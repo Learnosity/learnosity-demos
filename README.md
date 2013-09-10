@@ -12,6 +12,12 @@ Each page shows a basic integration to a specific Learnosity API which you can u
 Getting Started
 ---------------
 
-Download the package
-Put in a web accessible directory with PHP
-Browse to index.php
+* [Download the package](https://github.com/Learnosity/learnosity-php-examples/archive/master.zip)
+* Put in a web accessible directory with PHP
+* Copy config.dist.php to config.php
+* Replace the consumer_key, consumer_secret and name fields in the config.php file.
+* Test is out by browsing to index.php
+
+Documentation
+-------------
+Documentation is available at the [Learnosity Docs site](http://docs.learnosity.com) 
