@@ -42,7 +42,7 @@ $activity = '{
     },
     "ui_style":"horizontal",
     "labelBundle": {
-        "appName": "Pearson Singapore Demo",
+        "appName": "Assess Demo",
         "sheet": "Question"
     },
     "navigation": {
@@ -71,8 +71,8 @@ $activity = '{
         "user_id": "'.$studentid.'",
         "type": "submit_practice",
         "state": "initial",
-        "id": "demo-science-activity",
-        "name": "Assess API - Science Exam",
+        "id": "assessdemo",
+        "name": "Assess API - Demo",
         "course_id": "'.$courseid.'",
         "questions": [
 

@@ -16,7 +16,7 @@
         "rendering_type": "inline",
         "name": "Items API demo - Inline Activity.",
         "state": "initial",
-        "activity_id": "emberDemo2013",
+        "activity_id": "itemsinlinedemo",
         "session_id": "'.UUID::generateUuid().'",
         "course_id": "'.$courseid.'",
         "items": ["ccore_video_260_classification", "ccore_parcc_tecr_grade3"],
@@ -28,7 +28,7 @@
             "timestamp": "'.$timestamp.'"
         },
         "config": {
-            "renderSaveButton": true
+            "renderSubmitButton": true
         }
     }', true);
 
@@ -51,7 +51,7 @@
     <span class="learnosity-item" data-reference="ccore_video_260_classification"></span>
     <span class="learnosity-item" data-reference="ccore_parcc_tecr_grade3"></span></p>
 
-    <span class="learnosity-save-button"></span>
+    <span class="learnosity-submit-button"></span>
     </p>
 
 

@@ -11,53 +11,6 @@ $studentid = $name."Student";
 $teacherid = $name."Teacher";
 $schoolid = $name;
 
-
-//Student SSO JSON Object: http://docs.learnosity.com/dashboards/sso/userjson.php
-$student_json = '{
-            "consumer_key":"'.$consumer_key.'",
-            "timestamp":"' . $timestamp . '",
-            "user_id":"'.$studentid.'",
-            "domain":"'.$domain.'",
-            "module":"student",
-            "courses": [{
-                "id": "'.$courseid.'"
-            }],
-            "user": {
-                "firstname": "'.$name.'",
-                "lastname": "Student"
-            }
-        }';
-//Teacher SSO JSON Object: http://docs.learnosity.com/dashboards/sso/userjson.php
-$teacher_json = '{
-            "consumer_key":"'.$consumer_key.'",
-            "timestamp":"' . $timestamp . '",
-            "user_id":"'.$teacherid.'",
-            "domain":"'.$domain.'",
-            "module": "teacher",
-            "user": {
-                "firstname": "Susan",
-                "lastname": "Sanders"
-            },
-            "school": {
-                "id": "'.$schoolid.'",
-                "name": "'.$name.' Demo School"
-            },
-            "classes" : [
-                {"id":"1244","name":"Class 1","course_id":"'.$courseid.'"}
-            ],
-            "students" : [
-                {"id":"'.$studentid.'","class_ids":["1244"],"firstname":"'.$name.'","lastname":"Student"}
-    ]
-}';
-
-// Generate student signature
-$student_array = SignatureUtils::signRequest(json_decode($student_json,TRUE), $consumer_secret, 'sso');
-
-
-// Generate teacher signature
-$teacher_array = SignatureUtils::signRequest(json_decode($teacher_json, TRUE), $consumer_secret, 'sso');
-
-
 //Activity JSON:  http://docs.learnosity.com/api/activity.php
 $activitySignature = hash("sha256", $consumer_key . '_' . $domain . '_' . $timestamp . '_' . $studentid . '_' . $consumer_secret);
 $activity = '{
@@ -67,8 +20,8 @@ $activity = '{
     "user_id": "'.$studentid.'",
     "type": "submit_practice",
     "state": "initial",
-    "id": "demo-science-activity",
-    "name": "Questions API Demos",
+    "id": "questionsapi-demo",
+    "name": "Questions API Demo",
     "course_id": "'.$courseid.'",
     "renderSubmitButton" : "true",
     "questions": [

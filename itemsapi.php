@@ -25,7 +25,7 @@ $schoolid = $name;
         "rendering_type": "assess",
         "name": "Items API demo - Assess activity.",
         "state": "initial",
-        "activity_id": "emberDemo2013",
+        "activity_id": "itemsassessdemo",
         "session_id": "'.UUID::generateUuid().'",
         "course_id": "'.$courseid.'",
         "items": ["ccore_video_260_classification", "ccore_parcc_tecr_grade3"],
