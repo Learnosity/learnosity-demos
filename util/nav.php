@@ -12,8 +12,8 @@
             "index.php"=>"Home",
             "questionsapi.php"=>"QuestionsAPI",
             "assessapi.php"=>"AssessAPI",
-            "itemsapi_inline.php"=>"Items API Inline",
-            "itemsapi.php"=>"Items API",
+            "itemsapi_inline.php"=>"Items API",
+            "itemsapi_assess.php"=>"Items API Assess",
             "ssoapi.php"=>"Single Sign On",
             );
 ?>
