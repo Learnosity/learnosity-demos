@@ -11,11 +11,9 @@
     }
     include "util/headerbottom.php";
 
-  //  include "util/nav.php";
-
 
         //Loop through required keys in signature block
-        $configKeys = array('consumer_key', 'consumer_secret','name');
+        $configKeys = array('consumer_key', 'consumer_secret');
 
 
         foreach ($configKeys as $key) {
@@ -40,7 +38,7 @@
            }
         }else{
             echo '<div class="alert alert-success"><b>Config OK!</b> Looks like you are good to go.</div>';
-            echo '<p><a class="btn btn-primary btn-lg" href="questionsapi.php">Continue</a></p>';
+            echo '<p class="text-right"><a class="btn btn-primary btn-lg" href="questionsapi.php">Continue</a></p>';
         }
 
        ?>

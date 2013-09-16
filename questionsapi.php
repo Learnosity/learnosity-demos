@@ -1,15 +1,10 @@
 <?php include "util/headertop.php" ?>
 
-
 <?php
 
 include "config.php";
 include "util/signature.php";
 
-$courseid = $name."demo";
-$studentid = $name."Student";
-$teacherid = $name."Teacher";
-$schoolid = $name;
 
 //Activity JSON:  http://docs.learnosity.com/api/activity.php
 $activitySignature = hash("sha256", $consumer_key . '_' . $domain . '_' . $timestamp . '_' . $studentid . '_' . $consumer_secret);
@@ -219,6 +214,21 @@ $activity = '{
 <?php include "util/headerbottom.php" ?>
 
         <?php include "util/nav.php" ?>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Questions API</h1>
+        <p>Rich Question types can be embedded on any page with the Learnosity Questions API.  Every question is highly configurable to suit the assessment purpose, be it formative or summative.<p>
+
+        <div class="row">
+            <div class="col-md-8"> <p>Try a few questions and then submit at the bottom of the page</p></div>
+            <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="assessapi.php">Continue</a></p></div>
+        </div>
+
+      </div>
+    </div>
+
 
 
         <!-- Main question content below here: -->

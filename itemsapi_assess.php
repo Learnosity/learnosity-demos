@@ -4,12 +4,6 @@ include_once "config.php";
 include_once "util/signature.php";
 include_once "util/uuid.php";
 
-$courseid = $name."demo";
-$studentid = $name."Student";
-$teacherid = $name."Teacher";
-$schoolid = $name;
-
-
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -47,6 +41,18 @@ $schoolid = $name;
     $signedActivity = SignatureUtils::signRequest($activityData, $consumer_secret, 'items');
 
 ?>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Items API Assess</h1>
+        <p>Or with the flick of a switch make the items into an assessment.  Truly write once - use anywhere.<p>
+        <p class='text-right'><a class="btn btn-primary btn-lg" href="ssoapi.php">Continue</a></p>
+
+      </div>
+    </div>
+
+
 
 
     <!-- Container for the assess app to load into -->

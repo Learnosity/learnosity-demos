@@ -6,10 +6,6 @@
     include_once "util/signature.php";
     include_once "util/uuid.php";
 
-    $courseid = $name."demo";
-    $studentid = $name."Student";
-    $teacherid = $name."Teacher";
-    $schoolid = $name;
 
     //Define an activity - we use json and the convert it to PHP native for convenience
     $activityData = json_decode('{
@@ -45,6 +41,17 @@
 <?php include "util/headerbottom.php" ?>
 
 <?php include "util/nav.php" ?>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Items API</h1>
+        <p>Display items from the Learnosity Item Bank in no time with the Items API.  The Items API builds on the Questions API's power and makes it quicker to integrate.<p>
+        <div class="row">
+            <div class="col-md-8"> <p>See it below.</p></div>
+            <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_assess.php">Continue</a></p></div>
+        </div>
+      </div>
+    </div>
 
 
     <p>

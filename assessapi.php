@@ -3,10 +3,6 @@
 include_once "config.php";
 include_once "util/signature.php";
 
-$courseid = $name."demo";
-$studentid = $name."Student";
-$teacherid = $name."Teacher";
-$schoolid = $name;
 
 //The assess app is loaded in a iframe via assess.learnosity.com so the signature needs
 // to be generated with this domain.
@@ -172,6 +168,21 @@ $activity = '{
 
 
 <?php include "util/nav.php" ?>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Assess API</h1>
+        <p>Assessment made easy - configurable layouts, pause, fullscreen mode, simple assessment delivery to desktops and tablet devices in no time at all.<p>
+        <div class="row">
+            <div class="col-md-8"> <p>Try it for yourself.</p></div>
+            <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_inline.php">Continue</a></p></div>
+        </div>
+      </div>
+    </div>
+
+
+
 
     <!-- Main question content below here: -->
     <h2 class="page-heading">Assess API Demo</h2>

@@ -5,12 +5,6 @@
 include "config.php";
 include "util/signature.php";
 
-$courseid = $name."demo";
-$studentid = $name."Student";
-$teacherid = $name."Teacher";
-$schoolid = $name;
-
-
 //Student SSO JSON Object: http://docs.learnosity.com/dashboards/sso/userjson.php
 $student_json = '{
             "consumer_key":"'.$consumer_key.'",
@@ -22,7 +16,7 @@ $student_json = '{
                 "id": "'.$courseid.'"
             }],
             "user": {
-                "firstname": "'.$name.'",
+                "firstname": "Demo",
                 "lastname": "Student"
             },
             "return_link" : {
@@ -38,18 +32,18 @@ $teacher_json = '{
             "domain":"'.$domain.'",
             "module": "teacher",
             "user": {
-                "firstname": "Susan",
-                "lastname": "Sanders"
+                "firstname": "Demo",
+                "lastname": "Teacher"
             },
             "school": {
                 "id": "'.$schoolid.'",
-                "name": "'.$name.' Demo School"
+                "name": "Demo School"
             },
             "classes" : [
                 {"id":"1244","name":"Class 1","course_id":"'.$courseid.'"}
             ],
             "students" : [
-                {"id":"'.$studentid.'","class_ids":["1244"],"firstname":"'.$name.'","lastname":"Student"}
+                {"id":"'.$studentid.'","class_ids":["1244"],"firstname":"Demo","lastname":"Student"}
             ],
             "return_link" : {
                 "url": "'.$thispage.'",
@@ -79,9 +73,28 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, TRUE), $con
 
         <?php include "util/nav.php" ?>
 
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Single Sign On API</h1>
+        <p>Get quick access to the data using the Learnosity Dashboards - or simply use the Learnosity API's to build your own solution.<p>
+
+      </div>
+    </div>
+
+
+        <div class="row">
+            <div class="col-md-4">Login as a Student  <button class="btn" onclick="LearnositySSO.signon(studentSignon)">Student Sign-on</button></div>
+            <div class="col-md-4">Login as a Teacher  <button class="btn" onclick="LearnositySSO.signon(teacherSignon)">Teacher Sign-on</button></div>
+        </div>
+
+      </div>
+    </div>
+
         <!-- Quick buttons to login as a teacher or a student using SSO interface -->
-        <button class="btn" onclick="LearnositySSO.signon(studentSignon)">Student Sign-on</button>
-        <button class="btn" onclick="LearnositySSO.signon(teacherSignon)">Teacher Sign-on</button>
+
+
 
 
 <?php include "util/footer.php" ?>
