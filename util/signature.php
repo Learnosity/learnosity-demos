@@ -24,6 +24,10 @@ class SignatureUtils {
                 $signature = SignatureUtils::generateItemsSignature($request,$consumer_secret);
                 $signedRequest['security']['signature'] = $signature;
                 break;
+            case "v1":
+                $signature = SignatureUtils::generateV1Signature($request,$consumer_secret);
+                $signedRequest['security']['signature'] = $signature;
+                break;
             case "questions":
                 //TODO: Implement this.
                 break;
@@ -94,6 +98,40 @@ class SignatureUtils {
         // Return Concatenated String
         return $preHashString;
     }
+
+
+    private static function generateV1Signature($objectToSign, $consumer_secret) {
+        $concatenatedString = SignatureUtils::generatV1PreHashString($objectToSign, $consumer_secret);
+        return hash('sha256', $concatenatedString);
+    }
+
+    private static function generatV1PreHashString($objectToSign, $consumer_secret) {
+
+        //Check we have a security block & consumer secret
+        if(! isset($objectToSign['security']) || !count($objectToSign['security'])) throw new InvalidArgumentException("Security block does not exist");
+        if(! isset($consumer_secret) || !strlen($consumer_secret)) throw new InvalidArgumentException("consumer_secret was not passed in or was empty");
+
+        //Loop through required keys in signature block
+        $signatureKeys = array('consumer_key', 'timestamp','user_id','domain');
+
+        foreach ($signatureKeys as $key) {
+            //Check key exists
+            if(! isset($objectToSign['security'][$key]) || !strlen($objectToSign['security'][$key])) throw new InvalidArgumentException("Signature block does not contain required key or key was empty:".$key);
+
+            //Set key to local variable
+            ${$key} = $objectToSign['security'][$key];
+
+            // Remove above attributes from JSON before hashing
+            unset($objectToSign['security'][$key]);
+        }
+
+        // Create String to Hash
+        $preHashString = $consumer_key . '_' . $domain . '_' . $timestamp . '_' . $user_id . '_' . $consumer_secret;
+
+        // Return Concatenated String
+        return $preHashString;
+    }
+
 
     private static function arrayToStringForSignature($array) {
         $toReturn = "";
