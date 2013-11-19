@@ -1,13 +1,28 @@
-<?php include "util/headertop.php" ?>
-
 <?php
 
-include "config.php";
-include "util/signature.php";
+include_once 'src/includes/headertop.php';
+include_once 'config.php';
+include_once 'src/utils/RequestHelper.php';
+include_once 'src/utils/uuid.php';
 
+$uniqueResponseIdSuffix = UUID::generateUuid();
 
-//Activity JSON:  http://docs.learnosity.com/api/activity.php
-$activitySignature = hash("sha256", $consumer_key . '_' . $domain . '_' . $timestamp . '_' . $studentid . '_' . $consumer_secret);
+$security = [
+    "consumer_key" => $consumer_key,
+    "domain"       => $domain,
+    "timestamp"    => $timestamp,
+    "user_id"      => $studentid
+];
+
+$RequestHelper = new RequestHelper(
+    'questions',
+    $security,
+    $consumer_secret
+);
+
+$activitySignature = $RequestHelper->getSignature();
+
+// Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
 $activity = '{
     "consumer_key": "'.$consumer_key.'",
     "timestamp": "' . $timestamp . '",
@@ -199,113 +214,97 @@ $activity = '{
     ]
 }';
 
-
 ?>
 
+<script src="http://questions.learnosity.com"></script>
+<script>
+    var activity = <?php echo $activity; ?>;
+    LearnosityApp.init(activity);
+</script>
 
-        <script src="http://api.learnosity.com"></script>
-        <script type="text/javascript">
+<?php include 'src/includes/headerbottom.php' ?>
 
-        var activity = <?php echo $activity; ?>;
+<div class="jumbotron">
+    <h1>Questions API</h1>
+    <p>Rich Question types can be embedded on any page with the Learnosity Questions API.  Every question is highly configurable to suit the assessment purpose, be it formative or summative.<p>
 
-        LearnosityApp.init(activity);
-        </script>
-
-<?php include "util/headerbottom.php" ?>
-
-        <?php include "util/nav.php" ?>
-
-
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Questions API</h1>
-        <p>Rich Question types can be embedded on any page with the Learnosity Questions API.  Every question is highly configurable to suit the assessment purpose, be it formative or summative.<p>
-
-        <div class="row">
-            <div class="col-md-8"> <p>Try a few questions and then submit at the bottom of the page</p></div>
-            <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="assessapi.php">Continue</a></p></div>
-        </div>
-
-      </div>
+    <div class="row">
+        <div class="col-md-8"> <p>Try a few questions and then submit at the bottom of the page</p></div>
+        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="assessapi.php">Continue</a></p></div>
     </div>
+</div>
 
+<!-- Main question content below here: -->
+<h2 class="page-heading">Demo Science 8</h2>
 
+<p>1. Use your knowledge of conversions to complete the table below. To convert from centimetres to millimetres,
+    multiply by 10. To convert millimetres to micrometres, multiply by 1000. To reverse each of these, divide by
+    these factors of 10 and 1000. The first one has been done for you.</p>
+<span class="learnosity-response question-demoscience1<?php echo $uniqueResponseIdSuffix ?>"></span>
+<hr />
+<p>2. Identify the different bones of the human skeleton.</p>
+<span class="learnosity-response question-demoscience2<?php echo $uniqueResponseIdSuffix ?>"></span>
+<hr />
+<p>3. The world around you is constantly changing. Some of these changes are known as physical changes, in which no new substances are produced.
+    Other changes are known as chemical changes, in which new substances are produced. <strong>Classify</strong> each of the following situations as a physical or chemical change.</p>
+<span class="learnosity-response question-demoscience3<?php echo $uniqueResponseIdSuffix ?>"></span>
+<hr />
+<p>4. Complete the following equations.</p>
+<span class="learnosity-response question-demoscience4<?php echo $uniqueResponseIdSuffix ?>"></span>
+<hr />
+<p>5. Using the table <strong>construct</strong> a line graph using the graph provided to show how the level of ozone had varied from 1980 to 2006.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>1980</th>
+            <th>1982</th>
+            <th>1984</th>
+            <th>1986</th>
+            <th>1988</th>
+            <th>1990</th>
+            <th>1992</th>
+            <th>1998</th>
+            <th>2000</th>
+            <th>2002</th>
+            <th>2004</th>
+            <th>2006</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>Ozone minimum (DU)</td>
+        <td>194</td>
+        <td>195</td>
+        <td>154</td>
+        <td>124</td>
+        <td>109</td>
+        <td>108</td>
+        <td>84</td>
+        <td>99</td>
+        <td>97</td>
+        <td>91</td>
+        <td>91</td>
+        <td>102</td>
+    </tr>
+    </tbody>
+</table>
 
-        <!-- Main question content below here: -->
-        <h2 class="page-heading">Demo Science 8</h2>
+<!--[if IE 8]><div class="alert alert-error">Image Highlight Question Type is not currently supported by IE8, support will be released in the near future.<br>Sorry for any inconvenience.</div><![endif]-->
+<span class="learnosity-response question-demoscience5<?php echo $uniqueResponseIdSuffix ?>"></span>
+<hr>
+<p>6. <strong>Deduce</strong> from the graph what you might expect the minimum ozone level to be in 1994 and 1996.</p>
+<span class="learnosity-response question-demoscience6<?php echo $uniqueResponseIdSuffix ?>"></span>
+<hr>
+<p>7. <strong>Describe</strong> what happened to the ozone levels over this 26-year period.</p>
+<span class="learnosity-response question-demoscience7<?php echo $uniqueResponseIdSuffix ?>"></span>
+<hr>
+<p>8. <strong>Propose</strong> what you think the minimum ozone level will do over the next 10 years based on the data in the graph. <strong>Justify</strong> your answer.</p>
+<div style="height:80px;margin-bottom:100px;">
+    <span class="learnosity-response question-demoscience8<?php echo $uniqueResponseIdSuffix ?>"></span>
+</div>
 
-        <p>1. Use your knowledge of conversions to complete the table below. To convert from centimetres to millimetres,
-            multiply by 10. To convert millimetres to micrometres, multiply by 1000. To reverse each of these, divide by
-            these factors of 10 and 1000. The first one has been done for you.</p>
-        <span class="learnosity-response question-demoscience1<?php echo $uniqueResponseIdSuffix ?>"></span>
-        <hr />
-        <p>2. Identify the different bones of the human skeleton.</p>
-        <span class="learnosity-response question-demoscience2<?php echo $uniqueResponseIdSuffix ?>"></span>
-        <hr />
-        <p>3. The world around you is constantly changing. Some of these changes are known as physical changes, in which no new substances are produced.
-            Other changes are known as chemical changes, in which new substances are produced. <strong>Classify</strong> each of the following situations as a physical or chemical change.</p>
-        <span class="learnosity-response question-demoscience3<?php echo $uniqueResponseIdSuffix ?>"></span>
-        <hr />
-        <p>4. Complete the following equations.</p>
-        <span class="learnosity-response question-demoscience4<?php echo $uniqueResponseIdSuffix ?>"></span>
-        <hr />
-        <p>5. Using the table <strong>construct</strong> a line graph using the graph provided to show how the level of ozone had varied from 1980 to 2006.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Year</th>
-                    <th>1980</th>
-                    <th>1982</th>
-                    <th>1984</th>
-                    <th>1986</th>
-                    <th>1988</th>
-                    <th>1990</th>
-                    <th>1992</th>
-                    <th>1998</th>
-                    <th>2000</th>
-                    <th>2002</th>
-                    <th>2004</th>
-                    <th>2006</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>Ozone minimum (DU)</td>
-                <td>194</td>
-                <td>195</td>
-                <td>154</td>
-                <td>124</td>
-                <td>109</td>
-                <td>108</td>
-                <td>84</td>
-                <td>99</td>
-                <td>97</td>
-                <td>91</td>
-                <td>91</td>
-                <td>102</td>
-            </tr>
-            </tbody>
-        </table>
+<!-- Tell the API where to place the submit button if using "renderSubmitButton" attribute -->
+<span class="learnosity-submit-button"></span>
 
-        <!--[if IE 8]><div class="alert alert-error">Image Highlight Question Type is not currently supported by IE8, support will be released in the near future.<br>Sorry for any inconvenience.</div><![endif]-->
-        <span class="learnosity-response question-demoscience5<?php echo $uniqueResponseIdSuffix ?>"></span>
-        <hr />
-        <p>6. <strong>Deduce</strong> from the graph what you might expect the minimum ozone level to be in 1994 and 1996.</p>
-        <span class="learnosity-response question-demoscience6<?php echo $uniqueResponseIdSuffix ?>"></span>
-        <hr />
-        <p>7. <strong>Describe</strong> what happened to the ozone levels over this 26-year period.</p>
-        <span class="learnosity-response question-demoscience7<?php echo $uniqueResponseIdSuffix ?>"></span>
-        <hr />
-        <p>8. <strong>Propose</strong> what you think the minimum ozone level will do over the next 10 years based on the data in the graph. <strong>Justify</strong> your answer.</p>
-        <div style="height:80px;margin-bottom:100px;">
-            <span class="learnosity-response question-demoscience8<?php echo $uniqueResponseIdSuffix ?>"></span>
-        </div>
-
-
-        <!-- Tell the API where to place the submit button if using "renderSubmitButton" attribute -->
-         <span class="learnosity-submit-button"></span>
-
-
-
-<?php include "util/footer.php" ?>
-
+<?php include 'src/includes/footer.php' ?>

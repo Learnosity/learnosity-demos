@@ -1,21 +1,23 @@
 <?php
+
 /**
  * Signature Utils to make generating the signature simpler
  */
-class SignatureUtils {
 
+class SignatureUtils
+{
     // v1 - Questions API Signature
     // v2 - SSO signature
     // v3 - Items signature - keys encapsulated in security block
 
-
     /**
     * Sign a Learnosity API request
     */
-    static function signRequest($request, $consumer_secret, $version){
+    public static function signRequest($request, $consumer_secret, $version)
+    {
         $signedRequest = $request;
         $signature = "";
-        switch($version){
+        switch($version) {
             case "sso":
                 $signature = SignatureUtils::generateSSOSignature($request,$consumer_secret);
                 $signedRequest['signature'] = $signature;
@@ -35,13 +37,14 @@ class SignatureUtils {
         return $signedRequest;
     }
 
-    private static function generateItemsSignature($objectToSign, $consumer_secret) {
+    private static function generateItemsSignature($objectToSign, $consumer_secret)
+    {
         $concatenatedString = SignatureUtils::generatItemsPreHashString($objectToSign, $consumer_secret);
         return hash('sha256', $concatenatedString);
     }
 
-    private static function generatItemsPreHashString($objectToSign, $consumer_secret) {
-
+    private static function generatItemsPreHashString($objectToSign, $consumer_secret)
+    {
         //Check we have a security block & consumer secret
         if(! isset($objectToSign['security']) || !count($objectToSign['security'])) throw new InvalidArgumentException("Security block does not exist");
         if(! isset($consumer_secret) || !strlen($consumer_secret)) throw new InvalidArgumentException("consumer_secret was not passed in or was empty");
@@ -70,12 +73,14 @@ class SignatureUtils {
         return $preHashString;
     }
 
-    private static function generateSsoSignature($jsonArray, $consumer_secret) {
+    private static function generateSsoSignature($jsonArray, $consumer_secret)
+    {
         $concatenatedString = SignatureUtils::generateSsoPreHashString($jsonArray, $consumer_secret);
         return hash('sha256', $concatenatedString);
     }
 
-    private static function generateSsoPreHashString($jsonArray, $consumer_secret) {
+    private static function generateSsoPreHashString($jsonArray, $consumer_secret)
+    {
         // Concatenate String
         // Retrieve required parameters from JSON
         $consumer_key = $jsonArray['consumer_key'];
@@ -100,13 +105,14 @@ class SignatureUtils {
     }
 
 
-    private static function generateV1Signature($objectToSign, $consumer_secret) {
+    private static function generateV1Signature($objectToSign, $consumer_secret)
+    {
         $concatenatedString = SignatureUtils::generatV1PreHashString($objectToSign, $consumer_secret);
         return hash('sha256', $concatenatedString);
     }
 
-    private static function generatV1PreHashString($objectToSign, $consumer_secret) {
-
+    private static function generatV1PreHashString($objectToSign, $consumer_secret)
+    {
         //Check we have a security block & consumer secret
         if(! isset($objectToSign['security']) || !count($objectToSign['security'])) throw new InvalidArgumentException("Security block does not exist");
         if(! isset($consumer_secret) || !strlen($consumer_secret)) throw new InvalidArgumentException("consumer_secret was not passed in or was empty");
@@ -133,7 +139,8 @@ class SignatureUtils {
     }
 
 
-    private static function arrayToStringForSignature($array) {
+    private static function arrayToStringForSignature($array)
+    {
         $toReturn = "";
         ksort($array,SORT_STRING);
         foreach ($array as $key => $value) {
@@ -149,6 +156,3 @@ class SignatureUtils {
         return $toReturn;
     }
 }
-
-
-
