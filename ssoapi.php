@@ -1,9 +1,9 @@
-<?php include "util/headertop.php" ?>
+<?php include "src/includes/headertop.php" ?>
 
 <?php
 
 include "config.php";
-include "util/signature.php";
+include "src/utils/signature.php";
 
 //Student SSO JSON Object: http://docs.learnosity.com/dashboards/sso/userjson.php
 $student_json = '{
@@ -69,10 +69,7 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, TRUE), $con
         var teacherSignon = <?php echo json_encode($teacherSSO); ?>;
         </script>
 
-        <?php include "util/headerbottom.php" ?>
-
-        <?php include "util/nav.php" ?>
-
+        <?php include "src/includes/headerbottom.php" ?>
 
 
     <div class="jumbotron">
@@ -97,5 +94,5 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, TRUE), $con
 
 
 
-<?php include "util/footer.php" ?>
+<?php include "src/includes/footer.php" ?>
 
