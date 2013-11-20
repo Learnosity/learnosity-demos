@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DEPRECATED
+ * DEPRECATED - see RequestHelper.php
  * Signature Utils to make generating the signature simpler
  */
 
