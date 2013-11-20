@@ -60,7 +60,7 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, true), $con
 
 <div class="jumbotron">
     <h1>Single Sign On API</h1>
-    <p>Get quick access to the data using the Learnosity Dashboards - or simply use the Learnosity API's to build your own solution.<p>
+    <p>Get quick access to the data using the Learnosity Dashboards – or simply use the Learnosity API's to build your own solution.<p>
     <div class="row">
         <div class="col-md-8">
             <h4><a href="http://docs.learnosity.com/ssoapi/" class="text-muted">
@@ -72,16 +72,24 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, true), $con
 </div>
 
 <script src="http://sso.learnosity.com"></script>
-<script type="text/javascript">
+<script>
 // Create json objects from $student_array and $teacher_array.
 var studentSignon = <?php echo json_encode($studentSSO); ?>;
 var teacherSignon = <?php echo json_encode($teacherSSO); ?>;
 </script>
 
 <!-- Quick buttons to login as a teacher or a student using SSO interface -->
-<div class="row">
-    <div class="col-md-4">Login as a Student  <button class="btn" onclick="LearnositySSO.signon(studentSignon)">Student Sign-on</button></div>
-    <div class="col-md-4">Login as a Teacher  <button class="btn" onclick="LearnositySSO.signon(teacherSignon)">Teacher Sign-on</button></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Login as a Student</h2>
+            <button class="btn btn-primary btn-lg" onclick="LearnositySSO.signon(studentSignon)">Student Sign-on</button>
+        </div>
+        <div class="col-md-4">
+            <h2>Login as a Teacher</h2>
+            <button class="btn btn-primary btn-lg" onclick="LearnositySSO.signon(teacherSignon)">Teacher Sign-on</button>
+        </div>
+    </div>
 </div>
 
 <?php include_once '../src/includes/footer.php';
