@@ -11,13 +11,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>Use the top navigation or the list below to try out any of the demos:</p>
+            <h2>What do I do?</h2>
+            <p>Use the top navigation, or the list below, to try out any or all of the available demos:</p>
+            <br>
         </div>
-
+    </div>
+    <div class="row">
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Authoring</h3>
+                    <h2 class="panel-title">Authoring</h2>
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
@@ -30,7 +33,7 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Assessment</h3>
+                    <h2 class="panel-title">Assessment</h2>
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
@@ -45,7 +48,7 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Reporting</h3>
+                    <h2 class="panel-title">Reporting</h2>
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
