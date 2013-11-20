@@ -9,15 +9,18 @@
     <link rel="stylesheet" href="./static/vendor/reveal/reveal.css">
     <link rel="stylesheet" href="./static/css/main.css">
     <script src="./static/vendor/jquery/jquery-1.10.2.min.js"></script>
-    <script>
-        // Show alert if not being used form localhost
-        if (location.hostname !== 'localhost') {
-            document.write("<p>Note: Most demos will only work from 'localhost' please contact support@learnosity.com to get an additional domain added.</p>");
-        }
-    </script>
 </head>
 <body>
 
-<?php include_once '../src/includes/nav.php'; ?>
+<?php
+    // Show alert if not being used form localhost
+    if (strpos($_SERVER['SERVER_NAME'], '.learnosity.com') === false && $_SERVER['SERVER_NAME'] !== 'localhost') {
+        echo '<div class="container alert alert-warning"><p><b>Warning</b> – ' .
+            'Note: Most demos will only work from <em>localhost</em>. Please ' .
+            'contact support@learnosity.com to get an additional domain added.</p></div>';
+    }
+
+    include_once '../src/includes/nav.php';
+?>
 
 <div class="container">
