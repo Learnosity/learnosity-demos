@@ -1,8 +1,8 @@
 <?php
 
 include_once 'config.php';
-include_once 'src/utils/signature.php';
-include_once 'src/utils/uuid.php';
+include_once '../src/utils/uuid.php';
+include_once '../src/includes/header.php';
 
 $uniqueResponseIdSuffix = UUID::generateUuid();
 
@@ -55,7 +55,7 @@ $activity = '{
         "show_title": true,
         "outro_sheet": "",
         "show_outro": true,
-        "scroll_to_top": true,
+        "scroll_to_top": false,
         "scroll_to_test": false,
         "show_intro": true,
         "intro_sheet": ""
@@ -154,39 +154,32 @@ $activity = '{
     "type": "activity"
 }';
 
+?>
 
-?><!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-
-
-        <script src="http://assess.learnosity.com"></script>
-        <script type="text/javascript">
-            var activity = <?php echo $activity; ?>;
-        </script>
-
-<?php include "src/includes/headerbottom.php" ?>
-
-    <div class="jumbotron">
-        <h1>Assess API</h1>
-        <p>Assessment made easy - configurable layouts, pause, fullscreen mode, simple assessment delivery to desktops and tablet devices in no time at all.<p>
-        <div class="row">
-            <div class="col-md-8"> <p>Try it for yourself.</p></div>
-            <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_inline.php">Continue</a></p></div>
+<div class="jumbotron">
+    <h1>Assess API</h1>
+    <p>Assessment made easy - configurable layouts, pause, fullscreen mode, simple assessment delivery to desktops and tablet devices in no time at all.<p>
+    <div class="row">
+        <div class="col-md-8">
+            <h4><a href="http://docs.learnosity.com/assessapi/" class="text-muted">
+                <span class="glyphicon glyphicon-book"></span> Online docs
+            </a></h4>
         </div>
+        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="reportsapi.php">Continue</a></p></div>
     </div>
+</div>
 
-    <!-- Main question content below here: -->
-    <h2 class="page-heading">Assess API Demo</h2>
+<!-- Main question content below here: -->
+<h2 class="page-heading">Assess API Demo</h2>
 
-    <p>This page shows the Assess API and how it can leverage the Questions API to create a rich assessment experience</p>
+<p>This page shows the Assess API and how it can leverage the Questions API to create a rich assessment experience</p>
 
-    <div id="learnosity_assess"></div>
+<!-- Container for the assess api to load into -->
+<span id="learnosity_assess"></span>
+<script src="http://assess.learnosity.com"></script>
+<script>
+    var activity = <?php echo $activity; ?>;
+    LearnosityAssess.init(activity, "learnosity_assess");
+</script>
 
-    <script>LearnosityAssess.init(activity, "learnosity_assess");</script>
-
-<?php include "src/includes/footer.php" ?>
-
-
-
+<?php include_once '../src/includes/footer.php';

@@ -1,11 +1,9 @@
 <?php
 
-include_once 'src/includes/headertop.php';
 include_once 'config.php';
-include_once 'src/utils/RequestHelper.php';
-include_once 'src/utils/uuid.php';
-
-$uniqueResponseIdSuffix = UUID::generateUuid();
+include_once '../src/utils/uuid.php';
+include_once '../src/utils/RequestHelper.php';
+include_once '../src/includes/header.php';
 
 $security = [
     "consumer_key" => $consumer_key,
@@ -21,6 +19,8 @@ $RequestHelper = new RequestHelper(
 );
 
 $activitySignature = $RequestHelper->getSignature();
+
+$uniqueResponseIdSuffix = UUID::generateUuid();
 
 // Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
 $activity = '{
@@ -216,23 +216,27 @@ $activity = '{
 
 ?>
 
-<script src="http://questions.learnosity.com"></script>
+<div class="jumbotron">
+    <h1>Questions API</h1>
+    <p>Rich Question types can be embedded on any page with the Learnosity Questions API.  Every question is highly configurable to suit the assessment purpose, be it formative or summative.<p>
+    <p>Try a few questions and then submit at the bottom of the page</p>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h4><a href="http://docs.learnosity.com/questionsapi/" class="text-muted">
+                <span class="glyphicon glyphicon-book"></span> Online docs
+            </a></h4>
+        </div>
+        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_assess.php">Continue</a></p></div>
+    </div>
+</div>
+
+<!-- Container for the questions api to load into -->
+<script src="http://api.learnosity.com"></script>
 <script>
     var activity = <?php echo $activity; ?>;
     LearnosityApp.init(activity);
 </script>
-
-<?php include 'src/includes/headerbottom.php' ?>
-
-<div class="jumbotron">
-    <h1>Questions API</h1>
-    <p>Rich Question types can be embedded on any page with the Learnosity Questions API.  Every question is highly configurable to suit the assessment purpose, be it formative or summative.<p>
-
-    <div class="row">
-        <div class="col-md-8"> <p>Try a few questions and then submit at the bottom of the page</p></div>
-        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="assessapi.php">Continue</a></p></div>
-    </div>
-</div>
 
 <!-- Main question content below here: -->
 <h2 class="page-heading">Demo Science 8</h2>
@@ -307,4 +311,4 @@ $activity = '{
 <!-- Tell the API where to place the submit button if using "renderSubmitButton" attribute -->
 <span class="learnosity-submit-button"></span>
 
-<?php include 'src/includes/footer.php' ?>
+<?php include_once '../src/includes/footer.php';
