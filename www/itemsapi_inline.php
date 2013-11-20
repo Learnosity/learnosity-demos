@@ -1,10 +1,9 @@
 <?php
 
-include_once 'src/includes/headertop.php';
 include_once 'config.php';
-include_once 'src/utils/RequestHelper.php';
-include_once 'src/utils/signature.php';
-include_once "src/utils/uuid.php";
+include_once '../src/utils/uuid.php';
+include_once '../src/utils/RequestHelper.php';
+include_once '../src/includes/header.php';
 
 $security = [
     "consumer_key" => $consumer_key,
@@ -38,20 +37,23 @@ $signedActivity = $RequestHelper->generateRequest();
 
 ?>
 
+<!-- Container for the items api to load into -->
 <script src="http://items.learnosity.com/"></script>
 <script>
     var activity = <?php echo $signedActivity; ?>;
     LearnosityItems.init(activity);
 </script>
 
-<?php include "src/includes/headerbottom.php" ?>
-
 <div class="jumbotron">
-    <h1>Items API</h1>
+    <h1>Items API – Inline</h1>
     <p>Display items from the Learnosity Item Bank in no time with the Items API.  The Items API builds on the Questions API's power and makes it quicker to integrate.<p>
     <div class="row">
-        <div class="col-md-8"> <p>See it below.</p></div>
-        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_assess.php">Continue</a></p></div>
+        <div class="col-md-8">
+            <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
+                <span class="glyphicon glyphicon-book"></span> Online docs
+            </a></h4>
+        </div>
+        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="assessapi.php">Continue</a></p></div>
     </div>
 </div>
 
@@ -61,4 +63,4 @@ $signedActivity = $RequestHelper->generateRequest();
     <span class="learnosity-submit-button"></span>
 </p>
 
-<?php include "src/includes/footer.php" ?>
+<?php include_once '../src/includes/footer.php';

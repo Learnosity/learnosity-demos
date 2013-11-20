@@ -1,2 +1,7 @@
-
-config.php
+sonar-project.properties
+.sonar
+.DS_Store
+.project
+*.esproj
+*.sublime-workspace
+*.sublime-project

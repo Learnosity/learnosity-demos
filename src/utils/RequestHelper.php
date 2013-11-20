@@ -84,13 +84,13 @@ class RequestHelper
      * the correct order for signature generation.
      * @var array
      */
-    private $validSecurityKeys = ['consumer_key', 'domain', 'timestamp', 'user_id'];
+    private $validSecurityKeys = array('consumer_key', 'domain', 'timestamp', 'user_id');
 
     /**
      * Service names that are valid for `service`
      * @var array
      */
-    private $validServices = ['assess', 'author', 'data', 'items', 'questions', 'reports'];
+    private $validServices = array('assess', 'author', 'data', 'items', 'questions', 'reports');
 
     /**
      * The algorithm used in the hashing function to create the signature
@@ -141,7 +141,7 @@ class RequestHelper
      */
     public function generateRequest()
     {
-        $output = [];
+        $output = array();
 
         switch ($this->service) {
             case 'assess':
@@ -230,7 +230,7 @@ class RequestHelper
      */
     public function generateSignature()
     {
-        $signatureArray = [];
+        $signatureArray = array();
 
         // Create a pre-hash string based on the security credentials
         // The order is important
