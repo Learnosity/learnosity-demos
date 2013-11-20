@@ -47,7 +47,7 @@ $signedActivity = $RequestHelper->generateRequest();
 
 <div class="jumbotron">
     <h1>Items API – Assess</h1>
-    <p>Or with the flick of a switch make the items into an assessment. Truly write once - use anywhere.<p>
+    <p>With the flick of a switch make the items into an assessment. Truly write once - use anywhere.<p>
     <div class="row">
         <div class="col-md-8">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">

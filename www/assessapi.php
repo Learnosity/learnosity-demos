@@ -158,7 +158,7 @@ $activity = '{
 
 <div class="jumbotron">
     <h1>Assess API</h1>
-    <p>Assessment made easy - configurable layouts, pause, fullscreen mode, simple assessment delivery to desktops and tablet devices in no time at all.<p>
+    <p>Assessment made easy – configurable layouts, pause, fullscreen mode, simple assessment delivery to desktops and tablet devices in no time at all.<p>
     <div class="row">
         <div class="col-md-8">
             <h4><a href="http://docs.learnosity.com/assessapi/" class="text-muted">
