@@ -48,6 +48,11 @@
             <div class="pull-right">
                 <ul class="nav navbar-nav">
                     <li>
+                        <a href="https://github.com/Learnosity/learnosity-php-examples" class="text-muted">
+                            <span class="glyphicon glyphicon-file"></span> View source
+                        </a>
+                    </li>
+                    <li>
                         <a href="https://github.com/Learnosity/learnosity-php-examples/archive/master.zip" class="text-muted">
                             <span class="glyphicon glyphicon-cloud-download"></span> Download
                         </a>

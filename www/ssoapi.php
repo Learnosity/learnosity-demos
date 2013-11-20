@@ -64,10 +64,10 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, true), $con
     <div class="row">
         <div class="col-md-8">
             <h4><a href="http://docs.learnosity.com/ssoapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Online docs
+                <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
         </div>
-        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="index.php">Continue</a></p></div>
+        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
