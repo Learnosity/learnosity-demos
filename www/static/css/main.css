@@ -108,3 +108,7 @@ td {
     position: relative;
     z-index: 10;
 }
+
+.modal-dialog {
+    width: 800px;
+}

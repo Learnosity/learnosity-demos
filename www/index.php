@@ -37,7 +37,7 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="authorapi.php">Questions API</a></li>
+                        <li><a href="questionsapi.php">Questions API</a></li>
                         <li><a href="itemsapi_assess.php">Items API – Assess</a></li>
                         <li><a href="itemsapi_inline.php">Items API – Inline</a></li>
                         <li><a href="assessapi.php">Assess API</a></li>

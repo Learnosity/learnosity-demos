@@ -49,10 +49,29 @@ $signedRequest = $RequestHelper->generateRequest();
     var config = <?php echo $signedRequest; ?>;
     config.ui = {
         onItemClick: function (item) {
-            console.log(item);
+            var data = {
+                item_references: [item.reference],
+                sign_type: 'itemsinline'
+            };
+            $.ajax({
+                url: './xhr.php',
+                data: data,
+                type: 'POST'
+            })
+            .done(function(data) {
+                $('#render-items').html(data);
+                $('#itemsInlineModal').modal();
+            })
+            .fail(function() {
+                alert('There was an error attempting to preview the item');
+            });
         }
     }
     LearnosityAuthor.init(config);
 </script>
+
+<script src="http://items.learnosity.com/"></script>
+<!-- Container for the items api to load into -->
+<div id="render-items"></div>
 
 <?php include_once '../src/includes/footer.php';
