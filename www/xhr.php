@@ -17,11 +17,11 @@ include_once 'config.php';
 include_once '../src/utils/RequestHelper.php';
 include_once '../src/utils/uuid.php';
 
-$security = [
+$security = array(
     "consumer_key" => $consumer_key,
     "domain"       => $domain,
     "timestamp"    => $timestamp
-];
+);
 
 $service = null;
 $sign_type = (isset($_POST['sign_type'])) ? $_POST['sign_type'] : null;

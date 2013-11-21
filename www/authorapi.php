@@ -4,19 +4,19 @@ include_once 'config.php';
 include_once '../src/utils/RequestHelper.php';
 include_once '../src/includes/header.php';
 
-$security = [
+$security = array(
     "consumer_key" => $consumer_key,
     "domain"       => $domain,
     "timestamp"    => $timestamp
-];
+);
 
-$request = [
+$request = array(
     "limit" => 100,
-    "tags"  => [
-        ["type" => "course", "name" =>"commoncore"],
-        ["type" => "subject", "name" =>"English"]
-    ]
-];
+    "tags"  => array(
+        array("type" => "course", "name" =>"commoncore"),
+        array("type" => "subject", "name" =>"English")
+    )
+);
 
 $RequestHelper = new RequestHelper(
     'author',
