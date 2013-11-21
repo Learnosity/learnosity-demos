@@ -31,7 +31,7 @@ switch ($sign_type) {
     case 'itemsinline':
         $service = 'items';
         $show_modal = true;
-        $request = [
+        $request = array(
             "user_id"        => $studentid,
             "rendering_type" => "inline",
             "name"           => "Items API demo - Inline Activity.",
@@ -41,10 +41,10 @@ switch ($sign_type) {
             "course_id"      => $courseid,
             "items"          => $_POST['item_references'],
             "type"           => "submit_practice",
-            "config"         => [
+            "config"         => array(
                 "renderSubmitButton" => false
-            ]
-        ];
+            )
+        );
         break;
     default:
         // No default
