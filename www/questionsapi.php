@@ -5,12 +5,12 @@ include_once '../src/utils/uuid.php';
 include_once '../src/utils/RequestHelper.php';
 include_once '../src/includes/header.php';
 
-$security = [
+$security = array(
     "consumer_key" => $consumer_key,
     "domain"       => $domain,
     "timestamp"    => $timestamp,
     "user_id"      => $studentid
-];
+);
 
 $RequestHelper = new RequestHelper(
     'questions',

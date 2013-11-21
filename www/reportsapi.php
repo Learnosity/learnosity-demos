@@ -4,110 +4,110 @@ include_once 'config.php';
 include_once '../src/utils/RequestHelper.php';
 include_once '../src/includes/header.php';
 
-$security = [
+$security = array(
     "consumer_key" => 'yis0TYCu7U9V4o7M',
     "domain"       => $domain,
     "timestamp"    => $timestamp,
     "user_id"      => 'brianmoser'
-];
+);
 
-$request = [
-    [
+$request = array(
+    array(
         'id'          => 'report-1',
         'type'        => 'user-sessions-summary',
-        'session_ids' => [
+        'session_ids' => array(
             'AC023456-2C73-44DC-82DA28894FCBC3BF'
-        ]
-    ],
-    [
+        )
+    ),
+    array(
         'id'         => 'report-2',
         'session_id' => 'B146BA2C-C2D0-4368-B90FFBA2B245F2BA',
         'type'       => 'user-session-detail'
-    ],
-    [
+    ),
+    array(
         'id'        => 'report-3',
         'type'      => 'user-progress-by-tag',
         'hierarchy' => 'author'
-    ],
-    [
+    ),
+    array(
         'id'        => 'report-4',
         'type'      => 'user-sessions-summary-by-tag',
         'ui'        => 'bar-chart',
         'hierarchy' => 'author',
-        'session_ids' => [
+        'session_ids' => array(
             'B146BA2C-C2D0-4368-B90FFBA2B245F2BA'
-        ]
-    ],
-    [
+        )
+    ),
+    array(
         'id'    => 'report-5',
         'type'  => 'group-lastscore-by-activity',
-        'users' => [
-            [
+        'users' => array(
+            array(
                 'id' => 'brianmoser',
                 'name' => 'Brian Moser'
-            ],
-            [
+            ),
+            array(
                 'id' => '12345678',
                 'name' => 'John Carter'
-            ]
-        ],
-        'activities' => [
-            [
+            )
+        ),
+        'activities' => array(
+            array(
                 'id' => 'edde56e8-ff65-e42e-b4fe49caad796bd',
                 'name' => 'Mid Term'
-            ],
-            [
+            ),
+            array(
                 'id' => 'emberDemo2013',
                 'name' => 'Final'
-            ]
-        ]
-    ],
-    [
+            )
+        )
+    ),
+    array(
         'id'    => 'report-6',
         'type'  => 'user-lastscore-by-activity',
-        'activities' => [
-            [
+        'activities' => array(
+            array(
                 'id' => 'edde56e8-ff65-e42e-b4fe49caad796bd',
                 'name' => 'Mid Term'
-            ],
-            [
+            ),
+            array(
                 'id' => 'emberDemo2013',
                 'name' => 'Final'
-            ]
-        ]
-    ],
-    [
+            )
+        )
+    ),
+    array(
         'id'    => 'report-7',
         'type'  => 'group-lastscore-by-item',
-        'users' => [
-            [
+        'users' => array(
+            array(
                 'id' => 'brianmoser',
                 'name' => 'Brian Moser'
-            ],
-            [
+            ),
+            array(
                 'id' => '12345678',
                 'name' => 'John Carter'
-            ]
-        ],
+            )
+        ),
         'activity_id' => '52f5b81d-9270-914a-7094a1ada4d55e6e'
-    ],
-    [
+    ),
+    array(
         'id'    => 'report-8',
         'type'  => 'group-lastscore-by-tag',
-        'users' => [
-            [
+        'users' => array(
+            array(
                 'id' => 'brianmoser',
                 'name' => 'Brian Moser'
-            ],
-            [
+            ),
+            array(
                 'id' => '12345678',
                 'name' => 'John Carter'
-            ]
-        ],
+            )
+        ),
         'activity_id' => '52f5b81d-9270-914a-7094a1ada4d55e6e',
         'hierarchy' => 'questiontype'
-    ]
-];
+    )
+);
 
 $RequestHelper = new RequestHelper(
     'reports',

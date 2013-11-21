@@ -5,13 +5,13 @@ include_once '../src/utils/uuid.php';
 include_once '../src/utils/RequestHelper.php';
 include_once '../src/includes/header.php';
 
-$security = [
+$security = array(
     "consumer_key" => $consumer_key,
     "domain"       => $domain,
     "timestamp"    => $timestamp
-];
+);
 
-$request = [
+$request = array(
     "user_id"        => $studentid,
     "rendering_type" => "assess",
     "name"           => "Items API demo - assess activity.",
@@ -19,20 +19,20 @@ $request = [
     "activity_id"    => "itemsassessdemo",
     "session_id"     => UUID::generateUuid(),
     "course_id"      => $courseid,
-    "items"          => ["ccore_video_260_classification", "ccore_parcc_tecr_grade3"],
+    "items"          => array("ccore_video_260_classification", "ccore_parcc_tecr_grade3"),
     "type"           => "submit_practice",
-    "config"         => [
+    "config"         => array(
         "subtitle"   => "Walter White",
-        "navigation" => [
+        "navigation" => array(
             "show_intro"     => true,
             "show_itemcount" => true,
             "scroll_to_top"  => false,
             "scroll_to_test" => false
-        ],
+        ),
         "renderSaveButton"  => true,
         "ignore_validation" => false
-    ]
-];
+    )
+);
 
 $RequestHelper = new RequestHelper(
     'items',
