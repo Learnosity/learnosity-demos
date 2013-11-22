@@ -30,6 +30,7 @@ $show_modal = false;
 switch ($sign_type) {
     case 'itemsinline':
         $service = 'items';
+        $content = $_POST['content'];
         $show_modal = true;
         $request = array(
             "user_id"        => $studentid,

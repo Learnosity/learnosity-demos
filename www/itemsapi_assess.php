@@ -29,6 +29,13 @@ $request = array(
             "scroll_to_top"  => false,
             "scroll_to_test" => false
         ),
+        "time" => array(
+            "max_time"     => 1500,
+            "limit_type"   => "soft",
+            "show_pause"   => true,
+            "warning_time" => 60,
+            "show_time"    => true
+        ),
         "renderSaveButton"  => true,
         "ignore_validation" => false
     )
