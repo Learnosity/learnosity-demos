@@ -6,7 +6,8 @@
 |--------------------------------------------------------------------------
 |
 | Use this script to generate a new signature and initialisation
-| packet for a Learnosity service.
+| packet for a Learnosity service, or to generate the new signature
+| but return an HTML packet from an initialised service.
 |
 | Main use case right now is to sign an 'items' packet from the Author
 | API for previewing.
