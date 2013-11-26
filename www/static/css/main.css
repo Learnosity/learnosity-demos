@@ -125,3 +125,22 @@ td {
         width:90%;
    }
 }
+
+#initialisation-preview pre {
+   background-color: ghostwhite;
+   border: 1px solid silver;
+   padding: 10px 20px;
+   margin: 20px;
+}
+
+#initialisation-preview .json-key {
+   color: brown;
+}
+
+#initialisation-preview .json-value {
+   color: navy;
+}
+
+#initialisation-preview .json-string {
+   color: olive;
+}
