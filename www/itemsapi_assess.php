@@ -6,40 +6,75 @@ include_once '../src/utils/RequestHelper.php';
 include_once '../src/includes/header.php';
 
 $security = array(
-    "consumer_key" => $consumer_key,
-    "domain"       => $domain,
-    "timestamp"    => $timestamp
+    'consumer_key' => $consumer_key,
+    'domain'       => $domain,
+    'timestamp'    => $timestamp
 );
 
 $request = array(
-    "user_id"        => $studentid,
-    "rendering_type" => "assess",
-    "name"           => "Items API demo - assess activity.",
-    "state"          => "initial",
-    "activity_id"    => "itemsassessdemo",
-    "session_id"     => UUID::generateUuid(),
-    "course_id"      => $courseid,
-    "items"          => array("ccore_video_260_classification", "ccore_parcc_tecr_grade3"),
-    "type"           => "submit_practice",
-    "config"         => array(
-        "subtitle"   => "Walter White",
-        "navigation" => array(
-            "show_intro"     => true,
-            "show_itemcount" => true,
-            "scroll_to_top"  => false,
-            "scroll_to_test" => false
+    'activity_id'    => 'itemsassessdemo',
+    'name'           => 'Items API demo - assess activity',
+    'rendering_type' => 'assess',
+    'state'          => 'initial',
+    'type'           => 'local_practice',
+    'course_id'      => $courseid,
+    'session_id'     => UUID::generateUuid(),
+    'user_id'        => $studentid,
+    'items'          => array('ccore_video_260_classification', 'ccore_parcc_tecr_grade3'),
+    'config'         => array(
+        'title'      => '',
+        'subtitle'   => 'Walter White',
+        'navigation' => array(
+            'show_next'              => true,
+            'show_prev'              => true,
+            'show_fullscreencontrol' => false,
+            'show_progress'          => true,
+            'show_submit'            => false,
+            'show_title'             => false,
+            'show_save'              => false,
+            'show_calculator'        => false,
+            'scroll_to_top'          => false,
+            'scroll_to_test'         => false,
+            'show_itemcount'         => true,
+            'toc'                    => true,
+            'transition'             => 'slide',
+            'transition_speed'       => 400
         ),
-        "time" => array(
-            "max_time"     => 1500,
-            "limit_type"   => "soft",
-            "show_pause"   => true,
-            "warning_time" => 60,
-            "show_time"    => true
+        'time' => array(
+            'max_time'     => 120,
+            'limit_type'   => 'soft',
+            'show_pause'   => true,
+            'warning_time' => 60,
+            'show_time'    => true
         ),
-        "renderSaveButton"  => true,
-        "ignore_validation" => false
+        'ui_style'          => 'main',
+        'renderSaveButton'  => true,
+        'ignore_validation' => false
     )
 );
+
+// Examine the settings modal form post and replace the default
+// $request variables.
+if (isset($_POST['ui_style'])) {
+    foreach ($_POST as $key => $value) {
+        if (is_array($value)) {
+            foreach ($value as $subkey => $subvalue) {
+                if ($subvalue === 'true') {
+                    $_POST[$key][$subkey] = true;
+                } elseif ($subvalue === 'false') {
+                    $_POST[$key][$subkey] = false;
+                }
+            }
+        } else {
+            if ($value === 'true') {
+                $_POST[$key] = (bool)$value;
+            } elseif ($value === 'false') {
+                $_POST[$key] = false;
+            }
+        }
+    }
+    $request['config'] = array_replace_recursive($request['config'], $_POST);
+}
 
 $RequestHelper = new RequestHelper(
     'items',
@@ -56,9 +91,14 @@ $signedActivity = $RequestHelper->generateRequest();
     <h1>Items API – Assess</h1>
     <p>With the flick of a switch make the items into an assessment. Truly write once - use anywhere.<p>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-3">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
+            </a></h4>
+        </div>
+        <div class="col-md-5">
+            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
+                 <span class="glyphicon glyphicon-list-alt"></span> Customise API Settings
             </a></h4>
         </div>
         <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_inline.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
@@ -73,4 +113,6 @@ $signedActivity = $RequestHelper->generateRequest();
     LearnosityItems.init(activity);
 </script>
 
-<?php include_once '../src/includes/footer.php';
+<?php
+    include_once '../src/views/modals/settings-items.php';
+    include_once '../src/includes/footer.php';
