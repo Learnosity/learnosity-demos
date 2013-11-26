@@ -83,7 +83,7 @@ $RequestHelper = new RequestHelper(
     $request
 );
 
-$signedActivity = $RequestHelper->generateRequest();
+$signedRequest = $RequestHelper->generateRequest();
 
 ?>
 
@@ -91,17 +91,18 @@ $signedActivity = $RequestHelper->generateRequest();
     <h1>Items API – Assess</h1>
     <p>With the flick of a switch make the items into an assessment. Truly write once - use anywhere.<p>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
-        </div>
-        <div class="col-md-5">
             <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
-                 <span class="glyphicon glyphicon-list-alt"></span> Customise API Settings
+                <span class="glyphicon glyphicon-list-alt"></span> Customise API Settings
+            </a></h4>
+            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
+                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_inline.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_inline.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -109,10 +110,11 @@ $signedActivity = $RequestHelper->generateRequest();
 <span id="learnosity_assess"></span>
 <script src="http://items.learnosity.com"></script>
 <script>
-    var activity = <?php echo $signedActivity; ?>;
+    var activity = <?php echo $signedRequest; ?>;
     LearnosityItems.init(activity);
 </script>
 
 <?php
     include_once '../src/views/modals/settings-items.php';
+    include_once '../src/views/modals/initialisation-preview.php';
     include_once '../src/includes/footer.php';

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./static/vendor/reveal/reveal.css">
     <link rel="stylesheet" href="./static/css/main.css">
     <script src="./static/vendor/jquery/jquery-1.10.2.min.js"></script>
+    <script src="./static/js/main.js"></script>
 </head>
 <body>
 
