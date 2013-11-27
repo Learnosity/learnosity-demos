@@ -12,7 +12,7 @@ $assessdomain = 'assess.learnosity.com';
 
 //Activity JSON:  http://docs.learnosity.com/api/activity.php
 $activitySignature = hash("sha256", $consumer_key . '_' . $assessdomain . '_' . $timestamp . '_' . $studentid . '_' . $consumer_secret);
-$activity = '{
+$signedRequest = '{
     "sheets": [
         {
             "content": "<p>1. Use your knowledge of conversions to complete the table below. To convert from centimetres to millimetres, multiply by 10. To convert millimetres to micrometres, multiply by 1000. To reverse each of these, divide by these factors of 10 and 1000. The first one has been done for you.</p><span class=\"learnosity-response question-demoscience1'.$uniqueResponseIdSuffix.'\"></span>",
@@ -164,22 +164,22 @@ $activity = '{
             <h4><a href="http://docs.learnosity.com/assessapi/" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
+            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
+                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
+            </a></h4>
         </div>
         <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="reportsapi.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
-<!-- Main question content below here: -->
-<h2 class="page-heading">Assess API Demo</h2>
-
-<p>This page shows the Assess API and how it can leverage the Questions API to create a rich assessment experience</p>
-
 <!-- Container for the assess api to load into -->
 <span id="learnosity_assess"></span>
 <script src="http://assess.learnosity.com"></script>
 <script>
-    var activity = <?php echo $activity; ?>;
+    var activity = <?php echo $signedRequest; ?>;
     LearnosityAssess.init(activity, "learnosity_assess");
 </script>
 
-<?php include_once '../src/includes/footer.php';
+<?php
+    include_once '../src/views/modals/initialisation-preview.php';
+    include_once '../src/includes/footer.php';
