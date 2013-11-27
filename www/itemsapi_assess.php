@@ -16,7 +16,7 @@ $request = array(
     'name'           => 'Items API demo - assess activity',
     'rendering_type' => 'assess',
     'state'          => 'initial',
-    'type'           => 'local_practice',
+    'type'           => 'submit_practice',
     'course_id'      => $courseid,
     'session_id'     => UUID::generateUuid(),
     'user_id'        => $studentid,
@@ -41,7 +41,7 @@ $request = array(
             'transition_speed'       => 400
         ),
         'time' => array(
-            'max_time'     => 120,
+            'max_time'     => 10,
             'limit_type'   => 'soft',
             'show_pause'   => true,
             'warning_time' => 60,

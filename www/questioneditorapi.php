@@ -19,25 +19,324 @@ include_once '../src/includes/header.php';
     </div>
 </div>
 
+<!--
+********************************************************************
+*
+* Nav for different Question Editor API examples
+*
+********************************************************************
+-->
+<div class="alert alert-info" id="example-description"></div>
+<ul class="nav nav-tabs" id="nav-questioneditor">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">New Question<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="#" data-type="newQuestion" id="newQuestion">Standard</a></li>
+            <li><a href="#" data-type="defaults">with defaults</a></li>
+            <li><a href="#" data-type="disabled">with certain attributes disabled</a></li>
+            <li><a href="#" data-type="defaultsdisabled">with certain attributes disabled and defaults</a></li>
+            <li><a href="#" data-type="assetuploadexample">with image gallery asset handler</a></li>
+        </ul>
+    </li>
+    <li><a href="#" data-type="edit">Edit Existing Question</a></li>
+    <li><a href="#" data-type="feedback">Rubric Feedback</a></li>
+    <li><a href="#" data-type="features">Stimulus Features</a></li>
+</ul>
+
 <!-- Container for the question editor api to load into -->
 <span class="learnosity-response-editor"></span>
-<script src="http://responseeditor.learnosity.com/"></script>
+<script src="http://questioneditor.learnosity.com/"></script>
 <script>
-    LearnosityResponseEditor.init({
-        widgetType: 'response',
-        ui: {
-            columns: [{
-                tabs: ["edit", "advanced"],
-                width: "50%"
-            }, {
-                tabs: ["preview", "layout"],
-                width: "50%"
-            }],
-            fixedPreview: {
-               marginTop: 50
+    /********************************************************************
+    *
+    * Set the different initialisation settings based off the
+    * example currently being requested
+    *
+    ********************************************************************/
+    var initType,
+        initObjects = {
+            newQuestion: {
+                description: 'Just the standard default editor with no defaults set or attributes disabled.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: "v2"
+                    },
+                    widgetType: 'response',
+                    ui: {
+                        columns: [
+                            {
+                                tabs: ["edit", "advanced"],
+                                width: "50%"
+                            },
+                            {
+                                tabs: ["preview", "layout"],
+                                width: "50%"
+                            }
+                        ],
+                        fixedPreview: {
+                           marginTop: 50
+                        }
+                    }
+                }
+            },
+            defaults: {
+                description: 'In this example we\'re defaulting the editor to allow '
+                    + 'editing of only one question type. We\'re also setting certain '
+                    + 'attributes before the author sees it, like <em>instant_feedback</em> '
+                    + 'being set to true, a default <em>Stimulus</em> being set etc.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: "v2"
+                    },
+                    question_types: {
+                        association: {
+                            defaults: {
+                                "type": "association",
+                                "feedback_attempts": 5,
+                                "instant_feedback": true,
+                                "stimulus": "<p>Question stimulus goes here.</p>",
+                                "validation": {
+                                    "partial_scoring": true,
+                                    "penalty_score": -0.5,
+                                    "valid_score": 1
+                                    }
+                            }
+                        }
+                    },
+                    widgetType: 'response'
+                }
+            },
+            disabled: {
+                description: 'In this example we\'re hiding certain '
+                + 'attributes to demonstrate the flexibility you can provide to authors.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: "v2"
+                    },
+                    question_types: {
+                        clozetext: {
+                            hidden: [
+                                "character_map", "description", "feedback_attempts",
+                                "instant_feedback", "is_math", "max_length",
+                                "metadata", "response_container", "spellcheck", "stimulus_review"
+                            ]
+                        }
+                    },
+                    widgetType: 'response'
+                }
+            },
+            defaultsdisabled: {
+                description: 'In this example we\'re defaulting the editor to allow '
+                + 'editing of only one question type. We\'re also hiding certain '
+                + 'attributes to demonstrate the flexibility you can provide to authors.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: "v2"
+                    },
+                    question_types: {
+                        clozeassociation: {
+                            hidden: [ "description", "feedback_attempts", "instant_feedback",
+                                "is_math", "max_length", "metadata", "response_container",
+                                "spellcheck", "stimulus_review"
+                            ],
+                            defaults : {
+                                possible_responses: ["Answer 1", "Answer 2"],
+                                template: "<p>Here is a nice template of a Close Text question. It is nice and "
+                                    + "easy to put a {{response}} in.</p><p>Here is another {{response}} container.</p>"
+                            }
+                        }
+                    },
+                    widgetType: 'response'
+                }
+            },
+            assetuploadexample: {
+                description: 'Example of the custom asset uploader.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: "v2"
+                    },
+                    widgetType: 'response',
+                    question_types: {
+                        imageclozeassociation: {
+                            defaults: {
+                                img_src: "http://upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
+                                possible_responses: ["North Sydney", "Harbour Bridge", "The Rocks", "Darling Harbour"],
+                                response_positions: [
+                                    {
+                                        x: 20,
+                                        y: 69.56
+                                    },
+                                    {
+                                        x: 16.49,
+                                        y: 46.37
+                                    },
+                                    {
+                                        x: 51.23,
+                                        y: 21.55
+                                    },
+                                    {
+                                        x: 63.16,
+                                        y: 45.2
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    assetRequest: function(mediaRequested, returnType, callback) {
+                        if (mediaRequested === 'image') {
+                            var $modal = $('.modal.img-upload'),
+                                $images = $('.asset-img-gallery img'),
+                                imgClickHandler = function () {
+                                    callback($(this).data('img'));
+                                    $modal.modal('hide');
+                                };
+                            $images.on('click', imgClickHandler);
+                            $modal.modal({
+                                backdrop: 'static'
+                            }).on('hide', function () {
+                                $images.off('click', imgClickHandler);
+                            });
+                        }
+                    },
+                    ui: {
+                        columns: [
+                            {
+                                tabs: ["edit", "advanced"],
+                                width: "50%"
+                            },
+                            {
+                                tabs: ["preview", "layout"],
+                                width: "50%"
+                            }
+                        ],
+                        fixedPreview: {
+                            marginTop: 45
+                        }
+                    }
+                }
+            },
+            edit: {
+                description: 'In this example we\'re editing a previously created question.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: "v2"
+                    },
+                    question_types : ["imageclozeassociation"],
+                    widget_json: {
+                        "type": "imageclozeassociation",
+                        "img_src": "http://www.learnosity.com/static/img/Blank_US_Map.png",
+                        "possible_responses": ["Oregon", "California", "Texas", "Florida"],
+                        "response_positions": [
+                            {
+                                "x": 71.25,
+                                "y": 79.88
+                            }, {
+                                "x": 0,
+                                "y": 15.68
+                            }, {
+                                "x": 35.53,
+                                "y": 70.41
+                            }, {
+                                "x": 0,
+                                "y": 44.08
+                            }
+                        ],
+                        "validation": {
+                            "partial_scoring": true,
+                            "penalty_score": -0.5,
+                            "valid_responses": [
+                                ["Florida"],
+                                ["Oregon"],
+                                ["Texas"],
+                                ["California"]
+                            ],
+                            "valid_score": 1
+                        }
+                    },
+                    widgetType: 'response'
+                }
+            },
+            feedback: {
+                description: 'For teacher and grader feedback/rubrics. Default '
+                    + 'editor with an existing rating feedback type.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: "v2"
+                    },
+                    widget_json: {
+                        "options": [
+                            {
+                                "value": "1",
+                                "label": "25%",
+                                "label_tooltip": "Unsatifactory",
+                                "tint": "red",
+                                "description": "Poor effort."
+                            },
+                            {
+                                "value": "2",
+                                "label": "50%",
+                                "label_tooltip": "Average",
+                                "tint": "orange",
+                                "description": "You only just passed, more effort is required."
+                            },
+                            {
+                                "value": "3",
+                                "label": "75%",
+                                "label_tooltip": "Credit",
+                                "tint": "blue",
+                                "description": "You responded well to all questions."
+                            },
+                            {
+                                "value": "4",
+                                "label": "100%",
+                                "label_tooltip": "Perfect",
+                                "tint": "green",
+                                "description": "You answered everything correctly!"
+                            }
+                        ],
+                        "type": "rating"
+                    },
+                    widget_type: 'feedback'
+                }
+            },
+            features: {
+                description: 'Stimulus Features like Audio and Video. Default '
+                    + 'editor with an existing video feature.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: "v2"
+                    },
+                    widget_json: {
+                        "src": "http://www.youtube.com/watch?feature=player_detailpage&amp;v=flL7M36QszA",
+                        "type": "videoplayer"
+                    },
+                    widget_type: 'feature'
+                }
             }
+        };
+
+    function changeExample(evt) {
+        var type = $(this).attr('data-type');
+        evt.preventDefault();
+        $('#nav-questioneditor').find('li').removeClass('active');
+        if ($(this).closest('ul').hasClass('dropdown-menu')) {
+            $(this).closest('li.dropdown').addClass('active');
+        } else {
+            $(this).parent().addClass('active');
         }
-    });
+        if (typeof type !== 'undefined') {
+            currentType = initObjects[type];
+            $('#example-description').html(currentType.description);
+            LearnosityResponseEditor.init(currentType.json);
+        }
+    }
+
+    (function($) {
+        $('#nav-questioneditor').find('a').on('click', changeExample);
+        $('#newQuestion').trigger('click');
+    }(jQuery));
 </script>
 
-<?php include_once '../src/includes/footer.php';
+<?php
+    include_once '../src/views/modals/asset-upload.php';
+    include_once '../src/includes/footer.php';
