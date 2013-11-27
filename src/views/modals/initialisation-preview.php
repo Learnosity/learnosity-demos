@@ -26,7 +26,7 @@
     if (!isset($signedRequest)) {
         die('Make sure you call your PHP var $signedRequest for initialisation preview to work');
     }
-    $previewObject   = json_decode($signedRequest, true);
+    $previewObject = is_array($signedRequest) ? json_decode($signedRequest, true) : $signedRequest;
     if (is_array($previewObject)) {
         if (array_key_exists('security', $previewObject)) {
             $previewBody = '{"security": ' . json_encode($previewObject['security']) . ', "request": ' . json_encode($previewObject['request']) . '}';

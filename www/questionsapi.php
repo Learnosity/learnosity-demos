@@ -23,7 +23,7 @@ $activitySignature = $RequestHelper->getSignature();
 $uniqueResponseIdSuffix = UUID::generateUuid();
 
 // Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
-$activity = '{
+$signedRequest = '{
     "consumer_key": "'.$consumer_key.'",
     "timestamp": "' . $timestamp . '",
     "signature": "'.$activitySignature.'",
@@ -226,6 +226,9 @@ $activity = '{
             <h4><a href="http://docs.learnosity.com/questionsapi/" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
+            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
+                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
+            </a></h4>
         </div>
         <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_assess.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
@@ -234,7 +237,7 @@ $activity = '{
 <!-- Container for the questions api to load into -->
 <script src="http://api.learnosity.com"></script>
 <script>
-    var activity = <?php echo $activity; ?>;
+    var activity = <?php echo $signedRequest; ?>;
     LearnosityApp.init(activity);
 </script>
 
@@ -311,4 +314,6 @@ $activity = '{
 <!-- Tell the API where to place the submit button if using "renderSubmitButton" attribute -->
 <span class="learnosity-submit-button"></span>
 
-<?php include_once '../src/includes/footer.php';
+<?php
+    include_once '../src/views/modals/initialisation-preview.php';
+    include_once '../src/includes/footer.php';
