@@ -1,3 +1,8 @@
+/********************************************************************
+*
+* Defaults
+*
+********************************************************************/
 html, body {
     overflow: visible !important;
 }
@@ -16,6 +21,33 @@ a:hover {
     text-decoration: inherit !important;
 }
 
+@font-face {
+    font-family: 'museo300';
+    src: url('../fonts/museo300-regular-webfont.eot');
+    src: url('../fonts/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/museo300-regular-webfont.woff') format('woff'),  url('../fonts/museo300-regular-webfont.ttf') format('truetype'),  url('../fonts/museo300-regular-webfont.svg#museo300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo500';
+    src: url('../fonts/museo500-regular-webfont.eot');
+    src: url('../fonts/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/museo500-regular-webfont.woff') format('woff'),  url('../fonts/museo500-regular-webfont.ttf') format('truetype'),  url('../fonts/museo500-regular-webfont.svg#museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo700';
+    src: url('../fonts/museo700-regular-webfont.eot');
+    src: url('../fonts/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/museo700-regular-webfont.woff') format('woff'),  url('../fonts/museo700-regular-webfont.ttf') format('truetype'),  url('../fonts/museo700-regular-webfont.svg#museo700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/********************************************************************
+*
+* Something is messing up bootstrap styles, force them to inherit
+*
+********************************************************************/
 .lrn-auth input[type="text"] {
     height: inherit !important;
 }
@@ -48,33 +80,16 @@ td {
     border-top: 1px solid #ddd !important;
 }
 
-@font-face {
-    font-family: 'museo300';
-    src: url('../fonts/museo300-regular-webfont.eot');
-    src: url('../fonts/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/museo300-regular-webfont.woff') format('woff'),  url('../fonts/museo300-regular-webfont.ttf') format('truetype'),  url('../fonts/museo300-regular-webfont.svg#museo300') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'museo500';
-    src: url('../fonts/museo500-regular-webfont.eot');
-    src: url('../fonts/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/museo500-regular-webfont.woff') format('woff'),  url('../fonts/museo500-regular-webfont.ttf') format('truetype'),  url('../fonts/museo500-regular-webfont.svg#museo500') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'museo700';
-    src: url('../fonts/museo700-regular-webfont.eot');
-    src: url('../fonts/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/museo700-regular-webfont.woff') format('woff'),  url('../fonts/museo700-regular-webfont.ttf') format('truetype'),  url('../fonts/museo700-regular-webfont.svg#museo700') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .logo {
     background: url('../images/logo-square.png') no-repeat center left;
     padding-left: 40px;
 }
 
+/********************************************************************
+*
+* Reports API section
+*
+********************************************************************/
 .slides {
     width: 100% !important;
 }
@@ -126,6 +141,11 @@ td {
    }
 }
 
+/********************************************************************
+*
+* Initialisation preview
+*
+********************************************************************/
 #initialisation-preview pre {
    background-color: ghostwhite;
    border: 1px solid silver;
@@ -143,4 +163,21 @@ td {
 
 #initialisation-preview .json-string {
    color: olive;
+}
+
+/********************************************************************
+*
+* Question Editor API
+*
+********************************************************************/
+.asset-img-gallery img {
+  cursor: pointer;
+  max-height: 88px;
+  display: inline-block;
+  margin-top: 5px
+}
+.gallery-wrapper {
+  overflow-y: scroll;
+  min-height: 250px;
+  max-height: 250px;
 }

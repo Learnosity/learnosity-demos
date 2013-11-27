@@ -148,7 +148,7 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
 * packet. The response is the HTML of a modal window with the
 * Items API initialised to render whatever was found in the content
 * editor window (if anything).
-* See ./src/views/modals/itemsinline.php
+* See ./src/views/modals/items-inline.php
 *
 ********************************************************************
 -->
@@ -170,7 +170,7 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
     function signItemsRequest() {
         var data = {
             item_references: [],
-            sign_type: 'itemsinline',
+            sign_type: 'items-inline',
             content: editor.getValue()
         };
         $(data.content).each(function() {
