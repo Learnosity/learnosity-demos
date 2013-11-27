@@ -181,3 +181,19 @@ td {
   min-height: 250px;
   max-height: 250px;
 }
+
+/********************************************************************
+*
+* Security Check
+*
+********************************************************************/
+#serverresponse{ min-height: 75px;}
+
+#concatenation span.conpart {color: #762;}
+#concatenation span.conpart2 {color: #555;}
+
+#actJson {margin: 0;}
+
+#securityForm pre {
+    word-wrap: break-word;
+}

@@ -13,6 +13,9 @@
         'Reporting' => array(
             'reportsapi.php' => 'Reports API',
             'ssoapi.php'     => 'Single Sign On API'
+        ),
+        'Misc' => array(
+            'security_check.php' => 'Security Check'
         )
     );
 ?>
