@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./static/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./static/vendor/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="./static/vendor/reveal/reveal.css">
+    <link rel="stylesheet" href="./static/vendor/codemirror/codemirror.css">
     <link rel="stylesheet" href="./static/css/main.css">
     <script src="./static/vendor/jquery/jquery-1.10.2.min.js"></script>
     <script src="./static/js/main.js"></script>

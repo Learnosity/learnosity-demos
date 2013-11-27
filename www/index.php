@@ -2,7 +2,7 @@
 
 <div class="jumbotron">
     <h1>Learnosity API Demos</h1>
-    <p>Welcome to the Learnosity API demos site. Here you can try out some of our services.<p>
+    <p>Welcome to the Learnosity API demos site. Here you can try out some of our services.</p>
     <p>You may also <a href="https://github.com/Learnosity/learnosity-php-examples/archive/master.zip">download the entire site</a>
     to see how you can integrate our services into your own technology stack,
     or <a href="https://github.com/Learnosity/learnosity-php-examples">browse the code directly</a> on github.</p>
