@@ -1,14 +1,14 @@
 <?php
     $pages = array(
-        'Authoring' => array(
-            'authorapi.php'         => 'Author API',
-            'questioneditorapi.php' => 'Question Editor API'
-        ),
         'Assessment' => array(
             'questionsapi.php' => 'Questions API',
             'itemsapi_assess.php' => 'Items API – Assess',
             'itemsapi_inline.php' => 'Items API – Inline',
             'assessapi.php'    => 'Assess API'
+        ),
+        'Authoring' => array(
+            'authorapi.php'         => 'Author API',
+            'questioneditorapi.php' => 'Question Editor API'
         ),
         'Reporting' => array(
             'reportsapi.php' => 'Reports API',
