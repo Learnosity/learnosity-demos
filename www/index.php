@@ -20,19 +20,6 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Authoring</h2>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-unstyled">
-                        <li><a href="authorapi.php">Author API</a></li>
-                        <li><a href="questioneditorapi.php">Question Editor API</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
                     <h2 class="panel-title">Assessment</h2>
                 </div>
                 <div class="panel-body">
@@ -41,6 +28,19 @@
                         <li><a href="itemsapi_assess.php">Items API – Assess</a></li>
                         <li><a href="itemsapi_inline.php">Items API – Inline</a></li>
                         <li><a href="assessapi.php">Assess API</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Authoring</h2>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li><a href="authorapi.php">Author API</a></li>
+                        <li><a href="questioneditorapi.php">Question Editor API</a></li>
                     </ul>
                 </div>
             </div>
