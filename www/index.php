@@ -24,10 +24,9 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="questionsapi.php">Questions API</a></li>
-                        <li><a href="itemsapi_assess.php">Items API – Assess</a></li>
-                        <li><a href="itemsapi_inline.php">Items API – Inline</a></li>
-                        <li><a href="assessapi.php">Assess API</a></li>
+                        <li><a href="/assessment/questions">Questions API</a></li>
+                        <li><a href="/assessment/items">Items API</a></li>
+                        <li><a href="/assessment/assess">Assess API</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,8 +38,8 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="authorapi.php">Author API</a></li>
-                        <li><a href="questioneditorapi.php">Question Editor API</a></li>
+                        <li><a href="/authoring/author">Author API</a></li>
+                        <li><a href="/authoring/questioneditor">Question Editor API</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,8 +51,8 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="reportsapi.php">Reports API</a></li>
-                        <li><a href="ssoapi.php">Single Sign On API</a></li>
+                        <li><a href="/reporting/reports">Reports API</a></li>
+                        <li><a href="/reporting/sso">Single Sign On API</a></li>
                     </ul>
                 </div>
             </div>

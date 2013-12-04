@@ -1,21 +1,20 @@
 <?php
     $pages = array(
         'Assessment' => array(
-            'questionsapi.php' => 'Questions API',
-            'itemsapi_assess.php' => 'Items API – Assess',
-            'itemsapi_inline.php' => 'Items API – Inline',
-            'assessapi.php'    => 'Assess API'
+            '/assessment/questions' => 'Questions API',
+            '/assessment/items' => 'Items API',
+            '/assessment/assess'    => 'Assess API'
         ),
         'Authoring' => array(
-            'authorapi.php'         => 'Author API',
-            'questioneditorapi.php' => 'Question Editor API'
+            '/authoring/author'         => 'Author API',
+            '/authoring/questioneditor' => 'Question Editor API'
         ),
         'Reporting' => array(
-            'reportsapi.php' => 'Reports API',
-            'ssoapi.php'     => 'Single Sign On API'
+            '/reporting/reports' => 'Reports API',
+            '/reporting/sso'     => 'Single Sign On API'
         ),
         'Misc' => array(
-            'security_check.php' => 'Security Check'
+            '/misc/security_check.php' => 'Security Check'
         )
     );
 ?>
@@ -28,23 +27,19 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <?php
-                    $currentPage = basename($_SERVER['SCRIPT_NAME']);
+                    $currentPage = explode("/", $_SERVER['REQUEST_URI'])[1];
                     foreach ($pages as $page => $name) {
-                        $class = ($currentPage === $page) ? ' class="active"' : '';
-                        if (is_string($name)) {
-                            echo '<li' . $class . '><a href="' . $page . '">' . $name . '</a></li>' . PHP_EOL;
-                        } else {
-                            echo '
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $page . ' <b class="caret"></b></a>
-                                <ul class="dropdown-menu">';
-                                foreach ($name as $subpage => $subname) {
-                                    echo '<li><a href="' . $subpage . '">' . $subname . '</a></li>' . PHP_EOL;
-                                }
-                            echo '
-                                </ul>
-                            </li>' . PHP_EOL;
-                        }
+                        $active = strcasecmp($currentPage, $page) ? '' : ' active';
+                        echo '
+                        <li class="dropdown' . $active . '">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $page . ' <b class="caret"></b></a>
+                            <ul class="dropdown-menu">';
+                            foreach ($name as $subpage => $subname) {
+                                echo '<li><a href="' . $subpage . '">' . $subname . '</a></li>' . PHP_EOL;
+                            }
+                        echo '
+                            </ul>
+                        </li>' . PHP_EOL;
                     }
                 ?>
             </ul>
