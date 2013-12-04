@@ -1,8 +1,8 @@
 <?php
 
-include_once 'config.php';
-include_once '../src/utils/RequestHelper.php';
-include_once '../src/includes/header.php';
+include_once '../../config.php';
+include_once '../../../src/utils/RequestHelper.php';
+include_once '../../../src/includes/header.php';
 
 $security = array(
     "consumer_key" => $consumer_key,
@@ -41,7 +41,7 @@ $signedRequest = $RequestHelper->generateRequest();
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="questioneditorapi.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="../questioneditor/">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -50,7 +50,7 @@ $signedRequest = $RequestHelper->generateRequest();
     <p>Below is an edit page for a fictional Content/Learning Management System.</p>
     <p>The buttons on the right show how you might integrate the Author API to search for, and add items &mdash;
     allowing your authors to integrate rich content items into existing pages.</p>
-    <p>There is also a preview button which integrates the <a href="./itemsapi_inline.php">Items API</a>
+    <p>There is also a preview button which integrates the <a href="../../assessment/items/itemsapi_inline.php">Items API</a>
     &mdash; showing a full preview of your content embedded with items from the Item Bank.</p>
     <p>Place your cursor in the edit box below, where you want an item to appear. Click the "Add Item(s)" button
     and select your items from the Learnosity Item Bank.</p>
@@ -91,7 +91,7 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
 *
 ********************************************************************
 -->
-<script src="./static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
+<script src="/static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
 <script>
     var editor = ace.edit('editor');
     editor.setTheme('ace/theme/clouds');
@@ -194,5 +194,5 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
 </script>
 
 <?php
-    include_once '../src/views/modals/initialisation-preview.php';
-    include_once '../src/includes/footer.php';
+    include_once '../../../src/views/modals/initialisation-preview.php';
+    include_once '../../../src/includes/footer.php';

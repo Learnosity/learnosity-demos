@@ -1,8 +1,8 @@
 <?php
 
-include_once 'config.php';
-include_once '../src/utils/RequestHelper.php';
-include_once '../src/includes/header.php';
+include_once '../../config.php';
+include_once '../../../src/utils/RequestHelper.php';
+include_once '../../../src/includes/header.php';
 
 ?>
 
@@ -15,7 +15,7 @@ include_once '../src/includes/header.php';
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
         </div>
-        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="questionsapi.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="../../reporting/reports">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -338,5 +338,5 @@ include_once '../src/includes/header.php';
 </script>
 
 <?php
-    include_once '../src/views/modals/asset-upload.php';
-    include_once '../src/includes/footer.php';
+    include_once '../../../src/views/modals/asset-upload.php';
+    include_once '../../../src/includes/footer.php';

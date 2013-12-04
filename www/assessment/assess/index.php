@@ -1,8 +1,8 @@
 <?php
 
-include_once 'config.php';
-include_once '../src/utils/uuid.php';
-include_once '../src/includes/header.php';
+include_once '../../config.php';
+include_once '../../../src/utils/uuid.php';
+include_once '../../../src/includes/header.php';
 
 $uniqueResponseIdSuffix = UUID::generateUuid();
 
@@ -168,7 +168,7 @@ $signedRequest = '{
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="reportsapi.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="../../authoring/author">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -181,5 +181,5 @@ $signedRequest = '{
 </script>
 
 <?php
-    include_once '../src/views/modals/initialisation-preview.php';
-    include_once '../src/includes/footer.php';
+    include_once '../../../src/views/modals/initialisation-preview.php';
+    include_once '../../../src/includes/footer.php';

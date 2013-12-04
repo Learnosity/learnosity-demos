@@ -1,4 +1,4 @@
-<?php include_once '../src/includes/header.php'; ?>
+<?php include_once '../../src/includes/header.php'; ?>
 
 <div class="jumbotron">
     <h1>Security Check</h1>
@@ -154,4 +154,4 @@
 <script src="/static/vendor/codemirror/codemirror.min.js"></script>
 <script src="/static/vendor/beautify.js"></script>
 
-<?php include_once '../src/includes/footer.php';
+<?php include_once '../../src/includes/footer.php';

@@ -1,8 +1,8 @@
 <?php
 
-include_once 'config.php';
-include_once '../src/utils/RequestHelper.php';
-include_once '../src/includes/header.php';
+include_once '../../config.php';
+include_once '../../../src/utils/RequestHelper.php';
+include_once '../../../src/includes/header.php';
 
 $security = array(
     "consumer_key" => 'yis0TYCu7U9V4o7M',
@@ -132,7 +132,7 @@ $signedRequest = $RequestHelper->generateRequest();
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-2"> <p class='text-right'><a class="btn btn-primary btn-lg" href="ssoapi.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-2"> <p class='text-right'><a class="btn btn-primary btn-lg" href="../sso">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -205,8 +205,8 @@ $signedRequest = $RequestHelper->generateRequest();
 </div>
 
 <script src="http://reports.learnosity.com"></script>
-<script src="./static/vendor/head.min.js"></script>
-<script src="./static/vendor/reveal/reveal.js"></script>
+<script src="/static/vendor/head.min.js"></script>
+<script src="/static/vendor/reveal/reveal.js"></script>
 <script>
     var config = <?php echo $signedRequest; ?>;
     LearnosityReports.init(config);
@@ -218,7 +218,7 @@ $signedRequest = $RequestHelper->generateRequest();
             transition: 'none',
             dependencies: [
                 // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-                { src: './static/vendor/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/static/vendor/classList.js', condition: function() { return !document.body.classList; } },
             ]
         });
         $selector = $('#report-selector');
@@ -232,5 +232,5 @@ $signedRequest = $RequestHelper->generateRequest();
 </script>
 
 <?php
-    include_once '../src/views/modals/initialisation-preview.php';
-    include_once '../src/includes/footer.php';
+    include_once '../../../src/views/modals/initialisation-preview.php';
+    include_once '../../../src/includes/footer.php';
