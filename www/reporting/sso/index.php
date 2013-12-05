@@ -1,8 +1,8 @@
 <?php
 
-include_once 'config.php';
-include_once '../src/utils/signature.php';
-include_once '../src/includes/header.php';
+include_once '../../config.php';
+include_once '../../../src/utils/signature.php';
+include_once '../../../src/includes/header.php';
 
 //Student SSO JSON Object: http://docs.learnosity.com/dashboards/sso/userjson.php
 $student_json = '{
@@ -67,7 +67,7 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, true), $con
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
         </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="/">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -92,4 +92,4 @@ var teacherSignon = <?php echo json_encode($teacherSSO); ?>;
     </div>
 </div>
 
-<?php include_once '../src/includes/footer.php';
+<?php include_once '../../../src/includes/footer.php';
