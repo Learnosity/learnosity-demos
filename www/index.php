@@ -25,7 +25,7 @@
                 <div class="panel-body">
                     <ul class="list-unstyled">
                         <li><a href="/assessment/questions">Questions API</a></li>
-                        <li><a href="/assessment/items">Items API</a></li>
+                        <li><a href="/assessment/items/index.php">Items API</a></li>
                         <li><a href="/assessment/assess">Assess API</a></li>
                     </ul>
                 </div>
