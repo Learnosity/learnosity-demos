@@ -1,17 +1,17 @@
 <?php
     $pages = array(
         'Assessment' => array(
-            '/assessment/questions' => 'Questions API',
-            '/assessment/items' => 'Items API',
-            '/assessment/assess'    => 'Assess API'
+            '/assessment/questions/index.php' => 'Questions API',
+            '/assessment/items/index.php' => 'Items API',
+            '/assessment/assess/index.php'    => 'Assess API'
         ),
         'Authoring' => array(
-            '/authoring/author'         => 'Author API',
-            '/authoring/questioneditor' => 'Question Editor API'
+            '/authoring/author/index.php'         => 'Author API',
+            '/authoring/questioneditor/index.php' => 'Question Editor API'
         ),
         'Reporting' => array(
-            '/reporting/reports' => 'Reports API',
-            '/reporting/sso'     => 'Single Sign On API'
+            '/reporting/reports/index.php' => 'Reports API',
+            '/reporting/sso/index.php'     => 'Single Sign On API'
         ),
         'Misc' => array(
             '/misc/security_check.php' => 'Security Check'

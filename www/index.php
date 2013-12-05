@@ -24,9 +24,9 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="/assessment/questions">Questions API</a></li>
+                        <li><a href="/assessment/questions/index.php">Questions API</a></li>
                         <li><a href="/assessment/items/index.php">Items API</a></li>
-                        <li><a href="/assessment/assess">Assess API</a></li>
+                        <li><a href="/assessment/assess/index.php">Assess API</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,8 +38,8 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="/authoring/author">Author API</a></li>
-                        <li><a href="/authoring/questioneditor">Question Editor API</a></li>
+                        <li><a href="/authoring/author/index.php">Author API</a></li>
+                        <li><a href="/authoring/questioneditor/index.php">Question Editor API</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,8 +51,8 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="/reporting/reports">Reports API</a></li>
-                        <li><a href="/reporting/sso">Single Sign On API</a></li>
+                        <li><a href="/reporting/reports/index.php">Reports API</a></li>
+                        <li><a href="/reporting/sso/index.php">Single Sign On API</a></li>
                     </ul>
                 </div>
             </div>
