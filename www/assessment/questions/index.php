@@ -1,9 +1,9 @@
 <?php
 
-include_once 'config.php';
-include_once '../src/utils/uuid.php';
-include_once '../src/utils/RequestHelper.php';
-include_once '../src/includes/header.php';
+include_once '../../config.php';
+include_once '../../../src/utils/uuid.php';
+include_once '../../../src/utils/RequestHelper.php';
+include_once '../../../src/includes/header.php';
 
 $security = array(
     "consumer_key" => $consumer_key,
@@ -230,7 +230,7 @@ $signedRequest = '{
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_assess.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="../items">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -315,5 +315,5 @@ $signedRequest = '{
 <span class="learnosity-submit-button"></span>
 
 <?php
-    include_once '../src/views/modals/initialisation-preview.php';
-    include_once '../src/includes/footer.php';
+    include_once '../../../src/views/modals/initialisation-preview.php';
+    include_once '../../../src/includes/footer.php';
