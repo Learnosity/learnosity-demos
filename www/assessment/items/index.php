@@ -55,14 +55,14 @@ $signedActivity = $RequestHelper->generateRequest();
 <div class="jumbotron">
     <h1>Items API</h1>
     <p>
-        Learnosity's <b>Items API</b> provides a simple way to access content from the Learnosity item bank to pull in activities and assessments from the author site’s data store that can be embedded in your pages. It leverages the <a href="../questions">Questions API</a> and the <a href="../assess/">Assess API</a> as appropriate.</p>
+        Learnosity's <b>Items API</b> provides a simple way to access content from the Learnosity item bank to pull in activities and assessments from the author site’s data store that can be embedded in your pages. It leverages the <a href="../questions/index.php">Questions API</a> and the <a href="../assess/index.php">Assess API</a> as appropriate.</p>
     <div class="row">
         <div class="col-md-8">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
         </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="../assess">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="../assess/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 

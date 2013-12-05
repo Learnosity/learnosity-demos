@@ -67,7 +67,7 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, true), $con
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
         </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="/">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="../../misc/security_check.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 

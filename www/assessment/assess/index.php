@@ -168,7 +168,7 @@ $signedRequest = '{
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="../../authoring/author">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="../../authoring/author/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
