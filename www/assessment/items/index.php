@@ -83,7 +83,7 @@ $signedActivity = $RequestHelper->generateRequest();
                 <div class="panel-body">
                     <p>With the flick of a switch make the items into an assessment. Truly write once - use anywhere.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="itemsapi_assess.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_assess.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -96,7 +96,7 @@ $signedActivity = $RequestHelper->generateRequest();
                 <div class="panel-body">
                     <p>Display items from the Learnosity Item Bank in no time with the Items API. The Items API builds on the Questions API's power and makes it quicker to integrate.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="itemsapi_inline.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_inline.php">Demo</a>
                     </p>
                 </div>
             </div>
