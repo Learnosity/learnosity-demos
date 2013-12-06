@@ -44,112 +44,112 @@ $signedRequest = '{
         "sheet": "Question"
     },
     "navigation": {
-        "show_next": true,
-        "toc": {
-            "show_sheetcount": true
-        },
-        "show_submit": true,
-        "show_save": false,
-        "show_fullscreencontrol": true,
-        "show_prev": true,
-        "show_title": true,
-        "outro_sheet": "",
-        "show_outro": true,
         "scroll_to_top": false,
         "scroll_to_test": false,
+        "show_fullscreencontrol": true,
+        "show_next": true,
+        "show_prev": true,
+        "show_save": false,
+        "show_submit": true,
+        "show_title": true,
+        "intro_sheet": "",
         "show_intro": true,
-        "intro_sheet": ""
+        "outro_sheet": "",
+        "show_outro": true,
+        "toc": {
+            "show_sheetcount": true
+        }
     },
     "name": "Demo (2 questions)",
     "state": "initial",
-    "widgetAPIActivity": {
-        "consumer_key": "'.$consumer_key.'",
+    "questionsApiActivity": {
+        "consumer_key": "' . $consumer_key . '",
         "timestamp": "' . $timestamp . '",
-        "signature": "'.$activitySignature.'",
-        "user_id": "'.$studentid.'",
+        "signature": "' . $activitySignature . '",
+        "user_id": "' . $studentid . '",
         "type": "submit_practice",
         "state": "initial",
-        "id": "assessdemo",
+        "id": "assessdemo_' . UUID::generateUuid() . '",
         "name": "Assess API - Demo",
-        "course_id": "'.$courseid.'",
+        "course_id": "' . $courseid . '",
         "questions": [
-
             {
-            "type": "clozetext",
-                "response_id": "demoscience1'.$uniqueResponseIdSuffix.'",
-                "description": "The student needs to complete the conversion table.",
-                "max_length": 6,
-                "case_sensitive": false,
-                "template": "<table><thead><tr><th><strong>cm</strong></th><th><strong>mm</strong></th><th><strong>&#181;m</strong></th></thead><tbody><tr><td>0.03</td><td>0.3</td><td>300</td></tr><tr><td>0.7</td><td>{{response}}</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>2</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>45</td></tr><tr><td>0.03</td><td>{{response}}</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>130</td></tr><tr><td>{{response}}</td><td>0.04</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>78</td></tr></tbody></table>",
+                "type": "clozetext",
+                    "response_id": "demoscience1'.$uniqueResponseIdSuffix.'",
+                    "description": "The student needs to complete the conversion table.",
+                    "max_length": 6,
+                    "case_sensitive": false,
+                    "template": "<table><thead><tr><th><strong>cm</strong></th><th><strong>mm</strong></th><th><strong>&#181;m</strong></th></thead><tbody><tr><td>0.03</td><td>0.3</td><td>300</td></tr><tr><td>0.7</td><td>{{response}}</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>2</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>45</td></tr><tr><td>0.03</td><td>{{response}}</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>130</td></tr><tr><td>{{response}}</td><td>0.04</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>78</td></tr></tbody></table>",
+                    "valid_responses" : [
+                        [
+                            {"value" : "7"}
+                        ], [
+                            {"value" : "7000"}
+                        ], [
+                            {"value" : "0.2"},{"value" : ".2"}
+                        ], [
+                            {"value" : "2000"}
+                        ], [
+                            {"value" : "0.0045"},{"value" : ".0045"}
+                        ], [
+                            {"value" : "0.045"},{"value" : ".045"}
+                        ], [
+                            {"value" : "0.3"},{"value" : ".3"}
+                        ], [
+                            {"value" : "300"}
+                        ], [
+                            {"value" : "0.013"},{"value" : ".013"}
+                        ], [
+                            {"value" : "0.13"},{"value" : ".13"}
+                        ], [
+                            {"value" : "0.004"},{"value" : ".004"}
+                        ], [
+                            {"value" : "40"}
+                        ], [
+                            {"value" : "0.0078"},{"value" : ".0078"}
+                        ], [
+                            {"value" : "0.078"},{"value" : ".078"}
+                        ]
+                    ]
+                },
+                {
+                "response_id": "demoscience2'.$uniqueResponseIdSuffix.'",
+                "type": "imageclozedropdown",
+                "description" : "The student needs to choose the correct response for each blank ",
+                "img_src" : "http://docs.learnosity.com/static/images/clozeskeleton.jpg",
+                "response_positions" : [ {"x":"5","y":"5.5"}, {"x":"0","y":"24.5"}, {"x":"75","y":"27.5"}, {"x":"78","y":"39"}, {"x":"78","y":"43"}, {"x":"0","y":"36"}, {"x":"0","y":"41.5"}, {"x":"0","y":"56"}, {"x":"0","y":"65.5"}, {"x":"74","y":"73.2"}, {"x":"74","y":"78"} ],
+                "possible_responses" : [[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"]],
                 "valid_responses" : [
                     [
-                        {"value" : "7"}
+                        {"value" : "skull"}
                     ], [
-                        {"value" : "7000"}
+                        {"value" : "humerus"}
                     ], [
-                        {"value" : "0.2"},{"value" : ".2"}
+                        {"value" : "ribs"}
                     ], [
-                        {"value" : "2000"}
+                        {"value" : "radius"}
                     ], [
-                        {"value" : "0.0045"},{"value" : ".0045"}
+                        {"value" : "ulna"}
                     ], [
-                        {"value" : "0.045"},{"value" : ".045"}
+                        {"value" : "vertebrae"}
                     ], [
-                        {"value" : "0.3"},{"value" : ".3"}
+                        {"value" : "pelvis"}
                     ], [
-                        {"value" : "300"}
+                        {"value" : "femur"}
                     ], [
-                        {"value" : "0.013"},{"value" : ".013"}
+                        {"value" : "patella"}
                     ], [
-                        {"value" : "0.13"},{"value" : ".13"}
+                        {"value" : "fibula"}
                     ], [
-                        {"value" : "0.004"},{"value" : ".004"}
-                    ], [
-                        {"value" : "40"}
-                    ], [
-                        {"value" : "0.0078"},{"value" : ".0078"}
-                    ], [
-                        {"value" : "0.078"},{"value" : ".078"}
+                        {"value" : "tibia"}
                     ]
                 ]
-            },
-            {
-            "response_id": "demoscience2'.$uniqueResponseIdSuffix.'",
-            "type": "imageclozedropdown",
-            "description" : "The student needs to choose the correct response for each blank ",
-            "img_src" : "http://docs.learnosity.com/static/images/clozeskeleton.jpg",
-            "response_positions" : [ {"x":"5","y":"5.5"}, {"x":"0","y":"24.5"}, {"x":"75","y":"27.5"}, {"x":"78","y":"39"}, {"x":"78","y":"43"}, {"x":"0","y":"36"}, {"x":"0","y":"41.5"}, {"x":"0","y":"56"}, {"x":"0","y":"65.5"}, {"x":"74","y":"73.2"}, {"x":"74","y":"78"} ],
-            "possible_responses" : [[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"]],
-            "valid_responses" : [
-                [
-                    {"value" : "skull"}
-                ], [
-                    {"value" : "humerus"}
-                ], [
-                    {"value" : "ribs"}
-                ], [
-                    {"value" : "radius"}
-                ], [
-                    {"value" : "ulna"}
-                ], [
-                    {"value" : "vertebrae"}
-                ], [
-                    {"value" : "pelvis"}
-                ], [
-                    {"value" : "femur"}
-                ], [
-                    {"value" : "patella"}
-                ], [
-                    {"value" : "fibula"}
-                ], [
-                    {"value" : "tibia"}
-                ]
-            ]
             }
         ]
     },
     "configuration": {
-        "onsubmit_redirect_url": "'.$thispage.'",
+        "onsave_redirect_url": "' . $thispage . '",
+        "onsubmit_redirect_url": "' . $thispage . '"
     },
     "type": "activity"
 }';
