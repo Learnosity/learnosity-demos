@@ -179,7 +179,7 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
             }
         }, data);
         $.ajax({
-            url: './xhr.php',
+            url: '/xhr.php',
             data: data,
             type: 'POST'
         })
