@@ -1,5 +1,7 @@
 <?php
 
+include_once 'Json.php';
+
 /*
 |--------------------------------------------------------------------------
 | RequestHelper.php
@@ -196,12 +198,12 @@ class RequestHelper
         }
 
         if ($this->service === 'data') {
-            return 'security=' . json_encode($output['security']) . '&request=' . json_encode($output['request']);
+            return 'security=' . Json::encode($output['security']) . '&request=' . Json::encode($output['request']);
         } elseif ($this->service === 'assess') {
             return $output;
         }
 
-        return json_encode($output);
+        return Json::encode($output);
     }
 
     /**
@@ -214,7 +216,7 @@ class RequestHelper
         if (empty($this->requestPacket)) {
             return null;
         }
-        $requestString = json_encode($this->requestPacket);
+        $requestString = Json::encode($this->requestPacket);
         if (false === $requestString) {
             throw new \Exception('Invalid request JSON, please check your requestPacket');
         }

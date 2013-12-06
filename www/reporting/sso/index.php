@@ -2,6 +2,7 @@
 
 include_once '../../config.php';
 include_once '../../../src/utils/signature.php';
+include_once '../../../src/utils/Json.php';
 include_once '../../../src/includes/header.php';
 
 //Student SSO JSON Object: http://docs.learnosity.com/dashboards/sso/userjson.php
@@ -74,8 +75,8 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, true), $con
 <script src="http://sso.learnosity.com"></script>
 <script>
 // Create json objects from $student_json and $teacher_json
-var studentSignon = <?php echo json_encode($studentSSO); ?>;
-var teacherSignon = <?php echo json_encode($teacherSSO); ?>;
+var studentSignon = <?php echo Json::encode($studentSSO); ?>;
+var teacherSignon = <?php echo Json::encode($teacherSSO); ?>;
 </script>
 
 <!-- Quick buttons to login as a teacher or a student using SSO interface -->

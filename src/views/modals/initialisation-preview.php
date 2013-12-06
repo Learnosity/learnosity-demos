@@ -23,15 +23,17 @@
 </div>
 
 <?php
+    include_once '../../utils/Json.php';
+
     if (!isset($signedRequest)) {
         die('Make sure you call your PHP var $signedRequest for initialisation preview to work');
     }
     $previewObject = is_array($signedRequest) ? json_decode($signedRequest, true) : $signedRequest;
     if (is_array($previewObject)) {
         if (array_key_exists('security', $previewObject)) {
-            $previewBody = '{"security": ' . json_encode($previewObject['security']) . ', "request": ' . json_encode($previewObject['request']) . '}';
+            $previewBody = '{"security": ' . Json::encode($previewObject['security']) . ', "request": ' . Json::encode($previewObject['request']) . '}';
         } else {
-            $previewBody = json_encode($previewObject);
+            $previewBody = Json::encode($previewObject);
         }
     } else {
         $previewBody = $previewObject;
