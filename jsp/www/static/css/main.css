@@ -1,0 +1,199 @@
+/********************************************************************
+*
+* Defaults
+*
+********************************************************************/
+html, body {
+    overflow: visible !important;
+}
+
+body {
+    min-height: 500px;
+    padding-top: 70px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar {
+    font-family: 'museo300', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a:hover {
+    text-decoration: inherit !important;
+}
+
+@font-face {
+    font-family: 'museo300';
+    src: url('../fonts/museo300-regular-webfont.eot');
+    src: url('../fonts/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/museo300-regular-webfont.woff') format('woff'),  url('../fonts/museo300-regular-webfont.ttf') format('truetype'),  url('../fonts/museo300-regular-webfont.svg#museo300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo500';
+    src: url('../fonts/museo500-regular-webfont.eot');
+    src: url('../fonts/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/museo500-regular-webfont.woff') format('woff'),  url('../fonts/museo500-regular-webfont.ttf') format('truetype'),  url('../fonts/museo500-regular-webfont.svg#museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo700';
+    src: url('../fonts/museo700-regular-webfont.eot');
+    src: url('../fonts/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/museo700-regular-webfont.woff') format('woff'),  url('../fonts/museo700-regular-webfont.ttf') format('truetype'),  url('../fonts/museo700-regular-webfont.svg#museo700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/********************************************************************
+*
+* Something is messing up bootstrap styles, force them to inherit
+*
+********************************************************************/
+.lrn-auth input[type="text"] {
+    height: inherit !important;
+}
+
+.lrn-auth .pager li > a {
+    height: inherit !important;
+}
+
+.lrn-auth .pager li > div {
+    height: 39px !important;
+}
+
+.learnosity-assess iframe {
+    position: inherit !important;
+}
+
+table {
+    border-collapse: inherit !important;
+}
+
+th {
+    border: 0px !important;
+    border-left: 1px solid #ddd !important;
+    border-bottom-width: inherit !important;
+}
+
+td {
+    border: 0px !important;
+    border-left: 1px solid #ddd !important;
+    border-top: 1px solid #ddd !important;
+}
+
+.logo {
+    background: url('../images/logo-square.png') no-repeat center left;
+    padding-left: 40px;
+}
+
+/********************************************************************
+*
+* Reports API section
+*
+********************************************************************/
+.slides {
+    width: 100% !important;
+}
+.slides, .slides section {
+    top: 5px !important;
+}
+.slides section {
+    text-align: left;
+}
+.slides section .report-title {
+    text-align: center;
+    position: relative;
+    top: -15px;
+}
+.reveal .controls {
+    position: relative;
+    top: -78px;
+    left: 88%;
+}
+.reveal .controls div.navigate-right {
+    border-left-color: rgb(34, 26, 26);
+}
+.reveal .controls div.navigate-left {
+    border-right-color: rgb(34, 26, 26);
+}
+#footer {
+    background-color: #fff;
+}
+#report-selector {
+    width: 86%;
+    position: relative;
+    z-index: 10;
+}
+
+#editor {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #eee !important;
+    font-size: 13px !important;
+}
+
+.modal-dialog {
+   width: 70%;
+}
+
+@media (max-width: 768px) {
+   .modal-dialog {
+        width:90%;
+   }
+}
+
+/********************************************************************
+*
+* Initialisation preview
+*
+********************************************************************/
+#initialisation-preview pre {
+   background-color: ghostwhite;
+   border: 1px solid silver;
+   padding: 10px 20px;
+   margin: 20px;
+}
+
+#initialisation-preview .json-key {
+   color: brown;
+}
+
+#initialisation-preview .json-value {
+   color: navy;
+}
+
+#initialisation-preview .json-string {
+   color: olive;
+}
+
+/********************************************************************
+*
+* Question Editor API
+*
+********************************************************************/
+.asset-img-gallery img {
+  cursor: pointer;
+  max-height: 88px;
+  display: inline-block;
+  margin-top: 5px
+}
+.gallery-wrapper {
+  overflow-y: scroll;
+  min-height: 250px;
+  max-height: 250px;
+}
+
+/********************************************************************
+*
+* Security Check
+*
+********************************************************************/
+#serverresponse{ min-height: 75px;}
+
+#concatenation span.conpart {color: #762;}
+#concatenation span.conpart2 {color: #555;}
+
+#actJson {margin: 0;}
+
+#securityForm pre {
+    word-wrap: break-word;
+}
