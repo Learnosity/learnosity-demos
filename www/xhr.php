@@ -29,7 +29,7 @@ $sign_type = (isset($_POST['sign_type'])) ? $_POST['sign_type'] : null;
 $show_modal = false;
 
 switch ($sign_type) {
-    case 'itemsinline':
+    case 'items-inline':
         $service = 'items';
         $content = $_POST['content'];
         $show_modal = true;
