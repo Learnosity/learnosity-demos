@@ -77,7 +77,7 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
             </div>
             <div class="col-md-4 text-center">
                 <button type="button" class="btn btn-info btn" data-toggle="modal" data-target="#authorModal">Add Item(s) <span class="glyphicon glyphicon-import"></span></button>
-                <button type="button" class="btn btn-info btn" onclick="signItemsRequest();">Preview Item(s) <span class="glyphicon glyphicon-search"></span></button>
+                <button type="button" class="btn btn-info btn" onclick="signItemsRequest()">Preview Item(s) <span class="glyphicon glyphicon-search"></span></button>
             </div>
         </div>
     </div>
@@ -179,7 +179,7 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
             }
         }, data);
         $.ajax({
-            url: '/xhr.php',
+            url: '../../xhr.php',
             data: data,
             type: 'POST'
         })
