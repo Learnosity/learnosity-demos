@@ -32,6 +32,7 @@ include_once '../../../src/includes/header.php';
     <h4>Example</h4>
     <span class="learnosity-feature" data-type="audioplayer" data-src="http://assets.learnosity.com/demos/docs/audiofeaturedemo.mp3" data-waveform="http://assets.learnosity.com/demos/docs/waveform.png"></span>
     <br />
+    <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="audioplayer" data-src="audio-source.mp3" data-waveform="http://assets.learnosity.com/demos/docs/waveform.png"&gt;&lt;/span&gt;</pre>
     <hr />
 </section>
 
@@ -40,27 +41,36 @@ include_once '../../../src/includes/header.php';
     <h4>Example (with embedded youtube video)</h4>
     <span class="learnosity-feature" data-type="videoplayer" data-src="http://www.youtube.com/watch?feature=player_detailpage&v=flL7M36QszA"></span>
     <br />
+    <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="videoplayer" data-src="http://www.youtube.com/watch?feature=player_detailpage&v=flL7M36QszA"&gt;&lt;/span&gt;</pre>
     <hr />
 </section>
 
 <section>
     <h3 id="calculator">Calculator</h3>
     <h4>Example (Basic)</h4>
-    <span class="learnosity-feature" data-type="calculator"></span></br></br>
+    <span class="learnosity-feature" data-type="calculator"></span>
+    <br /><br />
+    <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="calculator"&gt;&lt;/span&gt;</pre><br />
     <h4>Example (Scientific)</h4>
-    <span class="learnosity-feature" data-type="calculator" data-mode="scientific"></span></br></br>
+    <span class="learnosity-feature" data-type="calculator" data-mode="scientific"></span>
+    <br /><br />
+    <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="calculator" data-mode="scientific"&gt;&lt;/span&gt;</pre>
     <hr />
 </section>
 
 <section>
     <h3 id="imagetool">Image Tool</h3>
-    <h4 style="margin-bottom:35px">Example (Protractor)</h4>
+    <h4>Example (Protractor)</h4>
     <span class="learnosity-feature" data-type="imagetool" data-image="protractor"></span>
-    </br>
-    <h4 style="margin-top: 200px">Example (Ruler 6 inches)</h4>
+    <pre style="margin-top:185px" class="feature htmlexample">&lt;span class="learnosity-feature" data-type="imagetool" data-image="protractor"&gt;&lt;/span&gt;</pre>
+    <br/><h4>Example (Ruler 6 inches)</h4>
     <span class="learnosity-feature" data-type="imagetool" data-image="ruler-6-inches"></span>
-    <p style="margin-bottom:80px"></p>
+    <pre style="margin-top: 70px" class="feature htmlexample">&lt;span class="learnosity-feature" data-type="imagetool" data-image="ruler-6-inches"&gt;&lt;/span&gt;</pre>
 </section>
+
+<script src="/static/js/codemirror.min.js"></script>
+<script src="/static/js/underscore.min.js"></script>
+<script src="/static/js/initCodeMirror.js"></script>
 
 <?php
     include_once '../../../src/includes/footer.php';
