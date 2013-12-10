@@ -29,8 +29,8 @@ $request = array(
             'show_prev'              => true,
             'show_fullscreencontrol' => false,
             'show_progress'          => true,
-            'show_submit'            => false,
-            'show_title'             => false,
+            'show_submit'            => true,
+            'show_title'             => true,
             'show_save'              => false,
             'show_calculator'        => false,
             'scroll_to_top'          => false,
@@ -48,9 +48,16 @@ $request = array(
             'show_time'    => true
         ),
         'ui_style'            => 'main',
-        'renderSaveButton'    => true,
         'ignore_validation'   => false,
-        'questionsApiVersion' => 'v2'
+        'questionsApiVersion' => 'v2',
+        'configuration'       => array(
+            'onsubmit_redirect_url' => 'itemsapi_assess.php',
+            'onsave_redirect_url'   => 'itemsapi_assess.php',
+            'idle_timeout'          => array(
+                'interval'       => 300,
+                'countdown_time' => 60
+            )
+        )
     )
 );
 
@@ -109,7 +116,7 @@ $signedRequest = $RequestHelper->generateRequest();
 
 <!-- Container for the items api to load into -->
 <span id="learnosity_assess"></span>
-<script src="http://items.learnosity.com"></script>
+<script src="http://items.vg.learnosity.com?latest"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
     LearnosityItems.init(activity);
