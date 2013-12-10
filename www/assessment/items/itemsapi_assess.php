@@ -41,10 +41,10 @@ $request = array(
             'transition_speed'       => 400
         ),
         'time' => array(
-            'max_time'     => 10,
+            'max_time'     => 1500,
             'limit_type'   => 'soft',
             'show_pause'   => true,
-            'warning_time' => 60,
+            'warning_time' => 1440,
             'show_time'    => true
         ),
         'ui_style'            => 'main',
@@ -116,7 +116,7 @@ $signedRequest = $RequestHelper->generateRequest();
 
 <!-- Container for the items api to load into -->
 <span id="learnosity_assess"></span>
-<script src="http://items.vg.learnosity.com?latest"></script>
+<script src="http://items.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
     LearnosityItems.init(activity);
