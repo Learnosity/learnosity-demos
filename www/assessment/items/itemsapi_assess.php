@@ -81,7 +81,14 @@ if (isset($_POST['ui_style'])) {
             }
         }
     }
+
     $request['config'] = array_replace_recursive($request['config'], $_POST);
+
+    // remove idle_timout settings if the should not be used
+    if ($_POST['configuration']['idle_timeout']['use_idle_timeout'] === 'false') {
+        unset($request['config']['configuration']['idle_timeout']);
+    }
+    unset($request['config']['configuration']['idle_timeout']['use_idle_timeout']);
 }
 
 $RequestHelper = new RequestHelper(
