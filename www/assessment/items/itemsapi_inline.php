@@ -22,7 +22,8 @@ $request = array(
     "items"          => array("ccore_video_260_classification", "ccore_parcc_tecr_grade3"),
     "type"           => "submit_practice",
     "config"         => array(
-        "renderSubmitButton" => true
+        "renderSubmitButton"  => true,
+        'questionsApiVersion' => 'v2'
     )
 );
 

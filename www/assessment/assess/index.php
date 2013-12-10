@@ -149,7 +149,8 @@ $signedRequest = '{
     },
     "configuration": {
         "onsave_redirect_url": "' . $thispage . '",
-        "onsubmit_redirect_url": "' . $thispage . '"
+        "onsubmit_redirect_url": "' . $thispage . '",
+        "questionsApiVersion": "v2"
     },
     "type": "activity"
 }';

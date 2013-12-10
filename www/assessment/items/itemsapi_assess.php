@@ -47,9 +47,10 @@ $request = array(
             'warning_time' => 60,
             'show_time'    => true
         ),
-        'ui_style'          => 'main',
-        'renderSaveButton'  => true,
-        'ignore_validation' => false
+        'ui_style'            => 'main',
+        'renderSaveButton'    => true,
+        'ignore_validation'   => false,
+        'questionsApiVersion' => 'v2'
     )
 );
 
