@@ -54,6 +54,23 @@ include_once '../../../src/includes/header.php';
         </div>
 
     </div>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Math Formula Question</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Painless input and validation for complex math expressions.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./formula.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <?php
