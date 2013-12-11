@@ -206,6 +206,9 @@
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" name="configuration[stylesheet]" value="<?php if (isset($con['configuration']['stylesheet'])) { echo $con['configuration']['stylesheet']; }; ?>">
                                     </div>
+                                    <div class="col-sm-12">
+                                        <p class="help-block pull-right">eg http://demos.learnosity.com/assessment/items/custom.css</p>
+                                    </div>
                                 </div>
                             </div>
 

@@ -57,7 +57,7 @@ $request = array(
                 'interval'       => 300,
                 'countdown_time' => 60
             ),
-            'stylesheet'      => 'http://demos.learnosity.com/assessment/items/custom.css'
+            'stylesheet' => ''
         )
     )
 );
