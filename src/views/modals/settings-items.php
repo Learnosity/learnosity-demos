@@ -49,7 +49,6 @@
                     <div class="panel panel-info">
                         <div class="panel-heading">Navigation/Control Settings</div>
                         <div class="panel-body">
-
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="show_prev" class="col-sm-6 control-label">Show Previous</label>
@@ -200,6 +199,12 @@
                                     <label for="transition-speed" class="col-sm-6 control-label">Transition Speed (ms)</label>
                                     <div class="col-sm-3">
                                         <input type="number" min="100" max="1000" step="100" class="form-control" name="navigation[transition_speed]" value="<?php if (isset($nav['transition_speed'])) { echo $nav['transition_speed']; }; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="transition-speed" class="col-sm-6 control-label">Custom Stylesheet</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="configuration[stylesheet]" value="<?php if (isset($con['configuration']['stylesheet'])) { echo $con['configuration']['stylesheet']; }; ?>">
                                     </div>
                                 </div>
                             </div>
