@@ -78,8 +78,6 @@
                                         <input type="radio" name="navigation[show_submit]" value="false"<?php if (isset($nav['show_submit']) && $nav['show_submit'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="show_fullscreencontrol" class="col-sm-6 control-label">Show Fullscreen</label>
                                     <div class="col-sm-6">
@@ -87,6 +85,8 @@
                                         <input type="radio" name="navigation[show_fullscreencontrol]" value="false"<?php if (isset($nav['show_fullscreencontrol']) && $nav['show_fullscreencontrol'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="show_calculator" class="col-sm-6 control-label">Show Calculator</label>
                                     <div class="col-sm-6">
@@ -106,6 +106,13 @@
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[show_itemcount]" value="true"<?php if (isset($nav['show_itemcount']) && $nav['show_itemcount'] === true) { echo ' checked'; }; ?>> True
                                         <input type="radio" name="navigation[show_itemcount]" value="false"<?php if (isset($nav['show_itemcount']) && $nav['show_itemcount'] === false) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_fullscreencontrol" class="col-sm-6 control-label">Show warning if not question not attempted</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[warning_on_change]" value="true"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[warning_on_change]" value="false"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                             </div>
