@@ -102,7 +102,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="show_itemcount" class="col-sm-6 control-label">Show Item Count?</label>
+                                    <label for="show_itemcount" class="col-sm-6 control-label">Show Item Count</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[show_itemcount]" value="true"<?php if (isset($nav['show_itemcount']) && $nav['show_itemcount'] === true) { echo ' checked'; }; ?>> True
                                         <input type="radio" name="navigation[show_itemcount]" value="false"<?php if (isset($nav['show_itemcount']) && $nav['show_itemcount'] === false) { echo ' checked'; }; ?>> False
