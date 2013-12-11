@@ -125,7 +125,7 @@ $signedRequest = $RequestHelper->generateRequest();
 
 <!-- Container for the items api to load into -->
 <span id="learnosity_assess"></span>
-<script src="http://items.vg.learnosity.com?latest"></script>
+<script src="http://items.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
     LearnosityItems.init(activity);
