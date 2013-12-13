@@ -29,7 +29,7 @@ include_once '../../../src/includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Question Types</h2>
+                    <h2 class="panel-title">Question Types Overview</h2>
                 </div>
                 <div class="panel-body">
                     <p>Rich Question Types can be embedded on any page with the Learnosity Questions API. Every question is highly configurable to suit the assessment purpose, be it formative or summative.</p>
@@ -42,7 +42,7 @@ include_once '../../../src/includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Feature Types</h2>
+                    <h2 class="panel-title">Features</h2>
                 </div>
                 <div class="panel-body">
                     <p>The Learnosity Questions API supports features, standalone utilities that are defined in the client's HTML. These are generally used as stimulus for questions.</p>
@@ -58,7 +58,7 @@ include_once '../../../src/includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Math Formula Question</h2>
+                    <h2 class="panel-title">Math Formula Question Type</h2>
                 </div>
                 <div class="panel-body">
                     <p>Painless input and validation for complex math expressions.</p>
@@ -71,7 +71,7 @@ include_once '../../../src/includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Graph Plotting Question</h2>
+                    <h2 class="panel-title">Graph Plotting Question Type</h2>
                 </div>
                 <div class="panel-body">
                     <p>Draw points and/or lines on a Cartesian plane.</p>
