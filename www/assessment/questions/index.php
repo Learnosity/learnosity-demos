@@ -55,7 +55,6 @@ include_once '../../../src/includes/header.php';
 
     </div>
     <div class="row">
-
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -65,6 +64,19 @@ include_once '../../../src/includes/header.php';
                     <p>Painless input and validation for complex math expressions.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./formula.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Graph Plotting Question</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Draw points and/or lines on a Cartesian plane.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./graphplotting.php">Demo</a>
                     </p>
                 </div>
             </div>
