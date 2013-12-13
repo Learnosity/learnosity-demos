@@ -41,52 +41,83 @@ $signedRequest = $RequestHelper->generateRequest();
 
 <!-- Container for the items api to load into -->
 <script src="http://items.learnosity.com/"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-    var activity = <?php echo $signedRequest; ?>;
+    var options = {
+            readyListener: initApp
+        },
+        ItemsAPI,
+        metadata,
+        activity = <?php echo $signedRequest; ?>;
+
     // Set a local variable from the init() method to access the public methods available
-    ItemsAPI = LearnosityItems.init(activity);
+    ItemsAPI = LearnosityItems.init(activity, options);
+
     /**
-     * Retrieves the question metadata from the public API (Questions API)
-     * and displays a sample_answer to an HTML element. Useful to provide
-     * a 'hint' to a user to assist them in answering a question.
-     * @param  string question_id   The id of the question in the metadata object
-     * @param  string host_el       An id on the host page to write a hint into
-     * @param  numeric hint_index   Hints may be strings or arrays, if they're arrays
-     *                              which index do you want to retrieve?
-     * @return void
+     * Method called from the Questions API ready listener
      */
-    function getMetadata(question_id, host_el, hint_index) {
-        var hostMeta = {
-            'id':    question_id,
-            'el':    host_el,
-            'index': (typeof hint_index === 'undefined') ? null : hint_index
-        };
-        // Hide any previously rendered hints
-        hideHints();
-        ItemsAPI.getMetadata(function(obj) {
-            var hint = obj[hostMeta.id];
-            if (hostMeta.index === null) {
-                hint = hint.hint;
-            } else {
-                hint = hint.hint[hostMeta.index];
-            }
-            $('#'+hostMeta.el).html(hint).show();
-        });
+    function initApp() {
+        var metadata = getMetadata();
+        var question_ids = getObjectKeys(metadata);
+        // Render a button next to each question for users to see a hint (if available)
+        // for that question
+        for (var i = 0; i < question_ids.length; i++) {
+            var id = question_ids[i];
+            var btnHint = '<p class="lrn_widget"><button type="button" class="btn btn-default btn-sm" onclick="renderHint(\'' + id + '\')">Hint</button></p>';
+            $('#'+id).closest('div.row').append(btnHint);
+        }
     }
+
     /**
-     * Hides any elements with a class of 'hint'
-     * @return {[type]} [description]
+     * Render any hint(s) retrieved from the question metadata
+     * @param  {string} question_id The question to render a hint for
      */
-    function hideHints() {
-        $('.hint').each(function(index, el) {
-            $(el).hide();
+    function renderHint(question_id) {
+        var metadata = getMetadata(question_id);
+        // Add the hint from a questions metadata and render into the div#hints element
+        $('#hints').addClass('alert alert-warning').empty().html(metadata.hint);
+        // Render any LaTeX that might have been in the hint
+        MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'hints']);
+    }
+
+    /**
+     * Retrieves the metadata object from the Questions API
+     * Optionally returns data for a specific key
+     * @param  {string} key Optional key to filter by
+     * @return {object}     Either the entire metadata object, or a subset (if key is passed)
+     */
+    function getMetadata(key) {
+        var metadata;
+        ItemsAPI.getMetadata(function(obj) {
+            metadata = obj;
         });
+        if (typeof key === 'undefined') {
+            return metadata;
+        } else {
+            return metadata[key];
+        }
+    }
+
+    /**
+     * Utility function to return all keys in a passed object
+     * @param  {object} obj Object to return keys from
+     * @return {array}      Array of object keys
+     */
+    function getObjectKeys(obj) {
+        var keys = [];
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key)) {
+                keys.push(key);
+            }
+        }
+        return keys;
     }
 </script>
 
 <div class="jumbotron">
     <h1>Items API – Worked Solutions</h1>
-    <p>Display items from the Learnosity Item Bank in no time with the Items API.  The Items API builds on the Questions API's power and makes it quicker to integrate.<p>
+    <p>Store basic HTML in the Questions API metadata property to be rendered by the host
+    environment for displaying rich hints to users.<p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
@@ -100,29 +131,9 @@ $signedRequest = $RequestHelper->generateRequest();
     </div>
 </div>
 
-<p>
-    <span class="learnosity-item" data-reference="workedsolutions_1"></span>
-</p>
-<div class="jumbotron">
-    <p>
-        <span class="glyphicon glyphicon-info-sign"></span>
-        Inline help is available to students by clicking the buttons below
-    </p>
-    <div class="row">
-        <div class="col-lg-3">
-            <button type="button" class="btn btn-default" onclick="getMetadata('<?= $session_id; ?>_workedsolutions_1_1', 'hint_a', 0)">Hint (a) – 1</button>
-            <button type="button" class="btn btn-default" onclick="getMetadata('<?= $session_id; ?>_workedsolutions_1_1', 'hint_a', 1)">Hint (a) – 2</button>
-        </div>
-        <div class="col-lg-3">
-            <button type="button" class="btn btn-default" onclick="getMetadata('<?= $session_id; ?>_workedsolutions_1_2', 'hint_b', 0)">Hint (b) – 1</button>
-            <button type="button" class="btn btn-default" onclick="getMetadata('<?= $session_id; ?>_workedsolutions_1_2', 'hint_b', 1)">Hint (b) – 2</button>
-        </div>
-        <div class="col-lg-3">
-            <button type="button" class="btn btn-default" onclick="getMetadata('<?= $session_id; ?>_workedsolutions_1_3', 'hint_c', 0)">Hint (c) – 1</button>
-            <button type="button" class="btn btn-default" onclick="getMetadata('<?= $session_id; ?>_workedsolutions_1_3', 'hint_c', 1)">Hint (c) – 2</button>
-        </div>
-    </div>
-</div>
+<!-- HTML element to load item(s) into -->
+<h2>Question 1</h2>
+<p><span class="learnosity-item" data-reference="workedsolutions_1"></span></p>
 
 <?php
     include_once '../../../src/views/modals/initialisation-preview.php';

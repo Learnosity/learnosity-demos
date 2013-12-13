@@ -236,3 +236,19 @@ td {
 .cm-s-default span.cm-bracket {color: #cc7;}
 .cm-s-default span.cm-tag {color: #170;}
 .cm-s-default span.cm-attribute {color: #00c;}
+
+/********************************************************************
+*
+* Worked Solutions hints
+*
+********************************************************************/
+.hints {
+    font-size: 85%;
+}
+.hint {
+    padding: 15px 0 5px 0;
+    line-height: 16px;
+}
+.hint:last-child {
+    border: none;
+}
