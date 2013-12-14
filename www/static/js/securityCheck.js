@@ -2,7 +2,7 @@
 $(function () {
     "use strict";
     var concatenated = "",
-        activityTemplate = 'var activity = {"consumer_key":"<%= act.consumer_key %>","timestamp":"<%= act.timestamp %>","signature":"<%= act.signature %>","user_id":"<%= act.user_id %>", ... };',
+        activityTemplate = 'var activity={"consumer_key":"<%= act.consumer_key %>","timestamp":"<%= act.timestamp %>","signature":"<%= act.signature %>","user_id":"<%= act.user_id %>", ... };',
         defaults = {
             consumer_key: 'soCnIErF4fojFiKe',
             domain: location.hostname,
@@ -10,20 +10,23 @@ $(function () {
             user_id: '12345678',
             consumer_secret: '457e0592c9a63b9d6cd39966c49db45c7ceee784'
         },
-        domain = "api.learnosity.com",
+        domain = "questions.learnosity.com",
         LearnosityApp = {},
         questionsApiComms;
 
     function initialiseQuestionsAPI() {
         LearnosityApp._internal = {};
         LearnosityApp._internal.config = {
-            apiHost: 'http://' + domain + "/stable"
+            apiHost: 'http://' + domain + "/latest"
         };
         window.LearnosityApp = LearnosityApp;
 
-        var apiModules = '//' + domain + '/stable/scripts';
+        var apiModules = 'http://' + domain + '/latest/app/';
         require.config({
-            baseUrl: apiModules
+            baseUrl: apiModules,
+            paths: {
+                vendor: '../vendor'
+            }
         });
         require(['comms'], function (comms) {
             questionsApiComms = comms;
@@ -37,6 +40,7 @@ $(function () {
             user_id: $('#user_id').val(),
             signature: $('#signature').val()
         } });
+
         CodeMirror.runMode(js_beautify(actText), {name: "javascript", json: true}, $('#actJson')[0]);
     }
 
@@ -63,6 +67,7 @@ $(function () {
         concatenated += '_';
         concatenated += $('#consumer_secret').val();
 
+
         var conc = "";
         conc += '<span title="consumer_key" class="conpart">' + $('#consumer_key').val() + '</span>';
         conc += '<strong>_</strong>';
@@ -76,38 +81,30 @@ $(function () {
 
         $('#concatenation').html(conc);
 
+
         var shaObj = new jsSHA(concatenated);
         $('#signature').val(shaObj.getHash("SHA-256", "HEX"));
     }
 
     function testSuccess(response) {
-        $('#serverresponse').html(response.status);
+        $('#serverresponse').html("Authentication successful");
     }
 
     function testError(response) {
-        $('#serverresponse').html(response.status + ' - ' + response.response);
+        $('#serverresponse').html(response.status + ' - ' + response.response.meta.message);
     }
 
     function submitToServer(withSecurity) {
         $('#serverresponse').html('');
-        var secParams = {
-            consumer_key: $('#consumer_key').val(),
-            domain: $('#domain_override').val(),
-            timestamp: $('#timestamp').val(),
-            user_id: $('#user_id').val(),
-            signature: $('#signature').val()
-        };
         if (questionsApiComms) {
             questionsApiComms.request({
                 url: '/authenticate',
-                security:  {
-                    security: JSON.stringify({
-                        consumer_key: secParams.consumer_key,
-                        domain: secParams.domain,
-                        timestamp: secParams.timestamp,
-                        user_id: secParams.user_id,
-                        signature: secParams.signature
-                    })
+                security: {
+                    consumer_key: $('#consumer_key').val(),
+                    domain:       $('#domain_override').val(),
+                    timestamp:    $('#timestamp').val(),
+                    user_id:      $('#user_id').val(),
+                    signature:    $('#signature').val()
                 },
                 success: testSuccess,
                 failure: testError
