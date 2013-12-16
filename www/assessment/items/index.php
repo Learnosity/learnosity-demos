@@ -29,7 +29,7 @@ include_once '../../../src/includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Items API - Assess</h2>
+                    <h2 class="panel-title">Assess</h2>
                 </div>
                 <div class="panel-body">
                     <p>With the flick of a switch make the items into an assessment. Truly write once - use anywhere.</p>
@@ -42,7 +42,7 @@ include_once '../../../src/includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Items API - Inline</h2>
+                    <h2 class="panel-title">Inline</h2>
                 </div>
                 <div class="panel-body">
                     <p>Display items from the Learnosity Item Bank in no time with the Items API. The Items API builds on the Questions API's power and makes it quicker to integrate.</p>
@@ -52,7 +52,21 @@ include_once '../../../src/includes/header.php';
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Worked Solutions (hints)</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Shows examples of using inline hints for questions.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_workedsolutions.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
