@@ -195,7 +195,7 @@ $signedRequest = '{
         }
     },
     {
-        "response_id": "demo10-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo11-'.$uniqueResponseIdSuffix.'",
         "type": "highlight",
         "description": "The student needs to mark one of the flower\'s anthers in the image.",
         "img_src": "http://www.staging.learnosity.com/static/img/flower.jpg",
@@ -203,7 +203,7 @@ $signedRequest = '{
         "line_width": "4"
     },
     {
-        "response_id": "demo11-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo12-'.$uniqueResponseIdSuffix.'",
         "type": "imageclozetext",
         "description": "The student needs to fill in the blanks",
         "img_src": "http://www.staging.learnosity.com/static/img/Blank_US_Map.png",
@@ -233,7 +233,7 @@ $signedRequest = '{
         ]
     },
     {
-        "response_id": "demo12-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo13-'.$uniqueResponseIdSuffix.'",
         "type": "imageclozedropdown",
         "img_src": "http://www.staging.learnosity.com/static/img/Blank_US_Map.png",
         "instant_feedback": true,
@@ -268,7 +268,7 @@ $signedRequest = '{
         ]
     },
     {
-        "response_id": "demo13-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo14-'.$uniqueResponseIdSuffix.'",
         "type": "imageclozeassociation",
         "img_src": "http://www.staging.learnosity.com/static/img/World_Map_AU_US_BR_RU.png",
         "possible_responses": ["<span style=\"font-size:20px;padding:5px;\">♂</span> Male", "<span style=\"font-size:20px;padding:5px;\">♀</span> Female"],
@@ -310,7 +310,7 @@ $signedRequest = '{
         }
     },
     {
-        "response_id": "demo14-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo15-'.$uniqueResponseIdSuffix.'",
         "type": "orderlist",
         "description": "In this question, the student needs to order the events, chronologically earliest to latest.",
         "list": ["Russian Revolution", "Discovery of the Americas", "Storming of the Bastille", "Battle of Plataea", "Founding of Rome", "First Crusade"],
@@ -325,7 +325,7 @@ $signedRequest = '{
         }
     },
     {
-        "response_id": "demo15-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo16-'.$uniqueResponseIdSuffix.'",
         "type": "orderlist",
         "description": "In this question, the student needs to order the albums, chronologically earliest to latest.",
         "list": [
@@ -345,7 +345,7 @@ $signedRequest = '{
         }
     },
     {
-        "response_id": "demo16-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo17-'.$uniqueResponseIdSuffix.'",
         "type": "orderlist",
         "list": ["Un peregrino llega a la cumbre agotado por la sed. El diablo, disfrazado de caminante, se ofrece a indicarle una fuente oculta, a condición de que reniegue de Dios, de la Virgen o de Santiago. Pero el peregrino mantiene su fe a toda costa, aun cuando se encuentra exhausto.", "Es entonces cuando se aparece Santiago vestido de peregrino, recoge al moribundo y le lleva a la escondida fuente, dándole de beber con su vieira.", "<h4>Fuente Reniega</h4>", "La acción tiene lugar en el Alto del Perdón, a pocos kilómetros de Pamplona."],
         "ui_style": "plainlist",
@@ -359,7 +359,7 @@ $signedRequest = '{
         }
     },
     {
-        "response_id": "demo17-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo18-'.$uniqueResponseIdSuffix.'",
         "type": "orderlist",
         "list": [ "On the contrary, for a small street in a quiet neighbourhood, it was remarkably animated.",
     "There was a group of shabbily dressed men smoking and laughing in a corner, a scissors-grinder with his wheel, two guardsmen who were flirting with a nurse-girl, and several well-dressed young men who were lounging up and down with cigars in their mouths.",
@@ -377,7 +377,7 @@ $signedRequest = '{
         }
     },
     {
-        "response_id": "demo18-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo19-'.$uniqueResponseIdSuffix.'",
         "type": "texthighlight",
         "description": "In this question, the student needs to highlight the <strong>adjectives</strong> in the extract.",
         "template": "His manner was not <valid>effusive</valid>. It seldom was; but he was <valid>glad</valid>, I think, to see me. With hardly a word spoken, but with a <valid>kindly</valid> eye, he waved me to an armchair, threw across his case of cigars, and indicated a spirit case and a gasogene in the corner. Then he stood before the fire and looked me over in his <valid>singular</valid> <valid>introspective</valid> fashion.",
@@ -385,20 +385,6 @@ $signedRequest = '{
         "feedback_attempts": 2,
         "word_bound": true,
         "validation": {
-            "valid_score": 1,
-            "partial_scoring": true,
-            "penalty_score": -1
-        }
-    },
-    {
-        "response_id": "demo19-'.$uniqueResponseIdSuffix.'",
-        "type": "sortlist",
-        "description": "In this question, the student needs to sort the events, chronologically earliest to latest.",
-        "list": ["Russian Revolution", "Discovery of the Americas", "Storming of the Bastille", "Battle of Plataea", "Founding of Rome", "First Crusade"],
-        "instant_feedback": true,
-        "feedback_attempts": 2,
-        "validation": {
-            "valid_response": [4, 3, 5, 1, 2, 0],
             "valid_score": 1,
             "partial_scoring": true,
             "penalty_score": -1
@@ -453,6 +439,20 @@ $signedRequest = '{
     },
     {
         "response_id": "demo22-'.$uniqueResponseIdSuffix.'",
+        "type": "sortlist",
+        "description": "In this question, the student needs to sort the events, chronologically earliest to latest.",
+        "list": ["Russian Revolution", "Discovery of the Americas", "Storming of the Bastille", "Battle of Plataea", "Founding of Rome", "First Crusade"],
+        "instant_feedback": true,
+        "feedback_attempts": 2,
+        "validation": {
+            "valid_response": [4, 3, 5, 1, 2, 0],
+            "valid_score": 1,
+            "partial_scoring": true,
+            "penalty_score": -1
+        }
+    },
+    {
+        "response_id": "demo24-'.$uniqueResponseIdSuffix.'",
         "type": "graphplotting",
         "description": "The student needs to plot a simple cubic curve.",
         "mode": "point",
@@ -479,7 +479,7 @@ $signedRequest = '{
         }
     },
     {
-        "response_id": "demo23-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo25-'.$uniqueResponseIdSuffix.'",
         "type": "graphplotting",
         "description": "The student needs to plot the line \\\( y = x + 1 \\\)",
         "mode": "line",
@@ -507,30 +507,30 @@ $signedRequest = '{
         }
     },
     {
-        "response_id": "demo24-'.$uniqueResponseIdSuffix.'",
-     "type": "clozeinlinetext",
-      "description": "The student needs to fill in the blanks ",
-      "template": "<p>Sherlock Homes had sprung out and seized the {{response}} by the collar. The other dived down the hole, and I heard the sound of {{response}} cloth as Jones clutched at his skirts. The light flashed upon the barrel of a revolver, but Holmes’ {{response}} came down on the man’s wrist, and the pistol {{response}} upon the stone floor.</p>",
+        "response_id": "demo10-'.$uniqueResponseIdSuffix.'",
+        "type": "clozeinlinetext",
+        "description": "The student needs to fill in the blanks ",
+        "template": "<p>Sherlock Homes had sprung out and seized the {{response}} by the collar. The other dived down the hole, and I heard the sound of {{response}} cloth as Jones clutched at his skirts. The light flashed upon the barrel of a revolver, but Holmes’ {{response}} came down on the man’s wrist, and the pistol {{response}} upon the stone floor.</p>",
         "instant_feedback": true,
-     "case_sensitive": false,
-      "validation": {
-           "valid_responses": [["intruder"],["rending"],["hunting crop"],["clinked"]]
-        }
-    },
+        "case_sensitive": false,
+        "validation": {
+               "valid_responses": [["intruder"],["rending"],["hunting crop"],["clinked"]]
+            }
+        },
     {
-        "response_id": "demo25-'.$uniqueResponseIdSuffix.'",
+        "response_id": "demo23-'.$uniqueResponseIdSuffix.'",
         "instant_feedback": true,
         "stimulus": "<strong>Which sentence or sentences imply that the cheetahs run fast?</strong>",
-       "template": "<p>Most cheetahs live in the wilds of Africa. There are also some in Iran and northwestern Afghanistan. The cheetah\'s head is smaller than the leopard\'s, and its body is longer. This cat is built for speed. Its legs are much longer than the leopard\', allowing it to run at speeds of up to 70 miles per hour! This incredible ability helps the cheetahs catch their dinner, which is usually an unfortunate antelope. A cheetah’s spots are simply black spots, not rosettes or circles.</p>",
-       "tokenization": "sentence",
-     "type": "tokenhighlight",
-       "validation": {
-           "partial_scoring": true,
-          "penalty_score": 0,
-           "show_partial_ui": true,
-          "valid_responses": [3, 4],
+        "template": "<p>Most cheetahs live in the wilds of Africa. There are also some in Iran and northwestern Afghanistan. The cheetah\'s head is smaller than the leopard\'s, and its body is longer. This cat is built for speed. Its legs are much longer than the leopard\', allowing it to run at speeds of up to 70 miles per hour! This incredible ability helps the cheetahs catch their dinner, which is usually an unfortunate antelope. A cheetah’s spots are simply black spots, not rosettes or circles.</p>",
+        "tokenization": "sentence",
+        "type": "tokenhighlight",
+        "validation": {
+            "partial_scoring": true,
+            "penalty_score": 0,
+            "show_partial_ui": true,
+            "valid_responses": [3, 4],
             "valid_score": 1
-      }
+        }
     },
     {
         "instant_feedback": true,
@@ -773,7 +773,7 @@ $signedRequest = '{
     <div class="col-md-8 col-md-offset-2">
         <h3 id="q20">Token Highlight</h3>
         <p>Select all the <strong>relevant sections</strong> in the text.</p>
-        <span class="learnosity-response question-demo20-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        <span class="learnosity-response question-demo23-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
 <hr>
@@ -782,7 +782,7 @@ $signedRequest = '{
     <div class="col-md-8 col-md-offset-2">
         <h3 id="q21">Match Lists</h3>
         <p>Match each city to its parent nation.</p>
-        <span class="learnosity-response question-demo21-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        <span class="learnosity-response question-demo20-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
 <hr>
@@ -800,7 +800,7 @@ $signedRequest = '{
     <div class="col-md-8 col-md-offset-2">
         <h3 id="q23">Categories (Drag and Drop)</h3>
         <p>Drag each triangle to the correct category.</p>
-        <span class="learnosity-response question-demo23-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        <span class="learnosity-response question-demo21-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
 <hr>
