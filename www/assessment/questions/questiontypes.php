@@ -583,10 +583,9 @@ $signedRequest = '{
 
 <!-- Main question content below here: -->
 <h2 class="page-heading">Question Types Overview</h2>
-<hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q1">Multiple Choice</h3>
         <p>Which of these colours has the smallest wavelength?</p>
         <span class="learnosity-response question-demo1-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -595,7 +594,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q1">Multiple Choice (Block Style)</h3>
         <p>What is the capital city of England?</p>
         <span class="learnosity-response question-demo1b-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -604,7 +603,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q2">Multiple Choice with multi select</h3>
         <p>Which of these cities are state capitals?</p>
         <span class="learnosity-response question-demo2-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -613,7 +612,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q3">Short text</h3>
          <p>
             <span class="label label-info">Hint</span> &#8220;Michael Bloomberg&#8221; gets one point, &#8220;Bloomberg&#8221; gets half a point.
@@ -625,7 +624,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q4">Long text answer with basic formatting</h3>
         <p>Briefly explain cellular mitosis.</p>
         <span class="learnosity-response question-demo4-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -634,7 +633,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q5">Plain text answer, with copy, cut &amp; paste</h3>
         <p>Write a haiku poem in German.</p>
         <span class="learnosity-response question-demo5-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -643,7 +642,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q6">Spoken response</h3>
         <p>Describe a typical day in your life.</p>
         <span class="learnosity-response requires-flash question-demo6-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -653,7 +652,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q7">Cloze (fill in the blanks)</h3>
         <p>Complete the multiplication table below.</p>
         <span class="learnosity-response question-demo7-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -662,7 +661,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q8">Cloze (fill in the blanks) with drop down menus</h3>
         <p>Fill in the blanks</p>
         <span class="learnosity-response question-demo8-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -671,7 +670,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q9">Cloze (fill in the blanks) with drag and drop</h3>
         <p>Simplify the following, expressing your answers with positive indices.</p>
         <span class="learnosity-response question-demo9-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -680,7 +679,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q10">Cloze Text Expanding (Extended Fill in the blanks)</h3>
         <p>Fill in the blanks.</p>
         <span class="learnosity-response question-demo10-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -689,7 +688,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q11">Draw / highlight on a background image</h3>
         <p>Circle one of the flower's anthers in the picture.</p>
         <span class="learnosity-response question-demo11-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -698,7 +697,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q12">Label an image (add text)</h3>
         <p>Name the states on the map</p>
         <span class="learnosity-response question-demo12-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -707,7 +706,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q13">Label an image (with drop down menus)</h3>
         <p>Select the correct State names on the map.</p>
         <span class="learnosity-response question-demo13-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -716,7 +715,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q14">Label an image (with drag and drop)</h3>
         <p>Indicate whether each of the highlighted countries currently has a male or a female <strong>Head of State</strong>.</p>
         <span class="learnosity-response question-demo14-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -725,7 +724,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q15">Order a list</h3>
         <p>Sort these historical events chronologically, from earliest to latest.</p>
         <span class="learnosity-response question-demo15-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -734,7 +733,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q16">Order buttons</h3>
         <p>Sort these Beatles albums by release date (earliest first).</p>
         <span class="learnosity-response question-demo16-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -743,7 +742,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q17">Order paragraphs</h3>
         <p>Move the paragraphs into the correct order.</p>
         <span class="learnosity-response question-demo17-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -752,7 +751,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q18">Order words or sentences within a paragraph</h3>
         <p>Rearrange the sentences into the correct order.</p>
         <span class="learnosity-response question-demo18-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -761,7 +760,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q19">Text Highlight</h3>
         <p>Select all the <strong>adjectives</strong> in the text.</p>
         <span class="learnosity-response question-demo19-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -770,7 +769,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q20">Token Highlight</h3>
         <p>Select all the <strong>relevant sections</strong> in the text.</p>
         <span class="learnosity-response question-demo23-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -779,7 +778,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q21">Match Lists</h3>
         <p>Match each city to its parent nation.</p>
         <span class="learnosity-response question-demo20-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -788,7 +787,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q22">Sort List</h3>
         <p>Sort these historical events chronologically, from earliest to latest.</p>
         <span class="learnosity-response question-demo22-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -797,7 +796,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q23">Categories (Drag and Drop)</h3>
         <p>Drag each triangle to the correct category.</p>
         <span class="learnosity-response question-demo21-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -806,7 +805,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q24">Plot Points</h3>
         <p>Plot a simple cubic curve on the graph.</p>
         <span class="learnosity-response question-demo24-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -815,7 +814,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q25">Plot Lines</h3>
         <p>Plot the line \( y = x + 1 \)</p>
         <span class="learnosity-response question-demo25-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -824,7 +823,7 @@ $signedRequest = '{
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <h3 id="q26">Math Formula</h3>
         <p><span class="label label-info">Hint</span>  \(x(x+4) +3\), \(x^2 +4x +3\) and \(3 + x^2 +4x \) would all be acceptable.</p>
         <span class="learnosity-response question-demo26-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -835,7 +834,7 @@ $signedRequest = '{
 <!-- Tell the API where to place the submit button if using "renderSubmitButton" attribute -->
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
         <span class="learnosity-submit-button"></span>
     </div>
 </div>
