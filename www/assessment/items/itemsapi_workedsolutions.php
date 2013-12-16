@@ -21,7 +21,7 @@ $request = array(
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => $session_id,
     'course_id'      => $courseid,
-    'items'          => array('workedsolutions_1'),
+    'items'          => array('workedsolutions_1', 'workedsolutions_2', 'workedsolutions_3'),
     'type'           => 'submit_practice',
     'config'         => array(
         'renderSubmitButton' => false
@@ -63,7 +63,7 @@ $signedRequest = $RequestHelper->generateRequest();
         // for that question
         for (var i = 0; i < question_ids.length; i++) {
             var id = question_ids[i];
-            var btnHint = '<p class="lrn_widget"><button type="button" class="btn btn-default btn-sm" onclick="renderHint(\'' + id + '\')">Hint</button></p>';
+            var btnHint = '<p class="lrn_widget"><button type="button" class="btn btn-default btn-sm ' + id + '" onclick="renderHint(\'' + id + '\')">Hint</button></p>';
             $('#'+id).closest('div.row').append(btnHint);
         }
     }
@@ -73,11 +73,34 @@ $signedRequest = $RequestHelper->generateRequest();
      * @param  {string} question_id The question to render a hint for
      */
     function renderHint(question_id) {
+        // get hints container..
+        var hintsElem = $('#'+question_id).parents('div.item-content').siblings();
+        $(hintsElem).attr('id', 'hints_' + question_id);
+
+        // clear hints container..
+        hintsElem.empty();
+
         var metadata = getMetadata(question_id);
-        // Add the hint from a questions metadata and render into the div#hints element
-        $('#hints').addClass('alert alert-warning').empty().html(metadata.hint);
+        var hintHtml = $.parseHTML(metadata.hint);
+        var hints = $(hintHtml).find('div.hint');
+
+        // check how many times the hint button has been clicked..
+        var hintsClicked = $('#'+question_id).data('hintsClicked');
+        if (hintsClicked === undefined) {
+            $('#' + question_id).data('hintsClicked', 1);
+        } else if (hintsClicked < hints.length) {
+            $('#' + question_id).data('hintsClicked', hintsClicked + 1);
+        }
+
+        // Add the hint(s) from questions metadata and render into the div#hints element
+        for (var i = 0; i < $('#'+question_id).data('hintsClicked'); i++) {
+            hintsElem.addClass('alert alert-warning').append(hints[i]);
+        };
+
+        $('button.' + question_id).text('Hint (' + (hints.length - $('#'+question_id).data('hintsClicked')) + ' left) ' )
+
         // Render any LaTeX that might have been in the hint
-        MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'hints']);
+        MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'hints_' + question_id]);
     }
 
     /**
@@ -134,6 +157,10 @@ $signedRequest = $RequestHelper->generateRequest();
 <!-- HTML element to load item(s) into -->
 <h2>Question 1</h2>
 <p><span class="learnosity-item" data-reference="workedsolutions_1"></span></p>
+<h2>Question 2</h2>
+<p><span class="learnosity-item" data-reference="workedsolutions_2"></span></p>
+<h2>Question 3</h2>
+<p><span class="learnosity-item" data-reference="workedsolutions_3"></span></p>
 
 <?php
     include_once '../../../src/views/modals/initialisation-preview.php';
