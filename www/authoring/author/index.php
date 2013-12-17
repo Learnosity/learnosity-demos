@@ -46,7 +46,7 @@ $signedRequest = $RequestHelper->generateRequest();
 </div>
 
 <section>
-    <h3>Sample CML/LMS Integration</h3>
+    <h3>Sample CMS/LMS Integration</h3>
     <p>Below is an edit page for a fictional Content/Learning Management System.</p>
     <p>The buttons on the right show how you might integrate the Author API to search for, and add items &mdash;
     allowing your authors to integrate rich content items into existing pages.</p>
