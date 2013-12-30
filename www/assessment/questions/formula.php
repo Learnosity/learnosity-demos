@@ -112,7 +112,7 @@ $signedRequest = '{
 
     <div class="row">
         <div class="col-md-8">
-            <h4><a href="http://docs.learnosity.com/questionsapi/formula.php" class="text-muted">
+            <h4><a href="http://docs.learnosity.com/questionsapi/responsetypes.php#formula" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
             <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">

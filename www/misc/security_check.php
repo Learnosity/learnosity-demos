@@ -7,7 +7,7 @@
     <p>If the request is successful, a status code 200 will be returned in the box at the
     bottom of the page, otherwise a status code 403 will be returned.</p>
     <p>Information on security is available on the documentation site for
-    the <a href="http://docs.learnosity.com/questionsapi/apiauth.php">Questions API</a>.</p>
+    the <a href="http://docs.learnosity.com/questionsapi/security.php">Questions API</a>.</p>
 </div>
 
 <form id="securityForm">
