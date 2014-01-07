@@ -64,7 +64,7 @@ $signedRequest = $RequestHelper->generateRequest();
         // for that question
         for (var i = 0; i < question_ids.length; i++) {
             var id = question_ids[i];
-            var btnHint = '<p class="lrn_widget"><button type="button" class="btn btn-default btn-sm ' + id + '" onclick="renderHint(\'' + id + '\')">Hint</button></p>';
+            var btnHint = '<p style="padding: 11px;"><button type="button" class="btn btn-default btn-sm ' + id + '" onclick="renderHint(\'' + id + '\')">Hint</button></p>';
             $('#'+id).closest('div.row').append(btnHint);
         }
     }
@@ -82,7 +82,7 @@ $signedRequest = $RequestHelper->generateRequest();
         hintsElem.empty();
 
         var metadata = getMetadata(question_id);
-        var hintHtml = $.parseHTML(metadata.hint);
+        var hintHtml = $.parseHTML(metadata.sample_answer || metadata.hint);
         var hints = $(hintHtml).find('div.hint');
 
         // check how many times the hint button has been clicked..
