@@ -109,10 +109,17 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="show_fullscreencontrol" class="col-sm-6 control-label">Show warning if not question not attempted</label>
+                                    <label for="warning_on_change" class="col-sm-6 control-label">Show warning if not question not attempted</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[warning_on_change]" value="true"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === true) { echo ' checked'; }; ?>> True
                                         <input type="radio" name="navigation[warning_on_change]" value="false"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === false) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="skip_submit_confirmation" class="col-sm-6 control-label">Skip confirmation window on submit</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[skip_submit_confirmation]" value="true"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[skip_submit_confirmation]" value="false"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                             </div>
