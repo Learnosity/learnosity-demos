@@ -136,7 +136,10 @@ $signedRequest = '{
                 var responses = app.getResponses();
                 $.each(responses, function (responseId, response) {
                     // Update latex in the code block to the right of the question.
-                    $('#' + responseId).closest('.question').find('.formula-latex code').text(response.value);
+                    var codeEl = $('#' + responseId).closest('.question').find('.formula-latex code');
+                    if (codeEl.text() !== response.value) {
+                        codeEl.text(response.value);
+                    }
                 });
             }, 250);
         }
@@ -148,7 +151,7 @@ $signedRequest = '{
 
 <p>1. Basic question</p>
 <div class="question">
-    <div class="pull-right formula-latex"><h4>LaTeX output</h4><code></code></div>
+    <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
     <span class="learnosity-response question-demoformula1_<?php echo $uniqueResponseIdSuffix ?>"></span>
 </div>
 <hr />
@@ -157,21 +160,21 @@ $signedRequest = '{
 <small>e.g. <strong>2x - x</strong></small>
 </p>
 <div class="question">
-    <div class="pull-right formula-latex"><h4>LaTeX output</h4><code></code></div>
+    <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
     <span class="learnosity-response question-demoformula2_<?php echo $uniqueResponseIdSuffix ?>"></span>
 </div>
 <hr />
 
 <p>3. Response positions: enter the symbol to complete the quadratic equation.</p>
 <div class="question">
-    <div class="pull-right formula-latex"><h4>LaTeX output</h4><code></code></div>
+    <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
     <span class="learnosity-response question-demoformula3_<?php echo $uniqueResponseIdSuffix ?>"></span>
 </div>
 <hr />
 
 <p>3. Custom toolbar buttons</p>
 <div class="question">
-    <div class="pull-right formula-latex"><h4>LaTeX output</h4><code></code></div>
+    <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
     <span class="learnosity-response question-demoformula4_<?php echo $uniqueResponseIdSuffix ?>"></span>
 </div>
 <hr />
