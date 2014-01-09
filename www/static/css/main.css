@@ -170,12 +170,20 @@ td {
 * Questions API
 *
 ********************************************************************/
+.formula-latex {
+  float: right;
+  position: relative;
+  z-index: 10;
+}
 .formula-latex code {
   padding: 5px;
   font-size: 1.2em;
+  float: right;
+  clear: right;
 }
 .formula-latex h4 {
   text-align: right;
+  float: right;
 }
 
 /********************************************************************
