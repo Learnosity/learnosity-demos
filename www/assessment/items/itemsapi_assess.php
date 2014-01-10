@@ -27,7 +27,7 @@ $request = array(
         'navigation' => array(
             'scroll_to_top'            => false,
             'scroll_to_test'           => false,
-            'show_intro'               => false,
+            'show_intro'               => true,
             'show_outro'               => false,
             'show_next'                => true,
             'show_prev'                => true,
@@ -129,7 +129,7 @@ $signedRequest = $RequestHelper->generateRequest();
 
 <!-- Container for the items api to load into -->
 <span id="learnosity_assess"></span>
-<script src="http://items.learnosity.com"></script>
+<script src="http://items.vg.learnosity.com?latest"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
     LearnosityItems.init(activity);
