@@ -196,6 +196,7 @@
                                             <option value="main"<?php if (isset($con['ui_style']) && $con['ui_style'] === 'main') { echo ' selected'; }; ?>>Main</option>
                                             <option value="horizontal"<?php if (isset($con['ui_style']) && $con['ui_style'] === 'horizontal') { echo ' selected'; }; ?>>Horizontal</option>
                                             <option value="horizontal-fixed"<?php if (isset($con['ui_style']) && $con['ui_style'] === 'horizontal-fixed') { echo ' selected'; }; ?>>Horizontal Fixed</option>
+                                            <option value="top"<?php if (isset($con['ui_style']) && $con['ui_style'] === 'top') { echo ' selected'; }; ?>>Top</option>
                                         </select>
                                     </div>
                                 </div>
