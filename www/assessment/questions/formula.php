@@ -123,7 +123,7 @@ $signedRequest = '{
     </div>
 </div>
 
-<script src="http://questions.learnosity.com"></script>
+<script src="//questions.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
 

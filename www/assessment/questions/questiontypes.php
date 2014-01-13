@@ -198,7 +198,7 @@ $signedRequest = '{
         "response_id": "demo11-'.$uniqueResponseIdSuffix.'",
         "type": "highlight",
         "description": "The student needs to mark one of the flower\'s anthers in the image.",
-        "img_src": "http://www.staging.learnosity.com/static/img/flower.jpg",
+        "img_src": "//www.learnosity.com/static/img/flower.jpg",
         "line_color": "rgb(255, 20, 0)",
         "line_width": "4"
     },
@@ -206,7 +206,7 @@ $signedRequest = '{
         "response_id": "demo12-'.$uniqueResponseIdSuffix.'",
         "type": "imageclozetext",
         "description": "The student needs to fill in the blanks",
-        "img_src": "http://www.staging.learnosity.com/static/img/Blank_US_Map.png",
+        "img_src": "//www.learnosity.com/static/img/Blank_US_Map.png",
         "response_positions": [{
             "x": 0.14,
             "y": 48
@@ -235,7 +235,7 @@ $signedRequest = '{
     {
         "response_id": "demo13-'.$uniqueResponseIdSuffix.'",
         "type": "imageclozedropdown",
-        "img_src": "http://www.staging.learnosity.com/static/img/Blank_US_Map.png",
+        "img_src": "//www.learnosity.com/static/img/Blank_US_Map.png",
         "instant_feedback": true,
         "possible_responses": [
             ["Montana", "Alabama", "California", "Louisiana"],
@@ -270,7 +270,7 @@ $signedRequest = '{
     {
         "response_id": "demo14-'.$uniqueResponseIdSuffix.'",
         "type": "imageclozeassociation",
-        "img_src": "http://www.staging.learnosity.com/static/img/World_Map_AU_US_BR_RU.png",
+        "img_src": "//www.learnosity.com/static/img/World_Map_AU_US_BR_RU.png",
         "possible_responses": ["<span style=\"font-size:20px;padding:5px;\">♂</span> Male", "<span style=\"font-size:20px;padding:5px;\">♀</span> Female"],
         "response_positions": [{
             "x": 61.02,
@@ -329,10 +329,10 @@ $signedRequest = '{
         "type": "orderlist",
         "description": "In this question, the student needs to order the albums, chronologically earliest to latest.",
         "list": [
-           "<div class=\"album\"><img src=\"http://www.staging.learnosity.com/static/img/beatles_sgt.-peppers-lonely-hearts-club-band.jpg\"><span class=\"caption\"> Sgt. Pepper\'s Lonely Hearts Club Band</span></div>",
-           "<div class=\"album\"><img src=\"http://www.staging.learnosity.com/static/img/beatles_abbey-road.jpg\"><span class=\"caption\"> Abbey Road</span></div>",
-           "<div class=\"album\"><img src=\"http://www.staging.learnosity.com/static/img/beatles_a-hard-days-night.jpg\"><span class=\"caption\"> A Hard Day\'s Night</span></div>",
-           "<div class=\"album\"><img src=\"http://www.staging.learnosity.com/static/img/beatles_the-beatles.jpg\"><span class=\"caption\"> The Beatles</span></div>",
+           "<div class=\"album\"><img src=\"//www.learnosity.com/static/img/beatles_sgt.-peppers-lonely-hearts-club-band.jpg\"><span class=\"caption\"> Sgt. Pepper\'s Lonely Hearts Club Band</span></div>",
+           "<div class=\"album\"><img src=\"//www.learnosity.com/static/img/beatles_abbey-road.jpg\"><span class=\"caption\"> Abbey Road</span></div>",
+           "<div class=\"album\"><img src=\"//www.learnosity.com/static/img/beatles_a-hard-days-night.jpg\"><span class=\"caption\"> A Hard Day\'s Night</span></div>",
+           "<div class=\"album\"><img src=\"//www.learnosity.com/static/img/beatles_the-beatles.jpg\"><span class=\"caption\"> The Beatles</span></div>",
          ],
         "ui_style": "button",
         "instant_feedback": true,
@@ -422,9 +422,9 @@ $signedRequest = '{
             "row_min_height": "100px"
         },
         "possible_responses": [
-            "<img src=\"http://www.staging.learnosity.com/static/img/triangle1.png\" />",
-            "<img src=\"http://www.staging.learnosity.com/static/img/triangle2.png\" />",
-            "<img src=\"http://www.staging.learnosity.com/static/img/triangle3.png\" />"
+            "<img src=\"//www.learnosity.com/static/img/triangle1.png\" />",
+            "<img src=\"//www.learnosity.com/static/img/triangle2.png\" />",
+            "<img src=\"//www.learnosity.com/static/img/triangle3.png\" />"
         ],
         "validation": {
             "valid_responses": [
@@ -575,7 +575,7 @@ $signedRequest = '{
 </div>
 
 <!-- Container for the questions api to load into -->
-<script src="http://questions.learnosity.com"></script>
+<script src="//questions.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
     LearnosityApp.init(activity);

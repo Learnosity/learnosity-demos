@@ -45,7 +45,7 @@ include_once '../../../src/includes/header.php';
 
 <!-- Container for the question editor api to load into -->
 <span class="learnosity-response-editor"></span>
-<script src="http://questioneditor.learnosity.com/"></script>
+<script src="//questioneditor.learnosity.com"></script>
 <script>
     /********************************************************************
     *
@@ -159,7 +159,7 @@ include_once '../../../src/includes/header.php';
                     question_types: {
                         imageclozeassociation: {
                             defaults: {
-                                img_src: "http://upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
+                                img_src: "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
                                 possible_responses: ["North Sydney", "Harbour Bridge", "The Rocks", "Darling Harbour"],
                                 response_positions: [
                                     {
@@ -224,7 +224,7 @@ include_once '../../../src/includes/header.php';
                     question_types : ["imageclozeassociation"],
                     widget_json: {
                         "type": "imageclozeassociation",
-                        "img_src": "http://www.learnosity.com/static/img/Blank_US_Map.png",
+                        "img_src": "//www.learnosity.com/static/img/Blank_US_Map.png",
                         "possible_responses": ["Oregon", "California", "Texas", "Florida"],
                         "response_positions": [
                             {
@@ -307,7 +307,7 @@ include_once '../../../src/includes/header.php';
                         questionsApiVersion: "v2"
                     },
                     widget_json: {
-                        "src": "http://www.youtube.com/watch?feature=player_detailpage&amp;v=flL7M36QszA",
+                        "src": "//www.youtube.com/watch?feature=player_detailpage&amp;v=flL7M36QszA",
                         "type": "videoplayer"
                     },
                     widget_type: 'feature'

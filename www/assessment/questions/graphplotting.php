@@ -144,7 +144,7 @@ $signedRequest = '{
 </div>
 
 <!-- Container for the questions api to load into -->
-<script src="http://questions.learnosity.com"></script>
+<script src="//questions.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
     LearnosityApp.init(activity);

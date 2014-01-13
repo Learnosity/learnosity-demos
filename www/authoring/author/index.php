@@ -152,8 +152,8 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
 *
 ********************************************************************
 -->
-<script src="http://authorapi.learnosity.com/"></script>
-<script src="http://items.learnosity.com/"></script>
+<script src="//authorapi.learnosity.com/"></script>
+<script src="//items.learnosity.com/"></script>
 <script>
     var config = <?php echo $signedRequest; ?>,
         hook;

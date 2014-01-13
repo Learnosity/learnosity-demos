@@ -19,7 +19,7 @@ include_once '../../../src/includes/header.php';
 </div>
 
 <!-- Container for the questions api to load into -->
-<script src="http://questions.learnosity.com"></script>
+<script src="//questions.learnosity.com"></script>
 <script>
     LearnosityApp.init();
 </script>
@@ -30,18 +30,18 @@ include_once '../../../src/includes/header.php';
 <section>
     <h3 id="audioplayer">Audio Player</h3>
     <h4>Example</h4>
-    <span class="learnosity-feature" data-type="audioplayer" data-src="http://assets.learnosity.com/demos/docs/audiofeaturedemo.mp3" data-waveform="http://assets.learnosity.com/demos/docs/waveform.png"></span>
+    <span class="learnosity-feature" data-type="audioplayer" data-src="//dw6y82u65ww8h.cloudfront.net/demos/docs/audiofeaturedemo.mp3" data-waveform="//dw6y82u65ww8h.cloudfront.net/demos/docs/waveform.png"></span>
     <br />
-    <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="audioplayer" data-src="audio-source.mp3" data-waveform="http://assets.learnosity.com/demos/docs/waveform.png"&gt;&lt;/span&gt;</pre>
+    <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="audioplayer" data-src="audio-source.mp3" data-waveform="//dw6y82u65ww8h.cloudfront.net/demos/docs/waveform.png"&gt;&lt;/span&gt;</pre>
     <hr />
 </section>
 
 <section>
     <h3 id="videoplayer">Video Player</h3>
     <h4>Example (with embedded youtube video)</h4>
-    <span class="learnosity-feature" data-type="videoplayer" data-src="http://www.youtube.com/watch?feature=player_detailpage&v=flL7M36QszA"></span>
+    <span class="learnosity-feature" data-type="videoplayer" data-src="//www.youtube.com/watch?feature=player_detailpage&v=flL7M36QszA"></span>
     <br />
-    <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="videoplayer" data-src="http://www.youtube.com/watch?feature=player_detailpage&v=flL7M36QszA"&gt;&lt;/span&gt;</pre>
+    <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="videoplayer" data-src="//www.youtube.com/watch?feature=player_detailpage&v=flL7M36QszA"&gt;&lt;/span&gt;</pre>
     <hr />
 </section>
 
@@ -62,7 +62,7 @@ include_once '../../../src/includes/header.php';
     <h3 id="imagetool">Image Tool</h3>
     <h4>Example (Protractor)</h4>
     <span class="learnosity-feature" data-type="imagetool" data-image="protractor"></span>
-    <pre style="margin-top:185px" class="feature htmlexample">&lt;span class="learnosity-feature" data-type="imagetool" data-image="protractor"&gt;&lt;/span&gt;</pre>
+    <pre style="margin-top:220px" class="feature htmlexample">&lt;span class="learnosity-feature" data-type="imagetool" data-image="protractor"&gt;&lt;/span&gt;</pre>
     <br/><h4>Example (Ruler 6 inches)</h4>
     <span class="learnosity-feature" data-type="imagetool" data-image="ruler-6-inches"></span>
     <pre style="margin-top: 70px" class="feature htmlexample">&lt;span class="learnosity-feature" data-type="imagetool" data-image="ruler-6-inches"&gt;&lt;/span&gt;</pre>

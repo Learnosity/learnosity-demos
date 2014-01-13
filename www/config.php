@@ -13,4 +13,5 @@ $schoolid  = 'demo_school';
 // Generate timestamp in format YYYYMMDD-HHMM for use in signature
 $timestamp = gmdate('Ymd-Hi');
 $domain    = $_SERVER['SERVER_NAME']; // Tested on "localhost"
-$thispage  = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$thispage  = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$protocol  = ($_SERVER['SERVER_PORT'] === '443') ? 'https://' : 'http://';

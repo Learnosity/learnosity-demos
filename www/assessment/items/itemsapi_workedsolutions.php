@@ -41,8 +41,7 @@ $signedRequest = $RequestHelper->generateRequest();
 ?>
 
 <!-- Container for the items api to load into -->
-<script src="http://items.learnosity.com/"></script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//items.learnosity.com/"></script>
 <script>
     var options = {
             readyListener: initApp
@@ -64,7 +63,7 @@ $signedRequest = $RequestHelper->generateRequest();
         // for that question
         for (var i = 0; i < question_ids.length; i++) {
             var id = question_ids[i];
-            var btnHint = '<p style="padding: 11px;"><button type="button" class="btn btn-default btn-sm ' + id + '" onclick="renderHint(\'' + id + '\')">Hint</button></p>';
+            var btnHint = '<p><button type="button" class="btn btn-default btn-sm ' + id + '" onclick="renderHint(\'' + id + '\')">Hint</button></p>';
             $('#'+id).closest('div.row').append(btnHint);
         }
     }
