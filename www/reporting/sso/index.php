@@ -20,7 +20,7 @@ $student_json = '{
         "lastname": "Student"
     },
     "return_link" : {
-        "url": "'.$thispage.'",
+        "url": "'.$protocol . $thispage.'",
         "label": "Back to Demos"
     }
 }';
@@ -46,7 +46,7 @@ $teacher_json = '{
         {"id":"'.$studentid.'","class_ids":["1244"],"firstname":"Demo","lastname":"Student"}
     ],
     "return_link" : {
-        "url": "'.$thispage.'",
+        "url": "'.$protocol . $thispage.'",
         "label": "Back to Demos"
     }
 }';
@@ -72,7 +72,7 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, true), $con
     </div>
 </div>
 
-<script src="http://sso.learnosity.com"></script>
+<script src="//sso.learnosity.com"></script>
 <script>
 // Create json objects from $student_json and $teacher_json
 var studentSignon = <?php echo Json::encode($studentSSO); ?>;

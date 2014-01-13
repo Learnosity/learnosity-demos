@@ -39,7 +39,7 @@ $signedRequest = $RequestHelper->generateRequest();
 ?>
 
 <!-- Container for the items api to load into -->
-<script src="http://items.learnosity.com/"></script>
+<script src="//items.learnosity.com/"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
     LearnosityItems.init(activity);

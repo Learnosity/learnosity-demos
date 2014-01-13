@@ -204,7 +204,7 @@ $signedRequest = $RequestHelper->generateRequest();
     </div>
 </div>
 
-<script src="http://reports.learnosity.com"></script>
+<script src="//reports.learnosity.com"></script>
 <script src="/static/vendor/head.min.js"></script>
 <script src="/static/vendor/reveal/reveal.js"></script>
 <script>

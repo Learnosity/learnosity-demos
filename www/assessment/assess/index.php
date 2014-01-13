@@ -116,7 +116,7 @@ $signedRequest = '{
                 "response_id": "demoscience2'.$uniqueResponseIdSuffix.'",
                 "type": "imageclozedropdown",
                 "description" : "The student needs to choose the correct response for each blank ",
-                "img_src" : "http://docs.learnosity.com/static/images/clozeskeleton.jpg",
+                "img_src" : "//docs.learnosity.com/static/images/clozeskeleton.jpg",
                 "response_positions" : [ {"x":"5","y":"5.5"}, {"x":"0","y":"24.5"}, {"x":"75","y":"27.5"}, {"x":"78","y":"39"}, {"x":"78","y":"43"}, {"x":"0","y":"36"}, {"x":"0","y":"41.5"}, {"x":"0","y":"56"}, {"x":"0","y":"65.5"}, {"x":"74","y":"73.2"}, {"x":"74","y":"78"} ],
                 "possible_responses" : [[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"],[ "femur", "fibula", "humerus", "patella", "pelvis", "radius", "ribs", "skull", "tibia", "ulna", "vertebrae"]],
                 "valid_responses" : [
@@ -175,7 +175,7 @@ $signedRequest = '{
 
 <!-- Container for the assess api to load into -->
 <span id="learnosity_assess"></span>
-<script src="http://assess.learnosity.com"></script>
+<script src="//assess.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
     LearnosityAssess.init(activity, "learnosity_assess");
