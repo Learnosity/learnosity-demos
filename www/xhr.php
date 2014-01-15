@@ -15,8 +15,8 @@
 */
 
 include_once 'config.php';
-include_once '../src/utils/RequestHelper.php';
-include_once '../src/utils/uuid.php';
+include_once 'utils/RequestHelper.php';
+include_once 'utils/uuid.php';
 
 $security = array(
     "consumer_key" => $consumer_key,
@@ -44,7 +44,8 @@ switch ($sign_type) {
             "items"          => $_POST['item_references'],
             "type"           => "submit_practice",
             "config"         => array(
-                "renderSubmitButton" => false
+                "renderSubmitButton" => false,
+                "questionsApiVersion" => "v2"
             )
         );
         break;
@@ -62,7 +63,7 @@ if (!is_null($service)) {
     );
     $output = $RequestHelper->generateRequest();
     if ($show_modal) {
-        include_once '../src/views/modals/' . $sign_type . '.php';
+        include_once 'views/modals/' . $sign_type . '.php';
     } else {
         echo $output;
     }

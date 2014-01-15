@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <title>Learnosity API Demos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/static/vendor/reveal/reveal.css">
-    <link rel="stylesheet" href="/static/vendor/codemirror/codemirror.css">
-    <link rel="stylesheet" href="/static/css/main.css">
-    <script src="/static/vendor/jquery/jquery-1.10.2.min.js"></script>
-    <script src="/static/js/main.js"></script>
+    <link rel="shortcut icon" href="<?php echo $env['www'] ?>static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/reveal/reveal.css">
+    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/codemirror/codemirror.css">
+    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/css/main.css">
+    <script src="<?php echo $env['www'] ?>static/vendor/jquery/jquery-1.10.2.min.js"></script>
+    <script src="<?php echo $env['www'] ?>static/js/main.js"></script>
 </head>
 <body>
 <!-- Google Tag Manager -->

@@ -1,20 +1,20 @@
 <?php
     $pages = array(
         'Assessment' => array(
-            '/assessment/questions/index.php' => 'Questions API',
-            '/assessment/items/index.php' => 'Items API',
-            '/assessment/assess/index.php'    => 'Assess API'
+            'assessment/questions/index.php' => 'Questions API',
+            'assessment/items/index.php'     => 'Items API',
+            'assessment/assess/index.php'    => 'Assess API'
         ),
         'Authoring' => array(
-            '/authoring/author/index.php'         => 'Author API',
-            '/authoring/questioneditor/index.php' => 'Question Editor API'
+            'authoring/author/index.php'         => 'Author API',
+            'authoring/questioneditor/index.php' => 'Question Editor API'
         ),
         'Reporting' => array(
-            '/reporting/reports/index.php' => 'Reports API',
-            '/reporting/sso/index.php'     => 'Single Sign On API'
+            'reporting/reports/index.php' => 'Reports API',
+            'reporting/sso/index.php'     => 'Single Sign On API'
         ),
         'Misc' => array(
-            '/misc/security_check.php' => 'Security Check'
+            'misc/security_check.php' => 'Security Check'
         )
     );
 ?>
@@ -22,20 +22,19 @@
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand logo" href="/">Learnosity Demos</a>
+            <a class="navbar-brand logo" href="<?php echo $env['www'] ?>">Learnosity Demos</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <?php
-                    $currentPage = explode("/", $_SERVER['REQUEST_URI'])[1];
                     foreach ($pages as $page => $name) {
-                        $active = strcasecmp($currentPage, $page) ? '' : ' active';
+                        $active = strcasecmp($env['section'], $page) ? '' : ' active';
                         echo '
                         <li class="dropdown' . $active . '">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $page . ' <b class="caret"></b></a>
                             <ul class="dropdown-menu">';
                             foreach ($name as $subpage => $subname) {
-                                echo '<li><a href="' . $subpage . '">' . $subname . '</a></li>' . PHP_EOL;
+                                echo '<li><a href="' . $env['www'] . $subpage . '">' . $subname . '</a></li>' . PHP_EOL;
                             }
                         echo '
                             </ul>

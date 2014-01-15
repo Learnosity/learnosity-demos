@@ -7,8 +7,8 @@
 -->
 <?php
     // Shortcuts for convenience
-    $con = $request['config'];
-    $nav = $request['config']['navigation'];
+    $con  = $request['config'];
+    $nav  = $request['config']['navigation'];
     $time = $request['config']['time'];
 ?>
 <div class="modal fade" id="settings">

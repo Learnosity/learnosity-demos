@@ -1,9 +1,9 @@
 <?php
 
 include_once '../../config.php';
-include_once '../../../src/utils/uuid.php';
-include_once '../../../src/utils/RequestHelper.php';
-include_once '../../../src/includes/header.php';
+include_once 'utils/uuid.php';
+include_once 'utils/RequestHelper.php';
+include_once 'includes/header.php';
 
 $security = array(
     "consumer_key" => $consumer_key,
@@ -101,8 +101,8 @@ $signedRequest = '{
             {"value": "Rudy Giuliani", "score":0.1},
             {"value": "Giuliani", "score":0.1}
         ],
-        "instant_feedback": true,
-        "case_sensitive": true
+        "case_sensitive": false,
+        "instant_feedback": true
     },
     {
         "response_id": "demo4-'.$uniqueResponseIdSuffix.'",
@@ -132,7 +132,7 @@ $signedRequest = '{
         "response_id": "demo7-'.$uniqueResponseIdSuffix.'",
         "type": "clozetext",
         "description" : "The student needs to fill in the blanks ",
-        "template" : "<table><thead><tr><th><strong>Multiply</strong></th><th><strong>_ x 1</strong></th><th><strong>_ x 2</strong></th><th><strong>_ x 3</strong></th><th><strong>_ x 4</strong></th><th><strong>_ x 5</strong></th></tr></thead><tbody><tr><td><strong>1 x _</strong></td><td>{{response}}</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td><strong>2 x _</strong></td><td>2</td><td>{{response}}</td><td>6</td><td>8</td><td>10</td></tr><tr><td><strong>3 x _</strong></td><td>3</td><td>6</td><td>{{response}}</td><td>12</td><td>15</td></tr><tr><td><strong>4 x _</strong></td><td>4</td><td>8</td><td>12</td><td>{{response}}</td><td>20</td></tr><tr><td><strong>5 x _</strong></td><td>5</td><td>10</td><td>15</td><td>20</td><td>{{response}}</td></tr></tbody></table>",
+        "template" : "<table class=\"table table-bordered\"><thead><tr><th><strong>Multiply</strong></th><th><strong>_ x 1</strong></th><th><strong>_ x 2</strong></th><th><strong>_ x 3</strong></th><th><strong>_ x 4</strong></th><th><strong>_ x 5</strong></th></tr></thead><tbody><tr><td><strong>1 x _</strong></td><td>{{response}}</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td><strong>2 x _</strong></td><td>2</td><td>{{response}}</td><td>6</td><td>8</td><td>10</td></tr><tr><td><strong>3 x _</strong></td><td>3</td><td>6</td><td>{{response}}</td><td>12</td><td>15</td></tr><tr><td><strong>4 x _</strong></td><td>4</td><td>8</td><td>12</td><td>{{response}}</td><td>20</td></tr><tr><td><strong>5 x _</strong></td><td>5</td><td>10</td><td>15</td><td>20</td><td>{{response}}</td></tr></tbody></table>",
         "instant_feedback" : true,
         "case_sensitive" : false,
         "max_length" : 2,
@@ -218,7 +218,7 @@ $signedRequest = '{
             "y": 84.58
         }],
         "instant_feedback": true,
-        "case_sensitive": true,
+        "case_sensitive": false,
         "max_length": 10,
         "valid_responses": [
             [{
@@ -288,7 +288,7 @@ $signedRequest = '{
         "instant_feedback": true,
         "valid_responses": [
             [{
-                "value": "<span style=\"font-size:20px;padding:5px;\">♀</span> Female",
+                "value": "<span style=\"font-size:20px;padding:5px;\">♂</span> Male",
                 "score": 1
             }],
             [{
@@ -840,5 +840,5 @@ $signedRequest = '{
 </div>
 
 <?php
-    include_once '../../../src/views/modals/initialisation-preview.php';
-    include_once '../../../src/includes/footer.php';
+    include_once 'views/modals/initialisation-preview.php';
+    include_once 'includes/footer.php';

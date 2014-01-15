@@ -1,4 +1,7 @@
-<?php include_once '../src/includes/header.php'; ?>
+<?php
+include_once 'config.php';
+include_once 'includes/header.php';
+?>
 
 <div class="jumbotron">
     <h1>Learnosity API Demos</h1>
@@ -24,9 +27,9 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="/assessment/questions/index.php">Questions API</a></li>
-                        <li><a href="/assessment/items/index.php">Items API</a></li>
-                        <li><a href="/assessment/assess/index.php">Assess API</a></li>
+                        <li><a href="<?php echo $env['www'] ?>assessment/questions/index.php">Questions API</a></li>
+                        <li><a href="<?php echo $env['www'] ?>assessment/items/index.php">Items API</a></li>
+                        <li><a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,8 +41,8 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="/authoring/author/index.php">Author API</a></li>
-                        <li><a href="/authoring/questioneditor/index.php">Question Editor API</a></li>
+                        <li><a href="<?php echo $env['www'] ?>authoring/author/index.php">Author API</a></li>
+                        <li><a href="<?php echo $env['www'] ?>authoring/questioneditor/index.php">Question Editor API</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,8 +54,8 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="/reporting/reports/index.php">Reports API</a></li>
-                        <li><a href="/reporting/sso/index.php">Single Sign On API</a></li>
+                        <li><a href="<?php echo $env['www'] ?>reporting/reports/index.php">Reports API</a></li>
+                        <li><a href="<?php echo $env['www'] ?>reporting/sso/index.php">Single Sign On API</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,4 +63,4 @@
     </div>
 </div>
 
-<?php include_once '../src/includes/footer.php';
+<?php include_once 'includes/footer.php';
