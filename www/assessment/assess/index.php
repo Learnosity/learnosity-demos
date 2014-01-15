@@ -1,8 +1,8 @@
 <?php
 
 include_once '../../config.php';
-include_once '../../../src/utils/uuid.php';
-include_once '../../../src/includes/header.php';
+include_once 'utils/uuid.php';
+include_once 'includes/header.php';
 
 $uniqueResponseIdSuffix = UUID::generateUuid();
 
@@ -79,7 +79,7 @@ $signedRequest = '{
                     "description": "The student needs to complete the conversion table.",
                     "max_length": 6,
                     "case_sensitive": false,
-                    "template": "<table><thead><tr><th><strong>cm</strong></th><th><strong>mm</strong></th><th><strong>&#181;m</strong></th></thead><tbody><tr><td>0.03</td><td>0.3</td><td>300</td></tr><tr><td>0.7</td><td>{{response}}</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>2</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>45</td></tr><tr><td>0.03</td><td>{{response}}</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>130</td></tr><tr><td>{{response}}</td><td>0.04</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>78</td></tr></tbody></table>",
+                    "template": "<table class=\"table table-bordered\"><thead><tr><th><strong>cm</strong></th><th><strong>mm</strong></th><th><strong>&#181;m</strong></th></thead><tbody><tr><td>0.03</td><td>0.3</td><td>300</td></tr><tr><td>0.7</td><td>{{response}}</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>2</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>45</td></tr><tr><td>0.03</td><td>{{response}}</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>130</td></tr><tr><td>{{response}}</td><td>0.04</td><td>{{response}}</td></tr><tr><td>{{response}}</td><td>{{response}}</td><td>78</td></tr></tbody></table>",
                     "valid_responses" : [
                         [
                             {"value" : "7"}
@@ -148,8 +148,8 @@ $signedRequest = '{
         ]
     },
     "configuration": {
-        "onsave_redirect_url": "' . $thispage . '",
-        "onsubmit_redirect_url": "' . $thispage . '",
+        "onsave_redirect_url": "' . $env['page'] . '",
+        "onsubmit_redirect_url": "' . $env['page'] . '",
         "questionsApiVersion": "v2"
     },
     "type": "activity"
@@ -169,7 +169,7 @@ $signedRequest = '{
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="../../authoring/author/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-4"> <p class='text-right'><a class="btn btn-primary btn-lg" href="<?php echo $env['www'] ?>authoring/author/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -182,5 +182,5 @@ $signedRequest = '{
 </script>
 
 <?php
-    include_once '../../../src/views/modals/initialisation-preview.php';
-    include_once '../../../src/includes/footer.php';
+    include_once 'views/modals/initialisation-preview.php';
+    include_once 'includes/footer.php';

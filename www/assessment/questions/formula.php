@@ -1,9 +1,9 @@
 <?php
 
 include_once '../../config.php';
-include_once '../../../src/utils/uuid.php';
-include_once '../../../src/utils/RequestHelper.php';
-include_once '../../../src/includes/header.php';
+include_once 'utils/uuid.php';
+include_once 'utils/RequestHelper.php';
+include_once 'includes/header.php';
 
 $security = array(
     "consumer_key" => $consumer_key,
@@ -180,5 +180,5 @@ $signedRequest = '{
 <hr />
 
 <?php
-    include_once '../../../src/views/modals/initialisation-preview.php';
-    include_once '../../../src/includes/footer.php';
+    include_once 'views/modals/initialisation-preview.php';
+    include_once 'includes/footer.php';

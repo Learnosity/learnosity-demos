@@ -1,8 +1,8 @@
 <?php
 
 include_once '../../config.php';
-include_once '../../../src/utils/RequestHelper.php';
-include_once '../../../src/includes/header.php';
+include_once 'utils/RequestHelper.php';
+include_once 'includes/header.php';
 
 $security = array(
     "consumer_key" => $consumer_key,
@@ -91,7 +91,7 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
 *
 ********************************************************************
 -->
-<script src="/static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
+<script src="<?php echo $env['www'] ?>static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
 <script>
     var editor = ace.edit('editor');
     editor.setTheme('ace/theme/clouds');
@@ -194,5 +194,5 @@ vulputate bibendum erat, vitae ultricies kneque.</p>
 </script>
 
 <?php
-    include_once '../../../src/views/modals/initialisation-preview.php';
-    include_once '../../../src/includes/footer.php';
+    include_once 'views/modals/initialisation-preview.php';
+    include_once 'includes/footer.php';

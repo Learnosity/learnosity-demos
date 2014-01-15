@@ -1,7 +1,6 @@
 <?php
-
-include_once '../../../src/includes/header.php';
-
+include_once '../../config.php';
+include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron">
@@ -68,9 +67,9 @@ include_once '../../../src/includes/header.php';
     <pre style="margin-top: 70px" class="feature htmlexample">&lt;span class="learnosity-feature" data-type="imagetool" data-image="ruler-6-inches"&gt;&lt;/span&gt;</pre>
 </section>
 
-<script src="/static/js/codemirror.min.js"></script>
-<script src="/static/js/underscore.min.js"></script>
-<script src="/static/js/initCodeMirror.js"></script>
+<script src="<?php echo $env['www'] ?>static/js/codemirror.min.js"></script>
+<script src="<?php echo $env['www'] ?>static/js/underscore.min.js"></script>
+<script src="<?php echo $env['www'] ?>static/js/initCodeMirror.js"></script>
 
 <?php
-    include_once '../../../src/includes/footer.php';
+    include_once 'includes/footer.php';

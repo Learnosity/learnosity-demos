@@ -1,6 +1,6 @@
 /*global $, require, jsSHA, window, LearnosityApp, _, CodeMirror, js_beautify */
 $(function () {
-    "use strict";
+    'use strict';
     var concatenated = "",
         activityTemplate = 'var activity={"consumer_key":"<%= act.consumer_key %>","timestamp":"<%= act.timestamp %>","signature":"<%= act.signature %>","user_id":"<%= act.user_id %>", ... };',
         defaults = {
@@ -10,18 +10,18 @@ $(function () {
             user_id: '12345678',
             consumer_secret: '457e0592c9a63b9d6cd39966c49db45c7ceee784'
         },
-        domain = "questions.learnosity.com",
+        domain = 'questions.learnosity.com',
         LearnosityApp = {},
         questionsApiComms;
 
     function initialiseQuestionsAPI() {
         LearnosityApp._internal = {};
         LearnosityApp._internal.config = {
-            apiHost: 'http://' + domain + "/latest"
+            apiHost: location.protocol + '//' + domain + '/latest'
         };
         window.LearnosityApp = LearnosityApp;
 
-        var apiModules = 'http://' + domain + '/latest/app/';
+        var apiModules = location.protocol + '//' + domain + '/latest/app/';
         require.config({
             baseUrl: apiModules,
             paths: {

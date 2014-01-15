@@ -1,9 +1,7 @@
 <?php
-
 include_once '../../config.php';
-include_once '../../../src/utils/RequestHelper.php';
-include_once '../../../src/includes/header.php';
-
+include_once 'utils/RequestHelper.php';
+include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron">
@@ -59,18 +57,18 @@ include_once '../../../src/includes/header.php';
                 description: 'Just the standard default editor with no defaults set or attributes disabled.',
                 json: {
                     configuration: {
-                        questionsApiVersion: "v2"
+                        questionsApiVersion: 'v2'
                     },
                     widgetType: 'response',
                     ui: {
                         columns: [
                             {
-                                tabs: ["edit", "advanced"],
-                                width: "50%"
+                                tabs: ['edit', 'advanced'],
+                                width: '50%'
                             },
                             {
-                                tabs: ["preview", "layout"],
-                                width: "50%"
+                                tabs: ['preview', 'layout'],
+                                width: '50%'
                             }
                         ],
                         fixedPreview: {
@@ -261,40 +259,40 @@ include_once '../../../src/includes/header.php';
                     + 'editor with an existing rating feedback type.',
                 json: {
                     configuration: {
-                        questionsApiVersion: "v2"
+                        questionsApiVersion: 'v2'
                     },
                     widget_json: {
-                        "options": [
+                        'options': [
                             {
-                                "value": "1",
-                                "label": "25%",
-                                "label_tooltip": "Unsatifactory",
-                                "tint": "red",
-                                "description": "Poor effort."
+                                'value': '1',
+                                'label': '25%',
+                                'label_tooltip': 'Unsatifactory',
+                                'tint': 'red',
+                                'description': 'Poor effort.'
                             },
                             {
-                                "value": "2",
-                                "label": "50%",
-                                "label_tooltip": "Average",
-                                "tint": "orange",
-                                "description": "You only just passed, more effort is required."
+                                'value': '2',
+                                'label': '50%',
+                                'label_tooltip': 'Average',
+                                'tint': 'orange',
+                                'description': 'You only just passed, more effort is required.'
                             },
                             {
-                                "value": "3",
-                                "label": "75%",
-                                "label_tooltip": "Credit",
-                                "tint": "blue",
-                                "description": "You responded well to all questions."
+                                'value': '3',
+                                'label': '75%',
+                                'label_tooltip': 'Credit',
+                                'tint': 'blue',
+                                'description': 'You responded well to all questions.'
                             },
                             {
-                                "value": "4",
-                                "label": "100%",
-                                "label_tooltip": "Perfect",
-                                "tint": "green",
-                                "description": "You answered everything correctly!"
+                                'value': '4',
+                                'label': '100%',
+                                'label_tooltip': 'Perfect',
+                                'tint': 'green',
+                                'description': 'You answered everything correctly!'
                             }
                         ],
-                        "type": "rating"
+                        'type': 'rating'
                     },
                     widget_type: 'feedback'
                 }
@@ -338,5 +336,5 @@ include_once '../../../src/includes/header.php';
 </script>
 
 <?php
-    include_once '../../../src/views/modals/asset-upload.php';
-    include_once '../../../src/includes/footer.php';
+    include_once 'views/modals/asset-upload.php';
+    include_once 'includes/footer.php';

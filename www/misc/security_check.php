@@ -1,4 +1,7 @@
-<?php include_once '../../src/includes/header.php'; ?>
+<?php
+include_once '../config.php';
+include_once 'includes/header.php';
+?>
 
 <div class="jumbotron">
     <h1>Security Check</h1>
@@ -140,7 +143,7 @@
     </fieldset>
 </form>
 
-<script src="/static/vendor/require/require.js"></script>
+<script src="<?php echo $env['www'] ?>static/vendor/require/require.js"></script>
 <script>
     var LearnosityAmd = {};
     LearnosityAmd.requirejs = requirejs;
@@ -148,10 +151,10 @@
     LearnosityAmd.define = define;
     var timestamp = '<?php echo gmdate('Ymd-Hi'); ?>';
 </script>
-<script src="/static/vendor/sha256.js"></script>
-<script src="/static/js/securityCheck.js"></script>
-<script src="/static/vendor/underscore.min.js"></script>
-<script src="/static/vendor/codemirror/codemirror.min.js"></script>
-<script src="/static/vendor/beautify.js"></script>
+<script src="<?php echo $env['www'] ?>static/vendor/sha256.js"></script>
+<script src="<?php echo $env['www'] ?>static/js/securityCheck.js"></script>
+<script src="<?php echo $env['www'] ?>static/vendor/underscore.min.js"></script>
+<script src="<?php echo $env['www'] ?>static/vendor/codemirror/codemirror.min.js"></script>
+<script src="<?php echo $env['www'] ?>static/vendor/beautify.js"></script>
 
-<?php include_once '../../src/includes/footer.php';
+<?php include_once 'includes/footer.php';

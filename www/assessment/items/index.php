@@ -1,7 +1,6 @@
 <?php
-
-include_once '../../../src/includes/header.php';
-
+include_once '../../config.php';
+include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron">
@@ -14,7 +13,7 @@ include_once '../../../src/includes/header.php';
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
         </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="../assess/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="<?php echo $env['www'] ?>assessment/assess/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -70,4 +69,4 @@ include_once '../../../src/includes/header.php';
     </div>
 </div>
 
-<?php include_once '../../../src/includes/footer.php';
+<?php include_once 'includes/footer.php';

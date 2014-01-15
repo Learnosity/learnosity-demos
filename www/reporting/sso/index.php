@@ -1,9 +1,9 @@
 <?php
 
 include_once '../../config.php';
-include_once '../../../src/utils/signature.php';
-include_once '../../../src/utils/Json.php';
-include_once '../../../src/includes/header.php';
+include_once 'utils/signature.php';
+include_once 'utils/Json.php';
+include_once 'includes/header.php';
 
 //Student SSO JSON Object: http://docs.learnosity.com/dashboards/sso/userjson.php
 $student_json = '{
@@ -20,7 +20,7 @@ $student_json = '{
         "lastname": "Student"
     },
     "return_link" : {
-        "url": "'.$protocol . $thispage.'",
+        "url": "'.$env['protocol'] . $env['page'].'",
         "label": "Back to Demos"
     }
 }';
@@ -46,7 +46,7 @@ $teacher_json = '{
         {"id":"'.$studentid.'","class_ids":["1244"],"firstname":"Demo","lastname":"Student"}
     ],
     "return_link" : {
-        "url": "'.$protocol . $thispage.'",
+        "url": "'.$env['protocol'] . $env['page'].'",
         "label": "Back to Demos"
     }
 }';
@@ -93,4 +93,4 @@ var teacherSignon = <?php echo Json::encode($teacherSSO); ?>;
     </div>
 </div>
 
-<?php include_once '../../../src/includes/footer.php';
+<?php include_once 'includes/footer.php';
