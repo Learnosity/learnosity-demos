@@ -22,7 +22,7 @@ $request = array(
     'user_id'        => $studentid,
     'items'          => array('ccore_video_260_classification', 'ccore_parcc_tecr_grade3'),
     'config'         => array(
-        'title'      => '',
+        'title'      => 'Sample Activity Title',
         'subtitle'   => 'Walter White',
         'navigation' => array(
             'scroll_to_top'            => false,
@@ -55,6 +55,7 @@ $request = array(
         'ui_style'            => 'main',
         'ignore_validation'   => false,
         'questionsApiVersion' => 'v2',
+        'assessApiVersion'    => 'v2',
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_assess.php',
             'onsave_redirect_url'   => 'itemsapi_assess.php',
@@ -62,7 +63,8 @@ $request = array(
                 'interval'       => 300,
                 'countdown_time' => 60
             ),
-            'stylesheet' => ''
+            'stylesheet' => '',
+            'fontsize'   => 'normal'
         )
     )
 );
