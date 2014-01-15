@@ -537,7 +537,6 @@ $signedRequest = '{
         "is_math": true,
         "response_id": "demo26-'.$uniqueResponseIdSuffix.'",
         "stimulus": "Find other equations that are equal to \\((x + 3)(x + 1)\\)",
-        "template": "{{response}}",
         "type": "formula",
         "validation": {
             "valid_responses": [
