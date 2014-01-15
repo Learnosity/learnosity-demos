@@ -226,7 +226,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="fontsize" class="col-sm-6 control-label">UI Style</label>
+                                    <label for="fontsize" class="col-sm-6 control-label">Font Size</label>
                                     <div class="col-sm-6">
                                         <select id="fontsize" name="configuration[fontsize]">
                                             <option value="small"<?php if (isset($con['configuration']['fontsize']) && $con['configuration']['fontsize'] === 'small') { echo ' selected'; }; ?>>Small</option>
