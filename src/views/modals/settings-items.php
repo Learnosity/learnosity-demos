@@ -225,6 +225,18 @@
                                         <p class="help-block pull-right">eg http://demos.learnosity.com/assessment/items/custom.css</p>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="fontsize" class="col-sm-6 control-label">UI Style</label>
+                                    <div class="col-sm-6">
+                                        <select id="fontsize" name="configuration[fontsize]">
+                                            <option value="small"<?php if (isset($con['configuration']['fontsize']) && $con['configuration']['fontsize'] === 'small') { echo ' selected'; }; ?>>Small</option>
+                                            <option value="normal"<?php if (isset($con['configuration']['fontsize']) && $con['configuration']['fontsize'] === 'normal') { echo ' selected'; }; ?>>Normal</option>
+                                            <option value="large"<?php if (isset($con['configuration']['fontsize']) && $con['configuration']['fontsize'] === 'large') { echo ' selected'; }; ?>>Large</option>
+                                            <option value="xlarge"<?php if (isset($con['configuration']['fontsize']) && $con['configuration']['fontsize'] === 'xlarge') { echo ' selected'; }; ?>>X Large</option>
+                                            <option value="xxlarge"<?php if (isset($con['configuration']['fontsize']) && $con['configuration']['fontsize'] === 'xxlarge') { echo ' selected'; }; ?>>XX Large</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
