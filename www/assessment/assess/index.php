@@ -13,11 +13,11 @@ $assessdomain = 'assess.learnosity.com';
 //Activity JSON:  http://docs.learnosity.com/api/activity.php
 $activitySignature = hash("sha256", $consumer_key . '_' . $assessdomain . '_' . $timestamp . '_' . $studentid . '_' . $consumer_secret);
 $signedRequest = '{
-    "sheets": [
+    "items": [
         {
             "content": "<p>1. Use your knowledge of conversions to complete the table below. To convert from centimetres to millimetres, multiply by 10. To convert millimetres to micrometres, multiply by 1000. To reverse each of these, divide by these factors of 10 and 1000. The first one has been done for you.</p><span class=\"learnosity-response question-demoscience1'.$uniqueResponseIdSuffix.'\"></span>",
             "response_ids": [
-                "question-demoscience1'.$uniqueResponseIdSuffix.'"
+                "demoscience1'.$uniqueResponseIdSuffix.'"
             ],
             "workflow": "",
             "reference": "question-demoscience1"
@@ -25,20 +25,20 @@ $signedRequest = '{
        {
             "content": "<p>2. Identify the different bones of the human skeleton.</p><span class=\"learnosity-response question-demoscience2'.$uniqueResponseIdSuffix.'\"></span>",
             "response_ids": [
-                "question-demoscience2'.$uniqueResponseIdSuffix.'"
+                "demoscience2'.$uniqueResponseIdSuffix.'"
             ],
             "workflow": "",
             "reference": "question-demoscience2"
         }
     ],
     "time": {
-        "max_time": 0,
+        "max_time": 600,
         "limit_type": "soft",
         "show_pause": true,
         "warning_time": 60,
         "show_time": true
     },
-    "ui_style":"horizontal",
+    "ui_style": "main",
     "labelBundle": {
         "appName": "Assess Demo",
         "sheet": "Question"
@@ -57,7 +57,7 @@ $signedRequest = '{
         "outro_sheet": "",
         "show_outro": true,
         "toc": {
-            "show_sheetcount": true
+            "show_itemcount": true
         }
     },
     "name": "Demo (2 questions)",
@@ -151,8 +151,7 @@ $signedRequest = '{
         "onsave_redirect_url": "' . $env['page'] . '",
         "onsubmit_redirect_url": "' . $env['page'] . '",
         "questionsApiVersion": "v2"
-    },
-    "type": "activity"
+    }
 }';
 
 ?>
