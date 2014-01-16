@@ -35,89 +35,387 @@ $signedRequest = '{
     "course_id": "'.$courseid.'",
     "questions": [
         {
-            "response_id": "demograph_1-'.$uniqueResponseIdSuffix.'",
-            "type": "graphplotting",
-            "mode": "point",
             "axis_x": {
-                "ticks_distance": 1,
-                "draw_labels": false
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
             },
             "axis_y": {
-                "ticks_distance": 1,
-                "draw_labels": false
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
             },
+            "canvas": {
+                "snap_to": "grid",
+                "x_max": 6,
+                "x_min": -6,
+                "y_max": 5,
+                "y_min": -6
+            },
+            "description": "",
             "grid": {
                 "x_distance": 1,
                 "y_distance": 1
             },
-            "canvas": {
-                "snap_to": 0.5,
-                "x_min": -10,
-                "x_max": 10,
-                "y_min": -10,
-                "y_max": 10
-            },
-            "ui_style": {
-                "width": "500px",
-                "height": "500px"
-            },
-            "annotation": {
-                "title": "Graph Title",
-                "label_top": "Y Axis Label",
-                "label_bottom": "Y Axis Label",
-                "label_left": "X Axis Label",
-                "label_right": "X Axis Label"
+            "instant_feedback": true,
+            "mode": "point",
+            "response_id": "demograph_1-'.$uniqueResponseIdSuffix.'",
+            "type": "graphplotting",
+            "validation": {
+                "penalty_score": "0",
+                "valid_responses": [
+                    [{
+                        "id": "lrn_1",
+                        "type": "point",
+                        "coords": {
+                            "x": 5,
+                            "y": 2
+                        }
+                    }, {
+                        "id": "lrn_2",
+                        "type": "point",
+                        "coords": {
+                            "x": 3,
+                            "y": 0
+                        }
+                    }, {
+                        "id": "lrn_3",
+                        "type": "point",
+                        "coords": {
+                            "x": 2,
+                            "y": 4
+                        }
+                    }, {
+                        "id": "lrn_4",
+                        "type": "point",
+                        "coords": {
+                            "x": -1,
+                            "y": -5
+                        }
+                    }]
+                ],
+                "valid_score": "1"
             }
         },
         {
-            "response_id": "demograph_2-'.$uniqueResponseIdSuffix.'",
-            "type": "graphplotting",
-            "mode": "line",
             "axis_x": {
-                "ticks_distance": 1,
-                "draw_labels": true
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
             },
             "axis_y": {
-                "ticks_distance": 1,
-                "draw_labels": true
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
             },
+            "canvas": {
+                "snap_to": "grid",
+                "x_max": 10,
+                "x_min": -1,
+                "y_max": 10,
+                "y_min": -1
+            },
+            "description": "The student needs to plot the line \\( y = x + 1 \\)",
             "grid": {
                 "x_distance": 1,
                 "y_distance": 1
             },
-            "canvas": {
-                "snap_to": 0.5,
-                "x_min": -8,
-                "x_max": 8,
-                "y_min": -8,
-                "y_max": 8
-            },
+            "instant_feedback": true,
+            "is_math": true,
+            "mode": "line",
+            "response_id": "demograph_2-'.$uniqueResponseIdSuffix.'",
+            "type": "graphplotting",
+            "validation": {
+                "penalty_score": "0",
+                "valid_responses": [
+                    [{
+                        "id": "lrn_2",
+                        "type": "point",
+                        "coords": {
+                            "x": 0,
+                            "y": 1
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_1",
+                        "type": "point",
+                        "coords": {
+                            "x": 1,
+                            "y": 2
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_3",
+                        "type": "line",
+                        "subElementsIds": {
+                            "startPoint": "lrn_2",
+                            "endPoint": "lrn_1"
+                        }
+                    }]
+                ],
+                "valid_score": "1"
+            }
         },
         {
             "response_id": "demograph_3-'.$uniqueResponseIdSuffix.'",
-            "type": "graphplotting",
-            "mode": "all",
             "axis_x": {
-                "ticks_distance": 0.5,
-                "draw_labels": true
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
             },
             "axis_y": {
-                "ticks_distance": 0.5,
-                "draw_labels": true
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
+            },
+            "canvas": {
+                "snap_to": "grid",
+                "x_max": 10,
+                "x_min": -10,
+                "y_max": 10,
+                "y_min": -10
             },
             "grid": {
                 "x_distance": 1,
                 "y_distance": 1
             },
-            "canvas": {
-                "snap_to": "ticks",
-                "x_min": -5,
-                "x_max": 5,
-                "y_min": -5,
-                "y_max": 5
+            "instant_feedback": true,
+            "is_math": true,
+            "toolbar": {
+                "default_tool": "segment",
+                "tools": ["segment"]
             },
+            "type": "graphplotting",
+            "validation": {
+                "penalty_score": 0,
+                "valid_responses": [
+                    [{
+                        "id": "lrn_2",
+                        "type": "point",
+                        "coords": {
+                            "x": -5,
+                            "y": -9
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_1",
+                        "type": "point",
+                        "coords": {
+                            "x": 4,
+                            "y": 7
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_3",
+                        "type": "segment",
+                        "subElementsIds": {
+                            "startPoint": "lrn_2",
+                            "endPoint": "lrn_1"
+                        }
+                    }]
+                ],
+                "valid_score": 1
+            }
+        },
+        {
+            "axis_x": {
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
+            },
+            "axis_y": {
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 2
+            },
+            "canvas": {
+                "snap_to": "grid",
+                "x_max": 9,
+                "x_min": -3,
+                "y_max": 5,
+                "y_min": -4
+            },
+            "grid": {
+                "x_distance": 1,
+                "y_distance": 1
+            },
+            "instant_feedback": true,
+            "is_math": true,
+            "response_id": "demograph_4-'.$uniqueResponseIdSuffix.'",
+            "toolbar": {
+                "default_tool": "line",
+                "tools": [
+                    ["line", "ray", "segment", "vector"]
+                ]
+            },
+            "type": "graphplotting",
             "ui_style": {
-                "margin": "20px"
+                "height": "375px",
+                "width": "500px"
+            },
+            "validation": {
+                "penalty_score": 0,
+                "valid_responses": [
+                    [{
+                        "id": "lrn_2",
+                        "type": "point",
+                        "coords": {
+                            "x": 4,
+                            "y": 0
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_1",
+                        "type": "point",
+                        "coords": {
+                            "x": 7,
+                            "y": 2
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_3",
+                        "type": "ray",
+                        "subElementsIds": {
+                            "startPoint": "lrn_2",
+                            "endPoint": "lrn_1"
+                        }
+                    }]
+                ],
+                "valid_score": 1
+            }
+        },
+        {
+            "response_id": "demograph_5-'.$uniqueResponseIdSuffix.'",
+            "axis_x": {
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
+            },
+            "axis_y": {
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
+            },
+            "canvas": {
+                "snap_to": "grid",
+                "x_max": 10,
+                "x_min": -10,
+                "y_max": 10,
+                "y_min": -10
+            },
+            "grid": {
+                "x_distance": 1,
+                "y_distance": 1
+            },
+            "instant_feedback": true,
+            "is_math": true,
+            "toolbar": {
+                "default_tool": "circle",
+                "tools": ["circle"]
+            },
+            "type": "graphplotting",
+            "validation": {
+                "penalty_score": 0,
+                "valid_responses": [
+                    [{
+                        "id": "lrn_2",
+                        "type": "point",
+                        "coords": {
+                            "x": 5,
+                            "y": 4
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_1",
+                        "type": "point",
+                        "coords": {
+                            "x": 7,
+                            "y": 4
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_3",
+                        "type": "circle",
+                        "subElementsIds": {
+                            "centrePoint": "lrn_2",
+                            "radiusPoint": "lrn_1"
+                        }
+                    }]
+                ],
+                "valid_score": 1
+            }
+        },
+        {
+            "response_id": "demograph_6-'.$uniqueResponseIdSuffix.'",
+            "axis_x": {
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
+            },
+            "axis_y": {
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
+            },
+            "canvas": {
+                "snap_to": "grid",
+                "x_max": 9,
+                "x_min": -9,
+                "y_max": 9,
+                "y_min": -9
+            },
+            "grid": {
+                "x_distance": 1,
+                "y_distance": 1
+            },
+            "instant_feedback": true,
+            "is_math": true,
+            "toolbar": {
+                "default_tool": "vector",
+                "tools": ["vector"]
+            },
+            "type": "graphplotting",
+            "validation": {
+                "penalty_score": 0,
+                "valid_responses": [
+                    [{
+                        "id": "lrn_2",
+                        "type": "point",
+                        "coords": {
+                            "x": 0,
+                            "y": 1
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_1",
+                        "type": "point",
+                        "coords": {
+                            "x": 3,
+                            "y": 5
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_3",
+                        "type": "vector",
+                        "subElementsIds": {
+                            "startPoint": "lrn_2",
+                            "endPoint": "lrn_1"
+                        }
+                    }]
+                ],
+                "valid_score": 1
             }
         }
     ]
@@ -127,7 +425,7 @@ $signedRequest = '{
 
 <div class="jumbotron">
     <h1>Graph Plotting</h1>
-    <p>One of the many question types provided by the Learnosity Questions API. The graph plotting type allows to draw or plot points on a coordinate grid.<p>
+    <p>One of the many question types provided by the Learnosity Questions API. The graph plotting type allows to draw or plot points, lines, line segments, rays, vectors and circles on a coordinate grid. Graph Plotting question types can be computer scored.<p>
     <p>Try a few of the demos below.</p>
 
     <div class="row">
@@ -154,15 +452,59 @@ $signedRequest = '{
 <!-- Main question content below here: -->
 <h2 class="page-heading">Demos</h2>
 
-<p>1. Plot four unique points on the coordinate grid that are each 5 units from the point (1,2). Each point must contain coordinates with integer values.</p>
-<span class="learnosity-response question-demograph_1-<?php echo $uniqueResponseIdSuffix ?>"></span><hr>
+<div class="row">
+    <div class="col-md-8">
+        <h3>Plot Points</h3>
+        <p>Plot points at \((5,2)\), \((3,0)\), \((2,4)\) and \((-1,-5)\).</p>
+        <span class="learnosity-response question-demograph_1-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
 
-<p>2. Draw the graph of the inverse of f(x) = x - 2 on the coordinate grid below.</p>
-<span class="learnosity-response question-demograph_2-<?php echo $uniqueResponseIdSuffix ?>"></span><hr>
+<div class="row">
+    <div class="col-md-8">
+        <h3>Plot Lines</h3>
+        <p>Plot the line \( y = x + 1 \)</p>
+        <span class="learnosity-response question-demograph_2-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
 
-<p>3. Draw a point at (-2,1) and the line for f(x) = 2x + 1</p>
-<span class="learnosity-response question-demograph_3-<?php echo $uniqueResponseIdSuffix ?>"></span>
+<div class="row">
+    <div class="col-md-8">
+        <h3>Plot Segments</h3>
+        <p>Plot a line segment between the coordinates \((-5,-9)\) and \((4,7)\)</p>
+        <span class="learnosity-response question-demograph_3-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
 
+<div class="row">
+    <div class="col-md-8">
+        <h3>Plot Rays</h3>
+        <p>Graph a Ray originating at \((4,0)\) in the direction towards \((7,-2)\)</p>
+        <p><span class="label label-info">Hint</span> You'll need to use the <strong>Ray</strong> tool</p></p>
+        <span class="learnosity-response question-demograph_4-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3>Plot Circles</h3>
+        <p>Plot the circle with centre co-ordinates \((5,4)\) and a radius of 2 units.</p>
+        <span class="learnosity-response question-demograph_5-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3>Plot Vectors</h3>
+        <p>Plot the vector originating at \((0,1)\) in the direction \(\binom{3}{4}\)</p>
+        <span class="learnosity-response question-demograph_6-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
 
 <?php
     include_once 'views/modals/initialisation-preview.php';
