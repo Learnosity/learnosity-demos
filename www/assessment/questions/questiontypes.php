@@ -20,7 +20,15 @@ $RequestHelper = new RequestHelper(
 
 $activitySignature = $RequestHelper->getSignature();
 
-$uniqueResponseIdSuffix = UUID::generateUuid();
+// retrieve responseId from GET parameter and switch to review state if questions have been submitted
+if (isset($_GET['state']) && $_GET['state'] === 'review') {
+    $state =  'review';
+    $uniqueResponseIdSuffix = $_GET['uniqueResponseIdSuffix'];
+}
+else {
+    $state =  'initial';
+    $uniqueResponseIdSuffix = UUID::generateUuid();
+}
 
 // Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
 $signedRequest = '{
@@ -29,16 +37,14 @@ $signedRequest = '{
     "signature": "'.$activitySignature.'",
     "user_id": "'.$studentid.'",
     "type": "submit_practice",
-    "state": "initial",
+    "state": "'.$state.'",
     "id": "questionsapi-demo",
     "name": "Questions API Demo",
     "course_id": "'.$courseid.'",
-    "renderSubmitButton" : "true",
     "questions": [
     {
         "response_id": "demo1-'.$uniqueResponseIdSuffix.'",
         "type": "mcq",
-        "description": "Which of this has the smallest wavelength?",
         "options" : [
             {"value" : "red"    , "label" : "Red"},
             {"value" : "violet"  , "label" : "Violet"},
@@ -576,8 +582,23 @@ $signedRequest = '{
 <!-- Container for the questions api to load into -->
 <script src="//questions.learnosity.com"></script>
 <script>
-    var activity = <?php echo $signedRequest; ?>;
-    LearnosityApp.init(activity);
+    $(function(){
+        var activity = <?php echo $signedRequest; ?>;
+
+        var options = {
+            saveSuccess: function(response_ids) {
+                $('button.finish').text('Going to Review...');
+                window.location = $('a#reviewButton').attr('href');
+            },
+        };
+        LearnosityApp.init(activity, options);
+
+        // submit questions..
+        $('button.save-review').on('click', function() {
+            $(this).removeClass('save-review').text($(this).attr('data-saving-text'));
+            LearnosityApp.save();
+        });
+    });
 </script>
 
 <!-- Main question content below here: -->
@@ -830,13 +851,15 @@ $signedRequest = '{
 </div>
 <hr>
 
-<!-- Tell the API where to place the submit button if using "renderSubmitButton" attribute -->
-
 <div class="row">
-    <div class="col-md-8">
-        <span class="learnosity-submit-button"></span>
+    <div class="form-actions">
+        <button class="btn btn-xlarge btn-primary save-review finish" data-saving-text="Saving..." <?php if ($state !== 'initial') { echo 'disabled'; } ?>>Save and Review</button>
+        <a id="reviewButton" style="display:none;" class="btn btn-primary" href="?uniqueResponseIdSuffix=<?php echo $uniqueResponseIdSuffix; ?>&state=review">Review answers</a>
     </div>
 </div>
+<br />
+<br />
+
 
 <?php
     include_once 'views/modals/initialisation-preview.php';
