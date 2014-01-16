@@ -148,8 +148,8 @@ $signedRequest = '{
         ]
     },
     "configuration": {
-        "onsave_redirect_url": "' . $env['page'] . '",
-        "onsubmit_redirect_url": "' . $env['page'] . '",
+        "onsave_redirect_url": "' . $env['protocol'] . $env['page'] . '",
+        "onsubmit_redirect_url": "' . $env['protocol'] . $env['page'] . '",
         "questionsApiVersion": "v2"
     }
 }';
