@@ -209,6 +209,9 @@ $signedRequest = $RequestHelper->generateRequest();
 <script src="<?php echo $env['www'] ?>static/vendor/reveal/reveal.js"></script>
 <script>
     var config = <?php echo $signedRequest; ?>;
+    config.configuration = {
+        questionsApiVersion: "v2"
+    };
     LearnosityReports.init(config);
 
     $(function() {
