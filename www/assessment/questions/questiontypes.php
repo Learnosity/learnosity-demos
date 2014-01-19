@@ -458,58 +458,128 @@ $signedRequest = '{
         }
     },
     {
-        "response_id": "demo24-'.$uniqueResponseIdSuffix.'",
-        "type": "graphplotting",
-        "description": "The student needs to plot a simple cubic curve.",
-        "mode": "point",
-        "canvas": {
-            "snap_to": "grid",
-            "x_min": -10,
-            "x_max": 10,
-            "y_min": -10,
-            "y_max": 10
-        },
         "axis_x": {
-            "ticks_distance": 1,
             "draw_labels": true,
-            "show_last_arrow": true
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
         },
         "axis_y": {
-            "ticks_distance": 1,
             "draw_labels": true,
-            "show_last_arrow": true
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
         },
-         "grid": {
+        "canvas": {
+            "snap_to": "grid",
+            "x_max": 6,
+            "x_min": -6,
+            "y_max": 5,
+            "y_min": -6
+        },
+        "description": "",
+        "grid": {
             "x_distance": 1,
             "y_distance": 1
+        },
+        "instant_feedback": true,
+        "mode": "point",
+        "response_id": "demo24-'.$uniqueResponseIdSuffix.'",
+        "type": "graphplotting",
+        "validation": {
+            "penalty_score": "0",
+            "valid_responses": [
+                [{
+                    "id": "lrn_1",
+                    "type": "point",
+                    "coords": {
+                        "x": 5,
+                        "y": 2
+                    }
+                }, {
+                    "id": "lrn_2",
+                    "type": "point",
+                    "coords": {
+                        "x": 3,
+                        "y": 0
+                    }
+                }, {
+                    "id": "lrn_3",
+                    "type": "point",
+                    "coords": {
+                        "x": 2,
+                        "y": 4
+                    }
+                }, {
+                    "id": "lrn_4",
+                    "type": "point",
+                    "coords": {
+                        "x": -1,
+                        "y": -5
+                    }
+                }]
+            ],
+            "valid_score": "1"
         }
     },
     {
-        "response_id": "demo25-'.$uniqueResponseIdSuffix.'",
-        "type": "graphplotting",
-        "description": "The student needs to plot the line \\\( y = x + 1 \\\)",
-        "mode": "line",
-        "is_math": true,
-        "canvas": {
-            "snap_to": "grid",
-            "x_min": -10,
-            "x_max": 10,
-            "y_min": -10,
-            "y_max": 10
-        },
         "axis_x": {
-            "ticks_distance": 1,
             "draw_labels": true,
-            "show_last_arrow": true
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
         },
         "axis_y": {
-            "ticks_distance": 1,
             "draw_labels": true,
-            "show_last_arrow": true
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
+        },
+        "canvas": {
+            "snap_to": "grid",
+            "x_max": 10,
+            "x_min": -1,
+            "y_max": 10,
+            "y_min": -1
         },
         "grid": {
             "x_distance": 1,
             "y_distance": 1
+        },
+        "instant_feedback": true,
+        "is_math": true,
+        "mode": "line",
+        "response_id": "demo25-'.$uniqueResponseIdSuffix.'",
+        "type": "graphplotting",
+        "validation": {
+            "penalty_score": "0",
+            "valid_responses": [
+                [{
+                    "id": "lrn_2",
+                    "type": "point",
+                    "coords": {
+                        "x": 0,
+                        "y": 1
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_1",
+                    "type": "point",
+                    "coords": {
+                        "x": 1,
+                        "y": 2
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_3",
+                    "type": "line",
+                    "subElementsIds": {
+                        "startPoint": "lrn_2",
+                        "endPoint": "lrn_1"
+                    }
+                }]
+            ],
+            "valid_score": "1"
         }
     },
     {
@@ -827,7 +897,7 @@ $signedRequest = '{
 <div class="row">
     <div class="col-md-8">
         <h3 id="q24">Plot Points</h3>
-        <p>Plot a simple cubic curve on the graph.</p>
+        <p>Plot points at \((5,2)\), \((3,0)\), \((2,4)\) and \((-1,-5)\).</p>
         <span class="learnosity-response question-demo24-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
