@@ -131,17 +131,18 @@ $signedRequest = '{
     // The second argument is an options object with a readyListener callback function.
     var app = LearnosityApp.init(activity, {
         readyListener: function () {
-            // Now the questions have been rendered: start polling them for updates.
-            window.setInterval(function () {
-                var responses = app.getResponses();
-                $.each(responses, function (responseId, response) {
-                    // Update latex in the code block to the right of the question.
-                    var codeEl = $('#' + responseId).closest('.question').find('.formula-latex code');
-                    if (codeEl.text() !== response.value) {
-                        codeEl.text(response.value);
-                    }
+            // For each formula question on this page...
+            $('.lrn_formula').each(function () {
+                // Get the latex area code element beside the question, and the question object.
+                var codeEl = $(this).closest('.question').find('.formula-latex code'),
+                    responseId = $(this).prop('id'),
+                    question = app.question(responseId);
+
+                // Register a callback to update the latex when the user input changes.
+                question.on('change', function () {
+                    codeEl.text(question.getResponse().value);
                 });
-            }, 250);
+            });
         }
     });
 </script>
