@@ -43,7 +43,8 @@ $request = array(
             'toc'                      => true,
             'transition'               => 'slide',
             'transition_speed'         => 400,
-            'warning_on_change'        => false
+            'warning_on_change'        => false,
+            'scrolling_indicator'      => false
         ),
         'time' => array(
             'max_time'     => 1500,
