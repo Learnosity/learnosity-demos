@@ -85,8 +85,6 @@
                                         <input type="radio" name="navigation[show_fullscreencontrol]" value="false"<?php if (isset($nav['show_fullscreencontrol']) && $nav['show_fullscreencontrol'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="show_calculator" class="col-sm-6 control-label">Show Calculator</label>
                                     <div class="col-sm-6">
@@ -94,6 +92,8 @@
                                         <input type="radio" name="navigation[show_calculator]" value="false"<?php if (isset($nav['show_calculator']) && $nav['show_calculator'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="toc" class="col-sm-6 control-label">Show Table of Contents</label>
                                     <div class="col-sm-6">
@@ -151,6 +151,13 @@
                                     <div class="col-sm-6">
                                         <input type="radio" name="time[show_pause]" value="true"<?php if (isset($time['show_pause']) && $time['show_pause'] === true) { echo ' checked'; }; ?>> True
                                         <input type="radio" name="time[show_pause]" value="false"<?php if (isset($time['show_pause']) && $time['show_pause'] === false) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="scrolling_indicator" class="col-sm-6 control-label">Show Scrolling Indicator<br>(horizontal-fixed layout only)</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[scrolling_indicator]" value="true"<?php if (isset($nav['scrolling_indicator']) && $nav['scrolling_indicator'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[scrolling_indicator]" value="false"<?php if (isset($nav['scrolling_indicator']) && $nav['scrolling_indicator'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                                 <div class="form-group">
