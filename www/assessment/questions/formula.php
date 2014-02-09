@@ -83,13 +83,13 @@ $signedRequest = '{
             }, {
                 "symbol": "\\\\cap",
                 "group": 3
-            }, , {
+            }, {
                 "symbol": "\\\\cup",
                 "group": 3
-            }, , {
+            }, {
                 "symbol": "\\\\subset",
                 "group": 3
-            }, , {
+            }, {
                 "symbol": "\\\\supset",
                 "group": 3
             }, {
