@@ -198,7 +198,8 @@ class RequestHelper
         }
 
         if ($this->service === 'data') {
-            return 'security=' . Json::encode($output['security']) . '&request=' . Json::encode($output['request']);
+            $a = (empty($output['action'])) ? '' : '&action=' . $output['action'];
+            return 'security=' . Json::encode($output['security']) . '&request=' . Json::encode($output['request']) . $a;
         } elseif ($this->service === 'assess') {
             return $output;
         }
