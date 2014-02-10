@@ -112,7 +112,7 @@ $request = array(
 $RequestHelper = new RequestHelper(
     'reports',
     $security,
-    '74c5fd430cf1242a527f6223aebd42d30464be22',
+    $consumer_secret,
     $request
 );
 
