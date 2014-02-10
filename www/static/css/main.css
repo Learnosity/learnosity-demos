@@ -147,22 +147,22 @@ td {
 * Initialisation preview
 *
 ********************************************************************/
-#initialisation-preview pre {
+.preview pre {
    background-color: ghostwhite;
    border: 1px solid silver;
    padding: 10px 20px;
    margin: 20px;
 }
 
-#initialisation-preview .json-key {
+.preview .json-key {
    color: brown;
 }
 
-#initialisation-preview .json-value {
+.preview .json-value {
    color: navy;
 }
 
-#initialisation-preview .json-string {
+.preview .json-string {
    color: olive;
 }
 
@@ -260,4 +260,8 @@ td {
 }
 .hint:last-child {
     border: none;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
 }
