@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<%out.print(request.getContextPath()); %>/static/vendor/reveal/reveal.css">
     <link rel="stylesheet" href="<%out.print(request.getContextPath()); %>/static/vendor/codemirror/codemirror.css">
     <link rel="stylesheet" href="<%out.print(request.getContextPath()); %>/static/css/main.css">
-    <script src="<%out.print(request.getContextPath()); %>/static/vendor/jquery/jquery-1.10.2.min.js"></script>
+    <script src="<%out.print(request.getContextPath()); %>/static/vendor/jquery/jquery-1.11.0.min.js"></script>
     <script src="<%out.print(request.getContextPath()); %>/static/js/main.js"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <%
     if(!request.getServerName().toLowerCase().contains(".learnosity.com") && !request.getServerName().toLowerCase().equals("localhost") ) {
-        out.print("<div class=\"container alert alert-warning\"><p><b>Warning</b> –" + 
+        out.print("<div class=\"container alert alert-warning\"><p><b>Warning</b> –" +
             " Note: Most demos will only work from <em>localhost</em>. Please" +
             " contact support@learnosity.com to get an additional domain added.</p></div>");
     }

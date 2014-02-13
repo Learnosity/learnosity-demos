@@ -19,7 +19,7 @@ $request = array(
     "activity_id"    => "itemsinlinedemo",
     "session_id"     => UUID::generateUuid(),
     "course_id"      => $courseid,
-    "items"          => array("ccore_video_260_classification", "ccore_parcc_tecr_grade3"),
+    "items"          => array("Demo3", "Demo4", "Demo5", "Demo6", "Demo7", "Demo8", "Demo9", "Demo10"),
     "type"           => "submit_practice",
     "config"         => array(
         "renderSubmitButton"  => true,
@@ -62,8 +62,14 @@ $signedRequest = $RequestHelper->generateRequest();
 </div>
 
 <p>
-    <span class="learnosity-item" data-reference="ccore_video_260_classification"></span>
-    <span class="learnosity-item" data-reference="ccore_parcc_tecr_grade3"></span></p>
+    <span class="learnosity-item" data-reference="Demo3"></span>
+    <span class="learnosity-item" data-reference="Demo4"></span>
+    <span class="learnosity-item" data-reference="Demo5"></span>
+    <span class="learnosity-item" data-reference="Demo6"></span>
+    <span class="learnosity-item" data-reference="Demo7"></span>
+    <span class="learnosity-item" data-reference="Demo8"></span>
+    <span class="learnosity-item" data-reference="Demo9"></span>
+    <span class="learnosity-item" data-reference="Demo10"></span>
     <span class="learnosity-submit-button"></span>
 </p>
 
