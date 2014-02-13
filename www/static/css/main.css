@@ -83,6 +83,7 @@ td {
 .logo {
     background: url('../images/logo-square.png') no-repeat center left;
     padding-left: 40px;
+    height: inherit;
 }
 
 /********************************************************************
