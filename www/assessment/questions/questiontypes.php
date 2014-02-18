@@ -735,8 +735,7 @@ $signedRequest = '{
     <div class="col-md-8">
         <h3 id="q6">Spoken response</h3>
         <p>Describe a typical day in your life.</p>
-        <span class="learnosity-response requires-flash question-demo6-<?php echo $uniqueResponseIdSuffix ?>"></span>
-        <div class="alert alert-error no-flash"><strong>Aww!</strong> We can't load this question because Flash isn't available.</div>
+        <span class="learnosity-response question-demo6-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
 <hr>
