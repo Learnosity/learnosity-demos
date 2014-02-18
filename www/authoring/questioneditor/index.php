@@ -388,17 +388,18 @@ include_once 'includes/header.php';
         };
 
     function changeExample(evt) {
-        
-        window.location.hash = $(this).attr('id');
+
         var type = $(this).attr('data-type');
         evt.preventDefault();
         $('#nav-questioneditor').find('li').removeClass('active');
         if ($(this).closest('ul').hasClass('dropdown-menu')) {
             $(this).closest('li.dropdown').addClass('active');
         } else {
+
             $(this).parent().addClass('active');
         }
         if (typeof type !== 'undefined') {
+            window.location.hash = $(this).attr('id');
             currentType = initObjects[type];
             $('#example-description').html(currentType.description);
             LearnosityResponseEditor.init(currentType.json);
