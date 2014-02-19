@@ -30,15 +30,16 @@ include_once 'includes/header.php';
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">New Question<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li><a href="#" data-type="newQuestion" id="newQuestion">Standard</a></li>
-            <li><a href="#" data-type="defaults">with defaults</a></li>
-            <li><a href="#" data-type="disabled">with certain attributes disabled</a></li>
-            <li><a href="#" data-type="defaultsdisabled">with certain attributes disabled and defaults</a></li>
-            <li><a href="#" data-type="assetuploadexample">with image gallery asset handler</a></li>
+            <li><a href="#" data-type="defaults" id="defaults">with defaults</a></li>
+            <li><a href="#" data-type="disabled" id="disabled">with certain attributes disabled</a></li>
+            <li><a href="#" data-type="defaultsdisabled" id="defaultsdisabled">with certain attributes disabled and defaults</a></li>
+            <li><a href="#" data-type="defaultsdisabledgraphing" id="defaultsdisabledgraphing">with certain attributes disabled and defaults (Graphing)</a></li>
+            <li><a href="#" data-type="assetuploadexample" id="assetupload">with image gallery asset handler</a></li>
         </ul>
     </li>
-    <li><a href="#" data-type="edit">Edit Existing Question</a></li>
-    <li><a href="#" data-type="feedback">Rubric Feedback</a></li>
-    <li><a href="#" data-type="features">Stimulus Features</a></li>
+    <li><a href="#" data-type="edit" id="edit">Edit Existing Question</a></li>
+    <li><a href="#" data-type="feedback" id="feedback">Rubric Feedback</a></li>
+    <li><a href="#" data-type="features" id="features">Stimulus Features</a></li>
 </ul>
 
 <!-- Container for the question editor api to load into -->
@@ -145,6 +146,79 @@ include_once 'includes/header.php';
                         }
                     },
                     widgetType: 'response'
+                }
+            },
+            defaultsdisabledgraphing: {
+                description: 'In this example we\'re defaulting the editor to allow '
+                + 'very simple templating of Graphing Questions. We\'re also hiding certain '
+                + 'attributes to demonstrate the flexibility you can provide to authors.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: "v2"
+                    },
+                    widgetType: 'response',
+                    question_types: {
+                        graphplotting: {
+                            hidden: [ "description", "feedback_attempts", "instant_feedback",
+                                "is_math", "grid", "axis_x", "axis_y",
+                                "draw_zero", "stimulus_review", "annotation", "mode","ui_style"
+                            ],
+                            defaults : {
+                                annotation : {
+                                    "label_right": "\\(X\\)",
+                                    "label_top": "\\(Y\\)"
+                                },
+                                axis_x : {
+                                    "draw_labels": true,
+                                    "show_first_arrow": true,
+                                    "show_last_arrow": true,
+                                    "ticks_distance": 1
+                                },
+                                axis_y : {
+                                    "draw_labels": true,
+                                    "show_first_arrow": true,
+                                    "show_last_arrow": true,
+                                    "ticks_distance": 1
+                                },
+                                canvas : {
+                                    "show_hover_position": true,
+                                    "snap_to": "grid",
+                                    "x_max": 10.5,
+                                    "x_min": -10.5,
+                                    "y_max": 10.5,
+                                    "y_min": -10.5
+                                } ,
+                                draw_zero: true,
+                                grid : {
+                                    "x_distance": 1,
+                                    "y_distance": 1
+                                },
+                                instant_feedback : true,
+                                is_math : true,
+                                stimulus : "Enter the question stimulus here.",
+                                "validation": {
+                                    "penalty_score": "0",
+                                    "valid_responses": [],
+                                    "valid_score": "1"
+                                }
+                            }
+                        }
+                    },
+                ui: {
+                        columns: [
+                            {
+                                tabs: ["edit", "advanced"],
+                                width: "40%"
+                            },
+                            {
+                                tabs: ["preview", "layout"],
+                                width: "60%"
+                            }
+                        ],
+                        fixedPreview: {
+                            marginTop: 45
+                        }
+                    }
                 }
             },
             assetuploadexample: {
@@ -314,15 +388,18 @@ include_once 'includes/header.php';
         };
 
     function changeExample(evt) {
+
         var type = $(this).attr('data-type');
         evt.preventDefault();
         $('#nav-questioneditor').find('li').removeClass('active');
         if ($(this).closest('ul').hasClass('dropdown-menu')) {
             $(this).closest('li.dropdown').addClass('active');
         } else {
+
             $(this).parent().addClass('active');
         }
         if (typeof type !== 'undefined') {
+            window.location.hash = $(this).attr('id');
             currentType = initObjects[type];
             $('#example-description').html(currentType.description);
             LearnosityResponseEditor.init(currentType.json);
@@ -331,7 +408,12 @@ include_once 'includes/header.php';
 
     (function($) {
         $('#nav-questioneditor').find('a').on('click', changeExample);
-        $('#newQuestion').trigger('click');
+        var hashString = window.location.hash;
+        if(hashString !== "") {
+            $(hashString).trigger('click');
+        } else {
+            $('#newQuestion').trigger('click');
+        }
     }(jQuery));
 </script>
 
