@@ -43,8 +43,8 @@ include_once 'includes/header.php';
 </ul>
 
 <!-- Container for the question editor api to load into -->
-<span class="learnosity-response-editor"></span>
 <script src="//questioneditor.learnosity.com"></script>
+<div class="learnosity-question-editor"></div>
 <script>
     /********************************************************************
     *
@@ -62,18 +62,15 @@ include_once 'includes/header.php';
                     },
                     widgetType: 'response',
                     ui: {
-                        columns: [
-                            {
-                                tabs: ['edit', 'advanced'],
-                                width: '50%'
-                            },
-                            {
-                                tabs: ['preview', 'layout'],
-                                width: '50%'
-                            }
-                        ],
-                        fixedPreview: {
-                           marginTop: 50
+                        columns: [{
+                            tabs: ['edit', 'advanced'],
+                            width: '50%'
+                        }, {
+                            tabs: ['preview', 'layout'],
+                            width: '50%'
+                        }],
+                        fixed_preview: {
+                            margin_top: 50
                         }
                     }
                 }
@@ -215,8 +212,8 @@ include_once 'includes/header.php';
                                 width: "60%"
                             }
                         ],
-                        fixedPreview: {
-                            marginTop: 45
+                        fixed_preview: {
+                            margin_top: 45
                         }
                     }
                 }
@@ -281,8 +278,8 @@ include_once 'includes/header.php';
                                 width: "50%"
                             }
                         ],
-                        fixedPreview: {
-                            marginTop: 45
+                        fixed_preview: {
+                            margin_top: 45
                         }
                     }
                 }
@@ -402,7 +399,7 @@ include_once 'includes/header.php';
             window.location.hash = $(this).attr('id');
             currentType = initObjects[type];
             $('#example-description').html(currentType.description);
-            LearnosityResponseEditor.init(currentType.json);
+            LearnosityQuestionEditor.init(currentType.json);
         }
     }
 
