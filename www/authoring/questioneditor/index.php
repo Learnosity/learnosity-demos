@@ -228,26 +228,24 @@ include_once 'includes/header.php';
                     question_types: {
                         imageclozeassociation: {
                             defaults: {
-                                img_src: "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
-                                possible_responses: ["North Sydney", "Harbour Bridge", "The Rocks", "Darling Harbour"],
-                                response_positions: [
-                                    {
-                                        x: 20,
-                                        y: 69.56
-                                    },
-                                    {
-                                        x: 16.49,
-                                        y: 46.37
-                                    },
-                                    {
-                                        x: 51.23,
-                                        y: 21.55
-                                    },
-                                    {
-                                        x: 63.16,
-                                        y: 45.2
-                                    }
-                                ]
+                                "img_src": "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
+                                "possible_responses": ["North Sydney", "Harbour Bridge", "The Rocks", "Darling Harbour"],
+                                "response_container": {
+                                    "pointer": "right"
+                                },
+                                "response_positions": [{
+                                    "x": 47.41,
+                                    "y": 78.52
+                                }, {
+                                    "x": 10.19,
+                                    "y": 38.77
+                                }, {
+                                    "x": 53.7,
+                                    "y": 26.42
+                                }, {
+                                    "x": 52.41,
+                                    "y": 38.27
+                                }]
                             }
                         }
                     },
