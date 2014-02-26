@@ -265,3 +265,18 @@ td {
 .nav-tabs {
     margin-bottom: 15px;
 }
+
+/********************************************************************
+*
+* Data API
+*
+********************************************************************/
+.panel-title .block {
+    background-color: #0686c4;
+    color: #eee;
+    position: relative;
+    left: -15px;
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}

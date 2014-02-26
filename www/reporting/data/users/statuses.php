@@ -1,7 +1,7 @@
 <?php
 
-$endpoint = "$URL/$version/users";
-$resource = 'users';
+$endpoint = "$URL/$version/users/statuses";
+$resource = 'statuses';
 
 ?>
 
@@ -27,19 +27,7 @@ $resource = 'users';
                         <div class="form-group">
                             <label class="col-md-2 control-label">username(s)</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="api-id" data-type="array" value="brianmoser, dextermorgan">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">school(s)</label>
-                            <div class="col-md-10">
-                                <input type="text" class="form-control" id="api-school_id" data-type="array" value="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">type(s)</label>
-                            <div class="col-md-10">
-                                <input type="text" class="form-control" id="api-types" data-type="array" value="student, teacher">
+                                <input type="text" class="form-control" id="api-user_id" data-type="array" value="brianmoser">
                             </div>
                         </div>
                         <div class="form-group">
