@@ -1,7 +1,7 @@
 <?php
 
-$endpoint = "$URL/$version/users/activities";
-$resource = 'activities';
+$endpoint = "$URL/$version/itembank/tags";
+$resource = 'tags';
 
 ?>
 
@@ -25,15 +25,32 @@ $resource = 'activities';
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">username(s)</label>
+                            <label class="col-md-2 control-label">types(s)</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="api-user_id" data-type="array" value="brianmoser">
+                                <input type="text" class="form-control" id="api-types" data-type="array" value="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">activity(s)</label>
+                            <label class="col-md-2 control-label">tags(s)</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="api-activity_id" data-type="array" value="">
+                                <input type="text" class="form-control" id="api-tags" data-type="array" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">count only?</label>
+                            <div class="col-md-10">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="count" id="api-count" data-type="boolean" value="1">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="count" id="api-count" data-type="boolean" value="0" checked>
+                                        No
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

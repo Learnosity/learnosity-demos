@@ -1,7 +1,7 @@
 <?php
 
-$endpoint = "$URL/$version/users/activities";
-$resource = 'activities';
+$endpoint = "$URL/$version/schools";
+$resource = 'schools';
 
 ?>
 
@@ -25,15 +25,9 @@ $resource = 'activities';
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">username(s)</label>
+                            <label class="col-md-2 control-label">code(s)</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="api-user_id" data-type="array" value="brianmoser">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">activity(s)</label>
-                            <div class="col-md-10">
-                                <input type="text" class="form-control" id="api-activity_id" data-type="array" value="">
+                                <input type="text" class="form-control" id="api-id" data-type="array" value="">
                             </div>
                         </div>
                         <div class="form-group">

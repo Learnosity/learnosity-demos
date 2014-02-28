@@ -1,15 +1,8 @@
 /**
- * Parses a form instance for specific data attributes and
- * returns an object of name|value pairs.
+ * Listens for form submission and submits an xhr request
+ * to a server side proxy to handle cross-domain API requests.
  *
- * Form inputs are in the format of:
- *      <input type="text" id="api-school_id" data-type="array" value="demo">
- *
- * Where each element 'id' is prefixed with 'api-' and each element has a
- * data-type attribute which could be:
- *     - string
- *     - integer
- *     - array
+ * Also translates form inputs to JSON for display.
  */
 (function($, config, Ladda) {
     'use strict';
