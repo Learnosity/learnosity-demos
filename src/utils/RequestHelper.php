@@ -199,7 +199,13 @@ class RequestHelper
 
         if ($this->service === 'data') {
             $a = (empty($output['action'])) ? '' : '&action=' . $output['action'];
-            return 'security=' . Json::encode($output['security']) . '&request=' . Json::encode($output['request']) . $a;
+            // Only add the 'request' key|value pair if we have params to send
+            $return = 'security=' . Json::encode($output['security']);
+            if (isset($output['request'])) {
+                $return .= '&request=' . Json::encode($output['request']);
+            } 
+            $return .= $a;
+            return $return;
         } elseif ($this->service === 'assess') {
             return $output;
         }
