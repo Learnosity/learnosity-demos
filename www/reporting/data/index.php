@@ -178,6 +178,13 @@ $version = 'v0.17';
     </div>
 </div>
 
+<script>
+    $(function() {
+        $('.glyphicon-question-sign').tooltip({
+            container: 'body'
+        })
+    });
+</script>
 <script src="<?php echo $env['www'] ?>static/vendor/ladda/spin.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/js/dataapi/formToObject.js"></script>

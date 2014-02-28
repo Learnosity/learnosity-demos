@@ -54,18 +54,6 @@ $resource = 'tags';
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">limit</label>
-                            <div class="col-md-2">
-                                <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="10">
-                            </div>
-                        </div>
-                       <div class="form-group">
-                            <label class="col-md-2 control-label">next page</label>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="api-next" data-type="string" value="">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <button type="submit" class="ladda-button" data-style="expand-right"><span class="ladda-label">Submit</span></button>
                             </div>
