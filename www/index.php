@@ -56,6 +56,7 @@ include_once 'includes/header.php';
                     <ul class="list-unstyled">
                         <li><a href="<?php echo $env['www'] ?>reporting/reports/index.php">Reports API</a></li>
                         <li><a href="<?php echo $env['www'] ?>reporting/sso/index.php">Single Sign On API</a></li>
+                        <li><a href="<?php echo $env['www'] ?>reporting/data/index.php">Data API</a></li>
                     </ul>
                 </div>
             </div>
