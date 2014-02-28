@@ -14,6 +14,11 @@
     <script src="<?php echo $env['www'] ?>static/vendor/jquery/jquery-1.11.0.min.js"></script>
     <script src="<?php echo $env['www'] ?>static/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo $env['www'] ?>static/js/main.js"></script>
+    <script>
+        var config = {
+            www: '<?php echo $env["www"]; ?>'
+        }
+    </script>
 </head>
 <body>
 <!-- Google Tag Manager -->
