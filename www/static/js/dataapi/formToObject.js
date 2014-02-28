@@ -1,5 +1,5 @@
 /**
- * Parses a form instance for specific data attributes and
+ * Parses a form instance for elements with specific data attributes and
  * returns an object of name|value pairs.
  *
  * Form inputs are in the format of:
@@ -7,9 +7,10 @@
  *
  * Where each element id is prefixed with 'api-' and each element has a
  * data-type attribute which could be:
- *     - string
- *     - integer
  *     - array
+ *     - boolean
+ *     - integer
+ *     - string
  */
 var formToObject = (function($) {
     'use strict';
@@ -31,7 +32,9 @@ var formToObject = (function($) {
     }
 
     /**
-     * Translate form inputs into a JavaScript object. DSL is defined by 'data' attributes.
+     * Translate form inputs into a JavaScript object. DSL is defined
+     * by 'data' attributes. We also expect elements to have specific
+     * 'id' prefixing.
      * @param  {object} els Form instance
      * @return {object}
      */
@@ -49,17 +52,29 @@ var formToObject = (function($) {
             }
             switch (type) {
                 case 'array':
-                    if ($.trim(value).length) {
+                    if (value.length) {
                         request[parameter] = [];
                         $.each(value.split(','), function() {
                             request[parameter].push($.trim(this));
                         });
                     }
                     break;
+                case 'boolean':
+                    if (!$(els[i]).is(':checked')) {
+                        continue;
+                    }
+                    request[parameter] = (value === '1') ? true : false;
+                    break;
                 case 'integer':
-                    request[parameter] = (isNaN(value) || !value.length) ? 0 : parseInt(value, 10);
+                    if (!value.length) {
+                        continue;
+                    }
+                    request[parameter] = (isNaN(value)) ? 0 : parseInt(value, 10);
                     break;
                 case 'string':
+                    if (!value.length) {
+                        continue;
+                    }
                     request[parameter] = value;
                     break;
                 default:

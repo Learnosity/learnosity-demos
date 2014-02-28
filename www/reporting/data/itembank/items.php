@@ -1,7 +1,7 @@
 <?php
 
-$endpoint = "$URL/$version/users/activities";
-$resource = 'activities';
+$endpoint = "$URL/$version/itembank/items";
+$resource = 'items';
 
 ?>
 
@@ -25,15 +25,26 @@ $resource = 'activities';
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">username(s)</label>
+                            <label class="col-md-2 control-label">references(s)</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="api-user_id" data-type="array" value="brianmoser">
+                                <input type="text" class="form-control" id="api-references" data-type="array" value="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">activity(s)</label>
+                            <label class="col-md-2 control-label">count only?</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="api-activity_id" data-type="array" value="">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="count" id="api-count" data-type="boolean" value="1">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="count" id="api-count" data-type="boolean" value="0" checked>
+                                        No
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
