@@ -25,9 +25,26 @@ $resource = 'schools';
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">code(s)</label>
+                            <label class="col-md-2 control-label">school(s)</label>
                             <div class="col-md-10">
                                 <input type="text" class="form-control" id="api-id" data-type="array" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">count only?</label>
+                            <div class="col-md-10">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="count" id="api-count" data-type="boolean" value="1">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="count" id="api-count" data-type="boolean" value="0" checked>
+                                        No
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -37,7 +54,14 @@ $resource = 'schools';
                             </div>
                         </div>
                        <div class="form-group">
-                            <label class="col-md-2 control-label">next page</label>
+                            <label class="col-md-2 control-label">
+                                next
+                                <span class="glyphicon glyphicon-question-sign"
+                                    data-toggle="tooltip"
+                                    data-placement="right"
+                                    title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of results if there are any.">
+                                </span>
+                            </label>
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="api-next" data-type="string" value="">
                             </div>

@@ -37,7 +37,14 @@ $resource = 'questions';
                             </div>
                         </div>
                        <div class="form-group">
-                            <label class="col-md-2 control-label">next page</label>
+                            <label class="col-md-2 control-label">
+                                next
+                                <span class="glyphicon glyphicon-question-sign"
+                                    data-toggle="tooltip"
+                                    data-placement="right"
+                                    title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of results if there are any.">
+                                </span>
+                            </label>
                             <div class="col-md-4">
                                 <input type="text" class="form-control" id="api-next" data-type="string" value="">
                             </div>
