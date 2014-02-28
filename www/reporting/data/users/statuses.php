@@ -39,7 +39,7 @@ $resource = 'statuses';
                        <div class="form-group">
                             <label class="col-md-2 control-label">next page</label>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" id="api-next" value="">
+                                <input type="text" class="form-control" id="api-next" data-type="string" value="">
                             </div>
                         </div>
                         <div class="form-group">
