@@ -31,6 +31,7 @@ $RequestHelper = new RequestHelper(
 );
 
 $signedRequest = $RequestHelper->generateRequest();
+var_dump($signedRequest);
 $response = $RequestHelper->sendXHR($endpoint, $signedRequest);
 
 echo $response;
