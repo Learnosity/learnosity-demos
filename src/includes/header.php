@@ -16,7 +16,15 @@
     <script src="<?php echo $env['www'] ?>static/js/main.js"></script>
     <script>
         var config = {
-            www: '<?php echo $env["www"]; ?>'
+            www: '<?php echo $env["www"]; ?>',
+            apiRequest: {
+                security: {
+                    consumer_key: '<?php echo $consumer_key; ?>',
+                    domain: '<?php echo $domain; ?>',
+                    timestamp: '<?php echo $timestamp; ?>',
+                    signature: '[add request signature here]'
+                }
+            }
         }
     </script>
 </head>

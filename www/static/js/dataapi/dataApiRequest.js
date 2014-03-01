@@ -18,10 +18,16 @@
     function prepareApiRequest (frm) {
         var obj = formToObject.parse(frm),
             endpoint = $(frm).find('#endpoint').val(),
-            resource = $(frm).data('resource');
+            resource = $(frm).data('resource'),
+            request;
+
+        request = {
+            security: config.apiRequest.security,
+            request: obj
+        }
 
         // Write to the request JSON tab
-        $('#request-'+resource).html(library.json.prettyPrint(obj));
+        $('#request-'+resource).html(library.json.prettyPrint(request));
 
         return {
             endpoint: endpoint,
