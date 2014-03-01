@@ -11,7 +11,8 @@
         ),
         'Reporting' => array(
             'reporting/reports/index.php' => 'Reports API',
-            'reporting/sso/index.php'     => 'Single Sign On API'
+            'reporting/sso/index.php'     => 'Single Sign On API',
+            'reporting/data/index.php' => 'Data API'
         ),
         'Misc' => array(
             'misc/security_check.php' => 'Security Check'

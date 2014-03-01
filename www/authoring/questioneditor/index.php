@@ -43,8 +43,8 @@ include_once 'includes/header.php';
 </ul>
 
 <!-- Container for the question editor api to load into -->
-<span class="learnosity-response-editor"></span>
 <script src="//questioneditor.learnosity.com"></script>
+<div class="learnosity-question-editor"></div>
 <script>
     /********************************************************************
     *
@@ -62,18 +62,15 @@ include_once 'includes/header.php';
                     },
                     widgetType: 'response',
                     ui: {
-                        columns: [
-                            {
-                                tabs: ['edit', 'advanced'],
-                                width: '50%'
-                            },
-                            {
-                                tabs: ['preview', 'layout'],
-                                width: '50%'
-                            }
-                        ],
-                        fixedPreview: {
-                           marginTop: 50
+                        columns: [{
+                            tabs: ['edit', 'advanced'],
+                            width: '50%'
+                        }, {
+                            tabs: ['preview', 'layout'],
+                            width: '50%'
+                        }],
+                        fixed_preview: {
+                            margin_top: 50
                         }
                     }
                 }
@@ -215,8 +212,8 @@ include_once 'includes/header.php';
                                 width: "60%"
                             }
                         ],
-                        fixedPreview: {
-                            marginTop: 45
+                        fixed_preview: {
+                            margin_top: 45
                         }
                     }
                 }
@@ -231,26 +228,24 @@ include_once 'includes/header.php';
                     question_types: {
                         imageclozeassociation: {
                             defaults: {
-                                img_src: "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
-                                possible_responses: ["North Sydney", "Harbour Bridge", "The Rocks", "Darling Harbour"],
-                                response_positions: [
-                                    {
-                                        x: 20,
-                                        y: 69.56
-                                    },
-                                    {
-                                        x: 16.49,
-                                        y: 46.37
-                                    },
-                                    {
-                                        x: 51.23,
-                                        y: 21.55
-                                    },
-                                    {
-                                        x: 63.16,
-                                        y: 45.2
-                                    }
-                                ]
+                                "img_src": "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
+                                "possible_responses": ["North Sydney", "Harbour Bridge", "The Rocks", "Darling Harbour"],
+                                "response_container": {
+                                    "pointer": "right"
+                                },
+                                "response_positions": [{
+                                    "x": 47.41,
+                                    "y": 78.52
+                                }, {
+                                    "x": 10.19,
+                                    "y": 38.77
+                                }, {
+                                    "x": 53.7,
+                                    "y": 26.42
+                                }, {
+                                    "x": 52.41,
+                                    "y": 38.27
+                                }]
                             }
                         }
                     },
@@ -281,8 +276,8 @@ include_once 'includes/header.php';
                                 width: "50%"
                             }
                         ],
-                        fixedPreview: {
-                            marginTop: 45
+                        fixed_preview: {
+                            margin_top: 45
                         }
                     }
                 }
@@ -402,7 +397,7 @@ include_once 'includes/header.php';
             window.location.hash = $(this).attr('id');
             currentType = initObjects[type];
             $('#example-description').html(currentType.description);
-            LearnosityResponseEditor.init(currentType.json);
+            LearnosityQuestionEditor.init(currentType.json);
         }
     }
 

@@ -9,9 +9,24 @@
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/reveal/reveal.css">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/codemirror/codemirror.css">
+    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.css">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/css/main.css">
     <script src="<?php echo $env['www'] ?>static/vendor/jquery/jquery-1.11.0.min.js"></script>
+    <script src="<?php echo $env['www'] ?>static/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo $env['www'] ?>static/js/main.js"></script>
+    <script>
+        var config = {
+            www: '<?php echo $env["www"]; ?>',
+            apiRequest: {
+                security: {
+                    consumer_key: '<?php echo $consumer_key; ?>',
+                    domain: '<?php echo $domain; ?>',
+                    timestamp: '<?php echo $timestamp; ?>',
+                    signature: '[add request signature here]'
+                }
+            }
+        }
+    </script>
 </head>
 <body>
 <!-- Google Tag Manager -->
