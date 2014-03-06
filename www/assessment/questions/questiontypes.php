@@ -612,7 +612,7 @@ $signedRequest = '{
         "instant_feedback": true,
         "is_math": true,
         "response_id": "demo26-'.$uniqueResponseIdSuffix.'",
-        "stimulus": "Find other equations that are equal to \\((x + 3)(x + 1)\\)",
+        "stimulus": "Find other equations that are equal to \\\((x + 3)(x + 1)\\\)",
         "type": "formula",
         "validation": {
             "valid_responses": [
@@ -624,6 +624,306 @@ $signedRequest = '{
                     }
                 }]
             ]
+        }
+    },
+    {
+        "instant_feedback": true,
+        "labels": {
+            "frequency": 1,
+            "show_max": true,
+            "show_min": true
+        },
+        "line": {
+            "left_arrow": true,
+            "max": 3,
+            "min": 0,
+            "right_arrow": true
+        },
+        "points": ["1.5", "2.5", "5"],
+        "response_id": "demo31-'.$uniqueResponseIdSuffix.'",
+        "snap_to_ticks": true,
+        "stimulus": "Position the tokens at the closest points. If the number is not on the line, do not place it.",
+        "ticks": {
+            "distance": ".5",
+            "show": true
+        },
+        "type": "numberline",
+        "validation": {
+            "partial_scoring": true,
+            "penalty_score": 0,
+            "show_partial_ui": true,
+            "threshold": 0.25,
+            "valid_responses": [{
+                "point": "1.5",
+                "position": "1.5"
+            }, {
+                "point": "2.5",
+                "position": "2.5"
+            }],
+            "valid_score": 1
+        }
+    },
+    {
+        "response_id": "demo27-'.$uniqueResponseIdSuffix.'",
+        "axis_x": {
+            "draw_labels": true,
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
+        },
+        "axis_y": {
+            "draw_labels": true,
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
+        },
+        "canvas": {
+            "snap_to": "grid",
+            "x_max": 10,
+            "x_min": -10,
+            "y_max": 10,
+            "y_min": -10
+        },
+        "grid": {
+            "x_distance": 1,
+            "y_distance": 1
+        },
+        "instant_feedback": true,
+        "is_math": true,
+        "stimulus": "Plot a line segment between the coordinates \\\((-5,-9)\\\) and \\\((4,7)\\\)",
+        "toolbar": {
+            "default_tool": "segment",
+            "tools": ["segment"]
+        },
+        "type": "graphplotting",
+        "validation": {
+            "penalty_score": 0,
+            "valid_responses": [
+                [{
+                    "id": "lrn_2",
+                    "type": "point",
+                    "coords": {
+                        "x": -5,
+                        "y": -9
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_1",
+                    "type": "point",
+                    "coords": {
+                        "x": 4,
+                        "y": 7
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_3",
+                    "type": "segment",
+                    "subElementsIds": {
+                        "startPoint": "lrn_2",
+                        "endPoint": "lrn_1"
+                    }
+                }]
+            ],
+            "valid_score": 1
+        }
+    },
+    {
+        "axis_x": {
+            "draw_labels": true,
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
+        },
+        "axis_y": {
+            "draw_labels": true,
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 2
+        },
+        "canvas": {
+            "snap_to": "grid",
+            "x_max": 9,
+            "x_min": -3,
+            "y_max": 5,
+            "y_min": -4
+        },
+        "grid": {
+            "x_distance": 1,
+            "y_distance": 1
+        },
+        "instant_feedback": true,
+        "is_math": true,
+        "response_id": "demo28-'.$uniqueResponseIdSuffix.'",
+        "toolbar": {
+            "default_tool": "line",
+            "tools": [
+                ["line", "ray", "segment", "vector"]
+            ]
+        },
+        "type": "graphplotting",
+        "ui_style": {
+            "height": "375px",
+            "width": "500px"
+        },
+        "validation": {
+            "penalty_score": 0,
+            "valid_responses": [
+                [{
+                    "id": "lrn_2",
+                    "type": "point",
+                    "coords": {
+                        "x": 4,
+                        "y": 0
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_1",
+                    "type": "point",
+                    "coords": {
+                        "x": 7,
+                        "y": 2
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_3",
+                    "type": "ray",
+                    "subElementsIds": {
+                        "startPoint": "lrn_2",
+                        "endPoint": "lrn_1"
+                    }
+                }]
+            ],
+            "valid_score": 1
+        }
+    },
+
+    {
+        "response_id": "demo29-'.$uniqueResponseIdSuffix.'",
+        "axis_x": {
+            "draw_labels": true,
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
+        },
+        "axis_y": {
+            "draw_labels": true,
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
+        },
+        "canvas": {
+            "snap_to": "grid",
+            "x_max": 10,
+            "x_min": -10,
+            "y_max": 10,
+            "y_min": -10
+        },
+        "grid": {
+            "x_distance": 1,
+            "y_distance": 1
+        },
+        "instant_feedback": true,
+        "is_math": true,
+        "stimulus": "Plot the circle with centre co-ordinates \\\((5,4)\\\) and a radius of 2 units.",
+        "toolbar": {
+            "default_tool": "circle",
+            "tools": ["circle"]
+        },
+        "type": "graphplotting",
+        "validation": {
+            "penalty_score": 0,
+            "valid_responses": [
+                [{
+                    "id": "lrn_2",
+                    "type": "point",
+                    "coords": {
+                        "x": 5,
+                        "y": 4
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_1",
+                    "type": "point",
+                    "coords": {
+                        "x": 7,
+                        "y": 4
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_3",
+                    "type": "circle",
+                    "subElementsIds": {
+                        "centrePoint": "lrn_2",
+                        "radiusPoint": "lrn_1"
+                    }
+                }]
+            ],
+            "valid_score": 1
+        }
+    },
+
+    {
+        "response_id": "demo30-'.$uniqueResponseIdSuffix.'",
+        "axis_x": {
+            "draw_labels": true,
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
+        },
+        "axis_y": {
+            "draw_labels": true,
+            "show_first_arrow": true,
+            "show_last_arrow": true,
+            "ticks_distance": 1
+        },
+        "canvas": {
+            "snap_to": "grid",
+            "x_max": 9,
+            "x_min": -9,
+            "y_max": 9,
+            "y_min": -9
+        },
+        "grid": {
+            "x_distance": 1,
+            "y_distance": 1
+        },
+        "instant_feedback": true,
+        "is_math": true,
+        "stimulus": "Plot the vector originating at \\\((0,1)\\\) in the direction \\\(\\\binom{3}{4}\\\)",
+        "toolbar": {
+            "default_tool": "vector",
+            "tools": ["vector"]
+        },
+        "type": "graphplotting",
+        "validation": {
+            "penalty_score": 0,
+            "valid_responses": [
+                [{
+                    "id": "lrn_2",
+                    "type": "point",
+                    "coords": {
+                        "x": 0,
+                        "y": 1
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_1",
+                    "type": "point",
+                    "coords": {
+                        "x": 3,
+                        "y": 5
+                    },
+                    "subElement": true
+                }, {
+                    "id": "lrn_3",
+                    "type": "vector",
+                    "subElementsIds": {
+                        "startPoint": "lrn_2",
+                        "endPoint": "lrn_1"
+                    }
+                }]
+            ],
+            "valid_score": 1
         }
     }
 ]
@@ -895,6 +1195,14 @@ $signedRequest = '{
 
 <div class="row">
     <div class="col-md-8">
+        <h3 id="q31">Numberline</h3>
+        <span class="learnosity-response question-demo31-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
         <h3 id="q24">Plot Points</h3>
         <p>Plot points at \((5,2)\), \((3,0)\), \((2,4)\) and \((-1,-5)\).</p>
         <span class="learnosity-response question-demo24-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -907,6 +1215,40 @@ $signedRequest = '{
         <h3 id="q25">Plot Lines</h3>
         <p>Plot the line \( y = x + 1 \)</p>
         <span class="learnosity-response question-demo25-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q27">Plot Segments</h3>
+        <span class="learnosity-response question-demo27-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q28">Plot Rays</h3>
+        <p>Graph a Ray originating at \((4,0)\) in the direction towards \((7,-2)\)</p>
+        <p><span class="label label-info">Hint</span> You'll need to use the <strong>Ray</strong> tool</p>
+        <span class="learnosity-response question-demo28-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q29">Plot Circles</h3>
+        <span class="learnosity-response question-demo29-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q30">Plot Vectors</h3>
+        <span class="learnosity-response question-demo30-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
 <hr>
