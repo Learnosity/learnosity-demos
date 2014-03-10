@@ -42,7 +42,12 @@ $signedRequest = $RequestHelper->generateRequest();
 <script src="//items.learnosity.com/"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
-    LearnosityItems.init(activity);
+    var eventOptions = {
+        readyListener: function () {
+            console.log("Learnosity Items API is ready");
+        }
+    };
+    var app = LearnosityItems.init(activity, eventOptions);
 </script>
 
 <div class="jumbotron">
