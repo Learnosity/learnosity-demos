@@ -5,11 +5,17 @@
 *
 ********************************************************************
 -->
+<style>
+    .img-upload .modal-dialog {
+        width: 600px;
+        padding-top: 200px
+    }
+</style>
+
 <div class="modal fade img-upload">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Image gallery</h4>
             </div>
             <div class="modal-body">
@@ -26,9 +32,6 @@
                         <img src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QVB.jpg/113px-QVB.jpg" data-img="//upload.wikimedia.org/wikipedia/en/5/5f/QVB136lg.jpg">
                     </p>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
