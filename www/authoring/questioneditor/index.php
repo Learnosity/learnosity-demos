@@ -254,7 +254,11 @@ include_once 'includes/header.php';
                             var $modal = $('.modal.img-upload'),
                                 $images = $('.asset-img-gallery img'),
                                 imgClickHandler = function () {
-                                    callback($(this).data('img'));
+                                    if (returnType === 'HTML') {
+                                        callback('<img src="' + $(this).data('img') + '"/>');
+                                    } else {
+                                        callback($(this).data('img'));
+                                    }
                                     $modal.modal('hide');
                                 };
                             $images.on('click', imgClickHandler);
