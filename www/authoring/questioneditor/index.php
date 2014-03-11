@@ -339,7 +339,7 @@ include_once 'includes/header.php';
                             {
                                 'value': '1',
                                 'label': '25%',
-                                'label_tooltip': 'Unsatifactory',
+                                'label_tooltip': 'Unsatisfactory',
                                 'tint': 'red',
                                 'description': 'Poor effort.'
                             },
