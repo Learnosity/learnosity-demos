@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 // Full base URL of the Data API
 $URL = 'https://data.learnosity.com';
 // Which version of the Data API to use
-$version = 'v0.17';
+$version = 'v0.20';
 
 ?>
 
@@ -141,6 +141,21 @@ $version = 'v0.17';
         <div id="sessionsresponses" class="panel-collapse collapse">
             <div class="panel-body">
                 <?php include_once 'sessions/responses.php'; ?>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#sessionsstatuses">
+                    <span class="block">action: get</span>
+                    <?php echo '/' . $version . '/sessions/statuses'; ?>
+                </a>
+            </h4>
+        </div>
+        <div id="sessionsstatuses" class="panel-collapse collapse">
+            <div class="panel-body">
+                <?php include_once 'sessions/statuses.php'; ?>
             </div>
         </div>
     </div>
