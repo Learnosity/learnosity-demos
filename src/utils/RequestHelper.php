@@ -203,7 +203,7 @@ class RequestHelper
             $return = 'security=' . Json::encode($output['security']);
             if (isset($output['request'])) {
                 $return .= '&request=' . Json::encode($output['request']);
-            } 
+            }
             $return .= $a;
             return $return;
         } elseif ($this->service === 'assess') {
@@ -296,19 +296,13 @@ class RequestHelper
     /**
      * Execute a resource request (POST) to an endpoint. Useful as a
      * cross-domain proxy.
-     * @param  array $security  Security consumer credentials including secret
      * @param  string $resource Full URL of where to POST the request
-     * @param  array  $data     Payload of request
-     * @param  string $action   Can be used for the Data API (get|set|update)
+     * @param  array  $request  Payload of request
      * @param  bool   $debug    Whether to output more information about the request
      * @return string           The response string
      */
     public function sendXHR($resource, $request, $debug = null)
     {
-        if (!empty($debug) && is_bool($debug)) {
-            $this->debug = $debug;
-        }
-
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $resource);
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -317,16 +311,16 @@ class RequestHelper
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
         curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
-        if ($this->debug) {
+        if ($debug) {
             curl_setopt($ch, CURLOPT_HEADER, 1);
         }
         $curl_response = curl_exec($ch);
         curl_close($ch);
 
         if (($curl_response)) {
-            if ($this->debug) {
+            if ($debug) {
                 $response = list($headers, $content) = explode("\r\n\r\n", $curl_response, 2);
-                if ($this->debug) {
+                if ($debug) {
                     echo 'Parameters sent to: ' . $resource;
                     echo '<pre>' . $request . '</pre>';
 
