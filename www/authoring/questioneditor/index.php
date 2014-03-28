@@ -229,23 +229,18 @@ include_once 'includes/header.php';
                         imageclozeassociation: {
                             defaults: {
                                 "img_src": "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
-                                "possible_responses": ["North Sydney", "Harbour Bridge", "The Rocks", "Darling Harbour"],
-                                "response_container": {
-                                    "pointer": "right"
-                                },
+                                "possible_responses": ["North Sydney", "Harbour Bridge", "The Rocks"],
+                                "response_container": {"pointer": "left"},
                                 "response_positions": [{
-                                    "x": 47.41,
-                                    "y": 78.52
-                                }, {
-                                    "x": 10.19,
-                                    "y": 38.77
-                                }, {
-                                    "x": 53.7,
-                                    "y": 26.42
-                                }, {
-                                    "x": 52.41,
-                                    "y": 38.27
-                                }]
+                                    "x": 45,
+                                    "y": 42.47
+                                    }, {
+                                    "x": 12.22,
+                                    "y": 64.2
+                                    }, {
+                                    "x": 45,
+                                    "y": 24.94
+                                    }]
                             }
                         }
                     },
@@ -339,7 +334,7 @@ include_once 'includes/header.php';
                             {
                                 'value': '1',
                                 'label': '25%',
-                                'label_tooltip': 'Unsatifactory',
+                                'label_tooltip': 'Unsatisfactory',
                                 'tint': 'red',
                                 'description': 'Poor effort.'
                             },
