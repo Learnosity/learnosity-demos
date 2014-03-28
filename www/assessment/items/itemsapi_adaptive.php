@@ -13,7 +13,7 @@ $security = array(
 
 $request = array(
     'activity_id'    => 'itemadaptivedemo',
-    'name'           => 'Items API demo - assess activity',
+    'name'           => 'Items API demo - adaptive activity',
     'rendering_type' => 'assess',
     'state'          => 'initial',
     'course_id'      => $courseid,
