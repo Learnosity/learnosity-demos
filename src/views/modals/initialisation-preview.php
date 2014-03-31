@@ -23,6 +23,8 @@
 </div>
 
 <?php
+    include_once 'utils/Json.php';
+
     if (!isset($signedRequest)) {
         die('Make sure you call your PHP var $signedRequest for initialisation preview to work');
     }
