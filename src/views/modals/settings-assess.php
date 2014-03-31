@@ -1,26 +1,26 @@
 <!--
 ********************************************************************
 *
-* Setup the Items API Settings modal
+* Setup the Assess API Settings modal
 *
 ********************************************************************
 -->
 <?php
     // Shortcuts for convenience
-    $con  = $request['config'];
-    $nav  = $request['config']['navigation'];
-    $time = $request['config']['time'];
+    $con  = $request;
+    $nav  = $request['navigation'];
+    $time = $request['time'];
 ?>
 <div class="modal fade" id="settings">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Items API – Custom Settings</h4>
+                <h4 class="modal-title">Assess API – Custom Settings</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" role="form" id="frmSettings" method="post">
-                    <input type="hidden" name="api_type" value="items">
+                    <input type="hidden" name="api_type" value="assess">
 
                     <div class="panel panel-info">
                         <div class="panel-heading">Navigation/Control Settings</div>
@@ -73,7 +73,7 @@
                                 <div class="form-group">
                                     <label for="toc" class="col-sm-6 control-label">Show Table of Contents</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="navigation[toc]" value="true"<?php if (isset($nav['toc']) && $nav['toc'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[toc]" value="true"<?php if (isset($nav['toc']) && (is_array($nav['toc']) || $nav['toc'] === true)) { echo ' checked'; }; ?>> True
                                         <input type="radio" name="navigation[toc]" value="false"<?php if (isset($nav['toc']) && $nav['toc'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
@@ -81,21 +81,21 @@
                                     <label for="show_calculator" class="col-sm-6 control-label">Show Calculator</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[show_calculator]" value="true"<?php if (isset($nav['show_calculator']) && $nav['show_calculator'] === true) { echo ' checked'; }; ?>> True
-                                        <input type="radio" name="navigation[show_calculator]" value="false"<?php if (isset($nav['show_calculator']) && $nav['show_calculator'] === false) { echo ' checked'; }; ?>> False
+                                        <input type="radio" name="navigation[show_calculator]" value="false"<?php if (isset($nav['show_calculator']) && $nav['show_calculator'] === false || !isset($nav['show_calculator'])) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="warning_on_change" class="col-sm-6 control-label">Show warning if not question not attempted</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[warning_on_change]" value="true"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === true) { echo ' checked'; }; ?>> True
-                                        <input type="radio" name="navigation[warning_on_change]" value="false"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === false) { echo ' checked'; }; ?>> False
+                                        <input type="radio" name="navigation[warning_on_change]" value="false"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === false || !isset($nav['warning_on_change'])) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="skip_submit_confirmation" class="col-sm-6 control-label">Skip confirmation window on submit</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[skip_submit_confirmation]" value="true"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === true) { echo ' checked'; }; ?>> True
-                                        <input type="radio" name="navigation[skip_submit_confirmation]" value="false"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === false) { echo ' checked'; }; ?>> False
+                                        <input type="radio" name="navigation[skip_submit_confirmation]" value="false"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === false || !isset($nav['skip_submit_confirmation'])) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                             </div>
@@ -112,28 +112,28 @@
                                     <label for="show_progress" class="col-sm-6 control-label">Show Progress Bar</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[show_progress]" value="true"<?php if (isset($nav['show_progress']) && $nav['show_progress'] === true) { echo ' checked'; }; ?>> True
-                                        <input type="radio" name="navigation[show_progress]" value="false"<?php if (isset($nav['show_progress']) && $nav['show_progress'] === false) { echo ' checked'; }; ?>> False
+                                        <input type="radio" name="navigation[show_progress]" value="false"<?php if (isset($nav['show_progress']) && $nav['show_progress'] === false || !isset($nav['show_progress'])) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="show_time" class="col-sm-6 control-label">Show Time</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="time[show_time]" value="true"<?php if (isset($time['show_time']) && $time['show_time'] === true) { echo ' checked'; }; ?>> True
-                                        <input type="radio" name="time[show_time]" value="false"<?php if (isset($time['show_time']) && $time['show_time'] === false) { echo ' checked'; }; ?>> False
+                                        <input type="radio" name="time[show_time]" value="false"<?php if (isset($time['show_time']) && $time['show_time'] === false || !isset($time['show_time'])) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="show_itemcount" class="col-sm-6 control-label">Show Item Count</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[show_itemcount]" value="true"<?php if (isset($nav['show_itemcount']) && $nav['show_itemcount'] === true) { echo ' checked'; }; ?>> True
-                                        <input type="radio" name="navigation[show_itemcount]" value="false"<?php if (isset($nav['show_itemcount']) && $nav['show_itemcount'] === false) { echo ' checked'; }; ?>> False
+                                        <input type="radio" name="navigation[show_itemcount]" value="false"<?php if (isset($nav['show_itemcount']) && $nav['show_itemcount'] === false || !isset($nav['show_itemcount'])) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="scrolling_indicator" class="col-sm-6 control-label">Show Scrolling Indicator<br>(horizontal-fixed layout only)</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[scrolling_indicator]" value="true"<?php if (isset($nav['scrolling_indicator']) && $nav['scrolling_indicator'] === true) { echo ' checked'; }; ?>> True
-                                        <input type="radio" name="navigation[scrolling_indicator]" value="false"<?php if (isset($nav['scrolling_indicator']) && $nav['scrolling_indicator'] === false) { echo ' checked'; }; ?>> False
+                                        <input type="radio" name="navigation[scrolling_indicator]" value="false"<?php if (isset($nav['scrolling_indicator']) && $nav['scrolling_indicator'] === false || !isset($nav['scrolling_indicator'])) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -254,7 +254,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="document.getElementById('frmSettings').submit();">Initialise Items API &raquo;</button>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('frmSettings').submit();">Initialise Assess API &raquo;</button>
             </div>
         </div>
     </div>
