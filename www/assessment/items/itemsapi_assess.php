@@ -70,35 +70,7 @@ $request = array(
     )
 );
 
-// Examine the settings modal form post and replace the default
-// $request variables.
-if (isset($_POST['ui_style'])) {
-    foreach ($_POST as $key => $value) {
-        if (is_array($value)) {
-            foreach ($value as $subkey => $subvalue) {
-                if ($subvalue === 'true') {
-                    $_POST[$key][$subkey] = true;
-                } elseif ($subvalue === 'false') {
-                    $_POST[$key][$subkey] = false;
-                }
-            }
-        } else {
-            if ($value === 'true') {
-                $_POST[$key] = (bool)$value;
-            } elseif ($value === 'false') {
-                $_POST[$key] = false;
-            }
-        }
-    }
-
-    $request['config'] = array_replace_recursive($request['config'], $_POST);
-
-    // remove idle_timout settings if the should not be used
-    if ($_POST['configuration']['idle_timeout']['use_idle_timeout'] === 'false') {
-        unset($request['config']['configuration']['idle_timeout']);
-    }
-    unset($request['config']['configuration']['idle_timeout']['use_idle_timeout']);
-}
+include_once 'utils/settings-override.php';
 
 $RequestHelper = new RequestHelper(
     'items',
