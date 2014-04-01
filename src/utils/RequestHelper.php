@@ -146,7 +146,6 @@ class RequestHelper
         $output = array();
 
         switch ($this->service) {
-            case 'assess':
             case 'author':
             case 'data':
             case 'items':
