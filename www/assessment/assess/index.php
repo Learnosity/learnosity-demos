@@ -47,6 +47,7 @@ $request = array(
     'ui_style'      => 'main',
     'configuration' => array(
         'questionsApiVersion'   => 'v2',
+        'fontsize'              => 'normal',
         'onsave_redirect_url'   => $env['protocol'] . $env['page'],
         'onsubmit_redirect_url' => $env['protocol'] . $env['page']
     ),
@@ -396,9 +397,6 @@ $request = array(
                       "clinked"
                     ]
                   ]
-                },
-                "ui_style": {
-                  "fontsize": "large"
                 },
                 "instant_feedback": true,
                 "response_id": "'.$uniqueResponseIdSuffix.'_Demo9",
