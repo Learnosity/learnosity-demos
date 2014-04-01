@@ -22,12 +22,12 @@ if (isset($_POST['ui_style'])) {
     }
 
     if ($_POST['api_type'] === 'items') {
+        $request['config'] = array_replace_recursive($request['config'], $_POST);
         $requestKey = $request['config'];
     } elseif ($_POST['api_type'] === 'assess') {
+        $request = array_replace_recursive($request, $_POST);
         $requestKey = $request;
     }
-
-    $request = array_replace_recursive($request, $_POST);
 
     // remove idle_timout settings if the should not be used
     if ($_POST['configuration']['idle_timeout']['use_idle_timeout'] === 'false') {
