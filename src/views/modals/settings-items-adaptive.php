@@ -29,13 +29,19 @@
                                         <input type="number" step="0.1" class="form-control" name="adaptive[initial_ability]" value="<?php echo @$adaptive['initial_ability']; ?>">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="interval" class="col-sm-6 control-label">Item Difficulty Tolerance</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" step="0.1" min="0" class="form-control" name="adaptive[item_difficulty_tolerance]" value="<?php echo @$adaptive['item_difficulty_tolerance']; ?>">
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="interval" class="col-sm-6 control-label">Item Difficulty Tolerance</label>
+                                    <label for="interval" class="col-sm-6 control-label">Item Difficulty Offset</label>
                                     <div class="col-sm-3">
-                                        <input type="number" step="0.1" class="form-control" name="adaptive[item_difficulty_tolerance]" value="<?php echo @$adaptive['item_difficulty_tolerance']; ?>">
+                                        <input type="number" step="0.1" class="form-control" name="adaptive[item_difficulty_offset]" value="<?php echo @$adaptive['item_difficulty_offset']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -57,13 +63,13 @@
                                 <div class="form-group">
                                     <label for="interval" class="col-sm-6 control-label">Standard Deviation</label>
                                     <div class="col-sm-3">
-                                        <input type="number" step="0.1" class="form-control" name="adaptive[eap][standard_deviation]" value="<?php echo @$adaptive['eap']['standard_deviation']; ?>">
+                                        <input type="number" step="0.1" min="0" class="form-control" name="adaptive[eap][standard_deviation]" value="<?php echo @$adaptive['eap']['standard_deviation']; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="interval" class="col-sm-6 control-label">Number of points</label>
                                     <div class="col-sm-3">
-                                        <input type="number" step="1" class="form-control" name="adaptive[eap][num_points]" value="<?php echo @$adaptive['eap']['num_points']; ?>">
+                                        <input type="number" step="1" min="1" class="form-control" name="adaptive[eap][num_points]" value="<?php echo @$adaptive['eap']['num_points']; ?>">
                                     </div>
                                 </div>
                             </div>
