@@ -22,29 +22,53 @@ $request = array(
     'adaptive'       => array(
         'type'                      => 'itemadaptive',
         'initial_ability'           => 0,
-        'item_difficulty_tolerance' => 1,
-        'max_difficulty_change'     => 0.7,
-        'termination_criteria'      => array(
-            'max_items' => 5
+        'item_difficulty_tolerance' => 0.1,
+        'eap' => array(
+            'mean'               => 0,
+            'standard_deviation' => 1,
+            'theta_min'          => -4,
+            'theta_max'          => 4,
+            'num_points'         => 50
+        ),
+        'termination_criteria' => array(
+            'max_items' => 10
         ),
         'required_tags' => array(
-            array('type' => 'course', 'name' => 'commoncore'),
-            array('type' => 'subject', 'name' => 'Maths')
+            array('type' => 'adaptive-lifecycle', 'name' => 'operational')
         )
     ),
     'config'         => array(
         'subtitle'   => 'Walter White',
-        'navigation' => array(),
+        'navigation' => array('show_prev' => false),
         'time' => array(),
         'assessApiVersion' => 'v2',
         'questionsApiVersion' => 'v2',
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_adaptive.php',
-            'onsave_redirect_url'   => 'itemsapi_adaptive.php',
-
+            'onsave_redirect_url'   => 'itemsapi_adaptive.php'
         )
     )
 );
+
+if (isset($_POST['adaptive'])) {
+    foreach ($_POST['adaptive'] as $key => $value) {
+        if (is_array($value)) {
+            foreach ($value as $childKey => $childValue) {
+                if (strlen($childValue)) {
+                    $request['adaptive'][$key][$childKey] = (float) $childValue;
+                } else {
+                    unset($request['adaptive'][$key][$childKey]);
+                }
+            }
+        } else {
+            if (strlen($value)) {
+                $request['adaptive'][$key] = (float) $value;
+            } else {
+                unset($request['adaptive'][$key]);
+            }
+        }
+    }
+}
 
 $RequestHelper = new RequestHelper(
     'items',
@@ -58,11 +82,15 @@ $signedRequest = $RequestHelper->generateRequest();
 ?>
 
 <div class="jumbotron">
-    <h1>Items API – Adaptive</h1>
+    <h1>Items API – Adaptive Assessment</h1>
+    <p>A dynamic assessment that adapts to the user's ability in real time.<p>
     <div class="row">
         <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
+            <h4><a href="//docs.learnosity.com/itemsapi/intheoven/itemadaptive.php" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
+            </a></h4>
+            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
+                <span class="glyphicon glyphicon-list-alt"></span> Customise Adaptive Settings
             </a></h4>
             <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
@@ -74,13 +102,13 @@ $signedRequest = $RequestHelper->generateRequest();
 
 <!-- Container for the items api to load into -->
 <span id="learnosity_assess"></span>
-<script src="http://items.staging.learnosity.com"></script>
+<script src="//items.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
     LearnosityItems.init(activity);
 </script>
 
 <?php
-    include_once '../../../src/views/modals/settings-items.php';
+    include_once '../../../src/views/modals/settings-items-adaptive.php';
     include_once '../../../src/views/modals/initialisation-preview.php';
     include_once '../../../src/includes/footer.php';
