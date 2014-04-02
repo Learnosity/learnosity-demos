@@ -56,6 +56,19 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <h2 class="panel-title">Adaptive Assessment</h2>
+                </div>
+                <div class="panel-body">
+                    <p>A dynamic assessment that adapts to the user's ability in real time.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_adaptive.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <h2 class="panel-title">Worked Solutions (hints)</h2>
                 </div>
                 <div class="panel-body">
