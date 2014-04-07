@@ -31,15 +31,20 @@ $request = array(
             'num_points'         => 50
         ),
         'termination_criteria' => array(
-            'max_items' => 10
+            'error_below' => 0.7
         ),
         'required_tags' => array(
             array('type' => 'adaptive-lifecycle', 'name' => 'operational')
         )
     ),
-    'config'         => array(
-        'subtitle'   => 'Walter White',
-        'navigation' => array('show_prev' => false),
+    'config' => array(
+        'title' => 'Adaptive Assessment',
+        'navigation' => array(
+            'intro_item'             => 'adaptive-intro',
+            'show_prev'              => false,
+            'show_progress'          => false,
+            'show_fullscreencontrol' => false
+        ),
         'time' => array(),
         'assessApiVersion' => 'v2',
         'questionsApiVersion' => 'v2',
