@@ -931,6 +931,7 @@ $signedRequest = '{
         "type": "choicematrix",
         "stimulus": "Which statement is true?",
         "options": ["True", "False"],
+        "instant_feedback": true,
         "stems": [
             "Sydney is the captital city of Australia.",
             "Darwin is the captital of the Northern Territory",
@@ -952,6 +953,7 @@ $signedRequest = '{
         "type": "choicematrix",
         "stimulus": "Read the passage and answer the following questions?",
         "options": ["Mary", "Jack", "Paul", "Lisa"],
+        "instant_feedback": true,
         "stems": [
             "Who did not submit homework?",
             "Who went to visit his/her grandmother after school?",
