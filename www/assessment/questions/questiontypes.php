@@ -626,43 +626,43 @@ $signedRequest = '{
             ]
         }
     },
-    {
-        "instant_feedback": true,
-        "labels": {
-            "frequency": 1,
-            "show_max": true,
-            "show_min": true
-        },
-        "line": {
-            "left_arrow": true,
-            "max": 3,
-            "min": 0,
-            "right_arrow": true
-        },
-        "points": ["1.5", "2.5", "5"],
-        "response_id": "demo31-'.$uniqueResponseIdSuffix.'",
-        "snap_to_ticks": true,
-        "stimulus": "Position the tokens at the closest points. If the number is not on the line, do not place it.",
-        "ticks": {
-            "distance": ".5",
-            "show": true
-        },
-        "type": "numberline",
-        "validation": {
-            "partial_scoring": true,
-            "penalty_score": 0,
-            "show_partial_ui": true,
-            "threshold": 0.25,
-            "valid_responses": [{
-                "point": "1.5",
-                "position": "1.5"
-            }, {
-                "point": "2.5",
-                "position": "2.5"
-            }],
-            "valid_score": 1
-        }
+{
+    "instant_feedback": true,
+    "labels": {
+        "frequency": 10,
+        "show_max": true,
+        "show_min": true
     },
+    "line": {
+        "left_arrow": true,
+        "max": 3,
+        "min": 0,
+        "right_arrow": true
+    },
+    "points": ["1.5", "2.5", "5"],
+    "response_id": "demo31-'.$uniqueResponseIdSuffix.'",
+    "snap_to_ticks": true,
+    "stimulus": "Position the tokens at the closest points. If the number isn&#39;t on the line, do not place it.<br />\nHint: We&#39;ll accept anything within .1 of the correct answer.",
+    "ticks": {
+        "distance": ".1",
+        "show": true
+    },
+    "type": "numberline",
+    "validation": {
+        "partial_scoring": true,
+        "penalty_score": 0,
+        "show_partial_ui": true,
+        "threshold": 0.1,
+        "valid_responses": [{
+            "point": "1.5",
+            "position": "1.5"
+        }, {
+            "point": "2.5",
+            "position": "2.5"
+        }],
+        "valid_score": 1
+    }
+},
     {
         "response_id": "demo27-'.$uniqueResponseIdSuffix.'",
         "axis_x": {
