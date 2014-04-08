@@ -925,6 +925,50 @@ $signedRequest = '{
             ],
             "valid_score": 1
         }
+    },
+    {
+        "response_id": "demo32-'.$uniqueResponseIdSuffix.'",
+        "type": "choicematrix",
+        "stimulus": "Which statement is true?",
+        "options": ["True", "False"],
+        "stems": [
+            "Sydney is the captital city of Australia.",
+            "Darwin is the captital of the Northern Territory",
+            "Queensland is the largest state in Australia."
+        ],
+        "validation": {
+            "scoring_type": "exactMatch",
+            "valid_response": {
+                "value": [1, 0, 1],
+                "score": 1
+            }
+        },
+        "ui_style": {
+            "stem_numeration": "lower-alpha"
+        }
+    },
+    {
+        "response_id": "demo33-'.$uniqueResponseIdSuffix.'",
+        "type": "choicematrix",
+        "stimulus": "Read the passage and answer the following questions?",
+        "options": ["Mary", "Jack", "Paul", "Lisa"],
+        "stems": [
+            "Who did not submit homework?",
+            "Who went to visit his/her grandmother after school?",
+            "Whose birthday is coming up?",
+            "Who lost his/her book?"
+        ],
+        "validation": {
+            "scoring_type": "exactMatch",
+            "valid_response": {
+            "value": [3, 1, 1, 0],
+            "score": 1
+            }
+        },
+        "ui_style": {
+            "stem_width": "600px",
+            "option_width": "100px"
+        }
     }
 ]
 }';
@@ -1189,6 +1233,22 @@ $signedRequest = '{
         <h3 id="q23">Categories (Drag and Drop)</h3>
         <p>Drag each triangle to the correct category.</p>
         <span class="learnosity-response question-demo21-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q32">Choice Matrix</h3>
+        <span class="learnosity-response question-demo32-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q33">Choice Matrix (wide)</h3>
+        <span class="learnosity-response question-demo33-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
 <hr>
