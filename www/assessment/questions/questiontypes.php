@@ -951,19 +951,19 @@ $signedRequest = '{
     {
         "response_id": "demo33-'.$uniqueResponseIdSuffix.'",
         "type": "choicematrix",
-        "stimulus": "Read the passage and answer the following questions?",
-        "options": ["Mary", "Jack", "Paul", "Lisa"],
+        "stimulus": "Answer the following questions:",
+        "options": ["Sydney", "Shanghai", "Berlin", "Dallas"],
         "instant_feedback": true,
         "stems": [
-            "Who did not submit homework?",
-            "Who went to visit his/her grandmother after school?",
-            "Whose birthday is coming up?",
-            "Who lost his/her book?"
+            "Which city lies in Australia?",
+            "Which city is the capital city of a country?",
+            "Which city has the largest population?",
+            "Which city lies in Texas?"
         ],
         "validation": {
             "scoring_type": "exactMatch",
             "valid_response": {
-            "value": [3, 1, 1, 0],
+            "value": [0, 2, 1, 3],
             "score": 1
             }
         },
