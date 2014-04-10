@@ -267,6 +267,7 @@ li.sortable-placeholder {
                 console.log(json);
                 questions[selected] = json;
             });
+            $('#delete').prop('disabled', false);
         } else {
             alert("Please enter a reference id");
         }
@@ -297,10 +298,7 @@ li.sortable-placeholder {
             console.log(question);
             console.log(questions);
             question.response_id = identifier + session_id;
-            question.metadata = {
-                "sheet_reference" : identifier,
-                "widget_reference" : identifier
-            };
+
 
             questionList.push(question);
             items.push(item);
