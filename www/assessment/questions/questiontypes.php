@@ -933,8 +933,8 @@ $signedRequest = '{
         "options": ["True", "False"],
         "instant_feedback": true,
         "stems": [
-            "Sydney is the captital city of Australia.",
-            "Darwin is the captital of the Northern Territory",
+            "Sydney is the capital city of Australia.",
+            "Darwin is the capital of the Northern Territory",
             "Queensland is the largest state in Australia."
         ],
         "validation": {
@@ -970,6 +970,44 @@ $signedRequest = '{
         "ui_style": {
             "stem_width": "600px",
             "option_width": "100px"
+        }
+    },
+    {
+        "instant_feedback": true,
+        "is_math": true,
+        "response_id": "demo34-'.$uniqueResponseIdSuffix.'",
+        "stimulus": "Enter any two values, such that the expression is equal to \\(5 = y + x\\).",
+        "template": "{{response}} = y + {{response}}",
+        "type": "formula",
+        "validation": {
+            "valid_responses": [
+                [{
+                    "method": "equivSymbolic",
+                    "value": "5=y+x",
+                    "options": {
+                        "allowDecimal": true,
+                        "decimalPlaces": 10
+                    }
+                }]
+            ]
+        }
+    },
+    {
+        "instant_feedback": true,
+        "is_math": true,
+        "response_id": "demo35-'.$uniqueResponseIdSuffix.'",
+        "stimulus": "Enter any value, such that the value is equal to \\(5m\\). You may use \\(km\\), \\(cm\\), \\(ft\\), \\(in\\) or other units (rounded to two decimal places.",
+        "type": "formula",
+        "validation": {
+            "valid_responses": [
+                [{
+                    "method": "equivValue",
+                    "value": "5m",
+                    "options": {
+                        "decimalPlaces": 2
+                    }
+                }]
+            ]
         }
     }
 ]
@@ -1320,6 +1358,25 @@ $signedRequest = '{
         <h3 id="q26">Math Formula</h3>
         <p><span class="label label-info">Hint</span>  \(x(x+4) +3\), \(x^2 +4x +3\) and \(3 + x^2 +4x \) would all be acceptable.</p>
         <span class="learnosity-response question-demo26-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q34">Math Formula (Fill in the Blanks)</h3>
+        <p><span class="label label-info">Hint</span>  Possible answers include:<br><br>\(5 = y + x\)<br>\(-5 = y + (-x -2y)\)</p>
+        <p>Try a few and see - the question is evaluated as a whole, rather than each box on its own.</p>
+        <span class="learnosity-response question-demo34-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q35">Math Formula (Unit comparison)</h3>
+        <p><span class="label label-info">Hint</span>  \(0.005km\), \(500cm\), \(5000mm\) \(16.40ft\), \(196.8in\) would all be acceptable.</p>
+        <span class="learnosity-response question-demo35-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
 <hr>
