@@ -933,8 +933,8 @@ $signedRequest = '{
         "options": ["True", "False"],
         "instant_feedback": true,
         "stems": [
-            "Sydney is the captital city of Australia.",
-            "Darwin is the captital of the Northern Territory",
+            "Sydney is the capital city of Australia.",
+            "Darwin is the capital of the Northern Territory",
             "Queensland is the largest state in Australia."
         ],
         "validation": {
