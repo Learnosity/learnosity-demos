@@ -82,6 +82,21 @@ include_once 'includes/header.php';
         </div>
 
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Advanced Audio Examples</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Our Audio questions provide simple ways to check audio quality and alert/prevent submission to ensure you always get a quality response.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./audio_advanced.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php
