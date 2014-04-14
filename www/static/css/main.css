@@ -280,3 +280,25 @@ td {
     padding: 10px 15px;
     text-transform: uppercase;
 }
+
+/********************************************************************
+*
+* Home page
+*
+********************************************************************/
+.landing .panel-heading {
+    padding: 20px 0;
+}
+.landing .panel-heading h2 {
+    font-size: 25px;
+    text-align: center;
+}
+.landing .panel {
+    min-height: 325px;
+}
+.landing ul.list-unstyled li {
+    padding-bottom: 8px;
+}
+.landing ul.list-unstyled {
+    margin-bottom: 0;
+}
