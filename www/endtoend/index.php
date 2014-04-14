@@ -182,10 +182,12 @@ li.sortable-placeholder {
             "stimulus": "<h3>What is the capital city of Ireland?</h3>\n",
             "type": "mcq",
             "ui_style": {},
-            "valid_responses": [{
-                "value": "0",
-                "score": 1
-            }]
+            "validation": {
+            "scoring_type": "exactMatch",
+                "valid_response": {
+                    "value": ["0"]
+                }
+            }
         },
         "formula_math_g_3" : {
             "instant_feedback": true,
@@ -194,17 +196,17 @@ li.sortable-placeholder {
             "template": "\\frac{-b \\pm \\sqrt{{{response}}^2 - {{response}}c}}{{{response}}}",
             "type": "formula",
             "validation": {
-                "valid_responses": [
-                [{
-                    "method": "equivSymbolic",
-                    "value": "\\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}",
-                    "options": {
-                        "allowDecimal": false,
-                        "decimalPlaces": 10
-                    }
-                }]
-                ]
-            }
+        "scoring_type": "exactMatch",
+        "valid_response": {
+            "value": [{
+                "method": "equivSymbolic",
+                "value": "\\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}",
+                "options": {
+                    "allowDecimal": false
+                }
+            }]
+        }
+    }
         }
     };
 
