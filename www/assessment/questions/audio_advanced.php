@@ -78,15 +78,10 @@ $signedRequest = '{
     <script>
 
     function checkQuality() {
-        var enableButton = false;
         $('.good,.bad').removeClass("good bad");
         if (parseFloat($('.numberOfClippingSamples').html(), 10) > parseFloat($('.numberOfClippingSamples_inp').val(), 10)) {
             $('.numberOfClippingSamples').addClass('bad');
             $('.numberOfClippingSamples_result').addClass('bad').html('Too Loud');
-            if($('.numberOfClippingSamples_mandatory').is(':checked')) {
-                console.log("clipping");
-                enableButton = true;
-            }
         } else {
             $('.numberOfClippingSamples').addClass('good');
             $('.numberOfClippingSamples_result').addClass('good').html('Acceptable');
@@ -94,10 +89,6 @@ $signedRequest = '{
         if (parseFloat($('.maxRmsEnergy').html(), 10) < parseFloat($('.maxRmsEnergy_inp').val(), 10)) {
             $('.maxRmsEnergy').addClass('bad');
             $('.maxRmsEnergy_result').addClass('bad').html('Too Quiet');
-            if($('.maxRmsEnergy_mandatory').is(':checked')) {
-                console.log("max");
-                enableButton = true;
-            }
         } else {
             $('.maxRmsEnergy').addClass('good');
             $('.maxRmsEnergy_result').addClass('good').html('Acceptable');
@@ -105,16 +96,10 @@ $signedRequest = '{
         if (parseFloat($('.minRmsEnergy').html(), 10) > parseFloat($('.minRmsEnergy_inp').val(), 10)) {
             $('.minRmsEnergy').addClass('bad');
             $('.minRmsEnergy_result').addClass('bad').html('Background Noise');
-            if($('.minRmsEnergy_mandatory').is(':checked')) {
-                console.log("min");
-                enableButton = true;
-            }
         } else {
             $('.minRmsEnergy').addClass('good');
             $('.minRmsEnergy_result').addClass('good').html('Acceptable');
         }
-        console.log(enableButton);
-        $('#submit_button').prop('disabled', enableButton);
     }
 
     $('.checkQualityInputs input').on("change", checkQuality);
@@ -146,12 +131,12 @@ $signedRequest = '{
     <div class="row">
         <div class="col-md-6">
             <h3>Analyse Audio</h3>
-            <p>Record a sample to analyse the audio quality. If one of the quality check fails, and it's marked as "required for submit", the submit button will be disabled, until an adequate recording has been made.</p>
+            <p>Record a sample to analyse the audio quality.</p>
             <span class="learnosity-response question-demoaudio_1-<?php echo $uniqueResponseIdSuffix ?>"></span>
         </div>
-        <div class="col-md-6 alert-warning">
+        <div class="col-md-6 ">
             <div class="hints">
-                <table class="table  table-condensed">
+                <table class="table table-bordered table-condensed">
                     <thead>
                         <tr>
                             <th></th>
@@ -185,20 +170,9 @@ $signedRequest = '{
                             <td class="maxRmsEnergy_result"></td>
                             <td class="minRmsEnergy_result"></td>
                         </tr>
-                        <tr>
-                            <td>Require to submit</td>
-                            <td><input type="checkbox" class="numberOfClippingSamples_mandatory"></td>
-                            <td><input type="checkbox" class="maxRmsEnergy_mandatory"></td>
-                            <td><input type="checkbox" class="minRmsEnergy_mandatory"></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            <button id="submit_button" type="button" class="btn btn-default btn-lg" disabled="disabled" >Submit</button>
         </div>
     </div>
     <hr>
