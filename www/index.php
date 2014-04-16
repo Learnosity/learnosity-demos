@@ -12,28 +12,7 @@ include_once 'includes/header.php';
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>What do I do?</h2>
-            <p>Use the top navigation, or the list below, to try out any or all of the available demos:</p>
-            <br>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Assessment</h2>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-unstyled">
-                        <li><a href="<?php echo $env['www'] ?>assessment/questions/index.php">Questions API</a></li>
-                        <li><a href="<?php echo $env['www'] ?>assessment/items/index.php">Items API</a></li>
-                        <li><a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div class="row landing">
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -41,8 +20,29 @@ include_once 'includes/header.php';
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="<?php echo $env['www'] ?>authoring/author/index.php">Author API</a></li>
-                        <li><a href="<?php echo $env['www'] ?>authoring/questioneditor/index.php">Question Editor API</a></li>
+                        <li><p><a href="<?php echo $env['www'] ?>authoring/questioneditor/index.php">Question Editor API</a></p>
+                        <p>A fully featured Question and Feature creation tool, with an easy-to-use interface and a live preview and interaction panel,
+                        allowing on-the-fly interactive creation and testing for Authors.</p></li>
+                        <li><p><a href="<?php echo $env['www'] ?>authoring/author/index.php">Author API</a></p>
+                        <p>Allows searching and integration of Learnosity powered content into your content management systems while still leveraging the
+                        power of the learnosity author site for creation of rich items with a simple interface.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Assessment</h2>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li><p><a href="<?php echo $env['www'] ?>assessment/questions/index.php">Questions API</a></p>
+                        <p>Rich Question types can be embedded on any page with the Learnosity Questions API.</p></li>
+                        <li><p><a href="<?php echo $env['www'] ?>assessment/items/index.php">Items API</a></p>
+                        <p>Provides a simple way to access content from the Learnosity item bank.</p></li>
+                        <li><p><a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a></p>
+                        <p>Configurable layouts, pause, fullscreen mode, simple assessment delivery to desktops and tablet devices.</p></li>
                     </ul>
                 </div>
             </div>
@@ -54,9 +54,12 @@ include_once 'includes/header.php';
                 </div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li><a href="<?php echo $env['www'] ?>reporting/reports/index.php">Reports API</a></li>
-                        <li><a href="<?php echo $env['www'] ?>reporting/sso/index.php">Single Sign On API</a></li>
-                        <li><a href="<?php echo $env['www'] ?>reporting/data/index.php">Data API</a></li>
+                        <li><p><a href="<?php echo $env['www'] ?>reporting/reports/index.php">Reports API</a></p>
+                        <p>A service that allows content providers to easily render rich reports.</p></li>
+                        <li><p><a href="<?php echo $env['www'] ?>reporting/data/index.php">Data API</a></p>
+                        <p>A back office service that allows authenticated users to retrieve and store information from within the Learnosity Assessment platform.</p></li>
+                        <li><p><a href="<?php echo $env['www'] ?>reporting/sso/index.php">Single Sign On API</a></p>
+                        <p>Get quick access to the data using the Learnosity Dashboards.</p></li>
                     </ul>
                 </div>
             </div>

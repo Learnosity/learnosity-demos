@@ -1,18 +1,18 @@
 <?php
     $pages = array(
+        'Authoring' => array(
+            'authoring/questioneditor/index.php' => 'Question Editor API',
+            'authoring/author/index.php'         => 'Author API'
+        ),
         'Assessment' => array(
             'assessment/questions/index.php' => 'Questions API',
             'assessment/items/index.php'     => 'Items API',
             'assessment/assess/index.php'    => 'Assess API'
         ),
-        'Authoring' => array(
-            'authoring/author/index.php'         => 'Author API',
-            'authoring/questioneditor/index.php' => 'Question Editor API'
-        ),
         'Reporting' => array(
             'reporting/reports/index.php' => 'Reports API',
-            'reporting/sso/index.php'     => 'Single Sign On API',
-            'reporting/data/index.php' => 'Data API'
+            'reporting/data/index.php'    => 'Data API',
+            'reporting/sso/index.php'     => 'Single Sign On API'
         ),
         'Misc' => array(
             'misc/security_check.php' => 'Security Check'
@@ -51,7 +51,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/Learnosity/learnosity-php-examples/archive/master.zip" class="text-muted">
+                        <a href="https://github.com/Learnosity/learnosity-php-examples/archive/master.zip" download="demos.master.zip" class="text-muted">
                             <span class="glyphicon glyphicon-cloud-download"></span> Download
                         </a>
                     </li>
