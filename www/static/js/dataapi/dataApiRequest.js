@@ -24,7 +24,7 @@
         request = {
             security: config.apiRequest.security,
             request: obj
-        }
+        };
 
         // Write to the request JSON tab
         $('#request-'+resource).html(library.json.prettyPrint(request));
