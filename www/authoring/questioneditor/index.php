@@ -85,7 +85,193 @@ include_once 'includes/header.php';
                     widgestType: 'response',
                     ui: {
                         question_tiles: true
-                    }
+                    },
+                    question_types: {
+                        association: {
+                            group_reference: "match"
+                        },
+                        audio: {
+                            group_reference: "writespeak"
+                        },
+                        choicematrix: {},
+                        classification: {
+                            group_reference: "match"
+                        },
+                        clozeassociation: {
+                            group_reference: "cloze"
+                        },
+                        clozedropdown: {
+                            group_reference: "cloze"
+                        },
+                        clozeinlinetext: {
+                            group_reference: "cloze"
+                        },
+                        clozetext: {
+                            group_reference: "cloze"
+                        },
+                        formula: {
+                            group_reference: "math"
+                        },
+                        graphplotting: {
+                            group_reference: "math"
+                        },
+                        highlight: {},
+                        imageclozeassociation: {
+                            group_reference: "cloze"
+                        },
+                        imageclozedropdown: {
+                            group_reference: "cloze"
+                        },
+                        imageclozetext: {
+                            group_reference: "cloze"
+                        },
+                        longtext: {
+                            group_reference: "writespeak"
+                        },
+                        mcq: {
+                            name: "MCQ - Standard",
+                            group_reference: "mcq"
+                        },
+                        numberline: {
+                            group_reference: "math"
+                        },
+                        orderlist: {
+                            group_reference: "ordersort"
+                        },
+                        plaintext: {
+                            group_reference: "writespeak"
+                        },
+                        shorttext: {
+                            group_reference: "writespeak"
+                        },
+                        sortlist: {
+                            group_reference: "ordersort"
+                        },
+                        texthighlight: {
+                            group_reference: "highlight"
+                        },
+                        tokenhighlight: {
+                            group_reference: "highlight"
+                        },
+                        audioplayer: {},
+                        counter: {},
+                        imagetool: {},
+                        calculator: {},
+                        sharedpassage: {},
+                        videoplayer: {}
+                    },
+                    question_type_templates: {
+                        mcq: [{
+                            name: "MCQ - Block Style",
+                            group_reference: "mcq",
+                            description: "Multiple Choice question with block style and predefined options.",
+                            image: "img/mcq_block.png",
+                            defaults: {
+                                stimulus: "The <strong>student</strong> needs to say which of these are state capitals.",
+                                options: [{
+                                    label: "Dublin",
+                                    value: "1"
+                                }, {
+                                    label: "Bristol",
+                                    value: "2"
+                                }, {
+                                    label: "Liverpool",
+                                    value: "3"
+                                }, {
+                                    label: "London",
+                                    value: "4"
+                                }],
+                                ui_style: {
+                                    type: "block",
+                                    columns: 1,
+                                    choice_label: "upper-alpha"
+                                }
+                            }
+                        }, {
+                            name: "MCQ - Horizontal",
+                            group_reference: "mcq",
+                            description: "Horizontal Multiple Choice question with predefined options.",
+                            image: "img/mcq_horizontal.png",
+                            defaults: {
+                                instant_feedback: true,
+                                options: [{
+                                    value: "1",
+                                    label: "Red"
+                                }, {
+                                    value: "2",
+                                    label: "Violet"
+                                }, {
+                                    value: "3",
+                                    label: "Blue"
+                                }, {
+                                    value: "4",
+                                    label: "Orange"
+                                }],
+                                stimulus: "Which of these colours has the smallest wavelength?",
+                                type: "mcq",
+                                ui_style: {
+                                    columns: 2,
+                                    type: "horizontal"
+                                },
+                                valid_responses: [{
+                                    value: "2",
+                                    score: 1
+                                }]
+                            }
+                        }, {
+                            name: "MCQ - Multi Select",
+                            group_reference: "mcq",
+                            image: "img/mcq_multi.png",
+                            defaults: {
+                                stimulus: "Which of these cities are state capitals?",
+                                options: [{
+                                    label: "Wilmington, NC",
+                                    value: "wilmington"
+                                }, {
+                                    label: "Trenton, NJ",
+                                    value: "trenton"
+                                }, {
+                                    label: "Topeka, KS",
+                                    value: "topeka"
+                                }, {
+                                    label: "St. Louis, MO",
+                                    value: "stlouis"
+                                }],
+                                valid_responses: [{
+                                    value: "trenton",
+                                    score: "1"
+                                }, {
+                                    value: "topeka",
+                                    score: "1"
+                                }],
+                                multiple_responses: true
+                            }
+                        }]
+                    },
+                    question_type_groups: [
+                        {
+                            reference: "mcq",
+                            name: "Multiple Choice"
+                        }, {
+                            reference: "cloze",
+                            name: "Cloze"
+                        }, {
+                            reference: "math",
+                            name: "Math"
+                        }, {
+                            reference: "writespeak",
+                            name: "Write and Speak"
+                        }, {
+                            reference: "highlight",
+                            name: "Highlight"
+                        }, {
+                            reference: "match",
+                            name: "Match Items"
+                        }, {
+                            reference: "ordersort",
+                            name: "Order and Sort"
+                        }
+                    ],
                 }
             },
             defaults: {
