@@ -30,6 +30,7 @@ include_once 'includes/header.php';
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">New Question<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li><a href="#" data-type="newQuestion" id="newQuestion">Standard</a></li>
+            <li><a href="#" data-type="tileUI" id="tileUI">Question type tiles</a></li>
             <li><a href="#" data-type="defaults" id="defaults">with defaults</a></li>
             <li><a href="#" data-type="disabled" id="disabled">with certain attributes disabled</a></li>
             <li><a href="#" data-type="defaultsdisabled" id="defaultsdisabled">with certain attributes disabled and defaults</a></li>
@@ -72,6 +73,18 @@ include_once 'includes/header.php';
                         fixed_preview: {
                             margin_top: 50
                         }
+                    }
+                }
+            },
+            tileUI: {
+                description: 'Question type tile thumbnails are templates of commonly used question configuration.',
+                json: {
+                    configuration: {
+                        questionsApiVersion: 'v2'
+                    },
+                    widgestType: 'response',
+                    ui: {
+                        question_tiles: true
                     }
                 }
             },
