@@ -94,7 +94,7 @@ $signedRequest = $RequestHelper->generateRequest();
     <p>A dynamic assessment that adapts to the user's ability in real time.<p>
     <div class="row">
         <div class="col-md-10">
-            <h4><a href="//docs.learnosity.com/itemsapi/itemadaptive.php" class="text-muted">
+            <h4><a href="//docs.learnosity.com/itemsapi/adaptive/itemadaptive.php" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
             <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
