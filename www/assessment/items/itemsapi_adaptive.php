@@ -23,6 +23,7 @@ $request = array(
         'type'                      => 'itemadaptive',
         'initial_ability'           => 0,
         'item_difficulty_tolerance' => 0.1,
+        'item_difficulty_offset' => 0,
         'eap' => array(
             'mean'               => 0,
             'standard_deviation' => 1,
@@ -31,6 +32,8 @@ $request = array(
             'num_points'         => 50
         ),
         'termination_criteria' => array(
+            'min_items' => 5,
+            'max_items' => 50,
             'error_below' => 0.7
         ),
         'required_tags' => array(
@@ -91,7 +94,7 @@ $signedRequest = $RequestHelper->generateRequest();
     <p>A dynamic assessment that adapts to the user's ability in real time.<p>
     <div class="row">
         <div class="col-md-10">
-            <h4><a href="//docs.learnosity.com/itemsapi/intheoven/itemadaptive.php" class="text-muted">
+            <h4><a href="//docs.learnosity.com/itemsapi/itemadaptive.php" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
             <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
