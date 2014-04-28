@@ -83,195 +83,793 @@ include_once 'includes/header.php';
                         questionsApiVersion: 'v2'
                     },
                     widgestType: 'response',
-                    ui: {
-                        question_tiles: true
-                    },
-                    question_types: {
-                        association: {
-                            group_reference: "match"
+                        "question_types": {
+                            "association": {},
+                            "audio": {},
+                            "classification": {},
+                            "clozeassociation": {},
+                            "clozedropdown": {},
+                            "clozeinlinetext": {},
+                            "clozetext": {},
+                            "choicematrix": {},
+                            "formula": {},
+                            "graphplotting": {},
+                            "highlight": {},
+                            "imageclozeassociation": {},
+                            "imageclozedropdown": {},
+                            "imageclozetext": {},
+                            "longtext": {},
+                            "mcq": {},
+                            "numberline": {},
+                            "orderlist": {},
+                            "plaintext": {},
+                            "shorttext": {},
+                            "sortlist": {},
+                            "texthighlight": {},
+                            "tokenhighlight": {},
+                            "audioplayer": {},
+                            "counter": {},
+                            "sharedpassage": {},
+                            "videoplayer": {}
                         },
-                        audio: {
-                            group_reference: "writespeak"
-                        },
-                        choicematrix: {},
-                        classification: {
-                            group_reference: "match"
-                        },
-                        clozeassociation: {
-                            group_reference: "cloze"
-                        },
-                        clozedropdown: {
-                            group_reference: "cloze"
-                        },
-                        clozeinlinetext: {
-                            group_reference: "cloze"
-                        },
-                        clozetext: {
-                            group_reference: "cloze"
-                        },
-                        formula: {
-                            group_reference: "math"
-                        },
-                        graphplotting: {
-                            group_reference: "math"
-                        },
-                        highlight: {},
-                        imageclozeassociation: {
-                            group_reference: "cloze"
-                        },
-                        imageclozedropdown: {
-                            group_reference: "cloze"
-                        },
-                        imageclozetext: {
-                            group_reference: "cloze"
-                        },
-                        longtext: {
-                            group_reference: "writespeak"
-                        },
-                        mcq: {
-                            name: "MCQ - Standard",
-                            group_reference: "mcq"
-                        },
-                        numberline: {
-                            group_reference: "math"
-                        },
-                        orderlist: {
-                            group_reference: "ordersort"
-                        },
-                        plaintext: {
-                            group_reference: "writespeak"
-                        },
-                        shorttext: {
-                            group_reference: "writespeak"
-                        },
-                        sortlist: {
-                            group_reference: "ordersort"
-                        },
-                        texthighlight: {
-                            group_reference: "highlight"
-                        },
-                        tokenhighlight: {
-                            group_reference: "highlight"
-                        },
-                        audioplayer: {},
-                        counter: {},
-                        imagetool: {},
-                        calculator: {},
-                        sharedpassage: {},
-                        videoplayer: {}
-                    },
-                    question_type_templates: {
-                        mcq: [{
-                            name: "MCQ - Block Style",
-                            group_reference: "mcq",
-                            description: "Multiple Choice question with block style and predefined options.",
-                            image: "img/mcq_block.png",
-                            defaults: {
-                                stimulus: "The <strong>student</strong> needs to say which of these are state capitals.",
-                                options: [{
-                                    label: "Dublin",
-                                    value: "1"
-                                }, {
-                                    label: "Bristol",
-                                    value: "2"
-                                }, {
-                                    label: "Liverpool",
-                                    value: "3"
-                                }, {
-                                    label: "London",
-                                    value: "4"
-                                }],
-                                ui_style: {
-                                    type: "block",
-                                    columns: 1,
-                                    choice_label: "upper-alpha"
-                                }
-                            }
-                        }, {
-                            name: "MCQ - Horizontal",
-                            group_reference: "mcq",
-                            description: "Horizontal Multiple Choice question with predefined options.",
-                            image: "img/mcq_horizontal.png",
-                            defaults: {
-                                instant_feedback: true,
-                                options: [{
-                                    value: "1",
-                                    label: "Red"
-                                }, {
-                                    value: "2",
-                                    label: "Violet"
-                                }, {
-                                    value: "3",
-                                    label: "Blue"
-                                }, {
-                                    value: "4",
-                                    label: "Orange"
-                                }],
-                                stimulus: "Which of these colours has the smallest wavelength?",
-                                type: "mcq",
-                                ui_style: {
-                                    columns: 2,
-                                    type: "horizontal"
+                        "question_type_templates": {
+                            "mcq": [{
+                                "name": "MCQ Standard",
+                                "description": "Standard Mulitple Choice Question",
+                                "group_reference": "mcq",
+                                "defaults": {
+                                    "is_math": true,
+                                    "options": [{
+                                        "value": "0",
+                                        "label": "[Choice A]"
+                                    }, {
+                                        "value": "1",
+                                        "label": "[Choice B]"
+                                    }, {
+                                        "value": "2",
+                                        "label": "[Choice C]"
+                                    }, {
+                                        "value": "3",
+                                        "label": "[Choice D]"
+                                    }],
+                                    "stimulus": "[This is the STEM.]",
+                                    "type": "mcq"
                                 },
-                                valid_responses: [{
-                                    value: "2",
-                                    score: 1
-                                }]
-                            }
+                                "image": "//assets.learnosity.com/questiontypes/tiles/mcqdefault.png",
+                                "hidden": ["description", "penalty_score", "is_math"]
+                            }, {
+                                "name": "MCQ Multi Response",
+                                "description": "Multiple Choice Question with multiple responses",
+                                "group_reference": "mcq",
+                                "defaults": {
+                                    "is_math": true,
+                                    "multiple_responses": true,
+                                    "options": [{
+                                        "value": "0",
+                                        "label": "[Choice A]"
+                                    }, {
+                                        "value": "1",
+                                        "label": "[Choice B]"
+                                    }, {
+                                        "value": "2",
+                                        "label": "[Choice C]"
+                                    }, {
+                                        "value": "3",
+                                        "label": "[Choice D]"
+                                    }],
+                                    "stimulus": "[This is the STEM.]",
+                                    "type": "mcq"
+                                },
+                                "image": "//assets.learnosity.com/questiontypes/tiles/mcqmulti.png",
+                                "hidden": ["multiple_responses", "description", "penalty_score", "is_math"]
+                            }, {
+                                "name": "MCQ Block UI",
+                                "description": "Multiple Choice Question with Block UI",
+                                "group_reference": "mcq",
+                                "defaults": {
+                                    "is_math": true,
+                                    "options": [{
+                                        "value": "0",
+                                        "label": "[Choice A]"
+                                    }, {
+                                        "value": "1",
+                                        "label": "[Choice B]"
+                                    }, {
+                                        "value": "2",
+                                        "label": "[Choice C]"
+                                    }, {
+                                        "value": "3",
+                                        "label": "[Choice D]"
+                                    }],
+                                    "stimulus": "[This is the STEM.]",
+                                    "type": "mcq",
+                                    "ui_style": {
+                                        "choice_label": "upper-alpha",
+                                        "type": "block"
+                                    }
+                                },
+                                "image": "//assets.learnosity.com/questiontypes/tiles/mcqblock.png",
+                                "hidden": ["description", "penalty_score", "is_math"]
+                            }, {
+                                "name": "MCQ Hoizontal - 2 Column",
+                                "description": "Multiple Choice Question Column format",
+                                "group_reference": "mcq",
+                                "defaults": {
+                                    "is_math": true,
+                                    "options": [{
+                                        "value": "1",
+                                        "label": "[Choice A]"
+                                    }, {
+                                        "value": "2",
+                                        "label": "[Choice B]"
+                                    }, {
+                                        "value": "3",
+                                        "label": "[Choice C]"
+                                    }, {
+                                        "value": "4",
+                                        "label": "[Choice D]"
+                                    }],
+                                    "stimulus": "[This is the Stem.]",
+                                    "type": "mcq",
+                                    "ui_style": {
+                                        "columns": 2,
+                                        "type": "horizontal"
+                                    }
+                                },
+                                "image": "//assets.learnosity.com/questiontypes/tiles/mcqcolumn.png",
+                                "hidden": ["description", "penalty_score", "is_math"]
+                            }],
+                            "choicematrix": [{
+                                "name": "Choice Matrix Table",
+                                "description": "Choice Matrix with 2 option columns. Table format",
+                                "group_reference": "mcq",
+                                "defaults": {
+                                    "is_math": true,
+                                    "options": ["True", "False"],
+                                    "stems": ["[Stem 1]", "[Stem 2]", "[Stem 3]", "[Stem 4]"],
+                                    "stimulus": "[This is the STEM.]",
+                                    "type": "choicematrix"
+                                },
+                                "image": "//assets.learnosity.com/questiontypes/tiles/matrix-table.png",
+                                "hidden": ["description", "is_math"]
+                            }, {
+                                "name": "Choice Matrix Inline",
+                                "description": "Choice Matrix with 2 option columns. Inline format",
+                                "group_reference": "mcq",
+                                "defaults": {
+                                    "is_math": true,
+                                    "options": ["True", "False"],
+                                    "stems": ["[Stem 1]", "[Stem 2]", "[Stem 3]", "[Stem 4]"],
+                                    "stimulus": "[This is the STEM.]",
+                                    "type": "choicematrix",
+                                    "ui_style": {
+                                        "type": "inline"
+                                    }
+                                },
+                                "image": "//assets.learnosity.com/questiontypes/tiles/matrix-inline.png",
+                                "hidden": ["description", "is_math"]
+                            },
+
+                            {
+                                "name": "Choice Matrix with Labels",
+                                "description": "Choice Matrix with 2 option columns. Table Format with Stem Numeration",
+                                "group_reference": "mcq",
+                                "defaults": {
+                                    "is_math": true,
+                                    "options": ["True", "False"],
+                                    "stems": ["[Stem 1]", "[Stem 2]", "[Stem 3]", "[Stem4]"],
+                                    "stimulus": "[This is the STEM.]",
+                                    "type": "choicematrix",
+                                    "ui_style": {
+                                        "stem_numeration": "upper-alpha",
+                                        "type": "table"
+                                    },
+                                    "validation": {
+                                        "scoring_type": "exactMatch",
+                                        "valid_response": {
+                                            "score": 1,
+                                            "value": [null, null, null]
+                                        }
+                                    }
+                                },
+                                "image": "//assets.learnosity.com/questiontypes/tiles/matrix-stem.png",
+                                "hidden": ["description", "is_math"]
+                            }],
+                            "longtext": [{
+                                "name": "Essay with formatting",
+                                "description": "Essay up to 10,000 words which may include text formatting controls.",
+                                "group_reference": "writespeak",
+                                "defaults": {
+                                    "character_map": true,
+                                    "is_math": true,
+                                    "stimulus": "[This is the Stem.]"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "//assets.learnosity.com/questiontypes/tiles/longtext.png"
+                            }],
+                            "plaintext": [{
+                                "name": "Essay cut, copy & paste controls",
+                                "description": "Essay up to 10,000 words does not include text formatting controls.",
+                                "group_reference": "writespeak",
+                                "defaults": {
+                                    "character_map": true,
+                                    "is_math": true,
+                                    "show_copy": true,
+                                    "show_cut": true,
+                                    "show_paste": true,
+                                    "stimulus": "[This is the STEM.]"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "//assets.learnosity.com/questiontypes/tiles/plaintext.png"
+                            }],
+                            "shorttext": [{
+                                "name": "Short Text",
+                                "description": "Short answer respones.",
+                                "group_reference": "writespeak",
+                                "defaults": {
+                                    "is_math": true,
+                                    "stimulus": "[This is the STEM.]",
+                                    "type": "shorttext"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "//assets.learnosity.com/questiontypes/tiles/shorttext.png"
+                            }],
+                            "audio": [{
+                                "name": "Audio - Block UI",
+                                "description": "Audio response with Block UI.",
+                                "group_reference": "writespeak",
+                                "defaults": {
+                                    "is_math": true,
+                                    "max_length": 600,
+                                    "overwrite_warning": true,
+                                    "recording_cue": true,
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "type": "audio"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "//assets.learnosity.com/questiontypes/tiles/audio-block.png"
+                            }, {
+                                "name": "Audio - Button UI",
+                                "description": "Audio response with Button UI.",
+                                "group_reference": "writespeak",
+                                "defaults": {
+                                    "is_math": true,
+                                    "max_length": 600,
+                                    "overwrite_warning": true,
+                                    "recording_cue": true,
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "type": "audio",
+                                    "ui_style": {
+                                        "type": "button"
+                                    }
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "//assets.learnosity.com/questiontypes/tiles/audio-button.png"
+                            }],
+                            "clozetext": [{
+                                "name": "Cloze Text",
+                                "description": "Fill in the blanks.",
+                                "group_reference": "cloze",
+                                "defaults": {
+                                    "stimulus": "[This is the STEM.]",
+                                    "template": "Risus {{response}}, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae. {{response}} dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum.",
+                                    "type": "clozetext"
+                                },
+                                "hidden": ["description"],
+                                "image": "//assets.learnosity.com/questiontypes/tiles/clozet.png"
+                            }],
+                            "clozedropdown": [{
+                                "name": "Cloze Drop Down",
+                                "description": "Fill in the blanks with drop down menus.",
+                                "group_reference": "cloze",
+                                "defaults": {
+                                    "possible_responses": [
+                                        ["Choice A", "Choice B", "Choice C", "Choice D"],
+                                        ["Choice A", "Choice B", "Choice C", "Choice D"]
+                                    ],
+                                    "response_container": {
+                                        "pointer": "left"
+                                    },
+                                    "stimulus": "[This is the STEM.]",
+                                    "template": "Risus {{response}}, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae. {{response}} dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum.",
+                                    "type": "clozedropdown"
+                                },
+                                "hidden": ["description"]
+                            }],
+                            "clozeassociation": [{
+                                "name": "Cloze Drag & Drop",
+                                "description": "Fill in the blanks drag and drop.",
+                                "group_reference": "cloze",
+                                "defaults": {
+                                    "possible_responses": [
+                                        ["Choice A"],
+                                        ["Choice B"]
+                                    ],
+                                    "response_container": {
+                                        "pointer": "left"
+                                    },
+                                    "stimulus": "[This is the STEM.]",
+                                    "template": "Risus {{response}}, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae. {{response}} dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum.",
+                                    "type": "clozeassociation"
+                                },
+                                "hidden": ["description"],
+                                "image": "//assets.learnosity.com/questiontypes/tiles/cloze_dd.png"
+                            }],
+                            "imageclozetext": [{
+                                "name": "Label Image",
+                                "description": "Fill in the blanks text box on and image.",
+                                "group_reference": "cloze",
+                                "defaults": {
+                                    "img_src": "//www.learnosity.com/static/img/Blank_US_Map.png",
+                                    "response_container": {
+                                        "pointer": "left"
+                                    },
+                                    "response_positions": [{
+                                        "x": 0.14,
+                                        "y": 48
+                                    }, {
+                                        "x": 35.1,
+                                        "y": 73.57
+                                    }, {
+                                        "x": 72.38,
+                                        "y": 84.58
+                                    }],
+                                    "stimulus": "<p>[This is the STEM]</p>\n",
+                                    "type": "imageclozetext"
+                                },
+                                "hidden": ["description"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/image_cloze.png"
+                            }],
+                            "imageclozedropdown": [{
+                                "name": "Label Image Drop Down",
+                                "description": "Fill in the blanks image with drop down menus.",
+                                "group_reference": "cloze",
+                                "defaults": {
+                                    "img_src": "//www.learnosity.com/static/img/Blank_US_Map.png",
+                                    "response_positions": [{
+                                        "x": 0.14,
+                                        "y": 48
+                                    }, {
+                                        "x": 35.1,
+                                        "y": 73.57
+                                    }, {
+                                        "x": 72.38,
+                                        "y": 84.58
+                                    }],
+                                    "stimulus": "<p>[This is the STEM]</p>\n",
+                                    "type": "imageclozedropdown",
+                                    "possible_responses": [
+                                        ["Choice A", "Choice B", "Choice C"],
+                                        ["Choice A", "Choice B", "Choice C"],
+                                        ["Choice A", "Choice B", "Choice C"]
+                                    ],
+                                    "response_container": {
+                                        "pointer": "left"
+                                    }
+                                },
+                                "hidden": ["description"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/image_dropdown.png"
+                            }],
+                            "imageclozeassociation": [{
+                                "name": "Label Image Drag & Drop",
+                                "description": "Fill in the blanks on image with Drag & Drop.",
+                                "group_reference": "cloze",
+                                "defaults": {
+                                    "img_src": "//www.learnosity.com/static/img/Blank_US_Map.png",
+
+
+                                    "response_positions": [{
+                                        "x": 0.14,
+                                        "y": 48
+                                    }, {
+                                        "x": 35.1,
+                                        "y": 73.57
+                                    }, {
+                                        "x": 72.38,
+                                        "y": 84.58
+                                    }],
+                                    "stimulus": "<p>[This is the STEM]</p>\n",
+                                    "type": "imageclozeassociation",
+                                    "possible_responses": [
+                                        ["Choice A"],
+                                        ["Choice B"],
+                                        ["Choice C"]
+                                    ],
+                                    "response_container": {
+                                        "pointer": "left"
+                                    }
+                                },
+                                "hidden": ["description"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/image_association.png"
+                            }],
+                            "association": [{
+                                "name": "Match List",
+                                "description": "Match reponses with list",
+                                "group_reference": "match",
+                                "defaults": {
+                                    "is_math": true,
+                                    "possible_responses": ["[Choice A]", "[Choice B]", "[Choice C]"],
+                                    "stimulus": "<p>[This is the STEM.]</p>\n",
+                                    "stimulus_list": ["[Stem 1]", "[Stem 2]", "[Stem 3]"],
+                                    "type": "association"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/association.png"
+                            }],
+                            "classification": [{
+                                "name": "Classification - 1 row",
+                                "description": "Drag and drop responses into grid with 2 columns and 1 row",
+                                "group_reference": "match",
+                                "defaults": {
+                                    "is_math": true,
+                                    "possible_responses": ["[Choice A]", "[Choice B]", "[Choice C]", "[Choice D]"],
+                                    "stimulus": "<p>[This is the STEM.]</p>\n",
+                                    "type": "classification",
+                                    "ui_style": {
+                                        "column_count": 2,
+                                        "column_titles": ["COLUMN 1", "COLUMN 2"],
+                                        "row_count": 1
+                                    }
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/classification.png"
+                            }, {
+                                "name": "Classification - 2 rows",
+                                "description": "Drag and drop response into grid with 2 columns and 2 rows",
+                                "group_reference": "match",
+                                "defaults": {
+                                    "is_math": true,
+                                    "possible_responses": ["[Choice A]", "[Choice B]", "[Choice C]", "[Choice D]"],
+                                    "stimulus": "<p>[This is the STEM.]</p>\n",
+                                    "type": "classification",
+                                    "ui_style": {
+                                        "column_count": 2,
+                                        "column_titles": ["COLUMN 1", "COLUMN 2"],
+                                        "row_count": 2,
+                                        "row_titles": ["ROW 1", "ROW 2"]
+                                    }
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/classification2.png"
+                            }],
+                            "sortlist": [{
+                                "name": "Sort List",
+                                "description": "Sort list by dragging items to the Target area into the correct order",
+                                "group_reference": "match",
+                                "defaults": {
+                                    "is_math": true,
+                                    "list": ["[Choice A]", "[Choice B]", "[Choice C]", "[Choice D]"],
+                                    "stimulus": "<p>[This is the STEM.]</p>\n",
+                                    "type": "sortlist"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/sort-list.png"
+                            }],
+
+                            "orderlist": [{
+                                "name": "Order List - Default",
+                                "description": "List of Items to be arranged into the correct order.",
+                                "group_reference": "match",
+                                "defaults": {
+                                    "is_math": true,
+                                    "list": ["[Choice A]", "[Choice B]", "[Choice C]", "[Choice D]"],
+                                    "stimulus": "[This is the Stem.]",
+                                    "type": "orderlist"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "//assets.learnosity.com/questiontypes/tiles/order_list.png"
+                            }, {
+                                "name": "Order List - List UI",
+                                "description": "List of Items to be arranged into the correct order.",
+                                "group_reference": "match",
+                                "defaults": {
+                                    "is_math": true,
+                                    "list": ["[Choice A]", ["Choice B"], "[Choice C]", ["Choice D"]],
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "type": "orderlist",
+                                    "ui_style": {
+                                        "type": "list"
+                                    }
+                                },
+                                "image": "//assets.learnosity.com/questiontypes/tiles/order.png",
+                                "hidden": ["description", "is_math"]
+                            }, {
+                                "name": "Order Paragraphs",
+                                "description": "Order Paragraphs.",
+                                "group_reference": "match",
+                                "defaults": {
+                                    "is_math": true,
+                                    "list": ["[Choice A] R<span>isus dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae.</span>", "[Choice B]&nbsp;<span>&nbsp;R</span><span>isus dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae.</span>", "[Choice C]&nbsp;<span>&nbsp;R</span><span>isus dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae.</span>", "[Choice D]&nbsp;<span>&nbsp;R</span><span>isus dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae.</span>"],
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "type": "orderlist",
+                                    "ui_style": {
+                                        "type": "list"
+                                    }
+                                },
+                                "image": "//assets.learnosity.com/questiontypes/tiles/order-paragraph.png",
+                                "hidden": ["description", "is_math"]
+                            }, {
+                                "name": "Order Sentences",
+                                "description": "Order Sentences.",
+                                "group_reference": "match",
+                                "defaults": {
+                                    "is_math": true,
+                                    "list": ["[Choice A] R<span>isus dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae.</span>", "[Choice B]&nbsp;<span>&nbsp;R</span><span>isus dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae.</span>", "[Choice C]&nbsp;<span>&nbsp;R</span><span>isus dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae.</span>", "[Choice D]&nbsp;<span>&nbsp;R</span><span>isus dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae.</span>"],
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "type": "orderlist",
+                                    "ui_style": {
+                                        "type": "inline"
+                                    }
+                                },
+                                "image": "//assets.learnosity.com/questiontypes/tiles/order-sentence.png",
+                                "hidden": ["description", "is_math"]
+                            }],
+                            "formula": [{
+                                "name": "Math Formula",
+                                "description": "Enter complex math. Default response box",
+                                "group_reference": "math",
+                                "defaults": {
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "type": "formula",
+                                    "is_math": true
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/formula.png"
+                            }, {
+                                "name": "Math Formula Fraction",
+                                "description": "Enter complex math. Fraction Response boxes",
+                                "group_reference": "math",
+                                "defaults": {
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "template": "\\frac{{{response}}}{{{response}}}",
+                                    "type": "formula",
+                                    "is_math": true
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/fraction.png"
+                            }, {
+                                "name": "Math Formula Multiple",
+                                "description": "Enter complex math. Add multiple response boxes",
+                                "group_reference": "math",
+                                "defaults": {
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "template": "{{response}} + {{response}} =",
+                                    "type": "formula",
+                                    "is_math": true
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/multiple.png"
+                            }],
+                            "numberline": [{
+                                "name": "Numberline",
+                                "group_reference": "math",
+                                "defaults": {
+                                    "labels": {
+                                        "frequency": 1,
+                                        "show_max": true,
+                                        "show_min": true
+                                    },
+                                    "line": {
+                                        "max": 10,
+                                        "min": 0
+                                    },
+                                    "points": ["[Choice A]", "[Choice B]", "[Choice C]"],
+                                    "snap_to_ticks": true,
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "ticks": {
+                                        "distance": "1",
+                                        "show": true
+                                    },
+                                    "type": "numberline",
+                                    "is_math": true
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/numberline.png"
+                            }],
+                            "graphplotting": [{
+                                "name": "Graph with Point Tool ",
+                                "description": "10 x 10 unit quadrants with Point tool.",
+                                "group_reference": "math",
+                                "defaults": {
+                                    "axis_x": {
+                                        "draw_labels": true,
+                                        "show_first_arrow": true,
+                                        "show_last_arrow": true,
+                                        "ticks_distance": 1
+                                    },
+                                    "axis_y": {
+                                        "draw_labels": true,
+                                        "show_first_arrow": true,
+                                        "show_last_arrow": true,
+                                        "ticks_distance": 1
+                                    },
+                                    "canvas": {
+                                        "snap_to": "grid",
+                                        "x_max": 10.4,
+                                        "x_min": -10.4,
+                                        "y_max": 10.4,
+                                        "y_min": -10.4
+                                    },
+                                    "grid": {
+                                        "x_distance": 1,
+                                        "y_distance": 1
+                                    },
+                                    "type": "graphplotting",
+                                    "toolbar": {
+                                        "default_tool": "point",
+                                        "tools": ["point", "move"]
+                                    },
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "is_math": true
+
+                                },
+                                "hidden": ["description", "is_math", "mode"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/graph.png"
+                            }, {
+                                "name": "Graph default tools",
+                                "description": "10 x 10 unit quadrants with all drawing tools.",
+                                "group_reference": "math",
+                                "defaults": {
+                                    "axis_x": {
+                                        "draw_labels": true,
+                                        "show_first_arrow": true,
+                                        "show_last_arrow": true,
+                                        "ticks_distance": 1
+                                    },
+                                    "axis_y": {
+                                        "draw_labels": true,
+                                        "show_first_arrow": true,
+                                        "show_last_arrow": true,
+                                        "ticks_distance": 1
+                                    },
+                                    "canvas": {
+                                        "snap_to": "grid",
+                                        "x_max": 10.4,
+                                        "x_min": -10.4,
+                                        "y_max": 10.4,
+                                        "y_min": -10.4
+                                    },
+                                    "grid": {
+                                        "x_distance": 1,
+                                        "y_distance": 1
+                                    },
+                                    "type": "graphplotting",
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "is_math": true
+                                },
+                                "hidden": ["description", "is_math", "mode"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/graph2.png"
+                            }, {
+                                "name": "Graph - larger grid lines",
+                                "description": "10 x 10 unit quadrants with grid lines set to 2 with all drawing tools.",
+                                "group_reference": "math",
+                                "defaults": {
+                                    "axis_x": {
+                                        "draw_labels": true,
+                                        "show_first_arrow": true,
+                                        "show_last_arrow": true,
+                                        "ticks_distance": 2
+                                    },
+                                    "axis_y": {
+                                        "draw_labels": true,
+                                        "show_first_arrow": true,
+                                        "show_last_arrow": true,
+                                        "ticks_distance": 2
+                                    },
+                                    "canvas": {
+                                        "snap_to": "grid",
+                                        "x_max": 10.4,
+                                        "x_min": -10.4,
+                                        "y_max": 10.4,
+                                        "y_min": -10.4
+                                    },
+                                    "grid": {
+                                        "x_distance": 2,
+                                        "y_distance": 2
+                                    },
+
+                                    "type": "graphplotting",
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "is_math": true
+                                },
+                                "hidden": ["description", "is_math", "mode"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/graph3.png"
+                            }, {
+                                "name": "1st Quadrant Graph",
+                                "description": "10 x 10 1st quadrant graph with all drawing tools.",
+                                "group_reference": "math",
+                                "defaults": {
+                                    "axis_x": {
+                                        "draw_labels": true,
+                                        "show_first_arrow": true,
+                                        "show_last_arrow": true,
+                                        "ticks_distance": 1
+                                    },
+                                    "axis_y": {
+                                        "draw_labels": true,
+                                        "show_first_arrow": true,
+                                        "show_last_arrow": true,
+                                        "ticks_distance": 1
+                                    },
+                                    "canvas": {
+                                        "snap_to": "grid",
+                                        "x_max": 10.4,
+                                        "x_min": -0.4,
+                                        "y_max": 10.4,
+                                        "y_min": -0.4
+                                    },
+                                    "grid": {
+                                        "x_distance": 1,
+                                        "y_distance": 1
+                                    },
+                                    "type": "graphplotting",
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "is_math": true
+                                },
+                                "hidden": ["description", "is_math", "mode"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/graph4.png"
+                            }],
+                            "highlight": [{
+                                "name": "Highlight Image",
+                                "group_reference": "highlight",
+                                "defaults": {
+                                    "img_src": "",
+                                    "is_math": true,
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "type": "highlight"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/image_highlight.png"
+                            }],
+                            "texthighlight": [{
+                                "name": "Text Highlight",
+                                "description": "The user can drag the cursor across the text which will be highlighted.",
+                                "group_reference": "highlight",
+                                "defaults": {
+                                    "stimulus": "<p>[This is the Stem.]</p>\n",
+                                    "template": "Risus et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae. dignissim, et tincidunt turpis facilisis. Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum.",
+                                    "tokenization": "custom",
+                                    "type": "texthighlight"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/text_highlight.png"
+                            }],
+                            "tokenhighlight": [{
+                                "name": "Token Highlight",
+                                "description": "User can click words/sentences/paragraphs to be highlighted",
+                                "group_reference": "highlight",
+                                "defaults": {
+                                    "stimulus": "<p>[This is the Stem.]</p>",
+                                    "template": "<p>Risus et tincidunt turpis facilisis.</p><p>Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum. Nunc diam enim, porta sed eros vitae. dignissim, et tincidunt turpis facilisis.</p><p>Curabitur eu nulla justo. Curabitur vulputate ut nisl et bibendum.</p>",
+                                    "tokenization": "paragraph",
+                                    "type": "tokenhighlight"
+                                },
+                                "hidden": ["description", "is_math"],
+                                "image": "http://assets.learnosity.com/questiontypes/tiles/token.png"
+                            }]
+                        },
+                        "question_type_groups": [{
+                            "reference": "mcq",
+                            "name": "Mulitple Choice"
                         }, {
-                            name: "MCQ - Multi Select",
-                            group_reference: "mcq",
-                            image: "img/mcq_multi.png",
-                            defaults: {
-                                stimulus: "Which of these cities are state capitals?",
-                                options: [{
-                                    label: "Wilmington, NC",
-                                    value: "wilmington"
-                                }, {
-                                    label: "Trenton, NJ",
-                                    value: "trenton"
-                                }, {
-                                    label: "Topeka, KS",
-                                    value: "topeka"
-                                }, {
-                                    label: "St. Louis, MO",
-                                    value: "stlouis"
-                                }],
-                                valid_responses: [{
-                                    value: "trenton",
-                                    score: "1"
-                                }, {
-                                    value: "topeka",
-                                    score: "1"
-                                }],
-                                multiple_responses: true
-                            }
-                        }]
-                    },
-                    question_type_groups: [
-                        {
-                            reference: "mcq",
-                            name: "Multiple Choice"
+                            "reference": "cloze",
+                            "name": "Fill in the Blanks (Cloze)"
                         }, {
-                            reference: "cloze",
-                            name: "Cloze"
+                            "reference": "writespeak",
+                            "name": "Written & Spoken"
                         }, {
-                            reference: "math",
-                            name: "Math"
+                            "reference": "match",
+                            "name": "Classify, Match & Order"
                         }, {
-                            reference: "writespeak",
-                            name: "Write and Speak"
+                            "reference": "math",
+                            "name": "Math & Cartesian Graphing"
                         }, {
-                            reference: "highlight",
-                            name: "Highlight"
-                        }, {
-                            reference: "match",
-                            name: "Match Items"
-                        }, {
-                            reference: "ordersort",
-                            name: "Order and Sort"
+                            "reference": "highlight",
+                            "name": "Highlight"
+                        }],
+                        "ui": {
+                            "question_tiles": true
                         }
-                    ],
                 }
             },
             defaults: {
