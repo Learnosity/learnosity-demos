@@ -431,7 +431,7 @@ $request = array(
                     "point",
                     "move"
                   ],
-                  "default_tool": "move"
+                  "default_tool": "point"
                 },
                 "ui_style": {
                   "margin": "10px"
