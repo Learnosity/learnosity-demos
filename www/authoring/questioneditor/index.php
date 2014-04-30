@@ -105,7 +105,9 @@ include_once 'includes/header.php';
                         "clozetext": {
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/clozet.png"
                         },
-                        "choicematrix": {},
+                        "choicematrix": {
+                            "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/matrix-table.png"
+                        },
                         "formula": {
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/formula.png"
                         },
@@ -141,8 +143,12 @@ include_once 'includes/header.php';
                         "sortlist": {
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/sort-list.png"
                         },
-                        "texthighlight": {},
-                        "tokenhighlight": {},
+                        "texthighlight": {
+                            "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/text_highlight.png"
+                        },
+                        "tokenhighlight": {
+                            "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/token.png"
+                        },
                         "audioplayer": {},
                         "counter": {},
                         "sharedpassage": {},
@@ -257,7 +263,7 @@ include_once 'includes/header.php';
                         }],
                         "choicematrix": [{
                             "name": "Choice Matrix Table",
-                            "description": "DRAFT - Choice Matrix with 2 option columns. Table format",
+                            "description": "Choice Matrix with 2 option columns. Table format",
                             "group_reference": "mcq",
                             "defaults": {
                                 "is_math": true,
@@ -270,7 +276,7 @@ include_once 'includes/header.php';
                             "hidden": ["description", "is_math"]
                         }, {
                             "name": "Choice Matrix Inline",
-                            "description": "DRAFT - Choice Matrix with 2 option columns. Inline format",
+                            "description": "Choice Matrix with 2 option columns. Inline format",
                             "group_reference": "mcq",
                             "defaults": {
                                 "is_math": true,
@@ -288,7 +294,7 @@ include_once 'includes/header.php';
 
                         {
                             "name": "Choice Matrix with Labels",
-                            "description": "DRAFT - Choice Matrix with 2 option columns. Table Format with Stem Numeration",
+                            "description": "Choice Matrix with 2 option columns. Table Format with Stem Numeration",
                             "group_reference": "mcq",
                             "defaults": {
                                 "is_math": true,
@@ -432,8 +438,8 @@ include_once 'includes/header.php';
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/cloze_dd.png"
                         }],
                         "clozeinlinetext": [{
-                            "name": "Cloze Inline Text - DRAFT",
-                            "description": "DRAFT - Fill in the blanks expanding.",
+                            "name": "Cloze Inline - DRAFT",
+                            "description": "Fill in the blanks expanding.",
                             "group_reference": "cloze",
                             "defaults": {
                                 "stimulus": "[This is the STEM.]",
@@ -582,7 +588,7 @@ include_once 'includes/header.php';
                         }],
                         "sortlist": [{
                             "name": "Sort List - DRAFT",
-                            "description": "DRAFT - Sort list by dragging items to the Target area into the correct order",
+                            "description": "Sort list by dragging items to the Target area into the correct order",
                             "group_reference": "match",
                             "defaults": {
                                 "is_math": true,
@@ -596,7 +602,7 @@ include_once 'includes/header.php';
 
                         "orderlist": [{
                             "name": "Order List Default",
-                            "description": "DRAFT - List of Items to be arranged into the correct order.",
+                            "description": "List of Items to be arranged into the correct order.",
                             "group_reference": "match",
                             "defaults": {
                                 "is_math": true,
@@ -608,7 +614,7 @@ include_once 'includes/header.php';
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/order_list.png"
                         }, {
                             "name": "Order List",
-                            "description": "DRAFT - List of Items to be arranged into the correct order.",
+                            "description": "List of Items to be arranged into the correct order.",
                             "group_reference": "match",
                             "defaults": {
                                 "is_math": true,
@@ -623,7 +629,7 @@ include_once 'includes/header.php';
                             "hidden": ["description", "is_math"]
                         }, {
                             "name": "Order Paragraphs",
-                            "description": "DRAFT - Order Paragraphs.",
+                            "description": "Order Paragraphs.",
                             "group_reference": "match",
                             "defaults": {
                                 "is_math": true,
@@ -638,7 +644,7 @@ include_once 'includes/header.php';
                             "hidden": ["description", "is_math"]
                         }, {
                             "name": "Order Sentences",
-                            "description": "DRAFT - Order Sentences.",
+                            "description": "Order Sentences.",
                             "group_reference": "match",
                             "defaults": {
                                 "is_math": true,
@@ -654,7 +660,7 @@ include_once 'includes/header.php';
                         }],
                         "formula": [{
                             "name": "Math Formula",
-                            "description": "DRAFT - Enter complex math. Default response box",
+                            "description": "Enter complex math. Default response box",
                             "group_reference": "math",
                             "defaults": {
                                 "stimulus": "<p>[This is the Stem.]</p>\n",
@@ -665,7 +671,7 @@ include_once 'includes/header.php';
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/formula.png"
                         }, {
                             "name": "Math Fraction",
-                            "description": "DRAFT - Enter complex math. Fraction Response boxes",
+                            "description": "Enter complex math. Fraction Response boxes",
                             "group_reference": "math",
                             "defaults": {
                                 "stimulus": "<p>[This is the Stem.]</p>\n",
@@ -677,7 +683,7 @@ include_once 'includes/header.php';
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/fraction.png"
                         }, {
                             "name": "Math - Fill in the blanks",
-                            "description": "DRAFT - Enter complex math. Add multiple response boxes",
+                            "description": "Enter complex math. Add multiple response boxes",
                             "group_reference": "math",
                             "defaults": {
                                 "stimulus": "<p>[This is the Stem.]</p>\n",
@@ -690,7 +696,7 @@ include_once 'includes/header.php';
                         }],
                         "numberline": [{
                             "name": "Numberline",
-                            "description": "DRAFT - Place points on a number line.",
+                            "description": "Place points on a number line.",
                             "group_reference": "math",
                             "defaults": {
                                 "labels": {
@@ -717,7 +723,7 @@ include_once 'includes/header.php';
                         }],
                         "graphplotting": [{
                             "name": "Graph with Point Tool",
-                            "description": "DRAFT - 10 x 10 unit quadrants with Point tool.",
+                            "description": "10 x 10 unit quadrants with Point tool.",
                             "group_reference": "math",
                             "defaults": {
                                 "axis_x": {
@@ -756,7 +762,7 @@ include_once 'includes/header.php';
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/graph.png"
                         }, {
                             "name": "Graph default tools",
-                            "description": "DRAFT - 10 x 10 unit quadrants with all drawing tools.",
+                            "description": "10 x 10 unit quadrants with all drawing tools.",
                             "group_reference": "math",
                             "defaults": {
                                 "axis_x": {
@@ -790,7 +796,7 @@ include_once 'includes/header.php';
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/graph2.png"
                         }, {
                             "name": "Graph - larger grid lines",
-                            "description": "DRAFT - 10 x 10 unit quadrants with grid lines set to 2 with all drawing tools.",
+                            "description": "10 x 10 unit quadrants with grid lines set to 2 with all drawing tools.",
                             "group_reference": "math",
                             "defaults": {
                                 "axis_x": {
@@ -825,7 +831,7 @@ include_once 'includes/header.php';
                             "image": "//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/graph3.png"
                         }, {
                             "name": "1st Quadrant Graph",
-                            "description": "DRAFT - 10 x 10 1st quadrant graph with all drawing tools.",
+                            "description": "10 x 10 1st quadrant graph with all drawing tools.",
                             "group_reference": "math",
                             "defaults": {
                                 "axis_x": {
@@ -885,7 +891,7 @@ include_once 'includes/header.php';
                         }],
                         "tokenhighlight": [{
                             "name": "Token Highlight",
-                            "description": "DRAFT - User can click words/sentences/paragraphs to be highlighted",
+                            "description": "User can click words/sentences/paragraphs to be highlighted",
                             "group_reference": "highlight",
                             "defaults": {
                                 "stimulus": "<p>[This is the Stem.]</p>",
@@ -948,7 +954,6 @@ include_once 'includes/header.php';
                     "ui": {
                         "question_tiles": true
                     }
-
                 }
             },
             defaults: {
