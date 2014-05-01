@@ -44,7 +44,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Inline</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Display items from the Learnosity Item Bank in no time with the Items API. The Items API builds on the Questions API's power and makes it quicker to integrate.</p>
+                    <p>Display items from the Learnosity item bank in no time with the Items API. The Items API builds on the Questions API's power and makes it quicker to integrate.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_inline.php">Demo</a>
                     </p>
@@ -66,6 +66,21 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Activities</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Shows examples of loading assessments using activities authored in the Learnosity item bank.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_activities.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">

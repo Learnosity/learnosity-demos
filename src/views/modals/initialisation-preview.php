@@ -30,6 +30,11 @@
     }
     $previewObject = is_array($signedRequest) ? json_decode($signedRequest, true) : $signedRequest;
     if (is_array($previewObject)) {
+        if (isset($previewObject['request']['api_type'])) {
+            unset($previewObject['request']['api_type']);
+        } elseif (isset($previewObject['request']['config']['api_type'])) {
+            unset($previewObject['request']['config']['api_type']);
+        }
         if (array_key_exists('security', $previewObject)) {
             $previewBody = '{"security": ' . Json::encode($previewObject['security']) . ', "request": ' . Json::encode($previewObject['request']) . '}';
         } else {

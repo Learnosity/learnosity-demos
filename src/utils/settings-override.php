@@ -2,7 +2,7 @@
 
 // Examine the settings modal form post and replace the default
 // $request variables.
-if (isset($_POST['ui_style'])) {
+if (isset($_POST['api_type'])) {
     foreach ($_POST as $key => $value) {
         if (is_array($value)) {
             foreach ($value as $subkey => $subvalue) {
@@ -22,8 +22,13 @@ if (isset($_POST['ui_style'])) {
     }
 
     if ($_POST['api_type'] === 'items') {
-        $request['config'] = array_replace_recursive($request['config'], $_POST);
-        $requestKey = $request['config'];
+        if (array_key_exists('config', $request)) {
+            $request['config'] = array_replace_recursive($request['config'], $_POST);
+            $requestKey = $request['config'];
+        } else {
+            $request = array_replace_recursive($request, $_POST);
+            $requestKey = $request;
+        }
     } elseif ($_POST['api_type'] === 'assess') {
         $request = array_replace_recursive($request, $_POST);
         $requestKey = $request;
