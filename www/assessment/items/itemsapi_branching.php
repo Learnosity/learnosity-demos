@@ -60,11 +60,14 @@ $request = array(
     ),
     'config' => array(
         'title' => 'Branching Assessment',
+                'ui_style'            => 'horizontal-fixed',
         'navigation' => array(
             'intro_item'             => 'branching-intro',
             'show_prev'              => false,
             'show_progress'          => false,
-            'show_fullscreencontrol' => false
+            'show_fullscreencontrol' => false,
+            "scroll_to_top"          => true,
+            "scroll_to_test"         => false,
         ),
         'time' => array(),
         'assessApiVersion' => 'v2',

@@ -69,6 +69,21 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <h2 class="panel-title">Branching Assessment</h2>
+                </div>
+                <div class="panel-body">
+                    <p>A branching assessment that adapts which testlet to show a user based on performance.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_branching.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <h2 class="panel-title">Activities</h2>
                 </div>
                 <div class="panel-body">
@@ -79,8 +94,6 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
