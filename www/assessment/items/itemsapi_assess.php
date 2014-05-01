@@ -16,7 +16,7 @@ $request = array(
     'name'           => 'Items API demo - assess activity',
     'rendering_type' => 'assess',
     'state'          => 'initial',
-    'type'           => 'submit_practice',
+    'type'           => 'local_practice',
     'course_id'      => $courseid,
     'session_id'     => UUID::generateUuid(),
     'user_id'        => $studentid,
@@ -98,7 +98,7 @@ $signedRequest = $RequestHelper->generateRequest();
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="<?php echo $env['www'] ?>assessment/items/itemsapi_adaptive.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_inline.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
