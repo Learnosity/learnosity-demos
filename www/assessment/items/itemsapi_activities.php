@@ -33,9 +33,11 @@ $signedRequest = $RequestHelper->generateRequest();
 
 <div class="jumbotron">
     <h1>Items API – Activities</h1>
-    <p>Preview the <a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">API Initialisation Object</a> to see how simple it can be using the Items API to load activities
+    <p>Activities are a wrapper for multiple items authored in the Learnosity Author site. They can also
+    include configuration used by the <a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a> to control the assessment user interface.</p>
+    <p>Preview the <a href="#" data-toggle="modal" data-target="#initialisation-preview">API Initialisation Object</a> to see how simple it can be using the Items API to load activities
     authored in the Learnosity item bank.<p>
-    <p><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">Customise the activity</a> you want to load.<p>
+    <p><a href="#" data-toggle="modal" data-target="#settings">Customise the activity</a> you want to load.<p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
