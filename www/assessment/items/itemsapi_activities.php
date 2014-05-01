@@ -13,8 +13,6 @@ $security = array(
 
 $request = array(
     'activity_template_id' => 'demo-activity-1',
-    'rendering_type'       => 'assess',
-    'type'                 => 'local_practice',
     'course_id'            => $courseid,
     'session_id'           => UUID::generateUuid(),
     'user_id'              => $studentid
