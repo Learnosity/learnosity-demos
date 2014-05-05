@@ -22,26 +22,26 @@ $request = array(
     'session_id'     => $session_id,
     'course_id'      => $courseid,
     'items'          => array(
-        'distractor_demo_1',
-        'distractor_demo_2',
-        'distractor_demo_3',
-        'distractor_demo_4',
-        'distractor_demo_5',
-        'distractor_demo_6',
-        'distractor_demo_7',
-        'distractor_demo_8',
-        'distractor_demo_9',
-        'distractor_demo_10',
-        'distractor_demo_11',
-        'distractor_demo_12',
-        'distractor_demo_13',
-        'distractor_demo_14',
-        'distractor_demo_15',
-        'distractor_demo_16',
-        'distractor_demo_17',
-        'distractor_demo_18',
-        'distractor_demo_19',
-        'distractor_demo_20'),
+        'act1',
+        'act2',
+        'act3',
+        'act4',
+        'act5',
+        'act6',
+        'act7',
+        'act8',
+        'act9',
+        'act10',
+        'act11',
+        'act12',
+        'act13',
+        'act14',
+        'act15',
+        'act16',
+        'act17',
+        'act18',
+        'act19',
+        'act20'),
     'type'           => 'submit_practice',
     'config'         => array(
         "questionsApiVersion" => "v2",
@@ -70,8 +70,7 @@ $signedRequest = $RequestHelper->generateRequest();
 
 <div class="jumbotron">
     <h1>Items API – Distractor Rationale</h1>
-    <p>Store distractor rationale in the Questions API metadata property to be rendered by the host
-    environment for displaying to users via Reports API.<p>
+    <p>Demonstration of extending the Items API and Reports API to show custom distractor rationales.<p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
@@ -111,9 +110,9 @@ $signedRequest = $RequestHelper->generateRequest();
                 </div>
                 <div class="modal-body">
                     <p>Test is submitted.</p>
+                    <p>On the next screen you will be shown the distractor rationales for all questions that you have attempted.  The styling and positioning of the distractors is fully controllable by the host environment.</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="" class="btn btn-default">Start again</a>
                     <a href="report.php?sessionId=<?php echo $session_id; ?>" class="btn btn-primary">View report</a>
                 </div>
             </div><!-- /.modal-content -->
