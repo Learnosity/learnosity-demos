@@ -36,8 +36,7 @@ $signedRequest = $RequestHelper->generateRequest();
 
 <div class="jumbotron">
     <h1>Reports API – Distractor Rationale</h1>
-    <p>Store distractor rationale in the Questions API metadata property to be rendered by the host
-    environment for displaying to users via Reports API.<p>
+    <p>Demonstration of extending the Items API and Reports API to show custom distractor rationales.<p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
