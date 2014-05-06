@@ -1009,6 +1009,77 @@ $signedRequest = '{
                 }]
             ]
         }
+    },
+    {
+        "response_id": "demo36-'.$uniqueResponseIdSuffix.'",
+        "type": "barchart",
+        "description": "An empty bar chart.",
+        "axes": {
+            "x": "label",
+            "y": "value"
+        },
+        "domains": {
+            "y": [0, 10]
+        },
+        "chart_data": {
+            "name": "Favourite movie type",
+            "data": [
+                { "x": "Comedy", "y": 4 },
+                { "x": "Action", "y": 5 },
+                { "x": "Romance", "y": 9 },
+                { "x": "Drama", "y": 1 }
+            ]
+        },
+        "validation": {
+            "scoring_type": "exactMatch",
+            "valid_response": {
+                "value": [
+                    { "x": "Comedy", "y": 4 },
+                    { "x": "Action", "y": 5 },
+                    { "x": "Romance", "y": 4 },
+                    { "x": "Drama", "y": 1 },
+                    { "x": "SciFi", "y": 4 }
+                ],
+                "score": 1
+            }
+        },
+        "instant_feedback": true
+    },
+    {
+        "response_id": "demo37-'.$uniqueResponseIdSuffix.'",
+        "type": "barchart",
+        "description": "Sort a bar chart.",
+        "axes": {
+            "x": "label",
+            "y": "value"
+        },
+        "add_bar": false,
+        "order_bar": true,
+        "resize_bar": false,
+        "chart_data": {
+            "name": "Animals by size (cm)",
+            "data": [
+                { "x": "Cat", "y": 25 },
+                { "x": "Mouse", "y": 10 },
+                { "x": "Hamster", "y": 13 },
+                { "x": "Horse", "y": 225 },
+                { "x": "Sheep", "y": 100 }
+            ]
+        },
+        "validation": {
+            "scoring_type": "exactMatch",
+            "valid_response": {
+                "value": [
+                    { "x": "Mouse", "y": 10 },
+                    { "x": "Hamster", "y": 13 },
+                    { "x": "Cat", "y": 25 },
+                    { "x": "Sheep", "y": 100 },
+                    { "x": "Horse", "y": 225 }
+                ],
+                "score": 1
+            }
+        },
+        "instant_feedback": true
     }
 ]
 }';
@@ -1377,6 +1448,24 @@ $signedRequest = '{
         <h3 id="q35">Math Formula (Unit comparison)</h3>
         <p><span class="label label-info">Hint</span>  \(0.005km\), \(500cm\), \(5000mm\) \(16.40ft\), \(196.8in\) would all be acceptable.</p>
         <span class="learnosity-response question-demo35-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q36">Bar Chart</h3>
+        <p><span class="label label-info">Hint</span> Resize <em>Romance</em> to 4 and add a new <em>SciFi</em> bar with a y-axis value of 4.</p>
+        <span class="learnosity-response question-demo36-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q37">Bar Chart - Sorting</h3>
+        <p><span class="label label-info">Hint</span> Sort the chart (ascending) by clicking on the arrows.</p>
+        <span class="learnosity-response question-demo37-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
 <hr>
