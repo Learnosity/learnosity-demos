@@ -1057,24 +1057,24 @@ $signedRequest = '{
         "order_bar": true,
         "resize_bar": false,
         "chart_data": {
-            "name": "Commits by projects",
+            "name": "Animals by size (cm)",
             "data": [
-                { "x": "Cat", "y": 1233 },
-                { "x": "Mouse", "y": 550 },
-                { "x": "Hamster", "y": 641 },
-                { "x": "Horse", "y": 8636 },
-                { "x": "Sheep", "y": 3089 }
+                { "x": "Cat", "y": 25 },
+                { "x": "Mouse", "y": 10 },
+                { "x": "Hamster", "y": 13 },
+                { "x": "Horse", "y": 225 },
+                { "x": "Sheep", "y": 100 }
             ]
         },
         "validation": {
             "scoring_type": "exactMatch",
             "valid_response": {
                 "value": [
-                    { "x": "Mouse", "y": 550 },
-                    { "x": "Hamster", "y": 641 },
-                    { "x": "Cat", "y": 1233 },
-                    { "x": "Sheep", "y": 3089 },
-                    { "x": "Horse", "y": 8636 }
+                    { "x": "Mouse", "y": 10 },
+                    { "x": "Hamster", "y": 13 },
+                    { "x": "Cat", "y": 25 },
+                    { "x": "Sheep", "y": 100 },
+                    { "x": "Horse", "y": 225 }
                 ],
                 "score": 1
             }
@@ -1455,7 +1455,7 @@ $signedRequest = '{
 <div class="row">
     <div class="col-md-8">
         <h3 id="q36">Bar Chart</h3>
-        <p><span class="label label-info">Hint</span> Resize romance to 4 and add a new SciFi bar with a y-axis value of 4.</p>
+        <p><span class="label label-info">Hint</span> Resize <em>Romance</em> to 4 and add a new <em>SciFi</em> bar with a y-axis value of 4.</p>
         <span class="learnosity-response question-demo36-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
