@@ -102,7 +102,9 @@ $signedRequest = $RequestHelper->generateRequest();
                                 });
                             });
                         }
-                        $('#' + question_id + "_dr").fadeIn();
+                        $('#' + question_id + "_dr").show();
+                        MathJax.Hub.Queue(['Typeset', MathJax.Hub, question_id + "_dr"]);
+
                     }
                 });
             }
@@ -120,19 +122,13 @@ $signedRequest = $RequestHelper->generateRequest();
                 case 'clozeassociation' :
                 case 'association' :
                 case 'clozetext' : 
-                                    console.log('validation', validation);
+                    console.log('validation', validation);
                     console.log('response', response);
                     $.each(validation, function(id, value) {
-                        if(value != response[id]) {
+                        if(value != response[id] && response[id] !== undefined) {
                             appendContent(q_id + "_dr", $('#' + q_id).parents().eq(1), metadata.distractor_rationale_response_level[id], "alert alert-danger");
                         }
                     });
-                    break;
-                case 'clozeassociation' :
-                    console.log('id', q_id);
-                    console.log('validation', validation);
-                    console.log('response', response);
-                    console.log('options', options);
                     break;
             }
         }
