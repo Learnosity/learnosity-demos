@@ -108,9 +108,6 @@ $request = array(
             'activity_id' => '52f5b81d-9270-914a-7094a1ada4d55e6e',
             'hierarchy' => 'questiontype'
         )
-    ),
-    'configuration' => array(
-        'questionsApiVersion' => 'v2'
     )
 );
 
