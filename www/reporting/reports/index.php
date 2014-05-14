@@ -40,9 +40,10 @@ $request = array(
             )
         ),
         array(
-            'id'    => 'report-5',
-            'type'  => 'group-lastscore-by-activity',
-            'users' => array(
+            'id'           => 'report-5',
+            'type'         => 'group-lastscore-by-activity',
+            'scoring_type' => 'partial',
+            'users'        => array(
                 array(
                     'id' => 'brianmoser',
                     'name' => 'Brian Moser'
@@ -64,9 +65,10 @@ $request = array(
             )
         ),
         array(
-            'id'    => 'report-6',
-            'type'  => 'user-lastscore-by-activity',
-            'activities' => array(
+            'id'           => 'report-6',
+            'type'         => 'user-lastscore-by-activity',
+            'scoring_type' => 'partial',
+            'activities'   => array(
                 array(
                     'id' => 'edde56e8-ff65-e42e-b4fe49caad796bd',
                     'name' => 'Mid Term'
@@ -78,9 +80,10 @@ $request = array(
             )
         ),
         array(
-            'id'    => 'report-7',
-            'type'  => 'group-lastscore-by-item',
-            'users' => array(
+            'id'           => 'report-7',
+            'type'         => 'group-lastscore-by-item',
+            'scoring_type' => 'partial',
+            'users'        => array(
                 array(
                     'id' => 'brianmoser',
                     'name' => 'Brian Moser'
