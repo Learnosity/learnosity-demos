@@ -149,6 +149,7 @@ class RequestHelper
             case 'author':
             case 'data':
             case 'items':
+            case 'reports':
                 // Add the security packet (with signature) to the output
                 $output['security'] = $this->securityPacket;
 
@@ -172,23 +173,6 @@ class RequestHelper
                 // Stringify the request packet if necessary
                 if (!empty($this->requestPacket)) {
                     $output = array_merge_recursive($output, $this->requestPacket);
-                }
-                break;
-            case 'reports':
-                // Add the security packet (with signature) to the root of output
-                $output = $this->securityPacket;
-
-                // Remove the `domain` key from the security packet
-                unset($output['domain']);
-
-                // Stringify the request packet if necessary
-                if (!empty($this->requestPacket)) {
-                    $output['reports'] = $this->requestPacket;
-                }
-
-                // Add the action if necessary
-                if (!empty($this->action)) {
-                    $output['action'] = $this->action;
                 }
                 break;
             default:
@@ -274,7 +258,6 @@ class RequestHelper
             case 'assess':
             case 'author':
             case 'questions':
-            case 'reports':
                 $this->doSignRequestData = false;
                 break;
             default:
