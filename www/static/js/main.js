@@ -20,7 +20,7 @@ library.json = {
     prettyPrint: function(obj) {
         var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
         return JSON.stringify(obj, null, 3)
-            .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
+            .replace(/&/g, '&amp;').replace(/\\"/g, '\\&quot;')
             .replace(/</g, '&lt;').replace(/>/g, '&gt;')
             .replace(jsonLine, library.json.replacer);
     }

@@ -53,6 +53,9 @@ $request = array(
             'warning_time' => 120,
             'show_time'    => true
         ),
+        'labelBundle' => array(
+            'item' => 'Question'
+        ),
         'ui_style'            => 'main',
         'ignore_validation'   => false,
         'questionsApiVersion' => 'v2',
