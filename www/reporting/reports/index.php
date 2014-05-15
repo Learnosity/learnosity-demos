@@ -68,6 +68,7 @@ $request = array(
             'id'           => 'report-6',
             'type'         => 'user-lastscore-by-activity',
             'scoring_type' => 'partial',
+            'user_id'      => 'brianmoser',
             'activities'   => array(
                 array(
                     'id' => 'edde56e8-ff65-e42e-b4fe49caad796bd',
