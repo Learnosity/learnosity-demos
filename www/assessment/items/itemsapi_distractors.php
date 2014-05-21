@@ -57,10 +57,11 @@ $signedRequest = $RequestHelper->generateRequest();
      * Method called from the Questions API ready listener
      */
     function initApp() {
-        var metadata = getMetadata();
+        metadata = getMetadata();
         var question_ids = getObjectKeys(metadata);
-        // Render a button next to each question for users to see a hint (if available)
-        // for that question
+        console.log(metadata);
+        // attach an onclick function to each questions "check answer"
+        // to display any distractor rationale for wrong answers
         for (var i = 0; i < question_ids.length; i++) {
             var question_id = question_ids[i];
             console.log('#' + question_id);
@@ -72,37 +73,54 @@ $signedRequest = $RequestHelper->generateRequest();
     }
 
     /**
-     * Render any hint(s) retrieved from the question metadata
-     * @param  {string} question_id The question to render a hint for
+     * Render any distractor rationale retrieved from the question metadata
+     * @param  {string} question_id The question to render a distratctor rationale for
      */
     function renderDistractorRationale(question_id) {
         // get hints container..
 
         lrnActivity.attemptedQuestions(function (responseIds) {
 
+
+            //check if question has been attempted
             if($.inArray(question_id, responseIds) !== -1) {
-                var metadata = getMetadata(question_id);
+                var q_meta = metadata[question_id];
+
+
+                //hide and reset contents of display box until needed
                 $('#' + question_id + "_dr").hide().text("");
+
+
                 lrnActivity.validItems(function (responseObj) {
                     
+
+
+                    //if question isn't in the valid list, get distractor rationale and display
                     if(!checkIfValid(responseObj, question_id)) {
-                        if(!metadata.hasOwnProperty("distractor_rationale_response_level")) {
-                            appendContent(question_id + "_dr", $('#' + question_id).parents().eq(1), metadata.distractor_rationale, "alert alert-danger");
+
+
+                        if(!q_meta.hasOwnProperty("distractor_rationale_response_level")) {
+                            //response level metadata takes precedence
+                            appendContent(question_id + "_dr", $('#' + question_id).parents().eq(1), q_meta.distractor_rationale, "alert alert-danger");
                             
                         } else {
 
+                            //do comparison to see if the answer is correct or not.
+                            //This should hopefully disappear once we get 'detailedWithPartial' support into validItems.
                             lrnActivity.getQuestions(function(questions) {
 
                                 lrnActivity.getResponses(function(responses) {
                                     question_validation = questions[question_id].validation.valid_response.value;
                                     question_response = responses[question_id].value;
                                     question_options = questions[question_id].options;
-                                    evaluateAnswers(question_id, question_validation, question_response, question_options, questions[question_id].type, metadata);
+                                    evaluateAnswers(question_id, question_validation, question_response, question_options, questions[question_id].type, q_meta);
                                 
                                 });
                             });
                         }
-                        $('#' + question_id + "_dr").show();
+                        if($('#' + question_id + "_dr").text() !== "") {
+                            $('#' + question_id + "_dr").show();
+                        }
                         MathJax.Hub.Queue(['Typeset', MathJax.Hub, question_id + "_dr"]);
 
                     }
@@ -125,7 +143,7 @@ $signedRequest = $RequestHelper->generateRequest();
                     console.log('validation', validation);
                     console.log('response', response);
                     $.each(validation, function(id, value) {
-                        if(value != response[id] && response[id] !== undefined) {
+                        if(value != response[id] && (response[id] !== undefined && response[id] !== null)) {
                             appendContent(q_id + "_dr", $('#' + q_id).parents().eq(1), metadata.distractor_rationale_response_level[id], "alert alert-danger");
                         }
                     });
@@ -143,46 +161,21 @@ $signedRequest = $RequestHelper->generateRequest();
             return false;
         }
 
+        /**
+         * Create or append a div 
+         * and store all relevant distract
+         * @param  {string} key Optional key to filter by
+         * @return {object}     Either the entire metadata object, or a subset (if key is passed)
+         */
 
         function appendContent (id, handle, content, classes) {
-            console.log("Here!", content);
             if($("#" + id).length == 0) {
-                console.log("uh oh, empty!");
-            handle.append($("<div>").attr('id', id).addClass(classes).append(content + "<br>"));
-        } else {
-            $("#" + id).addClass(classes).append(content + "<br>");
-        }
+                handle.append($("<div>").attr('id', id).addClass(classes).append(content + "<br>"));
+            } else {
+                $("#" + id).addClass(classes).append(content + "<br>");
+            }
         }
         
-/*
-        var hintsElem = $('#'+question_id).parents('div.item-content').siblings();
-        $(hintsElem).attr('id', 'hints_' + question_id);
-
-        // clear hints container..
-        hintsElem.empty();
-
-        var metadata = getMetadata(question_id);
-        var hintHtml = $.parseHTML(metadata.sample_answer || metadata.hint);
-        var hints = $(hintHtml).find('div.hint');
-
-        // check how many times the hint button has been clicked..
-        var hintsClicked = $('#'+question_id).data('hintsClicked');
-        if (hintsClicked === undefined) {
-            $('#' + question_id).data('hintsClicked', 1);
-        } else if (hintsClicked < hints.length) {
-            $('#' + question_id).data('hintsClicked', hintsClicked + 1);
-        }
-
-        // Add the hint(s) from questions metadata and render into the div#hints element
-        for (var i = 0; i < $('#'+question_id).data('hintsClicked'); i++) {
-            hintsElem.addClass('alert alert-warning').append(hints[i]);
-        };
-
-        $('button.' + question_id).text('Hint (' + (hints.length - $('#'+question_id).data('hintsClicked')) + ' left) ' )
-
-        // Render any LaTeX that might have been in the hint
-        MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'hints_' + question_id]);
-        */
     }
 
     /**
