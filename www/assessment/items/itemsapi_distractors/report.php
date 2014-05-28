@@ -8,17 +8,19 @@ include_once 'includes/header.php';
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain,
-    'timestamp'    => $timestamp,
-    'user_id'      => $studentid,
+    'timestamp'    => $timestamp
 );
 
 $sessionId = $_REQUEST['sessionId'];
 
 $request = array(
-    array(
-        'id'        => 'report-distractor-demo',
-        'session_id'  => $sessionId,
-        'type'      => 'user-session-detail'
+    'reports' => array(
+        array(
+            'id'         => 'report-distractor-demo',
+            'user_id'    => $studentid,
+            'session_id' => $sessionId,
+            'type'       => 'user-session-detail'
+        )
     )
 );
 
@@ -74,11 +76,11 @@ $signedRequest = $RequestHelper->generateRequest();
             $el.find('.distractor-content').append(text);
         },
 
-        renderDistractor = function (questionsActivity) {
+        renderDistractor = function (questionsApi) {
 
-            var attemptedQuestions = questionsActivity.attemptedQuestions(),
-                metadata = questionsActivity.getMetadata(),
-                validQuestions = questionsActivity.validQuestions('detailedWithPartials');
+            var attemptedQuestions = questionsApi.attemptedQuestions(),
+                metadata = questionsApi.getMetadata(),
+                validQuestions = questionsApi.validQuestions('detailedWithPartials');
 
             // loop through each metadata and decide which one to render
             $.each(metadata, function (id, qmeta) {
@@ -90,13 +92,13 @@ $signedRequest = $RequestHelper->generateRequest();
             });
         },
 
-        renderDistractorResponseLevel = function (questionsActivity) {
+        renderDistractorResponseLevel = function (questionsApi) {
 
-            var attemptedQuestions = questionsActivity.attemptedQuestions(),
-                metadata = questionsActivity.getMetadata(),
-                validQuestions = questionsActivity.validQuestions('detailedWithPartials'),
-                questions = questionsActivity.getQuestions(),
-                responses = questionsActivity.getResponses();
+            var attemptedQuestions = questionsApi.attemptedQuestions(),
+                metadata = questionsApi.getMetadata(),
+                validQuestions = questionsApi.validQuestions('detailedWithPartials'),
+                questions = questionsApi.getQuestions(),
+                responses = questionsApi.getResponses();
 
             // loop through each metadata and decide which one to render
             $.each(metadata, function (id, qmeta) {
@@ -122,9 +124,9 @@ $signedRequest = $RequestHelper->generateRequest();
             });
         },
 
-        renderUnattempts = function (questionsActivity) {
+        renderUnattempts = function (questionsApi) {
 
-            var attemptedQuestions = questionsActivity.attemptedQuestions(),
+            var attemptedQuestions = questionsApi.attemptedQuestions(),
                 attemptedQuestionsSelector = $.map(attemptedQuestions, function (id) {
                     return '#' + id;
                 }).join(","),
@@ -134,16 +136,16 @@ $signedRequest = $RequestHelper->generateRequest();
             $unattempts.append('<div class="alert alert-warning unattempts custom-msg">Not attempted</div>');
         },
 
-        questionsApiReady = function (questionsActivity) {
-            renderDistractor(questionsActivity);
-            renderDistractorResponseLevel(questionsActivity);
-            renderUnattempts(questionsActivity);
+        questionsApiReady = function (questionsApi) {
+            renderDistractor(questionsApi);
+            renderDistractorResponseLevel(questionsApi);
+            renderUnattempts(questionsApi);
         },
 
-        ReportAPI = LearnosityReports.init(config, {
+        reportsApi = LearnosityReports.init(config, {
             readyListener: function () {
-                reportObject = ReportAPI.getReport('report-distractor-demo');
-                reportObject.on("report:questionsApiReady", questionsApiReady);
+                reportObject = reportsApi.getReport('report-distractor-demo');
+                reportObject.on('ready:questionsApi', questionsApiReady);
             }
         });
 </script>
