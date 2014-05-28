@@ -19,7 +19,7 @@ $request = array(
             'id'         => 'report-distractor-demo',
             'user_id'    => $studentid,
             'session_id' => $sessionId,
-            'type'       => 'user-session-detail'
+            'type'       => 'session-detail'
         )
     )
 );
