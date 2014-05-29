@@ -15,7 +15,7 @@ $request = array(
     'reports' => array(
         array(
             'id'          => 'report-1',
-            'type'        => 'user-sessions-summary',
+            'type'        => 'sessions-summary',
             'session_ids' => array(
                 'AC023456-2C73-44DC-82DA28894FCBC3BF'
             )
@@ -23,16 +23,16 @@ $request = array(
         array(
             'id'         => 'report-2',
             'session_id' => 'B146BA2C-C2D0-4368-B90FFBA2B245F2BA',
-            'type'       => 'user-session-detail'
+            'type'       => 'session-detail'
         ),
         array(
             'id'        => 'report-3',
-            'type'      => 'user-progress-by-tag',
+            'type'      => 'progress-by-tag',
             'hierarchy' => 'author'
         ),
         array(
             'id'        => 'report-4',
-            'type'      => 'user-sessions-summary-by-tag',
+            'type'      => 'sessions-summary-by-tag',
             'ui'        => 'bar-chart',
             'hierarchy' => 'author',
             'session_ids' => array(
@@ -41,7 +41,7 @@ $request = array(
         ),
         array(
             'id'           => 'report-5',
-            'type'         => 'group-lastscore-by-activity',
+            'type'         => 'lastscore-by-activity-by-user',
             'scoring_type' => 'partial',
             'users'        => array(
                 array(
@@ -66,7 +66,7 @@ $request = array(
         ),
         array(
             'id'           => 'report-6',
-            'type'         => 'user-lastscore-by-activity',
+            'type'         => 'lastscore-by-activity',
             'scoring_type' => 'partial',
             'user_id'      => 'brianmoser',
             'activities'   => array(
@@ -82,7 +82,7 @@ $request = array(
         ),
         array(
             'id'           => 'report-7',
-            'type'         => 'group-lastscore-by-item',
+            'type'         => 'lastscore-by-item-by-user',
             'scoring_type' => 'partial',
             'users'        => array(
                 array(
@@ -98,7 +98,7 @@ $request = array(
         ),
         array(
             'id'    => 'report-8',
-            'type'  => 'group-lastscore-by-tag',
+            'type'  => 'lastscore-by-tag-by-user',
             'users' => array(
                 array(
                     'id' => 'brianmoser',
@@ -146,14 +146,14 @@ $signedRequest = $RequestHelper->generateRequest();
     <div class="row">
         <div class="col-md-10 pull-right">
             <select id="report-selector">
-                <option value="0">User Sessions Summary</option>
-                <option value="1">User Session Detail</option>
-                <option value="2">User Progress By Tag Table</option>
-                <option value="3">User Sessions Summary By Tag Chart</option>
-                <option value="4">Group Last Score By Activity</option>
-                <option value="5">User Last Score By Activity</option>
-                <option value="6">Group Last Score By Item</option>
-                <option value="7">Group Last Score By Tag</option>
+                <option value="0">Sessions Summary</option>
+                <option value="1">Session Detail</option>
+                <option value="2">Progress by Tag Table</option>
+                <option value="3">Sessions Summary By Tag Chart</option>
+                <option value="4">Last Score by Activity by User</option>
+                <option value="5">Last Score by Activity</option>
+                <option value="6">Last Score by Item by User</option>
+                <option value="7">Last Score by Tag by User</option>
             </select>
         </div>
     </div>
@@ -163,17 +163,17 @@ $signedRequest = $RequestHelper->generateRequest();
 
                 <!-- Containers for the reports api to load into -->
                 <section>
-                    <h3 class="report-title">User Sessions Summary</h3>
+                    <h3 class="report-title">Sessions Summary</h3>
                     <span class="learnosity-report" id="report-1"></span>
                 </section>
 
                 <section>
-                    <h3 class="report-title">User Session Detail</h3>
+                    <h3 class="report-title">Session Detail</h3>
                     <span class="learnosity-report" id="report-2"></span>
                 </section>
 
                 <section>
-                    <h3 class="report-title">User Progress By Tag Table</h3>
+                    <h3 class="report-title">Progress by Tag Table</h3>
                     <span class="learnosity-report" id="report-3"></span>
                     <div class="alert alert-info">
                         <strong>Note:</strong> The progress data for the above report is updated every 5 minutes
@@ -181,27 +181,27 @@ $signedRequest = $RequestHelper->generateRequest();
                 </section>
 
                 <section>
-                    <h3 class="report-title">User Sessions Summary By Tag Chart</h3>
+                    <h3 class="report-title">Sessions Summary By Tag Chart</h3>
                     <span class="learnosity-report" id="report-4"></span>
                 </section>
 
                 <section>
-                    <h3 class="report-title">Group Last Score By Activity</h3>
+                    <h3 class="report-title">Last Score by Activity by User</h3>
                     <span class="learnosity-report" id="report-5"></span>
                 </section>
 
                 <section>
-                    <h3 class="report-title">User Last Score By Activity</h3>
+                    <h3 class="report-title">Last Score by Activity</h3>
                     <span class="learnosity-report" id="report-6"></span>
                 </section>
 
                 <section>
-                    <h3 class="report-title">Group Last Score By Item</h3>
+                    <h3 class="report-title">Last Score by Item by User</h3>
                     <span class="learnosity-report" id="report-7"></span>
                 </section>
 
                 <section>
-                    <h3 class="report-title">Group Last Score By Tag</h3>
+                    <h3 class="report-title">Last Score by Tag by User</h3>
                     <span class="learnosity-report" id="report-8"></span>
                 </section>
 
