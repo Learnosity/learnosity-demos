@@ -11,30 +11,33 @@ $security = array(
 );
 
 $request = array(
-    'user_id' => 'brianmoser',
     'reports' => array(
         array(
             'id'          => 'report-1',
             'type'        => 'sessions-summary',
+            'user_id'     => 'brianmoser',
             'session_ids' => array(
                 'AC023456-2C73-44DC-82DA28894FCBC3BF'
             )
         ),
         array(
             'id'         => 'report-2',
-            'session_id' => 'B146BA2C-C2D0-4368-B90FFBA2B245F2BA',
-            'type'       => 'session-detail'
+            'type'       => 'session-detail',
+            'user_id'    => 'brianmoser',
+            'session_id' => 'B146BA2C-C2D0-4368-B90FFBA2B245F2BA'
         ),
         array(
             'id'        => 'report-3',
             'type'      => 'progress-by-tag',
+            'user_id'   => 'brianmoser',
             'hierarchy' => 'author'
         ),
         array(
-            'id'        => 'report-4',
-            'type'      => 'sessions-summary-by-tag',
-            'ui'        => 'bar-chart',
-            'hierarchy' => 'author',
+            'id'          => 'report-4',
+            'type'        => 'sessions-summary-by-tag',
+            'user_id'     => 'brianmoser',
+            'ui'          => 'bar-chart',
+            'hierarchy'   => 'author',
             'session_ids' => array(
                 'B146BA2C-C2D0-4368-B90FFBA2B245F2BA'
             )
