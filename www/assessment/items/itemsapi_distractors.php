@@ -10,7 +10,7 @@ $security = array(
     'domain'       => $domain
 );
 
-$session_id = Uuid::generateUuid();
+$session_id = Uuid::generate();
 
 $request = array(
     'user_id'        => $studentid,
@@ -85,7 +85,7 @@ $signedRequest = $Init->generate();
 
 
                 lrnActivity.validItems(function (responseObj) {
-                    
+
 
 
                     //if question isn't in the valid list, get distractor rationale and display
@@ -95,7 +95,7 @@ $signedRequest = $Init->generate();
                         if(!q_meta.hasOwnProperty("distractor_rationale_response_level")) {
                             //response level metadata takes precedence
                             appendContent(question_id + "_dr", $('#' + question_id).parents().eq(1), q_meta.distractor_rationale, "alert alert-danger");
-                            
+
                         } else {
 
                             //do comparison to see if the answer is correct or not.
@@ -107,7 +107,7 @@ $signedRequest = $Init->generate();
                                     question_response = responses[question_id].value;
                                     question_options = questions[question_id].options;
                                     evaluateAnswers(question_id, question_validation, question_response, question_options, questions[question_id].type, q_meta);
-                                
+
                                 });
                             });
                         }
@@ -155,7 +155,7 @@ $signedRequest = $Init->generate();
         }
 
         /**
-         * Create or append a div 
+         * Create or append a div
          * and store all relevant distract
          * @param  {string} key Optional key to filter by
          * @return {object}     Either the entire metadata object, or a subset (if key is passed)
@@ -168,7 +168,7 @@ $signedRequest = $Init->generate();
                 $("#" + id).addClass(classes).append(content + "<br>");
             }
         }
-        
+
     }
 
     /**

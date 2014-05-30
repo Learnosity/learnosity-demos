@@ -15,7 +15,7 @@ $request = array(
     'activity_id'          => 'demo-activity-1',
     'name'                 => 'Demo Activity',
     'course_id'            => $courseid,
-    'session_id'           => Uuid::generateUuid(),
+    'session_id'           => Uuid::generate(),
     'user_id'              => $studentid
 );
 

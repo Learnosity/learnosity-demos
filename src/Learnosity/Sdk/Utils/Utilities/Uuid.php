@@ -4,7 +4,7 @@
 
 class Uuid
 {
-    public static function generateUuid($type = 'v4', $namespace = null, $name = null)
+    public static function generate($type = 'v4', $namespace = null, $name = null)
     {
         switch ($type) {
             case 'v3':

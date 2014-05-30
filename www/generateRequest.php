@@ -38,7 +38,7 @@ switch ($sign_type) {
             'name'           => 'Items API demo - Inline Activity.',
             'state'          => 'initial',
             'activity_id'    => 'itemsinlinedemo',
-            'session_id'     => Uuid::generateUuid(),
+            'session_id'     => Uuid::generate(),
             'course_id'      => $courseid,
             'items'          => $_POST['item_references'],
             'type'           => 'submit_practice',

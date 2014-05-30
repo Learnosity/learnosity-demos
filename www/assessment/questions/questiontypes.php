@@ -17,7 +17,7 @@ if (isset($_GET['state']) && $_GET['state'] === 'review') {
     $uniqueResponseIdSuffix = $_GET['uniqueResponseIdSuffix'];
 } else {
     $state =  'initial';
-    $uniqueResponseIdSuffix = Uuid::generateUuid();
+    $uniqueResponseIdSuffix = Uuid::generate();
 }
 
 // Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
@@ -36,7 +36,7 @@ $request = '{
                 {"value" : "violet"  , "label" : "Violet"},
                 {"value" : "blue"   , "label" : "Blue"},
                 {"value" : "orange" , "label" : "Orange"}
-                ],
+            ],
             "valid_responses" : [
                 {"value" : "violet", "score": 1}
             ],
@@ -150,7 +150,7 @@ $request = '{
             "description" : "The student needs to select the correct response for each blank ",
             "template" : "<p>“It’s all clear,’ he {{response}}. “Have you the chisel and the bags? Great Scott! Jump, Archie, jump, and I’ll swing for it!’</p><p>Sherlock {{response}} had sprung out and seized the {{response}} by the collar. The other dived down the hole, and I heard the sound of {{response}} cloth as Jones clutched at his skirts. The light flashed upon the barrel of a revolver, but Holmes’ {{response}} came down on the man’s wrist, and the pistol {{response}} upon the stone floor.</p>",
             "instant_feedback" : true,
-            "possible_responses" : [ ["whispered", "sprinted", "joked"], ["Homes", "holmes", "Holmes" ], ["acquaintance", "intruder", "shopkeeper"], ["burning", "departing", "rending", "broken"], ["revolver","hunting crop"], ["rattled", "clinked", "spilt"] ],
+            "possible_responses" : [ ["whispered", "sprinted", "joked"], ["Homes", "holmes", "Holmes"], ["acquaintance", "intruder", "shopkeeper"], ["burning", "departing", "rending", "broken"], ["revolver","hunting crop"], ["rattled", "clinked", "spilt"] ],
             "valid_responses" : [
                 [
                     {"value" : "whispered"}
@@ -576,9 +576,9 @@ $request = '{
             "instant_feedback": true,
             "case_sensitive": false,
             "validation": {
-               "valid_responses": [["intruder"],["rending"],["hunting crop"],["clinked"]]
-            }
-        },
+                   "valid_responses": [["intruder"],["rending"],["hunting crop"],["clinked"]]
+                }
+            },
         {
             "response_id": "demo23-'.$uniqueResponseIdSuffix.'",
             "instant_feedback": true,
@@ -612,43 +612,43 @@ $request = '{
                 ]
             }
         },
-        {
-            "instant_feedback": true,
-            "labels": {
-                "frequency": 10,
-                "show_max": true,
-                "show_min": true
-            },
-            "line": {
-                "left_arrow": true,
-                "max": 3,
-                "min": 0,
-                "right_arrow": true
-            },
-            "points": ["1.5", "2.5", "5"],
-            "response_id": "demo31-'.$uniqueResponseIdSuffix.'",
-            "snap_to_ticks": true,
-            "stimulus": "Position the tokens at the closest points. If the number isn&#39;t on the line, do not place it.<br />\nHint: We&#39;ll accept anything within .1 of the correct answer.",
-            "ticks": {
-                "distance": ".1",
-                "show": true
-            },
-            "type": "numberline",
-            "validation": {
-                "partial_scoring": true,
-                "penalty_score": 0,
-                "show_partial_ui": true,
-                "threshold": 0.1,
-                "valid_responses": [{
-                    "point": "1.5",
-                    "position": "1.5"
-                }, {
-                    "point": "2.5",
-                    "position": "2.5"
-                }],
-                "valid_score": 1
-            }
+    {
+        "instant_feedback": true,
+        "labels": {
+            "frequency": 10,
+            "show_max": true,
+            "show_min": true
         },
+        "line": {
+            "left_arrow": true,
+            "max": 3,
+            "min": 0,
+            "right_arrow": true
+        },
+        "points": ["1.5", "2.5", "5"],
+        "response_id": "demo31-'.$uniqueResponseIdSuffix.'",
+        "snap_to_ticks": true,
+        "stimulus": "Position the tokens at the closest points. If the number isn&#39;t on the line, do not place it.<br />\nHint: We&#39;ll accept anything within .1 of the correct answer.",
+        "ticks": {
+            "distance": ".1",
+            "show": true
+        },
+        "type": "numberline",
+        "validation": {
+            "partial_scoring": true,
+            "penalty_score": 0,
+            "show_partial_ui": true,
+            "threshold": 0.1,
+            "valid_responses": [{
+                "point": "1.5",
+                "position": "1.5"
+            }, {
+                "point": "2.5",
+                "position": "2.5"
+            }],
+            "valid_score": 1
+        }
+    },
         {
             "response_id": "demo27-'.$uniqueResponseIdSuffix.'",
             "axis_x": {
@@ -713,57 +713,76 @@ $request = '{
                 "valid_score": 1
             }
         },
-        "ui_style": {
-            "stem_width": "600px",
-            "option_width": "100px"
-        }
-    },
-    {
-        "instant_feedback": true,
-        "is_math": true,
-        "response_id": "demo34-'.$uniqueResponseIdSuffix.'",
-        "stimulus": "Enter any two values, such that the expression is equal to \\(5 = y + x\\).",
-        "template": "{{response}} = y + {{response}}",
-        "type": "formula",
-        "validation": {
-            "valid_responses": [
-                [{
-                    "method": "equivSymbolic",
-                    "value": "5=y+x",
-                    "options": {
-                        "allowDecimal": true,
-                        "decimalPlaces": 10
-                    }
-                }]
-            ]
-        }
-    },
-    {
-        "instant_feedback": true,
-        "is_math": true,
-        "response_id": "demo35-'.$uniqueResponseIdSuffix.'",
-        "stimulus": "Enter any value, such that the value is equal to \\(5m\\). You may use \\(km\\), \\(cm\\), \\(ft\\), \\(in\\) or other units (rounded to two decimal places.",
-        "type": "formula",
-        "validation": {
-            "valid_responses": [
-                [{
-                    "method": "equivValue",
-                    "value": "5m",
-                    "options": {
-                        "decimalPlaces": 2
-                    }
-                }]
-            ]
-        }
-    },
-    {
-        "response_id": "demo36-'.$uniqueResponseIdSuffix.'",
-        "type": "simplechart",
-        "description": "An empty bar chart.",
-        "axes": {
-            "x": "label",
-            "y": "value"
+        {
+            "axis_x": {
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 1
+            },
+            "axis_y": {
+                "draw_labels": true,
+                "show_first_arrow": true,
+                "show_last_arrow": true,
+                "ticks_distance": 2
+            },
+            "canvas": {
+                "snap_to": "grid",
+                "x_max": 9,
+                "x_min": -3,
+                "y_max": 5,
+                "y_min": -4
+            },
+            "grid": {
+                "x_distance": 1,
+                "y_distance": 1
+            },
+            "instant_feedback": true,
+            "is_math": true,
+            "response_id": "demo28-'.$uniqueResponseIdSuffix.'",
+            "toolbar": {
+                "default_tool": "line",
+                "tools": [
+                    ["line", "ray", "segment", "vector"]
+                ]
+            },
+            "type": "graphplotting",
+            "ui_style": {
+                "height": "375px",
+                "width": "500px"
+            },
+            "validation": {
+                "penalty_score": 0,
+                "valid_responses": [
+                    [{
+                        "id": "lrn_2",
+                        "type": "point",
+                        "coords": {
+                            "x": 4,
+                            "y": 0
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_1",
+                        "type": "point",
+                        "coords": {
+                            "x": 7,
+                            "y": 2
+                        },
+                        "subElement": true
+                    }, {
+                        "id": "lrn_3",
+                        "type": "ray",
+                        "subElementsIds": {
+                            "startPoint": "lrn_2",
+                            "endPoint": "lrn_1"
+                        }
+                    }]
+                ],
+                "valid_score": 1
+            }
         },
+
         {
             "response_id": "demo29-'.$uniqueResponseIdSuffix.'",
             "axis_x": {
@@ -828,6 +847,7 @@ $request = '{
                 "valid_score": 1
             }
         },
+
         {
             "response_id": "demo30-'.$uniqueResponseIdSuffix.'",
             "axis_x": {
@@ -938,15 +958,25 @@ $request = '{
                 "option_width": "100px"
             }
         },
-        "instant_feedback": true
-    },
-    {
-        "response_id": "demo37-'.$uniqueResponseIdSuffix.'",
-        "type": "simplechart",
-        "description": "Sort a bar chart.",
-        "axes": {
-            "x": "label",
-            "y": "value"
+        {
+            "instant_feedback": true,
+            "is_math": true,
+            "response_id": "demo34-'.$uniqueResponseIdSuffix.'",
+            "stimulus": "Enter any two values, such that the expression is equal to \\\(5 = y + x\\\).",
+            "template": "{{response}} = y + {{response}}",
+            "type": "formula",
+            "validation": {
+                "valid_responses": [
+                    [{
+                        "method": "equivSymbolic",
+                        "value": "5=y+x",
+                        "options": {
+                            "allowDecimal": true,
+                            "decimalPlaces": 10
+                        }
+                    }]
+                ]
+            }
         },
         {
             "instant_feedback": true,
