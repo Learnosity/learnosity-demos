@@ -11,7 +11,7 @@ $security = array(
     'user_id'      => $studentid
 );
 
-$uniqueResponseIdSuffix = Uuid::generateUuid();
+$uniqueResponseIdSuffix = Uuid::generate();
 
 // Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
 $request = '{

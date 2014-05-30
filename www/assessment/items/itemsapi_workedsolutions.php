@@ -10,7 +10,7 @@ $security = array(
     'domain'       => $domain
 );
 
-$session_id = Uuid::generateUuid();
+$session_id = Uuid::generate();
 
 $request = array(
     'user_id'        => $studentid,
