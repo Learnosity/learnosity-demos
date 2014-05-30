@@ -1012,7 +1012,7 @@ $signedRequest = '{
     },
     {
         "response_id": "demo36-'.$uniqueResponseIdSuffix.'",
-        "type": "barchart",
+        "type": "simplechart",
         "description": "An empty bar chart.",
         "axes": {
             "x": "label",
@@ -1047,7 +1047,7 @@ $signedRequest = '{
     },
     {
         "response_id": "demo37-'.$uniqueResponseIdSuffix.'",
-        "type": "barchart",
+        "type": "simplechart",
         "description": "Sort a bar chart.",
         "axes": {
             "x": "label",
