@@ -1,33 +1,20 @@
 <?php
 
 include_once '../../config.php';
-include_once 'utils/uuid.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
 $security = array(
-    "consumer_key" => $consumer_key,
-    "domain"       => $domain,
-    "timestamp"    => $timestamp,
-    "user_id"      => $studentid
+    'consumer_key' => $consumer_key,
+    'domain'       => $domain,
+    'user_id'      => $studentid
 );
 
-$RequestHelper = new RequestHelper(
-    'questions',
-    $security,
-    $consumer_secret
-);
-
-$activitySignature = $RequestHelper->getSignature();
-
-$uniqueResponseIdSuffix = UUID::generateUuid();
+$uniqueResponseIdSuffix = Uuid::generate();
 
 // Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
-$signedRequest = '{
-    "consumer_key": "'.$consumer_key.'",
-    "timestamp": "' . $timestamp . '",
-    "signature": "'.$activitySignature.'",
-    "user_id": "'.$studentid.'",
+$request = '{
     "type": "submit_practice",
     "state": "initial",
     "id": "questionsapi-demo",
@@ -119,7 +106,7 @@ $signedRequest = '{
                 "y_max": 10,
                 "y_min": -1
             },
-            "description": "The student needs to plot the line \\( y = x + 1 \\)",
+            "description": "The student needs to plot the line \\\( y = x + 1 \\\)",
             "grid": {
                 "x_distance": 1,
                 "y_distance": 1
@@ -421,13 +408,15 @@ $signedRequest = '{
     ]
 }';
 
+$Init = new Init('questions', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
+
 ?>
 
 <div class="jumbotron">
     <h1>Graph Plotting</h1>
     <p>One of the many question types provided by the Learnosity Questions API. The graph plotting type allows to draw or plot points, lines, line segments, rays, vectors and circles on a coordinate grid. Graph Plotting question types can be computer scored.<p>
     <p>Try a few of the demos below.</p>
-
     <div class="row">
         <div class="col-md-8">
             <h4><a href="http://docs.learnosity.com/questionsapi/" class="text-muted">
@@ -444,10 +433,8 @@ $signedRequest = '{
 <!-- Container for the questions api to load into -->
 <script src="//questions.learnosity.com"></script>
 <script>
-    var activity = <?php echo $signedRequest; ?>;
-    LearnosityApp.init(activity);
+    LearnosityApp.init(<?php echo $signedRequest; ?>);
 </script>
-
 
 <!-- Main question content below here: -->
 <h2 class="page-heading">Demos</h2>

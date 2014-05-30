@@ -1,31 +1,25 @@
 <?php
 
 include_once '../../config.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
 $security = array(
-    "consumer_key" => $consumer_key,
-    "domain"       => $domain,
-    "timestamp"    => $timestamp
+    'consumer_key' => $consumer_key,
+    'domain'       => $domain
 );
 
 $request = array(
-    "limit" => 100,
-    "tags"  => array(
-        array("type" => "course", "name" =>"commoncore"),
-        array("type" => "subject", "name" =>"Maths")
+    'limit' => 100,
+    'tags'  => array(
+        array('type' => 'course', 'name' =>'commoncore'),
+        array('type' => 'subject', 'name' =>'Maths')
     )
 );
 
-$RequestHelper = new RequestHelper(
-    'author',
-    $security,
-    $consumer_secret,
-    $request
-);
-
-$signedRequest = $RequestHelper->generateRequest();
+$Init = new Init('author', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 

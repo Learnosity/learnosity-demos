@@ -1,17 +1,16 @@
 <?php
 
 include_once '../../config.php';
-include_once 'utils/uuid.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
-
-$session_id = UUID::generateUuid();
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'domain'       => $domain,
-    'timestamp'    => $timestamp
+    'domain'       => $domain
 );
+
+$session_id = Uuid::generate();
 
 $request = array(
     'user_id'        => $studentid,
@@ -29,14 +28,8 @@ $request = array(
     )
 );
 
-$RequestHelper = new RequestHelper(
-    'items',
-    $security,
-    $consumer_secret,
-    $request
-);
-
-$signedRequest = $RequestHelper->generateRequest();
+$Init = new Init('items', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 
@@ -92,7 +85,7 @@ $signedRequest = $RequestHelper->generateRequest();
 
 
                 lrnActivity.validItems(function (responseObj) {
-                    
+
 
 
                     //if question isn't in the valid list, get distractor rationale and display
@@ -102,7 +95,7 @@ $signedRequest = $RequestHelper->generateRequest();
                         if(!q_meta.hasOwnProperty("distractor_rationale_response_level")) {
                             //response level metadata takes precedence
                             appendContent(question_id + "_dr", $('#' + question_id).parents().eq(1), q_meta.distractor_rationale, "alert alert-danger");
-                            
+
                         } else {
 
                             //do comparison to see if the answer is correct or not.
@@ -114,7 +107,7 @@ $signedRequest = $RequestHelper->generateRequest();
                                     question_response = responses[question_id].value;
                                     question_options = questions[question_id].options;
                                     evaluateAnswers(question_id, question_validation, question_response, question_options, questions[question_id].type, q_meta);
-                                
+
                                 });
                             });
                         }
@@ -134,12 +127,12 @@ $signedRequest = $RequestHelper->generateRequest();
                     $.each(options, function(id, value) {
                         if($.inArray(value.value, response) !== -1 && ($.inArray(value.value, validation)) === -1) {
                             appendContent(q_id + "_dr", $('#' + q_id).parents().eq(1), metadata.distractor_rationale_response_level[id], "alert alert-danger");
-                        }              
+                        }
                     });
                     break;
                 case 'clozeassociation' :
                 case 'association' :
-                case 'clozetext' : 
+                case 'clozetext' :
                     console.log('validation', validation);
                     console.log('response', response);
                     $.each(validation, function(id, value) {
@@ -162,7 +155,7 @@ $signedRequest = $RequestHelper->generateRequest();
         }
 
         /**
-         * Create or append a div 
+         * Create or append a div
          * and store all relevant distract
          * @param  {string} key Optional key to filter by
          * @return {object}     Either the entire metadata object, or a subset (if key is passed)
@@ -175,7 +168,7 @@ $signedRequest = $RequestHelper->generateRequest();
                 $("#" + id).addClass(classes).append(content + "<br>");
             }
         }
-        
+
     }
 
     /**

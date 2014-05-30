@@ -13,24 +13,20 @@
 */
 
 include_once 'config.php';
-include_once 'utils/RequestHelper.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Request/Remote.php';
 
 $security = [
-    'consumer_key'    => $consumer_key,
-    'domain'          => $domain,
-    'timestamp'       => $timestamp
+    'consumer_key' => $consumer_key,
+    'domain'       => $domain
 ];
 $endpoint = (isset($_POST['endpoint'])) ? $_POST['endpoint'] : null;
 $data     = (isset($_POST['request'])) ? $_POST['request'] : null;
 
-$RequestHelper = new RequestHelper(
-    'data',
-    $security,
-    $consumer_secret,
-    $data
-);
+$Init = new Init('data', $security, $consumer_secret, $data);
+$signedRequest = $Init->generate();
 
-$signedRequest = $RequestHelper->generateRequest();
-$response = $RequestHelper->sendXHR($endpoint, $signedRequest);
+$Remote = new Remote();
+$response = $Remote->post($endpoint, $signedRequest);
 
 echo $response;
