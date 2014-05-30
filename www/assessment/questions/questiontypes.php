@@ -1454,7 +1454,7 @@ $signedRequest = '{
 
 <div class="row">
     <div class="col-md-8">
-        <h3 id="q36">Bar Chart</h3>
+        <h3 id="q36">Simple Chart</h3>
         <p><span class="label label-info">Hint</span> Resize <em>Romance</em> to 4 and add a new <em>SciFi</em> bar with a y-axis value of 4.</p>
         <span class="learnosity-response question-demo36-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
@@ -1463,7 +1463,7 @@ $signedRequest = '{
 
 <div class="row">
     <div class="col-md-8">
-        <h3 id="q37">Bar Chart - Sorting</h3>
+        <h3 id="q37">Simple Chart - Sorting</h3>
         <p><span class="label label-info">Hint</span> Sort the chart (ascending) by clicking on the arrows.</p>
         <span class="learnosity-response question-demo37-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
