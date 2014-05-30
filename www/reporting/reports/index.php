@@ -46,6 +46,7 @@ $request = array(
             'id'           => 'report-5',
             'type'         => 'lastscore-by-activity-by-user',
             'scoring_type' => 'partial',
+            'ui'           => 'numeric',
             'users'        => array(
                 array(
                     'id' => 'brianmoser',
@@ -128,8 +129,72 @@ $RequestHelper = new RequestHelper(
 $signedRequest = $RequestHelper->generateRequest();
 
 ?>
-
-<div class="jumbotron">
+<style type="text/css">
+    .tabs-left, .tabs-right {
+        border-bottom: none;
+        padding-top: 2px;
+    }
+    .tabs-left {
+        border-right: 1px solid #ddd;
+    }
+    .tabs-right {
+        border-left: 1px solid #ddd;
+    }
+    .tabs-left>li, .tabs-right>li {
+        float: none;
+        margin-bottom: 2px;
+    }
+    .tabs-left>li {
+        margin-right: -1px;
+    }
+    .tabs-right>li {
+        margin-left: -1px;
+    }
+    .tabs-left>li.active>a, .tabs-left>li.active>a:hover, .tabs-left>li.active>a:focus {
+        border-bottom-color: #ddd;
+        border-right-color: transparent;
+    }
+    .tabs-right>li.active>a, .tabs-right>li.active>a:hover, .tabs-right>li.active>a:focus {
+        border-bottom: 1px solid #ddd;
+        border-left-color: transparent;
+    }
+    .tabs-left>li>a {
+        border-radius: 4px 0 0 4px;
+        margin-right: 0;
+        display:block;
+    }
+    .tabs-right>li>a {
+        border-radius: 0 4px 4px 0;
+        margin-right: 0;
+    }
+    .lrn-reports-vertical-content {
+        margin-left: -1px;
+        min-width: 900px;
+        width: 900px;
+        border-left: 1px solid #ddd;
+        padding-left: 30px;
+    }
+    .lrn-nav-reports {
+        width: 190px;
+        height: 100%;
+    }
+    .lrn-nav-reports ul.nav-tabs .padding {
+        height: 37px;
+    }
+    .lrn-reports-content {
+        min-width: 1100px;
+        height: 100%;
+    }
+    .lrn-reports-summary {
+        font-size: 13px;
+    }
+    html,
+    body,
+    .lrn-nav-reports ul {
+        height: 100%;
+    }
+</style>
+<div class="jumbotron clearfix">
     <h1>Reports API</h1>
     <p>A cross domain embeddable service that allows content providers to easily render rich reports.<p>
     <div class="row">
@@ -141,75 +206,129 @@ $signedRequest = $RequestHelper->generateRequest();
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-2"> <p class='text-right'><a class="btn btn-primary btn-lg" href="../sso">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-2">
+            <p class='text-right'>
+                <a class="btn btn-primary btn-lg" href="../sso">
+                    Next <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </p>
+        </div>
     </div>
 </div>
-
-<div class="slides-container">
-    <div class="row">
-        <div class="col-md-10 pull-right">
-            <select id="report-selector">
-                <option value="0">Sessions Summary</option>
-                <option value="1">Session Detail</option>
-                <option value="2">Progress by Tag Table</option>
-                <option value="3">Sessions Summary By Tag Chart</option>
-                <option value="4">Last Score by Activity by User</option>
-                <option value="5">Last Score by Activity</option>
-                <option value="6">Last Score by Item by User</option>
-                <option value="7">Last Score by Tag by User</option>
-            </select>
-        </div>
+<div class="lrn-reports-content clearfix">
+    <div class="lrn-nav-reports pull-left">
+        <ul class="nav nav-tabs tabs-left">
+            <li class="padding">&nbsp;</li>
+            <li class="active"><a href="#sessions" data-toggle="tab">Reports by Session</a></li>
+            <li><a href="#lastscore" data-toggle="tab">Reports by Latest Score</a></li>
+            <li><a href="#progress" data-toggle="tab">Reports by Progress</a></li>
+        </ul>
     </div>
-    <div class="row">
-        <div class="reveal">
-            <div class="slides">
 
-                <!-- Containers for the reports api to load into -->
-                <section>
-                    <h3 class="report-title">Sessions Summary</h3>
-                    <span class="learnosity-report" id="report-1"></span>
-                </section>
-
-                <section>
-                    <h3 class="report-title">Session Detail</h3>
-                    <span class="learnosity-report" id="report-2"></span>
-                </section>
-
-                <section>
-                    <h3 class="report-title">Progress by Tag Table</h3>
-                    <span class="learnosity-report" id="report-3"></span>
-                    <div class="alert alert-info">
-                        <strong>Note:</strong> The progress data for the above report is updated every 5 minutes
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="report-title">Sessions Summary By Tag Chart</h3>
-                    <span class="learnosity-report" id="report-4"></span>
-                </section>
-
-                <section>
-                    <h3 class="report-title">Last Score by Activity by User</h3>
-                    <span class="learnosity-report" id="report-5"></span>
-                </section>
-
-                <section>
-                    <h3 class="report-title">Last Score by Activity</h3>
-                    <span class="learnosity-report" id="report-6"></span>
-                </section>
-
-                <section>
-                    <h3 class="report-title">Last Score by Item by User</h3>
-                    <span class="learnosity-report" id="report-7"></span>
-                </section>
-
-                <section>
-                    <h3 class="report-title">Last Score by Tag by User</h3>
-                    <span class="learnosity-report" id="report-8"></span>
-                </section>
-
+    <!-- Tab panes -->
+    <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
+        <div class="tab-pane active" id="sessions">
+            <div class="lrn-nav-sessions">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#sessions-summary" data-toggle="tab">Sessions Summary</a></li>
+                  <li><a href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
+                  <li><a href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
+                </ul>
+            </div>
+            <div class="lrn-tab-content tab-content">
+                <div class="tab-pane active" id="sessions-summary">
+                    <section>
+                        <h3 class="report-title">Sessions Summary</h3>
+                        <p class="lrn-report-summary">Gain quick, meaningful information about a students session at a glance.</p>
+                        <span class="learnosity-report" id="report-1"></span>
+                    </section>
+                </div>
+                <div class="tab-pane" id="sessions-detail">
+                    <section>
+                        <h3 class="report-title">Session Detail</h3>
+                        <p class="lrn-report-summary">A fine-grain approach to gleaning strengths and weaknesses from a students session.</p>
+                        <span class="learnosity-report" id="report-2"></span>
+                    </section>
+                </div>
+                <div class="tab-pane" id="sessions-tags">
+                    <section>
+                        <h3 class="report-title">Sessions Summary By Tag Chart</h3>
+                        <p class="lrn-report-summary">A sessions summary broken down into its constituent tags.</p>
+                        <span class="learnosity-report" id="report-4"></span>
+                    </section>
+                </div>
             </div>
         </div>
+        <div class="tab-pane" id="lastscore">
+            <div class="lrn-nav-lastscore">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#lastscore-activity" data-toggle="tab">Latest Score By Activity</a></li>
+                    <li><a href="#lastscore-user" data-toggle="tab">Latest Score By Activity By User</a></li>
+                    <li><a href="#lastscore-item" data-toggle="tab">Latest Score By Item By User</a></li>
+                    <li><a href="#lastscore-tag" data-toggle="tab">Latest Score By Tag By User</a></li>
+                </ul>
+            </div>
+            <div class="lrn-tab-content tab-content">
+                <div class="tab-pane active" id="lastscore-activity">
+                    <section>
+                        <h3 class="report-title">Latest Score by Activity</h3>
+                        <p class="lrn-report-summary">
+                            Obtain the latest activity scores for a particular student, represented by either a progress bar (shown), or a numeric result.
+                            <br>Hover over student scores to gather a meaningful score breakdown.
+                        </p>
+                        <p class="lrn-report-summary">Activities and scores can trigger onClick events to tie into other reports.</p>
+                        <span class="learnosity-report" id="report-6"></span>
+                    </section>
+                    <div id="lrn-report-lastscore-activity-events"></div>
+                </div>
+                <div class="tab-pane" id="lastscore-user">
+                    <section>
+                        <h3 class="report-title">Latest Score by Activity by User</h3>
+                        <p class="lrn-report-summary">
+                            Obtain the latest activity scores for a group of students, represented by either a numeric result (shown), or a progress bar.
+                            <br>Hover over student scores to gather a meaningful score break-down.
+                        </p>
+                        <p class="lrn-report-summary">Names, activities and scores can trigger onClick events to tie into other reports.</p>
+                        <span class="learnosity-report" id="report-5"></span>
+                    </section>
+                    <div id="lrn-report-lastscore-user-events"></div>
+                </div>
+                <div class="tab-pane" id="lastscore-item">
+                    <section>
+                        <h3 class="report-title">Latest Score by Item by User</h3>
+                        <p class="lrn-report-summary">
+                            Obtain the latest activity score with a break-down of its constituent items.
+                            <br>Hover over items to see the fine grain score break-down.
+                        </p>
+                        <p class="lrn-report-summary">Names and scores can trigger onClick events to tie into other reports.</p>
+                        <span class="learnosity-report" id="report-7"></span>
+                    </section>
+                    <div id="lrn-report-lastscore-item-events"></div>
+                </div>
+                <div class="tab-pane" id="lastscore-tag">
+                    <section>
+                        <h3 class="report-title">Latest Score by Tag by User</h3>
+                        <p class="lrn-report-summary">
+                            Obtain the latest activity score with a break-down of scores according its constituent tags.
+                            <br>Hover over the tag scores to see the fine grain score break-down.
+                        </p>
+                        <p class="lrn-report-summary">Names and scores can trigger onClick events to tie into other reports.</p>
+                        <span class="learnosity-report" id="report-8"></span>
+                    </section>
+                    <div id="lrn-report-lastscore-tag-events"></div>
+                </div>
+            </div>
+      </div>
+      <div class="tab-pane" id="progress">
+          <section>
+              <h3 class="report-title">Progress by Tag Table</h3>
+              <p class="lrn-report-summary">Gather insight into user progress according to your assigned tag hierarchy.</p>
+              <div class="alert alert-info">
+                  <strong>Note:</strong> The progress data for this report is updated every 5 minutes
+              </div>
+              <span class="learnosity-report" id="report-3"></span>
+          </section>
+      </div>
     </div>
 </div>
 
@@ -217,27 +336,75 @@ $signedRequest = $RequestHelper->generateRequest();
 <script src="<?php echo $env['www'] ?>static/vendor/head.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/reveal/reveal.js"></script>
 <script>
-    var options = <?php echo $signedRequest; ?>;
-    LearnosityReports.init(options);
-
-    $(function() {
-        Reveal.initialize({
-            progress: false,
-            rollingLinks: false,
-            transition: 'none',
-            dependencies: [
-                // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-                { src: '<?php echo $env['www'] ?>static/vendor/classList.js', condition: function() { return !document.body.classList; } },
-            ]
-        });
-        $selector = $('#report-selector');
-        Reveal.addEventListener('slidechanged', function(event) {
-            $selector.val(event.indexh);
-        });
-        $selector.on('change', function (event) {
-            Reveal.slide($(event.currentTarget).val());
-        });
+    var config = <?php echo $signedRequest; ?>;
+    config.configuration = {
+        questionsApiVersion: "v2"
+    };
+    var lrnReports = LearnosityReports.init(config, {
+        readyListener: onReportsReady
     });
+
+    function onReportsReady() {
+        var commonFunction = function(data, target) {
+            var html = '<div class="alert alert-info alert-dismissable">';
+                html += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><p>';
+                html += data.user_id ? '<p><strong>User ID:</strong> ' + data.user_id + '</p>' : '';
+                html += data.activity_id ? '<p><strong>Activity ID:</strong> ' + data.activity_id + '</p>' : '';
+                html += data.session_id ? '<p><strong>Session ID:</strong> ' + data.session_id + '</p>' : '';
+                html += '</p></div>';
+            $('#' + target).append(html);
+        };
+
+        /* group-lastscore-by-activity onclick events */
+        var groupLastScoreByActivity = lrnReports.getReport('report-6');
+
+        groupLastScoreByActivity.on('click:score', function (data) {
+            commonFunction(data, 'lrn-report-lastscore-activity-events');
+        });
+
+        groupLastScoreByActivity.on('click:activity', function (data) {
+            commonFunction(data, 'lrn-report-lastscore-activity-events');
+        });
+
+        groupLastScoreByActivity.on('click:user', function(data) {
+            commonFunction(data, 'lrn-report-lastscore-activity-events');
+        });
+
+        /* user-lastscore-by-activity onclick events */
+        var userLastScoreByActivity = lrnReports.getReport('report-5');
+
+        userLastScoreByActivity.on('click:score', function (data) {
+            commonFunction(data, 'lrn-report-lastscore-user-events');
+        });
+
+        userLastScoreByActivity.on('click:user', function (data) {
+            commonFunction(data, 'lrn-report-lastscore-user-events');
+        });
+
+        userLastScoreByActivity.on('click:activity', function (data) {
+            commonFunction(data, 'lrn-report-lastscore-user-events');
+        });
+
+        /* group-lastscore-by-item onclick events */
+        var groupLastScoreByItem = lrnReports.getReport('report-7');
+        groupLastScoreByItem.on('click:score', function (data) {
+            commonFunction(data, 'lrn-report-lastscore-item-events');
+        });
+
+        groupLastScoreByItem.on('click:user', function (data) {
+            commonFunction(data, 'lrn-report-lastscore-item-events');
+        });
+
+        /* group-lastscore-by-tag onclick events */
+        var groupLastScoreByTag = lrnReports.getReport('report-8');
+        groupLastScoreByTag.on('click:score', function (data) {
+            commonFunction(data, 'lrn-report-lastscore-tag-events');
+        });
+
+        groupLastScoreByTag.on('click:user', function (data) {
+            commonFunction(data, 'lrn-report-lastscore-tag-events');
+        });
+    }
 </script>
 
 <?php
