@@ -145,13 +145,14 @@ include_once 'includes/header.php';
 
 <script src="<?php echo $env['www'] ?>static/vendor/require/require.js"></script>
 <script>
-    var LearnosityAmd = {};
-    LearnosityAmd.requirejs = requirejs;
-    LearnosityAmd.require = require;
-    LearnosityAmd.define = define;
-    var timestamp = '<?php echo gmdate('Ymd-Hi'); ?>';
+    var LearnosityAmd = {
+            requirejs: requirejs,
+            require: require,
+            define: define
+        },
+        timestamp = '<?php echo gmdate('Ymd-Hi'); ?>';
 </script>
-<script src="<?php echo $env['www'] ?>static/vendor/sha256.js"></script>
+
 <script src="<?php echo $env['www'] ?>static/js/securityCheck.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/underscore.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/codemirror/codemirror.min.js"></script>
