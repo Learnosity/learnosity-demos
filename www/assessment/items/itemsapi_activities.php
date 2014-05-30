@@ -1,33 +1,28 @@
 <?php
 
 include_once '../../config.php';
-include_once 'utils/uuid.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'domain'       => $domain,
-    'timestamp'    => $timestamp
+    'domain'       => $domain
 );
 
 $request = array(
     'activity_template_id' => 'demo-activity-1',
+    'activity_id'          => 'demo-activity-1',
+    'name'                 => 'Demo Activity',
     'course_id'            => $courseid,
-    'session_id'           => UUID::generateUuid(),
+    'session_id'           => Uuid::generate(),
     'user_id'              => $studentid
 );
 
 include_once 'utils/settings-override.php';
 
-$RequestHelper = new RequestHelper(
-    'items',
-    $security,
-    $consumer_secret,
-    $request
-);
-
-$signedRequest = $RequestHelper->generateRequest();
+$Init = new Init('items', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 
@@ -58,13 +53,12 @@ $signedRequest = $RequestHelper->generateRequest();
 <span id="learnosity_assess"></span>
 <script src="//items.learnosity.com"></script>
 <script>
-    var activity = <?php echo $signedRequest; ?>;
     var eventOptions = {
-        readyListener: function () {
-            console.log("Learnosity Items API is ready");
-        }
-    };
-    var app = LearnosityItems.init(activity, eventOptions);
+            readyListener: function () {
+                console.log("Learnosity Items API is ready");
+            }
+        },
+        app = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
 </script>
 
 <?php

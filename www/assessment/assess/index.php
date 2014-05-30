@@ -1,17 +1,17 @@
 <?php
 
 include_once '../../config.php';
-include_once 'utils/Json.php';
-include_once 'utils/uuid.php';
 include_once 'includes/header.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
-$uniqueResponseIdSuffix = UUID::generateUuid();
+$security = array(
+    'consumer_key' => $consumer_key,
+    'domain'       => 'assess.vg.learnosity.com',
+    'user_id'      => $studentid
+);
 
-//The assess app is loaded in a iframe via assess.learnosity.com so the signature needs to be generated with this domain.
-$assessdomain = 'assess.learnosity.com';
-
-//Activity JSON:  http://docs.learnosity.com/api/activity.php
-$activitySignature = hash("sha256", $consumer_key . '_' . $assessdomain . '_' . $timestamp . '_' . $studentid . '_' . $consumer_secret);
+$uniqueResponseIdSuffix = Uuid::generate();
 
 $request = array(
     'name'       => 'Demo Activity (8 questions)',
@@ -35,7 +35,7 @@ $request = array(
     ),
     'time' => array(
         'max_time'     => 600,
-        'limit_type'   => 'soft',
+        'limit_type'   => 'hard',
         'show_pause'   => true,
         'warning_time' => 60,
         'show_time'    => true
@@ -127,13 +127,9 @@ $request = array(
     ),
     'questionsApiActivity' => json_decode(
         '{
-            "consumer_key": "' . $consumer_key . '",
-            "timestamp": "' . $timestamp . '",
-            "signature": "' . $activitySignature . '",
-            "user_id": "' . $studentid . '",
             "type": "submit_practice",
             "state": "initial",
-            "id": "assessdemo_' . UUID::generateUuid() . '",
+            "id": "assessdemo_' . $uniqueResponseIdSuffix . '",
             "name": "Assess API - Demo",
             "course_id": "' . $courseid . '",
             "questions": [
@@ -485,7 +481,8 @@ $request = array(
 
 include_once 'utils/settings-override.php';
 
-$signedRequest = Json::encode($request);
+$Init = new Init('assess', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 
@@ -510,10 +507,16 @@ $signedRequest = Json::encode($request);
 
 <!-- Container for the assess api to load into -->
 <span id="learnosity_assess"></span>
-<script src="//assess.learnosity.com"></script>
+<script src="//assess.vg.learnosity.com"></script>
 <script>
-    var activity = <?php echo $signedRequest; ?>;
-    LearnosityAssess.init(activity, "learnosity_assess");
+var activity = <?php echo $signedRequest; ?>;
+    activity.administration = {
+        pwd: '89e01536ac207279409d4de1e5253e01f4a1769e696db0d6062ca9b8f56767c8',
+        options: {
+            show_exit: true
+        }
+    };
+    LearnosityAssess.init(activity, 'learnosity_assess');
 </script>
 
 <?php

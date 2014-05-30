@@ -5,7 +5,7 @@ include_once 'utils/uuid.php';
 include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
 
-$session_id = UUID::generateUuid();
+$session_id = Uuid::generate();
 
 $security = array(
     'consumer_key' => $consumer_key,

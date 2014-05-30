@@ -1,14 +1,13 @@
 <?php
 
 include_once '../../config.php';
-include_once '../../../src/utils/uuid.php';
-include_once '../../../src/utils/RequestHelper.php';
-include_once '../../../src/includes/header.php';
+include_once 'includes/header.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'domain'       => $domain,
-    'timestamp'    => $timestamp
+    'domain'       => $domain
 );
 
 $request = array(
@@ -17,7 +16,7 @@ $request = array(
     'rendering_type' => 'assess',
     'state'          => 'initial',
     'course_id'      => $courseid,
-    'session_id'     => UUID::generateUuid(),
+    'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
     'adaptive'       => array(
         'type'                      => 'itemadaptive',
@@ -78,14 +77,8 @@ if (isset($_POST['adaptive'])) {
     }
 }
 
-$RequestHelper = new RequestHelper(
-    'items',
-    $security,
-    $consumer_secret,
-    $request
-);
-
-$signedRequest = $RequestHelper->generateRequest();
+$Init = new Init('items', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 
@@ -112,8 +105,7 @@ $signedRequest = $RequestHelper->generateRequest();
 <span id="learnosity_assess"></span>
 <script src="//items.learnosity.com"></script>
 <script>
-    var activity = <?php echo $signedRequest; ?>;
-    LearnosityItems.init(activity);
+    LearnosityItems.init(<?php echo $signedRequest; ?>);
 </script>
 
 <?php

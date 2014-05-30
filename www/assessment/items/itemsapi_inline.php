@@ -1,9 +1,9 @@
 <?php
 
 include_once '../../config.php';
-include_once 'utils/uuid.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
 $security = array(
     "consumer_key" => $consumer_key,
@@ -17,7 +17,7 @@ $request = array(
     "name"           => "Items API demo - Inline Activity.",
     "state"          => "initial",
     "activity_id"    => "itemsinlinedemo",
-    "session_id"     => UUID::generateUuid(),
+    "session_id"     => Uuid::generate(),
     "course_id"      => $courseid,
     "items"          => array("Demo3", "Demo4", "Demo5", "Demo6", "Demo7", "Demo8", "Demo9", "Demo10"),
     "type"           => "submit_practice",
@@ -27,27 +27,20 @@ $request = array(
     )
 );
 
-$RequestHelper = new RequestHelper(
-    'items',
-    $security,
-    $consumer_secret,
-    $request
-);
-
-$signedRequest = $RequestHelper->generateRequest();
+$Init = new Init('items', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 
 <!-- Container for the items api to load into -->
 <script src="//items.learnosity.com/"></script>
 <script>
-    var activity = <?php echo $signedRequest; ?>;
     var eventOptions = {
-        readyListener: function () {
-            console.log("Learnosity Items API is ready");
-        }
-    };
-    var app = LearnosityItems.init(activity, eventOptions);
+            readyListener: function () {
+                console.log("Learnosity Items API is ready");
+            }
+        },
+        app = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
 </script>
 
 <div class="jumbotron">
