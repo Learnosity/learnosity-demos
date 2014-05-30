@@ -1,33 +1,20 @@
 <?php
 
 include_once '../../config.php';
-include_once 'utils/uuid.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
 $security = array(
-    "consumer_key" => $consumer_key,
-    "domain"       => $domain,
-    "timestamp"    => $timestamp,
-    "user_id"      => $studentid
+    'consumer_key' => $consumer_key,
+    'domain'       => $domain,
+    'user_id'      => $studentid
 );
 
-$RequestHelper = new RequestHelper(
-    'questions',
-    $security,
-    $consumer_secret
-);
-
-$activitySignature = $RequestHelper->getSignature();
-
-$uniqueResponseIdSuffix = UUID::generateUuid();
+$uniqueResponseIdSuffix = Uuid::generateUuid();
 
 // Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
-$signedRequest = '{
-    "consumer_key": "'.$consumer_key.'",
-    "timestamp": "' . $timestamp . '",
-    "signature": "'.$activitySignature.'",
-    "user_id": "'.$studentid.'",
+$request = '{
     "type": "local_practice",
     "state": "initial",
     "id": "questionsapi-demo",
@@ -102,6 +89,9 @@ $signedRequest = '{
         }
     ]
 }';
+
+$Init = new Init('questions', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 

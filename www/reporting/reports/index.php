@@ -1,13 +1,12 @@
 <?php
 
 include_once '../../config.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
 
 $security = array(
-    "consumer_key" => 'yis0TYCu7U9V4o7M',
-    "domain"       => $domain,
-    "timestamp"    => $timestamp,
+    'consumer_key' => $consumer_key,
+    'domain'       => $domain
 );
 
 $request = array(
@@ -119,14 +118,8 @@ $request = array(
     )
 );
 
-$RequestHelper = new RequestHelper(
-    'reports',
-    $security,
-    $consumer_secret,
-    $request
-);
-
-$signedRequest = $RequestHelper->generateRequest();
+$Init = new Init('reports', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 <style type="text/css">

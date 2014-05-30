@@ -1,17 +1,16 @@
 <?php
 
 include_once '../../config.php';
-include_once 'utils/uuid.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
-
-$session_id = UUID::generateUuid();
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'domain'       => $domain,
-    'timestamp'    => $timestamp
+    'domain'       => $domain
 );
+
+$session_id = Uuid::generateUuid();
 
 $request = array(
     'user_id'        => $studentid,
@@ -29,14 +28,8 @@ $request = array(
     )
 );
 
-$RequestHelper = new RequestHelper(
-    'items',
-    $security,
-    $consumer_secret,
-    $request
-);
-
-$signedRequest = $RequestHelper->generateRequest();
+$Init = new Init('items', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 
@@ -134,12 +127,12 @@ $signedRequest = $RequestHelper->generateRequest();
                     $.each(options, function(id, value) {
                         if($.inArray(value.value, response) !== -1 && ($.inArray(value.value, validation)) === -1) {
                             appendContent(q_id + "_dr", $('#' + q_id).parents().eq(1), metadata.distractor_rationale_response_level[id], "alert alert-danger");
-                        }              
+                        }
                     });
                     break;
                 case 'clozeassociation' :
                 case 'association' :
-                case 'clozetext' : 
+                case 'clozetext' :
                     console.log('validation', validation);
                     console.log('response', response);
                     $.each(validation, function(id, value) {

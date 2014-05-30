@@ -15,13 +15,12 @@
 */
 
 include_once 'config.php';
-include_once 'utils/RequestHelper.php';
-include_once 'utils/uuid.php';
+include_once 'Learnosity/Sdk/Request/Init.php';
+include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
 
 $security = array(
     "consumer_key" => $consumer_key,
-    "domain"       => $domain,
-    "timestamp"    => $timestamp
+    "domain"       => $domain
 );
 
 $service = null;
@@ -34,18 +33,18 @@ switch ($sign_type) {
         $content = $_POST['content'];
         $show_modal = true;
         $request = array(
-            "user_id"        => $studentid,
-            "rendering_type" => "inline",
-            "name"           => "Items API demo - Inline Activity.",
-            "state"          => "initial",
-            "activity_id"    => "itemsinlinedemo",
-            "session_id"     => UUID::generateUuid(),
-            "course_id"      => $courseid,
-            "items"          => $_POST['item_references'],
-            "type"           => "submit_practice",
-            "config"         => array(
-                "renderSubmitButton" => false,
-                "questionsApiVersion" => "v2"
+            'user_id'        => $studentid,
+            'rendering_type' => 'inline',
+            'name'           => 'Items API demo - Inline Activity.',
+            'state'          => 'initial',
+            'activity_id'    => 'itemsinlinedemo',
+            'session_id'     => Uuid::generateUuid(),
+            'course_id'      => $courseid,
+            'items'          => $_POST['item_references'],
+            'type'           => 'submit_practice',
+            'config'         => array(
+                'renderSubmitButton' => false,
+                'questionsApiVersion' => 'v2'
             )
         );
         break;
@@ -55,13 +54,8 @@ switch ($sign_type) {
 }
 
 if (!is_null($service)) {
-    $RequestHelper = new RequestHelper(
-        $service,
-        $security,
-        $consumer_secret,
-        $request
-    );
-    $output = $RequestHelper->generateRequest();
+    $Init = new Init($service, $security, $consumer_secret, $request);
+    $output = $Init->generate();
     if ($show_modal) {
         include_once 'views/modals/' . $sign_type . '.php';
     } else {
