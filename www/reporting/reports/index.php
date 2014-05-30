@@ -408,9 +408,7 @@ $signedRequest = $RequestHelper->generateRequest();
         $('.lrn-reports-vertical-content ul.nav-tabs li a').click(function (e) {
             e.preventDefault();
             $(this).tab('show');
-            var select = ($(this).attr('id')).replace('lrn-nav-', '');
-            console.log(select);
-            $('.' + select + ' .lrn-report-response-container').hide().html($('.session-detail .lrn-report-response-container').html()).fadeIn(0);
+            $('.lrn_response_innerbody').width('100%');
         });
     }
 </script>
