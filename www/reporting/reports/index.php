@@ -230,9 +230,9 @@ $signedRequest = $RequestHelper->generateRequest();
         <div class="tab-pane active" id="sessions">
             <div class="lrn-nav-sessions">
                 <ul class="nav nav-tabs">
-                  <li class="active"><a href="#sessions-summary" data-toggle="tab">Sessions Summary</a></li>
-                  <li><a href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
-                  <li><a href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
+                  <li class="active"><a id="lrn-nav-session-summary" href="#sessions-summary" data-toggle="tab">Sessions Summary</a></li>
+                  <li><a id="lrn-nav-session-detail" href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
+                  <li><a id="lrn-nav-session-tags" href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
                 </ul>
             </div>
             <div class="lrn-tab-content tab-content">
@@ -262,10 +262,10 @@ $signedRequest = $RequestHelper->generateRequest();
         <div class="tab-pane" id="lastscore">
             <div class="lrn-nav-lastscore">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#lastscore-activity" data-toggle="tab">Latest Score By Activity</a></li>
-                    <li><a href="#lastscore-user" data-toggle="tab">Latest Score By Activity By User</a></li>
-                    <li><a href="#lastscore-item" data-toggle="tab">Latest Score By Item By User</a></li>
-                    <li><a href="#lastscore-tag" data-toggle="tab">Latest Score By Tag By User</a></li>
+                    <li class="active"><a id="lrn-nav-lastscore-activity" href="#lastscore-activity" data-toggle="tab">Latest Score By Activity</a></li>
+                    <li><a id="lrn-nav-lastscore-user" href="#lastscore-user" data-toggle="tab">Latest Score By Activity By User</a></li>
+                    <li><a id="lrn-nav-lastscore-item" href="#lastscore-item" data-toggle="tab">Latest Score By Item By User</a></li>
+                    <li><a id="lrn-nav-lastscore-tag" href="#lastscore-tag" data-toggle="tab">Latest Score By Tag By User</a></li>
                 </ul>
             </div>
             <div class="lrn-tab-content tab-content">
@@ -403,6 +403,14 @@ $signedRequest = $RequestHelper->generateRequest();
 
         groupLastScoreByTag.on('click:user', function (data) {
             commonFunction(data, 'lrn-report-lastscore-tag-events');
+        });
+
+        $('.lrn-reports-vertical-content ul.nav-tabs li a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+            var select = ($(this).attr('id')).replace('lrn-nav-', '');
+            console.log(select);
+            $('.' + select + ' .lrn-report-response-container').hide().html($('.session-detail .lrn-report-response-container').html()).fadeIn(0);
         });
     }
 </script>
