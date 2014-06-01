@@ -46,7 +46,7 @@
             <div class="pull-right">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="https://github.com/Learnosity/learnosity-php-examples" class="text-muted">
+                        <a href="https://github.com/Learnosity/learnosity-demos" class="text-muted">
                             <span class="glyphicon glyphicon-file"></span> View source
                         </a>
                     </li>
