@@ -1,6 +1,6 @@
 # Learnosity API Demos
 
-Jumpstart your integration of the Learnosity API's into your learning platform.
+Jumpstart your integration of the Learnosity APIs into your learning platform.
 
 ## Overview
 
