@@ -13,8 +13,9 @@
 */
 
 include_once 'config.php';
-include_once 'Learnosity/Sdk/Request/Init.php';
-include_once 'Learnosity/Sdk/Request/Remote.php';
+
+use LearnositySdk\Request\Init;
+use LearnositySdk\Request\Remote;
 
 $security = [
     'consumer_key' => $consumer_key,
@@ -29,4 +30,4 @@ $signedRequest = $Init->generate();
 $Remote = new Remote();
 $response = $Remote->post($endpoint, $signedRequest);
 
-echo $response;
+echo $response->getBody();

@@ -15,7 +15,7 @@ $consumer_key = 'yis0TYCu7U9V4o7M';
 $consumer_secret = '74c5fd430cf1242a527f6223aebd42d30464be22';
 
 // Some products need the domain as part of the security signature. Demos has been tested on "localhost"
-$domain    = $_SERVER['SERVER_NAME'];
+$domain = $_SERVER['SERVER_NAME'];
 
 // Generate timestamp in format YYYYMMDD-HHMM for use in signature
 $timestamp = gmdate('Ymd-Hi');
@@ -38,7 +38,7 @@ $schoolid  = 'demo_school';
 */
 $rootPath    = $_SERVER['DOCUMENT_ROOT'];
 $subDir      = strpos($_SERVER['REQUEST_URI'], '/www');
-$baseWebPath = ($subDir) ? substr($_SERVER['REQUEST_URI'], 0, $subDir + 4) : '/';
+$baseWebPath = ($subDir !== false) ? substr($_SERVER['REQUEST_URI'], 0, $subDir + 4) : '/';
 
 $includePaths = array(
     $rootPath,
@@ -53,7 +53,7 @@ include_once 'utils/UrlGenerator.php';
 $UrlGenerator = new UrlGenerator();
 
 // 2 separate statements needed for 5.3 support
-$pathArr = explode("/", $_SERVER['REQUEST_URI']);
+$pathArr = explode('/', $_SERVER['REQUEST_URI']);
 $section = $pathArr[1];
 
 $env = array(
@@ -68,3 +68,5 @@ $env = array(
 if (substr($env['www'], -1) !== '/') {
     $env['www'] .= '/';
 }
+
+include_once 'sdk/src/LearnositySdk/autoload.php';

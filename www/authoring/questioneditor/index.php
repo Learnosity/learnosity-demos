@@ -1,13 +1,15 @@
 <?php
+
 include_once '../../config.php';
 include_once 'includes/header.php';
-include_once 'Learnosity/Sdk/Request/Remote.php';
-include_once 'Learnosity/Sdk/Utils/DataHelpers/Json.php';
+
+use LearnositySdk\Request\Remote;
+use LearnositySdk\Utils\Json;
 
 $Remote = new Remote();
 $content = $Remote->get('http://schemas.learnosity.com/stable/questions/templates');
 // Temporary workaround to remove empty arrays
-$content = json_decode($content, true);
+$content = json_decode($content->getBody(), true);
 foreach ($content['data'] as &$type) {
     foreach ($type as $subType => $val) {
         if (empty($val)) {
