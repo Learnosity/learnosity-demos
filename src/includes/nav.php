@@ -50,11 +50,11 @@
                             <span class="glyphicon glyphicon-file"></span> View source
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="https://github.com/Learnosity/learnosity-php-examples/archive/master.zip" download="demos.master.zip" class="text-muted">
                             <span class="glyphicon glyphicon-cloud-download"></span> Download
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
