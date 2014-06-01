@@ -3,7 +3,7 @@
 include_once '../../config.php';
 include_once 'includes/header.php';
 include_once 'utils/signature.php';
-include_once 'Learnosity/Sdk/Utils/DataHelpers/Json.php';
+include_once 'LearnositySdk/Utils/DataHelpers/Json.php';
 
 //Student SSO JSON Object: http://docs.learnosity.com/dashboards/sso/userjson.php
 $student_json = '{

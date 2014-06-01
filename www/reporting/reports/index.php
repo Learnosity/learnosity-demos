@@ -2,7 +2,8 @@
 
 include_once '../../config.php';
 include_once 'includes/header.php';
-include_once 'Learnosity/Sdk/Request/Init.php';
+
+use LearnositySdk\Request\Init;
 
 $security = array(
     'consumer_key' => $consumer_key,

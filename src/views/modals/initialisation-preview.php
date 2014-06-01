@@ -23,26 +23,26 @@
 </div>
 
 <?php
-    include_once 'Learnosity/Sdk/Utils/DataHelpers/Json.php';
+use LearnositySdk\Utils\Json;
 
-    if (!isset($signedRequest)) {
-        die('Make sure you call your PHP var $signedRequest for initialisation preview to work');
+if (!isset($signedRequest)) {
+    die('Make sure you call your PHP var $signedRequest for initialisation preview to work');
+}
+$previewObject = is_array($signedRequest) ? json_decode($signedRequest, true) : $signedRequest;
+if (is_array($previewObject)) {
+    if (isset($previewObject['request']['api_type'])) {
+        unset($previewObject['request']['api_type']);
+    } elseif (isset($previewObject['request']['config']['api_type'])) {
+        unset($previewObject['request']['config']['api_type']);
     }
-    $previewObject = is_array($signedRequest) ? json_decode($signedRequest, true) : $signedRequest;
-    if (is_array($previewObject)) {
-        if (isset($previewObject['request']['api_type'])) {
-            unset($previewObject['request']['api_type']);
-        } elseif (isset($previewObject['request']['config']['api_type'])) {
-            unset($previewObject['request']['config']['api_type']);
-        }
-        if (array_key_exists('security', $previewObject)) {
-            $previewBody = '{"security": ' . Json::encode($previewObject['security']) . ', "request": ' . Json::encode($previewObject['request']) . '}';
-        } else {
-            $previewBody = Json::encode($previewObject);
-        }
+    if (array_key_exists('security', $previewObject)) {
+        $previewBody = '{"security": ' . Json::encode($previewObject['security']) . ', "request": ' . Json::encode($previewObject['request']) . '}';
     } else {
-        $previewBody = $previewObject;
+        $previewBody = Json::encode($previewObject);
     }
+} else {
+    $previewBody = $previewObject;
+}
 ?>
 
 <script>
