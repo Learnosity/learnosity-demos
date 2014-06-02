@@ -2,12 +2,12 @@
 
 include_once '../../config.php';
 include_once 'includes/header.php';
-include_once 'Learnosity/Sdk/Request/Init.php';
-include_once 'Learnosity/Sdk/Utils/Utilities/Uuid.php';
+
+use LearnositySdk\Request\Init;
+use LearnositySdk\Utils\Uuid;
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'domain'       => 'assess.vg.learnosity.com',
     'user_id'      => $studentid
 );
 
@@ -507,15 +507,9 @@ $signedRequest = $Init->generate();
 
 <!-- Container for the assess api to load into -->
 <span id="learnosity_assess"></span>
-<script src="//assess.vg.learnosity.com"></script>
+<script src="//assess.learnosity.com"></script>
 <script>
-var activity = <?php echo $signedRequest; ?>;
-    activity.administration = {
-        pwd: '89e01536ac207279409d4de1e5253e01f4a1769e696db0d6062ca9b8f56767c8',
-        options: {
-            show_exit: true
-        }
-    };
+    var activity = <?php echo $signedRequest; ?>;
     LearnosityAssess.init(activity, 'learnosity_assess');
 </script>
 
