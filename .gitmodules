@@ -1,3 +1,3 @@
 [submodule "src/sdk"]
 	path = src/sdk
-	url = https://github.com/Learnosity/learnosity-sdk-php.git
+	url = git@github.com:Learnosity/learnosity-sdk-php.git
