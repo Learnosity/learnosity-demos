@@ -8,21 +8,7 @@ use LearnositySdk\Utils\Json;
 
 $Remote = new Remote();
 $content = $Remote->get('http://schemas.learnosity.com/stable/questions/templates');
-// Temporary workaround to remove empty arrays
-$content = json_decode($content->getBody(), true);
-foreach ($content['data'] as &$type) {
-    foreach ($type as $subType => $val) {
-        if (empty($val)) {
-            unset($type[$subType]);
-        }
-    }
-}
-// Temporary workaround to replace barchart with simplechart
-$content['data']['question_types']['simplechart'] = $content['data']['question_types']['barchart'];
-unset($content['data']['question_types']['barchart']);
-ksort($content['data']['question_types']);
-$content = Json::encode($content);
-
+$content = $content->getBody();
 ?>
 
 <div class="jumbotron">
