@@ -7,23 +7,23 @@ use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
 $security = array(
-    "consumer_key" => $consumer_key,
-    "domain"       => $domain,
-    "timestamp"    => $timestamp
+    'consumer_key' => $consumer_key,
+    'domain'       => $domain,
+    'timestamp'    => $timestamp
 );
 
 $request = array(
-    "user_id"        => $studentid,
-    "rendering_type" => "inline",
-    "name"           => "Items API demo - Inline Activity.",
-    "state"          => "initial",
-    "activity_id"    => "itemsinlinedemo",
-    "session_id"     => Uuid::generate(),
-    "course_id"      => $courseid,
-    "items"          => array("Demo3", "Demo4", "Demo5", "Demo6", "Demo7", "Demo8", "Demo9", "Demo10"),
-    "type"           => "submit_practice",
-    "config"         => array(
-        "renderSubmitButton"  => true,
+    'user_id'        => $studentid,
+    'rendering_type' => 'inline',
+    'name'           => 'Items API demo - Inline Activity.',
+    'state'          => 'initial',
+    'activity_id'    => 'itemsinlinedemo',
+    'session_id'     => Uuid::generate(),
+    'course_id'      => $courseid,
+    'items'          => array('Demo3', 'Demo4', 'Demo5', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10'),
+    'type'           => 'submit_practice',
+    'config'         => array(
+        'renderSubmitButton'  => true,
         'questionsApiVersion' => 'v2'
     )
 );
@@ -32,17 +32,6 @@ $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
-<!-- Container for the items api to load into -->
-<script src="//items.learnosity.com/"></script>
-<script>
-    var eventOptions = {
-            readyListener: function () {
-                console.log("Learnosity Items API is ready");
-            }
-        },
-        app = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
-</script>
 
 <div class="jumbotron">
     <h1>Items API – Inline</h1>
@@ -71,6 +60,17 @@ $signedRequest = $Init->generate();
     <span class="learnosity-item" data-reference="Demo10"></span>
     <span class="learnosity-submit-button"></span>
 </p>
+
+<!-- Container for the items api to load into -->
+<script src="//items.learnosity.com/"></script>
+<script>
+    var eventOptions = {
+            readyListener: function () {
+                console.log('Learnosity Items API is ready');
+            }
+        },
+        app = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+</script>
 
 <?php
     include_once 'views/modals/initialisation-preview.php';

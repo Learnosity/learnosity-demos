@@ -17,7 +17,12 @@ $request = array(
     'name'                 => 'Demo Activity',
     'course_id'            => $courseid,
     'session_id'           => Uuid::generate(),
-    'user_id'              => $studentid
+    'user_id'              => $studentid,
+    'config'               => array(
+        'administration' => array(
+            'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
+        )
+    )
 );
 
 include_once 'utils/settings-override.php';
@@ -56,10 +61,12 @@ $signedRequest = $Init->generate();
 <script>
     var eventOptions = {
             readyListener: function () {
-                console.log("Learnosity Items API is ready");
+                console.log('Learnosity Items API is ready');
             }
         },
-        app = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+        activity = <?php echo $signedRequest; ?>;
+
+    LearnosityItems.init(activity, eventOptions);
 </script>
 
 <?php
