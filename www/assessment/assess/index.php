@@ -14,8 +14,11 @@ $security = array(
 $uniqueResponseIdSuffix = Uuid::generate();
 
 $request = array(
-    'name'       => 'Demo Activity (8 questions)',
-    'state'      => 'initial',
+    'name'           => 'Demo Activity (8 questions)',
+    'state'          => 'initial',
+    'administration' => array(
+        'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
+    ),
     'navigation' => array(
         'scroll_to_top'          => false,
         'scroll_to_test'         => false,
