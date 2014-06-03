@@ -399,6 +399,7 @@ $signedRequest = $Init->generate();
             e.preventDefault();
             $(this).tab('show');
             $('.lrn_response_innerbody').width('100%');
+            $('.lrn_graph_plotter .lrn_btn').click();
         });
     }
 </script>
