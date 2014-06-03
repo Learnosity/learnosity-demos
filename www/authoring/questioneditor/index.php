@@ -8,21 +8,7 @@ use LearnositySdk\Utils\Json;
 
 $Remote = new Remote();
 $content = $Remote->get('http://schemas.learnosity.com/stable/questions/templates');
-// Temporary workaround to remove empty arrays
-$content = json_decode($content->getBody(), true);
-foreach ($content['data'] as &$type) {
-    foreach ($type as $subType => $val) {
-        if (empty($val)) {
-            unset($type[$subType]);
-        }
-    }
-}
-// Temporary workaround to replace barchart with simplechart
-$content['data']['question_types']['simplechart'] = $content['data']['question_types']['barchart'];
-unset($content['data']['question_types']['barchart']);
-ksort($content['data']['question_types']);
-$content = Json::encode($content);
-
+$content = $content->getBody();
 ?>
 
 <div class="jumbotron">
@@ -50,8 +36,7 @@ $content = Json::encode($content);
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">New Question<b class="caret"></b></a>
         <ul class="dropdown-menu">
-            <li><a href="#" data-type="tileUI" id="tileUI">Question Type Tiles (beta)</a></li>
-            <li><a href="#" data-type="newQuestion" id="newQuestion">Standard</a></li>
+            <li><a href="#" data-type="newQuestion" id="newQuestion">New Question</a></li>
             <li><a href="#" data-type="defaults" id="defaults">with defaults</a></li>
             <li><a href="#" data-type="disabled" id="disabled">with certain attributes disabled</a></li>
             <li><a href="#" data-type="defaultsdisabled" id="defaultsdisabled">with certain attributes disabled and defaults</a></li>
@@ -78,27 +63,6 @@ $content = Json::encode($content);
         questionTemplates = <?php echo $content ?>.data,
         initObjects = {
             newQuestion: {
-                description: 'Just the standard default editor with no defaults set or attributes disabled.',
-                json: {
-                    configuration: {
-                        questionsApiVersion: 'v2'
-                    },
-                    widgetType: 'response',
-                    ui: {
-                        columns: [{
-                            tabs: ['edit', 'advanced'],
-                            width: '50%'
-                        }, {
-                            tabs: ['preview', 'layout'],
-                            width: '50%'
-                        }],
-                        fixed_preview: {
-                            margin_top: 50
-                        }
-                    }
-                }
-            },
-            tileUI: {
                 description: 'Question type tile thumbnails are templates of commonly used question configuration.',
                 json: {
                     ui: {
@@ -421,6 +385,7 @@ $content = Json::encode($content);
 
     function changeExample(evt) {
         var type = $(this).attr('data-type');
+        console.log(type);
         evt.preventDefault();
         $('#nav-questioneditor').find('li').removeClass('active');
         if ($(this).closest('ul').hasClass('dropdown-menu')) {
@@ -442,7 +407,7 @@ $content = Json::encode($content);
         if(hashString !== "") {
             $(hashString).trigger('click');
         } else {
-            $('#tileUI').trigger('click');
+            $('#newQuestion').trigger('click');
         }
     }(jQuery));
 </script>
