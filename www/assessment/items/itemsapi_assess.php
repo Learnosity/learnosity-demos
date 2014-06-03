@@ -86,6 +86,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron">
     <h1>Items API – Assess</h1>
     <p>With the flick of a switch make the items into an assessment. Truly write once - use anywhere.<p>
+    <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
