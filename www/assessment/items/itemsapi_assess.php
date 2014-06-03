@@ -22,8 +22,11 @@ $request = array(
     'user_id'        => $studentid,
     'items'          => array("Demo3", "Demo4", "Demo5", "Demo6", "Demo7", "Demo8", "Demo9", "Demo10"),
     'config'         => array(
-        'title'      => 'Demo activity - showcasing question types and assess options',
-        'subtitle'   => 'Walter White',
+        'title'          => 'Demo activity - showcasing question types and assess options',
+        'subtitle'       => 'Walter White',
+        'administration' => array(
+            'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
+        ),
         'navigation' => array(
             'scroll_to_top'            => false,
             'scroll_to_test'           => false,
@@ -76,7 +79,6 @@ $request = array(
 include_once 'utils/settings-override.php';
 
 $Init = new Init('items', $security, $consumer_secret, $request);
-
 $signedRequest = $Init->generate();
 
 ?>
@@ -84,6 +86,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron">
     <h1>Items API – Assess</h1>
     <p>With the flick of a switch make the items into an assessment. Truly write once - use anywhere.<p>
+    <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">

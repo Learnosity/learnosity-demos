@@ -123,38 +123,6 @@ $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-<style type="text/css">
-    .lrn-reports-vertical-content {
-        margin-left: -1px;
-        min-width: 750px;
-        width: 880px;
-        border-left: 1px solid #ddd;
-        padding-left: 30px;
-    }
-    .lrn-nav-tabs {
-        min-width: 250px;
-        width: 250px;
-        height: 100%;
-    }
-    .lrn-nav-reports ul.nav-tabs .padding {
-        height: 37px;
-    }
-    .lrn-reports-content {
-        min-width: 1100px;
-        height: 100%;
-    }
-    .lrn-reports-summary {
-        font-size: 13px;
-    }
-    html,
-    body,
-    .lrn-nav-reports ul {
-        height: 100%;
-    }
-    .lrn-reports-demo-wrapper {
-        padding: 20px;
-    }
-</style>
 <div class="jumbotron clearfix">
     <h1>Reports API</h1>
     <p>A cross domain embeddable service that allows content providers to easily render rich reports.<p>
@@ -226,7 +194,7 @@ $signedRequest = $Init->generate();
         <div class="panel-heading">
             <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-lastscore">
-                    Reports By Latest Score
+                    Reports By Last Score
                 </a>
             </h4>
         </div>
@@ -235,16 +203,16 @@ $signedRequest = $Init->generate();
                 <div id="lrn-reports-demos-lastscore-content">
                     <div class="lrn-nav-tabs lrn-nav-lastscore pull-left">
                         <ul class="nav nav-tabs tabs-left">
-                            <li class="active"><a id="lrn-nav-lastscore-activity" href="#lastscore-activity" data-toggle="tab">Latest Score By Activity</a></li>
-                            <li><a id="lrn-nav-lastscore-user" href="#lastscore-user" data-toggle="tab">Latest Score By Activity By User</a></li>
-                            <li><a id="lrn-nav-lastscore-item" href="#lastscore-item" data-toggle="tab">Latest Score By Item By User</a></li>
-                            <li><a id="lrn-nav-lastscore-tag" href="#lastscore-tag" data-toggle="tab">Latest Score By Tag By User</a></li>
+                            <li class="active"><a id="lrn-nav-lastscore-activity" href="#lastscore-activity" data-toggle="tab">Last Score By Activity</a></li>
+                            <li><a id="lrn-nav-lastscore-user" href="#lastscore-user" data-toggle="tab">Last Score By Activity By User</a></li>
+                            <li><a id="lrn-nav-lastscore-item" href="#lastscore-item" data-toggle="tab">Last Score By Item By User</a></li>
+                            <li><a id="lrn-nav-lastscore-tag" href="#lastscore-tag" data-toggle="tab">Last Score By Tag By User</a></li>
                         </ul>
                     </div>
                     <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
                         <div class="tab-pane active" id="lastscore-activity">
                             <section>
-                                <h3 class="report-title">Latest Score by Activity</h3>
+                                <h3 class="report-title">Last Score by Activity</h3>
                                 <p class="lrn-report-summary">
                                     Obtain the latest activity scores for a particular student, represented by either a progress bar (shown), or a numeric result.
                                     <br>Hover over student scores to gather a meaningful score breakdown.
@@ -256,7 +224,7 @@ $signedRequest = $Init->generate();
                         </div>
                         <div class="tab-pane" id="lastscore-user">
                             <section>
-                                <h3 class="report-title">Latest Score by Activity by User</h3>
+                                <h3 class="report-title">Last Score by Activity by User</h3>
                                 <p class="lrn-report-summary">
                                     Obtain the latest activity scores for a group of students, represented by either a numeric result (shown), or a progress bar.
                                     <br>Hover over student scores to gather a meaningful score break-down.
@@ -268,7 +236,7 @@ $signedRequest = $Init->generate();
                         </div>
                         <div class="tab-pane" id="lastscore-item">
                             <section>
-                                <h3 class="report-title">Latest Score by Item by User</h3>
+                                <h3 class="report-title">Last Score by Item by User</h3>
                                 <p class="lrn-report-summary">
                                     Obtain the latest activity score with a break-down of its constituent items.
                                     <br>Hover over items to see the fine grain score break-down.
@@ -280,7 +248,7 @@ $signedRequest = $Init->generate();
                         </div>
                         <div class="tab-pane" id="lastscore-tag">
                             <section>
-                                <h3 class="report-title">Latest Score by Tag by User</h3>
+                                <h3 class="report-title">Last Score by Tag by User</h3>
                                 <p class="lrn-report-summary">
                                     Obtain the latest activity score with a break-down of scores according its constituent tags.
                                     <br>Hover over the tag scores to see the fine grain score break-down.
@@ -349,10 +317,10 @@ $signedRequest = $Init->generate();
     });
 
     function onReportsReady() {
-        var commonFunction = function(data, target, modal) {
+        var onClickFunction = function(data, target, modal) {
             if (modal) {
-                var usReports = ['sessions-summary', 'session-detail', 'sessions-summary-by-tag'];
-                var reportType = usReports[Math.floor(Math.random()*usReports.length)];
+                var sessionReports = ['sessions-summary', 'session-detail', 'sessions-summary-by-tag'];
+                var reportType = sessionReports[Math.floor(Math.random() * sessionReports.length)];
 
                 $('#lrn-reports-demos-modal').modal({
                     'remote': 'demo-request.php'
@@ -380,50 +348,50 @@ $signedRequest = $Init->generate();
         var groupLastScoreByActivity = lrnReports.getReport('report-6');
 
         groupLastScoreByActivity.on('click:score', function (data) {
-            commonFunction(data, 'lrn-report-lastscore-activity-events', true);
+            onClickFunction(data, 'lrn-report-lastscore-activity-events', true);
         });
 
         groupLastScoreByActivity.on('click:activity', function (data) {
-            commonFunction(data, 'lrn-report-lastscore-activity-events', false);
+            onClickFunction(data, 'lrn-report-lastscore-activity-events', false);
         });
 
         groupLastScoreByActivity.on('click:user', function(data) {
-            commonFunction(data, 'lrn-report-lastscore-activity-events', false);
+            onClickFunction(data, 'lrn-report-lastscore-activity-events', false);
         });
 
         /* user-lastscore-by-activity onclick events */
         var userLastScoreByActivity = lrnReports.getReport('report-5');
 
         userLastScoreByActivity.on('click:score', function (data) {
-            commonFunction(data, 'lrn-report-lastscore-user-events', true);
+            onClickFunction(data, 'lrn-report-lastscore-user-events', true);
         });
 
         userLastScoreByActivity.on('click:user', function (data) {
-            commonFunction(data, 'lrn-report-lastscore-user-events', false);
+            onClickFunction(data, 'lrn-report-lastscore-user-events', false);
         });
 
         userLastScoreByActivity.on('click:activity', function (data) {
-            commonFunction(data, 'lrn-report-lastscore-user-events', false);
+            onClickFunction(data, 'lrn-report-lastscore-user-events', false);
         });
 
         /* group-lastscore-by-item onclick events */
         var groupLastScoreByItem = lrnReports.getReport('report-7');
         groupLastScoreByItem.on('click:score', function (data) {
-            commonFunction(data, 'lrn-report-lastscore-item-events', true);
+            onClickFunction(data, 'lrn-report-lastscore-item-events', true);
         });
 
         groupLastScoreByItem.on('click:user', function (data) {
-            commonFunction(data, 'lrn-report-lastscore-item-events', false);
+            onClickFunction(data, 'lrn-report-lastscore-item-events', false);
         });
 
         /* group-lastscore-by-tag onclick events */
         var groupLastScoreByTag = lrnReports.getReport('report-8');
         groupLastScoreByTag.on('click:score', function (data) {
-            commonFunction(data, 'lrn-report-lastscore-tag-events', true);
+            onClickFunction(data, 'lrn-report-lastscore-tag-events', true);
         });
 
         groupLastScoreByTag.on('click:user', function (data) {
-            commonFunction(data, 'lrn-report-lastscore-tag-events', false);
+            onClickFunction(data, 'lrn-report-lastscore-tag-events', false);
         });
 
         // Sessions detail hidden width fix
@@ -431,6 +399,7 @@ $signedRequest = $Init->generate();
             e.preventDefault();
             $(this).tab('show');
             $('.lrn_response_innerbody').width('100%');
+            $('.lrn_graph_plotter .lrn_btn').click();
         });
     }
 </script>

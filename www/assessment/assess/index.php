@@ -14,8 +14,11 @@ $security = array(
 $uniqueResponseIdSuffix = Uuid::generate();
 
 $request = array(
-    'name'       => 'Demo Activity (8 questions)',
-    'state'      => 'initial',
+    'name'           => 'Demo Activity (8 questions)',
+    'state'          => 'initial',
+    'administration' => array(
+        'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
+    ),
     'navigation' => array(
         'scroll_to_top'          => false,
         'scroll_to_test'         => false,
@@ -489,6 +492,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron">
     <h1>Assess API</h1>
     <p>Assessment made easy – configurable layouts, pause, fullscreen mode, simple assessment delivery to desktops and tablet devices in no time at all.<p>
+    <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
     <div class="row">
         <div class="col-md-8">
             <h4><a href="http://docs.learnosity.com/assessapi/" class="text-muted">

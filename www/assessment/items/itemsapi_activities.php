@@ -17,7 +17,12 @@ $request = array(
     'name'                 => 'Demo Activity',
     'course_id'            => $courseid,
     'session_id'           => Uuid::generate(),
-    'user_id'              => $studentid
+    'user_id'              => $studentid,
+    'config'               => array(
+        'administration' => array(
+            'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
+        )
+    )
 );
 
 include_once 'utils/settings-override.php';
@@ -34,6 +39,7 @@ $signedRequest = $Init->generate();
     <p>Preview the <a href="#" data-toggle="modal" data-target="#initialisation-preview">API Initialisation Object</a> to see how simple it can be using the Items API to load activities
     authored in the Learnosity item bank.<p>
     <p><a href="#" data-toggle="modal" data-target="#settings">Customise the activity</a> you want to load.<p>
+    <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
@@ -56,10 +62,12 @@ $signedRequest = $Init->generate();
 <script>
     var eventOptions = {
             readyListener: function () {
-                console.log("Learnosity Items API is ready");
+                console.log('Learnosity Items API is ready');
             }
         },
-        app = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+        activity = <?php echo $signedRequest; ?>;
+
+    LearnosityItems.init(activity, eventOptions);
 </script>
 
 <?php
