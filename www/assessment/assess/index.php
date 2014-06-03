@@ -492,6 +492,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron">
     <h1>Assess API</h1>
     <p>Assessment made easy – configurable layouts, pause, fullscreen mode, simple assessment delivery to desktops and tablet devices in no time at all.<p>
+    <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
     <div class="row">
         <div class="col-md-8">
             <h4><a href="http://docs.learnosity.com/assessapi/" class="text-muted">

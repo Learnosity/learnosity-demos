@@ -39,6 +39,7 @@ $signedRequest = $Init->generate();
     <p>Preview the <a href="#" data-toggle="modal" data-target="#initialisation-preview">API Initialisation Object</a> to see how simple it can be using the Items API to load activities
     authored in the Learnosity item bank.<p>
     <p><a href="#" data-toggle="modal" data-target="#settings">Customise the activity</a> you want to load.<p>
+    <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
