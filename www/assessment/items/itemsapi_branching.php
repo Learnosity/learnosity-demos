@@ -20,57 +20,62 @@ $request = array(
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
     'adaptive'       => array(
-        "type" => "branching",
-        "sequence" => array(
+        'type' => 'branching',
+        'sequence' => array(
             array(
-                "activity_id" => "sequence-1A"
+                'activity_id' => 'sequence-1A'
             ),
             array(
-                "decision" => array(
+                'decision' => array(
                     array(
-                        "activity_id" => "decision-1A",
-                        "score" => 3
+                        'activity_id' => 'decision-1A',
+                        'score' => 3
                     ),
                     array(
-                        "activity_id" => "decision-1B",
-                        "score" => 4
+                        'activity_id' => 'decision-1B',
+                        'score' => 4
                     ),
                     array(
-                        "activity_id" => "decision-1B",
-                        "score" => 7
+                        'activity_id' => 'decision-1B',
+                        'score' => 7
                     ),
                     array(
-                        "activity_id" => "decision-1C",
-                        "score" => 8,
-                        "sequence" => array(
+                        'activity_id' => 'decision-1C',
+                        'score' => 8,
+                        'sequence' => array(
                             array(
-                                "activity_id" => "sequence-2A"
+                                'activity_id' => 'sequence-2A'
                             ),
                             array(
-                                "activity_id" => "sequence-2B"
+                                'activity_id' => 'sequence-2B'
                             )
                         )
                     )
                 )
             ),
             array(
-                "activity_id" => "sequence-1B"
+                'activity_id' => 'sequence-1B'
             )
         )
     ),
     'config' => array(
-        'title' => 'Branching Assessment',
-                'ui_style'            => 'horizontal-fixed',
+        'title'      => 'Branching Assessment',
+        'administration' => array(
+            'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
+        ),
+        'ui_style'   => 'horizontal-fixed',
         'navigation' => array(
             'intro_item'             => 'branching-intro',
             'show_prev'              => false,
             'show_progress'          => false,
             'show_fullscreencontrol' => false,
-            "scroll_to_top"          => true,
-            "scroll_to_test"         => false,
+            'scroll_to_top'          => true,
+            'scroll_to_test'         => false,
         ),
-        'time' => array(),
-        'assessApiVersion' => 'v2',
+        'time' => array(
+            'max_time' => 1800
+        ),
+        'assessApiVersion'    => 'v2',
         'questionsApiVersion' => 'v2',
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_branching.php',
