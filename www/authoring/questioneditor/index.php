@@ -7,8 +7,9 @@ use LearnositySdk\Request\Remote;
 use LearnositySdk\Utils\Json;
 
 $Remote = new Remote();
-$content = $Remote->get('http://schemas.learnosity.com/stable/questions/templates');
-$content = $content->getBody();
+$result = $Remote->get('http://schemas.learnosity.com/stable/questions/templates');
+$questionTemplates = $result->getBody();
+
 ?>
 
 <div class="jumbotron">
@@ -60,7 +61,7 @@ $content = $content->getBody();
     *
     ********************************************************************/
     var initType,
-        questionTemplates = <?php echo $content ?>.data,
+        questionTemplates = <?php echo $questionTemplates ?>.data,
         initObjects = {
             newQuestion: {
                 description: 'Question type tile thumbnails are templates of commonly used question configuration.',
