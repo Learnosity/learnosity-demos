@@ -386,7 +386,6 @@ $questionTemplates = $result->getBody();
 
     function changeExample(evt) {
         var type = $(this).attr('data-type');
-        console.log(type);
         evt.preventDefault();
         $('#nav-questioneditor').find('li').removeClass('active');
         if ($(this).closest('ul').hasClass('dropdown-menu')) {
