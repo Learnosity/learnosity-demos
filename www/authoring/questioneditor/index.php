@@ -31,7 +31,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Standard</h2>
                 </div>
                 <div class="panel-body">
-                    <p><strong>DRAFT - </strong>The Question Editor initialised with the standard defaults.</p>
+                    <p><strong>DRAFT -</strong> The Question Editor initialised with the standard defaults.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./standard.php">Demo</a>
                     </p>
@@ -44,7 +44,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Extended</h2>
                 </div>
                 <div class="panel-body">
-                    <p><strong>DRAFT - </strong>The Question Editor can be extended to include your own custom question types and groupings in addition to the standard defaults.</p>
+                    <p><strong>DRAFT -</strong> The Question Editor can be extended to include your own custom question types and groupings in addition to the standard defaults.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./extended.php">Demo</a>
                     </p>
@@ -59,7 +59,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Bespoke</h2>
                 </div>
                 <div class="panel-body">
-                    <p><strong>DRAFT - </strong>The Question Editor can be initialised with only your own custom question types and groupings.</p>
+                    <p><strong>DRAFT -</strong> The Question Editor can be initialised with only your own custom question types and groupings.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./bespoke.php">Demo</a>
                     </p>
@@ -72,9 +72,24 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Legacy</h2>
                 </div>
                 <div class="panel-body">
-                    <p><strong>DRAFT - </strong>The old way of doing things.</p>
+                    <p><strong>DRAFT -</strong> The old way of doing things.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./legacy.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Default</h2>
+                </div>
+                <div class="panel-body">
+                    <p><strong>DRAFT -</strong> Default settings</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./default.php">Demo</a>
                     </p>
                 </div>
             </div>

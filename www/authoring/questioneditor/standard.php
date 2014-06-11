@@ -13,7 +13,7 @@ $questionTemplates = $result->getBody();
 ?>
 
 <div class="jumbotron">
-    <h1>Question Editor API</h1>
+    <h1>Question Editor API - Standard Initialisation</h1>
     <p>Our editor. Your item bank platform.<p>
     <div class="row">
         <div class="col-md-10">
