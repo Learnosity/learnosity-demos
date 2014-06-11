@@ -141,6 +141,12 @@ td {
         width:90%;
    }
 }
+.lrn-single-report {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+}
 
 /********************************************************************
 *

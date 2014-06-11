@@ -115,6 +115,26 @@ $request = array(
             ),
             'activity_id' => '52f5b81d-9270-914a-7094a1ada4d55e6e',
             'hierarchy' => 'questiontype'
+        ),
+        array(
+            'id'          => 'report-9',
+            'type'        => 'sessions-list',
+            'limit'       => 10,
+            'ui'          => 'table'
+        ),
+        array(
+            'id'          => 'report-10',
+            'type'        => 'lastscore-single',
+            'ui'          => 'pie',
+            'user_id'     => 'demo_student',
+            'activity_id' => 'itemadaptivedemo'
+        ),
+        array(
+            'id'          => 'report-11',
+            'type'        => 'lastscore-single',
+            'ui'          => 'pie',
+            'user_id'     => 'brianmoser',
+            'activity_id' => 'edde56e8-ff65-e42e-b4fe49caad796bd'
         )
     )
 );
@@ -159,6 +179,7 @@ $signedRequest = $Init->generate();
                     <div class="lrn-nav-tabs lrn-nav-sessions pull-left">
                         <ul class="nav nav-tabs tabs-left">
                           <li class="active"><a id="lrn-nav-session-summary" href="#sessions-summary" data-toggle="tab">Sessions Summary</a></li>
+                          <li><a id="lrn-nav-session-list" href="#sessions-list" data-toggle="tab">Sessions List</a></li>
                           <li><a id="lrn-nav-session-detail" href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
                           <li><a id="lrn-nav-session-tags" href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
                         </ul>
@@ -170,6 +191,16 @@ $signedRequest = $Init->generate();
                                 <p class="lrn-report-summary">Gain quick, meaningful information about a students session at a glance.</p>
                                 <span class="learnosity-report" id="report-1"></span>
                             </section>
+                        </div>
+                        <div class="tab-pane" id="sessions-list">
+                            <section>
+                                <h3 class="report-title">Sessions List</h3>
+                                <p class="lrn-report-summary">Get a quick glimpse of the latest sessions.</p>
+                                <p class="lrn-report-summary">Session progress bars can trigger onClick events to tie into other reports.</p>
+                                <span class="learnosity-report" id="report-9"></span>
+                                <span class="learnosity-report" id="report-13"></span>
+                            </section>
+                            <div id="lrn-report-sessions-list-events"></div>
                         </div>
                         <div class="tab-pane" id="sessions-detail">
                             <section>
@@ -205,6 +236,7 @@ $signedRequest = $Init->generate();
                         <ul class="nav nav-tabs tabs-left">
                             <li class="active"><a id="lrn-nav-lastscore-activity" href="#lastscore-activity" data-toggle="tab">Last Score By Activity</a></li>
                             <li><a id="lrn-nav-lastscore-user" href="#lastscore-user" data-toggle="tab">Last Score By Activity By User</a></li>
+                            <li><a id="lrn-nav-lastscore-single" href="#lastscore-single" data-toggle="tab">Last Score Single</a></li>
                             <li><a id="lrn-nav-lastscore-item" href="#lastscore-item" data-toggle="tab">Last Score By Item By User</a></li>
                             <li><a id="lrn-nav-lastscore-tag" href="#lastscore-tag" data-toggle="tab">Last Score By Tag By User</a></li>
                         </ul>
@@ -231,6 +263,22 @@ $signedRequest = $Init->generate();
                                 </p>
                                 <p class="lrn-report-summary">Names, activities and scores can trigger onClick events to tie into other reports.</p>
                                 <span class="learnosity-report" id="report-5"></span>
+                            </section>
+                            <div id="lrn-report-lastscore-user-events"></div>
+                        </div>
+                        <div class="tab-pane" id="lastscore-single">
+                            <section>
+                                <h3 class="report-title">Last Score Single</h3>
+                                <p class="lrn-report-summary">
+                                    Obtain the latest activity score in a single bar or chart format.
+                                </p>
+                                <p class="lrn-report-summary">Score progress bars and charts can trigger onClick events to tie into other reports.</p>
+                                <div class="lrn-single-report">
+                                    <span class="learnosity-report" id="report-10"></span>
+                                </div>
+                                <div class="lrn-single-report">
+                                    <span class="learnosity-report" id="report-11"></span>
+                                </div>
                             </section>
                             <div id="lrn-report-lastscore-user-events"></div>
                         </div>
@@ -392,6 +440,12 @@ $signedRequest = $Init->generate();
 
         groupLastScoreByTag.on('click:user', function (data) {
             onClickFunction(data, 'lrn-report-lastscore-tag-events', false);
+        });
+
+        /* sessions-list onclick events */
+        var sessionsList = lrnReports.getReport('report-9');
+            sessionsList.on('click:session', function (data) {
+            onClickFunction(data, 'lrn-report-sessions-list-events', false);
         });
 
         // Sessions detail hidden width fix
