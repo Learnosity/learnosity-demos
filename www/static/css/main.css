@@ -142,14 +142,17 @@ td {
    }
 }
 .lrn-single-report {
-    float: left;
-    width: 75px;
-    height: 75px;
-    line-height: 75px;
-    margin-right: 15px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
 }
 .lrn-single-reports {
     margin-bottom: 15px;
+    text-align: center;
+}
+.lrn-single-reports td {
+    border: 0 none !important;
+    padding: 10px;
 }
 
 /********************************************************************
