@@ -1,37 +1,28 @@
 <?php
 
 include_once '../../../config.php';
-include_once 'utils/uuid.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
+
+use LearnositySdk\Request\Init;
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'domain'       => $domain,
-    'timestamp'    => $timestamp
+    'domain'       => $domain
 );
-
-$sessionId = $_REQUEST['sessionId'];
 
 $request = array(
     'reports' => array(
         array(
             'id'         => 'report-distractor-demo',
             'user_id'    => $studentid,
-            'session_id' => $sessionId,
+            'session_id' => $_REQUEST['sessionId'],
             'type'       => 'session-detail'
         )
     )
 );
 
-$RequestHelper = new RequestHelper(
-    'reports',
-    $security,
-    $consumer_secret,
-    $request
-);
-
-$signedRequest = $RequestHelper->generateRequest();
+$Init = new Init('reports', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 <link rel="stylesheet" href="demo.css">
