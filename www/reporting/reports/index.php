@@ -119,18 +119,32 @@ $request = array(
         array(
             'id'          => 'report-9',
             'type'        => 'sessions-list',
-            'limit'       => 10,
+            'limit'       => 15,
             'ui'          => 'table'
         ),
         array(
             'id'          => 'report-10',
             'type'        => 'lastscore-single',
             'ui'          => 'pie',
-            'user_id'     => 'demo_student',
-            'activity_id' => 'itemadaptivedemo'
+            'user_id'     => '12345678',
+            'activity_id' => 'fffcf70e-4165-f907-b6eadc9813bdc56'
         ),
         array(
             'id'          => 'report-11',
+            'type'        => 'lastscore-single',
+            'ui'          => 'bar',
+            'user_id'     => 'brianmoser',
+            'activity_id' => 'edde56e8-ff65-e42e-b4fe49caad796bd'
+        ),
+        array(
+            'id'          => 'report-12',
+            'type'        => 'lastscore-single',
+            'ui'          => 'pie',
+            'user_id'     => '12345678',
+            'activity_id' => 'BD13_L1_P24_AC2'
+        ),
+        array(
+            'id'          => 'report-13',
             'type'        => 'lastscore-single',
             'ui'          => 'pie',
             'user_id'     => 'brianmoser',
@@ -198,7 +212,6 @@ $signedRequest = $Init->generate();
                                 <p class="lrn-report-summary">Get a quick glimpse of the latest sessions.</p>
                                 <p class="lrn-report-summary">Session progress bars can trigger onClick events to tie into other reports.</p>
                                 <span class="learnosity-report" id="report-9"></span>
-                                <span class="learnosity-report" id="report-13"></span>
                             </section>
                             <div id="lrn-report-sessions-list-events"></div>
                         </div>
@@ -270,17 +283,25 @@ $signedRequest = $Init->generate();
                             <section>
                                 <h3 class="report-title">Last Score Single</h3>
                                 <p class="lrn-report-summary">
-                                    Obtain the latest activity score in a single bar or chart format.
+                                    Obtain the latest activity score in a single bar or chart format (each bar/chart below is a separate report).
                                 </p>
                                 <p class="lrn-report-summary">Score progress bars and charts can trigger onClick events to tie into other reports.</p>
-                                <div class="lrn-single-report">
-                                    <span class="learnosity-report" id="report-10"></span>
-                                </div>
-                                <div class="lrn-single-report">
-                                    <span class="learnosity-report" id="report-11"></span>
+                                <div class="lrn-single-reports clearfix">
+                                    <div class="lrn-single-report">
+                                        <span class="learnosity-report" id="report-10"></span>
+                                    </div>
+                                    <div class="lrn-single-report">
+                                        <span class="learnosity-report" id="report-11"></span>
+                                    </div>
+                                    <div class="lrn-single-report">
+                                        <span class="learnosity-report" id="report-12"></span>
+                                    </div>
+                                    <div class="lrn-single-report">
+                                        <span class="learnosity-report" id="report-13"></span>
+                                    </div>
                                 </div>
                             </section>
-                            <div id="lrn-report-lastscore-user-events"></div>
+                            <div id="lrn-report-lastscore-single-events"></div>
                         </div>
                         <div class="tab-pane" id="lastscore-item">
                             <section>
@@ -448,12 +469,41 @@ $signedRequest = $Init->generate();
             onClickFunction(data, 'lrn-report-sessions-list-events', false);
         });
 
+        /* lastscore-single onclick events */
+        var lastScoreSingleOne = lrnReports.getReport('report-10');
+        lastScoreSingleOne.on('click:score', function (data) {
+            onClickFunction(data, 'lrn-report-lastscore-single-events', false);
+        });
+        var lastScoreSingleTwo = lrnReports.getReport('report-11');
+        lastScoreSingleTwo.on('click:score', function (data) {
+            onClickFunction(data, 'lrn-report-lastscore-single-events', false);
+        });
+        var lastScoreSingleThree = lrnReports.getReport('report-12');
+        lastScoreSingleThree.on('click:score', function (data) {
+            onClickFunction(data, 'lrn-report-lastscore-single-events', false);
+        });
+        var lastScoreSingleFour = lrnReports.getReport('report-13');
+        lastScoreSingleFour.on('click:score', function (data) {
+            onClickFunction(data, 'lrn-report-lastscore-single-events', false);
+        });
+
         // Sessions detail hidden width fix
         $('a#lrn-nav-session-detail').click(function (e) {
             e.preventDefault();
             $(this).tab('show');
             $('.lrn_response_innerbody').width('100%');
             $('.lrn_graph_plotter .lrn_btn').click();
+        });
+
+        // lastscore-single hidden width fix
+        $('a#lrn-nav-lastscore-single').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+            $('.lastscore-single canvas').each(function () {
+                var size = $(this).parent().width();
+                $(this).width(size);
+                $(this).height(size);
+            });
         });
     }
 </script>

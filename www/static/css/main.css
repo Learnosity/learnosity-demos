@@ -142,10 +142,14 @@ td {
    }
 }
 .lrn-single-report {
-    display: inline-block;
+    float: left;
     width: 75px;
     height: 75px;
     line-height: 75px;
+    margin-right: 15px;
+}
+.lrn-single-reports {
+    margin-bottom: 15px;
 }
 
 /********************************************************************
