@@ -125,30 +125,119 @@ $request = array(
         array(
             'id'          => 'report-10',
             'type'        => 'lastscore-single',
-            'ui'          => 'pie',
-            'user_id'     => '12345678',
-            'activity_id' => 'fffcf70e-4165-f907-b6eadc9813bdc56'
+            'ui'          => 'bar',
+            'user_id'     => 'demo_student',
+            'activity_id' => '6c2935ae-eecc-4387-9494-a6d47f067893'
         ),
         array(
             'id'          => 'report-11',
+            'type'        => 'lastscore-single',
+            'ui'          => 'bar',
+            'user_id'     => '12345678',
+            'activity_id' => 'BD13_L1_P24_AC2'
+        ),
+        array(
+            'id'          => 'report-12',
             'type'        => 'lastscore-single',
             'ui'          => 'bar',
             'user_id'     => 'brianmoser',
             'activity_id' => 'edde56e8-ff65-e42e-b4fe49caad796bd'
         ),
         array(
-            'id'          => 'report-12',
+            'id'          => 'report-13',
+            'type'        => 'lastscore-single',
+            'ui'          => 'pie',
+            'user_id'     => 'demo_student',
+            'activity_id' => '6c2935ae-eecc-4387-9494-a6d47f067893'
+        ),
+        array(
+            'id'          => 'report-14',
             'type'        => 'lastscore-single',
             'ui'          => 'pie',
             'user_id'     => '12345678',
             'activity_id' => 'BD13_L1_P24_AC2'
         ),
         array(
-            'id'          => 'report-13',
+            'id'          => 'report-15',
             'type'        => 'lastscore-single',
             'ui'          => 'pie',
             'user_id'     => 'brianmoser',
             'activity_id' => 'edde56e8-ff65-e42e-b4fe49caad796bd'
+        ),
+        array( //NEW
+            'id'          => 'report-16',
+            'type'        => 'progress-single',
+            'user_id'     => 'brianmoser',
+            'hierarchy'   => 'questiontype',
+            'tag_hierarchy_path'   => array(
+                array(
+                    'type'  => 'questiontype',
+                    'name'  => 'clozeassociation'
+                )
+            )
+        ),
+        array(
+            'id'          => 'report-17',
+            'type'        => 'progress-single',
+            'user_id'     => 'brianmoser',
+            'hierarchy'   => 'questiontype',
+            'tag_hierarchy_path'   => array(
+                array(
+                    'type'  => 'questiontype',
+                    'name'  => 'clozetext'
+                )
+            )
+        ),
+        array(
+            'id'          => 'report-18',
+            'type'        => 'progress-single',
+            'user_id'     => '12345678',
+            'hierarchy'   => 'questiontype',
+            'tag_hierarchy_path'   => array(
+                array(
+                    'type'  => 'questiontype',
+                    'name'  => 'clozetext'
+                )
+            )
+        ),
+        array(
+            'id'          => 'report-21',
+            'type'        => 'progress-single',
+            'user_id'     => 'brianmoser',
+            'ui'          => 'pie',
+            'hierarchy'   => 'questiontype',
+            'tag_hierarchy_path'   => array(
+                array(
+                    'type'  => 'questiontype',
+                    'name'  => 'clozeassociation'
+                )
+            )
+        ),
+        array(
+            'id'          => 'report-21',
+            'type'        => 'progress-single',
+            'user_id'     => 'brianmoser',
+            'ui'          => 'pie',
+            'hierarchy'   => 'questiontype',
+            'tag_hierarchy_path'   => array(
+                array(
+                    'type'  => 'questiontype',
+                    'name'  => 'clozetext'
+                )
+            )
+        ),
+        array(
+            'id'          => 'report-21',
+            'type'        => 'progress-single',
+            'user_id'     => '12345678',
+            'ui'          => 'pie',
+            'hierarchy'   => 'questiontype',
+            'tag_hierarchy_path'   => array(
+                array(
+                    'type'  => 'questiontype',
+                    'name'  => 'clozetext'
+                )
+            )
         )
     )
 );
@@ -286,20 +375,18 @@ $signedRequest = $Init->generate();
                                     Obtain the latest activity score in a single bar or chart format (each bar/chart below is a separate report).
                                 </p>
                                 <p class="lrn-report-summary">Score progress bars and charts can trigger onClick events to tie into other reports.</p>
-                                <div class="lrn-single-reports clearfix">
-                                    <div class="lrn-single-report">
-                                        <span class="learnosity-report" id="report-10"></span>
-                                    </div>
-                                    <div class="lrn-single-report">
-                                        <span class="learnosity-report" id="report-11"></span>
-                                    </div>
-                                    <div class="lrn-single-report">
-                                        <span class="learnosity-report" id="report-12"></span>
-                                    </div>
-                                    <div class="lrn-single-report">
-                                        <span class="learnosity-report" id="report-13"></span>
-                                    </div>
-                                </div>
+                                <table class="lrn-single-reports">
+                                    <tr>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-10"></span></div></td>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-11"></span></div></td>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-12"></span></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-13"></span></div></td>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-14"></span></div></td>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-15"></span></div></td>
+                                    </tr>
+                                </table>
                             </section>
                             <div id="lrn-report-lastscore-single-events"></div>
                         </div>
@@ -343,15 +430,43 @@ $signedRequest = $Init->generate();
         <div id="lrn-reports-demos-progress" class="panel-collapse collapse">
             <div class="panel-body">
                 <div id="lrn-reports-demos-progress-content">
-                    <div class="tab-pane" id="progress">
-                        <section>
-                            <h3 class="report-title">Progress by Tag Table</h3>
-                            <p class="lrn-report-summary">Gather insight into user progress according to your assigned tag hierarchy.</p>
-                            <div class="alert alert-info">
-                                <strong>Note:</strong> The progress data for this report is updated every 5 minutes
-                            </div>
-                            <span class="learnosity-report" id="report-3"></span>
-                        </section>
+                    <div class="lrn-nav-tabs lrn-nav-progress pull-left">
+                        <ul class="nav nav-tabs tabs-left">
+                          <li class="active"><a id="lrn-nav-progress-by-tag-table" href="#progress-by-tag-table" data-toggle="tab">Progress By Tag Table</a></li>
+                          <li><a id="lrn-nav-progress-single" href="#progress-single" data-toggle="tab">Progress Single</a></li>
+                        </ul>
+                    </div>
+                    <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
+                        <div class="tab-pane active" id="progress-by-tag-table">
+                            <section>
+                                <h3 class="report-title">Progress by Tag Table</h3>
+                                <p class="lrn-report-summary">Gather insight into user progress according to your assigned tag hierarchy.</p>
+                                <div class="alert alert-info">
+                                    <strong>Note:</strong> The progress data for this report is updated every 5 minutes
+                                </div>
+                                <span class="learnosity-report" id="report-3"></span>
+                            </section>
+                        </div>
+                        <div class="tab-pane" id="progress-single">
+                            <section>
+                                <h3 class="report-title">Progress Single</h3>
+                                <p class="lrn-report-summary">
+                                    Gather insight into user progress according to your assigned tag hierarchy (each bar/chart below is a separate report).
+                                </p>
+                                <table class="lrn-single-reports">
+                                    <tr>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-16"></span></div></td>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-17"></span></div></td>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-18"></span></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-19"></span></div></td>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-20"></span></div></td>
+                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-21"></span></div></td>
+                                    </tr>
+                                </table>
+                            </section>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -484,6 +599,14 @@ $signedRequest = $Init->generate();
         });
         var lastScoreSingleFour = lrnReports.getReport('report-13');
         lastScoreSingleFour.on('click:score', function (data) {
+            onClickFunction(data, 'lrn-report-lastscore-single-events', false);
+        });
+        var lastScoreSingleFive = lrnReports.getReport('report-14');
+        lastScoreSingleFive.on('click:score', function (data) {
+            onClickFunction(data, 'lrn-report-lastscore-single-events', false);
+        });
+        var lastScoreSingleSix = lrnReports.getReport('report-15');
+        lastScoreSingleSix.on('click:score', function (data) {
             onClickFunction(data, 'lrn-report-lastscore-single-events', false);
         });
 
