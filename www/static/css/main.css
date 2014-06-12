@@ -141,6 +141,19 @@ td {
         width:90%;
    }
 }
+.lrn-single-report {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+}
+.lrn-single-reports {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.lrn-single-reports td {
+    border: 0 none !important;
+    padding: 10px;
+}
 
 /********************************************************************
 *
