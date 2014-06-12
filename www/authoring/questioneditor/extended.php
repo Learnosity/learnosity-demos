@@ -29,8 +29,11 @@ include_once 'includes/header.php';
             questionsApiVersion: 'v2'
         },
         question_type_groups: [{
+            reference: 'mcq',
+            name: 'Overridden MCQ Name'
+        }, {
             reference: 'custom',
-            name: 'Custom'
+            name: 'My Custom Group'
         }],
         question_type_templates: {
             association: [{
@@ -76,7 +79,7 @@ include_once 'includes/header.php';
                 }
             }]
         },
-        template_defaults: true
+        widget_type: 'response'
     };
     LearnosityQuestionEditor.init(initOptions);
 </script>
