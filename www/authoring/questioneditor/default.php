@@ -21,14 +21,14 @@ include_once 'includes/header.php';
 <div class="alert alert-info" id="example-description">Description here</div>
 
 <!-- Container for the question editor api to load into -->
-<script src="//questioneditor.learnosity.com/"></script>
+<script src="//questioneditor.vg.learnosity.com/?latest"></script>
 <div class="learnosity-question-editor"></div>
 <script>
     var initOptions = {
         configuration: {
             questionsApiVersion: 'v2'
         },
-        template_defaults: true
+        widget_type: 'response'
     };
     LearnosityQuestionEditor.init(initOptions);
 </script>
