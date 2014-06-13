@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron">
-    <h1>Question Editor API - Standard Initialisation</h1>
+    <h1>Question Editor API</h1>
     <p>Our editor. Your item bank platform.<p>
     <div class="row">
         <div class="col-md-10">
@@ -46,7 +46,7 @@ include_once 'includes/header.php';
 </ul>
 
 <!-- Container for the question editor api to load into -->
-<script src="//questioneditor.learnosity.com/"></script>
+<script src="//questioneditor.vg.learnosity.com/?latest"></script>
 <div class="learnosity-question-editor"></div>
 <script>
     /********************************************************************
