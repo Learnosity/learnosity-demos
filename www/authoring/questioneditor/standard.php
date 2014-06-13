@@ -98,7 +98,7 @@ $questionTemplates = $result->getBody();
                                     "partial_scoring": true,
                                     "penalty_score": -0.5,
                                     "valid_score": 1
-                                    }
+                                }
                             }
                         }
                     },
