@@ -34,9 +34,6 @@ include_once 'includes/header.php';
         }, {
             reference: 'cloze',
             name: 'Fill in the Blanks (Cloze)'
-        }, {
-            reference: 'mcq',
-            name: 'Multiple Choice'
         }],
         question_types: {
             association: {
@@ -44,14 +41,11 @@ include_once 'includes/header.php';
             },
             clozetext: {
                 image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/clozet.png'
-            },
-            mcq: {
-                image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/mcqdefault.png'
             }
         },
         question_type_templates: {
             association: [{
-                name: 'Match List',
+                name: 'Custom Match List',
                 description: 'Match reponses with list',
                 group_reference: 'match',
                 defaults: {
@@ -85,132 +79,9 @@ include_once 'includes/header.php';
                 type: 'clozetext'
                 },
                 hidden: [
-                'description'
+                    'description'
                 ],
                 image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/clozet.png'
-            }],
-            mcq: [{
-                name: 'MCQ Standard',
-                description: 'Standard Multiple Choice Question',
-                group_reference: 'mcq',
-                defaults: {
-                    is_math: true,
-                    options: [{
-                        value: '0',
-                        label: '[Choice A]'
-                    }, {
-                        value: '1',
-                        label: '[Choice B]'
-                    }, {
-                        value: '2',
-                        label: '[Choice C]'
-                    }, {
-                        value: '3',
-                        label: '[Choice D]'
-                    }],
-                    stimulus: '[This is the STEM.]',
-                    type: 'mcq'
-                },
-                image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/mcqdefault.png',
-                hidden: [
-                    'description',
-                    'penalty_score',
-                    'is_math'
-                ]
-            }, {
-                name: 'MCQ Multi Response',
-                description: 'Multiple Choice Question with multiple responses',
-                group_reference: 'mcq',
-                defaults: {
-                    is_math: true,
-                    multiple_responses: true,
-                    options: [{
-                        value: '0',
-                        label: '[Choice A]'
-                    }, {
-                        value: '1',
-                        label: '[Choice B]'
-                    }, {
-                        value: '2',
-                        label: '[Choice C]'
-                    }, {
-                        value: '3',
-                        label: '[Choice D]'
-                    }],
-                    stimulus: '[This is the STEM.]',
-                    type: 'mcq'
-                },
-                image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/mcqmulti.png',
-                hidden: [
-                    'multiple_responses',
-                    'description',
-                    'penalty_score',
-                    'is_math'
-                ]
-            }, {
-                name: 'MCQ Block UI',
-                description: 'Multiple Choice Question with Block UI',
-                group_reference: 'mcq',
-                defaults: {
-                    is_math: true,
-                    options: [{
-                        value: '0',
-                        label: '[Choice A]'
-                    }, {
-                        value: '1',
-                        label: '[Choice B]'
-                    }, {
-                        value: '2',
-                        label: '[Choice C]'
-                    }, {
-                        value: '3',
-                        label: '[Choice D]'
-                    }],
-                    stimulus: '[This is the STEM.]',
-                    type: 'mcq',
-                    ui_style: {
-                        choice_label: 'upper-alpha',
-                        type: 'block'
-                    }
-                },
-                image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/mcqblock.png',
-                hidden: [
-                    'description',
-                    'penalty_score',
-                    'is_math'
-                ]
-            }, {
-                name: 'MCQ Horizontal - 2 Column',
-                description: 'Multiple Choice Question column format',
-                group_reference: 'mcq',
-                defaults: {
-                    is_math: true,
-                    options: [{
-                        value: '1',
-                        label: '[Choice A]'
-                    }, {
-                        value: '2',
-                        label: '[Choice B]'
-                    }, {
-                        value: '3',
-                        label: '[Choice C]'
-                    }, {
-                        value: '4',
-                        label: '[Choice D]'
-                    }],
-                    stimulus: '[This is the Stem.]',
-                    type: 'mcq',
-                    ui_style: {
-                        columns: 2,
-                        type: 'horizontal'
-                    }
-                },
-                image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/mcqcolumn.png',
-                hidden: [
-                    'description',
-                    'penalty_score',
-                    'is_math'
-                ]
             }]
         },
         template_defaults: false,
