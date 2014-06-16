@@ -46,7 +46,7 @@ include_once 'includes/header.php';
 </ul>
 
 <!-- Container for the question editor api to load into -->
-<script src="//questioneditor.vg.learnosity.com/?latest"></script>
+<script src="//questioneditor.learnosity.com/"></script>
 <div class="learnosity-question-editor"></div>
 <script>
     /********************************************************************
