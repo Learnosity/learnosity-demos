@@ -311,15 +311,12 @@ $questionTemplates = $result->getBody();
                             }
                         ],
                         "validation": {
-                            "partial_scoring": true,
-                            "penalty_score": -0.5,
-                            "valid_responses": [
-                                ["Florida"],
-                                ["Oregon"],
-                                ["Texas"],
-                                ["California"]
-                            ],
-                            "valid_score": 1
+                            "penalty": 0.5,
+                            "scoring_type": "partialMatch",
+                            "valid_response": {
+                                "score": 1,
+                                "value": ["Florida", "Oregon", "Texas", "California"]
+                            }
                         }
                     },
                     widgetType: 'response'

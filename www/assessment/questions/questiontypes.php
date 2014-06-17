@@ -213,17 +213,14 @@ $request = '{
             "instant_feedback": true,
             "case_sensitive": false,
             "max_length": 10,
-            "valid_responses": [
-                [{
-                    "value": "California"
-                }],
-                [{
-                    "value": "Texas"
-                }],
-                [{
-                    "value": "Florida"
-                }]
-            ]
+            "validation": {
+                "penalty": 0.5,
+                "scoring_type": "partialMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["Florida", "Oregon", "Texas", "California"]
+                }
+            }
         },
         {
             "response_id": "demo13-'.$uniqueResponseIdSuffix.'",
@@ -245,20 +242,14 @@ $request = '{
                 "x": 76.87,
                 "y": 81.72
             }],
-            "valid_responses": [
-                [{
-                    "value": "California",
-                    "score": 1
-                }],
-                 [{
-                    "value": "Texas",
-                    "score": 1
-                }],
-                 [{
-                    "value": "Florida",
-                    "score": 1
-                }]
-            ]
+            "validation": {
+                "penalty": 0.5,
+                "scoring_type": "partialMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["Florida", "Oregon", "Texas", "California"]
+                }
+            }
         },
         {
             "response_id": "demo14-'.$uniqueResponseIdSuffix.'",
