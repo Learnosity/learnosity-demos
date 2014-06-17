@@ -88,9 +88,9 @@ $signedRequest = $Init->generate();
                 lrnActivity.validItems(function (responseObj) {
 
 
-
+                    var validObj = checkIfValid (responseObj, question_id);
                     //if question isn't in the valid list, get distractor rationale and display
-                    if(!checkIfValid(responseObj, question_id)) {
+                    if(!validObj.correct) {
 
 
                         if(!q_meta.hasOwnProperty("distractor_rationale_response_level")) {
@@ -104,10 +104,10 @@ $signedRequest = $Init->generate();
                             lrnActivity.getQuestions(function(questions) {
 
                                 lrnActivity.getResponses(function(responses) {
-                                    question_validation = questions[question_id].validation.valid_response.value;
-                                    question_response = responses[question_id].value;
-                                    question_options = questions[question_id].options;
-                                    evaluateAnswers(question_id, question_validation, question_response, question_options, questions[question_id].type, q_meta);
+                                    var question_response = responses[question_id].value;
+                                    var question_options = questions[question_id].options;
+
+                                    evaluateAnswers(question_id, validObj.partial, question_response, question_options, questions[question_id].type, q_meta);
 
                                 });
                             });
@@ -118,32 +118,36 @@ $signedRequest = $Init->generate();
                         MathJax.Hub.Queue(['Typeset', MathJax.Hub, question_id + "_dr"]);
 
                     }
-                });
+                }, "detailedWithPartials");
             }
         });
 
+
         function evaluateAnswers (q_id, validation, response, options, type, metadata) {
             switch(type) {
-                case 'mcq' :
+                case "mcq" :
                     $.each(options, function(id, value) {
-                        if($.inArray(value.value, response) !== -1 && ($.inArray(value.value, validation)) === -1) {
-                            appendContent(q_id + "_dr", $('#' + q_id).parents().eq(1), metadata.distractor_rationale_response_level[id], "alert alert-danger");
+                        var responseLocation = $.inArray(value.value, response);
+
+                        if(responseLocation !== -1) {
+                            if (!validation[responseLocation] ) {
+                                appendContent(q_id + "_dr", $('#' + q_id).parents().eq(1), metadata.distractor_rationale_response_level[id], "alert alert-danger");
+                            }
                         }
                     });
                     break;
-                case 'clozeassociation' :
-                case 'association' :
-                case 'clozetext' :
-                    console.log('validation', validation);
-                    console.log('response', response);
-                    $.each(validation, function(id, value) {
-                        if(value != response[id] && (response[id] !== undefined && response[id] !== null)) {
+                case "association" :
+                case "clozeassociation" :
+                case "clozetext" :
+                    $.each(response, function(id, value) {
+                        if(!validation[id] && value != null) {
                             appendContent(q_id + "_dr", $('#' + q_id).parents().eq(1), metadata.distractor_rationale_response_level[id], "alert alert-danger");
                         }
                     });
                     break;
             }
         }
+
 
 
         function checkIfValid(responses, question_id) {
