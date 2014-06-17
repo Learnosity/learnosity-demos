@@ -14,20 +14,16 @@
 
 include_once 'config.php';
 
-use LearnositySdk\Request\Init;
-use LearnositySdk\Request\Remote;
+use LearnositySdk\Request\DataApi;
 
-$security = [
+$security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain
-];
+);
 $endpoint = (isset($_POST['endpoint'])) ? $_POST['endpoint'] : null;
 $data     = (isset($_POST['request'])) ? $_POST['request'] : null;
 
-$Init = new Init('data', $security, $consumer_secret, $data);
-$signedRequest = $Init->generate();
-
-$Remote = new Remote();
-$response = $Remote->post($endpoint, $signedRequest);
+$dataapi = new DataApi();
+$response = $dataapi->request($endpoint, $security, $consumer_secret, $data);
 
 echo $response->getBody();
