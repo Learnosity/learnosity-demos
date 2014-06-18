@@ -58,19 +58,11 @@ include_once 'includes/header.php';
     var initObjects = {
             newQuestion: {
                 description: 'Question type tile thumbnails are templates of commonly used question configuration.',
-                json: {
-                    configuration: {
-                        questionsApiVersion: 'v2'
-                    },
-                    widgetType: 'response'
-                }
+                json: {}
             },
             extended: {
                 description: 'The defaults can be extended to include customised question type templates and groupings.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: 'v2'
-                    },
                     question_type_groups: [{
                         reference: 'custom',
                         name: 'My Custom Group'
@@ -118,16 +110,12 @@ include_once 'includes/header.php';
                                 choice_label: 'upper-alpha'
                             }
                         }]
-                    },
-                    widget_type: 'response'
+                    }
                 }
             },
             limitedquestions: {
                 description: 'In this example, we are only displaying a small selection of question types, by setting <em>template_defaults</em> to <em>false</em>.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: 'v2'
-                    },
                     question_type_groups: [{
                         reference: 'match',
                         name: 'Classify, Match & Order'
@@ -184,16 +172,12 @@ include_once 'includes/header.php';
                             image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/clozet.png'
                         }]
                     },
-                    template_defaults: false,
-                    widget_type: 'response'
+                    template_defaults: false
                 }
             },
             singlequestion: {
                 description: "In this example we're defaulting the editor to allow editing of only one question type by setting <em>template_defaults</em> to <em>false</em> and only adding one type to <em>question_types</em>. We're also setting certain attributes before the author sees it, like <em>instant_feedback</em> being set to true, a default <em>Stimulus</em> being set etc.",
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
                     question_types: {
                         association: {
                             group_reference: 'match',
@@ -210,17 +194,13 @@ include_once 'includes/header.php';
                             }
                         }
                     },
-                    template_defaults: false,
-                    widgetType: 'response'
+                    template_defaults: false
                 }
             },
             disabled: {
                 description: 'In this example we\'re hiding certain '
                 + 'attributes to demonstrate the flexibility you can provide to authors.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
                     question_types: {
                         clozetext: {
                             hidden: [
@@ -230,8 +210,7 @@ include_once 'includes/header.php';
                             ]
                         }
                     },
-                    template_defaults: false,
-                    widgetType: 'response'
+                    template_defaults: false
                 }
             },
             defaultsdisabled: {
@@ -239,9 +218,6 @@ include_once 'includes/header.php';
                 + 'editing of only one question type. We\'re also hiding certain '
                 + 'attributes to demonstrate the flexibility you can provide to authors.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
                     question_types: {
                         clozeassociation: {
                             hidden: [ "description", "feedback_attempts", "instant_feedback",
@@ -255,8 +231,7 @@ include_once 'includes/header.php';
                             }
                         }
                     },
-                    template_defaults: false,
-                    widgetType: 'response'
+                    template_defaults: false
                 }
             },
             defaultsdisabledgraphing: {
@@ -264,11 +239,7 @@ include_once 'includes/header.php';
                 + 'very simple templating of Graphing Questions. We\'re also hiding certain '
                 + 'attributes to demonstrate the flexibility you can provide to authors.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: 'v2'
-                    },
                     template_defaults: false,
-                    widgetType: 'response',
                     question_types: {
                     graphplotting: {
                             hidden: [ 'description', 'feedback_attempts', 'instant_feedback',
@@ -336,10 +307,6 @@ include_once 'includes/header.php';
             assetuploadexample: {
                 description: 'Example of the custom asset uploader.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
-                    widgetType: 'response',
                     template_defaults: false,
                     question_types: {
                         imageclozeassociation: {
@@ -400,9 +367,6 @@ include_once 'includes/header.php';
             edit: {
                 description: 'In this example we\'re editing a previously created question.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
                     question_types : ["imageclozeassociation"],
                     widget_json: {
                         "type": "imageclozeassociation",
@@ -434,17 +398,13 @@ include_once 'includes/header.php';
                             ],
                             "valid_score": 1
                         }
-                    },
-                    widgetType: 'response'
+                    }
                 }
             },
             feedback: {
                 description: 'For teacher and grader feedback/rubrics. Default '
                     + 'editor with an existing rating feedback type.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: 'v2'
-                    },
                     widget_json: {
                         'options': [
                             {
@@ -485,9 +445,6 @@ include_once 'includes/header.php';
                 description: 'Stimulus Features like Audio and Video. Default '
                     + 'editor with an existing video feature.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
                     widget_json: {
                         "src": "//www.youtube.com/watch?feature=player_detailpage&amp;v=flL7M36QszA",
                         "type": "videoplayer"
