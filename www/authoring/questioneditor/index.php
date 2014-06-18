@@ -55,8 +55,7 @@ include_once 'includes/header.php';
     * example currently being requested
     *
     ********************************************************************/
-    var initType,
-        initObjects = {
+    var initObjects = {
             newQuestion: {
                 description: 'Question type tile thumbnails are templates of commonly used question configuration.',
                 json: {
