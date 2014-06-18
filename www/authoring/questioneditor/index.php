@@ -137,11 +137,9 @@ include_once 'includes/header.php';
                     }],
                     question_types: {
                         association: {
-                            group_reference: 'match',
                             image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/association.png'
                         },
                         clozetext: {
-                            group_reference: 'cloze',
                             image: '//dw6y82u65ww8h.cloudfront.net/questiontypes/tiles/clozet.png'
                         }
                     },
