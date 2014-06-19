@@ -11,7 +11,7 @@ $security = array(
     'user_id'      => $studentid
 );
 
-$uniqueResponseIdSuffix = Uuid::generate();
+$uniqueResponseIdSuffix = substr(Uuid::generate(), 0, 23);
 
 $request = array(
     'name'           => 'Demo Activity (8 questions)',
