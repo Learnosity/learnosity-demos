@@ -42,7 +42,6 @@ $request = '{
                 {"value" : "violet", "score": 1}
             ],
             "instant_feedback" : true,
-            "feedback_attempts" : 1,
             "multiple_responses": false,
             "penalty_score": -1
         },
