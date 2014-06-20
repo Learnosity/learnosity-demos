@@ -372,9 +372,9 @@ $signedRequest = $Init->generate();
                             <section>
                                 <h3 class="report-title">Last Score Single</h3>
                                 <p class="lrn-report-summary">
-                                    Obtain the latest activity score in a single bar or chart format (each bar/chart below is a separate report).
-                                </p>
-                                <p class="lrn-report-summary">Score progress bars and charts can trigger onClick events to tie into other reports.</p>
+                                    Single reports are designed to be embedded within content pages.</p> 
+                                    <p class="lrn-report-summary">Obtain the latest activity score in a single bar or chart format (each bar/chart below is a separate report).</p>
+                                    <p class="lrn-report-summary">Score progress bars and charts can trigger onClick events to tie into other reports.</p>
                                 <table class="lrn-single-reports">
                                     <tr>
                                         <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-10"></span></div></td>
@@ -450,6 +450,8 @@ $signedRequest = $Init->generate();
                         <div class="tab-pane" id="progress-single">
                             <section>
                                 <h3 class="report-title">Progress Single</h3>
+                                <p class="lrn-report-summary">
+                                    Single reports are designed to be embedded within content pages.</p> 
                                 <p class="lrn-report-summary">
                                     Gather insight into user progress according to your assigned tag hierarchy (each bar/chart below is a separate report).
                                 </p>
