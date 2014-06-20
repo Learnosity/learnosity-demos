@@ -271,7 +271,7 @@ $signedRequest = $Init->generate();
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-sessions">
+            <a id="accordion-report-session" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-sessions">
                 Reports By Session
             </a>
             </h4>
@@ -281,10 +281,10 @@ $signedRequest = $Init->generate();
                 <div id="lrn-reports-demos-sessions-content">
                     <div class="lrn-nav-tabs lrn-nav-sessions pull-left">
                         <ul class="nav nav-tabs tabs-left">
-                          <li class="active"><a id="lrn-nav-session-summary" href="#sessions-summary" data-toggle="tab">Sessions Summary</a></li>
-                          <li><a id="lrn-nav-session-list" href="#sessions-list" data-toggle="tab">Sessions List</a></li>
-                          <li><a id="lrn-nav-session-detail" href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
-                          <li><a id="lrn-nav-session-tags" href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
+                          <li class="active"><a id="report-session-summary" href="#sessions-summary" data-toggle="tab">Sessions Summary</a></li>
+                          <li><a id="report-session-list" href="#sessions-list" data-toggle="tab">Sessions List</a></li>
+                          <li><a id="report-session-detail" href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
+                          <li><a id="report-session-tags" href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
                         </ul>
                     </div>
                     <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
@@ -326,7 +326,7 @@ $signedRequest = $Init->generate();
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-lastscore">
+                <a id="accordion-report-lastscore" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-lastscore">
                     Reports By Last Score
                 </a>
             </h4>
@@ -336,11 +336,11 @@ $signedRequest = $Init->generate();
                 <div id="lrn-reports-demos-lastscore-content">
                     <div class="lrn-nav-tabs lrn-nav-lastscore pull-left">
                         <ul class="nav nav-tabs tabs-left">
-                            <li class="active"><a id="lrn-nav-lastscore-activity" href="#lastscore-activity" data-toggle="tab">Last Score By Activity</a></li>
-                            <li><a id="lrn-nav-lastscore-user" href="#lastscore-user" data-toggle="tab">Last Score By Activity By User</a></li>
-                            <li><a id="lrn-nav-lastscore-single" href="#lastscore-single" data-toggle="tab">Last Score Single</a></li>
-                            <li><a id="lrn-nav-lastscore-item" href="#lastscore-item" data-toggle="tab">Last Score By Item By User</a></li>
-                            <li><a id="lrn-nav-lastscore-tag" href="#lastscore-tag" data-toggle="tab">Last Score By Tag By User</a></li>
+                            <li class="active"><a id="report-lastscore-activity" href="#lastscore-activity" data-toggle="tab">Last Score By Activity</a></li>
+                            <li><a id="report-lastscore-user" href="#lastscore-user" data-toggle="tab">Last Score By Activity By User</a></li>
+                            <li><a id="report-lastscore-single" href="#lastscore-single" data-toggle="tab">Last Score Single</a></li>
+                            <li><a id="report-lastscore-item" href="#lastscore-item" data-toggle="tab">Last Score By Item By User</a></li>
+                            <li><a id="report-lastscore-tag" href="#lastscore-tag" data-toggle="tab">Last Score By Tag By User</a></li>
                         </ul>
                     </div>
                     <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
@@ -422,7 +422,7 @@ $signedRequest = $Init->generate();
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-progress">
+                <a id="accordion-report-progress" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-progress">
                     Reports By Progress
                 </a>
             </h4>
@@ -432,8 +432,8 @@ $signedRequest = $Init->generate();
                 <div id="lrn-reports-demos-progress-content">
                     <div class="lrn-nav-tabs lrn-nav-progress pull-left">
                         <ul class="nav nav-tabs tabs-left">
-                          <li class="active"><a id="lrn-nav-progress-by-tag-table" href="#progress-by-tag-table" data-toggle="tab">Progress By Tag Table</a></li>
-                          <li><a id="lrn-nav-progress-single" href="#progress-single" data-toggle="tab">Progress Single</a></li>
+                          <li class="active"><a id="report-progress-by-tag-table" href="#progress-by-tag-table" data-toggle="tab">Progress By Tag Table</a></li>
+                          <li><a id="report-progress-single" href="#progress-single" data-toggle="tab">Progress Single</a></li>
                         </ul>
                     </div>
                     <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
@@ -611,7 +611,7 @@ $signedRequest = $Init->generate();
         });
 
         // Sessions detail hidden width fix
-        $('a#lrn-nav-session-detail').click(function (e) {
+        $('a#report-session-detail').click(function (e) {
             e.preventDefault();
             $(this).tab('show');
             $('.lrn_response_innerbody').width('100%');
@@ -619,7 +619,7 @@ $signedRequest = $Init->generate();
         });
 
         // lastscore-single hidden width fix
-        $('a#lrn-nav-lastscore-single').click(function (e) {
+        $('a#report-lastscore-single').click(function (e) {
             e.preventDefault();
             $(this).tab('show');
             $('.lastscore-single canvas').each(function () {
@@ -628,6 +628,22 @@ $signedRequest = $Init->generate();
                 $(this).height(size);
             });
         });
+
+        function displayReport() {
+            var report = window.location.hash.substring(1);
+            if (report) {
+                var parts = report.split('-');
+                if (parts.length >= 3) {
+                    if (parts[1] !== 'session') {
+                        $('#accordion-' + parts[0] + '-' + parts[1]).click();
+                    }
+                    $('#' + report).click();
+                    $(window).scrollTop($('#' + report).offset().top);
+                }
+            }
+            return false;
+        }
+        displayReport();
     }
 </script>
 
