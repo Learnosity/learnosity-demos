@@ -60,7 +60,7 @@ $signedRequest = $Init->generate();
 </p>
 
 <!-- Container for the items api to load into -->
-<script src="//items.vg.learnosity.com/"></script>
+<script src="//items.staging.learnosity.com/"></script>
 <script src="itemsapi_distractors/response-level-map.js"></script>
 <script>
     var eventOptions = {
