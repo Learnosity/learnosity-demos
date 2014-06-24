@@ -27,7 +27,14 @@ function mapResponseLevel (question, response, valid) {
         case "imageclozedropdown":
         case "imageclozetext":
         case "choicematrix":
-            out = valid.partial;
+            out = [];
+            $.each(response.value, function (index, responseValue) {
+                if(responseValue == null) {
+                    out[index] = responseValue;
+                } else {
+                    out[index] = valid.partial[index];
+                }
+            });
             break;
         }
     }
