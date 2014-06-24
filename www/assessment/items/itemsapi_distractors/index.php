@@ -1,17 +1,17 @@
 <?php
 
 include_once '../../../config.php';
-include_once 'utils/uuid.php';
-include_once 'utils/RequestHelper.php';
 include_once 'includes/header.php';
 
-$session_id = Uuid::generate();
+use LearnositySdk\Request\Init;
+use LearnositySdk\Utils\Uuid;
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'domain'       => $domain,
-    'timestamp'    => $timestamp
+    'domain'       => $domain
 );
+
+$session_id = Uuid::generate();
 
 $request = array(
     'user_id'        => $studentid,
@@ -49,14 +49,8 @@ $request = array(
     )
 );
 
-$RequestHelper = new RequestHelper(
-    'items',
-    $security,
-    $consumer_secret,
-    $request
-);
-
-$signedRequest = $RequestHelper->generateRequest();
+$Init = new Init('items', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 <link rel="stylesheet" href="demo.css">

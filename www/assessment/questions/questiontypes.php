@@ -42,7 +42,6 @@ $request = '{
                 {"value" : "violet", "score": 1}
             ],
             "instant_feedback" : true,
-            "feedback_attempts" : 1,
             "multiple_responses": false,
             "penalty_score": -1
         },
@@ -213,17 +212,14 @@ $request = '{
             "instant_feedback": true,
             "case_sensitive": false,
             "max_length": 10,
-            "valid_responses": [
-                [{
-                    "value": "California"
-                }],
-                [{
-                    "value": "Texas"
-                }],
-                [{
-                    "value": "Florida"
-                }]
-            ]
+            "validation": {
+                "penalty": 0.5,
+                "scoring_type": "partialMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["Florida", "Oregon", "Texas", "California"]
+                }
+            }
         },
         {
             "response_id": "demo13-'.$uniqueResponseIdSuffix.'",
@@ -245,20 +241,14 @@ $request = '{
                 "x": 76.87,
                 "y": 81.72
             }],
-            "valid_responses": [
-                [{
-                    "value": "California",
-                    "score": 1
-                }],
-                 [{
-                    "value": "Texas",
-                    "score": 1
-                }],
-                 [{
-                    "value": "Florida",
-                    "score": 1
-                }]
-            ]
+            "validation": {
+                "penalty": 0.5,
+                "scoring_type": "partialMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["Florida", "Oregon", "Texas", "California"]
+                }
+            }
         },
         {
             "response_id": "demo14-'.$uniqueResponseIdSuffix.'",
@@ -1000,14 +990,11 @@ $request = '{
         {
             "response_id": "demo36-'.$uniqueResponseIdSuffix.'",
             "type": "simplechart",
+            "ui_style": {
+                "chart_type": "bar"
+            },
             "description": "An empty bar chart.",
-            "axes": {
-                "x": "label",
-                "y": "value"
-            },
-            "domains": {
-                "y": [0, 10]
-            },
+            "max_y_value": 10,
             "chart_data": {
                 "name": "Favourite movie type",
                 "data": [
@@ -1035,14 +1022,13 @@ $request = '{
         {
             "response_id": "demo37-'.$uniqueResponseIdSuffix.'",
             "type": "simplechart",
-            "description": "Sort a bar chart.",
-            "axes": {
-                "x": "label",
-                "y": "value"
+            "ui_style": {
+                "chart_type": "bar"
             },
-            "add_bar": false,
-            "order_bar": true,
-            "resize_bar": false,
+            "description": "Sort a bar chart.",
+            "add_point": false,
+            "order_point": true,
+            "resize_point": false,
             "chart_data": {
                 "name": "Animals by size (cm)",
                 "data": [
@@ -1062,6 +1048,58 @@ $request = '{
                         { "x": "Cat", "y": 25 },
                         { "x": "Sheep", "y": 100 },
                         { "x": "Horse", "y": 225 }
+                    ],
+                    "score": 1
+                }
+            },
+            "instant_feedback": true
+        },
+        {
+            "response_id": "demo38-'.$uniqueResponseIdSuffix.'",
+            "type": "simplechart",
+            "ui_style": {
+                "chart_type": "line"
+            },
+            "max_y_value": 100,
+            "x_axis_label": "X axis title",
+            "y_axis_label": "Y axis title",
+            "resize_point": true,
+            "delete_point": true,
+            "edit_label": true,
+            "chart_data": {
+                "name": "Random data",
+                "data": [
+                    { "x": "A", "y": 100 },
+                    { "x": "B", "y": 0 },
+                    { "x": "C", "y": 90 },
+                    { "x": "D", "y": 10 },
+                    { "x": "E", "y": 80},
+                    { "x": "F", "y": 20 },
+                    { "x": "G", "y": 70 },
+                    { "x": "H", "y": 30 },
+                    { "x": "I", "y": 60 },
+                    { "x": "J", "y": 40 },
+                    { "x": "K", "y": 50 },
+                    { "x": "L", "y": 50 }
+                ]
+            },
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "value": [
+                        { "x": "A", "y": 100 },
+                        { "x": "B", "y": 0 },
+                        { "x": "C", "y": 90 },
+                        { "x": "D", "y": 10 },
+                        { "x": "E", "y": 80},
+                        { "x": "F", "y": 20 },
+                        { "x": "G", "y": 70 },
+                        { "x": "H", "y": 30 },
+                        { "x": "I", "y": 60 },
+                        { "x": "J", "y": 40 },
+                        { "x": "K", "y": 50 },
+                        { "x": "L", "y": 40 },
+                        { "x": "M", "y": 60 }
                     ],
                     "score": 1
                 }
@@ -1443,7 +1481,7 @@ $signedRequest = $Init->generate();
 
 <div class="row">
     <div class="col-md-8">
-        <h3 id="q36">Simple Chart</h3>
+        <h3 id="q36">Simple Chart - Bar</h3>
         <p><span class="label label-info">Hint</span> Resize <em>Romance</em> to 4 and add a new <em>SciFi</em> bar with a y-axis value of 4.</p>
         <span class="learnosity-response question-demo36-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
@@ -1452,9 +1490,18 @@ $signedRequest = $Init->generate();
 
 <div class="row">
     <div class="col-md-8">
-        <h3 id="q37">Simple Chart - Sorting</h3>
+        <h3 id="q37">Simple Chart - Bar Sorting</h3>
         <p><span class="label label-info">Hint</span> Sort the chart (ascending) by clicking on the arrows.</p>
         <span class="learnosity-response question-demo37-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3 id="q36">Simple Chart - Line</h3>
+        <p><span class="label label-info">hint</span> Resize L to 40 and add a new point (M) and set its value to 60.</p>
+        <span class="learnosity-response question-demo38-<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
 </div>
 <hr>

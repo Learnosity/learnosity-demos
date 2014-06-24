@@ -141,6 +141,19 @@ td {
         width:90%;
    }
 }
+.lrn-single-report {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+}
+.lrn-single-reports {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.lrn-single-reports td {
+    border: 0 none !important;
+    padding: 10px;
+}
 
 /********************************************************************
 *
@@ -268,6 +281,49 @@ td {
 
 /********************************************************************
 *
+* Vertical Navigation Tabs
+*
+********************************************************************/
+.tabs-left, .tabs-right {
+    border-bottom: none;
+    padding-top: 2px;
+}
+.tabs-left {
+    border-right: 1px solid #ddd;
+}
+.tabs-right {
+    border-left: 1px solid #ddd;
+}
+.tabs-left>li, .tabs-right>li {
+    float: none;
+    margin-bottom: 2px;
+}
+.tabs-left>li {
+    margin-right: -1px;
+}
+.tabs-right>li {
+    margin-left: -1px;
+}
+.tabs-left>li.active>a, .tabs-left>li.active>a:hover, .tabs-left>li.active>a:focus {
+    border-bottom-color: #ddd;
+    border-right-color: transparent;
+}
+.tabs-right>li.active>a, .tabs-right>li.active>a:hover, .tabs-right>li.active>a:focus {
+    border-bottom: 1px solid #ddd;
+    border-left-color: transparent;
+}
+.tabs-left>li>a {
+    border-radius: 4px 0 0 4px;
+    margin-right: 0;
+    display:block;
+}
+.tabs-right>li>a {
+    border-radius: 0 4px 4px 0;
+    margin-right: 0;
+}
+
+/********************************************************************
+*
 * Data API
 *
 ********************************************************************/
@@ -279,6 +335,42 @@ td {
     border: 1px solid transparent;
     padding: 10px 15px;
     text-transform: uppercase;
+}
+
+/********************************************************************
+*
+* Reports API
+*
+********************************************************************/
+.lrn-reports-vertical-content {
+    margin-left: -1px;
+    min-width: 750px;
+    width: 880px;
+    border-left: 1px solid #ddd;
+    padding-left: 30px;
+}
+.lrn-nav-tabs {
+    min-width: 250px;
+    width: 250px;
+    height: 100%;
+}
+.lrn-nav-reports ul.nav-tabs .padding {
+    height: 37px;
+}
+.lrn-reports-content {
+    min-width: 1100px;
+    height: 100%;
+}
+.lrn-reports-summary {
+    font-size: 13px;
+}
+html,
+body,
+.lrn-nav-reports ul {
+    height: 100%;
+}
+.lrn-reports-demo-wrapper {
+    padding: 20px;
 }
 
 /********************************************************************
