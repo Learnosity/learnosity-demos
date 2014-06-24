@@ -3,13 +3,6 @@
 include_once '../../config.php';
 include_once 'includes/header.php';
 
-use LearnositySdk\Request\Remote;
-use LearnositySdk\Utils\Json;
-
-$Remote = new Remote();
-$result = $Remote->get('http://schemas.learnosity.com/stable/questions/templates');
-$questionTemplates = $result->getBody();
-
 ?>
 
 <div class="jumbotron">
@@ -38,8 +31,6 @@ $questionTemplates = $result->getBody();
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">New Question<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li><a href="#" data-type="newQuestion" id="newQuestion">New Question</a></li>
-            <li><a href="#" data-type="defaults" id="defaults">with defaults</a></li>
-            <li><a href="#" data-type="disabled" id="disabled">with certain attributes disabled</a></li>
             <li><a href="#" data-type="defaultsdisabled" id="defaultsdisabled">with certain attributes disabled and defaults</a></li>
             <li><a href="#" data-type="defaultsdisabledgraphing" id="defaultsdisabledgraphing">with certain attributes disabled and defaults (Graphing)</a></li>
             <li><a href="#" data-type="assetuploadexample" id="assetupload">with image gallery asset handler</a></li>
@@ -51,7 +42,7 @@ $questionTemplates = $result->getBody();
 </ul>
 
 <!-- Container for the question editor api to load into -->
-<script src="//questioneditor.learnosity.com"></script>
+<script src="//questioneditor.learnosity.com/"></script>
 <div class="learnosity-question-editor"></div>
 <script>
     /********************************************************************
@@ -60,78 +51,16 @@ $questionTemplates = $result->getBody();
     * example currently being requested
     *
     ********************************************************************/
-    var initType,
-        questionTemplates = <?php echo $questionTemplates ?>.data,
-        initObjects = {
+    var initObjects = {
             newQuestion: {
                 description: 'Question type tile thumbnails are templates of commonly used question configuration.',
-                json: {
-                    ui: {
-                        question_tiles: true
-                    },
-                    configuration: {
-                        questionsApiVersion: 'v2'
-                    },
-                    widgetType: 'response',
-                    question_types: questionTemplates.question_types,
-                    question_type_templates: questionTemplates.question_type_templates,
-                    question_type_groups: questionTemplates.question_type_groups
-                }
-            },
-            defaults: {
-                description: 'In this example we\'re defaulting the editor to allow '
-                    + 'editing of only one question type. We\'re also setting certain '
-                    + 'attributes before the author sees it, like <em>instant_feedback</em> '
-                    + 'being set to true, a default <em>Stimulus</em> being set etc.',
-                json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
-                    question_types: {
-                        association: {
-                            defaults: {
-                                "type": "association",
-                                "feedback_attempts": 5,
-                                "instant_feedback": true,
-                                "stimulus": "<p>Question stimulus goes here.</p>",
-                                "validation": {
-                                    "partial_scoring": true,
-                                    "penalty_score": -0.5,
-                                    "valid_score": 1
-                                    }
-                            }
-                        }
-                    },
-                    widgetType: 'response'
-                }
-            },
-            disabled: {
-                description: 'In this example we\'re hiding certain '
-                + 'attributes to demonstrate the flexibility you can provide to authors.',
-                json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
-                    question_types: {
-                        clozetext: {
-                            hidden: [
-                                "character_map", "description", "feedback_attempts",
-                                "instant_feedback", "is_math", "max_length",
-                                "metadata", "response_container", "spellcheck", "stimulus_review"
-                            ]
-                        }
-                    },
-                    widgetType: 'response'
-                }
+                json: {}
             },
             defaultsdisabled: {
                 description: 'In this example we\'re defaulting the editor to allow '
                 + 'editing of only one question type. We\'re also hiding certain '
                 + 'attributes to demonstrate the flexibility you can provide to authors.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
                     question_types: {
                         clozeassociation: {
                             hidden: [ "description", "feedback_attempts", "instant_feedback",
@@ -145,7 +74,7 @@ $questionTemplates = $result->getBody();
                             }
                         }
                     },
-                    widgetType: 'response'
+                    template_defaults: false
                 }
             },
             defaultsdisabledgraphing: {
@@ -153,57 +82,54 @@ $questionTemplates = $result->getBody();
                 + 'very simple templating of Graphing Questions. We\'re also hiding certain '
                 + 'attributes to demonstrate the flexibility you can provide to authors.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
-                    widgetType: 'response',
+                    template_defaults: false,
                     question_types: {
-                        graphplotting: {
-                            hidden: [ "description", "feedback_attempts", "instant_feedback",
-                                "is_math", "grid", "axis_x", "axis_y",
-                                "draw_zero", "stimulus_review", "annotation", "mode","ui_style"
+                    graphplotting: {
+                            hidden: [ 'description', 'feedback_attempts', 'instant_feedback',
+                                'is_math', 'grid', 'axis_x', 'axis_y',
+                                'draw_zero', 'stimulus_review', 'annotation', 'mode','ui_style'
                             ],
-                            defaults : {
-                                annotation : {
-                                    "label_right": "\\(X\\)",
-                                    "label_top": "\\(Y\\)"
-                                },
-                                axis_x : {
-                                    "draw_labels": true,
-                                    "show_first_arrow": true,
-                                    "show_last_arrow": true,
-                                    "ticks_distance": 1
-                                },
-                                axis_y : {
-                                    "draw_labels": true,
-                                    "show_first_arrow": true,
-                                    "show_last_arrow": true,
-                                    "ticks_distance": 1
-                                },
-                                canvas : {
-                                    "show_hover_position": true,
-                                    "snap_to": "grid",
-                                    "x_max": 10.5,
-                                    "x_min": -10.5,
-                                    "y_max": 10.5,
-                                    "y_min": -10.5
-                                } ,
-                                draw_zero: true,
-                                grid : {
-                                    "x_distance": 1,
-                                    "y_distance": 1
-                                },
-                                instant_feedback : true,
-                                is_math : true,
-                                stimulus : "Enter the question stimulus here.",
-                                "validation": {
-                                    "penalty_score": "0",
-                                    "valid_responses": [],
-                                    "valid_score": "1"
-                                }
+                        defaults : {
+                            annotation : {
+                                'label_right': '\\(X\\)',
+                                'label_top': '\\(Y\\)'
+                            },
+                            axis_x : {
+                                'draw_labels': true,
+                                'show_first_arrow': true,
+                                'show_last_arrow': true,
+                                'ticks_distance': 1
+                            },
+                            axis_y : {
+                                'draw_labels': true,
+                                'show_first_arrow': true,
+                                'show_last_arrow': true,
+                                'ticks_distance': 1
+                            },
+                            canvas : {
+                                'show_hover_position': true,
+                                'snap_to': 'grid',
+                                'x_max': 10.5,
+                                'x_min': -10.5,
+                                'y_max': 10.5,
+                                'y_min': -10.5
+                            } ,
+                            draw_zero: true,
+                            grid : {
+                                'x_distance': 1,
+                                'y_distance': 1
+                            },
+                            instant_feedback : true,
+                            is_math : true,
+                            stimulus : 'Enter the question stimulus here.',
+                            validation: {
+                                'penalty_score': '0',
+                                'valid_responses': [],
+                                'valid_score': '1'
                             }
                         }
-                    },
+                    }
+                },
                 ui: {
                         columns: [
                             {
@@ -224,10 +150,7 @@ $questionTemplates = $result->getBody();
             assetuploadexample: {
                 description: 'Example of the custom asset uploader.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
-                    widgetType: 'response',
+                    template_defaults: false,
                     question_types: {
                         imageclozeassociation: {
                             defaults: {
@@ -243,7 +166,7 @@ $questionTemplates = $result->getBody();
                                     }, {
                                     "x": 45,
                                     "y": 24.94
-                                    }]
+                                }]
                             }
                         }
                     },
@@ -287,9 +210,6 @@ $questionTemplates = $result->getBody();
             edit: {
                 description: 'In this example we\'re editing a previously created question.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
                     question_types : ["imageclozeassociation"],
                     widget_json: {
                         "type": "imageclozeassociation",
@@ -318,17 +238,13 @@ $questionTemplates = $result->getBody();
                                 "value": ["Florida", "Oregon", "Texas", "California"]
                             }
                         }
-                    },
-                    widgetType: 'response'
+                    }
                 }
             },
             feedback: {
                 description: 'For teacher and grader feedback/rubrics. Default '
                     + 'editor with an existing rating feedback type.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: 'v2'
-                    },
                     widget_json: {
                         'options': [
                             {
@@ -369,9 +285,6 @@ $questionTemplates = $result->getBody();
                 description: 'Stimulus Features like Audio and Video. Default '
                     + 'editor with an existing video feature.',
                 json: {
-                    configuration: {
-                        questionsApiVersion: "v2"
-                    },
                     widget_json: {
                         "src": "//www.youtube.com/watch?feature=player_detailpage&amp;v=flL7M36QszA",
                         "type": "videoplayer"
@@ -383,7 +296,6 @@ $questionTemplates = $result->getBody();
 
     function changeExample(evt) {
         var type = $(this).attr('data-type');
-        console.log(type);
         evt.preventDefault();
         $('#nav-questioneditor').find('li').removeClass('active');
         if ($(this).closest('ul').hasClass('dropdown-menu')) {
