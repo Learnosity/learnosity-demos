@@ -8,10 +8,9 @@ use LearnositySdk\Utils\Uuid;
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'domain'       => $domain
+    'domain'       => $domain,
+    'timestamp'    => $timestamp
 );
-
-$session_id = Uuid::generate();
 
 $request = array(
     'user_id'        => $studentid,
@@ -19,13 +18,13 @@ $request = array(
     'name'           => 'Items API demo - Inline Activity.',
     'state'          => 'initial',
     'activity_id'    => 'itemsinlinedemo',
-    'session_id'     => $session_id,
+    'session_id'     => Uuid::generate(),
     'course_id'      => $courseid,
-    'items'          => array('act1', 'act2', 'act3','act4','act5','act6'),
+    'items'          => array('act1','act2','act3','act4','act5','act6'),
     'type'           => 'submit_practice',
     'config'         => array(
-        'questionsApiVersion' => 'v2',
-        'renderSubmitButton'  => false
+        'renderSubmitButton'  => true,
+        'questionsApiVersion' => 'v2'
     )
 );
 
@@ -34,186 +33,9 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<!-- Container for the items api to load into -->
-<script src="//items.learnosity.com/"></script>
-<script>
-    var options = {
-            readyListener: initApp
-        },
-        ItemsAPI,
-        metadata,
-        activity = <?php echo $signedRequest; ?>;
-
-    // Set a local variable from the init() method to access the public methods available
-    lrnActivity = LearnosityItems.init(activity, options);
-
-    /**
-     * Method called from the Questions API ready listener
-     */
-    function initApp() {
-        metadata = getMetadata();
-        var question_ids = getObjectKeys(metadata);
-        console.log(metadata);
-        // attach an onclick function to each questions "check answer"
-        // to display any distractor rationale for wrong answers
-        for (var i = 0; i < question_ids.length; i++) {
-            var question_id = question_ids[i];
-            console.log('#' + question_id);
-            $('#' + question_id + " .lrn_btn").click({id : question_id}, function(event) {
-                renderDistractorRationale(event.data.id);
-            });
-
-        }
-    }
-
-    /**
-     * Render any distractor rationale retrieved from the question metadata
-     * @param  {string} question_id The question to render a distratctor rationale for
-     */
-    function renderDistractorRationale(question_id) {
-        // get hints container..
-
-        lrnActivity.attemptedQuestions(function (responseIds) {
-
-
-            //check if question has been attempted
-            if($.inArray(question_id, responseIds) !== -1) {
-                var q_meta = metadata[question_id];
-
-
-                //hide and reset contents of display box until needed
-                $('#' + question_id + "_dr").hide().text("");
-
-
-                lrnActivity.validItems(function (responseObj) {
-
-
-                    var validObj = checkIfValid (responseObj, question_id);
-                    //if question isn't in the valid list, get distractor rationale and display
-                    if(!validObj.correct) {
-
-
-                        if(!q_meta.hasOwnProperty("distractor_rationale_response_level")) {
-                            //response level metadata takes precedence
-                            appendContent(question_id + "_dr", $('#' + question_id).parents().eq(1), q_meta.distractor_rationale, "alert alert-danger");
-
-                        } else {
-
-                            //do comparison to see if the answer is correct or not.
-                            //This should hopefully disappear once we get 'detailedWithPartial' support into validItems.
-                            lrnActivity.getQuestions(function(questions) {
-
-                                lrnActivity.getResponses(function(responses) {
-                                    var question_response = responses[question_id].value;
-                                    var question_options = questions[question_id].options;
-
-                                    evaluateAnswers(question_id, validObj.partial, question_response, question_options, questions[question_id].type, q_meta);
-
-                                });
-                            });
-                        }
-                        if($('#' + question_id + "_dr").text() !== "") {
-                            $('#' + question_id + "_dr").show();
-                        }
-                        MathJax.Hub.Queue(['Typeset', MathJax.Hub, question_id + "_dr"]);
-
-                    }
-                }, "detailedWithPartials");
-            }
-        });
-
-
-        function evaluateAnswers (q_id, validation, response, options, type, metadata) {
-            switch(type) {
-                case "mcq" :
-                    $.each(options, function(id, value) {
-                        var responseLocation = $.inArray(value.value, response);
-
-                        if(responseLocation !== -1) {
-                            if (!validation[responseLocation] ) {
-                                appendContent(q_id + "_dr", $('#' + q_id).parents().eq(1), metadata.distractor_rationale_response_level[id], "alert alert-danger");
-                            }
-                        }
-                    });
-                    break;
-                case "association" :
-                case "clozeassociation" :
-                case "clozetext" :
-                    $.each(response, function(id, value) {
-                        if(!validation[id] && value != null) {
-                            appendContent(q_id + "_dr", $('#' + q_id).parents().eq(1), metadata.distractor_rationale_response_level[id], "alert alert-danger");
-                        }
-                    });
-                    break;
-            }
-        }
-
-
-
-        function checkIfValid(responses, question_id) {
-            for(var key in responses) {
-                if(responses[key].hasOwnProperty(question_id)) {
-                    return responses[key][question_id];
-                }
-            }
-            return false;
-        }
-
-        /**
-         * Create or append a div
-         * and store all relevant distract
-         * @param  {string} key Optional key to filter by
-         * @return {object}     Either the entire metadata object, or a subset (if key is passed)
-         */
-
-        function appendContent (id, handle, content, classes) {
-            if($("#" + id).length == 0) {
-                handle.append($("<div>").attr('id', id).addClass(classes).append(content + "<br>"));
-            } else {
-                $("#" + id).addClass(classes).append(content + "<br>");
-            }
-        }
-
-    }
-
-    /**
-     * Retrieves the metadata object from the Questions API
-     * Optionally returns data for a specific key
-     * @param  {string} key Optional key to filter by
-     * @return {object}     Either the entire metadata object, or a subset (if key is passed)
-     */
-    function getMetadata(key) {
-        var metadata;
-        lrnActivity.getMetadata(function(obj) {
-            metadata = obj;
-        });
-        if (typeof key === 'undefined') {
-            return metadata;
-        } else {
-            return metadata[key];
-        }
-    }
-
-    /**
-     * Utility function to return all keys in a passed object
-     * @param  {object} obj Object to return keys from
-     * @return {array}      Array of object keys
-     */
-    function getObjectKeys(obj) {
-        var keys = [];
-        for(var key in obj) {
-            if(obj.hasOwnProperty(key)) {
-                keys.push(key);
-            }
-        }
-        return keys;
-    }
-</script>
-
 <div class="jumbotron">
-    <h1>Items API – Distractor Rationale</h1>
-    <p>Store distractor rationale in the Questions API metadata property to be rendered by the host
-    environment for displaying context to wrong answers.<p>
+    <h1>Items API – Inline</h1>
+    <p>Display items from the Learnosity Item Bank in no time with the Items API.  The Items API builds on the Questions API's power and makes it quicker to integrate.<p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
@@ -223,23 +45,99 @@ $signedRequest = $Init->generate();
                 <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
             </a></h4>
         </div>
-        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="<?php echo $env['www'] ?>assessment/assess/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_adaptive.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
-<!-- HTML element to load item(s) into -->
-<h2>Question 1</h2>
-<p><span class="learnosity-item" data-reference="act1"></span></p>
-<h2>Question 2</h2>
-<p><span class="learnosity-item" data-reference="act2"></span></p>
-<h2>Question 3</h2>
-<p><span class="learnosity-item" data-reference="act3"></span></p>
-<h2>Question 4</h2>
-<p><span class="learnosity-item" data-reference="act4"></span></p>
-<h2>Question 5</h2>
-<p><span class="learnosity-item" data-reference="act5"></span></p>
-<h2>Question 6</h2>
-<p><span class="learnosity-item" data-reference="act6"></span></p>
+<p>
+    <span class="learnosity-item" data-reference="act1"></span>
+    <span class="learnosity-item" data-reference="act2"></span>
+    <span class="learnosity-item" data-reference="act3"></span>
+    <span class="learnosity-item" data-reference="act4"></span>
+    <span class="learnosity-item" data-reference="act5"></span>
+    <span class="learnosity-item" data-reference="act6"></span>
+    <span class="learnosity-submit-button"></span>
+</p>
+
+<!-- Container for the items api to load into -->
+<script src="//items.staging.learnosity.com/"></script>
+<script src="itemsapi_distractors/response-level-map.js"></script>
+<script>
+    var eventOptions = {
+            readyListener: function () {
+                //Patching functionality as awaiting a coming release of itemsInstance.questions()
+                itemsInstance.questions = getQuestionResponseIds;
+
+                $.each(itemsInstance.questions(), function(index, question) {
+                    question.on("validated", function() {
+                        var distractorQuestionLvl = this.getMetadata().distractor_rationale || "",
+                            distractorResponseLvl = this.getMetadata().distractor_rationale_response_level || "",
+                            validation = this.isValid("detailedWithPartials"),
+                            question = this.getQuestion(),
+                            outputHTML = "";
+
+                        if(!validation.correct) {
+                            if(distractorResponseLvl.length) {
+                                var response = this.getResponse(),
+                                    map = mapResponseLevel(question, response, validation),
+                                    list = "";
+
+                                $.each(distractorResponseLvl, function (index, distractor) {
+                                    if (map[index] === false) { // Change here to render 'correct' distactor info or unattempted
+                                        list += "<li>" + distractor + "</li>";
+                                    }
+                                });
+
+                                outputHTML += list.length ? "<ul>" + list + "</ul>" : "";
+                            } else if(distractorQuestionLvl.length) {
+                                outputHTML += distractorQuestionLvl;
+                            }
+
+                            renderDistractor(question.response_id, outputHTML);
+                        }
+                    });
+                });
+
+                $.each(itemsInstance.questions(), function(index, question) {
+                    question.on("changed", function() {
+                        removeDistractor(this.getQuestion().response_id);
+                    });
+                });
+            }
+        },
+        itemsInstance = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+
+        // Host page rendering logic
+        function renderDistractor (id, content) {
+            if($("#" + id + "_distractor").length) {
+                $("#" + id + "_distractor").html(content).fadeIn();
+            } else {
+                var template = "<div id=\"" + id + "_distractor\" class=\"distractor-rationale alert alert-danger\">" + content + "</div>";
+                $("#" + id).append(template);
+            }
+        }
+
+        function removeDistractor (id) {
+            $("#" + id + '_distractor').fadeOut();
+        }
+
+        // Patch effort, itemsInstance.questions() will be released replacing this.
+        function getQuestionResponseIds () {
+            var questions = [];
+            itemsInstance.getQuestions(function (questionsJSON) {
+                $.each(questionsJSON, function (index, value) {
+                    questions.push(itemsInstance.question(index));
+                });
+            });
+            return questions;
+        }
+
+</script>
+
+<style>
+    .distractor-rationale { margin: 6px 0 24px; }
+</style>
+
 <?php
     include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';
