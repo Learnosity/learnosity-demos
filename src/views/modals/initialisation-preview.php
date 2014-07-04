@@ -46,5 +46,5 @@ if (is_array($previewObject)) {
 ?>
 
 <script>
-    $('#preview-body').html(library.json.prettyPrint(<?php echo $previewBody; ?>));
+    $('#preview-body').html(prettyPrint.render(<?php echo $previewBody; ?>));
 </script>

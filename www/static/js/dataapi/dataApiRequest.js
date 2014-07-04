@@ -4,7 +4,7 @@
  *
  * Also translates form inputs to JSON for display.
  */
-(function($, config, Ladda) {
+(function($, config, Ladda, prettyPrint) {
     'use strict';
 
     /**
@@ -27,7 +27,7 @@
         };
 
         // Write to the request JSON tab
-        $('#request-'+resource).html(library.json.prettyPrint(request));
+        $('#request-'+resource).html(prettyPrint.render(request));
 
         return {
             endpoint: endpoint,
@@ -45,7 +45,7 @@
      * @return {void}
      */
     function renderResponse (resource, data, status, xhr) {
-        $('#response-'+resource).html(library.json.prettyPrint(data));
+        $('#response-'+resource).html(prettyPrint.render(data));
         $('#nav-dataapi-'+resource+' a[href="#tab-response-'+resource+'"]').tab('show');
     }
 
@@ -98,4 +98,4 @@
     });
 
     return {};
-}(jQuery, config, Ladda));
+}(jQuery, config, Ladda, prettyPrint));
