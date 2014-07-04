@@ -83,7 +83,7 @@
         <link rel="stylesheet" href="http://www.xrgb.com/amplify/learnosity/www/static/css/main.css">
         <script src="http://www.xrgb.com/amplify/learnosity/www/static/vendor/jquery/jquery-1.11.0.min.js"></script><style type="text/css"></style>
         <script src="http://www.xrgb.com/amplify/learnosity/www/static/vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="http://www.xrgb.com/amplify/learnosity/www/static/js/main.js"></script>
+        <script src="http://www.xrgb.com/amplify/learnosity/www/static/js/prettyPrint.js"></script>
         <script src="http://www.xrgb.com/amplify/learnosity/www/assessment/assess/readiness_utils.js"></script>
     </head>
     <body style="padding:0;">
@@ -104,15 +104,15 @@
                             }
                         },
                         lrnItems = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
-                    
+
                     function sendToReport() {
                         var testName = "Challenge_G6_U10_L2: denis";
                         var itemList = ["Jump6_G_9_1_bi","Jump6_G_9_1_biii"] ;
                         var sessionId = "session-54bc7344-bcf7-4d22-9e1d-56c0b6dd4768_";
-                        
+
                         var activityId = "Challenge_G6_U10_L2";
                         var activityTitle = "Challenge_G6_U10_L2";
-                        
+
                         generate_report(itemList, sessionId, testName, '../../assignment-login.html?activity_id=' + activityId + '&activity_title=' + activityTitle, '../../assignment-menu.php');
                     }
                 </script>
