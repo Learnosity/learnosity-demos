@@ -510,7 +510,7 @@ $signedRequest = $Init->generate();
 </div>
 
 <!-- Container for the assess api to load into -->
-<span id="learnosity_assess"></span>
+<div id="learnosity_assess"></div>
 <script src="//assess.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
