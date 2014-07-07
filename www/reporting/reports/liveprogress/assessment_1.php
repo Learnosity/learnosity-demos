@@ -60,14 +60,8 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<style>
-    #learnosity_assess iframe {
-        position: relative;
-    }
-</style>
-
 <!-- Container for the items api to load into -->
-<span id="learnosity_assess"></span>
+<div id="learnosity_assess"></div>
 <script src="//items.learnosity.com"></script>
 <script>
     var app = LearnosityItems.init(<?php echo $signedRequest; ?>);
