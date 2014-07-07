@@ -24,7 +24,7 @@ $request = array(
     'course_id'      => $courseid,
     'session_id'     => Uuid::generate(),
     'user_id'        => $student['id'],
-    'items'          => array("Demo3", "Demo4", "Demo5", "Demo6", "Demo7", "Demo8", "Demo9", "Demo10"),
+    'items'          => array('Demo3', 'Demo4', 'Demo5', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10'),
     'config'         => array(
         'title'          => 'Demo showcasing remote control events',
         'subtitle'       => $student['name'],
@@ -49,8 +49,9 @@ $request = array(
         'questionsApiVersion' => 'v2',
         'assessApiVersion'    => 'v2',
         'configuration'       => array(
-            'onsubmit_redirect_url' => './assessment_1.php',
-            'onsave_redirect_url'   => './assessment_1.php'
+            'onsubmit_redirect_url' => './assessment_2.php',
+            'onsave_redirect_url'   => './assessment_2.php',
+            'events'                => true
         )
     )
 );

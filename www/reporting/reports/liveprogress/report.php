@@ -6,11 +6,11 @@ use LearnositySdk\Request\Init;
 
 $security = array(
     'consumer_key' => $consumer_key,
+    'user_id'      => $teacherid,
     'domain'       => $domain
 );
 
 $request  = array(
-    'user_id' => $teacherid,
     'reports' => array(
         array(
             'id'             => 'report-1',
@@ -23,17 +23,17 @@ $request  = array(
                 array(
                     'id'=> 'jessepinkman',
                     'name'=> 'Jesse Pinkman',
-                    'hash' => hash('sha256', 'jessepinkman' . $consumerSecret)
+                    'hash' => hash('sha256', 'jessepinkman' . $consumer_secret)
                 ),
                 array(
                     'id'=> 'walterwhite',
                     'name'=> 'Walter White',
-                    'hash' => hash('sha256', 'walterwhite' . $consumerSecret)
+                    'hash' => hash('sha256', 'walterwhite' . $consumer_secret)
                 ),
                 array(
                     'id'=> 'hankschrader',
                     'name'=> 'Hank Schrader',
-                    'hash' => hash('sha256', 'hankschrader' . $consumerSecret)
+                    'hash' => hash('sha256', 'hankschrader' . $consumer_secret)
                 )
             )
         )
