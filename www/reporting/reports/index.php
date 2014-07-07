@@ -238,6 +238,66 @@ $request = array(
                     'name'  => 'clozetext'
                 )
             )
+        ),
+        array(
+            "id"        => "report-30",
+            "type"      => "live-activitystatus-by-user",
+            "activity" => array(
+                "id" => "edde56e8-ff65-e42e-b4fe49caad796bd"
+            ),
+            "users" => array(
+                array(
+                    "id"=> "brianmoser",
+                    "name"=> "Brian Moser",
+                    "hash" => hash('sha256', "brianmoser" . $consumer_secret)
+                ),
+                array(
+                    "id"=> "walterwhite",
+                    "name"=> "Walter White",
+                    "hash" => hash('sha256', "12345678" . $consumer_secret)
+                ),
+                array(
+                    "id"=> "jessepinkman",
+                    "name"=> "Jesse Pinkman",
+                    "hash" => hash('sha256', "12345679" . $consumer_secret)
+                ),
+                array(
+                    "id"=> "hankschrader",
+                    "name"=> "Hank Schrader",
+                    "hash" => hash('sha256', "12345680" . $consumer_secret)
+                )
+            )
+        ),
+        array(
+            "id"             => "report-31",
+            "type"           => "live-activitystatus-by-user",
+            "control_events" => true,
+            "activity"       => array(
+                "id" => "edde56e8-ff65-e42e-b4fe49caad796bd",
+                "title" => "Demo Test"
+            ),
+            "users" => array(
+                array(
+                    "id"=> "brianmoser",
+                    "name"=> "Brian Moser",
+                    "hash" => hash('sha256', "brianmoser" . $consumer_secret)
+                ),
+                array(
+                    "id"=> "walterwhite",
+                    "name"=> "Walter White",
+                    "hash" => hash('sha256', "12345678" . $consumer_secret)
+                ),
+                array(
+                    "id"=> "jessepinkman",
+                    "name"=> "Jesse Pinkman",
+                    "hash" => hash('sha256', "12345679" . $consumer_secret)
+                ),
+                array(
+                    "id"=> "hankschrader",
+                    "name"=> "Hank Schrader",
+                    "hash" => hash('sha256', "12345680" . $consumer_secret)
+                )
+            )
         )
     )
 );
@@ -267,6 +327,7 @@ $signedRequest = $Init->generate();
         </div>
     </div>
 </div>
+
 <div class="panel-group" id="lrn-reports-demos-accordion">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -372,7 +433,7 @@ $signedRequest = $Init->generate();
                             <section>
                                 <h3 class="report-title">Last Score Single</h3>
                                 <p class="lrn-report-summary">
-                                    Single reports are designed to be embedded within content pages.</p> 
+                                    Single reports are designed to be embedded within content pages.</p>
                                     <p class="lrn-report-summary">Obtain the latest activity score in a single bar or chart format (each bar/chart below is a separate report).</p>
                                     <p class="lrn-report-summary">Score progress bars and charts can trigger onClick events to tie into other reports.</p>
                                 <table class="lrn-single-reports">
@@ -451,7 +512,7 @@ $signedRequest = $Init->generate();
                             <section>
                                 <h3 class="report-title">Progress Single</h3>
                                 <p class="lrn-report-summary">
-                                    Single reports are designed to be embedded within content pages.</p> 
+                                    Single reports are designed to be embedded within content pages.</p>
                                 <p class="lrn-report-summary">
                                     Gather insight into user progress according to your assigned tag hierarchy (each bar/chart below is a separate report).
                                 </p>
@@ -474,7 +535,49 @@ $signedRequest = $Init->generate();
             </div>
         </div>
     </div>
+    <!-- Real time reports -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+            <a id="accordion-report-live" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-live">
+                Reports By Live Progress
+            </a>
+            </h4>
+        </div>
+        <div id="lrn-reports-demos-live" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div id="lrn-reports-demos-live-content">
+                    <div class="lrn-nav-tabs lrn-nav-live pull-left">
+                        <ul class="nav nav-tabs tabs-left">
+                          <li class="active"><a id="report-session-summary" href="#live-progress" data-toggle="tab">Live Progress Tracking</a></li>
+                          <li><a id="report-session-list" href="#live-progress-events" data-toggle="tab">Live Progress w/Control Events</a></li>
+                        </ul>
+                    </div>
+                    <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
+                        <div class="tab-pane active" id="live-progress">
+                            <section>
+                                <h3 class="report-title">Live Progress Tracking</h3>
+                                <p class="lrn-report-summary">Displays a real-time report of students status for an activity.</p>
+                                <span class="learnosity-report" id="report-30"></span>
+                            </section>
+                            <div id="lrn-report-progress"></div>
+                        </div>
+                        <div class="tab-pane" id="live-progress-events">
+                            <section>
+                                <h3 class="report-title">Live Progress Tracking with Control Events</h3>
+                                <p class="lrn-report-summary">Displays a real-time report of students status for an activity.</p>
+                                <p class="lrn-report-summary">This report also allows you to send push events to control users activities.</p>
+                                <span class="learnosity-report" id="report-31"></span>
+                            </section>
+                            <div id="lrn-report-progress-events"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 <!-- Demo Report OnClick Modal -->
 <div class="modal fade" id="lrn-reports-demos-modal" tabindex="-1" role="dialog" aria-labelledby="lrn-reports-demos-modal-label" aria-hidden="true">
     <div class="modal-dialog">
@@ -490,6 +593,7 @@ $signedRequest = $Init->generate();
         </div>
     </div>
 </div>
+
 <script src="//reports.learnosity.com"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/head.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/reveal/reveal.js"></script>
@@ -498,9 +602,12 @@ $signedRequest = $Init->generate();
     config.configuration = {
         questionsApiVersion: "v2"
     };
-    var lrnReports = LearnosityReports.init(config, {
-        readyListener: onReportsReady
-    });
+    var lrnReports = LearnosityReports.init(
+        config,
+        {
+            readyListener: onReportsReady
+        }
+    );
 
     function onReportsReady() {
         var onClickFunction = function(data, target, modal) {
