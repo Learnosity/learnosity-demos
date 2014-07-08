@@ -34,7 +34,8 @@ $request = array(
             'show_outro'               => false,
             'show_next'                => true,
             'show_prev'                => true,
-            'show_fullscreencontrol'   => false,
+            'show_accessibility'       => false,
+            'show_fullscreencontrol'   => true,
             'show_progress'            => true,
             'show_submit'              => true,
             'show_title'               => true,
@@ -47,7 +48,8 @@ $request = array(
             'transition'               => 'slide',
             'transition_speed'         => 400,
             'warning_on_change'        => false,
-            'scrolling_indicator'      => false
+            'scrolling_indicator'      => false,
+            'show_answermasking'       => true
         ),
         'time' => array(
             'max_time'     => 1500,
@@ -104,7 +106,7 @@ $signedRequest = $Init->generate();
 </div>
 
 <!-- Container for the items api to load into -->
-<span id="learnosity_assess"></span>
+<div id="learnosity_assess"></div>
 <script src="//items.learnosity.com"></script>
 <script>
     var eventOptions = {
