@@ -21,18 +21,18 @@ $request  = array(
             ),
             'users' => array(
                 array(
-                    'id'=> 'jessepinkman',
-                    'name'=> 'Jesse Pinkman',
+                    'id'   => 'jessepinkman',
+                    'name' => 'Jesse Pinkman',
                     'hash' => hash('sha256', 'jessepinkman' . $consumer_secret)
                 ),
                 array(
-                    'id'=> 'walterwhite',
-                    'name'=> 'Walter White',
+                    'id'   => 'walterwhite',
+                    'name' => 'Walter White',
                     'hash' => hash('sha256', 'walterwhite' . $consumer_secret)
                 ),
                 array(
-                    'id'=> 'hankschrader',
-                    'name'=> 'Hank Schrader',
+                    'id'   => 'hankschrader',
+                    'name' => 'Hank Schrader',
                     'hash' => hash('sha256', 'hankschrader' . $consumer_secret)
                 )
             )
