@@ -34,6 +34,7 @@ $request = array(
             'show_outro'               => false,
             'show_next'                => true,
             'show_prev'                => true,
+            'show_accessibility'       => false,
             'show_fullscreencontrol'   => true,
             'show_progress'            => true,
             'show_submit'              => true,
