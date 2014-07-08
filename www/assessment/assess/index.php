@@ -23,6 +23,8 @@ $request = array(
         'scroll_to_top'          => false,
         'scroll_to_test'         => false,
         'show_fullscreencontrol' => true,
+        'show_accessibility'     => false,
+        'show_answermasking'     => true,
         'show_next'              => true,
         'show_prev'              => true,
         'show_save'              => false,
@@ -510,7 +512,7 @@ $signedRequest = $Init->generate();
 </div>
 
 <!-- Container for the assess api to load into -->
-<span id="learnosity_assess"></span>
+<div id="learnosity_assess"></div>
 <script src="//assess.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;

@@ -54,11 +54,18 @@
                                         <input type="radio" name="navigation[show_submit]" value="false"<?php if (isset($nav['show_submit']) && $nav['show_submit'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="show_fullscreencontrol" class="col-sm-6 control-label">Show Fullscreen</label>
+                                 <div class="form-group">
+                                    <label for="show_accessibility" class="col-sm-6 control-label">Show Accessibility</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="navigation[show_fullscreencontrol]" value="true"<?php if (isset($nav['show_fullscreencontrol']) && $nav['show_fullscreencontrol'] === true) { echo ' checked'; }; ?>> True
-                                        <input type="radio" name="navigation[show_fullscreencontrol]" value="false"<?php if (isset($nav['show_fullscreencontrol']) && $nav['show_fullscreencontrol'] === false) { echo ' checked'; }; ?>> False
+                                        <input type="radio" name="navigation[show_accessibility]" value="true"<?php if (isset($nav['show_accessibility']) && $nav['show_accessibility'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[show_accessibility]" value="false"<?php if (isset($nav['show_accessibility']) && $nav['show_accessibility'] === false) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_answermasking" class="col-sm-6 control-label">Show Response Masking</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_answermasking]" value="true"<?php if (isset($nav['show_answermasking']) && $nav['show_answermasking'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[show_answermasking]" value="false"<?php if (isset($nav['show_answermasking']) && $nav['show_answermasking'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -75,6 +82,13 @@
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[toc]" value="true"<?php if (isset($nav['toc']) && (is_array($nav['toc']) || $nav['toc'] === true)) { echo ' checked'; }; ?>> True
                                         <input type="radio" name="navigation[toc]" value="false"<?php if (isset($nav['toc']) && $nav['toc'] === false) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_fullscreencontrol" class="col-sm-6 control-label">Show Fullscreen</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_fullscreencontrol]" value="true"<?php if (isset($nav['show_fullscreencontrol']) && $nav['show_fullscreencontrol'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[show_fullscreencontrol]" value="false"<?php if (isset($nav['show_fullscreencontrol']) && $nav['show_fullscreencontrol'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
                                 <div class="form-group">
