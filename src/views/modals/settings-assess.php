@@ -54,6 +54,13 @@
                                         <input type="radio" name="navigation[show_submit]" value="false"<?php if (isset($nav['show_submit']) && $nav['show_submit'] === false) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
+                                 <div class="form-group">
+                                    <label for="show_accessibility" class="col-sm-6 control-label">Show Accessibility</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_accessibility]" value="true"<?php if (isset($nav['show_accessibility']) && $nav['show_accessibility'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[show_accessibility]" value="false"<?php if (isset($nav['show_accessibility']) && $nav['show_accessibility'] === false) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="show_answermasking" class="col-sm-6 control-label">Show Response Masking</label>
                                     <div class="col-sm-6">
