@@ -23,6 +23,7 @@ $request = array(
         'scroll_to_top'          => false,
         'scroll_to_test'         => false,
         'show_fullscreencontrol' => true,
+        'show_accessibility'     => false,
         'show_answermasking'     => true,
         'show_next'              => true,
         'show_prev'              => true,
