@@ -60,7 +60,7 @@ $signedRequest = $Init->generate();
 </p>
 
 <!-- Container for the items api to load into -->
-<script src="//items.staging.learnosity.com/"></script>
+<script src="//items.learnosity.com/"></script>
 <script src="itemsapi_distractors/response-level-map.js"></script>
 <script>
     var eventOptions = {
@@ -76,20 +76,20 @@ $signedRequest = $Init->generate();
                             question = this.getQuestion(),
                             outputHTML = "";
 
-                        if(!validation.correct) {
+                        if(!validation.correct) { // Could show 'correct' distractors
                             if(distractorResponseLvl.length) {
                                 var response = this.getResponse(),
                                     map = mapResponseLevel(question, response, validation),
                                     list = "";
 
                                 $.each(distractorResponseLvl, function (index, distractor) {
-                                    if (map[index] === false) { // Change here to render 'correct' distactor info or unattempted
+                                    if (map[index] === false) { // Change here to render unattempted
                                         list += "<li>" + distractor + "</li>";
                                     }
                                 });
 
                                 outputHTML += list.length ? "<ul>" + list + "</ul>" : "";
-                            } else if(distractorQuestionLvl.length) {
+                            } else if(distractorQuestionLvl.length) { // could render both level
                                 outputHTML += distractorQuestionLvl;
                             }
 
