@@ -48,6 +48,7 @@ $request = array(
         'questionsApiVersion' => 'v2',
         'assessApiVersion'    => 'v2',
         'configuration'       => array(
+            'ondiscard_redirect_url' => './assessment_2.php',
             'onsubmit_redirect_url' => './assessment_2.php',
             'onsave_redirect_url'   => './assessment_2.php',
             'events'                => true
