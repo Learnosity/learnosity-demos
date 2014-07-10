@@ -31,6 +31,12 @@ $resource = 'activities';
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-md-2 control-label">statuses(s)</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="api-status" data-type="array" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-md-2 control-label">count only?</label>
                             <div class="col-md-10">
                                 <div class="radio">
