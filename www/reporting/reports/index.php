@@ -260,7 +260,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="col-md-2">
             <p class='text-right'>
-                <a class="btn btn-primary btn-lg" href="../sso">
+                <a class="btn btn-primary btn-lg" href="../data">
                     Next <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
             </p>
