@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 // Full base URL of the Data API
 $URL = 'https://data.learnosity.com';
 // Which version of the Data API to use
-$version = 'v0.27';
+$version = 'v0.28';
 
 ?>
 
@@ -35,6 +35,21 @@ $version = 'v0.27';
 <div class="panel-group" id="accordion">
     <!-- Interactives demos for the 'itembank' section -->
     <h2>Itembank</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#activities">
+                    <span class="block">action: get</span>
+                    <?php echo '/' . $version . '/itembank/activities'; ?>
+                </a>
+            </h4>
+        </div>
+        <div id="activities" class="panel-collapse collapse">
+            <div class="panel-body">
+                <?php include_once 'itembank/activities.php'; ?>
+            </div>
+        </div>
+    </div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">

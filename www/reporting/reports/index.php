@@ -238,66 +238,6 @@ $request = array(
                     'name'  => 'clozetext'
                 )
             )
-        ),
-        array(
-            "id"        => "report-30",
-            "type"      => "live-activitystatus-by-user",
-            "activity" => array(
-                "id" => "edde56e8-ff65-e42e-b4fe49caad796bd"
-            ),
-            "users" => array(
-                array(
-                    "id"=> "brianmoser",
-                    "name"=> "Brian Moser",
-                    "hash" => hash('sha256', "brianmoser" . $consumer_secret)
-                ),
-                array(
-                    "id"=> "walterwhite",
-                    "name"=> "Walter White",
-                    "hash" => hash('sha256', "12345678" . $consumer_secret)
-                ),
-                array(
-                    "id"=> "jessepinkman",
-                    "name"=> "Jesse Pinkman",
-                    "hash" => hash('sha256', "12345679" . $consumer_secret)
-                ),
-                array(
-                    "id"=> "hankschrader",
-                    "name"=> "Hank Schrader",
-                    "hash" => hash('sha256', "12345680" . $consumer_secret)
-                )
-            )
-        ),
-        array(
-            "id"             => "report-31",
-            "type"           => "live-activitystatus-by-user",
-            "control_events" => true,
-            "activity"       => array(
-                "id" => "edde56e8-ff65-e42e-b4fe49caad796bd",
-                "title" => "Demo Test"
-            ),
-            "users" => array(
-                array(
-                    "id"=> "brianmoser",
-                    "name"=> "Brian Moser",
-                    "hash" => hash('sha256', "brianmoser" . $consumer_secret)
-                ),
-                array(
-                    "id"=> "walterwhite",
-                    "name"=> "Walter White",
-                    "hash" => hash('sha256', "12345678" . $consumer_secret)
-                ),
-                array(
-                    "id"=> "jessepinkman",
-                    "name"=> "Jesse Pinkman",
-                    "hash" => hash('sha256', "12345679" . $consumer_secret)
-                ),
-                array(
-                    "id"=> "hankschrader",
-                    "name"=> "Hank Schrader",
-                    "hash" => hash('sha256', "12345680" . $consumer_secret)
-                )
-            )
         )
     )
 );
@@ -544,13 +484,12 @@ $signedRequest = $Init->generate();
             </a>
             </h4>
         </div>
-        <div id="lrn-reports-demos-live" class="panel-collapse collapse in">
+        <div id="lrn-reports-demos-live" class="panel-collapse collapse">
             <div class="panel-body">
                 <div id="lrn-reports-demos-live-content">
                     <div class="lrn-nav-tabs lrn-nav-live pull-left">
                         <ul class="nav nav-tabs tabs-left">
                           <li class="active"><a id="report-session-summary" href="#live-progress" data-toggle="tab">Live Progress Tracking</a></li>
-                          <li><a id="report-session-list" href="#live-progress-events" data-toggle="tab">Live Progress w/Control Events</a></li>
                         </ul>
                     </div>
                     <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
@@ -558,18 +497,15 @@ $signedRequest = $Init->generate();
                             <section>
                                 <h3 class="report-title">Live Progress Tracking</h3>
                                 <p class="lrn-report-summary">Displays a real-time report of students status for an activity.</p>
-                                <span class="learnosity-report" id="report-30"></span>
+                                <p>You can also send real-time remote control events to do things like:</p>
+                                <ul>
+                                    <li>Pause/Unpause</li>
+                                    <li>Extend activity time</li>
+                                    <li>Save &amp; Quit</li>
+                                    <li>Exit &amp; Discard</li>
+                                </ul>
+                                <p>Visit our <a href="./live_progress.php">interactive demo</a> to see this in action.</p>
                             </section>
-                            <div id="lrn-report-progress"></div>
-                        </div>
-                        <div class="tab-pane" id="live-progress-events">
-                            <section>
-                                <h3 class="report-title">Live Progress Tracking with Control Events</h3>
-                                <p class="lrn-report-summary">Displays a real-time report of students status for an activity.</p>
-                                <p class="lrn-report-summary">This report also allows you to send push events to control users activities.</p>
-                                <span class="learnosity-report" id="report-31"></span>
-                            </section>
-                            <div id="lrn-report-progress-events"></div>
                         </div>
                     </div>
                 </div>
