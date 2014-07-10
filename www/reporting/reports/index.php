@@ -260,7 +260,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="col-md-2">
             <p class='text-right'>
-                <a class="btn btn-primary btn-lg" href="../sso">
+                <a class="btn btn-primary btn-lg" href="../data">
                     Next <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
             </p>
@@ -505,6 +505,7 @@ $signedRequest = $Init->generate();
                                     <li>Exit &amp; Discard</li>
                                 </ul>
                                 <p>Visit our <a href="./live_progress.php">interactive demo</a> to see this in action.</p>
+                                <p>Review the <a href="http://docs.learnosity.com/reportsapi/reporttypes.php#live-activitystatus-by-user">documentation here</a>.</p>
                             </section>
                         </div>
                     </div>
