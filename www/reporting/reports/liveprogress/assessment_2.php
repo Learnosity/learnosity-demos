@@ -11,7 +11,7 @@ $security = array(
 );
 
 $student = array(
-    'id'   => 'walterwhite',
+    'id'   => $_GET['user_id'],
     'name' => 'Walter White'
 );
 
