@@ -10,6 +10,8 @@ $security = array(
     'domain'       => $domain
 );
 
+$userIds = explode(',', $_GET['user_ids']);
+
 $request  = array(
     'reports' => array(
         array(
@@ -21,19 +23,19 @@ $request  = array(
             ),
             'users' => array(
                 array(
-                    'id'   => 'jessepinkman',
+                    'id'   => $userIds[0],
                     'name' => 'Jesse Pinkman',
-                    'hash' => hash('sha256', 'jessepinkman' . $consumer_secret)
+                    'hash' => hash('sha256', $userIds[0] . $consumer_secret)
                 ),
                 array(
-                    'id'   => 'walterwhite',
+                    'id'   => $userIds[1],
                     'name' => 'Walter White',
-                    'hash' => hash('sha256', 'walterwhite' . $consumer_secret)
+                    'hash' => hash('sha256', $userIds[1] . $consumer_secret)
                 ),
                 array(
-                    'id'   => 'hankschrader',
+                    'id'   => $userIds[2],
                     'name' => 'Hank Schrader',
-                    'hash' => hash('sha256', 'hankschrader' . $consumer_secret)
+                    'hash' => hash('sha256', $userIds[2] . $consumer_secret)
                 )
             )
         )
