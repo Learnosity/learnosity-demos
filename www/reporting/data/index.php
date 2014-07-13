@@ -14,13 +14,16 @@ $version = 'v0.28';
     <h1>Data API</h1>
     <p>A back office service that allows authenticated users to retrieve and store information from
     within the Learnosity Assessment platform. Only authenticated users can access their information, over SSL.<p>
+    <p>The examples below are a subset of what you can do with the Data API. Integration is recommended using our
+    SDK, available in <a href="https://github.com/Learnosity/learnosity-sdk-php">PHP</a>, <a href="https://github.com/Learnosity/learnosity-sdk-asp.net">C#.NET</a>
+    or <a href="https://github.com/Learnosity/learnosity-sdk-java">Java</a>.</p>
     <div class="row">
         <div class="col-md-10">
             <h4><a href="http://docs.learnosity.com/dataapi/" class="text-muted">
                 <span class="glyphicon glyphicon-book"></span> Documentation
             </a></h4>
         </div>
-        <div class="col-md-2"> <p class='text-right'><a class="btn btn-primary btn-lg" href="../../misc/security_check.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+        <div class="col-md-2"> <p class='text-right'><a class="btn btn-primary btn-lg" href="../sso">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
     </div>
 </div>
 
@@ -95,6 +98,38 @@ $version = 'v0.28';
             </div>
         </div>
     </div>
+    <!-- Interactives demos for the 'sessions' section -->
+    <h2>Sessions</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#sessionsresponses">
+                    <span class="block">action: get</span>
+                    <?php echo '/' . $version . '/sessions/responses'; ?>
+                </a>
+            </h4>
+        </div>
+        <div id="sessionsresponses" class="panel-collapse collapse">
+            <div class="panel-body">
+                <?php include_once 'sessions/responses.php'; ?>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#sessionsstatuses">
+                    <span class="block">action: get</span>
+                    <?php echo '/' . $version . '/sessions/statuses'; ?>
+                </a>
+            </h4>
+        </div>
+        <div id="sessionsstatuses" class="panel-collapse collapse">
+            <div class="panel-body">
+                <?php include_once 'sessions/statuses.php'; ?>
+            </div>
+        </div>
+    </div>
     <!-- Interactives demos for the 'users' section -->
     <h2>Users</h2>
     <div class="panel panel-default">
@@ -139,38 +174,6 @@ $version = 'v0.28';
         <div id="usersstatuses" class="panel-collapse collapse">
             <div class="panel-body">
                 <?php include_once 'users/statuses.php'; ?>
-            </div>
-        </div>
-    </div>
-    <!-- Interactives demos for the 'sessions' section -->
-    <h2>Sessions</h2>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#sessionsresponses">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/sessions/responses'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="sessionsresponses" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'sessions/responses.php'; ?>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#sessionsstatuses">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/sessions/statuses'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="sessionsstatuses" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'sessions/statuses.php'; ?>
             </div>
         </div>
     </div>
