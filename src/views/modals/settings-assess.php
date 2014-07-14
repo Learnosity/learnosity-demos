@@ -10,6 +10,7 @@
     $con  = $request;
     $nav  = $request['navigation'];
     $time = $request['time'];
+    $admin = $request['administration'];
 ?>
 <div class="modal fade" id="settings">
     <div class="modal-dialog">
@@ -235,6 +236,37 @@
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Configuration Panel Settings</div>
+                        <div class="panel-body">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="show_save" class="col-sm-6 control-label">Show Save</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="administration[options][show_save]" value="true"<?php if (isset($admin['options']['show_save']) && $admin['options']['show_save'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="administration[options][show_save]" value="false"<?php if (isset($admin['options']['show_save']) && $admin['options']['show_save'] === false) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_exit" class="col-sm-6 control-label">Show Exit</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="administration[options][show_exit]" value="true"<?php if (isset($admin['options']['show_exit']) && $admin['options']['show_exit'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="administration[options][show_exit]" value="false"<?php if (isset($admin['options']['show_exit']) && $admin['options']['show_exit'] === false) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="show_extend" class="col-sm-6 control-label">Show Extend</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="administration[options][show_extend]" value="true"<?php if (isset($admin['options']['show_extend']) && $admin['options']['show_extend'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="administration[options][show_extend]" value="false"<?php if (isset($admin['options']['show_extend']) && $admin['options']['show_extend'] === false) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
