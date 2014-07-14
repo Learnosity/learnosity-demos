@@ -2,24 +2,22 @@
 
 // Examine the settings modal form post and replace the default
 // $request variables.
-if (isset($_POST['api_type'])) {
-    foreach ($_POST as $key => $value) {
+function trueFalseConverter (&$object)
+{
+    foreach ($object as $key => $value) {
         if (is_array($value)) {
-            foreach ($value as $subkey => $subvalue) {
-                if ($subvalue === 'true') {
-                    $_POST[$key][$subkey] = true;
-                } elseif ($subvalue === 'false') {
-                    $_POST[$key][$subkey] = false;
-                }
-            }
-        } else {
-            if ($value === 'true') {
-                $_POST[$key] = (bool)$value;
-            } elseif ($value === 'false') {
-                $_POST[$key] = false;
-            }
+            $object[$key] = trueFalseConverter($value);
+        } elseif ($value === 'true') {
+            $object[$key] = true;
+        } elseif ($value === 'false') {
+            $object[$key] = false;
         }
     }
+    return $object;
+}
+
+if (isset($_POST['api_type'])) {
+    trueFalseConverter($_POST);
 
     if ($_POST['api_type'] === 'items') {
         if (array_key_exists('config', $request)) {
@@ -35,7 +33,7 @@ if (isset($_POST['api_type'])) {
     }
 
     // remove idle_timout settings if the should not be used
-    if ($_POST['configuration']['idle_timeout']['use_idle_timeout'] === 'false') {
+    if ($_POST['configuration']['idle_timeout']['use_idle_timeout'] === false) {
         unset($requestKey['configuration']['idle_timeout']);
     }
     unset($requestKey['configuration']['idle_timeout']['use_idle_timeout']);
