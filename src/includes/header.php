@@ -51,4 +51,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 ?>
 
 <div class="container">
-    <div class="row">
+    <div class="row content-section">

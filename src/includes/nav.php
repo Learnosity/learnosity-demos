@@ -20,7 +20,7 @@
     );
 ?>
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand logo" href="<?php echo $env['www'] ?>">Learnosity Demos</a>

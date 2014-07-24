@@ -24,41 +24,39 @@ include_once 'includes/header.php';
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Reports API Demos</h2>
-            <p>Try one of the demos below.</p></br>
-        </div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Reports API Demos</h2>
+        <p>Try one of the demos below.</p></br>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Report Types</h2>
-                </div>
-                <div class="panel-body">
-                    <p>See all of our powerful reports in action. Rendering aggregated summaries or review
-                    modes from students assessments.</p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./report_types.php">Demo</a>
-                    </p>
-                </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Report Types</h2>
+            </div>
+            <div class="panel-body">
+                <p>See all of our powerful reports in action. Rendering aggregated summaries or review
+                modes from students assessments.</p>
+                <p class="text-right">
+                    <a class="btn btn-primary btn-md" href="./report_types.php">Demo</a>
+                </p>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Live Progress Tracking</h2>
-                </div>
-                <div class="panel-body">
-                    <p>An interactive demo, simulating 3 students taking a test with an administrator viewing their
-                    progress in real time. Also shows the power of <em>control events</em>, the ability to control end users
-                    assessments in real time.</p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./live_progress.php">Demo</a>
-                    </p>
-                </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Live Progress Tracking</h2>
+            </div>
+            <div class="panel-body">
+                <p>An interactive demo, simulating 3 students taking a test with an administrator viewing their
+                progress in real time. Also shows the power of <em>control events</em>, the ability to control end users
+                assessments in real time.</p>
+                <p class="text-right">
+                    <a class="btn btn-primary btn-md" href="./live_progress.php">Demo</a>
+                </p>
             </div>
         </div>
     </div>
