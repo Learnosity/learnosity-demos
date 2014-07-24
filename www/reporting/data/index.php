@@ -35,177 +35,179 @@ $version = 'v0.28';
 *
 ********************************************************************
 -->
-<div class="panel-group" id="accordion">
-    <!-- Interactives demos for the 'itembank' section -->
-    <h2>Itembank</h2>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#activities">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/itembank/activities'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="activities" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'itembank/activities.php'; ?>
+<div class="content-container">
+    <div class="panel-group" id="accordion">
+        <!-- Interactives demos for the 'itembank' section -->
+        <h2>Itembank</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#activities">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/itembank/activities'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="activities" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'itembank/activities.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#items">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/itembank/items'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="items" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'itembank/items.php'; ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#items">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/itembank/items'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="items" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'itembank/items.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#itembankquestions">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/itembank/questions'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="itembankquestions" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'itembank/questions.php'; ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#itembankquestions">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/itembank/questions'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="itembankquestions" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'itembank/questions.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#itembanktags">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/itembank/tags'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="itembanktags" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'itembank/tags.php'; ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#itembanktags">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/itembank/tags'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="itembanktags" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'itembank/tags.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Interactives demos for the 'sessions' section -->
-    <h2>Sessions</h2>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#sessionsresponses">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/sessions/responses'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="sessionsresponses" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'sessions/responses.php'; ?>
+        <!-- Interactives demos for the 'sessions' section -->
+        <h2>Sessions</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#sessionsresponses">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/sessions/responses'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="sessionsresponses" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'sessions/responses.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#sessionsstatuses">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/sessions/statuses'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="sessionsstatuses" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'sessions/statuses.php'; ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#sessionsstatuses">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/sessions/statuses'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="sessionsstatuses" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'sessions/statuses.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Interactives demos for the 'users' section -->
-    <h2>Users</h2>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#users">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/users'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="users" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'users/users.php'; ?>
+        <!-- Interactives demos for the 'users' section -->
+        <h2>Users</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#users">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/users'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="users" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'users/users.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#usersactivities">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/users/activities'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="usersactivities" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'users/activities.php'; ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#usersactivities">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/users/activities'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="usersactivities" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'users/activities.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#usersstatuses">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/users/statuses'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="usersstatuses" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'users/statuses.php'; ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#usersstatuses">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/users/statuses'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="usersstatuses" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'users/statuses.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Interactives demos for the 'schools' section -->
-    <h2>Schools</h2>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#schools">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/schools'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="schools" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'schools/schools.php'; ?>
+        <!-- Interactives demos for the 'schools' section -->
+        <h2>Schools</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#schools">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/schools'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="schools" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'schools/schools.php'; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#schoolsclasses">
-                    <span class="block">action: get</span>
-                    <?php echo '/' . $version . '/schools/classes'; ?>
-                </a>
-            </h4>
-        </div>
-        <div id="schoolsclasses" class="panel-collapse collapse">
-            <div class="panel-body">
-                <?php include_once 'schools/classes.php'; ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#schoolsclasses">
+                        <span class="block">action: get</span>
+                        <?php echo '/' . $version . '/schools/classes'; ?>
+                    </a>
+                </h4>
+            </div>
+            <div id="schoolsclasses" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php include_once 'schools/classes.php'; ?>
+                </div>
             </div>
         </div>
     </div>
