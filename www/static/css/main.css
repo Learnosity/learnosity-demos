@@ -487,11 +487,12 @@ h1, h2, h3, h4, h5, h6, .navbar {
     border-bottom: 1px solid #ebf0f0;
 }
 
+.section {
+    padding-top: 24px;
+}
+
 .container .jumbotron {
     padding-top: 24px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
     background-color: #fff;
     margin-bottom: 30px;
 }
@@ -514,13 +515,19 @@ h1, h2, h3, h4, h5, h6, .navbar {
     letter-spacing: 0.2px;
 }
 
+.landing.section {
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .landing .jumbotron p {
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.02em;
 }
 
-.content-section {
+.section {
     background-color: #fff;
     color: #424d55;
     border: 1px solid #e9e9e9;
