@@ -6,24 +6,22 @@ include_once 'includes/header.php';
 // Full base URL of the Data API
 $URL = 'https://data.learnosity.com';
 // Which version of the Data API to use
-$version = 'v0.28';
+$version = 'v0.30';
 
 ?>
 
 <div class="jumbotron">
+    <div class="pull-right toolbar">
+        <a href="http://docs.learnosity.com/dataapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a>
+        <a href="../sso" title="Next – SSO"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+    </div>
     <h1>Data API</h1>
-    <p>A back office service that allows authenticated users to retrieve and store information from
-    within the Learnosity Assessment platform. Only authenticated users can access their information, over SSL.<p>
-    <p>The examples below are a subset of what you can do with the Data API. Integration is recommended using our
-    SDK, available in <a href="https://github.com/Learnosity/learnosity-sdk-php">PHP</a>, <a href="https://github.com/Learnosity/learnosity-sdk-asp.net">C#.NET</a>
-    or <a href="https://github.com/Learnosity/learnosity-sdk-java">Java</a>.</p>
-    <div class="row">
-        <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/dataapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-        </div>
-        <div class="col-md-2"> <p class='text-right'><a class="btn btn-primary btn-lg" href="../sso">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+    <div class="section">
+        <p>A back office service that allows authenticated users to retrieve and store information from
+        within the Learnosity Assessment platform. Only authenticated users can access their information, over SSL.<p>
+        <p>The examples below are a subset of what you can do with the Data API. Integration is recommended using our
+        SDK, available in <a href="https://github.com/Learnosity/learnosity-sdk-php">PHP</a>, <a href="https://github.com/Learnosity/learnosity-sdk-asp.net">C#.NET</a>
+        or <a href="https://github.com/Learnosity/learnosity-sdk-java">Java</a>.</p>
     </div>
 </div>
 
