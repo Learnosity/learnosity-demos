@@ -496,7 +496,7 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<div class="jumbotron">
+<div class="jumbotron section">
     <div class="pull-right toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted" data-toggle="modal" data-target="#settings"><span class="glyphicon glyphicon-list-alt"></span></a></li>
@@ -510,8 +510,11 @@ $signedRequest = $Init->generate();
     <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
 </div>
 
-<!-- Container for the assess api to load into -->
-<div id="learnosity_assess"></div>
+<div class="section">
+    <!-- Container for the assess api to load into -->
+    <div id="learnosity_assess"></div>
+</div>
+
 <script src="//assess.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;

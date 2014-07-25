@@ -3,7 +3,7 @@ include_once 'config.php';
 include_once 'includes/header.php';
 ?>
 
-<div class="landing">
+<div class="landing section">
     <div class="jumbotron">
         <h1 class="landing-heading">Learnosity API Demos</h1>
         <dl class="dl-horizontal">
