@@ -5,7 +5,7 @@ include_once 'includes/header.php';
 
 ?>
 
-<div class="jumbotron">
+<div class="jumbotron section">
     <div class="pull-right toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
@@ -23,25 +23,27 @@ include_once 'includes/header.php';
 *
 ********************************************************************
 -->
-<div class="alert alert-info" id="example-description"></div>
-<ul class="nav nav-tabs" id="nav-questioneditor">
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">New Question<b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <li><a href="#" data-type="newQuestion" id="newQuestion">New Question</a></li>
-            <li><a href="#" data-type="defaultsdisabled" id="defaultsdisabled">with certain attributes disabled and defaults</a></li>
-            <li><a href="#" data-type="defaultsdisabledgraphing" id="defaultsdisabledgraphing">with certain attributes disabled and defaults (Graphing)</a></li>
-            <li><a href="#" data-type="assetuploadexample" id="assetupload">with image gallery asset handler</a></li>
-        </ul>
-    </li>
-    <li><a href="#" data-type="edit" id="edit">Edit Existing Question</a></li>
-    <li><a href="#" data-type="feedback" id="feedback">Rubric Feedback</a></li>
-    <li><a href="#" data-type="features" id="features">Stimulus Features</a></li>
-</ul>
+<div class="section">
+    <div class="alert alert-info" id="example-description"></div>
+    <ul class="nav nav-tabs" id="nav-questioneditor">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">New Question<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#" data-type="newQuestion" id="newQuestion">New Question</a></li>
+                <li><a href="#" data-type="defaultsdisabled" id="defaultsdisabled">with certain attributes disabled and defaults</a></li>
+                <li><a href="#" data-type="defaultsdisabledgraphing" id="defaultsdisabledgraphing">with certain attributes disabled and defaults (Graphing)</a></li>
+                <li><a href="#" data-type="assetuploadexample" id="assetupload">with image gallery asset handler</a></li>
+            </ul>
+        </li>
+        <li><a href="#" data-type="edit" id="edit">Edit Existing Question</a></li>
+        <li><a href="#" data-type="feedback" id="feedback">Rubric Feedback</a></li>
+        <li><a href="#" data-type="features" id="features">Stimulus Features</a></li>
+    </ul>
 
-<!-- Container for the question editor api to load into -->
-<script src="//questioneditor.learnosity.com/"></script>
-<div class="learnosity-question-editor"></div>
+    <!-- Container for the question editor api to load into -->
+    <script src="//questioneditor.learnosity.com/"></script>
+    <div class="learnosity-question-editor"></div>
+</div>
 <script>
     /********************************************************************
     *

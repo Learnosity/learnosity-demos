@@ -246,286 +246,278 @@ $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-<div class="jumbotron clearfix">
+<div class="jumbotron section">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/reportsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="./live_progress.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
     <h1>Reports API</h1>
     <p>A cross domain embeddable service that allows content providers to easily render rich reports.<p>
-    <div class="row">
-        <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/reportsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
-                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
-            </a></h4>
-        </div>
-        <div class="col-md-2">
-            <p class='text-right'>
-                <a class="btn btn-primary btn-lg" href="../data">
-                    Next <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </p>
-        </div>
-    </div>
 </div>
 
-<div class="panel-group" id="lrn-reports-demos-accordion">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-            <a id="accordion-report-session" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-sessions">
-                Reports By Session
-            </a>
-            </h4>
-        </div>
-        <div id="lrn-reports-demos-sessions" class="panel-collapse collapse in">
-            <div class="panel-body">
-                <div id="lrn-reports-demos-sessions-content">
-                    <div class="lrn-nav-tabs lrn-nav-sessions pull-left">
-                        <ul class="nav nav-tabs tabs-left">
-                          <li class="active"><a id="report-session-summary" href="#sessions-summary" data-toggle="tab">Sessions Summary</a></li>
-                          <li><a id="report-session-list" href="#sessions-list" data-toggle="tab">Sessions List</a></li>
-                          <li><a id="report-session-detail" href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
-                          <li><a id="report-session-tags" href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
-                        </ul>
-                    </div>
-                    <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
-                        <div class="tab-pane active" id="sessions-summary">
-                            <section>
-                                <h3 class="report-title">Sessions Summary</h3>
-                                <p class="lrn-report-summary">Gain quick, meaningful information about a students session at a glance.</p>
-                                <span class="learnosity-report" id="report-1"></span>
-                            </section>
-                        </div>
-                        <div class="tab-pane" id="sessions-list">
-                            <section>
-                                <h3 class="report-title">Sessions List</h3>
-                                <p class="lrn-report-summary">Get a quick glimpse of the latest sessions.</p>
-                                <p class="lrn-report-summary">Session progress bars can trigger onClick events to tie into other reports.</p>
-                                <span class="learnosity-report" id="report-9"></span>
-                            </section>
-                            <div id="lrn-report-sessions-list-events"></div>
-                        </div>
-                        <div class="tab-pane" id="sessions-detail">
-                            <section>
-                                <h3 class="report-title">Session Detail</h3>
-                                <p class="lrn-report-summary">A fine-grain approach to gleaning strengths and weaknesses from a students session.</p>
-                                <span class="learnosity-report" id="report-2"></span>
-                            </section>
-                        </div>
-                        <div class="tab-pane" id="sessions-tags">
-                            <section>
-                                <h3 class="report-title">Sessions Summary By Tag Chart</h3>
-                                <p class="lrn-report-summary">A sessions summary broken down into its constituent tags.</p>
-                                <span class="learnosity-report" id="report-4"></span>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a id="accordion-report-lastscore" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-lastscore">
-                    Reports By Last Score
+<div class="section">
+    <div class="panel-group" id="lrn-reports-demos-accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                <a id="accordion-report-session" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-sessions">
+                    Reports By Session
                 </a>
-            </h4>
-        </div>
-        <div id="lrn-reports-demos-lastscore" class="panel-collapse collapse">
-            <div class="panel-body">
-                <div id="lrn-reports-demos-lastscore-content">
-                    <div class="lrn-nav-tabs lrn-nav-lastscore pull-left">
-                        <ul class="nav nav-tabs tabs-left">
-                            <li class="active"><a id="report-lastscore-activity" href="#lastscore-activity" data-toggle="tab">Last Score By Activity</a></li>
-                            <li><a id="report-lastscore-user" href="#lastscore-user" data-toggle="tab">Last Score By Activity By User</a></li>
-                            <li><a id="report-lastscore-single" href="#lastscore-single" data-toggle="tab">Last Score Single</a></li>
-                            <li><a id="report-lastscore-item" href="#lastscore-item" data-toggle="tab">Last Score By Item By User</a></li>
-                            <li><a id="report-lastscore-tag" href="#lastscore-tag" data-toggle="tab">Last Score By Tag By User</a></li>
-                        </ul>
-                    </div>
-                    <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
-                        <div class="tab-pane active" id="lastscore-activity">
-                            <section>
-                                <h3 class="report-title">Last Score by Activity</h3>
-                                <p class="lrn-report-summary">
-                                    Obtain the latest activity scores for a particular student, represented by either a progress bar (shown), or a numeric result.
-                                    <br>Hover over student scores to gather a meaningful score breakdown.
-                                </p>
-                                <p class="lrn-report-summary">Activities and scores can trigger onClick events to tie into other reports.</p>
-                                <span class="learnosity-report" id="report-6"></span>
-                            </section>
-                            <div id="lrn-report-lastscore-activity-events"></div>
+                </h4>
+            </div>
+            <div id="lrn-reports-demos-sessions" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div id="lrn-reports-demos-sessions-content">
+                        <div class="lrn-nav-tabs lrn-nav-sessions pull-left">
+                            <ul class="nav nav-tabs tabs-left">
+                              <li class="active"><a id="report-session-summary" href="#sessions-summary" data-toggle="tab">Sessions Summary</a></li>
+                              <li><a id="report-session-list" href="#sessions-list" data-toggle="tab">Sessions List</a></li>
+                              <li><a id="report-session-detail" href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
+                              <li><a id="report-session-tags" href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
+                            </ul>
                         </div>
-                        <div class="tab-pane" id="lastscore-user">
-                            <section>
-                                <h3 class="report-title">Last Score by Activity by User</h3>
-                                <p class="lrn-report-summary">
-                                    Obtain the latest activity scores for a group of students, represented by either a numeric result (shown), or a progress bar.
-                                    <br>Hover over student scores to gather a meaningful score break-down.
-                                </p>
-                                <p class="lrn-report-summary">Names, activities and scores can trigger onClick events to tie into other reports.</p>
-                                <span class="learnosity-report" id="report-5"></span>
-                            </section>
-                            <div id="lrn-report-lastscore-user-events"></div>
-                        </div>
-                        <div class="tab-pane" id="lastscore-single">
-                            <section>
-                                <h3 class="report-title">Last Score Single</h3>
-                                <p class="lrn-report-summary">
-                                    Single reports are designed to be embedded within content pages.</p>
-                                    <p class="lrn-report-summary">Obtain the latest activity score in a single bar or chart format (each bar/chart below is a separate report).</p>
-                                    <p class="lrn-report-summary">Score progress bars and charts can trigger onClick events to tie into other reports.</p>
-                                <table class="lrn-single-reports">
-                                    <tr>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-10"></span></div></td>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-11"></span></div></td>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-12"></span></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-13"></span></div></td>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-14"></span></div></td>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-15"></span></div></td>
-                                    </tr>
-                                </table>
-                            </section>
-                            <div id="lrn-report-lastscore-single-events"></div>
-                        </div>
-                        <div class="tab-pane" id="lastscore-item">
-                            <section>
-                                <h3 class="report-title">Last Score by Item by User</h3>
-                                <p class="lrn-report-summary">
-                                    Obtain the latest activity score with a break-down of its constituent items.
-                                    <br>Hover over items to see the fine grain score break-down.
-                                </p>
-                                <p class="lrn-report-summary">Names and scores can trigger onClick events to tie into other reports.</p>
-                                <span class="learnosity-report" id="report-7"></span>
-                            </section>
-                            <div id="lrn-report-lastscore-item-events"></div>
-                        </div>
-                        <div class="tab-pane" id="lastscore-tag">
-                            <section>
-                                <h3 class="report-title">Last Score by Tag by User</h3>
-                                <p class="lrn-report-summary">
-                                    Obtain the latest activity score with a break-down of scores according its constituent tags.
-                                    <br>Hover over the tag scores to see the fine grain score break-down.
-                                </p>
-                                <p class="lrn-report-summary">Names and scores can trigger onClick events to tie into other reports.</p>
-                                <span class="learnosity-report" id="report-8"></span>
-                            </section>
-                            <div id="lrn-report-lastscore-tag-events"></div>
+                        <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
+                            <div class="tab-pane active" id="sessions-summary">
+                                <section>
+                                    <h3 class="report-title">Sessions Summary</h3>
+                                    <p class="lrn-report-summary">Gain quick, meaningful information about a students session at a glance.</p>
+                                    <span class="learnosity-report" id="report-1"></span>
+                                </section>
+                            </div>
+                            <div class="tab-pane" id="sessions-list">
+                                <section>
+                                    <h3 class="report-title">Sessions List</h3>
+                                    <p class="lrn-report-summary">Get a quick glimpse of the latest sessions.</p>
+                                    <p class="lrn-report-summary">Session progress bars can trigger onClick events to tie into other reports.</p>
+                                    <span class="learnosity-report" id="report-9"></span>
+                                </section>
+                                <div id="lrn-report-sessions-list-events"></div>
+                            </div>
+                            <div class="tab-pane" id="sessions-detail">
+                                <section>
+                                    <h3 class="report-title">Session Detail</h3>
+                                    <p class="lrn-report-summary">A fine-grain approach to gleaning strengths and weaknesses from a students session.</p>
+                                    <span class="learnosity-report" id="report-2"></span>
+                                </section>
+                            </div>
+                            <div class="tab-pane" id="sessions-tags">
+                                <section>
+                                    <h3 class="report-title">Sessions Summary By Tag Chart</h3>
+                                    <p class="lrn-report-summary">A sessions summary broken down into its constituent tags.</p>
+                                    <span class="learnosity-report" id="report-4"></span>
+                                </section>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a id="accordion-report-progress" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-progress">
-                    Reports By Progress
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a id="accordion-report-lastscore" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-lastscore">
+                        Reports By Last Score
+                    </a>
+                </h4>
+            </div>
+            <div id="lrn-reports-demos-lastscore" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div id="lrn-reports-demos-lastscore-content">
+                        <div class="lrn-nav-tabs lrn-nav-lastscore pull-left">
+                            <ul class="nav nav-tabs tabs-left">
+                                <li class="active"><a id="report-lastscore-activity" href="#lastscore-activity" data-toggle="tab">Last Score By Activity</a></li>
+                                <li><a id="report-lastscore-user" href="#lastscore-user" data-toggle="tab">Last Score By Activity By User</a></li>
+                                <li><a id="report-lastscore-single" href="#lastscore-single" data-toggle="tab">Last Score Single</a></li>
+                                <li><a id="report-lastscore-item" href="#lastscore-item" data-toggle="tab">Last Score By Item By User</a></li>
+                                <li><a id="report-lastscore-tag" href="#lastscore-tag" data-toggle="tab">Last Score By Tag By User</a></li>
+                            </ul>
+                        </div>
+                        <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
+                            <div class="tab-pane active" id="lastscore-activity">
+                                <section>
+                                    <h3 class="report-title">Last Score by Activity</h3>
+                                    <p class="lrn-report-summary">
+                                        Obtain the latest activity scores for a particular student, represented by either a progress bar (shown), or a numeric result.
+                                        <br>Hover over student scores to gather a meaningful score breakdown.
+                                    </p>
+                                    <p class="lrn-report-summary">Activities and scores can trigger onClick events to tie into other reports.</p>
+                                    <span class="learnosity-report" id="report-6"></span>
+                                </section>
+                                <div id="lrn-report-lastscore-activity-events"></div>
+                            </div>
+                            <div class="tab-pane" id="lastscore-user">
+                                <section>
+                                    <h3 class="report-title">Last Score by Activity by User</h3>
+                                    <p class="lrn-report-summary">
+                                        Obtain the latest activity scores for a group of students, represented by either a numeric result (shown), or a progress bar.
+                                        <br>Hover over student scores to gather a meaningful score break-down.
+                                    </p>
+                                    <p class="lrn-report-summary">Names, activities and scores can trigger onClick events to tie into other reports.</p>
+                                    <span class="learnosity-report" id="report-5"></span>
+                                </section>
+                                <div id="lrn-report-lastscore-user-events"></div>
+                            </div>
+                            <div class="tab-pane" id="lastscore-single">
+                                <section>
+                                    <h3 class="report-title">Last Score Single</h3>
+                                    <p class="lrn-report-summary">
+                                        Single reports are designed to be embedded within content pages.</p>
+                                        <p class="lrn-report-summary">Obtain the latest activity score in a single bar or chart format (each bar/chart below is a separate report).</p>
+                                        <p class="lrn-report-summary">Score progress bars and charts can trigger onClick events to tie into other reports.</p>
+                                    <table class="lrn-single-reports">
+                                        <tr>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-10"></span></div></td>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-11"></span></div></td>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-12"></span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-13"></span></div></td>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-14"></span></div></td>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-15"></span></div></td>
+                                        </tr>
+                                    </table>
+                                </section>
+                                <div id="lrn-report-lastscore-single-events"></div>
+                            </div>
+                            <div class="tab-pane" id="lastscore-item">
+                                <section>
+                                    <h3 class="report-title">Last Score by Item by User</h3>
+                                    <p class="lrn-report-summary">
+                                        Obtain the latest activity score with a break-down of its constituent items.
+                                        <br>Hover over items to see the fine grain score break-down.
+                                    </p>
+                                    <p class="lrn-report-summary">Names and scores can trigger onClick events to tie into other reports.</p>
+                                    <span class="learnosity-report" id="report-7"></span>
+                                </section>
+                                <div id="lrn-report-lastscore-item-events"></div>
+                            </div>
+                            <div class="tab-pane" id="lastscore-tag">
+                                <section>
+                                    <h3 class="report-title">Last Score by Tag by User</h3>
+                                    <p class="lrn-report-summary">
+                                        Obtain the latest activity score with a break-down of scores according its constituent tags.
+                                        <br>Hover over the tag scores to see the fine grain score break-down.
+                                    </p>
+                                    <p class="lrn-report-summary">Names and scores can trigger onClick events to tie into other reports.</p>
+                                    <span class="learnosity-report" id="report-8"></span>
+                                </section>
+                                <div id="lrn-report-lastscore-tag-events"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a id="accordion-report-progress" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-progress">
+                        Reports By Progress
+                    </a>
+                </h4>
+            </div>
+            <div id="lrn-reports-demos-progress" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div id="lrn-reports-demos-progress-content">
+                        <div class="lrn-nav-tabs lrn-nav-progress pull-left">
+                            <ul class="nav nav-tabs tabs-left">
+                              <li class="active"><a id="report-progress-by-tag-table" href="#progress-by-tag-table" data-toggle="tab">Progress By Tag Table</a></li>
+                              <li><a id="report-progress-single" href="#progress-single" data-toggle="tab">Progress Single</a></li>
+                            </ul>
+                        </div>
+                        <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
+                            <div class="tab-pane active" id="progress-by-tag-table">
+                                <section>
+                                    <h3 class="report-title">Progress by Tag Table</h3>
+                                    <p class="lrn-report-summary">Gather insight into user progress according to your assigned tag hierarchy.</p>
+                                    <div class="alert alert-info">
+                                        <strong>Note:</strong> The progress data for this report is updated every 5 minutes
+                                    </div>
+                                    <span class="learnosity-report" id="report-3"></span>
+                                </section>
+                            </div>
+                            <div class="tab-pane" id="progress-single">
+                                <section>
+                                    <h3 class="report-title">Progress Single</h3>
+                                    <p class="lrn-report-summary">
+                                        Single reports are designed to be embedded within content pages.</p>
+                                    <p class="lrn-report-summary">
+                                        Gather insight into user progress according to your assigned tag hierarchy (each bar/chart below is a separate report).
+                                    </p>
+                                    <table class="lrn-single-reports">
+                                        <tr>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-16"></span></div></td>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-17"></span></div></td>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-18"></span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-19"></span></div></td>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-20"></span></div></td>
+                                            <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-21"></span></div></td>
+                                        </tr>
+                                    </table>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Real time reports -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                <a id="accordion-report-live" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-live">
+                    Reports By Live Progress
                 </a>
-            </h4>
-        </div>
-        <div id="lrn-reports-demos-progress" class="panel-collapse collapse">
-            <div class="panel-body">
-                <div id="lrn-reports-demos-progress-content">
-                    <div class="lrn-nav-tabs lrn-nav-progress pull-left">
-                        <ul class="nav nav-tabs tabs-left">
-                          <li class="active"><a id="report-progress-by-tag-table" href="#progress-by-tag-table" data-toggle="tab">Progress By Tag Table</a></li>
-                          <li><a id="report-progress-single" href="#progress-single" data-toggle="tab">Progress Single</a></li>
-                        </ul>
-                    </div>
-                    <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
-                        <div class="tab-pane active" id="progress-by-tag-table">
-                            <section>
-                                <h3 class="report-title">Progress by Tag Table</h3>
-                                <p class="lrn-report-summary">Gather insight into user progress according to your assigned tag hierarchy.</p>
-                                <div class="alert alert-info">
-                                    <strong>Note:</strong> The progress data for this report is updated every 5 minutes
-                                </div>
-                                <span class="learnosity-report" id="report-3"></span>
-                            </section>
+                </h4>
+            </div>
+            <div id="lrn-reports-demos-live" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div id="lrn-reports-demos-live-content">
+                        <div class="lrn-nav-tabs lrn-nav-live pull-left">
+                            <ul class="nav nav-tabs tabs-left">
+                              <li class="active"><a id="report-session-summary" href="#live-progress" data-toggle="tab">Live Progress Tracking</a></li>
+                            </ul>
                         </div>
-                        <div class="tab-pane" id="progress-single">
-                            <section>
-                                <h3 class="report-title">Progress Single</h3>
-                                <p class="lrn-report-summary">
-                                    Single reports are designed to be embedded within content pages.</p>
-                                <p class="lrn-report-summary">
-                                    Gather insight into user progress according to your assigned tag hierarchy (each bar/chart below is a separate report).
-                                </p>
-                                <table class="lrn-single-reports">
-                                    <tr>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-16"></span></div></td>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-17"></span></div></td>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-18"></span></div></td>
-                                    </tr>
-                                    <tr>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-19"></span></div></td>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-20"></span></div></td>
-                                        <td width="33%"><div class="lrn-single-report"><span class="learnosity-report" id="report-21"></span></div></td>
-                                    </tr>
-                                </table>
-                            </section>
+                        <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
+                            <div class="tab-pane active" id="live-progress">
+                                <section>
+                                    <h3 class="report-title">Live Progress Tracking</h3>
+                                    <p class="lrn-report-summary">Displays a real-time report of students status for an activity.</p>
+                                    <p>You can also send real-time remote control events to do things like:</p>
+                                    <ul>
+                                        <li>Pause/Unpause</li>
+                                        <li>Extend activity time</li>
+                                        <li>Save &amp; Quit</li>
+                                        <li>Exit &amp; Discard</li>
+                                    </ul>
+                                    <p>Visit our <a href="./live_progress.php">interactive demo</a> to see this in action.</p>
+                                    <p>Review the <a href="http://docs.learnosity.com/reportsapi/reporttypes.php#live-activitystatus-by-user">documentation here</a>.</p>
+                                </section>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Real time reports -->
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-            <a id="accordion-report-live" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-live">
-                Reports By Live Progress
-            </a>
-            </h4>
-        </div>
-        <div id="lrn-reports-demos-live" class="panel-collapse collapse">
-            <div class="panel-body">
-                <div id="lrn-reports-demos-live-content">
-                    <div class="lrn-nav-tabs lrn-nav-live pull-left">
-                        <ul class="nav nav-tabs tabs-left">
-                          <li class="active"><a id="report-session-summary" href="#live-progress" data-toggle="tab">Live Progress Tracking</a></li>
-                        </ul>
-                    </div>
-                    <div class="lrn-reports-vertical-content lrn-tab-content tab-content pull-left">
-                        <div class="tab-pane active" id="live-progress">
-                            <section>
-                                <h3 class="report-title">Live Progress Tracking</h3>
-                                <p class="lrn-report-summary">Displays a real-time report of students status for an activity.</p>
-                                <p>You can also send real-time remote control events to do things like:</p>
-                                <ul>
-                                    <li>Pause/Unpause</li>
-                                    <li>Extend activity time</li>
-                                    <li>Save &amp; Quit</li>
-                                    <li>Exit &amp; Discard</li>
-                                </ul>
-                                <p>Visit our <a href="./live_progress.php">interactive demo</a> to see this in action.</p>
-                                <p>Review the <a href="http://docs.learnosity.com/reportsapi/reporttypes.php#live-activitystatus-by-user">documentation here</a>.</p>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Demo Report OnClick Modal -->
-<div class="modal fade" id="lrn-reports-demos-modal" tabindex="-1" role="dialog" aria-labelledby="lrn-reports-demos-modal-label" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="lrn-reports-demos-modal-label">Demo Report</h4>
-            </div>
-            <div id="lrn-reports-demos-modal-content" class="modal-body"></div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <!-- Demo Report OnClick Modal -->
+    <div class="modal fade" id="lrn-reports-demos-modal" tabindex="-1" role="dialog" aria-labelledby="lrn-reports-demos-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="lrn-reports-demos-modal-label">Demo Report</h4>
+                </div>
+                <div id="lrn-reports-demos-modal-content" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>

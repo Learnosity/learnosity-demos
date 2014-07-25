@@ -11,8 +11,10 @@ include_once 'includes/header.php';
         </ul>
     </div>
     <h1>Reports API</h1>
-    <p>A cross domain embeddable service that allows content providers to easily render rich reports.<p>
-    <p>Live Progress Tracking also gives administrators the power to control end users assessments in real time.</p>
+    <div class="section-intro">
+        <p>A cross domain embeddable service that allows content providers to easily render rich reports.<p>
+        <p>Live Progress Tracking also gives administrators the power to control end users assessments in real time.</p>
+    </div>
 
     <div class="row">
         <div class="col-md-6">

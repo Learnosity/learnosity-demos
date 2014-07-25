@@ -96,22 +96,17 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<div class="jumbotron">
-    <h1>Questions API - Formula question type</h1>
+<div class="jumbotron section">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questionsapi/responsetypes.php#formula" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="./graphplotting.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
+    <h1>Questions API – Formula question type</h1>
     <p>One of the many question types provided by the Learnosity <b>Questions API</b>. The formula question type allows for easy input of complex math or scientific expressions, with powerful validation capabilities for authors.<p>
     <p>Input is captured in the popular <a href="http://www.latex-project.org/">LaTeX format</a>. Try entering some maths below to see the resulting LaTeX output.</p>
-
-    <div class="row">
-        <div class="col-md-8">
-            <h4><a href="http://docs.learnosity.com/questionsapi/responsetypes.php#formula" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
-                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
-            </a></h4>
-        </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="./graphplotting.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
-    </div>
 </div>
 
 <script src="//questions.learnosity.com"></script>
@@ -138,38 +133,40 @@ $signedRequest = $Init->generate();
     });
 </script>
 
-<!-- Main question content below here: -->
-<h2 class="page-heading">Demos</h2>
+<div class="section">
+    <!-- Main question content below here: -->
+    <h2 class="page-heading">Demos</h2>
 
-<p>1. Basic question</p>
-<div class="question">
-    <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
-    <span class="learnosity-response question-demoformula1_<?php echo $uniqueResponseIdSuffix ?>"></span>
-</div>
-<hr />
+    <p>1. Basic question</p>
+    <div class="question">
+        <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
+        <span class="learnosity-response question-demoformula1_<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+    <hr />
 
-<p>2. Validation: enter any mathematical expression equivalent to <strong>x</strong> and check your answer.
-<small>e.g. <strong>2x - x</strong></small>
-</p>
-<div class="question">
-    <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
-    <span class="learnosity-response question-demoformula2_<?php echo $uniqueResponseIdSuffix ?>"></span>
-</div>
-<hr />
+    <p>2. Validation: enter any mathematical expression equivalent to <strong>x</strong> and check your answer.
+    <small>e.g. <strong>2x - x</strong></small>
+    </p>
+    <div class="question">
+        <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
+        <span class="learnosity-response question-demoformula2_<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+    <hr />
 
-<p>3. Response positions: enter the symbol to complete the quadratic equation.</p>
-<div class="question">
-    <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
-    <span class="learnosity-response question-demoformula3_<?php echo $uniqueResponseIdSuffix ?>"></span>
-</div>
-<hr />
+    <p>3. Response positions: enter the symbol to complete the quadratic equation.</p>
+    <div class="question">
+        <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
+        <span class="learnosity-response question-demoformula3_<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+    <hr />
 
-<p>3. Custom toolbar buttons</p>
-<div class="question">
-    <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
-    <span class="learnosity-response question-demoformula4_<?php echo $uniqueResponseIdSuffix ?>"></span>
+    <p>3. Custom toolbar buttons</p>
+    <div class="question">
+        <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
+        <span class="learnosity-response question-demoformula4_<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+    <hr />
 </div>
-<hr />
 
 <?php
     include_once 'views/modals/initialisation-preview.php';

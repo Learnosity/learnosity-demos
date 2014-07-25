@@ -1114,23 +1114,18 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<div class="jumbotron">
-    <h1>Questions API - Question Types</h1>
+<div class="jumbotron section">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questionsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="./featuretypes.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
+    <h1>Questions API – Question Types</h1>
     <p>Rich Question Types can be embedded on any page with the Learnosity <b>Questions API</b>.
     Every question is highly configurable to suit the assessment purpose, be it formative or summative.<p>
     <p>Try a few questions and then submit at the bottom of the page</p>
-    <div class="row">
-        <div class="col-md-8">
-            <h4><a href="http://docs.learnosity.com/questionsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
-                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
-            </a></h4>
-        </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="./featuretypes.php">Next
-        <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
-    </div>
 </div>
 
 <!-- Container for the questions api to load into -->
@@ -1153,366 +1148,367 @@ $signedRequest = $Init->generate();
     });
 </script>
 
-<!-- Main question content below here: -->
-<h2 class="page-heading">Question Types Overview</h2>
+<div class="section">
+    <!-- Main question content below here: -->
+    <h2 class="page-heading">Question Types Overview</h2>
 
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q1">Multiple Choice</h3>
-        <p>Which of these colours has the smallest wavelength?</p>
-        <span class="learnosity-response question-demo1-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q1">Multiple Choice</h3>
+            <p>Which of these colours has the smallest wavelength?</p>
+            <span class="learnosity-response question-demo1-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q1">Multiple Choice (Block Style)</h3>
+            <p>What is the capital city of England?</p>
+            <span class="learnosity-response question-demo1b-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q2">Multiple Choice with multi select</h3>
+            <p>Which of these cities are state capitals?</p>
+            <span class="learnosity-response question-demo2-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q3">Short text</h3>
+             <p>
+                <span class="label label-info">Hint</span> &#8220;Michael Bloomberg&#8221; gets one point, &#8220;Bloomberg&#8221; gets half a point.
+            </p>
+            <p>Who is the Mayor of New York City?</p>
+            <span class="learnosity-response question-demo3-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q4">Long text answer with basic formatting</h3>
+            <p>Briefly explain cellular mitosis.</p>
+            <span class="learnosity-response question-demo4-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q5">Plain text answer, with copy, cut &amp; paste</h3>
+            <p>Write a haiku poem in German.</p>
+            <span class="learnosity-response question-demo5-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q6">Spoken response</h3>
+            <p>Describe a typical day in your life.</p>
+            <span class="learnosity-response question-demo6-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q7">Cloze (fill in the blanks)</h3>
+            <p>Complete the multiplication table below.</p>
+            <span class="learnosity-response question-demo7-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q8">Cloze (fill in the blanks) with drop down menus</h3>
+            <p>Fill in the blanks</p>
+            <span class="learnosity-response question-demo8-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q9">Cloze (fill in the blanks) with drag and drop</h3>
+            <p>Simplify the following, expressing your answers with positive indices.</p>
+            <span class="learnosity-response question-demo9-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q10">Cloze Text Expanding (Extended Fill in the blanks)</h3>
+            <p>Fill in the blanks.</p>
+            <span class="learnosity-response question-demo10-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q11">Draw / highlight on a background image</h3>
+            <p>Circle one of the flower's anthers in the picture.</p>
+            <span class="learnosity-response question-demo11-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q12">Label an image (add text)</h3>
+            <p>Name the states on the map</p>
+            <span class="learnosity-response question-demo12-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q13">Label an image (with drop down menus)</h3>
+            <p>Select the correct State names on the map.</p>
+            <span class="learnosity-response question-demo13-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q14">Label an image (with drag and drop)</h3>
+            <p>Indicate whether each of the highlighted countries currently has a male or a female <strong>Head of State</strong>.</p>
+            <span class="learnosity-response question-demo14-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q15">Order a list</h3>
+            <p>Sort these historical events chronologically, from earliest to latest.</p>
+            <span class="learnosity-response question-demo15-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q16">Order buttons</h3>
+            <p>Sort these Beatles albums by release date (earliest first).</p>
+            <span class="learnosity-response question-demo16-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q17">Order paragraphs</h3>
+            <p>Move the paragraphs into the correct order.</p>
+            <span class="learnosity-response question-demo17-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q18">Order words or sentences within a paragraph</h3>
+            <p>Rearrange the sentences into the correct order.</p>
+            <span class="learnosity-response question-demo18-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q19">Text Highlight</h3>
+            <p>Select all the <strong>adjectives</strong> in the text.</p>
+            <span class="learnosity-response question-demo19-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q20">Token Highlight</h3>
+            <p>Select all the <strong>relevant sections</strong> in the text.</p>
+            <span class="learnosity-response question-demo23-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q21">Match Lists</h3>
+            <p>Match each city to its parent nation.</p>
+            <span class="learnosity-response question-demo20-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q22">Sort List</h3>
+            <p>Sort these historical events chronologically, from earliest to latest.</p>
+            <span class="learnosity-response question-demo22-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q23">Categories (Drag and Drop)</h3>
+            <p>Drag each triangle to the correct category.</p>
+            <span class="learnosity-response question-demo21-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q32">Choice Matrix</h3>
+            <span class="learnosity-response question-demo32-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q33">Choice Matrix (wide)</h3>
+            <span class="learnosity-response question-demo33-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q31">Numberline</h3>
+            <span class="learnosity-response question-demo31-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q24">Plot Points</h3>
+            <p>Plot points at \((5,2)\), \((3,0)\), \((2,4)\) and \((-1,-5)\).</p>
+            <span class="learnosity-response question-demo24-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q25">Plot Lines</h3>
+            <p>Plot the line \( y = x + 1 \)</p>
+            <span class="learnosity-response question-demo25-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q27">Plot Segments</h3>
+            <span class="learnosity-response question-demo27-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q28">Plot Rays</h3>
+            <p>Graph a Ray originating at \((4,0)\) in the direction towards \((7,-2)\)</p>
+            <p><span class="label label-info">Hint</span> You'll need to use the <strong>Ray</strong> tool</p>
+            <span class="learnosity-response question-demo28-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q29">Plot Circles</h3>
+            <span class="learnosity-response question-demo29-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q30">Plot Vectors</h3>
+            <span class="learnosity-response question-demo30-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q26">Math Formula</h3>
+            <p><span class="label label-info">Hint</span>  \(x(x+4) +3\), \(x^2 +4x +3\) and \(3 + x^2 +4x \) would all be acceptable.</p>
+            <span class="learnosity-response question-demo26-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q34">Math Formula (Fill in the Blanks)</h3>
+            <p><span class="label label-info">Hint</span>  Possible answers include:<br><br>\(5 = y + x\)<br>\(-5 = y + (-x -2y)\)</p>
+            <p>Try a few and see - the question is evaluated as a whole, rather than each box on its own.</p>
+            <span class="learnosity-response question-demo34-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q35">Math Formula (Unit comparison)</h3>
+            <p><span class="label label-info">Hint</span>  \(0.005km\), \(500cm\), \(5000mm\) \(16.40ft\), \(196.8in\) would all be acceptable.</p>
+            <span class="learnosity-response question-demo35-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q36">Simple Chart - Bar</h3>
+            <p><span class="label label-info">Hint</span> Resize <em>Romance</em> to 4 and add a new <em>SciFi</em> bar with a y-axis value of 4.</p>
+            <span class="learnosity-response question-demo36-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q37">Simple Chart - Bar Sorting</h3>
+            <p><span class="label label-info">Hint</span> Sort the chart (ascending) by clicking on the arrows.</p>
+            <span class="learnosity-response question-demo37-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q36">Simple Chart - Line</h3>
+            <p><span class="label label-info">hint</span> Resize L to 40 and add a new point (M) and set its value to 60.</p>
+            <span class="learnosity-response question-demo38-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="form-actions">
+            <button class="btn btn-xlarge btn-primary save-review finish" data-saving-text="Saving..." <?php if ($state !== 'initial') { echo 'disabled'; } ?>>Save and Review</button>
+            <a id="reviewButton" style="display:none;" class="btn btn-primary" href="?uniqueResponseIdSuffix=<?php echo $uniqueResponseIdSuffix; ?>&state=review">Review answers</a>
+        </div>
     </div>
 </div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q1">Multiple Choice (Block Style)</h3>
-        <p>What is the capital city of England?</p>
-        <span class="learnosity-response question-demo1b-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q2">Multiple Choice with multi select</h3>
-        <p>Which of these cities are state capitals?</p>
-        <span class="learnosity-response question-demo2-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q3">Short text</h3>
-         <p>
-            <span class="label label-info">Hint</span> &#8220;Michael Bloomberg&#8221; gets one point, &#8220;Bloomberg&#8221; gets half a point.
-        </p>
-        <p>Who is the Mayor of New York City?</p>
-        <span class="learnosity-response question-demo3-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q4">Long text answer with basic formatting</h3>
-        <p>Briefly explain cellular mitosis.</p>
-        <span class="learnosity-response question-demo4-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q5">Plain text answer, with copy, cut &amp; paste</h3>
-        <p>Write a haiku poem in German.</p>
-        <span class="learnosity-response question-demo5-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q6">Spoken response</h3>
-        <p>Describe a typical day in your life.</p>
-        <span class="learnosity-response question-demo6-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q7">Cloze (fill in the blanks)</h3>
-        <p>Complete the multiplication table below.</p>
-        <span class="learnosity-response question-demo7-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q8">Cloze (fill in the blanks) with drop down menus</h3>
-        <p>Fill in the blanks</p>
-        <span class="learnosity-response question-demo8-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q9">Cloze (fill in the blanks) with drag and drop</h3>
-        <p>Simplify the following, expressing your answers with positive indices.</p>
-        <span class="learnosity-response question-demo9-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q10">Cloze Text Expanding (Extended Fill in the blanks)</h3>
-        <p>Fill in the blanks.</p>
-        <span class="learnosity-response question-demo10-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q11">Draw / highlight on a background image</h3>
-        <p>Circle one of the flower's anthers in the picture.</p>
-        <span class="learnosity-response question-demo11-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q12">Label an image (add text)</h3>
-        <p>Name the states on the map</p>
-        <span class="learnosity-response question-demo12-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q13">Label an image (with drop down menus)</h3>
-        <p>Select the correct State names on the map.</p>
-        <span class="learnosity-response question-demo13-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q14">Label an image (with drag and drop)</h3>
-        <p>Indicate whether each of the highlighted countries currently has a male or a female <strong>Head of State</strong>.</p>
-        <span class="learnosity-response question-demo14-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q15">Order a list</h3>
-        <p>Sort these historical events chronologically, from earliest to latest.</p>
-        <span class="learnosity-response question-demo15-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q16">Order buttons</h3>
-        <p>Sort these Beatles albums by release date (earliest first).</p>
-        <span class="learnosity-response question-demo16-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q17">Order paragraphs</h3>
-        <p>Move the paragraphs into the correct order.</p>
-        <span class="learnosity-response question-demo17-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q18">Order words or sentences within a paragraph</h3>
-        <p>Rearrange the sentences into the correct order.</p>
-        <span class="learnosity-response question-demo18-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q19">Text Highlight</h3>
-        <p>Select all the <strong>adjectives</strong> in the text.</p>
-        <span class="learnosity-response question-demo19-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q20">Token Highlight</h3>
-        <p>Select all the <strong>relevant sections</strong> in the text.</p>
-        <span class="learnosity-response question-demo23-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q21">Match Lists</h3>
-        <p>Match each city to its parent nation.</p>
-        <span class="learnosity-response question-demo20-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q22">Sort List</h3>
-        <p>Sort these historical events chronologically, from earliest to latest.</p>
-        <span class="learnosity-response question-demo22-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q23">Categories (Drag and Drop)</h3>
-        <p>Drag each triangle to the correct category.</p>
-        <span class="learnosity-response question-demo21-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q32">Choice Matrix</h3>
-        <span class="learnosity-response question-demo32-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q33">Choice Matrix (wide)</h3>
-        <span class="learnosity-response question-demo33-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q31">Numberline</h3>
-        <span class="learnosity-response question-demo31-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q24">Plot Points</h3>
-        <p>Plot points at \((5,2)\), \((3,0)\), \((2,4)\) and \((-1,-5)\).</p>
-        <span class="learnosity-response question-demo24-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q25">Plot Lines</h3>
-        <p>Plot the line \( y = x + 1 \)</p>
-        <span class="learnosity-response question-demo25-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q27">Plot Segments</h3>
-        <span class="learnosity-response question-demo27-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q28">Plot Rays</h3>
-        <p>Graph a Ray originating at \((4,0)\) in the direction towards \((7,-2)\)</p>
-        <p><span class="label label-info">Hint</span> You'll need to use the <strong>Ray</strong> tool</p>
-        <span class="learnosity-response question-demo28-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q29">Plot Circles</h3>
-        <span class="learnosity-response question-demo29-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q30">Plot Vectors</h3>
-        <span class="learnosity-response question-demo30-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q26">Math Formula</h3>
-        <p><span class="label label-info">Hint</span>  \(x(x+4) +3\), \(x^2 +4x +3\) and \(3 + x^2 +4x \) would all be acceptable.</p>
-        <span class="learnosity-response question-demo26-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q34">Math Formula (Fill in the Blanks)</h3>
-        <p><span class="label label-info">Hint</span>  Possible answers include:<br><br>\(5 = y + x\)<br>\(-5 = y + (-x -2y)\)</p>
-        <p>Try a few and see - the question is evaluated as a whole, rather than each box on its own.</p>
-        <span class="learnosity-response question-demo34-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q35">Math Formula (Unit comparison)</h3>
-        <p><span class="label label-info">Hint</span>  \(0.005km\), \(500cm\), \(5000mm\) \(16.40ft\), \(196.8in\) would all be acceptable.</p>
-        <span class="learnosity-response question-demo35-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q36">Simple Chart - Bar</h3>
-        <p><span class="label label-info">Hint</span> Resize <em>Romance</em> to 4 and add a new <em>SciFi</em> bar with a y-axis value of 4.</p>
-        <span class="learnosity-response question-demo36-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q37">Simple Chart - Bar Sorting</h3>
-        <p><span class="label label-info">Hint</span> Sort the chart (ascending) by clicking on the arrows.</p>
-        <span class="learnosity-response question-demo37-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3 id="q36">Simple Chart - Line</h3>
-        <p><span class="label label-info">hint</span> Resize L to 40 and add a new point (M) and set its value to 60.</p>
-        <span class="learnosity-response question-demo38-<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-</div>
-<hr>
-
-<div class="row">
-    <div class="form-actions">
-        <button class="btn btn-xlarge btn-primary save-review finish" data-saving-text="Saving..." <?php if ($state !== 'initial') { echo 'disabled'; } ?>>Save and Review</button>
-        <a id="reviewButton" style="display:none;" class="btn btn-primary" href="?uniqueResponseIdSuffix=<?php echo $uniqueResponseIdSuffix; ?>&state=review">Review answers</a>
-    </div>
-</div>
-<p>&nbsp;</p>
 
 <?php
     include_once 'views/modals/initialisation-preview.php';
