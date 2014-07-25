@@ -23,7 +23,8 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Report Types</h2>
                 </div>
                 <div class="panel-body">
-                    <p>See all of our powerful reports in action. Rendering aggregated summaries or review
+                    <p>See all of our powerful reports in action.</p>
+                    <p>Rendering aggregated summaries or review
                     modes from students assessments.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./report_types.php">Demo</a>
