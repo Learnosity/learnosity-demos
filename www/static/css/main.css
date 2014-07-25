@@ -668,3 +668,12 @@ h1, h2, h3, h4, h5, h6, .navbar {
 .lrn-reports-vertical-content {
     width: 765px;
 }
+
+#accordion .panel-heading {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.panel-group .panel {
+    border-radius: 0px;
+}
