@@ -6,16 +6,14 @@ include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="../author"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
     <h1>Question Editor API</h1>
     <p>Our editor. Your item bank platform.<p>
-    <div class="row">
-        <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/questioneditorapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-        </div>
-        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="../../authoring/author/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
-    </div>
 </div>
 
 <!--

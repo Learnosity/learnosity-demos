@@ -4,17 +4,16 @@ include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron">
-    <h1>Items API</h1>
-    <p>
-        Learnosity's <b>Items API</b> provides a simple way to access content from the Learnosity item bank to pull in activities and assessments from the author site’s data store that can be embedded in your pages. It leverages the <a href="../questions/index.php">Questions API</a> and the <a href="../assess/index.php">Assess API</a> as appropriate.</p>
-    <div class="row">
-        <div class="col-md-8">
-            <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-        </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="<?php echo $env['www'] ?>assessment/assess/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="../assess/"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
     </div>
+    <h1>Items API</h1>
+    <p>Learnosity's <b>Items API</b> provides a simple way to access content from the Learnosity item bank to pull in activities and assessments from the author
+    site’s data store that can be embedded in your pages. It leverages the <a href="../questions/index.php">Questions API</a> and the
+    <a href="../assess/index.php">Assess API</a> as appropriate.</p>
 </div>
 
 <div class="row">

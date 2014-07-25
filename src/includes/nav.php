@@ -29,7 +29,7 @@
             <ul class="nav navbar-nav">
                 <?php
                     foreach ($pages as $page => $name) {
-                        $active = strcasecmp($env['section'], $page) ? '' : ' active';
+                        $active = strcasecmp($env['section'], $page) ? '' : ' active_';
                         echo '
                         <li class="dropdown' . $active . '">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $page . ' <b class="caret"></b></a>

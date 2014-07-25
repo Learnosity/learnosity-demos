@@ -4,24 +4,15 @@ include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron clearfix">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/reportsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="../data/"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
     <h1>Reports API</h1>
     <p>A cross domain embeddable service that allows content providers to easily render rich reports.<p>
-    <p>Live Progress Tracking also gives administrators the power to control end users assessments in real
-    time.</p>
-    <div class="row">
-        <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/reportsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-        </div>
-        <div class="col-md-2">
-            <p class='text-right'>
-                <a class="btn btn-primary btn-lg" href="../data">
-                    Next <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </p>
-        </div>
-    </div>
+    <p>Live Progress Tracking also gives administrators the power to control end users assessments in real time.</p>
 </div>
 
 <div class="row">

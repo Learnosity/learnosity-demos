@@ -12,8 +12,10 @@ $version = 'v0.30';
 
 <div class="jumbotron">
     <div class="pull-right toolbar">
-        <a href="http://docs.learnosity.com/dataapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a>
-        <a href="../sso" title="Next – SSO"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/dataapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="../sso"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
     </div>
     <h1>Data API</h1>
     <div class="section">

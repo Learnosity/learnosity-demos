@@ -25,19 +25,15 @@ $signedRequest = $Init->generate();
 ?>
 
 <div class="jumbotron">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/authorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="../../assessment/questions/index.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
     <h1>Author API</h1>
     <p>Learnosity's Author API allows searching and integration of Learnosity powered content into your content management system.<p>
-    <div class="row">
-        <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/authorapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
-                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
-            </a></h4>
-        </div>
-        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="../../assessment/questions/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
-    </div>
 </div>
 
 <section>
