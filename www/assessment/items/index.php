@@ -106,6 +106,21 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Accessibility</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Showcases the Accessibility panel that allows students to configure accessibility options during an assessment.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_accessibility.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php include_once 'includes/footer.php';
