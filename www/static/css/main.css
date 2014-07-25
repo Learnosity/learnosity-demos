@@ -410,6 +410,28 @@ body,
 * New UI starting 23rd July 2014
 *
 ********************************************************************/
+.row {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.row [class^="col-"] {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.glyphicon-question-sign:before {
+    color: #e21c47;
+}
+
+.glyphicon-cloud-download:before {
+    color: #f1bd19;
+}
+
+.glyphicon-info-sign:before {
+    color: #93d5d9;
+}
+
 body {
     padding-top: 0;
     background-color: #f3f5f5;
@@ -460,7 +482,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
     border-radius: 0px;
 }
 
-.jumbotron .row {
+.jumbotron .section {
     padding-bottom: 15px;
     border-bottom: 1px solid #ebf0f0;
 }
@@ -471,12 +493,15 @@ h1, h2, h3, h4, h5, h6, .navbar {
     padding-left: 0px;
     padding-right: 0px;
     background-color: #fff;
+    margin-bottom: 30px;
 }
 
 .jumbotron h1 {
     font-weight: 100;
-    padding-bottom: 0.3em;
+    padding: 18px 0 35px;
     border-bottom: 1px solid #ebf0f0;
+    letter-spacing: 0.03em;
+    margin-bottom: 40px;
 }
 
 .jumbotron p:first-of-type {
@@ -491,8 +516,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 .landing .jumbotron p {
     font-size: 20px;
-    line-height: 22px;
-    letter-spacing: 0.2px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
 }
 
 .content-section {
@@ -541,11 +566,23 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .landing-panel {
-    border-bottom: 1px solid #efefef;
+    border-top: 1px solid #efefef;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 .landing-panel:first-child {
     border-top: 1px solid #efefef;
+}
+
+.toolbar {
+    font-size: 20px;
+}
+
+.toolbar a {
+    color: #424d55;
+}
+
+.toolbar a:hover {
+    color: #428bca;
 }

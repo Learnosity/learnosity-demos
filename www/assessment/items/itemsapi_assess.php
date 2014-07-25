@@ -86,22 +86,20 @@ $signedRequest = $Init->generate();
 ?>
 
 <div class="jumbotron">
+    <div class="pull-right toolbar">
+        <a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a>
+        <a href="itemsapi_inline" title="Next – Items Inline"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+    </div>
     <h1>Items API – Assess</h1>
     <p>With the flick of a switch make the items into an assessment. Truly write once - use anywhere.<p>
     <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
-    <div class="row">
-        <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
-                <span class="glyphicon glyphicon-list-alt"></span> Customise API Settings
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
-                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
-            </a></h4>
-        </div>
-        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_inline.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+    <div class="section">
+        <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
+            <span class="glyphicon glyphicon-list-alt"></span> Customise API Settings
+        </a></h4>
+        <h4><a href="#"  data-toggle="modal" data-target="#initialisation-preview">
+            <span class="glyphicon glyphicon-search"></span> Preview API Initialisation Object
+        </a></h4>
     </div>
 </div>
 
