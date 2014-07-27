@@ -7,10 +7,9 @@
     <link rel="shortcut icon" href="<?php echo $env['www'] ?>static/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/reveal/reveal.css">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/codemirror/codemirror.css">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.css">
-    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/css/main.css">
+    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/css/main.css?20140728">
     <script src="<?php echo $env['www'] ?>static/vendor/jquery/jquery-1.11.0.min.js"></script>
     <script src="<?php echo $env['www'] ?>static/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo $env['www'] ?>static/js/prettyPrint.js"></script>
