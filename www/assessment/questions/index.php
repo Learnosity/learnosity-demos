@@ -3,27 +3,19 @@ include_once '../../config.php';
 include_once 'includes/header.php';
 ?>
 
-<div class="jumbotron">
+<div class="jumbotron section">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questionsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="../items/"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
     <h1>Questions API</h1>
-    <p>Rich Question types can be embedded on any page with the Learnosity <b>Questions API</b>. Every question is highly configurable to suit the assessment purpose, be it formative or summative.<p>
-
-    <div class="row">
-        <div class="col-md-8">
-            <h4><a href="http://docs.learnosity.com/questionsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-        </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="<?php echo $env['www'] ?>assessment/items/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
+    <div class="section-intro">
+        <p>Rich Question types can be embedded on any page with the Learnosity <b>Questions API</b>. Every question is highly configurable
+        to suit the assessment purpose, be it formative or summative.<p>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Questions API Demos</h2>
-            <p>Try one of the Demos below.</p></br>
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">

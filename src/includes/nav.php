@@ -20,7 +20,7 @@
     );
 ?>
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand logo" href="<?php echo $env['www'] ?>">Learnosity Demos</a>
@@ -29,7 +29,7 @@
             <ul class="nav navbar-nav">
                 <?php
                     foreach ($pages as $page => $name) {
-                        $active = strcasecmp($env['section'], $page) ? '' : ' active';
+                        $active = strcasecmp($env['section'], $page) ? '' : ' active_';
                         echo '
                         <li class="dropdown' . $active . '">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $page . ' <b class="caret"></b></a>

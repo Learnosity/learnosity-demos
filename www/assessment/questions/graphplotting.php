@@ -414,21 +414,17 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<div class="jumbotron">
-    <h1>Graph Plotting</h1>
+<div class="jumbotron section">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questionsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="./audio_advanced.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
+    <h1>Questions API – Graph Plotting</h1>
     <p>One of the many question types provided by the Learnosity Questions API. The graph plotting type allows to draw or plot points, lines, line segments, rays, vectors and circles on a coordinate grid. Graph Plotting question types can be computer scored.<p>
     <p>Try a few of the demos below.</p>
-    <div class="row">
-        <div class="col-md-8">
-            <h4><a href="http://docs.learnosity.com/questionsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
-                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
-            </a></h4>
-        </div>
-        <div class="col-md-4"><p class='text-right'><a class="btn btn-primary btn-lg" href="<?php echo $env['www'] ?>assessment/items/index.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
-    </div>
 </div>
 
 <!-- Container for the questions api to load into -->
@@ -437,60 +433,62 @@ $signedRequest = $Init->generate();
     LearnosityApp.init(<?php echo $signedRequest; ?>);
 </script>
 
-<!-- Main question content below here: -->
-<h2 class="page-heading">Demos</h2>
+<div class="section">
+    <!-- Main question content below here: -->
+    <h2 class="page-heading">Demos</h2>
 
-<div class="row">
-    <div class="col-md-8">
-        <h3>Plot Points</h3>
-        <p>Plot points at \((5,2)\), \((3,0)\), \((2,4)\) and \((-1,-5)\).</p>
-        <span class="learnosity-response question-demograph_1-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Plot Points</h3>
+            <p>Plot points at \((5,2)\), \((3,0)\), \((2,4)\) and \((-1,-5)\).</p>
+            <span class="learnosity-response question-demograph_1-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
     </div>
-</div>
-<hr>
+    <hr>
 
-<div class="row">
-    <div class="col-md-8">
-        <h3>Plot Lines</h3>
-        <p>Plot the line \( y = x + 1 \)</p>
-        <span class="learnosity-response question-demograph_2-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Plot Lines</h3>
+            <p>Plot the line \( y = x + 1 \)</p>
+            <span class="learnosity-response question-demograph_2-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
     </div>
-</div>
-<hr>
+    <hr>
 
-<div class="row">
-    <div class="col-md-8">
-        <h3>Plot Segments</h3>
-        <p>Plot a line segment between the coordinates \((-5,-9)\) and \((4,7)\)</p>
-        <span class="learnosity-response question-demograph_3-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Plot Segments</h3>
+            <p>Plot a line segment between the coordinates \((-5,-9)\) and \((4,7)\)</p>
+            <span class="learnosity-response question-demograph_3-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
     </div>
-</div>
-<hr>
+    <hr>
 
-<div class="row">
-    <div class="col-md-8">
-        <h3>Plot Rays</h3>
-        <p>Graph a Ray originating at \((4,0)\) in the direction towards \((7,-2)\)</p>
-        <p><span class="label label-info">Hint</span> You'll need to use the <strong>Ray</strong> tool</p></p>
-        <span class="learnosity-response question-demograph_4-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Plot Rays</h3>
+            <p>Graph a Ray originating at \((4,0)\) in the direction towards \((7,-2)\)</p>
+            <p><span class="label label-info">Hint</span> You'll need to use the <strong>Ray</strong> tool</p></p>
+            <span class="learnosity-response question-demograph_4-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
     </div>
-</div>
-<hr>
+    <hr>
 
-<div class="row">
-    <div class="col-md-8">
-        <h3>Plot Circles</h3>
-        <p>Plot the circle with centre co-ordinates \((5,4)\) and a radius of 2 units.</p>
-        <span class="learnosity-response question-demograph_5-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Plot Circles</h3>
+            <p>Plot the circle with centre co-ordinates \((5,4)\) and a radius of 2 units.</p>
+            <span class="learnosity-response question-demograph_5-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
     </div>
-</div>
-<hr>
+    <hr>
 
-<div class="row">
-    <div class="col-md-8">
-        <h3>Plot Vectors</h3>
-        <p>Plot the vector originating at \((0,1)\) in the direction \(\binom{3}{4}\)</p>
-        <span class="learnosity-response question-demograph_6-<?php echo $uniqueResponseIdSuffix ?>"></span>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Plot Vectors</h3>
+            <p>Plot the vector originating at \((0,1)\) in the direction \(\binom{3}{4}\)</p>
+            <span class="learnosity-response question-demograph_6-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
     </div>
 </div>
 

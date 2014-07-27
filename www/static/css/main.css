@@ -403,3 +403,275 @@ body,
     margin-top: 2px;
     margin-bottom: 15px;
 }
+
+
+/********************************************************************
+*
+* New UI starting 23rd July 2014
+*
+********************************************************************/
+.container {
+    padding-bottom: 35px;
+}
+
+.row {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.row [class^="col-"] {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.glyphicon-question-sign:before {
+    color: #e21c47;
+}
+
+.glyphicon-cloud-download:before {
+    color: #f1bd19;
+}
+
+.glyphicon-info-sign:before {
+    color: #93d5d9;
+}
+
+body {
+    padding-top: 0;
+    background-color: #f3f5f5;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+.jumbotron h1 {
+    font-size: 58px;
+}
+
+.landing .jumbotron  h1 {
+    font-size: 63px;
+}
+
+.logo {
+   padding-left: 40px;
+   height: inherit;
+   background: url('../images/logo-square.svg') no-repeat center left;
+   background-size: 28px;
+   font-size: 20px;
+}
+
+.navbar {
+    height: 90px;
+    background: none;
+    background-color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+}
+
+.navbar .container {
+    padding-top: 18px;
+}
+
+.navbar-nav {
+    margin-left: 15px;
+}
+
+.navbar-nav .text-muted {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+}
+
+.navbar-default {
+    border-bottom: 1px solid #efefef;
+    border-radius: 0;
+    box-shadow: none;
+    webkit-box-shadow: none;
+}
+
+.container .jumbotron {
+    border-radius: 0px;
+}
+
+.jumbotron .section {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ebf0f0;
+}
+
+.section:first-of-type {
+    padding-top: 0px;
+}
+
+.jumbotron {
+    padding-bottom: 24px;
+}
+
+.section {
+    padding-top: 24px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.container .jumbotron {
+    padding-top: 24px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.jumbotron h1 {
+    font-weight: 100;
+    padding: 18px 0 35px;
+    border-bottom: 1px solid #ebf0f0;
+    letter-spacing: 0.03em;
+    margin-bottom: 40px;
+}
+
+.jumbotron p:first-of-type {
+    margin-top: 25px;
+}
+
+.jumbotron p {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+}
+
+.landing.section {
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.landing .jumbotron p {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+}
+
+.landing .jumbotron {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.section {
+    background-color: #fff;
+    color: #424d55;
+    border: 1px solid #e9e9e9;
+    webkit-box-shadow: 0 1px 50px rgba(0,0,0,0.04);
+    box-shadow: 0 1px 50px rgba(0,0,0,0.04);
+    min-height: 280px;
+}
+
+.landing .dl-horizontal dt {
+    width: 120px;
+    font-size: 30px;
+}
+
+.landing .dl-horizontal dd {
+    margin-left: 140px;
+}
+
+.landing dl {
+    padding-right: 70px;
+    padding-bottom: 2px;
+}
+
+.landing h4 {
+    padding-top: 10px;
+}
+
+.content-panel {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+    border-left: 1px solid #eee;
+}
+
+.content-panel ul.list-unstyled li {
+    padding-bottom: 2px;
+}
+
+.content-panel ul.list-unstyled li:last-child {
+    padding-bottom: 8px;
+}
+
+.landing-panel {
+    border-top: 1px solid #efefef;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.landing-panel:first-child {
+    border-top: 1px solid #efefef;
+}
+
+.toolbar {
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.toolbar a {
+    color: #424d55;
+}
+
+.toolbar a:hover {
+    color: #428bca;
+}
+
+.section-intro {
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 25px;
+    margin-bottom: 40px;
+}
+
+.hints table {
+    border-collapse: collapse !important;
+}
+
+.jumbotron .panel-body p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    margin-left: 0px;
+}
+
+.panel-default>.panel-heading {
+    background-image: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.panel {
+    border-radius: 0px;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.btn-primary {
+    background-image: none;
+}
+
+.dropdown-menu>li>a {
+    font-weight: 300;
+}
+
+.lrn-reports-vertical-content {
+    width: 765px;
+}
+
+#accordion .panel-heading {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.panel-group .panel {
+    border-radius: 0px;
+}
