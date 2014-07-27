@@ -32,7 +32,15 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<div class="jumbotron">
+<div class="jumbotron section">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted" data-toggle="modal" data-target="#settings"><span class="glyphicon glyphicon-list-alt"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="itemsapi_workedsolutions.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
     <h1>Items API – Activities</h1>
     <p>Activities are a wrapper for multiple items authored in the Learnosity Author site. They can also
     include configuration used by the <a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a> to control the assessment user interface.</p>
@@ -40,24 +48,12 @@ $signedRequest = $Init->generate();
     authored in the Learnosity item bank.<p>
     <p><a href="#" data-toggle="modal" data-target="#settings">Customise the activity</a> you want to load.<p>
     <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
-    <div class="row">
-        <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
-                <span class="glyphicon glyphicon-list-alt"></span> Customise API Settings
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
-                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
-            </a></h4>
-        </div>
-        <div class="col-md-2"><p class='text-right'><a class="btn btn-primary btn-lg" href="itemsapi_workedsolutions.php">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p></div>
-    </div>
 </div>
 
-<!-- Container for the items api to load into -->
-<div id="learnosity_assess"></div>
+<div class="section">
+    <!-- Container for the items api to load into -->
+    <div id="learnosity_assess"></div>
+</div>
 <script src="//items.learnosity.com"></script>
 <script>
     var eventOptions = {

@@ -3,34 +3,19 @@ include_once '../../config.php';
 include_once 'includes/header.php';
 ?>
 
-<div class="jumbotron clearfix">
+<div class="jumbotron section">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/reportsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="../data/"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
     <h1>Reports API</h1>
-    <p>A cross domain embeddable service that allows content providers to easily render rich reports.<p>
-    <p>Live Progress Tracking also gives administrators the power to control end users assessments in real
-    time.</p>
-    <div class="row">
-        <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/reportsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Documentation
-            </a></h4>
-        </div>
-        <div class="col-md-2">
-            <p class='text-right'>
-                <a class="btn btn-primary btn-lg" href="../data">
-                    Next <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </p>
-        </div>
+    <div class="section-intro">
+        <p>A cross domain embeddable service that allows content providers to easily render rich reports.<p>
+        <p>Live Progress Tracking also gives administrators the power to control end users assessments in real time.</p>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Reports API Demos</h2>
-            <p>Try one of the demos below.</p></br>
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
@@ -38,7 +23,8 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Report Types</h2>
                 </div>
                 <div class="panel-body">
-                    <p>See all of our powerful reports in action. Rendering aggregated summaries or review
+                    <p>See all of our powerful reports in action.</p>
+                    <p>Rendering aggregated summaries or review
                     modes from students assessments.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./report_types.php">Demo</a>

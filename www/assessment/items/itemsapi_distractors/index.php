@@ -62,56 +62,58 @@ $signedRequest = $Init->generate();
     ItemsAPI = LearnosityItems.init(activity);
 </script>
 
-<div class="jumbotron">
+<div class="jumbotron section">
+    <div class="pull-right toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Next demo"><a href="itemsapi_inline.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+        </ul>
+    </div>
     <h1>Items API – Distractor Rationale</h1>
     <p>Demonstration of extending the Items API and Reports API to show custom distractor rationales.<p>
-    <div class="row">
-        <div class="col-md-10">
-            <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Items API Documentation
-            </a></h4>
-            <h4><a href="http://docs.learnosity.com/reportsapi/" class="text-muted">
-                <span class="glyphicon glyphicon-book"></span> Reports API Documentation
-            </a></h4>
-            <h4><a href="#" class="text-muted" data-toggle="modal" data-target="#initialisation-preview">
-                <span class="glyphicon glyphicon-share-alt"></span> Preview API Initialisation Object
-            </a></h4>
-        </div>
-    </div>
+    <h4><a href="http://docs.learnosity.com/itemsapi/" class="text-muted">
+        <span class="glyphicon glyphicon-book"></span> Items API Documentation
+    </a></h4>
+    <h4><a href="http://docs.learnosity.com/reportsapi/" class="text-muted">
+        <span class="glyphicon glyphicon-book"></span> Reports API Documentation
+    </a></h4>
 </div>
 
-<!-- HTML element to load item(s) into -->
-<?php
-    foreach ($request['items'] as $index => $item) {
-        echo('
-<h2>Question ' . ($index+1) . '</h2>
-<p><span class="learnosity-item" data-reference="' . $item . '"></span></p>
-            ');
-    }
-?>
-    <a id="submit-activity" class="btn btn-primary">Submit</a>
+<div class="section">
+    <!-- HTML element to load item(s) into -->
+    <?php
+        foreach ($request['items'] as $index => $item) {
+            echo('
+    <h2>Question ' . ($index+1) . '</h2>
+    <p><span class="learnosity-item" data-reference="' . $item . '"></span></p>
+                ');
+        }
+    ?>
+        <a id="submit-activity" class="btn btn-primary">Submit</a>
 
-    <div class="modal fade" id="loaderModal">
-        <img src="loader.svg" alt="Loading icon" width="64" height="64" />
-    </div>
+        <div class="modal fade" id="loaderModal">
+            <img src="loader.svg" alt="Loading icon" width="64" height="64" />
+        </div>
 
-    <div class="modal fade" id="testSubmitModal">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header" style="padding:15px;">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Success</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Test is submitted.</p>
-                    <p>On the next screen you will be shown the distractor rationales for all questions that you have attempted.  The styling and positioning of the distractors is fully controllable by the host environment.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="report.php?sessionId=<?php echo $session_id; ?>" class="btn btn-primary">View report</a>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /#testSubmitModal -->
+        <div class="modal fade" id="testSubmitModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:15px;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Success</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Test is submitted.</p>
+                        <p>On the next screen you will be shown the distractor rationales for all questions that you have attempted.  The styling and positioning of the distractors is fully controllable by the host environment.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="report.php?sessionId=<?php echo $session_id; ?>" class="btn btn-primary">View report</a>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /#testSubmitModal -->
+</div>
 
 <script>
 

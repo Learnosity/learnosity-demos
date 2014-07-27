@@ -1,7 +1,7 @@
 <?php
 
-$endpoint = "$URL/$version/itembank/activities";
-$resource = 'activities';
+$endpoint = "$URL/$version/sessions/scores";
+$resource = 'sessionscores';
 
 ?>
 
@@ -17,33 +17,39 @@ $resource = 'activities';
             <div class="form-group">
                 <label class="col-md-2 control-label">URL</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="endpoint" value="<?php echo $endpoint; ?>" readonly>
+                <input type="text" class="form-control" id="endpoint" value="<?php echo $endpoint; ?>" readonly>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">references(s)</label>
+                <label class="col-md-2 control-label">user(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-references" data-type="array" value="">
+                    <input type="text" class="form-control" id="api-user_id" data-type="array" value="">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">statuses(s)</label>
+                <label class="col-md-2 control-label">activity(s)</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="api-activity_id" data-type="array" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">status(s)</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-status" data-type="array" value="">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">count only?</label>
+                <label class="col-md-2 control-label">include response scores?</label>
                 <div class="col-md-10">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="1">
+                            <input type="radio" name="include_response_scores" id="api-include_response_scores" data-type="boolean" value="1">
                             Yes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="0" checked>
+                            <input type="radio" name="include_response_scores" id="api-include_response_scores" data-type="boolean" value="0" checked>
                             No
                         </label>
                     </div>
@@ -55,13 +61,13 @@ $resource = 'activities';
                     <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="10">
                 </div>
             </div>
-            <div class="form-group">
+           <div class="form-group">
                 <label class="col-md-2 control-label">
                     next
                     <span class="glyphicon glyphicon-question-sign"
-                          data-toggle="tooltip"
-                          data-placement="right"
-                          title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of results if there are any.">
+                        data-toggle="tooltip"
+                        data-placement="right"
+                        title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of results if there are any.">
                     </span>
                 </label>
                 <div class="col-md-4">
