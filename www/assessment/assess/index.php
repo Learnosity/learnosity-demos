@@ -24,7 +24,6 @@ $request = array(
             'show_extend' => true
         )
     ),
-    "assess_inline" => false,
     'navigation'    => array(
         'scroll_to_top'          => false,
         'scroll_to_test'         => false,
