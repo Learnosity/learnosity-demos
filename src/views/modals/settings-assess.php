@@ -113,6 +113,23 @@
                                         <input type="radio" name="navigation[skip_submit_confirmation]" value="false"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === false || !isset($nav['skip_submit_confirmation'])) { echo ' checked'; }; ?>> False
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <p>The following are recommended to be turned on if using the <em>horizontal fixed</em> layout.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="scroll_to_top" class="col-sm-6 control-label">Scroll to top</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[scroll_to_top]" value="true"<?php if (isset($nav['scroll_to_top']) && $nav['scroll_to_top'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[scroll_to_top]" value="false"<?php if (isset($nav['scroll_to_top']) && $nav['scroll_to_top'] === false || !isset($nav['scroll_to_top'])) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="scroll_to_test" class="col-sm-6 control-label">Scroll to test</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[scroll_to_test]" value="true"<?php if (isset($nav['scroll_to_test']) && $nav['scroll_to_test'] === true) { echo ' checked'; }; ?>> True
+                                        <input type="radio" name="navigation[scroll_to_test]" value="false"<?php if (isset($nav['scroll_to_test']) && $nav['scroll_to_test'] === false || !isset($nav['scroll_to_test'])) { echo ' checked'; }; ?>> False
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
