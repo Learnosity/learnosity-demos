@@ -24,7 +24,7 @@ $request = array(
             'show_extend' => true
         )
     ),
-    'navigation' => array(
+    'navigation'    => array(
         'scroll_to_top'          => false,
         'scroll_to_test'         => false,
         'show_fullscreencontrol' => true,
@@ -56,10 +56,11 @@ $request = array(
     ),
     'ui_style'      => 'main',
     'configuration' => array(
-        'questionsApiVersion'   => 'v2',
-        'fontsize'              => 'normal',
-        'onsave_redirect_url'   => $env['protocol'] . $env['page'],
-        'onsubmit_redirect_url' => $env['protocol'] . $env['page']
+        'questionsApiVersion'    => 'v2',
+        'fontsize'               => 'normal',
+        'ondiscard_redirect_url' => $env['protocol'] . $env['page'],
+        'onsave_redirect_url'    => $env['protocol'] . $env['page'],
+        'onsubmit_redirect_url'  => $env['protocol'] . $env['page']
     ),
     'items' => array(
         array(
