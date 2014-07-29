@@ -27,6 +27,10 @@ if (isset($_POST['api_type'])) {
             $request = array_replace_recursive($request, $_POST);
             $requestKey = $request;
         }
+    } elseif ($_POST['api_type'] === 'activities') {
+        $request = array_replace_recursive($request, $_POST);
+        unset($request['api_type']);
+        $requestKey = $request;
     } elseif ($_POST['api_type'] === 'assess') {
         $request = array_replace_recursive($request, $_POST);
         $requestKey = $request;
