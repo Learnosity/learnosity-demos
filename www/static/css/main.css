@@ -505,10 +505,6 @@ h1, h2, h3, h4, h5, h6, .navbar {
     border-bottom: 1px solid #ebf0f0;
 }
 
-.section:first-of-type {
-    padding-top: 0px;
-}
-
 .jumbotron {
     padding-bottom: 24px;
 }
