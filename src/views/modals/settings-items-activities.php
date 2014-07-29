@@ -24,7 +24,7 @@
                 feel of the assessment, along with the items to be used are all loaded from the
                 Learnosity item bank.</p>
                 <form class="form-horizontal" role="form" id="frmSettings" method="post">
-                    <input type="hidden" name="api_type" value="items">
+                    <input type="hidden" name="api_type" value="activities">
 
                     <div class="panel panel-info">
                         <div class="panel-heading">Activity Settings</div>
