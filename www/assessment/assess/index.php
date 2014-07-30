@@ -518,8 +518,8 @@ $signedRequest = $Init->generate();
 
 <script src="//assess.learnosity.com"></script>
 <script>
-    var activity = <?php echo $signedRequest; ?>;
-    LearnosityAssess.init(activity, 'learnosity_assess');
+    var activity = <?php echo $signedRequest; ?>,
+        assessApp = LearnosityAssess.init(activity, 'learnosity_assess');
 </script>
 
 <?php
