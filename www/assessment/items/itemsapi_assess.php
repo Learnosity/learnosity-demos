@@ -21,7 +21,7 @@ $request = array(
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
     'items'          => array("Demo3", "Demo4", "Demo5", "Demo6", "Demo7", "Demo8", "Demo9", "Demo10"),
-    "assess_inline"  => false,
+    'assess_inline'  => false,
     'config'         => array(
         'title'          => 'Demo activity - showcasing question types and assess options',
         'subtitle'       => 'Walter White',
@@ -112,7 +112,7 @@ $signedRequest = $Init->generate();
                 console.log("Learnosity Items API is ready");
             }
         },
-        app = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+        itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
 </script>
 
 <?php
