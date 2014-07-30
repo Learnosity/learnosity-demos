@@ -127,8 +127,8 @@ $signedRequest = $Init->generate();
 </div>
 <script src="//items.learnosity.com"></script>
 <script>
-    var activity = <?php echo $signedRequest; ?>;
-    LearnosityItems.init(activity);
+    var activity = <?php echo $signedRequest; ?>,
+        itemsApp = LearnosityItems.init(activity);
 </script>
 
 <?php

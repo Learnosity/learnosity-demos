@@ -68,7 +68,7 @@ $signedRequest = $Init->generate();
                 console.log('Learnosity Items API is ready');
             }
         },
-        app = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+        itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
 </script>
 
 <?php
