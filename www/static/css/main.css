@@ -410,16 +410,45 @@ body,
 * New UI starting 23rd July 2014
 *
 ********************************************************************/
-@media (min-width: 1366px) {
-  .container {
-    width: 1220px;
-  }
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .nav-sec-wrapper {
+        float: right;
+    }
+
+    .nav-sec > li > a {
+        padding-right: 0;
+        padding-top: 18px;
+    }
 }
 
-.container {
+@media (min-width: 768px) and (max-width: 991px) {
+    .nav-source-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+}
+
+@media (min-width: 1366px) {
+    .container {
+        width: 1220px;
+    }
+}
+
+/*.container {
     padding-bottom: 35px;
 }
-
+*/
 .row {
     margin-left: -20px;
     margin-right: -20px;
@@ -428,6 +457,16 @@ body,
 .row [class^="col-"] {
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.row-spacing-small {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.row-spacing-small [class^="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .glyphicon-question-sign:before {
@@ -469,8 +508,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .navbar {
-    height: 90px;
-    background: none;
+    /*height: 90px;*/
+    /*background: none;*/
     background-color: #fff;
     font-size: 16px;
     letter-spacing: 0.04em;
@@ -478,6 +517,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 .navbar .container {
     padding-top: 18px;
+    padding-bottom: 18px;
+    /*padding-bottom: 35px;*/
 }
 
 .navbar-nav {
@@ -489,11 +530,19 @@ h1, h2, h3, h4, h5, h6, .navbar {
     letter-spacing: 0.01em;
 }
 
+.navbar-brand {
+    height: auto;
+}
+
 .navbar-default {
     border-bottom: 1px solid #efefef;
     border-radius: 0;
     box-shadow: none;
     webkit-box-shadow: none;
+}
+
+.nav-sec .navbar-nav {
+    margin-left: 0;
 }
 
 .container .jumbotron {
@@ -530,9 +579,9 @@ h1, h2, h3, h4, h5, h6, .navbar {
     margin-bottom: 40px;
 }
 
-.jumbotron p:first-of-type {
+/*.jumbotron p:first-of-type {
     margin-top: 25px;
-}
+}*/
 
 .jumbotron p {
     font-size: 18px;
@@ -550,6 +599,12 @@ h1, h2, h3, h4, h5, h6, .navbar {
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.02em;
+    margin-bottom: 40px;
+}
+
+.landing-intro {
+    width: 95%;
+    margin: 0 auto;
 }
 
 .landing .jumbotron {
@@ -566,18 +621,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
     min-height: 280px;
 }
 
-.landing .dl-horizontal dt {
-    width: 120px;
+.landing .jumbotron .glyphicon {
     font-size: 30px;
-}
-
-.landing .dl-horizontal dd {
-    margin-left: 140px;
-}
-
-.landing dl {
-    padding-right: 70px;
-    padding-bottom: 2px;
 }
 
 .landing h4 {
@@ -639,11 +684,11 @@ h1, h2, h3, h4, h5, h6, .navbar {
     font-size: 16px;
 }
 
-.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+/*.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin-left: 0px;
-}
+}*/
 
-.panel-default>.panel-heading {
+.panel-default > .panel-heading {
     background-image: none;
     padding-top: 15px;
     padding-bottom: 15px;
