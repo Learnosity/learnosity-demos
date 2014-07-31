@@ -23,9 +23,15 @@
 <div class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand logo" href="<?php echo $env['www'] ?>">Learnosity Demos</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?php echo $env['www'] ?>"><span class="logo">Learnosity Demos</span></a>
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse" id="nav-main">
             <ul class="nav navbar-nav">
                 <?php
                     foreach ($pages as $page => $name) {
@@ -43,18 +49,17 @@
                     }
                 ?>
             </ul>
-            <div class="pull-right">
-                <ul class="nav navbar-nav">
+            <div class="nav-sec-wrapper">
+                <ul class="nav navbar-nav nav-sec">
+
                     <li>
                         <a href="https://github.com/Learnosity/learnosity-demos" class="text-muted">
-                            <span class="glyphicon glyphicon-file"></span> View source
+                            <span class="glyphicon glyphicon-file"></span> <span class="nav-source-text">View source</span>
                         </a>
-                    </li>
-                    <!-- <li>
-                        <a href="https://github.com/Learnosity/learnosity-php-examples/archive/master.zip" download="demos.master.zip" class="text-muted">
+                        <!-- <a href="https://github.com/Learnosity/learnosity-php-examples/archive/master.zip" download="demos.master.zip" class="text-muted">
                             <span class="glyphicon glyphicon-cloud-download"></span> Download
-                        </a>
-                    </li> -->
+                        </a> -->
+                    </li>
                 </ul>
             </div>
         </div>
