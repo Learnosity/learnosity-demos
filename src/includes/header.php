@@ -48,5 +48,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     include_once 'nav.php';
 ?>
 
-<div class="container">
+<div class="container container-content">
     <div class="row">
