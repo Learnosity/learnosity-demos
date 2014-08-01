@@ -89,8 +89,11 @@ $signedRequest = $Init->generate();
                             } else if(distractorQuestionLvl.length) { // could render both level
                                 outputHTML += distractorQuestionLvl;
                             }
-
+                            if(outputHTML == "" || outputHTML == null) {
+                                outputHTML = "Have you answered all possible responses?";
+                            }
                             renderDistractor(question.response_id, outputHTML);
+                            MathJax.Hub.Queue(['Typeset', MathJax.Hub, question.response_id]);
                         }
                     });
                 });
