@@ -410,45 +410,10 @@ body,
 * New UI starting 23rd July 2014
 *
 ********************************************************************/
-@media (min-width: 768px) {
-    .navbar-nav > li > a {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .nav-sec-wrapper {
-        float: right;
-    }
-
-    .nav-sec > li > a {
-        padding-right: 0;
-        padding-top: 18px;
-    }
+.container-content {
+    margin-bottom: 35px;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .nav-source-text {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-    }
-}
-
-@media (min-width: 1366px) {
-    .container {
-        width: 1220px;
-    }
-}
-
-/*.container {
-    padding-bottom: 35px;
-}
-*/
 .row {
     margin-left: -20px;
     margin-right: -20px;
@@ -457,16 +422,6 @@ body,
 .row [class^="col-"] {
     padding-left: 20px;
     padding-right: 20px;
-}
-
-.row-spacing-small {
-    margin-left: -10px;
-    margin-right: -10px;
-}
-
-.row-spacing-small [class^="col-"] {
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .glyphicon-question-sign:before {
@@ -491,6 +446,16 @@ h1, h2, h3, h4, h5, h6, .navbar {
     font-weight: 300;
 }
 
+a {
+    padding-bottom: 1px;
+    border-bottom: 1px dashed #428bca;
+}
+
+a:hover,
+a:focus {
+    border-bottom: 0;
+}
+
 .jumbotron h1 {
     font-size: 58px;
 }
@@ -500,7 +465,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .logo {
-   padding-left: 40px;
+   padding: 3px 0 3px 40px;
    height: inherit;
    background: url('../images/logo-square.svg') no-repeat center left;
    background-size: 28px;
@@ -508,17 +473,19 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .navbar {
-    /*height: 90px;*/
-    /*background: none;*/
     background-color: #fff;
     font-size: 16px;
     letter-spacing: 0.04em;
 }
 
+.navbar a {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
 .navbar .container {
     padding-top: 18px;
     padding-bottom: 18px;
-    /*padding-bottom: 35px;*/
 }
 
 .navbar-nav {
@@ -603,8 +570,12 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .landing-intro {
-    width: 95%;
+    width: 85%;
     margin: 0 auto;
+}
+
+.landing-intro .pull-left {
+    margin-right: 20px;
 }
 
 .landing .jumbotron {
@@ -662,7 +633,9 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .toolbar a {
+    padding-bottom: 0;
     color: #424d55;
+    border-bottom: 0;
 }
 
 .toolbar a:hover {
@@ -684,9 +657,9 @@ h1, h2, h3, h4, h5, h6, .navbar {
     font-size: 16px;
 }
 
-/*.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-    margin-left: 0px;
-}*/
+.landing-panel-heading h3 {
+    margin-top: 15px;
+}
 
 .panel-default > .panel-heading {
     background-image: none;
@@ -721,4 +694,50 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 .panel-group .panel {
     border-radius: 0px;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .nav-sec-wrapper {
+        float: right;
+    }
+
+    .nav-sec > li > a {
+        padding-right: 0;
+        padding-top: 18px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .nav-source-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav > li > a {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .landing-panel-heading {
+        text-align: right;
+    }
+}
+
+@media (min-width: 1366px) {
+    .container {
+        width: 1220px;
+    }
 }

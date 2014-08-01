@@ -7,31 +7,31 @@ include_once 'includes/header.php';
     <div class="jumbotron">
         <h1 class="landing-heading">Learnosity API Demos</h1>
         <div class="landing-intro">
-            <div class="row row-spacing-small">
-                <div class="col-xs-1">
+            <div class="media">
+                <div class="pull-left">
                     <span class="glyphicon glyphicon-question-sign"></span>
                 </div>
-                <div class="col-xs-11">
+                <div class="media-body">
                     <p>This site contains demonstrations for all Learnosity APIs. Most of them are interactive, allowing you to get
                 the feel of our products with real content.</p>
                 </div>
             </div>
 
-            <div class="row row-spacing-small">
-                <div class="col-xs-1">
+            <div class="media">
+                <div class="pull-left">
                     <span class="glyphicon glyphicon-cloud-download"></span>
                 </div>
-                <div class="col-xs-11">
+                <div class="media-body">
                     <p>You may also download the entire site to see how you can easily integrate our services into your own technology stack,
             or you can <a href="https://github.com/Learnosity/learnosity-php-examples/tree/master">browse the code directly</a> on github.</p>
                 </div>
             </div>
 
-            <div class="row row-spacing-small">
-                <div class="col-xs-1">
+             <div class="media">
+                <div class="pull-left">
                     <span class="glyphicon glyphicon-info-sign"></span>
                 </div>
-                <div class="col-xs-11">
+                <div class="media-body">
                     <p>Although the site has been written in PHP, the format is simple enough to follow no matter what your preferred language might be.</p>
                 </div>
             </div>
@@ -39,7 +39,7 @@ include_once 'includes/header.php';
     </div>
 
     <div class="row landing-panel">
-        <div class="col-md-3 text-right">
+        <div class="col-md-3 landing-panel-heading">
             <h3>Authoring</h3>
         </div>
         <div class="col-md-8 content-panel">
@@ -54,7 +54,7 @@ include_once 'includes/header.php';
         </div>
     </div>
     <div class="row landing-panel">
-        <div class="col-md-3 text-right">
+        <div class="col-md-3 landing-panel-heading">
             <h3>Assessment</h3>
         </div>
         <div class="col-md-8 content-panel">
@@ -71,7 +71,7 @@ include_once 'includes/header.php';
         </div>
     </div>
     <div class="row landing-panel">
-        <div class="col-md-3 text-right">
+        <div class="col-md-3 landing-panel-heading">
             <h3>Reporting</h3>
         </div>
         <div class="col-md-8 content-panel">
@@ -88,4 +88,4 @@ include_once 'includes/header.php';
     </div>
 </div>
 
-<?php include_once 'includes/footer.php';
+<?php include_once 'includes/footer.php'; ?>
