@@ -410,8 +410,10 @@ body,
 * New UI starting 23rd July 2014
 *
 ********************************************************************/
-.container-content {
-    margin-bottom: 35px;
+@media (min-width: 1366px) {
+  .container {
+    width: 1220px;
+  }
 }
 
 .row {
@@ -694,6 +696,11 @@ a:focus {
 
 .panel-group .panel {
     border-radius: 0px;
+}
+
+/* Needed to appear on top of Assess inline */
+.modal {
+    z-index: 9999;
 }
 
 @media (min-width: 768px) {
