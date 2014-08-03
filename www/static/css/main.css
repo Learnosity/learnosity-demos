@@ -410,12 +410,6 @@ body,
 * New UI starting 23rd July 2014
 *
 ********************************************************************/
-@media (min-width: 1366px) {
-  .container {
-    width: 1220px;
-  }
-}
-
 .row {
     margin-left: -20px;
     margin-right: -20px;
