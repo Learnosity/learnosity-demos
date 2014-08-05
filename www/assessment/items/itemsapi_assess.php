@@ -21,6 +21,7 @@ $request = array(
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
     'items'          => array("Demo3", "Demo4", "Demo5", "Demo6", "Demo7", "Demo8", "Demo9", "Demo10"),
+    'assess_inline'  => true,
     'config'         => array(
         'title'          => 'Demo activity - showcasing question types and assess options',
         'subtitle'       => 'Walter White',
@@ -49,7 +50,11 @@ $request = array(
             'transition_speed'         => 400,
             'warning_on_change'        => false,
             'scrolling_indicator'      => false,
-            'show_answermasking'       => true
+            'show_answermasking'       => true,
+            'auto_save' => array(
+                'ui' => false,
+                'saveIntervalDuration' => 500
+            )
         ),
         'time' => array(
             'max_time'     => 1500,
@@ -66,9 +71,10 @@ $request = array(
         'questionsApiVersion' => 'v2',
         'assessApiVersion'    => 'v2',
         'configuration'       => array(
-            'onsubmit_redirect_url' => 'itemsapi_assess.php',
-            'onsave_redirect_url'   => 'itemsapi_assess.php',
-            'idle_timeout'          => array(
+            'ondiscard_redirect_url' => 'itemsapi_assess.php',
+            'onsave_redirect_url'    => 'itemsapi_assess.php',
+            'onsave_redirect_url'    => 'itemsapi_assess.php',
+            'idle_timeout'           => array(
                 'interval'       => 300,
                 'countdown_time' => 60
             ),
@@ -110,7 +116,7 @@ $signedRequest = $Init->generate();
                 console.log("Learnosity Items API is ready");
             }
         },
-        app = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+        itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
 </script>
 
 <?php

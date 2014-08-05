@@ -6,25 +6,41 @@ include_once 'includes/header.php';
 <div class="landing section">
     <div class="jumbotron">
         <h1 class="landing-heading">Learnosity API Demos</h1>
-        <dl class="dl-horizontal">
-            <dt><span class="glyphicon glyphicon-question-sign"></span></dt>
-            <dd><p>This site contains demonstrations for all Learnosity APIs. Most of them are interactive, allowing you to get
-            the feel of our products with real content.</p></dd>
-        </dl>
-        <dl class="dl-horizontal">
-            <dt><span class="glyphicon glyphicon-cloud-download"></span></dt>
-            <dd><p>You may also download the entire site to see how you can easily integrate our services into your own technology stack,
-        or you can <a href="https://github.com/Learnosity/learnosity-php-examples/tree/master">browse the code directly</a> on github.</p></dd>
-        </dl>
-        <dl class="dl-horizontal">
-            <dt><span class="glyphicon glyphicon-info-sign"></span></dt>
-            <dd><p>Although the site has been written in PHP, the format is simple enough to follow no matter what your preferred language might be.</p></dd>
-        </dl>
+        <div class="landing-intro">
+            <div class="media">
+                <div class="pull-left">
+                    <span class="glyphicon glyphicon-question-sign"></span>
+                </div>
+                <div class="media-body">
+                    <p>This site contains demonstrations for all Learnosity APIs. Most of them are interactive, allowing you to get
+                the feel of our products with real content.</p>
+                </div>
+            </div>
+
+            <div class="media">
+                <div class="pull-left">
+                    <span class="glyphicon glyphicon-cloud-download"></span>
+                </div>
+                <div class="media-body">
+                    <p>You may also download the entire site to see how you can easily integrate our services into your own technology stack,
+            or you can <a href="https://github.com/Learnosity/learnosity-php-examples/tree/master">browse the code directly</a> on github.</p>
+                </div>
+            </div>
+
+             <div class="media">
+                <div class="pull-left">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                </div>
+                <div class="media-body">
+                    <p>Although the site has been written in PHP, the format is simple enough to follow no matter what your preferred language might be.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row landing-panel">
-        <div class="col-md-3">
-            <h3 class="pull-right">Authoring</h3>
+        <div class="col-md-3 landing-panel-heading">
+            <h3>Authoring</h3>
         </div>
         <div class="col-md-8 content-panel">
             <ul class="list-unstyled">
@@ -38,8 +54,8 @@ include_once 'includes/header.php';
         </div>
     </div>
     <div class="row landing-panel">
-        <div class="col-md-3">
-            <h3 class="pull-right">Assessment</h3>
+        <div class="col-md-3 landing-panel-heading">
+            <h3>Assessment</h3>
         </div>
         <div class="col-md-8 content-panel">
             <ul class="list-unstyled">
@@ -55,8 +71,8 @@ include_once 'includes/header.php';
         </div>
     </div>
     <div class="row landing-panel">
-        <div class="col-md-3">
-            <h3 class="pull-right">Reporting</h3>
+        <div class="col-md-3 landing-panel-heading">
+            <h3>Reporting</h3>
         </div>
         <div class="col-md-8 content-panel">
             <ul class="list-unstyled">
@@ -72,4 +88,4 @@ include_once 'includes/header.php';
     </div>
 </div>
 
-<?php include_once 'includes/footer.php';
+<?php include_once 'includes/footer.php'; ?>

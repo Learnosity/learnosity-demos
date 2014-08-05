@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/codemirror/codemirror.css">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.css">
-    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/css/main.css?20140728">
+    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/css/main.css?20140805">
     <script src="<?php echo $env['www'] ?>static/vendor/jquery/jquery-1.11.0.min.js"></script>
     <script src="<?php echo $env['www'] ?>static/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo $env['www'] ?>static/js/prettyPrint.js"></script>
@@ -48,5 +48,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     include_once 'nav.php';
 ?>
 
-<div class="container">
+<div class="container container-content">
     <div class="row">
