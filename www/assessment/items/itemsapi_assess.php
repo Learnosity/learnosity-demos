@@ -50,7 +50,11 @@ $request = array(
             'transition_speed'         => 400,
             'warning_on_change'        => false,
             'scrolling_indicator'      => false,
-            'show_answermasking'       => true
+            'show_answermasking'       => true,
+            'auto_save' => array(
+                'ui' => false,
+                'saveIntervalDuration' => 500
+            )
         ),
         'time' => array(
             'max_time'     => 1500,
