@@ -452,6 +452,16 @@ a:focus {
     border-bottom: 0;
 }
 
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
 .jumbotron h1 {
     font-size: 58px;
 }
@@ -526,12 +536,12 @@ a:focus {
     padding-bottom: 30px;
     padding-left: 60px;
     padding-right: 60px;
+    margin-bottom: 20px;
 }
 
 .container .jumbotron {
     padding-top: 24px;
     background-color: #fff;
-    margin-bottom: 20px;
 }
 
 .jumbotron h1 {
@@ -541,10 +551,6 @@ a:focus {
     letter-spacing: 0.03em;
     margin-bottom: 40px;
 }
-
-/*.jumbotron p:first-of-type {
-    margin-top: 25px;
-}*/
 
 .jumbotron p {
     font-size: 18px;
