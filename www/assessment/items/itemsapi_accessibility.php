@@ -18,6 +18,7 @@ $request = array(
     'course_id'            => $courseid,
     'session_id'           => Uuid::generate(),
     'user_id'              => $studentid,
+    'assess_inline'        => true,
     'config'               => array(
         'title'    => 'Accessibility Demo',
         'subtitle' => 'Walter White',
@@ -57,14 +58,19 @@ $signedRequest = $Init->generate();
 </div>
 <script src="//items.learnosity.com"></script>
 <script>
-    var eventOptions = {
+    var launchAccessibility,
+        eventOptions = {
             readyListener: function () {
                 console.log('Learnosity Items API is ready');
+                launchAccessibility();
             }
         },
-        activity = <?php echo $signedRequest; ?>;
+        activity = <?php echo $signedRequest; ?>,
+        itemsApp = LearnosityItems.init(activity, eventOptions);
 
-    LearnosityItems.init(activity, eventOptions);
+    launchAccessibility = function () {
+        itemsApp.dialogs().accessibility.show();
+    }
 </script>
 
 <?php
