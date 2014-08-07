@@ -26,7 +26,12 @@ $request = array(
         'title'          => 'Demo activity - showcasing question types and assess options',
         'subtitle'       => 'Walter White',
         'administration' => array(
-            'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
+            'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', // `password`
+            'options' => array(
+                'show_save' => true,
+                'show_exit' => true,
+                'show_extend' => true
+            )
         ),
         'navigation' => array(
             'scroll_to_top'            => false,
@@ -71,15 +76,18 @@ $request = array(
         'questionsApiVersion' => 'v2',
         'assessApiVersion'    => 'v2',
         'configuration'       => array(
+            'fontsize'               => 'normal',
+            'dynamic'                => false,
+            'swipe'                  => false,
+            'events'                 => false,
+            'stylesheet'             => '',
+            'onsubmit_redirect_url'  => 'itemsapi_assess.php',
+            'onsave_redirect_url'    => 'itemsapi_assess.php',
             'ondiscard_redirect_url' => 'itemsapi_assess.php',
-            'onsave_redirect_url'    => 'itemsapi_assess.php',
-            'onsave_redirect_url'    => 'itemsapi_assess.php',
             'idle_timeout'           => array(
                 'interval'       => 300,
                 'countdown_time' => 60
-            ),
-            'stylesheet' => '',
-            'fontsize'   => 'normal'
+            )
         )
     )
 );
