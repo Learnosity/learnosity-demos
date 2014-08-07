@@ -161,7 +161,7 @@ if (count($reportVariables)) {
         config.configuration = {
             questionsApiVersion: "v2"
         };
-        LearnosityReports.init(config);
+        window.reportsApp = LearnosityReports.init(config);
     </script>
     <?php
 }

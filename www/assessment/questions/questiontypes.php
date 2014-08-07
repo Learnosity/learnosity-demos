@@ -1136,9 +1136,9 @@ $signedRequest = $Init->generate();
                 saveSuccess: function(response_ids) {
                     $('button.finish').text('Going to Review...');
                     window.location = $('a#reviewButton').attr('href');
-                },
+                }
             };
-        LearnosityApp.init(<?php echo $signedRequest; ?>, options);
+        window.questionsApp = LearnosityApp.init(<?php echo $signedRequest; ?>, options);
 
         // submit questions..
         $('button.save-review').on('click', function() {
