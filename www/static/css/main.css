@@ -748,3 +748,38 @@ h6 a {
         width: 1220px;
     }
 }
+
+#settings .modal-body {
+    background-color: #f3f5f5;
+}
+
+#settings .section {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#settings .panel-heading {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+}
+
+#settings .panel-info {
+    border: none;
+}
+
+#settings h3 {
+    font-weight: 300;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ebf0f0;
+    letter-spacing: 0.03em;
+}
+
+#settings .form-horizontal .control-label {
+    padding-top: 0px;
+    font-weight: normal;
+}
+
+#settings .form-group {
+    margin-bottom: 18px;
+}
