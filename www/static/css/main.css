@@ -783,3 +783,7 @@ h6 a {
 #settings .form-group {
     margin-bottom: 18px;
 }
+
+.learnosity-assess .start-page {
+    z-index: 1000 !important;
+}
