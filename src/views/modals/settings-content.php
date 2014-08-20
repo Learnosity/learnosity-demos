@@ -76,8 +76,10 @@
                                         <input type="radio" name="navigation[show_answermasking]" value="false"<?php if (isset($nav['show_answermasking']) && $nav['show_answermasking'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="show_accessibility" class="col-sm-6 control-label">Accessibility</label>
+                                    <label for="show_accessibility" class="col-sm-6 control-label">Accessibility Options</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[show_accessibility]" value="true"<?php if (isset($nav['show_accessibility']) && $nav['show_accessibility'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
                                         <input type="radio" name="navigation[show_accessibility]" value="false"<?php if (isset($nav['show_accessibility']) && $nav['show_accessibility'] === false) { echo ' checked'; }; ?>> Disable
@@ -97,8 +99,6 @@
                                         <input type="radio" name="navigation[show_calculator][mode]" value="scientific"<?php if (isset($nav['show_calculator']['mode']) && $nav['show_calculator']['mode'] === 'scientific') { echo ' checked'; }; ?>> Scientific
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="toc" class="col-sm-6 control-label">Table of Contents</label>
                                     <div class="col-sm-6">
@@ -134,34 +134,6 @@
                                         <input type="radio" name="navigation[scroll_to_top]" value="false"<?php if (isset($nav['scroll_to_top']) && $nav['scroll_to_top'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exit_securebrowser" class="col-sm-6 control-label">Exit Secure Browser</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="navigation[exit_securebrowser]" value="true"<?php if (isset($nav['exit_securebrowser']) && $nav['exit_securebrowser'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="navigation[exit_securebrowser]" value="false"<?php if (isset($nav['exit_securebrowser']) && $nav['exit_securebrowser'] === false) { echo ' checked'; }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="dynamic" class="col-sm-6 control-label">Dynamic</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="configuration[dynamic]" value="true"<?php if (isset($con['configuration']['dynamic']) && $con['configuration']['dynamic'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="configuration[dynamic]" value="false"<?php if (isset($con['configuration']['dynamic']) && $con['configuration']['dynamic'] === false) { echo ' checked'; }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="swipe" class="col-sm-6 control-label">Swipe</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="configuration[swipe]" value="true"<?php if (isset($con['configuration']['swipe']) && $con['configuration']['swipe'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="configuration[swipe]" value="false"<?php if (isset($con['configuration']['swipe']) && $con['configuration']['swipe'] === false) { echo ' checked'; }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="configuration[events]" class="col-sm-6 control-label">Events API</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="configuration[events]" value="true"<?php if (isset($con['configuration']['events']) && $con['configuration']['events'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="configuration[events]" value="false"<?php if (isset($con['configuration']['events']) && $con['configuration']['events'] === false) { echo ' checked'; }; ?>> Disable
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -179,7 +151,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="show_time" class="col-sm-6 control-label">Time</label>
+                                    <label for="show_time" class="col-sm-6 control-label">Timer</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="time[show_time]" value="true"<?php if (isset($time['show_time']) && $time['show_time'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
                                         <input type="radio" name="time[show_time]" value="false"<?php if (isset($time['show_time']) && $time['show_time'] === false) { echo ' checked'; }; ?>> Disable
