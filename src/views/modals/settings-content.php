@@ -314,7 +314,7 @@
                     </div>
 
                     <div class="panel panel-info">
-                        <div class="panel-heading"><h3>Configuration Panel Settings</h3></div>
+                        <div class="panel-heading"><h3>Administration Panel Settings</h3></div>
                         <div class="panel-body">
                             <div class="col-lg-6">
                                 <div class="form-group">
