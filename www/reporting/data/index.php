@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 // Full base URL of the Data API
 $URL = 'https://data.learnosity.com';
 // Which version of the Data API to use
-$version = 'v0.30';
+$version = 'v0.33';
 
 ?>
 
@@ -20,7 +20,7 @@ $version = 'v0.30';
     <h1>Data API</h1>
     <p>A back office service that allows authenticated users to retrieve and store information from
     within the Learnosity Assessment platform. Only authenticated users can access their information, over SSL.<p>
-    <p>The examples below are a subset of what you can do with the Data API. Integration is recommended using our
+    <p>The examples below are a (readonly) subset of what you can do with the Data API. Integration is recommended using our
     SDK, available in <a href="https://github.com/Learnosity/learnosity-sdk-php">PHP</a>, <a href="https://github.com/Learnosity/learnosity-sdk-asp.net">C#.NET</a>
     or <a href="https://github.com/Learnosity/learnosity-sdk-java">Java</a>.</p>
 </div>
@@ -37,7 +37,7 @@ $version = 'v0.30';
     <div class="content-container">
         <div class="panel-group" id="accordion">
             <!-- Interactives demos for the 'itembank' section -->
-            <h2>Itembank</h2>
+            <h2>Item Bank</h2>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -50,6 +50,21 @@ $version = 'v0.30';
                 <div id="activities" class="panel-collapse collapse">
                     <div class="panel-body">
                         <?php include_once 'itembank/activities.php'; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#activitytemplates">
+                            <span class="block">action: get</span>
+                            <?php echo '/' . $version . '/itembank/activities/templates'; ?>
+                        </a>
+                    </h4>
+                </div>
+                <div id="activitytemplates" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'itembank/activitytemplates.php'; ?>
                     </div>
                 </div>
             </div>
