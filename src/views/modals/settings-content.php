@@ -165,45 +165,59 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="scrolling_indicator" class="col-sm-6 control-label">Scrolling Indicator<br>(horizontal-fixed layout only)</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="navigation[scrolling_indicator]" value="true"<?php if (isset($nav['scrolling_indicator']) && $nav['scrolling_indicator'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="navigation[scrolling_indicator]" value="false"<?php if (isset($nav['scrolling_indicator']) && $nav['scrolling_indicator'] === false) { echo ' checked'; }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="idle_timeout" class="col-sm-6 control-label">Idle Timout</label>
+                                    <label for="idle_timeout" class="col-sm-6 control-label">Idle Timout Warning</label>
                                     <div class="col-sm-6">
                                          <input type="radio" name="configuration[idle_timeout][use_idle_timeout]" value="true"<?php if (isset($con['configuration']['idle_timeout']) &&  $con['configuration']['idle_timeout'] !== false) { echo ' checked'; }; ?>> Enable &nbsp;
                                          <input type="radio" name="configuration[idle_timeout][use_idle_timeout]" value="false"<?php if (isset($con['configuration']['idle_timeout']) === false || $con['configuration']['idle_timeout'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="interval" class="col-sm-6 control-label">Interval (sec)</label>
+                                    <label for="interval" class="col-sm-6 control-label">Idle Timeout Interval (sec)</label>
                                     <div class="col-sm-3">
                                         <input type="number" min="0" step="1" class="form-control" name="configuration[idle_timeout][interval]" value="<?php if (isset($con['configuration']['idle_timeout']['interval'])) { echo $con['configuration']['idle_timeout']['interval']; } else { echo '0'; } ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="countdown_time" class="col-sm-6 control-label">Countdown Time (sec)</label>
-                                    <div class="col-sm-3">
-                                        <input type="number" min="0" step="1" class="form-control" name="configuration[idle_timeout][countdown_time]" value="<?php if (isset($con['configuration']['idle_timeout']['countdown_time'])) { echo $con['configuration']['idle_timeout']['countdown_time']; } else { echo '0'; } ?>">
+                                    <label for="auto_save" class="col-sm-6 control-label">Auto Save</label>
+                                    <div class="col-sm-6">
+                                         <input type="radio" name="navigation[auto_save][use_auto_save]" value="true"<?php if (isset($nav['auto_save']) && $nav['auto_save'] !== false) { echo ' checked'; }; ?>> Enable &nbsp;
+                                         <input type="radio" name="navigation[auto_save][use_auto_save]" value="false"<?php if (isset($nav['auto_save']) === false || $nav['auto_save'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="max_time" class="col-sm-6 control-label">Max Time (sec)</label>
+                                    <label for="ui" class="col-sm-6 control-label">Auto Save UI Indicator</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[auto_save][ui]" value="true"<?php if (isset($nav['auto_save']['ui']) && $nav['auto_save']['ui'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[auto_save][ui]" value="false"<?php if (isset($nav['auto_save']['ui']) && $nav['auto_save']['ui'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="saveIntervalDuration" class="col-sm-6 control-label">Auto Save Interval (sec)</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" min="0" step="1" class="form-control" name="navigation[auto_save][saveIntervalDuration]" value="<?php if (isset($nav['auto_save']['saveIntervalDuration'])) { echo $nav['auto_save']['saveIntervalDuration']; } else { echo '0'; } ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="scrolling_indicator" class="col-sm-6 control-label">Scrolling Indicator<br>(Horizontal Fixed layout only)</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[scrolling_indicator]" value="true"<?php if (isset($nav['scrolling_indicator']) && $nav['scrolling_indicator'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[scrolling_indicator]" value="false"<?php if (isset($nav['scrolling_indicator']) && $nav['scrolling_indicator'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="max_time" class="col-sm-6 control-label">Assessment Time (sec)</label>
                                     <div class="col-sm-3">
                                         <input type="number" min="100" max="1000" step="100" class="form-control" name="time[max_time]" value="<?php if (isset($time['max_time'])) { echo $time['max_time']; }; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="warning_time" class="col-sm-6 control-label">Warning Time (sec)</label>
+                                    <label for="warning_time" class="col-sm-6 control-label">End Assessment Warning Time (sec)</label>
                                     <div class="col-sm-3">
                                         <input type="number" min="100" max="1000" step="100" class="form-control" name="time[warning_time]" value="<?php if (isset($time['warning_time'])) { echo $time['warning_time']; }; ?>">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="show_time" class="col-sm-6 control-label">Limit Type</label>
                                     <div class="col-sm-6">
@@ -214,22 +228,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="ui_style" class="col-sm-6 control-label">UI Style</label>
+                                    <label for="ui_style" class="col-sm-6 control-label">Layout</label>
                                     <div class="col-sm-6">
                                         <select id="ui_style" name="ui_style">
                                             <option value="main"<?php if (isset($con['ui_style']) && $con['ui_style'] === 'main') { echo ' selected'; }; ?>>Main</option>
                                             <option value="horizontal"<?php if (isset($con['ui_style']) && $con['ui_style'] === 'horizontal') { echo ' selected'; }; ?>>Horizontal</option>
                                             <option value="horizontal-fixed"<?php if (isset($con['ui_style']) && $con['ui_style'] === 'horizontal-fixed') { echo ' selected'; }; ?>>Horizontal Fixed</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="transition" class="col-sm-6 control-label">Transition</label>
-                                    <div class="col-sm-6">
-                                        <select id="transition" name="navigation[transition]">
-                                            <option value="slide"<?php if (isset($nav['transition']) && $nav['transition'] === 'slide') { echo ' selected'; }; ?>>Slide</option>
-                                            <option value="fade"<?php if (isset($nav['transition']) && $nav['transition'] === 'fade') { echo ' selected'; }; ?>>Fade</option>
-                                            <option value="toggle"<?php if (isset($nav['transition']) && $nav['transition'] === 'toggle') { echo ' selected'; }; ?>>Toggle</option>
                                         </select>
                                     </div>
                                 </div>
@@ -246,29 +250,25 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="auto_save" class="col-sm-6 control-label">Auto Save</label>
+                                    <label for="transition" class="col-sm-6 control-label">Item Transition</label>
                                     <div class="col-sm-6">
-                                         <input type="radio" name="navigation[auto_save][use_auto_save]" value="true"<?php if (isset($nav['auto_save']) && $nav['auto_save'] !== false) { echo ' checked'; }; ?>> Enable &nbsp;
-                                         <input type="radio" name="navigation[auto_save][use_auto_save]" value="false"<?php if (isset($nav['auto_save']) === false || $nav['auto_save'] === false) { echo ' checked'; }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ui" class="col-sm-6 control-label">UI Indicator</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="navigation[auto_save][ui]" value="true"<?php if (isset($nav['auto_save']['ui']) && $nav['auto_save']['ui'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="navigation[auto_save][ui]" value="false"<?php if (isset($nav['auto_save']['ui']) && $nav['auto_save']['ui'] === false) { echo ' checked'; }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="saveIntervalDuration" class="col-sm-6 control-label">Interval between auto saves (sec)</label>
-                                    <div class="col-sm-3">
-                                        <input type="number" min="0" step="1" class="form-control" name="navigation[auto_save][saveIntervalDuration]" value="<?php if (isset($nav['auto_save']['saveIntervalDuration'])) { echo $nav['auto_save']['saveIntervalDuration']; } else { echo '0'; } ?>">
+                                        <select id="transition" name="navigation[transition]">
+                                            <option value="slide"<?php if (isset($nav['transition']) && $nav['transition'] === 'slide') { echo ' selected'; }; ?>>Slide</option>
+                                            <option value="fade"<?php if (isset($nav['transition']) && $nav['transition'] === 'fade') { echo ' selected'; }; ?>>Fade</option>
+                                            <option value="toggle"<?php if (isset($nav['transition']) && $nav['transition'] === 'toggle') { echo ' selected'; }; ?>>Toggle</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="transition-speed" class="col-sm-6 control-label">Transition Speed (ms)</label>
                                     <div class="col-sm-3">
                                         <input type="number" min="100" max="1000" step="100" class="form-control" name="navigation[transition_speed]" value="<?php if (isset($nav['transition_speed'])) { echo $nav['transition_speed']; }; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="countdown_time" class="col-sm-6 control-label">Remote Control Countdown Time (sec)</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" min="0" step="1" class="form-control" name="configuration[idle_timeout][countdown_time]" value="<?php if (isset($con['configuration']['idle_timeout']['countdown_time'])) { echo $con['configuration']['idle_timeout']['countdown_time']; } else { echo '0'; } ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
