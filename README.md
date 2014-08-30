@@ -13,8 +13,8 @@ There is also a SignatureUtils class which simplifies the generation of the secu
 
 ## Getting Started
 
-* <strike>[Download the package](https://github.com/Learnosity/learnosity-php-examples/archive/master.zip)</strike>
-* ``` git clone --recursive https://github.com/Learnosity/learnosity-php-examples.git```
+* <strike>[Download the package](https://github.com/Learnosity/learnosity-demos/archive/master.zip)</strike>
+* ``` git clone --recursive https://github.com/Learnosity/learnosity-demos.git```
 * Put in a web accessible directory ^
 * Test it out by browsing to index.php
 
@@ -23,7 +23,7 @@ There is also a SignatureUtils class which simplifies the generation of the secu
 If you have PHP 5.4+ you can use the local server to quickly get up and running, no Apache/IIS is required.
 
 ```
-cd learnosity-php-examples/www
+cd learnosity-demos/www
 php -S localhost:5000
 ```
 
