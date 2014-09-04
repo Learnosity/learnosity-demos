@@ -46,6 +46,11 @@ if (isset($_POST['api_type'])) {
     }
     unset($requestKey['navigation']['show_calculator']['use_calculator']);
 
+    if (!$requestKey['configuration']['submit_criteria']['use_submit_criteria']) {
+        unset($requestKey['configuration']['submit_criteria']);
+    }
+    unset($requestKey['configuration']['submit_criteria']['use_submit_criteria']);
+
     if (!$requestKey['navigation']['auto_save']['use_auto_save']) {
         unset($requestKey['navigation']['auto_save']);
     }

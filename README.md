@@ -14,7 +14,10 @@ There is also a SignatureUtils class which simplifies the generation of the secu
 ## Getting Started
 
 * <strike>[Download the package](https://github.com/Learnosity/learnosity-demos/archive/master.zip)</strike>
-* ``` git clone --recursive https://github.com/Learnosity/learnosity-demos.git```
+* <strike>``` git clone --recursive https://github.com/Learnosity/learnosity-demos.git```</strike>
+* ``` git clone https://github.com/Learnosity/learnosity-demos.git ```
+* ``` cd learnosity-demos/src/sdk ``` 
+* ``` git clone https://github.com/Learnosity/learnosity-sdk-php.git ./  ``` 
 * Put in a web accessible directory ^
 * Test it out by browsing to index.php
 

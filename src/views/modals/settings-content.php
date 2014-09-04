@@ -76,6 +76,26 @@
                                         <input type="radio" name="navigation[show_answermasking]" value="false"<?php if (isset($nav['show_answermasking']) && $nav['show_answermasking'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="submit_criteria" class="col-sm-6 control-label">Submit Criteria</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="configuration[submit_criteria][use_submit_criteria]" value="true"<?php if (isset($con['configuration']['submit_criteria']) && $con['configuration']['submit_criteria'] !== false) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="configuration[submit_criteria][use_submit_criteria]" value="false"<?php if (isset($con['configuration']['submit_criteria']) === false || $con['configuration']['submit_criteria'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type" class="col-sm-6 control-label">Submit Criteria Type</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="configuration[submit_criteria][type]" value="attempted"<?php if (isset($con['configuration']['submit_criteria']['type']) && $con['configuration']['submit_criteria']['type'] === 'attempted') { echo ' checked'; }; ?>> Attempted &nbsp;
+                                        <input type="radio" name="configuration[submit_criteria][type]" value="valid"<?php if (isset($con['configuration']['submit_criteria']['type']) && $con['configuration']['submit_criteria']['type'] === 'valid') { echo ' checked'; }; ?>> Valid
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="threshold" class="col-sm-6 control-label">Submit Criteria Threshold</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" min="0" max="1" step="0.1" class="form-control" name="configuration[submit_criteria][threshold]" value="<?php if (isset($con['configuration']['submit_criteria']['threshold'])) { echo $con['configuration']['submit_criteria']['threshold']; } else { echo '0'; } ?>">
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
