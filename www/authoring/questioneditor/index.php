@@ -51,6 +51,27 @@ include_once 'includes/header.php';
     * example currently being requested
     *
     ********************************************************************/
+    var assetRequestFunction = function(mediaRequested, returnType, callback) {
+        if (mediaRequested === 'image') {
+            var $modal = $('.modal.img-upload'),
+            $images = $('.asset-img-gallery img'),
+            imgClickHandler = function () {
+                    if (returnType === 'HTML') {
+                        callback('<img src="' + $(this).data('img') + '"/>');
+                    } else {
+                        callback($(this).data('img'));
+                    }
+                    $modal.modal('hide');
+                };
+            $images.on('click', imgClickHandler);
+            $modal.modal({
+                backdrop: 'static'
+            }).on('hide', function () {
+                $images.off('click', imgClickHandler);
+            });
+        }
+    };
+
     var initObjects = {
             newQuestion: {
                 description: 'Question type tile thumbnails are templates of commonly used question configuration.',
@@ -170,26 +191,7 @@ include_once 'includes/header.php';
                             }
                         }
                     },
-                    assetRequest: function(mediaRequested, returnType, callback) {
-                        if (mediaRequested === 'image') {
-                            var $modal = $('.modal.img-upload'),
-                                $images = $('.asset-img-gallery img'),
-                                imgClickHandler = function () {
-                                    if (returnType === 'HTML') {
-                                        callback('<img src="' + $(this).data('img') + '"/>');
-                                    } else {
-                                        callback($(this).data('img'));
-                                    }
-                                    $modal.modal('hide');
-                                };
-                            $images.on('click', imgClickHandler);
-                            $modal.modal({
-                                backdrop: 'static'
-                            }).on('hide', function () {
-                                $images.off('click', imgClickHandler);
-                            });
-                        }
-                    },
+                    assetRequest: assetRequestFunction,
                     ui: {
                         columns: [
                             {
@@ -306,6 +308,9 @@ include_once 'includes/header.php';
         if (typeof type !== 'undefined') {
             window.location.hash = $(this).attr('id');
             currentType = initObjects[type];
+            if (currentType.json && currentType.json.assetRequest && currentType.json.assetRequest === true) {
+                currentType.json.assetRequest = assetRequestFunction;
+            }
             $('#example-description').html(currentType.description);
             LearnosityQuestionEditor.init(currentType.json);
         }
