@@ -1109,6 +1109,67 @@ $request = '{
         {
             "response_id": "demo39-'.$uniqueResponseIdSuffix.'",
             "type": "formulaessay"
+        },
+        {
+            "response_id": "demo40-'.$uniqueResponseIdSuffix.'",
+            "instant_feedback": true,
+            "response_containers": [{
+                "template": "25 + 45={{response}}"
+            }],
+            "stimulus": "It takes John 25 minutes to walk to the car park and 45 minutes to drive to work.",
+            "template": "<p>{{response}} minutes = {{response}} hour and {{response}} minutes</p>\n\n<p>John needs to get out of the house at {{response}}:{{response}}a.m. in order to get to work at 9:00a.m.</p>\n",
+            "type": "clozeformula",
+            "ui_style": {
+                "fontsize": "",
+                "type": "block-on-focus-keyboard"
+            },
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        [{
+                            "method": "isTrue",
+                            "options": {
+                                "decimalPlaces": 10,
+                                "inverseResult": false
+                            }
+                        }],
+                        [{
+                            "method": "equivLiteral",
+                            "value": "1",
+                            "options": {
+                                "ignoreOrder": false,
+                                "inverseResult": false
+                            }
+                        }],
+                        [{
+                            "method": "equivLiteral",
+                            "value": "10",
+                            "options": {
+                                "ignoreOrder": false,
+                                "inverseResult": false
+                            }
+                        }],
+                        [{
+                            "method": "equivValue",
+                            "value": "7",
+                            "options": {
+                                "decimalPlaces": 10,
+                                "inverseResult": false
+                            }
+                        }],
+                        [{
+                            "method": "equivLiteral",
+                            "value": "50",
+                            "options": {
+                                "ignoreOrder": false,
+                                "inverseResult": false
+                            }
+                        }]
+                    ]
+                }
+            }
         }
     ]
 }';
@@ -1254,6 +1315,14 @@ $signedRequest = $Init->generate();
             <h3 id="q10">Cloze Text Expanding (Extended Fill in the blanks)</h3>
             <p>Fill in the blanks.</p>
             <span class="learnosity-response question-demo10-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q40">Cloze (fill in the blanks) with Math</h3>
+            <span class="learnosity-response question-demo40-<?php echo $uniqueResponseIdSuffix ?>"></span>
         </div>
     </div>
     <hr>
@@ -1514,6 +1583,7 @@ $signedRequest = $Init->generate();
         </div>
     </div>
     <hr>
+
 
     <div class="row">
         <div class="form-actions">
