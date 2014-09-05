@@ -1105,6 +1105,10 @@ $request = '{
                 }
             },
             "instant_feedback": true
+        },
+        {
+            "response_id": "demo39-'.$uniqueResponseIdSuffix.'",
+            "type": "formulaessay"
         }
     ]
 }';
@@ -1496,8 +1500,17 @@ $signedRequest = $Init->generate();
     <div class="row">
         <div class="col-md-8">
             <h3 id="q36">Simple Chart - Line</h3>
-            <p><span class="label label-info">hint</span> Resize L to 40 and add a new point (M) and set its value to 60.</p>
+            <p><span class="label label-info">Hint</span> Resize L to 40 and add a new point (M) and set its value to 60.</p>
             <span class="learnosity-response question-demo38-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q39">Formula Essay</h3>
+            <p><span class="label label-info">Hint</span> Add math and rich text in the one long-response. Switch between math mode and text mode using the buttons on the right of each selected line.</p>
+            <span class="learnosity-response question-demo39-<?php echo $uniqueResponseIdSuffix ?>"></span>
         </div>
     </div>
     <hr>
