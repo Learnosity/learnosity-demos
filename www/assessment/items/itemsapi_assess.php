@@ -37,7 +37,7 @@ $request = array(
             'scroll_to_top'            => false,
             'scroll_to_test'           => false,
             'show_intro'               => true,
-            'show_outro'               => false,
+            'show_outro'               => true,
             'show_next'                => true,
             'show_prev'                => true,
             'show_accessibility'       => true,
@@ -119,10 +119,17 @@ $signedRequest = $Init->generate();
 <script>
     var eventOptions = {
             readyListener: function () {
-                console.log("Learnosity Items API is ready");
+                console.log('Learnosity Items API is ready');
+                LearnosityAssess.on('test:submit:success', function () {
+                    toggleModalClass();
+                });
             }
         },
         itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+
+    function toggleModalClass () {
+        $('.modal-backdrop').css('display', 'none');
+    }
 </script>
 
 <?php
