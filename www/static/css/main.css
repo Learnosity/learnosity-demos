@@ -520,6 +520,7 @@ h6 a {
 
 .container .jumbotron {
     border-radius: 0px;
+    position: relative;
 }
 
 .jumbotron .section {
@@ -594,6 +595,10 @@ h6 a {
     min-height: 280px;
 }
 
+.jumbotron.section {
+    min-height: 10px;
+}
+
 .landing .jumbotron .glyphicon {
     font-size: 30px;
 }
@@ -632,6 +637,7 @@ h6 a {
 .toolbar {
     font-size: 20px;
     padding-top: 15px;
+    text-align: right;
 }
 
 .toolbar a {
