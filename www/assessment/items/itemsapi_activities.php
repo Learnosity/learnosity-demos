@@ -34,21 +34,24 @@ $signedRequest = $Init->generate();
 ?>
 
 <div class="jumbotron section">
-    <div class="pull-right toolbar">
+    <div class="toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted" data-toggle="modal" data-target="#settings"><span class="glyphicon glyphicon-list-alt"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Next demo"><a href="itemsapi_workedsolutions.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
         </ul>
     </div>
-    <h1>Items API – Activities</h1>
-    <p>Activities are a wrapper for multiple items authored in the Learnosity Author site. They can also
-    include configuration used by the <a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a> to control the assessment user interface.</p>
-    <p>Preview the <a href="#" data-toggle="modal" data-target="#initialisation-preview">API Initialisation Object</a> to see how simple it can be using the Items API to load activities
-    authored in the Learnosity item bank.<p>
-    <p><a href="#" data-toggle="modal" data-target="#settings">Customise the activity</a> you want to load.<p>
-    <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
+    <div class="overview">
+        <h1>Items API – Activities</h1>
+        <p>Activities are a wrapper for multiple items authored in the Learnosity Author site. They can also
+        include configuration used by the <a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a> to control the assessment user interface.</p>
+        <p>Preview the <a href="#" data-toggle="modal" data-target="#initialisation-preview">API Initialisation Object</a> to see how simple it can be using the Items API to load activities
+        authored in the Learnosity item bank.<p>
+        <p><a href="#" data-toggle="modal" data-target="#settings">Customise the activity</a> you want to load.<p>
+        <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
+    </div>
 </div>
 
 <div class="section">
