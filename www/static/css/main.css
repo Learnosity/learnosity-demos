@@ -410,6 +410,15 @@ body,
 * New UI starting 23rd July 2014
 *
 ********************************************************************/
+a:focus,
+.dropdown-toggle:focus {
+    outline: thin dotted #777;
+}
+
+.dropdown.open .dropdown-toggle {
+    outline: none;
+}
+
 .row {
     margin-left: -20px;
     margin-right: -20px;
