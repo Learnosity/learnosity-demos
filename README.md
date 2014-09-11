@@ -1,5 +1,7 @@
 # Learnosity API Demos
 
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/Learnosity/learnosity-demos?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 Jumpstart your integration of the Learnosity APIs into your learning platform.
 
 ## Overview
@@ -16,8 +18,8 @@ There is also a SignatureUtils class which simplifies the generation of the secu
 * <strike>[Download the package](https://github.com/Learnosity/learnosity-demos/archive/master.zip)</strike>
 * <strike>``` git clone --recursive https://github.com/Learnosity/learnosity-demos.git```</strike>
 * ``` git clone https://github.com/Learnosity/learnosity-demos.git ```
-* ``` cd learnosity-demos/src/sdk ``` 
-* ``` git clone https://github.com/Learnosity/learnosity-sdk-php.git ./  ``` 
+* ``` cd learnosity-demos/src/sdk ```
+* ``` git clone https://github.com/Learnosity/learnosity-sdk-php.git ./  ```
 * Put in a web accessible directory ^
 * Test it out by browsing to index.php
 
