@@ -64,7 +64,6 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, true), $con
     <div class="pull-right toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/ssoapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Next demo"><a href="../../misc/security_check.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
         </ul>
     </div>
     <h1>Single Sign On API</h1>

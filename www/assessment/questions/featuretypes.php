@@ -7,7 +7,6 @@ include_once 'includes/header.php';
     <div class="pull-right toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questionsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Next demo"><a href="./formula.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
         </ul>
     </div>
     <h1>Questions API – Feature Types</h1>
