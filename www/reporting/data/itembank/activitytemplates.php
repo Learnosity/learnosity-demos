@@ -21,13 +21,13 @@ $resource = 'activitytemplates';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">references(s)</label>
+                <label class="col-md-2 control-label">reference(s)</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-references" data-type="array" value="">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">statuses(s)</label>
+                <label class="col-md-2 control-label">status(s)</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-status" data-type="array" value="">
                 </div>
