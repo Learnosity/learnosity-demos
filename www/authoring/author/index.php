@@ -25,15 +25,17 @@ $signedRequest = $Init->generate();
 ?>
 
 <div class="jumbotron section">
-    <div class="pull-right toolbar">
+    <div class="toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/authorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Next demo"><a href="../../assessment/questions/index.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
         </ul>
     </div>
-    <h1>Author API</h1>
-    <p>Learnosity's Author API allows searching and integration of Learnosity powered content into your content management system.<p>
+    <div class="overview">
+        <h1>Author API</h1>
+        <p>Learnosity's Author API allows searching and integration of Learnosity powered content into your content management system.<p>
+    </div>
 </div>
 
 <div class="section">
