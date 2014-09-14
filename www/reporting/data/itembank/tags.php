@@ -21,13 +21,13 @@ $resource = 'tags';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">types(s)</label>
+                <label class="col-md-2 control-label">type(s)</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-types" data-type="array" value="">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">tags(s)</label>
+                <label class="col-md-2 control-label">tag(s)</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-tags" data-type="array" value="">
                 </div>
