@@ -1,7 +1,7 @@
 <?php
 
 $endpoint = "$URL/$version/users/activities";
-$resource = 'activities';
+$resource = 'usersactivities';
 
 ?>
 
@@ -35,7 +35,7 @@ $resource = 'activities';
             <div class="form-group">
                 <label class="col-md-2 control-label">limit</label>
                 <div class="col-md-2">
-                    <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="10">
+                    <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="5">
                 </div>
             </div>
            <div class="form-group">

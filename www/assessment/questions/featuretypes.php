@@ -7,7 +7,6 @@ include_once 'includes/header.php';
     <div class="pull-right toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questionsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Next demo"><a href="./formula.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
         </ul>
     </div>
     <h1>Questions API – Feature Types</h1>
@@ -27,7 +26,7 @@ include_once 'includes/header.php';
     <section>
         <h3 id="audioplayer">Audio Player</h3>
         <h4>Example</h4>
-        <span class="learnosity-feature" data-type="audioplayer" data-src="//dw6y82u65ww8h.cloudfront.net/demos/docs/audiofeaturedemo.mp3" data-waveform="//dw6y82u65ww8h.cloudfront.net/demos/docs/waveform.png"></span>
+        <span class="learnosity-feature" data-type="audioplayer" data-src="//dw6y82u65ww8h.cloudfront.net/organisations/1/codie_award.mp3" data-waveform="//dw6y82u65ww8h.cloudfront.net/organisations/1/codie_award.png"></span>
         <br />
         <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="audioplayer" data-src="audio-source.mp3" data-waveform="//dw6y82u65ww8h.cloudfront.net/demos/docs/waveform.png"&gt;&lt;/span&gt;</pre>
         <hr />
@@ -36,9 +35,9 @@ include_once 'includes/header.php';
     <section>
         <h3 id="videoplayer">Video Player</h3>
         <h4>Example (with embedded youtube video)</h4>
-        <span class="learnosity-feature" data-type="videoplayer" data-src="//www.youtube.com/watch?feature=player_detailpage&v=flL7M36QszA"></span>
+        <span class="learnosity-feature" data-type="videoplayer" data-src="https://www.youtube.com/watch?v=OqsLA2U3d54&list=UU5m6XDcZUU2GCX4uQQSxBVg"></span>
         <br />
-        <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="videoplayer" data-src="//www.youtube.com/watch?feature=player_detailpage&v=flL7M36QszA"&gt;&lt;/span&gt;</pre>
+        <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="videoplayer" data-src="https://www.youtube.com/watch?v=OqsLA2U3d54&list=UU5m6XDcZUU2GCX4uQQSxBVg"&gt;&lt;/span&gt;</pre>
         <hr />
     </section>
 

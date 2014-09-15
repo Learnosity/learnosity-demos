@@ -114,7 +114,6 @@ $signedRequest = $Init->generate();
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="//docs.learnosity.com/itemsapi/adaptive/branching.php" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Next demo"><a href="itemsapi_inline.php"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
         </ul>
     </div>
     <h1>Items API – Branching Assessment</h1>
