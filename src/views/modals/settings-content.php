@@ -93,7 +93,7 @@
                                 <div class="form-group">
                                     <label for="threshold" class="col-sm-6 control-label">Submit Criteria Threshold</label>
                                     <div class="col-sm-3">
-                                        <input type="number" min="0" max="1" step="0.1" class="form-control" name="configuration[submit_criteria][threshold]" value="<?php if (isset($con['configuration']['submit_criteria']['threshold'])) { echo $con['configuration']['submit_criteria']['threshold']; } else { echo '0'; } ?>">
+                                        <input type="number" min="0" max="100" step="10" class="form-control" name="configuration[submit_criteria][threshold]" value="<?php if (isset($con['configuration']['submit_criteria']['threshold'])) { echo $con['configuration']['submit_criteria']['threshold']; } else { echo '0'; } ?>">
                                     </div>
                                 </div>
                             </div>
