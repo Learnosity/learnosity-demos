@@ -26,4 +26,9 @@ $data     = (isset($_POST['request'])) ? $_POST['request'] : null;
 $dataapi = new DataApi();
 $response = $dataapi->request($endpoint, $security, $consumer_secret, $data);
 
-echo $response->getBody();
+if (strlen($response->getBody())) {
+    echo $response->getBody();
+} else {
+    $err = $response->getError();
+    echo $err['message'];
+}
