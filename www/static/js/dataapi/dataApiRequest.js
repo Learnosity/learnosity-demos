@@ -64,7 +64,10 @@
             dataType: 'json',
             type: 'POST'
         })
-        .done(resource, function(data, status, xhr) {
+        .error(resource, function(xhr, status, data) {
+            renderResponse(resource, xhr.responseText, null, null);
+        })
+        .success(resource, function(data, status, xhr) {
             renderResponse(resource, data, status, xhr);
         });
     }
