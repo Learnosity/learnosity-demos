@@ -21,7 +21,7 @@ $security = array(
     'domain'       => $domain
 );
 $endpoint = (isset($_POST['endpoint'])) ? $_POST['endpoint'] : null;
-$data     = (isset($_POST['request'])) ? $_POST['request'] : null;
+$data     = (isset($_POST['request'])) ? json_decode($_POST['request'], true) : null;
 
 $dataapi = new DataApi();
 $response = $dataapi->request($endpoint, $security, $consumer_secret, $data);
