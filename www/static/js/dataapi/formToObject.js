@@ -77,6 +77,11 @@ var formToObject = (function($) {
                     }
                     request[parameter] = value;
                     break;
+                case 'json':
+                    try {
+                        request[parameter] = JSON.parse(value);
+                    } catch (e) {}
+                    break;
                 default:
                     break;
             }
