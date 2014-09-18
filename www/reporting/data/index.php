@@ -162,6 +162,23 @@ $version = 'v0.35';
                     </div>
                 </div>
             </div>
+            <!-- Interactives demos for the 'scoring' section -->
+            <h2>Scoring</h2>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#scoring">
+                            <span class="block">action: get</span>
+                            <?php echo '/' . $version . '/scoring'; ?>
+                        </a>
+                    </h4>
+                </div>
+                <div id="scoring" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'scoring/scoring.php'; ?>
+                    </div>
+                </div>
+            </div>
             <!-- Interactives demos for the 'users' section -->
             <h2>Users</h2>
             <div class="panel panel-default">
