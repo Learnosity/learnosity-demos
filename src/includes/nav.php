@@ -5,8 +5,8 @@
             'authoring/author/index.php'         => 'Author API'
         ),
         'Assessment' => array(
-            'assessment/questions/index.php' => 'Questions API',
             'assessment/items/index.php'     => 'Items API',
+            'assessment/questions/index.php' => 'Questions API',
             'assessment/assess/index.php'    => 'Assess API'
         ),
         'Reporting' => array(
