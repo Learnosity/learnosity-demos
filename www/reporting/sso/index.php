@@ -66,7 +66,7 @@ $teacherSSO = SignatureUtils::signRequest(json_decode($teacher_json, true), $con
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/ssoapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
-    <h1>Single Sign On API</h1>
+    <h1>Single Sign On API <span class="label label-danger">DEPRECATED</span></h1>
     <p>Get quick access to the data using the Learnosity Dashboards – or simply use the Learnosity API's to build your own solution.<p>
 </div>
 
