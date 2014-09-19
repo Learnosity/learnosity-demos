@@ -44,7 +44,8 @@ include_once 'includes/header.php';
         <div class="col-md-8 content-panel">
             <ul class="list-unstyled">
 
-                <li><h4><a href="<?php echo $env['www'] ?>assessment/items/index.php">Items API</a></h4>
+                <li><h4><a href="<?php echo $env['www'] ?>assessment/items/index.php">Items API</a> 
+                <span class="label label-info">Start here!</span></h4>
                 <p>Provides a simple way to access content from the Learnosity item bank. Also includes a powerful
                 adaptive engine for fine grained assessment control.</p></li>
 
