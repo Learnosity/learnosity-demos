@@ -5,7 +5,7 @@ include_once 'includes/header.php';
 
 <div class="landing section">
     <div class="jumbotron">
-        <h1 class="landing-heading">Learnosity API Demos</h1>
+        <h1 class="landing-heading">Learnosity Demos</h1>
         <div class="landing-intro">
             <div class="media">
                 <div class="pull-left">
