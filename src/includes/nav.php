@@ -12,7 +12,7 @@
         'Reporting' => array(
             'reporting/reports/index.php' => 'Reports API',
             'reporting/data/index.php'    => 'Data API',
-            'reporting/sso/index.php'     => 'Single Sign On API'
+            'reporting/sso/index.php'     => 'Single Sign On API (Depreciated)'
         ),
         'Misc' => array(
             'misc/security_check.php' => 'Security Check'
