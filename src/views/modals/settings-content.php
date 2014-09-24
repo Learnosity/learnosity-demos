@@ -273,7 +273,6 @@
                                     <label for="transition" class="col-sm-6 control-label">Item Transition</label>
                                     <div class="col-sm-6">
                                         <select id="transition" name="navigation[transition]">
-                                            <option value="slide"<?php if (isset($nav['transition']) && $nav['transition'] === 'slide') { echo ' selected'; }; ?>>Slide</option>
                                             <option value="fade"<?php if (isset($nav['transition']) && $nav['transition'] === 'fade') { echo ' selected'; }; ?>>Fade</option>
                                             <option value="toggle"<?php if (isset($nav['transition']) && $nav['transition'] === 'toggle') { echo ' selected'; }; ?>>Toggle</option>
                                         </select>
