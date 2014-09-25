@@ -5,7 +5,7 @@ include_once 'includes/header.php';
 
 <div class="landing section">
     <div class="jumbotron">
-        <h1 class="landing-heading">Learnosity API Demos</h1>
+        <h1 class="landing-heading">Learnosity Demos</h1>
         <div class="landing-intro">
             <div class="media">
                 <div class="pull-left">
@@ -37,7 +37,28 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
+ <div class="row landing-panel">
+        <div class="col-md-3 landing-panel-heading">
+            <h3>Assessment</h3>
+        </div>
+        <div class="col-md-8 content-panel">
+            <ul class="list-unstyled">
 
+                <li><h4><a href="<?php echo $env['www'] ?>assessment/items/index.php">Items API</a> 
+                <span class="label label-info">Start here!</span></h4>
+                <p>Provides a simple way to access content from the Learnosity item bank. Also includes a powerful
+                adaptive engine for fine grained assessment control.</p></li>
+
+                <li><h4><a href="<?php echo $env['www'] ?>assessment/questions/index.php">Questions API</a></h4>
+                <p>Rich Question and Feature types can be embedded on any page with the Learnosity Questions API.</p></li>
+
+                <li><h4><a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a></h4>
+                <p>Configurable layouts and assessment controls including pause, fullscreen mode,
+                navigation and many more. Provides simple assessment delivery to desktops and tablet devices.</p></li>
+            </ul>
+        </div>
+    </div>
+   
     <div class="row landing-panel">
         <div class="col-md-3 landing-panel-heading">
             <h3>Authoring</h3>
@@ -55,23 +76,6 @@ include_once 'includes/header.php';
     </div>
     <div class="row landing-panel">
         <div class="col-md-3 landing-panel-heading">
-            <h3>Assessment</h3>
-        </div>
-        <div class="col-md-8 content-panel">
-            <ul class="list-unstyled">
-                <li><h4><a href="<?php echo $env['www'] ?>assessment/questions/index.php">Questions API</a></h4>
-                <p>Rich Question and Feature types can be embedded on any page with the Learnosity Questions API.</p></li>
-                <li><h4><a href="<?php echo $env['www'] ?>assessment/items/index.php">Items API</a></h4>
-                <p>Provides a simple way to access content from the Learnosity item bank. Also includes a powerful
-                adaptive engine for fine grained assessment control.</p></li>
-                <li><h4><a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a></h4>
-                <p>Configurable layouts and assessment controls including pause, fullscreen mode,
-                navigation and many more. Provides simple assessment delivery to desktops and tablet devices.</p></li>
-            </ul>
-        </div>
-    </div>
-    <div class="row landing-panel">
-        <div class="col-md-3 landing-panel-heading">
             <h3>Reporting</h3>
         </div>
         <div class="col-md-8 content-panel">
@@ -81,7 +85,9 @@ include_once 'includes/header.php';
                 events, to remotely control any assessment in real time.</p></li>
                 <li><h4><a href="<?php echo $env['www'] ?>reporting/data/index.php">Data API</a></h4>
                 <p>A back office service that allows authenticated users to retrieve and store information from within the Learnosity Assessment platform.</p></li>
-                <li><h4><a href="<?php echo $env['www'] ?>reporting/sso/index.php">Single Sign On API</a></h4>
+                <li><h4><a href="<?php echo $env['www'] ?>reporting/sso/index.php">Single Sign On API</a>
+                <span class="label label-danger">DEPRECATED</span>
+                </h4>
                 <p>Gain quick access to assessments and reports using the Learnosity Dashboards.</p></li>
             </ul>
         </div>
