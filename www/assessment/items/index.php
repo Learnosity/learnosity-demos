@@ -11,19 +11,26 @@ include_once 'includes/header.php';
     </div>
     <h1>Items API</h1>
     <div class="section-intro">
-        <p>Learnosity's <b>Items API</b> provides a simple way to access content from the Learnosity item bank to pull in activities and assessments from the author
-        site’s data store that can be embedded in your pages. It leverages the <a href="../questions/index.php">Questions API</a> and the
+        <p>Learnosity's <b>Items API</b> provides a simple way to access content from the Learnosity
+        item bank, and to optionally pull in activities (assessments) that can be embedded in your pages.
+        It leverages the <a href="../questions/index.php">Questions API</a> and the
         <a href="../assess/index.php">Assess API</a> as appropriate.</p>
+        <p>The Items API also supports both items and testlet
+        <a href="http://docs.learnosity.com/itemsapi/knowledgebase/adaptiveassessment.php" target="_blank">
+        adaptive assessments</a>.
+        </p>
     </div>
 
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Assess</h2>
+                    <h2 class="panel-title">Use our Assessment Layer</h2>
                 </div>
                 <div class="panel-body">
-                    <p>With the flick of a switch make the items into an assessment. Truly write once - use anywhere.</p>
+                    <p>With the flick of a switch turn items into assessments.
+                    Truly write once - use anywhere.</p>
+                    <p>Uses the power of our Assess API for a full assessment experience.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_assess.php">Demo</a>
                     </p>
@@ -33,10 +40,11 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Inline</h2>
+                    <h2 class="panel-title">Render Questions Inline (no Assessment Layer)</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Display items from the Learnosity item bank in no time with the Items API. The Items API builds on the Questions API's power and makes it quicker to integrate.</p>
+                    <p>Display items from the Learnosity item bank in no time with the Items API.</p>
+                    <p>Leverages the Questions API's power and makes it faster to integrate.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_inline.php">Demo</a>
                     </p>
@@ -51,7 +59,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Adaptive Assessment</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A dynamic assessment that adapts to the user's ability in real time.</p>
+                    <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_adaptive.php">Demo</a>
                     </p>

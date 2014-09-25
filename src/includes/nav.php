@@ -5,14 +5,14 @@
             'authoring/author/index.php'         => 'Author API'
         ),
         'Assessment' => array(
-            'assessment/questions/index.php' => 'Questions API',
             'assessment/items/index.php'     => 'Items API',
+            'assessment/questions/index.php' => 'Questions API',
             'assessment/assess/index.php'    => 'Assess API'
         ),
         'Reporting' => array(
             'reporting/reports/index.php' => 'Reports API',
             'reporting/data/index.php'    => 'Data API',
-            'reporting/sso/index.php'     => 'Single Sign On API'
+            'reporting/sso/index.php'     => 'Single Sign On API (Deprecated)'
         ),
         'Misc' => array(
             'misc/security_check.php' => 'Security Check'
