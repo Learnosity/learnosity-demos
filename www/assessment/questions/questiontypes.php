@@ -590,7 +590,7 @@ $request = '{
             "is_math": true,
             "response_id": "demo26-'.$uniqueResponseIdSuffix.'",
             "stimulus": "Find other equations that are equal to \\\((x + 3)(x + 1)\\\)",
-            "type": "formula",
+            "type": "formulaV2",
             "validation": {
                 "valid_responses": [
                     [{
@@ -955,7 +955,7 @@ $request = '{
             "response_id": "demo34-'.$uniqueResponseIdSuffix.'",
             "stimulus": "Enter any two values, such that the expression is equal to \\\(5 = y + x\\\).",
             "template": "{{response}} = y + {{response}}",
-            "type": "formula",
+            "type": "formulaV2",
             "validation": {
                 "valid_responses": [
                     [{
@@ -974,7 +974,7 @@ $request = '{
             "is_math": true,
             "response_id": "demo35-'.$uniqueResponseIdSuffix.'",
             "stimulus": "Enter any value, such that the value is equal to \\\(5m\\\). You may use \\\(km\\\), \\\(cm\\\), \\\(ft\\\), \\\(in\\\) or other units (rounded to two decimal places.",
-            "type": "formula",
+            "type": "formulaV2",
             "validation": {
                 "valid_responses": [
                     [{
