@@ -66,7 +66,9 @@ $signedRequest = $Init->generate();
 
 <style>
     .section {
-        background-color: #FAF9ED;
+        background-color: #f3f5f5;
+        border: 0;
+        box-shadow: none;
     }
     .gallery {
         width: 100%;
@@ -113,6 +115,19 @@ $signedRequest = $Init->generate();
         max-height: 200px;
         overflow: hidden;
     }
+
+    .card:before {
+      cursor: pointer;
+      z-index: 1;
+      content: "";
+      display: block;
+      background: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
 </style>
 
 
@@ -121,11 +136,11 @@ $signedRequest = $Init->generate();
         <div class="row">
             <?php foreach ($glossaryCards as $card) { ?>
             <div class="col-md-4">
-            <div class="effect2">
-              <div class="card">
-                <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
+              <div class="effect2">
+                <div class="card">
+                  <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
+                </div>
               </div>
-            </div>
             </div>
             <?php } ?>
         </div>
