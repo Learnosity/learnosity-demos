@@ -13,6 +13,13 @@ $security = array(
     'timestamp'    => $timestamp
 );
 
+/*
+ * First make a request to the Data API to retrieve all
+ * card sets you want to appear on this gallery page.
+ *
+ * This assumes that each set has an equivalent `activity`
+ * in the Learnosity Authoring site.
+ */
 $DataApi = new DataApi();
 $response = $DataApi->request(
     'https://data.learnosity.com/latest/itembank/activities',
@@ -20,6 +27,12 @@ $response = $DataApi->request(
     $consumer_secret,
     ['references' => ['gallery_1', 'gallery_2', 'gallery_3']]
 );
+
+/*
+ * Now that you have all activities, loop over them and
+ * retrieve the first item in each. That will be the item
+ * used as the preview card students will click on.
+ */
 if (!$response->getError()['code']) {
     $activities = json_decode($response->getBody(), true)['data'];
     $glossaryCards = [];
@@ -28,8 +41,11 @@ if (!$response->getError()['code']) {
     }
 }
 
-
-
+/*
+ * Now that we have an array of item references, init
+ * the Items API (inline mode). Use a "card" UI for each
+ * item, which represents the first item of a set.
+ */
 $request = array(
     'user_id'        => $studentid,
     'name'           => 'Items API demo - Inline Activity.',
@@ -49,6 +65,9 @@ $signedRequest = $Init->generate();
 
 
 <style>
+    .section {
+        background-color: #FAF9ED;
+    }
     .gallery {
         width: 100%;
         height: 100%;
