@@ -54,19 +54,17 @@ $signedRequest = $Init->generate();
         height: 100%;
         position: relative;
     }
+    .effect2,
     .card {
-        transform: scale(.5);
-        max-height: 200px;
-        overflow: hidden;
-    }
-    .effect2 {
       position: relative;
+      z-index: 1;
+      background: #fff;
     }
     .effect2:before, .effect2:after {
       z-index: -1;
       position: absolute;
       content: "";
-      bottom: 15px;
+      bottom: 17px; /* Adjust this to move the shadow up/down */
       left: 10px;
       width: 50%;
       top: 80%;
@@ -91,6 +89,11 @@ $signedRequest = $Init->generate();
       right: 10px;
       left: auto;
     }
+    .card .learnosity-item {
+        transform: scale(.8);
+        max-height: 200px;
+        overflow: hidden;
+    }
 </style>
 
 
@@ -99,8 +102,10 @@ $signedRequest = $Init->generate();
         <div class="row">
             <?php foreach ($glossaryCards as $card) { ?>
             <div class="col-md-4">
-            <div class="card effect2">
+            <div class="effect2">
+              <div class="card">
                 <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
+              </div>
             </div>
             </div>
             <?php } ?>
