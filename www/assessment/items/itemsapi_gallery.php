@@ -110,8 +110,12 @@ $signedRequest = $Init->generate();
         right: 10px;
         left: auto;
     }
+
+    .card {
+      padding: 20px;
+    }
+    
     .card .learnosity-item {
-        transform: scale(.7);
         max-height: 210px;
         overflow: hidden;
     }
