@@ -72,6 +72,9 @@ $signedRequest = $Init->generate();
 
 
 <style>
+    .excerpt-suppress {
+        display: none;
+    }
     .section {
         background-color: #f3f5f5;
         border: 0;
