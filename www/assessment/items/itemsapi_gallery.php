@@ -14,6 +14,11 @@ $security = array(
 );
 
 /*
+ * Array of cardsets (activities) you want to display
+ */
+$activityRefs = ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5', 'gallery_6'];
+
+/*
  * First make a request to the Data API to retrieve all
  * card sets you want to appear on this gallery page.
  *
@@ -25,7 +30,7 @@ $response = $DataApi->request(
     'https://data.learnosity.com/latest/itembank/activities',
     $security,
     $consumer_secret,
-    ['references' => ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5', 'gallery_6']]
+    ['references' => $activityRefs]
 );
 
 /*
@@ -112,9 +117,9 @@ $signedRequest = $Init->generate();
     }
 
     .card {
-      padding: 20px;
+      padding: 25px;
     }
-    
+
     .card .learnosity-item {
         max-height: 210px;
         overflow: hidden;
@@ -140,10 +145,10 @@ $signedRequest = $Init->generate();
 <div class="section">
     <section class="gallery">
         <div class="row">
-            <?php foreach ($glossaryCards as $card) { ?>
+            <?php foreach ($glossaryCards as $i => $card) { ?>
             <div class="col-md-4 pod">
                 <div class="effect2">
-                    <div class="card">
+                    <div class="card" data-activity="<?php echo $activityRefs[$i]; ?>">
                         <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
                     </div>
                 </div>
@@ -161,19 +166,21 @@ $signedRequest = $Init->generate();
                 init();
             }
         },
-        itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions),
-        loadItem,
-        init;
+        init,
+        itemsApp,
+        loadActivity;
+
+    itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
 
     function init () {
         $('.card').on('click', function (el) {
-            var itemRef = $(this).find('div.learnosity-item').attr('data-reference');
-            loadItem(itemRef);
+            var ref = $(this).attr('data-activity');
+            loadActivity(ref);
         });
     }
 
-    function loadItem(dom) {
-        console.log(dom);
+    function loadActivity(ref) {
+        console.log(ref);
     }
 </script>
 
