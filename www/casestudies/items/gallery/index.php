@@ -41,8 +41,10 @@ $response = $DataApi->request(
 if (!$response->getError()['code']) {
     $activities = json_decode($response->getBody(), true)['data'];
     $glossaryCards = [];
+    $cardsetRef = [];
     foreach ($activities as $i => $activity) {
         $glossaryCards[] = $activity['data']['items'][0];
+        $cardsetRef[] = $activity['reference'];
     }
 }
 
@@ -119,6 +121,7 @@ $signedRequest = $Init->generate();
     .card .learnosity-item {
         transform: scale(.8);
         max-height: 200px;
+        height: 200px;
         overflow: hidden;
     }
 
@@ -146,7 +149,7 @@ $signedRequest = $Init->generate();
             <?php foreach ($glossaryCards as $i => $card) { ?>
             <div class="col-md-4 pod">
                 <div class="effect2">
-                    <div class="card" data-activity="<?php echo $activityRefs[$i]; ?>">
+                    <div class="card" data-activity="<?php echo $cardsetRef[$i]; ?>">
                         <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
                     </div>
                 </div>
