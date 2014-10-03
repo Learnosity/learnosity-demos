@@ -25,7 +25,7 @@ $response = $DataApi->request(
     'https://data.learnosity.com/latest/itembank/activities',
     $security,
     $consumer_secret,
-    ['references' => ['gallery_1', 'gallery_2', 'gallery_3']]
+    ['references' => ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5', 'gallery_6']]
 );
 
 /*
@@ -77,56 +77,58 @@ $signedRequest = $Init->generate();
     }
     .effect2,
     .card {
-      position: relative;
-      z-index: 1;
-      background: #fff;
+        position: relative;
+        z-index: 1;
+        background: #fff;
     }
     .effect2:before, .effect2:after {
-      z-index: -1;
-      position: absolute;
-      content: "";
-      bottom: 17px; /* Adjust this to move the shadow up/down */
-      left: 10px;
-      width: 50%;
-      top: 80%;
-      max-width:300px;
-      background: #777;
-      -webkit-box-shadow: 0 15px 10px #777;
-      -moz-box-shadow: 0 15px 10px #777;
-      box-shadow: 0 15px 10px #777;
-      -webkit-transform: rotate(-3deg);
-      -moz-transform: rotate(-3deg);
-      -o-transform: rotate(-3deg);
-      -ms-transform: rotate(-3deg);
-      transform: rotate(-3deg);
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 17px; /* Adjust this to move the shadow up/down */
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width:300px;
+        background: #777;
+        -webkit-box-shadow: 0 15px 10px #777;
+        -moz-box-shadow: 0 15px 10px #777;
+        box-shadow: 0 15px 10px #777;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -o-transform: rotate(-3deg);
+        -ms-transform: rotate(-3deg);
+        transform: rotate(-3deg);
     }
     .effect2:after
     {
-      -webkit-transform: rotate(3deg);
-      -moz-transform: rotate(3deg);
-      -o-transform: rotate(3deg);
-      -ms-transform: rotate(3deg);
-      transform: rotate(3deg);
-      right: 10px;
-      left: auto;
+        -webkit-transform: rotate(3deg);
+        -moz-transform: rotate(3deg);
+        -o-transform: rotate(3deg);
+        -ms-transform: rotate(3deg);
+        transform: rotate(3deg);
+        right: 10px;
+        left: auto;
     }
     .card .learnosity-item {
-        transform: scale(.8);
-        max-height: 200px;
+        transform: scale(.7);
+        max-height: 210px;
         overflow: hidden;
     }
-
     .card:before {
-      cursor: pointer;
-      z-index: 1;
-      content: "";
-      display: block;
-      background: transparent;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+        cursor: pointer;
+        z-index: 1;
+        content: "";
+        display: block;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .pod {
+        padding-bottom: 25px;
     }
 </style>
 
@@ -135,12 +137,12 @@ $signedRequest = $Init->generate();
     <section class="gallery">
         <div class="row">
             <?php foreach ($glossaryCards as $card) { ?>
-            <div class="col-md-4">
-              <div class="effect2">
-                <div class="card">
-                  <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
+            <div class="col-md-4 pod">
+                <div class="effect2">
+                    <div class="card">
+                        <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
+                    </div>
                 </div>
-              </div>
             </div>
             <?php } ?>
         </div>
