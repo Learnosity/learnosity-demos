@@ -116,25 +116,23 @@ $signedRequest = $Init->generate();
         left: auto;
     }
 
-    .card {
-      padding: 25px;
-    }
-
     .card .learnosity-item {
-        max-height: 210px;
+        transform: scale(.8);
+        max-height: 200px;
         overflow: hidden;
     }
+
     .card:before {
-        cursor: pointer;
-        z-index: 1;
-        content: "";
-        display: block;
-        background: transparent;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+      cursor: pointer;
+      z-index: 1;
+      content: "";
+      display: block;
+      background: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
     .pod {
         padding-bottom: 25px;
