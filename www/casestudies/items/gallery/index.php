@@ -178,7 +178,7 @@ $signedRequest = $Init->generate();
     }
 
     function loadActivity(ref) {
-        console.log(ref);
+        location.href = 'cardset.php?set=' + ref;
     }
 </script>
 
