@@ -158,10 +158,23 @@ $signedRequest = $Init->generate();
 <script>
     var eventOptions = {
             readyListener: function () {
-                console.log('Learnosity Items API is ready');
+                init();
             }
         },
-        itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+        itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions),
+        loadItem,
+        init;
+
+    function init () {
+        $('.card').on('click', function (el) {
+            var itemRef = $(this).find('div.learnosity-item').attr('data-reference');
+            loadItem(itemRef);
+        });
+    }
+
+    function loadItem(dom) {
+        console.log(dom);
+    }
 </script>
 
 <?php
