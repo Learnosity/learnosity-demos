@@ -33,9 +33,7 @@ $signedRequest = $Init->generate();
 ?>
 
 <div class="section">
-    <section class="gallfery">
-        <span class="learnosity-item" data-reference="<?php echo $itemRef; ?>"></span>
-    </section>
+    <span class="learnosity-item" data-reference="<?php echo $itemRef; ?>"></span>
     <button type="button" class="btn btn-primary" onclick="location.href='./cardset.php?set=<?php echo $activityRef ?>'">Back &laquo;</button>
 </div>
 
