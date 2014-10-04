@@ -13,56 +13,39 @@ $security = array(
     'timestamp'    => $timestamp
 );
 
-/*
- * Array of cardsets (activities) you want to display
- */
-$activityRefs = ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5', 'gallery_6'];
+// Which activity do you want to load?
+$activityRef = 'gallery_1';
 
 /*
- * First make a request to the Data API to retrieve all
- * card sets you want to appear on this gallery page.
- *
- * This assumes that each set has an equivalent `activity`
- * in the Learnosity Authoring site.
+ * The only reason we're using the Data API here is to
+ * retrieve the item references necessary to create a
+ * DOM node (to load an item into).
+ * This call would ideally be cached by the host page.
  */
 $DataApi = new DataApi();
 $response = $DataApi->request(
     'https://data.learnosity.com/latest/itembank/activities',
     $security,
     $consumer_secret,
-    ['references' => $activityRefs]
+    ['references' => [$activityRef]]
 );
 
-/*
- * Now that you have all activities, loop over them and
- * retrieve the first item in each. That will be the item
- * used as the preview card students will click on.
- */
 if (!$response->getError()['code']) {
-    $activities = json_decode($response->getBody(), true)['data'];
-    $glossaryCards = [];
-    $cardsetRef = [];
-    foreach ($activities as $i => $activity) {
-        $glossaryCards[] = $activity['data']['items'][0];
-        $cardsetRef[] = $activity['reference'];
-    }
+    $activity = json_decode($response->getBody(), true)['data'];
+    $glossaryCards = $activity[0]['data']['items'];
 }
 
-/*
- * Now that we have an array of item references, init
- * the Items API (inline mode). Use a "card" UI for each
- * item, which represents the first item of a set.
- */
+// Setup your request object as usual
 $request = array(
-    'user_id'        => $studentid,
-    'name'           => 'Items API demo - Inline Activity.',
-    'state'          => 'initial',
-    'activity_id'    => 'itemsinlinedemo',
-    'session_id'     => Uuid::generate(),
-    'course_id'      => $courseid,
-    'type'           => 'local_practice',
-    'rendering_type' => 'inline',
-    'items'          => $glossaryCards
+    'user_id'              => $studentid,
+    'name'                 => 'Items API demo - Inline Activity.',
+    'state'                => 'initial',
+    'activity_id'          => 'itemsinlinedemo',
+    'session_id'           => Uuid::generate(),
+    'course_id'            => $courseid,
+    'type'                 => 'local_practice',
+    'rendering_type'       => 'inline',
+    'activity_template_id' => $activityRef
 );
 
 $Init = new Init('items', $security, $consumer_secret, $request);
@@ -72,9 +55,6 @@ $signedRequest = $Init->generate();
 
 
 <style>
-    .excerpt-suppress {
-        display: none;
-    }
     .section {
         background-color: #f3f5f5;
         border: 0;
@@ -121,24 +101,26 @@ $signedRequest = $Init->generate();
         left: auto;
     }
 
+    .card {
+      padding: 25px;
+    }
+
     .card .learnosity-item {
-        transform: scale(.8);
-        max-height: 200px;
+        max-height: 210px;
         height: 200px;
         overflow: hidden;
     }
-
     .card:before {
-      cursor: pointer;
-      z-index: 1;
-      content: "";
-      display: block;
-      background: transparent;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+        cursor: pointer;
+        z-index: 1;
+        content: "";
+        display: block;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
     .pod {
         padding-bottom: 25px;
@@ -152,7 +134,7 @@ $signedRequest = $Init->generate();
             <?php foreach ($glossaryCards as $i => $card) { ?>
             <div class="col-md-4 pod">
                 <div class="effect2">
-                    <div class="card" data-activity="<?php echo $cardsetRef[$i]; ?>">
+                    <div class="card">
                         <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
                     </div>
                 </div>
@@ -178,13 +160,13 @@ $signedRequest = $Init->generate();
 
     function init () {
         $('.card').on('click', function (el) {
-            var ref = $(this).attr('data-activity');
-            loadActivity(ref);
+            var $item = $(this).find('div.learnosity-item');
+            loadItem($item);
         });
     }
 
-    function loadActivity(ref) {
-        location.href = 'cardset.php?set=' + ref;
+    function loadItem(item, card) {
+        location.href = 'card.php?ref=' + $(item).attr('data-reference');
     }
 </script>
 
