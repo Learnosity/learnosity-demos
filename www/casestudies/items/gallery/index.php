@@ -53,82 +53,21 @@ $signedRequest = $Init->generate();
 
 ?>
 
+<div class="jumbotron section">
+    <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+        </ul>
+    </div>
+    <div class="overview">
+        <h1>Items API – Inline Gallery Style</h1>
+        <p>Demonstrates how simply you can style each <em>item</em> in an activity.</p>
+    </div>
+</div>
 
-<style>
-    .section {
-        background-color: #f3f5f5;
-        border: 0;
-        box-shadow: none;
-    }
-    .gallery {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-    .effect2,
-    .card {
-        position: relative;
-        z-index: 1;
-        background: #fff;
-    }
-    .effect2:before, .effect2:after {
-        z-index: -1;
-        position: absolute;
-        content: "";
-        bottom: 17px; /* Adjust this to move the shadow up/down */
-        left: 10px;
-        width: 50%;
-        top: 80%;
-        max-width:300px;
-        background: #777;
-        -webkit-box-shadow: 0 15px 10px #777;
-        -moz-box-shadow: 0 15px 10px #777;
-        box-shadow: 0 15px 10px #777;
-        -webkit-transform: rotate(-3deg);
-        -moz-transform: rotate(-3deg);
-        -o-transform: rotate(-3deg);
-        -ms-transform: rotate(-3deg);
-        transform: rotate(-3deg);
-    }
-    .effect2:after
-    {
-        -webkit-transform: rotate(3deg);
-        -moz-transform: rotate(3deg);
-        -o-transform: rotate(3deg);
-        -ms-transform: rotate(3deg);
-        transform: rotate(3deg);
-        right: 10px;
-        left: auto;
-    }
-
-    .card {
-      padding: 25px;
-    }
-
-    .card .learnosity-item {
-        max-height: 210px;
-        height: 200px;
-        overflow: hidden;
-    }
-    .card:before {
-        cursor: pointer;
-        z-index: 1;
-        content: "";
-        display: block;
-        background: transparent;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-    .pod {
-        padding-bottom: 25px;
-    }
-</style>
-
-
-<div class="section">
+<div class="gallery-section">
     <section class="gallery">
         <div class="row">
             <?php foreach ($glossaryCards as $i => $card) { ?>
