@@ -67,7 +67,7 @@ $signedRequest = $Init->generate();
     </div>
 </div>
 
-<div class="gallery-section">
+<div class="gallery-section section">
     <section class="gallery">
         <div class="row">
             <?php foreach ($glossaryCards as $i => $card) { ?>
