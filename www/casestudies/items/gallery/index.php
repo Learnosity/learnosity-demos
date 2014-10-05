@@ -105,6 +105,8 @@ $signedRequest = $Init->generate();
     }
 
     function loadItem(item, card) {
+        //$('.pod').hide();
+        //$(item).closest('.pod').toggleClass('col-md-4', 'col-md-12').show();
         location.href = 'card.php?ref=' + $(item).attr('data-reference');
     }
 </script>
