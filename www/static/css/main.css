@@ -718,6 +718,10 @@ h6 a {
     z-index: 9999;
 }
 
+.nav-sec-wrapper {
+    display: none;
+}
+
 @media (min-width: 768px) {
     .navbar-nav > li > a {
         padding-left: 10px;
@@ -755,6 +759,12 @@ h6 a {
 
     .landing-panel-heading {
         text-align: right;
+    }
+}
+
+@media (min-width: 1201px) {
+    .nav-sec-wrapper {
+        display: block;
     }
 }
 
@@ -801,4 +811,85 @@ h6 a {
 
 .learnosity-assess .start-page {
     z-index: 1000 !important;
+}
+
+
+/********************************************************************
+*
+* Gallery view - /casestudies/items/gallery/
+*
+********************************************************************/
+.gallery-section {
+    background-color: #f3f5f5;
+    border: 0;
+    box-shadow: none;
+}
+.gallery {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.effect2,
+.card {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+}
+.effect2:before, .effect2:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 17px; /* Adjust this to move the shadow up/down */
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+.effect2:after
+{
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+}
+
+.card {
+  padding: 25px;
+}
+
+.card .learnosity-item {
+    max-height: 210px;
+    height: 200px;
+    overflow: hidden;
+}
+.card:before {
+    cursor: pointer;
+    z-index: 1;
+    content: "";
+    display: block;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.pod {
+    padding-bottom: 25px;
+}
+
+.excerpt-suppress {
+    display: none;
 }
