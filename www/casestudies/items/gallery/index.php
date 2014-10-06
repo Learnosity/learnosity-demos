@@ -79,6 +79,7 @@ $signedRequest = $Init->generate();
                 <div class="effect2">
                     <div class="card">
                         <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
+                        <button type="button" class="btn btn-primary back">Back &laquo;</button>
                     </div>
                 </div>
             </div>
@@ -103,15 +104,24 @@ $signedRequest = $Init->generate();
 
     function init () {
         $('.card').on('click', function (el) {
-            var $item = $(this).find('div.learnosity-item');
-            loadItem($item);
+            if (!$(this).hasClass('active')) {
+                var $item = $(this).find('div.learnosity-item');
+                toggleItem($item, $(this));
+            }
+        });
+
+        $('.card .back').on('click', function (el) {
+            var $card = $(this).closest('.card');
+            var $item = $card.find('div.learnosity-item');
+            toggleItem($item, $card);
+            return false;
         });
     }
 
-    function loadItem(item, card) {
-        //$('.pod').hide();
-        //$(item).closest('.pod').toggleClass('col-md-4', 'col-md-12').show();
-        location.href = 'card.php?ref=' + $(item).attr('data-reference');
+    function toggleItem(item, card) {
+        $('.pod').toggle();
+        item.closest('.pod').toggleClass('col-md-4', 'col-md-12').show('fast');
+        card.toggleClass('active');
     }
 </script>
 

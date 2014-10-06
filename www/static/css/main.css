@@ -869,12 +869,13 @@ h6 a {
   padding: 25px;
 }
 
-.card .learnosity-item {
-    max-height: 210px;
-    height: 200px;
+.card:not(.active) .learnosity-item {
+    height: 300px;
     overflow: hidden;
+    transform: scale(.66);
+    margin: -50px;
 }
-.card:before {
+.card:not(.active):before {
     cursor: pointer;
     z-index: 1;
     content: "";
@@ -886,6 +887,11 @@ h6 a {
     right: 0;
     bottom: 0;
 }
+
+.card:not(.active) .back {
+    display: none;
+}
+
 .pod {
     padding-bottom: 25px;
 }
