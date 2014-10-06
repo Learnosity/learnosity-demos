@@ -16,6 +16,10 @@ $security = array(
 // Which activity do you want to load?
 $activityRef = 'gallery_1';
 
+if (isset($_GET['activity_reference'])) {
+    $activityRef = $_GET['activity_reference'];
+}
+
 /*
  * The only reason we're using the Data API here is to
  * retrieve the item references necessary to create a
