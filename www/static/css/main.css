@@ -829,13 +829,13 @@ h6 a {
     height: 100%;
     position: relative;
 }
-.effect2,
+.pod-inner,
 .card {
     position: relative;
     z-index: 1;
     background: #fff;
 }
-.effect2:before, .effect2:after {
+.pod-inner:before, .pod-inner:after {
     z-index: -1;
     position: absolute;
     content: "";
@@ -854,7 +854,7 @@ h6 a {
     -ms-transform: rotate(-3deg);
     transform: rotate(-3deg);
 }
-.effect2:after
+.pod-inner:after
 {
     -webkit-transform: rotate(3deg);
     -moz-transform: rotate(3deg);
@@ -867,6 +867,7 @@ h6 a {
 
 .card {
   padding: 25px;
+  margin-bottom: 25px;
 }
 
 .card:not(.active) .learnosity-item {
