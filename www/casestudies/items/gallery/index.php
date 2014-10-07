@@ -76,7 +76,7 @@ $signedRequest = $Init->generate();
         <div class="row">
             <?php foreach ($glossaryCards as $i => $card) { ?>
             <div class="col-md-4 pod">
-                <div class="effect2">
+                <div class="pod-inner">
                     <div class="card">
                         <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
                         <button type="button" class="btn btn-primary back">Back &laquo;</button>
@@ -120,7 +120,7 @@ $signedRequest = $Init->generate();
 
     function toggleItem(item, card) {
         $('.pod').toggle();
-        item.closest('.pod').toggleClass('col-md-4', 'col-md-12').show('fast');
+        item.closest('.pod').toggleClass('col-md-4').fadeToggle('fast');
         card.toggleClass('active');
     }
 </script>
