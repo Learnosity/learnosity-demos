@@ -3,16 +3,6 @@
 include_once '../../../config.php';
 include_once 'includes/header.php';
 
-use LearnositySdk\Request\Init;
-use LearnositySdk\Request\DataApi;
-use LearnositySdk\Utils\Uuid;
-
-$security = array(
-    'consumer_key' => $consumer_key,
-    'domain'       => $domain,
-    'timestamp'    => $timestamp
-);
-
 // Which activity do you want to load?
 $activityRef = 'gallery_1';
 
@@ -20,40 +10,7 @@ if (isset($_GET['activity_reference'])) {
     $activityRef = $_GET['activity_reference'];
 }
 
-/*
- * The only reason we're using the Data API here is to
- * retrieve the item references necessary to create a
- * DOM node (to load an item into).
- * This call would ideally be cached by the host page.
- */
-$DataApi = new DataApi();
-$response = $DataApi->request(
-    'https://data.learnosity.com/latest/itembank/activities',
-    $security,
-    $consumer_secret,
-    ['references' => [$activityRef]]
-);
-
-if (!$response->getError()['code']) {
-    $activity = json_decode($response->getBody(), true)['data'];
-    $glossaryCards = $activity[0]['data']['items'];
-}
-
-// Setup your request object as usual
-$request = array(
-    'user_id'              => $studentid,
-    'name'                 => 'Items API demo - Inline Activity.',
-    'state'                => 'initial',
-    'activity_id'          => 'itemsinlinedemo',
-    'session_id'           => Uuid::generate(),
-    'course_id'            => $courseid,
-    'type'                 => 'local_practice',
-    'rendering_type'       => 'inline',
-    'activity_template_id' => $activityRef
-);
-
-$Init = new Init('items', $security, $consumer_secret, $request);
-$signedRequest = $Init->generate();
+include './itemsRequest.php';
 
 ?>
 
@@ -74,12 +31,12 @@ $signedRequest = $Init->generate();
 <div class="gallery-section section">
     <section class="gallery">
         <div class="row">
-            <?php foreach ($glossaryCards as $i => $card) { ?>
+            <?php foreach ($items as $reference) { ?>
             <div class="col-md-4 pod">
                 <div class="pod-inner">
                     <div class="card">
-                        <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
-                        <button type="button" class="btn btn-primary back">Back &laquo;</button>
+                        <span class="learnosity-item" data-reference="<?php echo $reference; ?>"></span>
+                        <button type="button" class="btn btn-primary save">Save</button>
                     </div>
                 </div>
             </div>
@@ -90,17 +47,16 @@ $signedRequest = $Init->generate();
 
 <!-- Container for the items api to load into -->
 <script src="//items.learnosity.com/"></script>
+<script src="//events.learnosity.com/"></script>
 <script>
-    var eventOptions = {
+    var initOptions = <?php echo $itemsRequest; ?>,
+        eventOptions = {
             readyListener: function () {
                 init();
             }
         },
-        init,
-        itemsApp,
-        loadActivity;
-
-    itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+        itemsApp = LearnosityItems.init(initOptions, eventOptions),
+        eventsApp = LearnosityEvents.init(initOptions);
 
     function init () {
         $('.card').on('click', function (el) {
@@ -110,21 +66,78 @@ $signedRequest = $Init->generate();
             }
         });
 
-        $('.card .back').on('click', function (el) {
+        $('.card .save').on('click', function (el) {
             var $card = $(this).closest('.card');
             var $item = $card.find('div.learnosity-item');
             toggleItem($item, $card);
+            saveItem($item.data('reference'));
             return false;
         });
     }
 
-    function toggleItem(item, card) {
+    function toggleItem($item, $card) {
         $('.pod').toggle();
-        item.closest('.pod').toggleClass('col-md-4').fadeToggle('fast');
-        card.toggleClass('active');
+        $item.closest('.pod').toggleClass('col-md-4').fadeToggle('fast');
+        $card.toggleClass('active');
+    }
+
+    function saveItem(reference) {
+        itemsApp.save();
+
+        var attempted = false;
+        itemsApp.attemptedItems(function (items) {
+            attempted = $.inArray(reference, items) !== -1;
+        });
+
+        if (!attempted) {
+            return;
+        }
+
+        var responseIds = [];
+        itemsApp.getItems(
+            function (items) {
+                responseIds = items[reference].response_ids;
+            }
+        );
+        var correct = true;
+        itemsApp.getScores(
+            function (responses) {
+                for (var i=0; i < responseIds.length; i++) {
+                    var score = responses[responseIds[i]];
+                    if (score.score !== score.max_score) {
+                        correct = false;
+                    }
+                }
+            }
+        );
+        sendEvent(reference, correct);
+    }
+
+    function sendEvent(reference, correct) {
+        // debugger;
+        // eventsApp.publish({
+        //     "kind": "assess_logging",
+
+        //     "actor": {
+        //         "account": {
+        //             "homePage": "yis0TYCu7U9V4o7M",
+        //             "name": "de3bfc16-511b-4559-bd97-c5b0ec54ce95"
+        //         },
+        //         "objectType": "Agent"
+        //     },
+        //     "verb": {
+        //         "id": "http://activitystrea.ms/schema/1.0/start",
+        //         "display": {
+        //             "en-US": "started"
+        //         }
+        //     },
+        //     "object": {
+        //         "id": "https://xapi.learnosity.com/activities/org/1/pool/null/activity/itemsassessdemo",
+        //         "objectType": "Activity"
+        //     }
+        // });
     }
 </script>
 
 <?php
-    include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';

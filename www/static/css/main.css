@@ -889,7 +889,7 @@ h6 a {
     bottom: 0;
 }
 
-.card:not(.active) .back {
+.card:not(.active) .save {
     display: none;
 }
 
