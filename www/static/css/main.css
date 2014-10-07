@@ -897,6 +897,6 @@ h6 a {
     padding-bottom: 25px;
 }
 
-.excerpt-suppress {
-    display: none;
+.gallery-section .excerpt-suppress {
+    /*display: none;*/
 }
