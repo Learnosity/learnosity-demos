@@ -55,8 +55,12 @@ include './itemsRequest.php';
                 init();
             }
         },
-        itemsApp = LearnosityItems.init(initOptions, eventOptions),
-        eventsApp = LearnosityEvents.init(initOptions);
+        itemsApp = LearnosityItems.init(initOptions, eventOptions);
+
+    initOptions.config = {
+        eventbus: true
+    };
+    var eventsApp = LearnosityEvents.init(initOptions);
 
     function init () {
         $('.card').on('click', function (el) {
@@ -99,43 +103,50 @@ include './itemsRequest.php';
                 responseIds = items[reference].response_ids;
             }
         );
+
         var correct = true;
         itemsApp.getScores(
             function (responses) {
                 for (var i=0; i < responseIds.length; i++) {
                     var score = responses[responseIds[i]];
-                    if (score.score !== score.max_score) {
+                    if (score && score.score !== score.max_score) {
                         correct = false;
                     }
                 }
             }
         );
+
         sendEvent(reference, correct);
     }
 
     function sendEvent(reference, correct) {
-        // debugger;
-        // eventsApp.publish({
-        //     "kind": "assess_logging",
-
-        //     "actor": {
-        //         "account": {
-        //             "homePage": "yis0TYCu7U9V4o7M",
-        //             "name": "de3bfc16-511b-4559-bd97-c5b0ec54ce95"
-        //         },
-        //         "objectType": "Agent"
-        //     },
-        //     "verb": {
-        //         "id": "http://activitystrea.ms/schema/1.0/start",
-        //         "display": {
-        //             "en-US": "started"
-        //         }
-        //     },
-        //     "object": {
-        //         "id": "https://xapi.learnosity.com/activities/org/1/pool/null/activity/itemsassessdemo",
-        //         "objectType": "Activity"
-        //     }
-        // });
+        var verb = correct ? 'passed' : 'failed';
+        eventsApp.publish({
+            kind: 'assess_logging',
+            actor: {
+                account: {
+                    homePage: '<?php echo $consumer_key; ?>',
+                    name: '<?php echo $studentid; ?>'
+                },
+                objectType: 'Agent'
+            },
+            verb: {
+                id: 'http://adlnet.gov/expapi/verbs/' + verb,
+                display: {
+                    'en-US': verb
+                }
+            },
+            object: {
+                id: 'https://xapi.learnosity.com/activities/org/1/pool/null/activity/' +
+                    initOptions.request.activity_id + '/item/' + reference,
+                objectType: 'Activity',
+                definition: {
+                    extensions: {
+                        data: reference
+                    }
+                }
+            }
+        });
     }
 </script>
 
