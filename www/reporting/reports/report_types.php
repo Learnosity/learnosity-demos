@@ -201,7 +201,7 @@ $request = array(
             )
         ),
         array(
-            'id'          => 'report-21',
+            'id'          => 'report-19',
             'type'        => 'progress-single',
             'user_id'     => 'brianmoser',
             'ui'          => 'pie',
@@ -214,7 +214,7 @@ $request = array(
             )
         ),
         array(
-            'id'          => 'report-21',
+            'id'          => 'report-20',
             'type'        => 'progress-single',
             'user_id'     => 'brianmoser',
             'ui'          => 'pie',
