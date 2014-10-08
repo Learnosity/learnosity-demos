@@ -16,6 +16,10 @@
         ),
         'Misc' => array(
             'misc/security_check.php' => 'Security Check'
+        ),
+        'Case Studies' => array(
+            'casestudies/items/gallery' => 'Gallery Style UI',
+            'casestudies/items/xapi'    => 'xAPI Events'
         )
     );
 ?>
@@ -51,14 +55,10 @@
             </ul>
             <div class="nav-sec-wrapper">
                 <ul class="nav navbar-nav nav-sec">
-
                     <li>
                         <a href="https://github.com/Learnosity/learnosity-demos" class="text-muted">
                             <span class="glyphicon glyphicon-file"></span> <span class="nav-source-text">View source</span>
                         </a>
-                        <!-- <a href="https://github.com/Learnosity/learnosity-php-examples/archive/master.zip" download="demos.master.zip" class="text-muted">
-                            <span class="glyphicon glyphicon-cloud-download"></span> Download
-                        </a> -->
                     </li>
                 </ul>
             </div>
