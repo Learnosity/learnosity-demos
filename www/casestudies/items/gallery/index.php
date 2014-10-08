@@ -81,7 +81,11 @@ include './itemsRequest.php';
 
     function toggleItem($item, $card) {
         $('.pod').toggle();
-        $item.closest('.pod').toggleClass('col-md-4').fadeToggle('fast');
+        $item.closest('.pod').toggleClass('col-md-4').animate({
+            width: "toggle",
+            height: "toggle",
+            opacity: "toggle"
+        });
         $card.toggleClass('active');
     }
 
