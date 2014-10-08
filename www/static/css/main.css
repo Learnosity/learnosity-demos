@@ -866,16 +866,25 @@ h6 a {
 }
 
 .card {
-  padding: 25px;
-  margin-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+.card:not(.active) {
+    padding: 25px 0;
+}
+
+.card.active {
+    padding: 25px;
 }
 
 .card:not(.active) .learnosity-item {
     height: 300px;
     overflow: hidden;
-    transform: scale(.66);
-    margin: -50px;
+    padding-right: 10px;
+    transform: scale(.6);
+    margin: -50px -60px -50px -50px;
 }
+
 .card:not(.active):before {
     cursor: pointer;
     z-index: 1;
