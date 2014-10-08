@@ -823,6 +823,7 @@ h6 a {
     background-color: #f3f5f5;
     border: 0;
     box-shadow: none;
+    min-height: 600px;
 }
 .gallery {
     width: 100%;
