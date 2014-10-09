@@ -39,6 +39,41 @@ $resource = 'responses';
                 </div>
             </div>
             <div class="form-group">
+                <label class="col-md-2 control-label">sort</label>
+                <div class="col-md-2">
+                    <select class="form-control" id="api-sort" data-type="string">
+                        <option value="asc" selected>Asc</option>
+                        <option value="desc">Desc</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">
+                    mintime
+                    <span class="glyphicon glyphicon-question-sign"
+                        data-toggle="tooltip"
+                        data-placement="right"
+                        title="A unix timestamp or ISO 8601 datetime string, indicating a minimum point in time from when to return values.">
+                    </span>
+                </label>
+                <div class="col-md-2">
+                    <input type="input" class="form-control" id="api-mintime" data-type="string" value="<?php echo date('Y-m-d', strtotime('-1 month')); ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">
+                    maxtime
+                    <span class="glyphicon glyphicon-question-sign"
+                        data-toggle="tooltip"
+                        data-placement="right"
+                        title="A unix timestamp or ISO 8601 datetime string, indicating a maximum point in time to return values.">
+                    </span>
+                </label>
+                <div class="col-md-2">
+                    <input type="input" class="form-control" id="api-maxtime" data-type="string" value="">
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="col-md-2 control-label">limit</label>
                 <div class="col-md-2">
                     <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="5">
