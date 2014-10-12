@@ -8,15 +8,11 @@ use LearnositySdk\Request\Init;
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain,
-    'user_id'      => 'demo_teacher'
+    'user_id'      => 'brianmoser'
 );
 
 $request = array(
-    'eventbus' => true,
-    'users'    => array(
-        'brianmoser',
-        'paulyshore'
-    )
+    'eventbus' => true
 );
 
 $Init = new Init('events', $security, $consumer_secret, $request);
