@@ -458,7 +458,7 @@ a {
 
 a:hover,
 a:focus {
-    border-bottom: 0;
+    border-bottom-color: transparent;
 }
 
 h1 a,
