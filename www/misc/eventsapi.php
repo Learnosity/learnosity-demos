@@ -17,7 +17,7 @@ $request = array(
 
 $Init = new Init('events', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
-var_dump($signedRequest);
+
 ?>
 
 <script src="//events.learnosity.com"></script>
@@ -30,13 +30,28 @@ var_dump($signedRequest);
 
     function handleEvent (e) {
         console.log(e);
-        eventsApp.publish([e])
+        eventsApp.publish(e)
     }
     function onEvent () {
         eventsApp.on(function (e) {
             console.log(e);
         });
     }
+
+    // To have the host page send xAPI events, pass something like the following
+    // to a method that would call publish() on the Events API instance:
+    /*
+        handleEvent({
+          "events": [
+            {
+              "kind": "assess_logging",
+              "actor": "brianmoser",
+              "verb": "progressed",
+              "object": "https://xapi.learnosity.com/activities/org/1/pool/null/activity/demoactivity"
+            }
+          ]
+        });
+     */
 </script>
 
 <?php
