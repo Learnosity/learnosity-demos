@@ -10,18 +10,13 @@ if (isset($_GET['activity_reference'])) {
     $activityRef = $_GET['activity_reference'];
 }
 
+$studentid = isset($_GET['user']) ? $_GET['user'] : $studentid;
+
 include './itemsRequest.php';
 
 ?>
 
 <div class="jumbotron section">
-    <div class="toolbar">
-        <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
-        </ul>
-    </div>
     <div class="overview">
         <h1>Items API – Inline Gallery Style</h1>
         <p>Demonstrates how simply you can style each <em>item</em> in an activity.</p>
@@ -47,7 +42,7 @@ include './itemsRequest.php';
 
 <!-- Container for the items api to load into -->
 <script src="//items.learnosity.com/"></script>
-<script src="//events.learnosity.com/"></script>
+<script src="//events.staging.learnosity.com"></script>
 <script>
     var initOptions = <?php echo $itemsRequest; ?>,
         eventOptions = {
@@ -108,48 +103,57 @@ include './itemsRequest.php';
             }
         );
 
-        var correct = true;
+        var itemScore = {
+            score: 0,
+            max_score: 0
+        };
         itemsApp.getScores(
             function (responses) {
                 for (var i=0; i < responseIds.length; i++) {
-                    var score = responses[responseIds[i]];
-                    if (score && score.score !== score.max_score) {
-                        correct = false;
+                    var questionScore = responses[responseIds[i]];
+                    if (questionScore && questionScore.max_score) {
+                        itemScore.score += questionScore.score;
+                        itemScore.max_score += questionScore.max_score;
                     }
                 }
             }
         );
 
-        sendEvent(reference, correct);
+        sendEvent(reference, itemScore);
     }
 
-    function sendEvent(reference, correct) {
-        var verb = correct ? 'passed' : 'failed';
+    function sendEvent(reference, score) {
         eventsApp.publish({
-            kind: 'assess_logging',
-            actor: {
-                account: {
-                    homePage: '<?php echo $consumer_key; ?>',
-                    name: '<?php echo $studentid; ?>'
+            events: [{
+                kind: 'assess_logging',
+                actor: {
+                    account: {
+                        homePage: '<?php echo $consumer_key; ?>',
+                        name: '<?php echo $studentid; ?>'
+                    },
+                    objectType: 'Agent'
                 },
-                objectType: 'Agent'
-            },
-            verb: {
-                id: 'http://adlnet.gov/expapi/verbs/' + verb,
-                display: {
-                    'en-US': verb
-                }
-            },
-            object: {
-                id: 'https://xapi.learnosity.com/activities/org/1/pool/null/activity/' +
-                    initOptions.request.activity_id + '/item/' + reference,
-                objectType: 'Activity',
-                definition: {
-                    extensions: {
-                        data: reference
+                verb: {
+                    id: 'http://adlnet.gov/expapi/verbs/scored',
+                    display: {
+                        'en-US': 'scored'
+                    }
+                },
+                object: {
+                    id: 'https://xapi.learnosity.com/activities/org/1/pool/null/activity/' +
+                        initOptions.request.activity_id + '/item/' + reference,
+                    objectType: 'Activity',
+                    definition: {
+                        extensions: {
+                            data: {
+                                itemReference: reference,
+                                score: score.score,
+                                maxScore: score.max_score
+                            }
+                        }
                     }
                 }
-            }
+            }]
         });
     }
 </script>
