@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../config.php';
+include_once '../config.php';
 include_once 'includes/header.php';
 
 use LearnositySdk\Request\Init;
