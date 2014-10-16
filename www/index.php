@@ -23,7 +23,7 @@ include_once 'includes/header.php';
                 </div>
                 <div class="media-body">
                     <p>You may also download the entire site to see how you can easily integrate our services into your own technology stack,
-            or you can <a href="https://github.com/Learnosity/learnosity-php-examples/tree/master">browse the code directly</a> on github.</p>
+            or you can <a href="https://github.com/Learnosity/learnosity-demos/tree/master">browse the code directly</a> on github.</p>
                 </div>
             </div>
 
@@ -44,7 +44,7 @@ include_once 'includes/header.php';
         <div class="col-md-8 content-panel">
             <ul class="list-unstyled">
 
-                <li><h4><a href="<?php echo $env['www'] ?>assessment/items/index.php">Items API</a> 
+                <li><h4><a href="<?php echo $env['www'] ?>assessment/items/index.php">Items API</a>
                 <span class="label label-info">Start here!</span></h4>
                 <p>Provides a simple way to access content from the Learnosity item bank. Also includes a powerful
                 adaptive engine for fine grained assessment control.</p></li>
@@ -58,7 +58,7 @@ include_once 'includes/header.php';
             </ul>
         </div>
     </div>
-   
+
     <div class="row landing-panel">
         <div class="col-md-3 landing-panel-heading">
             <h3>Authoring</h3>
