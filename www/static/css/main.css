@@ -544,8 +544,8 @@ h6 a {
 .section {
     padding-top: 24px;
     padding-bottom: 30px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
     margin-bottom: 20px;
 }
 
@@ -928,5 +928,82 @@ h6 a {
 
 .card.failing {
     background-color: #fbdddd;
+}
+
+.gallery-button {
+    z-index: 10;
+    background: none;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    opacity: 0;
+    color: #666;
+}
+
+.gallery-button:hover,
+.gallery-button:focus {
+    color: #222;
+    outline: 0;
+}
+
+.gallery-button-prev {
+    left: -86px;
+}
+
+.gallery-button-next {
+    right: -86px;
+}
+
+.gallery-pagination {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    opacity: 0;
+}
+
+.gallery-pagination li {
+    display: inline-block;
+    padding: 0 8px;
+}
+
+.gallery-pagination li:hover {
+    cursor: pointer;
+}
+
+.gallery-pagination li:first-child {
+    margin-left: 0;
+}
+
+.gallery-pagination button {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+}
+
+.gallery-pagination li:hover button,
+.gallery-pagination .active button,
+.gallery-pagination button:focus {
+    background: #ccc;
+    outline: 0;
+}
+
+.gallery-button[disabled] {
+    color: #bbb;
+    cursor: default;
+}
+
+.card-active .gallery-button,
+.card-active .gallery-pagination {
+    opacity: 1;
+}
+
+.card-active .gallery-button,
+.card-active .gallery-pagination li button {
+    transition: all .25s ease-in;
 }
 

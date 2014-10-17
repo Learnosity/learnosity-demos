@@ -25,6 +25,10 @@ include './itemsRequest.php';
 
 <div class="gallery-section section">
     <section class="gallery">
+        <button type="button" class="gallery-button gallery-button-prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Next item</span>
+        </button>
         <div class="row">
             <?php foreach ($items as $reference) { ?>
             <div class="col-md-4 pod">
@@ -37,6 +41,17 @@ include './itemsRequest.php';
             </div>
             <?php } ?>
         </div>
+        <ul class="gallery-pagination">
+            <?php foreach ($items as $reference) { ?>
+                <li>
+                    <button type="button"><span class="sr-only">Item</span></button>
+                </li>
+            <?php } ?>
+        </ul>
+        <button type="button" class="gallery-button gallery-button-next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next item</span>
+        </button>
     </section>
 </div>
 
@@ -50,7 +65,11 @@ include './itemsRequest.php';
                 init();
             }
         },
-        itemsApp = LearnosityItems.init(initOptions, eventOptions);
+        itemsApp = LearnosityItems.init(initOptions, eventOptions),
+        $cards = $('.card'),
+        lastCardIndex = $cards.length -1,
+        cardIndex,
+        nextCardIndex;
 
     initOptions.config = {
         eventbus: true
@@ -59,10 +78,12 @@ include './itemsRequest.php';
 
     function init () {
         $('.card').on('click', function (el) {
+            cardIndex = $('.card').index(this);
             if (!$(this).hasClass('active')) {
                 var $item = $(this).find('div.learnosity-item');
-                toggleItem($item, $(this));
+                toggleItem($item, $(this), true);
             }
+            pagination(cardIndex);
         });
 
         $('.card .save').on('click', function (el) {
@@ -72,16 +93,75 @@ include './itemsRequest.php';
             saveItem($item.data('reference'));
             return false;
         });
+
+        $('.gallery-button').on('click', function(event) {
+            if ($(this).hasClass('gallery-button-next') && cardIndex !== lastCardIndex) {
+                nextCardIndex = cardIndex + 1;
+            } else if (cardIndex !== 0) {
+                nextCardIndex = cardIndex - 1;
+            }
+            showNextCard();
+        });
+
+        $('.gallery-pagination li').on('click', function() {
+            var paginationIndex = $('.gallery-pagination li').index(this);
+            if (paginationIndex !== cardIndex) {
+                nextCardIndex = paginationIndex;
+                showNextCard();
+            }
+        });
     }
 
-    function toggleItem($item, $card) {
+    function showNextCard() {
+        var $currentCard = $($cards[cardIndex]),
+            $currentItem = $currentCard.find('div.learnosity-item'),
+            $nextCard = $($cards[nextCardIndex]),
+            $nextItem = $nextCard.find('div.learnosity-item');
+
+        $currentItem.closest('.pod').addClass('col-md-4').hide();
+        $currentCard.removeClass('active');
+        $nextItem.closest('.pod').removeClass('col-md-4').fadeIn();
+        $nextCard.addClass('active');
+
+        cardIndex = nextCardIndex;
+        pagination(cardIndex);
+    }
+
+    function toggleItem($item, $card, showCard) {
         $('.pod').toggle();
+        if (!showCard) {
+            $('.gallery').removeClass('card-active');
+        }
         $item.closest('.pod').toggleClass('col-md-4').animate({
             width: "toggle",
             height: "toggle",
             opacity: "toggle"
+        }, function() {
+            if (showCard) {
+                $('.gallery').addClass('card-active');
+            }
         });
+        
         $card.toggleClass('active');
+    }
+
+    function pagination(cardIndex) {
+        var paginationItem;
+
+        if (cardIndex === 0) {
+            $('.gallery-button-prev').attr('disabled', 'disabled');
+        } else {
+            $('.gallery-button-prev').removeAttr('disabled');
+        }
+        if (cardIndex === lastCardIndex) {
+            $('.gallery-button-next').attr('disabled', 'disabled');
+        } else {
+            $('.gallery-button-next').removeAttr('disabled');
+        }
+
+        $('.gallery-pagination li').removeClass('active');
+        paginationItem = $('.gallery-pagination li')[cardIndex];
+        $(paginationItem).addClass('active');
     }
 
     function saveItem(reference) {
@@ -91,7 +171,6 @@ include './itemsRequest.php';
         itemsApp.attemptedItems(function (items) {
             attempted = $.inArray(reference, items) !== -1;
         });
-
         if (!attempted) {
             return;
         }
