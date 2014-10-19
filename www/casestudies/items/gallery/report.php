@@ -47,9 +47,18 @@ $reportsRequest = $init->generate();
 ?>
 
 <div class="jumbotron section">
+    <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+        </ul>
+    </div>
     <div class="overview">
         <h1>Items API &amp; Reports API – Gallery Report</h1>
         <p>Demonstrates how you can combine Items API and Reports API to create a custom report with live updates.</p>
+        <ul>
+            <li><a href="./">Student View</a></li>
+            <li>Teacher View</li>
+        </ul>
     </div>
 </div>
 
@@ -124,13 +133,15 @@ $reportsRequest = $init->generate();
         }
         $('.users-attempted', $itemStatus).text(countAttempted);
 
-        var $card = $itemStatus.closest('.card');
+        var $card = $itemStatus.closest('.card'),
+            $status = $card.children('.item-status');
+
         if (countPassed >= countAttempted - countPassed) {
-            $card.addClass('passing');
-            $card.removeClass('failing');
+            $status.addClass('passing');
+            $status.removeClass('failing');
         } else {
-            $card.addClass('failing');
-            $card.removeClass('passing');
+            $status.addClass('failing');
+            $status.removeClass('passing');
         }
 
         $('.status-text', $itemStatus).attr(
