@@ -544,8 +544,8 @@ h6 a {
 .section {
     padding-top: 24px;
     padding-bottom: 30px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 60px;
+    padding-right: 60px;
     margin-bottom: 20px;
 }
 
@@ -830,6 +830,10 @@ h6 a {
     height: 100%;
     position: relative;
 }
+.gallery.card-active {
+    width: 90%;
+    margin: 0 auto;
+}
 .pod-inner,
 .card {
     position: relative;
@@ -901,6 +905,21 @@ h6 a {
 
 .card:not(.active) .save {
     display: none;
+}
+.card:not(.active) .cancel {
+    display: none;
+}
+.alert-saved, .spinner {
+    display: none;
+    width: 200px;
+    margin: 0 auto;
+    position: absolute;
+    left: 40%;
+    text-align: center;
+    top: 10px;
+}
+.spinner {
+    top: 25px;
 }
 
 .pod {
@@ -981,7 +1000,7 @@ h6 a {
     height: 15px;
     padding: 0;
     background: #fff;
-    border: 1px solid #aaa;
+    border: 1px solid #ccc;
     border-radius: 50%;
 }
 
