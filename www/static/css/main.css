@@ -830,6 +830,10 @@ h6 a {
     height: 100%;
     position: relative;
 }
+.gallery.card-active {
+    width: 90%;
+    margin: 0 auto;
+}
 .pod-inner,
 .card {
     position: relative;
@@ -902,6 +906,21 @@ h6 a {
 .card:not(.active) .save {
     display: none;
 }
+.card:not(.active) .cancel {
+    display: none;
+}
+.alert-saved, .spinner {
+    display: none;
+    width: 200px;
+    margin: 0 auto;
+    position: absolute;
+    left: 40%;
+    text-align: center;
+    top: 10px;
+}
+.spinner {
+    top: 25px;
+}
 
 .pod {
     padding-bottom: 25px;
@@ -928,5 +947,82 @@ h6 a {
 
 .card.failing {
     background-color: #fbdddd;
+}
+
+.gallery-button {
+    z-index: 10;
+    background: none;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    opacity: 0;
+    color: #666;
+}
+
+.gallery-button:hover,
+.gallery-button:focus {
+    color: #222;
+    outline: 0;
+}
+
+.gallery-button-prev {
+    left: -86px;
+}
+
+.gallery-button-next {
+    right: -86px;
+}
+
+.gallery-pagination {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    opacity: 0;
+}
+
+.gallery-pagination li {
+    display: inline-block;
+    padding: 0 8px;
+}
+
+.gallery-pagination li:hover {
+    cursor: pointer;
+}
+
+.gallery-pagination li:first-child {
+    margin-left: 0;
+}
+
+.gallery-pagination button {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+.gallery-pagination li:hover button,
+.gallery-pagination .active button,
+.gallery-pagination button:focus {
+    background: #ccc;
+    outline: 0;
+}
+
+.gallery-button[disabled] {
+    color: #bbb;
+    cursor: default;
+}
+
+.card-active .gallery-button,
+.card-active .gallery-pagination {
+    opacity: 1;
+}
+
+.card-active .gallery-button,
+.card-active .gallery-pagination li button {
+    transition: all .25s ease-in;
 }
 
