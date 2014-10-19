@@ -872,10 +872,15 @@ h6 a {
 
 .card {
     margin-bottom: 25px;
+    min-height: 265px;
 }
 
 .card:not(.active) {
     padding: 25px 0;
+}
+
+.card.report:not(.active) {
+    padding: 25px 0 0 0;
 }
 
 .card.active {
@@ -931,22 +936,24 @@ h6 a {
 }
 
 .item-status {
-    position: absolute;
     width: 100%;
-    bottom: 0;
     height: 35px;
     text-align: right;
-    padding-top: 5px;
+    padding-top: 7px;
     padding-right: 20px;
-    color: dimgrey;
+    color: #7C7C7C;
+    background-color: #fafafa;
+    margin-top: 5px;
 }
 
-.card.passing {
-    background-color: #e7f4e1;
+.passing {
+    background-color: #397523;
+    color: #fefefe;
 }
 
-.card.failing {
-    background-color: #fbdddd;
+.failing {
+    background-color: #98040c;
+    color: #fefefe;
 }
 
 .gallery-button {

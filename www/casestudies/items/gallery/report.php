@@ -133,13 +133,15 @@ $reportsRequest = $init->generate();
         }
         $('.users-attempted', $itemStatus).text(countAttempted);
 
-        var $card = $itemStatus.closest('.card');
+        var $card = $itemStatus.closest('.card'),
+            $status = $card.children('.item-status');
+
         if (countPassed >= countAttempted - countPassed) {
-            $card.addClass('passing');
-            $card.removeClass('failing');
+            $status.addClass('passing');
+            $status.removeClass('failing');
         } else {
-            $card.addClass('failing');
-            $card.removeClass('passing');
+            $status.addClass('failing');
+            $status.removeClass('passing');
         }
 
         $('.status-text', $itemStatus).attr(
