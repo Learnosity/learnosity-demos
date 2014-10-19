@@ -25,6 +25,10 @@ include './itemsRequest.php';
     <div class="overview">
         <h1>Items API – Inline Gallery Style</h1>
         <p>Demonstrates how simply you can style each <em>item</em> in an activity.</p>
+        <ul>
+            <li>Student View</li>
+            <li><a href="./report.php">Teacher View</a></li>
+        </ul>
     </div>
 </div>
 
