@@ -42,6 +42,7 @@ $signedRequest = $Init->generate();
     // to a method that would call publish() on the Events API instance:
     /*
         handleEvent({
+          "xapi": false,
           "events": [
             {
               "kind": "assess_logging",
