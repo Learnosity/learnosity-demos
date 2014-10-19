@@ -36,7 +36,7 @@ include './itemsRequest.php';
     <section class="gallery">
         <button type="button" class="gallery-button gallery-button-prev" title="Previous Question">
             <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Next item</span>
+            <span class="sr-only">Previous Question</span>
         </button>
         <div class="row">
             <?php foreach ($items as $reference) { ?>
@@ -60,13 +60,13 @@ include './itemsRequest.php';
         <ul class="gallery-pagination">
             <?php foreach ($items as $i => $reference) { ?>
                 <li>
-                    <button type="button" title="Question #<?= $i+1; ?>"><span class="sr-only">Question</span></button>
+                    <button type="button" title="Question #<?= $i+1; ?>"><span class="sr-only">Question #<?= $i+1; ?></span></button>
                 </li>
             <?php } ?>
         </ul>
         <button type="button" class="gallery-button gallery-button-next" title="Next Question">
             <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next item</span>
+            <span class="sr-only">Next Question</span>
         </button>
     </section>
 </div>
