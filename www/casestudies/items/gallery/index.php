@@ -25,7 +25,7 @@ include './itemsRequest.php';
 
 <div class="gallery-section section">
     <section class="gallery">
-        <button type="button" class="gallery-button gallery-button-prev">
+        <button type="button" class="gallery-button gallery-button-prev" title="Previous Question">
             <span class="glyphicon glyphicon-chevron-left"></span>
             <span class="sr-only">Next item</span>
         </button>
@@ -33,22 +33,29 @@ include './itemsRequest.php';
             <?php foreach ($items as $reference) { ?>
             <div class="col-md-4 pod">
                 <div class="pod-inner">
-                    <div class="card">
+                    <div class="card clearfix">
                         <span class="learnosity-item" data-reference="<?php echo $reference; ?>"></span>
-                        <button type="button" class="btn btn-primary save">Save</button>
+                        <div style="padding-top: 25px; position: relative;">
+                            <button type="button" class="btn btn-default btn-sm cancel pull-left">Close</button>
+                            <div class="alert alert-info alert-saved collapse" role="alert">
+                                <p>Question saved</p>
+                            </div>
+                            <div class="spinner collapse"><img src="<?php echo $env['www'] ?>static/images/spinner.gif"></div>
+                            <button type="button" class="btn btn-primary save pull-right">Save</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <?php } ?>
         </div>
         <ul class="gallery-pagination">
-            <?php foreach ($items as $reference) { ?>
+            <?php foreach ($items as $i => $reference) { ?>
                 <li>
-                    <button type="button"><span class="sr-only">Item</span></button>
+                    <button type="button" title="Question #<?= $i+1; ?>"><span class="sr-only">Question</span></button>
                 </li>
             <?php } ?>
         </ul>
-        <button type="button" class="gallery-button gallery-button-next">
+        <button type="button" class="gallery-button gallery-button-next" title="Next Question">
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next item</span>
         </button>
@@ -89,8 +96,15 @@ include './itemsRequest.php';
         $('.card .save').on('click', function (el) {
             var $card = $(this).closest('.card');
             var $item = $card.find('div.learnosity-item');
-            toggleItem($item, $card);
+            $('.spinner').show();
             saveItem($item.data('reference'));
+            return false;
+        });
+
+        $('.card .cancel').on('click', function (el) {
+            var $card = $(this).closest('.card');
+            var $item = $card.find('div.learnosity-item');
+            toggleItem($item, $card);
             return false;
         });
 
@@ -141,7 +155,7 @@ include './itemsRequest.php';
                 $('.gallery').addClass('card-active');
             }
         });
-        
+
         $card.toggleClass('active');
     }
 
@@ -165,7 +179,11 @@ include './itemsRequest.php';
     }
 
     function saveItem(reference) {
-        itemsApp.save();
+        itemsApp.save({
+            success: function (response_ids) {
+                toggleSaved();
+            }
+        });
 
         var attempted = false;
         itemsApp.attemptedItems(function (items) {
@@ -234,6 +252,11 @@ include './itemsRequest.php';
                 }
             }]
         });
+    }
+
+    function toggleSaved () {
+        $('.spinner').hide();
+        $('.alert-saved').show().fadeToggle(2000);
     }
 </script>
 
