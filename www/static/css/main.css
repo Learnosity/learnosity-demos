@@ -890,7 +890,7 @@ h6 a {
     margin: -50px -60px -50px -50px;
 }
 
-.card:not(.active):not(.report):before {
+.card:not(.active):before {
     cursor: pointer;
     z-index: 1;
     content: "";
