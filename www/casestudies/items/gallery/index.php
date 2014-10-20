@@ -12,7 +12,7 @@ if (isset($_GET['activity_reference'])) {
 
 $studentid = isset($_GET['user']) ? $_GET['user'] : $studentid;
 
-include './itemsRequest.php';
+include './includes/itemsRequest.php';
 
 ?>
 
@@ -36,7 +36,7 @@ include './itemsRequest.php';
     <section class="gallery">
         <button type="button" class="gallery-button gallery-button-prev" title="Previous Question">
             <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Next item</span>
+            <span class="sr-only">Previous Question</span>
         </button>
         <div class="row">
             <?php foreach ($items as $reference) { ?>
@@ -60,19 +60,18 @@ include './itemsRequest.php';
         <ul class="gallery-pagination">
             <?php foreach ($items as $i => $reference) { ?>
                 <li>
-                    <button type="button" title="Question #<?= $i+1; ?>"><span class="sr-only">Question</span></button>
+                    <button type="button" title="Question #<?= $i+1; ?>"><span class="sr-only">Question #<?= $i+1; ?></span></button>
                 </li>
             <?php } ?>
         </ul>
         <button type="button" class="gallery-button gallery-button-next" title="Next Question">
             <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next item</span>
+            <span class="sr-only">Next Question</span>
         </button>
     </section>
 </div>
 
-<!-- Container for the items api to load into -->
-<script src="//items.learnosity.com/"></script>
+<script src="//items.learnosity.com"></script>
 <script src="//events.staging.learnosity.com"></script>
 <script>
     var initOptions = <?php echo $itemsRequest; ?>,
@@ -85,12 +84,13 @@ include './itemsRequest.php';
         $cards = $('.card'),
         lastCardIndex = $cards.length -1,
         cardIndex,
-        nextCardIndex;
+        nextCardIndex,
+        eventsApp;
 
     initOptions.config = {
         eventbus: true
     };
-    var eventsApp = LearnosityEvents.init(initOptions);
+    eventsApp = LearnosityEvents.init(initOptions);
 
     function init () {
         $('.card').on('click', function (el) {
@@ -105,7 +105,7 @@ include './itemsRequest.php';
         $('.card .save').on('click', function (el) {
             var $card = $(this).closest('.card');
             var $item = $card.find('div.learnosity-item');
-            $('.spinner').show();
+            $($card).find('.spinner').show();
             saveItem($item.data('reference'));
             return false;
         });
@@ -135,40 +135,7 @@ include './itemsRequest.php';
         });
     }
 
-    function showNextCard() {
-        var $currentCard = $($cards[cardIndex]),
-            $currentItem = $currentCard.find('div.learnosity-item'),
-            $nextCard = $($cards[nextCardIndex]),
-            $nextItem = $nextCard.find('div.learnosity-item');
-
-        $currentItem.closest('.pod').addClass('col-md-4').hide();
-        $currentCard.removeClass('active');
-        $nextItem.closest('.pod').removeClass('col-md-4').fadeIn();
-        $nextCard.addClass('active');
-
-        cardIndex = nextCardIndex;
-        pagination(cardIndex);
-    }
-
-    function toggleItem($item, $card, showCard) {
-        $('.pod').toggle();
-        if (!showCard) {
-            $('.gallery').removeClass('card-active');
-        }
-        $item.closest('.pod').toggleClass('col-md-4').animate({
-            width: "toggle",
-            height: "toggle",
-            opacity: "toggle"
-        }, function() {
-            if (showCard) {
-                $('.gallery').addClass('card-active');
-            }
-        });
-
-        $card.toggleClass('active');
-    }
-
-    function pagination(cardIndex) {
+    function pagination (cardIndex) {
         var paginationItem;
 
         if (cardIndex === 0) {
@@ -187,14 +154,17 @@ include './itemsRequest.php';
         $(paginationItem).addClass('active');
     }
 
-    function saveItem(reference) {
+    function saveItem (reference) {
+        var attempted = false,
+            responseIds = [],
+            itemScore;
+
         itemsApp.save({
             success: function (response_ids) {
-                toggleSaved();
+                toggleSavedMessage(response_ids);
             }
         });
 
-        var attempted = false;
         itemsApp.attemptedItems(function (items) {
             attempted = $.inArray(reference, items) !== -1;
         });
@@ -202,14 +172,13 @@ include './itemsRequest.php';
             return;
         }
 
-        var responseIds = [];
         itemsApp.getItems(
             function (items) {
                 responseIds = items[reference].response_ids;
             }
         );
 
-        var itemScore = {
+        itemScore = {
             score: 0,
             max_score: 0
         };
@@ -228,7 +197,7 @@ include './itemsRequest.php';
         sendEvent(reference, itemScore);
     }
 
-    function sendEvent(reference, score) {
+    function sendEvent (reference, score) {
         eventsApp.publish({
             events: [{
                 kind: 'assess_logging',
@@ -263,7 +232,40 @@ include './itemsRequest.php';
         });
     }
 
-    function toggleSaved () {
+    function showNextCard () {
+        var $currentCard = $($cards[cardIndex]),
+            $currentItem = $currentCard.find('div.learnosity-item'),
+            $nextCard = $($cards[nextCardIndex]),
+            $nextItem = $nextCard.find('div.learnosity-item');
+
+        $currentItem.closest('.pod').addClass('col-md-4').hide();
+        $currentCard.removeClass('active');
+        $nextItem.closest('.pod').removeClass('col-md-4').fadeIn();
+        $nextCard.addClass('active');
+
+        cardIndex = nextCardIndex;
+        pagination(cardIndex);
+    }
+
+    function toggleItem ($item, $card, showCard) {
+        $('.pod').toggle();
+        if (!showCard) {
+            $('.gallery').removeClass('card-active');
+        }
+        $item.closest('.pod').toggleClass('col-md-4').animate({
+            width: "toggle",
+            height: "toggle",
+            opacity: "toggle"
+        }, function() {
+            if (showCard) {
+                $('.gallery').addClass('card-active');
+            }
+        });
+
+        $card.toggleClass('active');
+    }
+
+    function toggleSavedMessage (response_ids) {
         $('.spinner').hide();
         $('.alert-saved').show().fadeToggle(2000);
     }
