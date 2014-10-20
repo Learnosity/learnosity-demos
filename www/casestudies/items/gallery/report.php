@@ -12,7 +12,7 @@ if (isset($_GET['activity_reference'])) {
     $activityRef = $_GET['activity_reference'];
 }
 
-include './itemsRequest.php';
+include './includes/itemsRequest.php';
 
 $security = array(
     'consumer_key' => $consumer_key,
@@ -20,9 +20,10 @@ $security = array(
     'domain'       => $domain
 );
 
-$users = explode(',', $_GET['users']);
+// Use the `users` query string var, otherwise go with the application default student name
+$users = (strlen($_GET['users'])) ? explode(',', $_GET['users']) : [$studentid];
 
-$request  = array(
+$request = array(
     'reports' => array(
         array(
             'id'             => 'activitystatus-1',
@@ -86,8 +87,8 @@ $reportsRequest = $init->generate();
 </div>
 
 <!-- Container for the items api to load into -->
-<script src="//items.learnosity.com/"></script>
-<script src="//reports.staging.learnosity.com/"></script>
+<script src="//items.learnosity.com"></script>
+<script src="//reports.staging.learnosity.com"></script>
 <script>
     var itemsInit = <?php echo $itemsRequest; ?>,
         reportsInit = <?php echo $reportsRequest; ?>,
@@ -100,7 +101,7 @@ $reportsRequest = $init->generate();
         reportsApp = LearnosityReports.init(reportsInit, eventOptions),
         scoresByItemByUser = {};
 
-    function init() {
+    function init () {
         reportsApp.getReport('activitystatus-1').on('scored', function (event) {
             var data = event.object.definition.extensions.data;
             var userId = event.actor.account.name;
@@ -109,7 +110,7 @@ $reportsRequest = $init->generate();
         });
     }
 
-    function updateScores(itemReference, userId, score) {
+    function updateScores (itemReference, userId, score) {
         var $itemStatus = $('.item-status#' + itemReference);
 
         if ($itemStatus.length != 1) {
@@ -150,10 +151,10 @@ $reportsRequest = $init->generate();
         );
     }
 
-    function getStatusTooltip(scoresByUser) {
+    function getStatusTooltip (scoresByUser) {
         var text = "";
         for (var userId in scoresByUser) {
-            text += userId + ':&nbsp;' + scoresByUser[userId].score + '<br />';
+            text += userId + ':&nbsp;' + scoresByUser[userId].score + '<br>';
         }
         return text;
     }
