@@ -8,7 +8,8 @@ use LearnositySdk\Utils\Uuid;
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'user_id'      => $studentid
+    'user_id'      => $studentid,
+    'domain'       => $domain
 );
 
 $uniqueResponseIdSuffix = substr(Uuid::generate(), 0, 23);
@@ -534,7 +535,7 @@ $signedRequest = $Init->generate();
     <div id="learnosity_assess"></div>
 </div>
 
-<script src="//assess.learnosity.com"></script>
+<script src="//assess.learnosity.com?inline"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>,
         assessApp = LearnosityAssess.init(activity, 'learnosity_assess');
