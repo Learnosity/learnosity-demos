@@ -113,7 +113,7 @@ $signedRequest = $Init->generate();
                 success: function (response_ids) {
                     // Receives a list of the submitted user responses as [response_id]
                     console.log("submit has been successful", response_ids);
-                    console.log('Retieve responses from the Data API with this session_id: <?php echo $session_id ?>');
+                    console.log('Retrieve responses from the Data API with this session_id: <?php echo $session_id ?>');
                 }
             });
         });
