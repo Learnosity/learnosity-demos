@@ -12,15 +12,18 @@ $security = array(
     'timestamp'    => $timestamp
 );
 
+$items = array('Demo3', 'Demo4', 'Demo5', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10');
+$sessionid = Uuid::generate();
+
 $request = array(
     'user_id'        => $studentid,
     'rendering_type' => 'inline',
     'name'           => 'Items API demo - Inline Activity.',
     'state'          => 'initial',
     'activity_id'    => 'itemsinlinedemo',
-    'session_id'     => Uuid::generate(),
+    'session_id'     => $sessionid,
     'course_id'      => $courseid,
-    'items'          => array('Demo3', 'Demo4', 'Demo5', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10'),
+    'items'          => $items,
     'type'           => 'submit_practice',
     'config'         => array(
         'renderSubmitButton'  => true,
@@ -50,20 +53,15 @@ $signedRequest = $Init->generate();
 <div class="section">
     <br>
     <p>
-        <span class="learnosity-item" data-reference="Demo3"></span>
-        <span class="learnosity-item" data-reference="Demo4"></span>
-        <span class="learnosity-item" data-reference="Demo5"></span>
-        <span class="learnosity-item" data-reference="Demo6"></span>
-        <span class="learnosity-item" data-reference="Demo7"></span>
-        <span class="learnosity-item" data-reference="Demo8"></span>
-        <span class="learnosity-item" data-reference="Demo9"></span>
-        <span class="learnosity-item" data-reference="Demo10"></span>
+        <?php foreach ($items as $item) { ?>
+        <span class="learnosity-item" data-reference="<?= $item; ?>"></span>
+        <?php } ?>
         <span class="learnosity-submit-button"></span>
     </p>
 </div>
 
 <!-- Container for the items api to load into -->
-<script src="//items.learnosity.com/"></script>
+<script src="//items.learnosity.com"></script>
 <script>
     var eventOptions = {
             readyListener: function () {
