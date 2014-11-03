@@ -24,19 +24,19 @@ $request = array(
         array(
             'items' => array('Demo3', 'Demo4', 'Demo5'),
             'config' => array(
-                'subtitle' => 'Vocabulary'
+                'subtitle' => 'Vocabulary section'
             )
         ),
         array(
             'items' => array('Demo6', 'Demo7', 'Demo8'),
             'config' => array(
-                'subtitle' => 'Grammar'
+                'subtitle' => 'Grammar section'
             )
         ),
         array(
             'items' => array('Demo9', 'Demo10'),
             'config' => array(
-                'subtitle' => 'Spelling'
+                'subtitle' => 'Spelling section'
             )
         )
     ),
@@ -97,9 +97,9 @@ $request = array(
         'configuration'       => array(
             'fontsize'               => 'normal',
             'stylesheet'             => '',
-            'onsubmit_redirect_url'  => 'itemsapi_assess.php',
-            'onsave_redirect_url'    => 'itemsapi_assess.php',
-            'ondiscard_redirect_url' => 'itemsapi_assess.php',
+            'onsubmit_redirect_url'  => 'itemsapi_sections.php',
+            'onsave_redirect_url'    => 'itemsapi_sections.php',
+            'ondiscard_redirect_url' => 'itemsapi_sections.php',
             'idle_timeout'           => array(
                 'interval'       => 300,
                 'countdown_time' => 60
