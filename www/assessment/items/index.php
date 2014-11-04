@@ -81,7 +81,6 @@ include_once 'includes/header.php';
         </div>
     </div>
     <div class="row">
-
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -95,7 +94,7 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
-            <div class="col-md-6">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title">Formative Distractor Rationale</h2>
@@ -109,7 +108,7 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
-        <div class="row">
+    <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -123,17 +122,32 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">Accessibility</h2>
-                    </div>
-                    <div class="panel-body">
-                        <p>Showcases the Accessibility panel that allows students to configure accessibility options during an assessment.</p>
-                        <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./itemsapi_accessibility.php">Demo</a>
-                        </p>
-                    </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Accessibility</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Showcases the Accessibility panel that allows students to configure accessibility options during an assessment.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_accessibility.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Sections</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Sections are a way to split up a single activity into discreet buckets of items, with
+                    the ability to have different activity configuration per section.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_sections.php">Demo</a>
+                    </p>
                 </div>
             </div>
         </div>
