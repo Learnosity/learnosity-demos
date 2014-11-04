@@ -103,6 +103,21 @@ $version = 'v0.40';
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#itembankfeatures">
+                            <span class="block">action: get</span>
+                            <?php echo '/' . $version . '/itembank/features'; ?>
+                        </a>
+                    </h4>
+                </div>
+                <div id="itembankfeatures" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'itembank/features.php'; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#itembanktags">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/tags'; ?>

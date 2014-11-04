@@ -1,7 +1,7 @@
 <?php
 
-$endpoint = "$URL/$version/itembank/questions";
-$resource = 'questions';
+$endpoint = "$URL/$version/itembank/features";
+$resource = 'features';
 
 ?>
 
@@ -23,7 +23,7 @@ $resource = 'questions';
             <div class="form-group">
                 <label class="col-md-2 control-label">types(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-types" data-type="array" value="">
+                    <input type="text" class="form-control" id="api-types" data-type="array" value="audioplayer, calculator, counter, imagetool, sharedpassage, videoplayer">
                 </div>
             </div>
             <div class="form-group">
