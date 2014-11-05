@@ -11,7 +11,6 @@ $resource = 'scoring';
     <li><a href="#tab-response-<?php echo $resource; ?>" data-toggle="tab">Response</a></li>
 </ul>
 <div class="tab-content">
-    <!-- Render the interactive request form -->
     <div class="tab-pane active" id="tab-request-form-<?php echo $resource; ?>">
         <form class="form-horizontal" role="form" method="post" id="frm-data-api-<?php echo $resource; ?>" data-resource="<?php echo $resource; ?>">
             <div class="form-group">
@@ -23,13 +22,57 @@ $resource = 'scoring';
             <div class="form-group">
                 <label class="col-md-2 control-label">questions</label>
                 <div class="col-md-10">
-                    <textarea class="form-control" id="api-questions" data-type="json">[ ]</textarea>
+                    <textarea class="form-control" id="api-questions" data-type="json">
+[
+  {
+    "response_id": "10000",
+    "options": [
+      {
+        "label": "A",
+        "value": "0"
+      },
+      {
+        "label": "B",
+        "value": "1"
+      },
+      {
+        "label": "C",
+        "value": "2"
+      },
+      {
+        "label": "D",
+        "value": "3"
+      }
+    ],
+    "stimulus": "<p>Choose the right response</p>",
+    "type": "mcq",
+    "ui_style": {},
+    "validation": {
+      "scoring_type": "exactMatch",
+      "valid_response": {
+        "score": 1,
+        "value": [
+          "0"
+        ]
+      }
+    }
+  }
+]</textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-2 control-label">responses</label>
                 <div class="col-md-10">
-                    <textarea class="form-control" id="api-responses" data-type="json">{ }</textarea>
+                    <textarea class="form-control" id="api-responses" data-type="json">
+{
+  "10000": {
+    "value": [
+      "0"
+    ],
+    "type": "array",
+    "apiVersion": "v2.45.1"
+  }
+}</textarea>
                 </div>
             </div>
             <div class="form-group">

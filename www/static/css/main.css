@@ -1033,3 +1033,6 @@ h6 a {
     transition: all .25s ease-in;
 }
 
+textarea.form-control {
+    height: 200px;
+}
