@@ -51,6 +51,18 @@ var formToObject = (function($) {
                 continue;
             }
             switch (type) {
+                case 'objectarray':
+                    if (value.length) {
+                        var param = parameter.split(':'), val = [];
+                        $.each(value.split(','), function() {
+                            val.push($.trim(this));
+                        });
+                        if (val.length) {
+                            request[param[0]] = {}
+                            request[param[0]][param[1]] = val;
+                        }
+                    }
+                    break;
                 case 'array':
                     if (value.length) {
                         request[parameter] = [];
