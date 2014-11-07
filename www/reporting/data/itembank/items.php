@@ -27,6 +27,18 @@ $resource = 'items';
                 </div>
             </div>
             <div class="form-group">
+                <label class="col-md-2 control-label">question types(s)</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="api-questions:types" data-type="objectarray" value="mcq, association">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">question reference(s)</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="api-questions:references" data-type="objectarray" value="">
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="col-md-2 control-label">status(s)</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-status" data-type="array" value="published, unpublished, deleted">
