@@ -1,8 +1,6 @@
 # Learnosity API Demos
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/Learnosity/learnosity-demos?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/Learnosity/learnosity-demos?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 Jumpstart your integration of the Learnosity APIs into your learning platform.
 
 ## Overview
