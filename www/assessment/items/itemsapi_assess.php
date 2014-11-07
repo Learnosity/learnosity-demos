@@ -119,14 +119,17 @@ $signedRequest = $Init->generate();
 <script src="//items.learnosity.com"></script>
 <script>
     var eventOptions = {
-            readyListener: function () {
-                console.log('Learnosity Items API is ready');
-                LearnosityAssess.on('test:submit:success', function () {
-                    toggleModalClass();
-                });
-            }
+            readyListener: init
         },
         itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+
+    function init () {
+        var assessApp = itemsApp.assessApp();
+
+        assessApp.on('test:submit:success', function () {
+            toggleModalClass();
+        });
+    }
 
     function toggleModalClass () {
         $('.modal-backdrop').css('display', 'none');
