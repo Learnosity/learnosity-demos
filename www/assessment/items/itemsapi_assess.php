@@ -126,9 +126,26 @@ $signedRequest = $Init->generate();
     function init () {
         var assessApp = itemsApp.assessApp();
 
+        assessApp.on('item:load', function () {
+            console.log('Active item:', getActiveItem(this.getItems()));
+        });
+
         assessApp.on('test:submit:success', function () {
             toggleModalClass();
         });
+    }
+
+    /**
+     * Returns the active item if using the Assess API
+     * @param  {object} items Object of all items currently loaded
+     * @return {object}       Current active item
+     */
+    function getActiveItem (items) {
+        for (var item in items) {
+            if (items.hasOwnProperty(item) && items[item].active === true) {
+                return items[item];
+            }
+        }
     }
 
     function toggleModalClass () {
