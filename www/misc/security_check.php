@@ -155,6 +155,7 @@ include_once 'includes/header.php';
         timestamp = '<?php echo gmdate('Ymd-Hi'); ?>';
 </script>
 
+<script src="<?php echo $env['www'] ?>static/js/sha256.js"></script>
 <script src="<?php echo $env['www'] ?>static/js/securityCheck.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/underscore.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/codemirror/codemirror.min.js"></script>
