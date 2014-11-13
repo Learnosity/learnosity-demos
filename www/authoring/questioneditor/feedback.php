@@ -14,7 +14,7 @@ include_once 'includes/header.php';
     </div>
     <div class="overview">
         <h1>Question Editor API</h1>
-        <p>Features are reusable question and/or stimulus UI widgets that you can embed in an assessment.<p>
+        <p>Feedback components are reusable UI widgets to assist teachers/administrators in scoring.<p>
     </div>
 </div>
 
@@ -28,7 +28,7 @@ include_once 'includes/header.php';
     var initObjects, questionEditorApp;
 
     initObjects = {
-        widget_type: 'feature'
+        widget_type: 'feedback'
     };
 
     questionEditorApp = LearnosityQuestionEditor.init(initObjects);

@@ -1036,3 +1036,27 @@ h6 a {
 textarea.form-control {
     height: 200px;
 }
+
+.sortable {
+    padding-left: 0;
+    width: 100%;
+}
+.sortable li {
+    list-style: none;
+    border: 1px solid #ddd;
+    background: #F6F6F6;
+    margin: 5px;
+    padding: 5px;
+    height: 2em;
+    line-height: 1.4em;
+}
+.sortable li:hover {
+    cursor: move;
+    border: 1px solid #bbb;
+    background: #f9f9f9;
+}
+.sortable .glyphicon-move {
+    font-size: 12px;
+    color: #444;
+    padding-right: 2px;
+}
