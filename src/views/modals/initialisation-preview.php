@@ -46,5 +46,7 @@ if (is_array($previewObject)) {
 ?>
 
 <script>
-    $('#preview-body').html(prettyPrint.render(<?php echo $previewBody; ?>));
+    var init = <?php echo $previewBody; ?>;
+    delete init.api_type;
+    $('#preview-body').html(prettyPrint.render(init));
 </script>
