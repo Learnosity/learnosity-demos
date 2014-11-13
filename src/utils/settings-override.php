@@ -19,21 +19,88 @@ function trueFalseConverter (&$object)
 if (isset($_POST['api_type'])) {
     trueFalseConverter($_POST);
 
-    if ($_POST['api_type'] === 'items') {
-        if (array_key_exists('config', $request)) {
-            $request['config'] = array_replace_recursive($request['config'], $_POST);
-            $requestKey = &$request['config'];
-        } else {
+    switch ($_POST['api_type']) {
+        case 'activities':
+            $request = array_replace_recursive($request, $_POST);
+            unset($request['api_type']);
+            $requestKey = $request;
+            break;
+        case 'assess':
             $request = array_replace_recursive($request, $_POST);
             $requestKey = &$request;
-        }
-    } elseif ($_POST['api_type'] === 'activities') {
-        $request = array_replace_recursive($request, $_POST);
-        unset($request['api_type']);
-        $requestKey = $request;
-    } elseif ($_POST['api_type'] === 'assess') {
-        $request = array_replace_recursive($request, $_POST);
-        $requestKey = &$request;
+            break;
+        case 'items':
+            if (array_key_exists('config', $request)) {
+                $request['config'] = array_replace_recursive($request['config'], $_POST);
+                $requestKey = &$request['config'];
+            } else {
+                $request = array_replace_recursive($request, $_POST);
+                $requestKey = &$request;
+            }
+            break;
+        case 'questioneditor':
+            $request = array_replace_recursive($request, $_POST);
+            if (isset($request['ui']['public_methods'])) {
+                if (!empty($request['ui']['public_methods'])) {
+                    $request['ui']['public_methods'] = [$request['ui']['public_methods']];
+                } else {
+                    unset($request['ui']['public_methods']);
+                }
+            }
+            // Determine if we are to remove any accordions
+            $hideAccordions = [];
+            if (isset($request['hide_attribute_group_basic'])) {
+                $hideAccordions[] = 'basic';
+            }
+            if (isset($request['hide_attribute_group_formatting'])) {
+                $hideAccordions[] = 'formatting';
+            }
+            if (isset($request['hide_attribute_group_validation'])) {
+                $hideAccordions[] = 'validation';
+            }
+            if (isset($request['hide_attribute_group_metadata'])) {
+                $hideAccordions[] = 'metadata';
+            }
+            if (isset($request['hide_attribute_group_advanced'])) {
+                $hideAccordions[] = 'advanced';
+            }
+            if (count($hideAccordions)) {
+                foreach ($hideAccordions as $accLabel) {
+                    foreach ($request['base_question_type']['attribute_groups'] as $a => $accordion) {
+                        if ($accordion['reference'] === $accLabel) {
+                            array_splice($request['base_question_type']['attribute_groups'], $a, 1);
+                            continue;
+                        }
+                    }
+                }
+            }
+            if (isset($request['accordion-order']) && !empty($request['accordion-order'])) {
+                $accordions = [];
+                $orderList = explode(',', $request['accordion-order']);
+                foreach ($orderList as $reference) {
+                    foreach ($request['base_question_type']['attribute_groups'] as $accordion) {
+                        if ($accordion['reference'] === $reference) {
+                            $accordions[] = $accordion;
+                        }
+                    }
+                }
+                $request['base_question_type']['attribute_groups'] = $accordions;
+            }
+            if (isset($request['hidden']) && is_array($request['hidden'])) {
+                $hiddenAttributes = [];
+                foreach ($request['hidden'] as $h => $val) {
+                    if ($val === true) {
+                        $hiddenAttributes[] = $h;
+                    }
+                }
+                $request['base_question_type']['hidden'] = $hiddenAttributes;
+                unset($request['hidden']);
+            }
+            $requestKey = &$request;
+            break;
+        default:
+            # do nothing
+            break;
     }
 
     if (!$requestKey['configuration']['idle_timeout']['use_idle_timeout']) {
