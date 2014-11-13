@@ -11,7 +11,8 @@ include_once 'includes/header.php';
     </div>
     <h1>Question Editor API</h1>
     <div class="section-intro">
-        <p>Our editor. Your item bank platform.<p>
+        <p>Our editor. Your item bank platform. Embed our Question Editor into your existing CMS to author rich question types
+        directly in the system your content authors and SMEs already know.<p>
     </div>
 
     <div class="row">

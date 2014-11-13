@@ -31,7 +31,7 @@ $request = [
     ],
     'template_defaults' => true,
     'widget_type'       => 'response',
-        'widget_json' => [
+    'widget_json' => [
         'options' => [
             [
                 'label' => '[Choice A]',
