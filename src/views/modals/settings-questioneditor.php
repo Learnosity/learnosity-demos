@@ -62,6 +62,7 @@
                                         </label><br>
                                     </div>
                                 </div>
+                                <p><em>Note:</em> - Not shown on this demo is the ability to rename the accordion labels.</p>
                             </div>
                             <div class="col-lg-6">
                                 <?php if (!isset($removeOverrideFields) || !in_array('widget_type', $removeOverrideFields)) { ?>
