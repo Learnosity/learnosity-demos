@@ -214,7 +214,6 @@ include_once 'includes/header.php';
             edit: {
                 description: 'In this example we\'re editing a previously created question.',
                 json: {
-                    question_types : ["imageclozeassociation"],
                     widget_json: {
                         "type": "imageclozeassociation",
                         "img_src": "//www.learnosity.com/static/img/Blank_US_Map.png",
