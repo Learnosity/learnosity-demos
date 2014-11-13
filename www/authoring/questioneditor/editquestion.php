@@ -31,7 +31,7 @@ $request = [
     ],
     'template_defaults' => true,
     'widget_type'       => 'response',
-    'widget_json' => [
+    'widget_json'       => [
         'options' => [
             [
                 'label' => '[Choice A]',
@@ -52,7 +52,6 @@ $request = [
         ],
         'stimulus' => '<p>This is the question the student will answer</p>',
         'type' => 'mcq',
-        'ui_style' => [],
         'validation' => [
             'scoring_type' => 'exactMatch',
             'valid_response' => [
@@ -79,7 +78,10 @@ $removeOverrideFields = ['widget_type'];
 
 include_once 'utils/settings-override.php';
 
-$signedRequest = json_encode($request);
+$signedRequest = $request;
+// Cleanup JSON object to make the preview more readable
+unset($signedRequest['accordion-order']);
+$signedRequest = json_encode($signedRequest);
 
 ?>
 
