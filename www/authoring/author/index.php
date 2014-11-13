@@ -57,17 +57,17 @@ $signedRequest = $Init->generate();
             <div class="row">
                 <div class="col-md-8">
                     <div id="editor"><?php echo htmlspecialchars('<h1>Sample content page</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit libero.
-    Aenean placerat lacus nunc, et lobortis augue venenatis sed. Vestibulum ornare
-    malesuada ligula a molestie.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit libero.
+Aenean placerat lacus nunc, et lobortis augue venenatis sed. Vestibulum ornare
+malesuada ligula a molestie.</p>
 
-    <p>Mauris eget condimentum diam, id porttitor lacus. Phasellus faucibus
-    condimentum mi, id hendrerit sem cursus ut. Nam purus nisi, vehicula non laoreet
-    a, volutpat at felis. Mauris molestie congue felis et ultrices. Aenean fermentum
-    leo sit amet metus molestie, molestie pulvinar tellus tristique. Curabitur
-    vulputate bibendum erat, vitae ultricies kneque.</p>
-    <br>') . PHP_EOL; ?>
-    </div>
+<p>Mauris eget condimentum diam, id porttitor lacus. Phasellus faucibus
+condimentum mi, id hendrerit sem cursus ut. Nam purus nisi, vehicula non laoreet
+a, volutpat at felis. Mauris molestie congue felis et ultrices. Aenean fermentum
+leo sit amet metus molestie, molestie pulvinar tellus tristique. Curabitur
+vulputate bibendum erat, vitae ultricies kneque.</p>') . PHP_EOL; ?>
+
+</div>
                 </div>
                 <div class="col-md-4 text-center">
                     <button type="button" class="btn btn-info btn" data-toggle="modal" data-target="#authorModal">Add Item(s) <span class="glyphicon glyphicon-import"></span></button>
