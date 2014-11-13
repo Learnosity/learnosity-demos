@@ -6,10 +6,6 @@ include_once 'includes/header.php';
 $request = [
     'base_question_type' => [
         'hidden'   => [],
-        'shown'    => [],
-        'defaults' => [
-            'stimulus' => 'this is a default stimulus'
-        ],
         'attributes_asset_enabled' => false,
         // Default accordion groups
         'attribute_groups' => [
@@ -53,7 +49,10 @@ $request = [
 
 include_once 'utils/settings-override.php';
 
-$signedRequest = json_encode($request);
+$signedRequest = $request;
+// Cleanup JSON object to make the preview more readable
+unset($signedRequest['accordion-order']);
+$signedRequest = json_encode($signedRequest);
 
 ?>
 
