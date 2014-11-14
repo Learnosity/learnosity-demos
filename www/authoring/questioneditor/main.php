@@ -28,7 +28,7 @@ include_once 'includes/header.php';
 <div class="section">
     <div class="alert alert-info" id="example-description"></div>
     <ul class="nav nav-tabs" id="nav-questioneditor">
-        <li class="dropdown">
+        <!--<li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">New Question<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="#" data-type="newQuestion" id="newQuestion">New Question</a></li>
@@ -36,7 +36,8 @@ include_once 'includes/header.php';
                 <li><a href="#" data-type="defaultsdisabledgraphing" id="defaultsdisabledgraphing">with certain attributes disabled and defaults (Graphing)</a></li>
                 <li><a href="#" data-type="assetuploadexample" id="assetupload">with image gallery asset handler</a></li>
             </ul>
-        </li>
+        </li>-->
+        <li><a href="#" data-type="newQuestion" id="newQuestion">New Question</a></li>
         <li><a href="#" data-type="edit" id="edit">Edit Existing Question</a></li>
         <li><a href="#" data-type="feedback" id="feedback">Rubric Feedback</a></li>
         <li><a href="#" data-type="features" id="features">Stimulus Features</a></li>
@@ -214,7 +215,6 @@ include_once 'includes/header.php';
             edit: {
                 description: 'In this example we\'re editing a previously created question.',
                 json: {
-                    question_types : ["imageclozeassociation"],
                     widget_json: {
                         "type": "imageclozeassociation",
                         "img_src": "//www.learnosity.com/static/img/Blank_US_Map.png",
