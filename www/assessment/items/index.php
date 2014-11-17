@@ -151,6 +151,21 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Failed Submission</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Simulates submitting an activity where the network connection may not be available.
+                    Students get 3 attempts to submit a test before being presented with options to manually
+                    retrieve their assessment data.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_failedsubmission.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
