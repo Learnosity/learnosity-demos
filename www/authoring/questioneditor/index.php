@@ -39,17 +39,6 @@ include_once 'includes/header.php';
                     </p>
                 </div>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Feedback</h2>
-                </div>
-                <div class="panel-body">
-                    <p>Feedback components are reusable UI widgets to assist teachers/administrators in scoring.</p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./feedback.php">Demo</a>
-                    </p>
-                </div>
-            </div>
         </div>
         <div class="col-md-6">
             <div class="panel panel-default">
