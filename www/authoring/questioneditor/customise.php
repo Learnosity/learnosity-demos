@@ -4,47 +4,47 @@ include_once '../../config.php';
 include_once 'includes/header.php';
 
 $request = [
-    'base_question_type' => [
-        'hidden'   => [],
+    'base_question_type' => array(
+        'hidden'   => array(),
         'attributes_asset_enabled' => false,
         // Default accordion groups
-        'attribute_groups' => [
-            [
+        'attribute_groups' => array(
+            array(
                 'reference' => 'basic',
                 'name'      => 'Basic'
-            ],
-            [
+            ),
+            array(
                 'reference' => 'formatting',
                 'name'      => 'Formatting'
-            ],
-            [
+            ),
+            array(
                 'reference' => 'validation',
                 'name'      => 'Validation'
-            ],
-            [
+            ),
+            array(
                 'reference' => 'metadata',
                 'name'      => 'Metadata'
-            ],
-            [
+            ),
+            array(
                 'reference' => 'advanced',
                 'name'      => 'Advanced'
-            ]
-        ],
-    ],
-    'ui' => [
-        'public_methods' => [],
+            )
+        ),
+    ),
+    'ui' => array(
+        'public_methods' => array(),
         'layout'             => '2-column',
         'question_tiles'     => false,
         'documentation_link' => false,
         'change_button'      => true,
         'source_button'      => true,
         'fixed_preview'      => true
-    ],
+    ),
     'template_defaults' => true,
     'widget_type'       => 'response',
-    'configuration'     => [
+    'configuration'     => array(
         'questionsApiVersion' => 'v2'
-    ]
+    )
 ];
 
 include_once 'utils/settings-override.php';
