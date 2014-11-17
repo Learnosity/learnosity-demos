@@ -3,76 +3,76 @@
 include_once '../../config.php';
 include_once 'includes/header.php';
 
-$request = [
-    'base_question_type' => [
-        'hidden'   => [],
-        'attribute_groups' => [
-            [
+$request = array(
+    'base_question_type' => array(
+        'hidden'   => array(),
+        'attribute_groups' => array(
+            array(
                 'reference' => 'basic',
                 'name'      => 'Basic'
-            ],
-            [
+            ),
+            array(
                 'reference' => 'formatting',
                 'name'      => 'Formatting'
-            ],
-            [
+            ),
+            array(
                 'reference' => 'validation',
                 'name'      => 'Validation'
-            ],
-            [
+            ),
+            array(
                 'reference' => 'metadata',
                 'name'      => 'Metadata'
-            ],
-            [
+            ),
+            array(
                 'reference' => 'advanced',
                 'name'      => 'Advanced'
-            ]
-        ],
-    ],
+            )
+        ),
+    ),
     'template_defaults' => true,
     'widget_type'       => 'response',
-    'widget_json'       => [
-        'options' => [
-            [
+    'widget_json'       => array(
+        'options' => array(
+            array(
                 'label' => '[Choice A]',
                 'value' => '0'
-            ],
-            [
+            ),
+            array(
                 'label' => '[Choice B]',
                 'value' => '1'
-            ],
-            [
+            ),
+            array(
                 'label' => '[Choice C]',
                 'value' => '2'
-            ],
-            [
+            ),
+            array(
                 'label' => '[Choice D]',
                 'value' => '3'
-            ]
-        ],
+            )
+        ),
         'stimulus' => '<p>This is the question the student will answer</p>',
         'type' => 'mcq',
-        'validation' => [
+        'validation' => array(
             'scoring_type' => 'exactMatch',
-            'valid_response' => [
+            'valid_response' => array(
                 'score' => 1,
-                'value' => ['']
-            ]
-        ]
-    ],
-    'ui' => [
-        'public_methods' => [],
+                'value' => array('')
+            )
+        )
+    ),
+    'ui' => array(
+        'public_methods' => array(),
         'layout'             => '2-column',
         'question_tiles'     => false,
         'documentation_link' => false,
         'change_button'      => true,
         'source_button'      => true,
         'fixed_preview'      => true
-    ],
-    'configuration'     => [
+    ),
+    'configuration'     => array(
         'questionsApiVersion' => 'v2'
-    ]
-];
+    )
+);
 
 $removeOverrideFields = ['widget_type'];
 
