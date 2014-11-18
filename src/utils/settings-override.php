@@ -98,6 +98,9 @@ if (isset($_POST['api_type'])) {
             }
             $requestKey = &$request;
             break;
+        case 'questioneditor-test-init':
+            $request = $_POST['init'];
+            break;
         default:
             # do nothing
             break;
