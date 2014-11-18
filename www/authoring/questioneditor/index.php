@@ -64,6 +64,20 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Test Custom Initialisation JSON</h2>
+                </div>
+                <div class="panel-body">
+                    <p>If you are customising the editor (removing attributes or re-sorting accordions etc)
+                    you can test your custom initialisation JSON here.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./test_init.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
