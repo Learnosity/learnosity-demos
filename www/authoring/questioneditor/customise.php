@@ -3,7 +3,7 @@
 include_once '../../config.php';
 include_once 'includes/header.php';
 
-$request = [
+$request = array(
     'base_question_type' => array(
         'hidden'   => array(),
         'attributes_asset_enabled' => false,
@@ -45,7 +45,7 @@ $request = [
     'configuration'     => array(
         'questionsApiVersion' => 'v2'
     )
-];
+);
 
 include_once 'utils/settings-override.php';
 

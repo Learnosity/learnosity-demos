@@ -36,7 +36,6 @@ $request = array(
             'id'          => 'report-4',
             'type'        => 'sessions-summary-by-tag',
             'user_id'     => 'brianmoser',
-            'ui'          => 'bar-chart',
             'hierarchy'   => 'author',
             'session_ids' => array(
                 'B146BA2C-C2D0-4368-B90FFBA2B245F2BA'
