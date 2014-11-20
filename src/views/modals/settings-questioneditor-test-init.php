@@ -45,7 +45,8 @@
 
 <script src="<?php echo $env['www'] ?>static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
 <script>
-    var editor = ace.edit('editor');
+    var editor = ace.edit('editor'),
+        $wrapper = $('.editor-wrapper');
     editor.setTheme('ace/theme/kuroir');
     editor.getSession().setMode('ace/mode/json');
     editor.setShowPrintMargin(false);
@@ -55,10 +56,18 @@
     editor.navigateFileEnd();
     editor.focus();
 
+    function reInit (init) {
+        //$($wrapper).find('.learnosity-question-editor').remove();
+        //$($wrapper).append('<div class="learnosity-question-editor"></div>');
+        LearnosityQuestionEditor.init(init);
+        $('#settings').modal('hide');
+    }
+
     $(function() {
         $('.btn-primary').on('click', function () {
             $('#init').val(editor.getValue());
-            $('#frmSettings').submit();
+            //$('#frmSettings').submit();
+            reInit(JSON.parse(editor.getValue()));
         });
     });
 </script>
