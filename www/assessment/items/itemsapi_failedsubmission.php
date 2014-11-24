@@ -22,11 +22,8 @@ $request = array(
     'config'               => array(
         'configuration' => array(
             'submit_failed_options' => array(
-                'mailto' => array(
-                    'to'      => 'your.administrator@yourschool.net', // Defaults to empty
-                    'cc'      => 'another.administrator@yourschool.net',
-                    'bcc'     => 'techies@yourschool.net'
-                )
+                'mailto' => false,
+                'download' => false
             )
         )
     )
@@ -61,7 +58,7 @@ $signedRequest = $Init->generate();
     <!-- Container for the items api to load into -->
     <div id="learnosity_assess"></div>
 </div>
-<script src="//items.learnosity.com"></script>
+<script src="//items.vg.learnosity.com"></script>
 <script>
     var eventOptions = {
             readyListener: init
@@ -87,6 +84,6 @@ $signedRequest = $Init->generate();
 </script>
 
 <?php
-    include_once 'views/modals/settings-items-activities.php';
+    include_once 'views/modals/settings-items-failed-submit.php';
     include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';
