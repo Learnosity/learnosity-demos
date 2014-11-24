@@ -22,8 +22,8 @@ $request = array(
     'config'               => array(
         'configuration' => array(
             'submit_failed_options' => array(
-                'mailto' => false,
-                'download' => false
+                'mailto' => true,
+                'download' => true
             )
         )
     )
@@ -58,7 +58,7 @@ $signedRequest = $Init->generate();
     <!-- Container for the items api to load into -->
     <div id="learnosity_assess"></div>
 </div>
-<script src="//items.vg.learnosity.com"></script>
+<script src="//items.learnosity.com"></script>
 <script>
     var eventOptions = {
             readyListener: init
