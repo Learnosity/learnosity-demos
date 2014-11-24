@@ -37,7 +37,6 @@ if (isset($_POST['api_type'])) {
                 $request = array_replace_recursive($request, $_POST);
                 $requestKey = &$request;
             }
-            unset($request['api_type']);
             break;
         case 'questioneditor':
             $request = array_replace_recursive($request, $_POST);
@@ -126,4 +125,7 @@ if (isset($_POST['api_type'])) {
         unset($requestKey['navigation']['auto_save']);
     }
     unset($requestKey['navigation']['auto_save']['use_auto_save']);
+    if (!$requestKey['configuration']['api_type']) {
+        unset($requestKey['api_type']);
+    }
 }
