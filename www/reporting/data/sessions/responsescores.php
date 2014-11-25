@@ -1,7 +1,7 @@
 <?php
 
-$endpoint = "$URL/$version/sessions/scores";
-$resource = 'sessionscores';
+$endpoint = "$URL/$version/sessions/responses/scores";
+$resource = 'responsescores';
 
 ?>
 
