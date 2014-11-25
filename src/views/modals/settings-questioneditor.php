@@ -115,6 +115,20 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="show_advanced_group" class="col-sm-6 control-label">Advanced Group</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="ui[advanced_group]" value="true"<?php if (isset($ui['advanced_group']) && $ui['advanced_group'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="ui[advanced_group]" value="false"<?php if (isset($ui['advanced_group']) && $ui['advanced_group'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_search_field" class="col-sm-6 control-label">Search Field</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="ui[search_field]" value="true"<?php if (isset($ui['search_field']) && $ui['search_field'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="ui[search_field]" value="false"<?php if (isset($ui['search_field']) && $ui['search_field'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="getResponses" class="col-sm-6 control-label">Show getResponses()</label>
                                     <div class="col-sm-6">
                                         <?php
