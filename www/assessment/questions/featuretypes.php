@@ -85,6 +85,24 @@ include_once 'includes/header.php';
         <pre style="margin-top: 20px" class="feature htmlexample">&lt;span class="learnosity-feature" data-type="imagetool" data-image="ruler-15-cm" data-button="true"&gt;&lt;/span&gt;</pre>
     </section>
 
+    <section>
+        <h3 id="formulainput">Formula Input</h3>
+        <h4>Example (Basic)</h4>
+        <span class="learnosity-feature" data-type="formulainput"></span>
+        <pre style="margin-top: 20px" class="feature htmlexample">&lt;span class="learnosity-feature" data-type="formulainput"&gt;&lt;/span&gt;</pre>
+        <br>
+        <h4>Example (Initial value)</h4>
+        <span class="learnosity-feature" data-type="formulainput" data-value="\frac{x}{y}"></span>
+        <pre style="margin-top: 20px" class="feature htmlexample">&lt;span class="learnosity-feature" data-type="formulainput" data-value="\frac{x}{y}"&gt;&lt;/span&gt;</pre>
+        <br>
+        <h4>Example (Updating input value)</h4>
+        <span class="learnosity-feature" data-type="formulainput" data-input=".math-receiver"></span>
+        <input class="math-receiver">
+        <pre style="margin-top: 20px" class="feature htmlexample">
+&lt;span class="learnosity-feature" data-type="formulainput" data-input=".math-receiver"&gt;&lt;/span&gt;
+&lt;input class="math-receiver"&gt;&lt;/input&gt;</pre>
+    </section>
+
 </div>
 
 <script src="<?php echo $env['www'] ?>static/js/codemirror.min.js"></script>
