@@ -19,6 +19,7 @@ $request = array(
     'course_id'      => $courseid,
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
+    'assess_inline'  => true,
     'adaptive'       => array(
         'type' => 'branching',
         'sequence' => array(
