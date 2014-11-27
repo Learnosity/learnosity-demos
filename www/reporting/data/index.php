@@ -165,6 +165,21 @@ $version = 'v0.41';
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#responsescores">
+                            <span class="block">action: get</span>
+                            <?php echo '/' . $version . '/sessions/responses/scores'; ?>
+                        </a>
+                    </h4>
+                </div>
+                <div id="responsescores" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'sessions/responsescores.php'; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#sessionsstatuses">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/statuses'; ?>
