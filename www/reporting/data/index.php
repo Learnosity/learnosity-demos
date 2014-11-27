@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 // Full base URL of the Data API
 $URL = 'https://data.learnosity.com';
 // Which version of the Data API to use
-$version = 'v0.41';
+$version = 'v0.42';
 
 ?>
 
@@ -150,21 +150,6 @@ $version = 'v0.41';
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#sessionsscores">
-                            <span class="block">action: get</span>
-                            <?php echo '/' . $version . '/sessions/scores'; ?>
-                        </a>
-                    </h4>
-                </div>
-                <div id="sessionsscores" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <?php include_once 'sessions/scores.php'; ?>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#responsescores">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/responses/scores'; ?>
@@ -174,6 +159,21 @@ $version = 'v0.41';
                 <div id="responsescores" class="panel-collapse collapse">
                     <div class="panel-body">
                         <?php include_once 'sessions/responsescores.php'; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#sessionsscores">
+                            <span class="block">action: get</span>
+                            <?php echo '/' . $version . '/sessions/scores'; ?>
+                        </a>
+                    </h4>
+                </div>
+                <div id="sessionsscores" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'sessions/scores.php'; ?>
                     </div>
                 </div>
             </div>
