@@ -46,7 +46,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>The Question Editor can tie into any existing Digital Asset Management System you may have, or want to use.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./features.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./assetrequest.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -70,7 +70,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Features are reusable question and/or stimulus UI widgets that you can embed in an assessment.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./assetrequest.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./features.php">Demo</a>
                     </p>
                 </div>
             </div>
