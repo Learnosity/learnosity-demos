@@ -23,13 +23,13 @@ $request = '{
     "course_id": "'.$courseid.'",
     "questions": [
         {
-            "type": "formula",
+            "type": "formulaV2",
             "response_id": "demoformula1_'.$uniqueResponseIdSuffix.'",
             "description": "Enter a math formula."
         },
 
         {
-            "type": "formula",
+            "type": "formulaV2",
             "response_id": "demoformula2_'.$uniqueResponseIdSuffix.'",
             "description": "Enter any expression that evaluates to x.",
             "instant_feedback" : true,
@@ -41,52 +41,22 @@ $request = '{
         },
 
         {
-            "type": "formula",
+            "type": "formulaV2",
             "response_id": "demoformula3_'.$uniqueResponseIdSuffix.'",
             "description": "Complete the quadratic equation.",
             "template": "\\\\frac{-b\\\\pm\\\\sqrt{b^2-4ac}}{{{response}}}"
         },
-
         {
-            "type": "formula",
             "response_id": "demoformula4_'.$uniqueResponseIdSuffix.'",
-            "description": "Enter some symbols using the custom math toolbar.",
             "symbols": [{
-                "symbol": "\\\\Sigma",
-                "group": 1,
-                "title": "My custom title for uppercase sigma"
-            }, {
-                "symbol": "\\\\sigma",
-                "group": 1,
-                "title": "My custom title for lowercase sigma"
-            }, {
-                "symbol": "\\\\sqrt",
-                "group": 2
-            }, {
-                "symbol": "\\\\frac",
-                "group": 2
-            }, {
-                "symbol": "^",
-                "group": 2
-            }, {
-                "symbol": "\\\\cap",
-                "group": 3
-            }, {
-                "symbol": "\\\\cup",
-                "group": 3
-            }, {
-                "symbol": "\\\\subset",
-                "group": 3
-            }, {
-                "symbol": "\\\\supset",
-                "group": 3
-            }, {
-                "symbol": "\\\\in",
-                "group": 3
-            }, {
-                "symbol": "\\\\ni",
-                "group": 3
-            }]
+                "label": "\\\\Sigma",
+                "title": "My Custom group",
+                "value": ["\\\\Sigma", "\\\\sigma", "", "", "\\\\sqrt", "box_\\\\frac", "box_^2", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+            }],
+            "type": "formulaV2",
+            "ui_style": {
+                "type": "floating-keyboard"
+            }
         }
     ]
 }';
@@ -117,11 +87,13 @@ $signedRequest = $Init->generate();
     var app = LearnosityApp.init(activity, {
         readyListener: function () {
             // For each formula question on this page...
-            $('.lrn_formula').each(function () {
+            $('.lrn_formulaV2').each(function () {
                 // Get the latex area code element beside the question, and the question object.
-                var codeEl = $(this).closest('.question').find('.formula-latex code'),
-                    responseId = $(this).prop('id'),
-                    question = app.question(responseId);
+                var codeEl = $(this).closest('.question').find('.formula-latex code');
+                var responseId = $(this).prop('id');
+                console.log(responseId);
+                var question = app.question(responseId);
+                console.log(question);
 
                 // Register a callback to update the latex when the user input changes.
                 question.on('change', function () {

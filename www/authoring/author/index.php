@@ -15,7 +15,7 @@ $request = array(
     'limit' => 100,
     'tags'  => array(
         array('type' => 'course', 'name' =>'commoncore'),
-        array('type' => 'subject', 'name' =>'Maths')
+        array('type' => 'subject', 'name' =>'Math')
     )
 );
 
