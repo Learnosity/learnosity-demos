@@ -121,12 +121,12 @@ $signedRequest = $Init->generate();
 <script>
     var eventOptions = {
             readyListener: function () {
-                init();
+                initialiseEventsPosting();
             }
         },
         itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
 
-    function init () {
+    function initialiseEventsPosting() {
         itemsApp.eventsApp().on(function (events) {
             $('.previewWrapper').show();
             $('#xApiPreview').prepend(
