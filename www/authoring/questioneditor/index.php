@@ -39,6 +39,17 @@ include_once 'includes/header.php';
                     </p>
                 </div>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Digital Asset Management</h2>
+                </div>
+                <div class="panel-body">
+                    <p>The Question Editor can tie into any existing Digital Asset Management System you may have, or want to use.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./assetrequest.php">Demo</a>
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="panel panel-default">
@@ -63,8 +74,6 @@ include_once 'includes/header.php';
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title">Test Custom Initialisation JSON</h2>
