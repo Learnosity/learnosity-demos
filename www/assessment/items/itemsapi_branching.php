@@ -125,7 +125,7 @@ $signedRequest = $Init->generate();
     <!-- Container for the items api to load into -->
     <div id="learnosity_assess"></div>
 </div>
-<script src="//items.learnosity.com"></script>
+<script src="//items.learnosity.com?v1.15"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>,
         itemsApp = LearnosityItems.init(activity);
