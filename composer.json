@@ -7,6 +7,6 @@
     "license": "MIT",
     "require": {
         "php": ">=5.3.0",
-        "learnosity/learnosity-sdk-php": "0.5"
+        "learnosity/learnosity-sdk-php": "0.5.*"
     }
 }
