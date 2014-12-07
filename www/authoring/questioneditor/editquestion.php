@@ -61,13 +61,15 @@ $request = array(
         )
     ),
     'ui' => array(
-        'public_methods' => array(),
+        'public_methods'     => array(),
         'layout'             => '2-column',
         'question_tiles'     => false,
         'documentation_link' => false,
         'change_button'      => true,
         'source_button'      => true,
-        'fixed_preview'      => true
+        'fixed_preview'      => true,
+        'advanced_group'     => true,
+        'search_field'       => true
     ),
     'configuration'     => array(
         'questionsApiVersion' => 'v2'
