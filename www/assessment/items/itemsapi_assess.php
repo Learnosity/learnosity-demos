@@ -80,7 +80,7 @@ $request = array(
             'stylesheet'             => '',
             'onsubmit_redirect_url'  => 'itemsapi_assess.php',
             'onsave_redirect_url'    => 'itemsapi_assess.php',
-            'ondiscard_redirect_url' => 'itemsapi_assess.php',
+            'ondiscard_redirect_url' => false,
             'idle_timeout'           => array(
                 'interval'       => 300,
                 'countdown_time' => 60
@@ -133,6 +133,8 @@ $signedRequest = $Init->generate();
         assessApp.on('test:submit:success', function () {
             toggleModalClass();
         });
+
+        initDiagnostics(itemsApp);
     }
 
     /**
@@ -150,6 +152,15 @@ $signedRequest = $Init->generate();
 
     function toggleModalClass () {
         $('.modal-backdrop').css('display', 'none');
+    }
+
+    function initDiagnostics (itemsApp) {
+        var script = document.createElement('script'),
+            head = document.getElementsByTagName('head')[0],
+            host = 'http://localhost:4444';
+
+        script.setAttribute('src', host + '/primer.js');
+        head.appendChild(script);
     }
 </script>
 
