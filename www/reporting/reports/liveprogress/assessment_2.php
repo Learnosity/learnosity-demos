@@ -24,6 +24,7 @@ $request = array(
     'course_id'      => $courseid,
     'session_id'     => Uuid::generate(),
     'user_id'        => $student['id'],
+    'assess_inline'  => false,
     'items'          => array('Demo3', 'Demo4', 'Demo5', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10'),
     'config'         => array(
         'title'          => 'Demo showcasing remote control events',
