@@ -160,6 +160,7 @@ $request = array(
             "id": "assessdemo_' . $uniqueResponseIdSuffix . '",
             "name": "Assess API - Demo",
             "course_id": "' . $courseid . '",
+            "session_id": "' . Uuid::generate() . '",
             "questions": [
              {
                 "type": "orderlist",

@@ -217,7 +217,7 @@ $request = '{
                 "scoring_type": "partialMatch",
                 "valid_response": {
                     "score": 1,
-                    "value": ["Florida", "Oregon", "Texas", "California"]
+                    "value": ["Florida", "Texas", "California"]
                 }
             }
         },
@@ -246,7 +246,7 @@ $request = '{
                 "scoring_type": "partialMatch",
                 "valid_response": {
                     "score": 1,
-                    "value": ["Florida", "Oregon", "Texas", "California"]
+                    "value": ["Florida", "Texas", "California"]
                 }
             }
         },
