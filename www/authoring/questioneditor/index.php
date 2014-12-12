@@ -41,6 +41,17 @@ include_once 'includes/header.php';
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <h2 class="panel-title">Custom Question Type Templates</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Create custom question type templates to suit your organisations authoring needs.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./customtemplates.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <h2 class="panel-title">Digital Asset Management</h2>
                 </div>
                 <div class="panel-body">
