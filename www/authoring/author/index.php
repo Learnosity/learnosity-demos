@@ -6,18 +6,35 @@ include_once 'includes/header.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
+$item_ref        = Uuid::generate();
+
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain
 );
 
-$request = array(
-    'limit' => 100,
-    'tags'  => array(
-        array('type' => 'course', 'name' =>'commoncore'),
-        array('type' => 'subject', 'name' =>'Math')
-    )
-);
+$request = [
+    'components' => [
+        [
+            'id'        => 'itemeditor1',
+            'type'      => 'itemeditor',
+            'reference' => $item_ref,
+            'question_editor_options' => [
+                'ui' => [
+                    'public_methods'     => [],
+                    'layout'             => '2-column',
+                    'question_tiles'     => false,
+                    'documentation_link' => false,
+                    'change_button'      => true,
+                    'source_button'      => false,
+                    'fixed_preview'      => true,
+                    'advanced_group'     => false,
+                    'search_field'       => false
+                ]
+            ]
+        ]
+    ]
+];
 
 $Init = new Init('author', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
@@ -40,152 +57,34 @@ $signedRequest = $Init->generate();
 
 <div class="section">
     <section>
-        <h3>Sample CMS/LMS Integration</h3>
-        <p>Below is an edit page for a fictional Content/Learning Management System.</p>
-        <p>The buttons on the right show how you might integrate the Author API to search for, and add items &mdash;
-        allowing your authors to integrate rich content items into existing pages.</p>
-        <p>There is also a preview button which integrates the <a href="../../assessment/items/itemsapi_inline.php">Items API</a>
-        &mdash; showing a full preview of your content embedded with items from the Item Bank.</p>
-        <p>Place your cursor in the edit box below, where you want an item to appear. Click the "Add Item(s)" button
-        and select your items from the Learnosity Item Bank.</p>
+        <h3>Sample Author API</h3>
+        <p>Below is demo of the Author API editing a new item each time, questions can be created, edited and are persisted to our itembank.</p>
         <br>
     </section>
-
-    <div class="panel panel-info">
-        <div class="panel-heading"><span class="glyphicon glyphicon-edit"></span> Custom Content Management System – Edit Page</div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-8">
-                    <div id="editor"><?php echo htmlspecialchars('<h1>Sample content page</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit libero.
-Aenean placerat lacus nunc, et lobortis augue venenatis sed. Vestibulum ornare
-malesuada ligula a molestie.</p>
-
-<p>Mauris eget condimentum diam, id porttitor lacus. Phasellus faucibus
-condimentum mi, id hendrerit sem cursus ut. Nam purus nisi, vehicula non laoreet
-a, volutpat at felis. Mauris molestie congue felis et ultrices. Aenean fermentum
-leo sit amet metus molestie, molestie pulvinar tellus tristique. Curabitur
-vulputate bibendum erat, vitae ultricies kneque.</p>') . PHP_EOL; ?>
-
-</div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <button type="button" class="btn btn-info btn" data-toggle="modal" data-target="#authorModal">Add Item(s) <span class="glyphicon glyphicon-import"></span></button>
-                    <button type="button" class="btn btn-info btn" onclick="signItemsRequest()">Preview Item(s) <span class="glyphicon glyphicon-search"></span></button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <!--
 ********************************************************************
 *
-* Load a fake editor (ACE Editor) to simulate integrating with
-* a Content/Learning management system
+* Setup the Author API html node.
 *
 ********************************************************************
 -->
-<script src="<?php echo $env['www'] ?>static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
-<script>
-    var editor = ace.edit('editor');
-    editor.setTheme('ace/theme/clouds');
-    editor.getSession().setMode('ace/mode/html');
-    editor.setShowPrintMargin(false);
-    editor.navigateFileEnd();
-    editor.focus();
-</script>
 
-<!--
-********************************************************************
-*
-* Setup the Author API modal, using bootstrap 3.0
-*
-********************************************************************
--->
-<div class="modal fade" id="authorModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Learnosity Author API</h4>
-            </div>
-            <div class="modal-body">
-                <!-- Container for the author api to load into -->
-                <span class="learnosity-author"></span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--
-********************************************************************
-*
-* This is the HTML hook to load the Items API preview into
-*
-********************************************************************
--->
-<div id="render-items"></div>
+<div id="itemeditor1"></div>
 
 <!--
 ********************************************************************
 *
 * Load the Author and Items API JavaScript files.
 *
-* The onItemClick() function adds an HTML hook (span) into the
-* content editor. This is the tag that an item loads into.
-*
-* The signItemsRequest() function parses the content block for
-* item hooks and sends a request to the server to sign the request
-* packet. The response is the HTML of a modal window with the
-* Items API initialised to render whatever was found in the content
-* editor window (if anything).
-* See ./src/views/modals/items-inline.php
-*
 ********************************************************************
 -->
-<script src="//authorapi.learnosity.com/"></script>
-<script src="//items.learnosity.com/"></script>
+<script src="//authorapi.learnosity.com/?v0.6"></script>
 <script>
-    var config = <?php echo $signedRequest; ?>,
-        hook;
+    var initOptions = <?php echo $signedRequest; ?>;
 
-    config.ui = {
-        onItemClick: function (item) {
-            hook = '<span class="learnosity-item" data-reference="' + item.reference + '"></span>';
-            editor.insert(hook);
-            $('#authorModal').modal('hide');
-        }
-    }
-    LearnosityAuthor.init(config);
-
-    function signItemsRequest() {
-        var data = {
-            item_references: [],
-            sign_type: 'items-inline',
-            content: editor.getValue()
-        };
-        $(data.content).each(function() {
-            if (typeof $(this).attr('data-reference') !== 'undefined') {
-                data.item_references.push($(this).attr('data-reference'));
-            }
-        }, data);
-        $.ajax({
-            url: '<?php echo $env['www'] ?>generateRequest.php',
-            data: data,
-            type: 'POST'
-        })
-        .done(function(data) {
-            $('#render-items').html(data);
-            $('#itemsInlineModal').modal();
-        })
-        .fail(function() {
-            alert('There was an error attempting to preview the item');
-        });
-    }
+    LearnosityAuthor.init(initOptions);
 </script>
 
 <?php
