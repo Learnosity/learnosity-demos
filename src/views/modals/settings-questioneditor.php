@@ -8,7 +8,7 @@
 <?php
     // Shortcuts for convenience
     $base  = $request['base_question_type'];
-    $ui  = $request['ui'];
+    $ui = $request['ui'];
 
     $service = 'Question Editor API';
     $serviceShortcut = 'questioneditor';
@@ -132,13 +132,26 @@
                                     <label for="getResponses" class="col-sm-6 control-label">Show getResponses()</label>
                                     <div class="col-sm-6">
                                         <?php
-                                            $checkPublicMethods = false;
-                                            if (isset($ui['public_methods']) && is_array($ui['public_methods']) && $ui['public_methods'][0] === 'getResponses') {
-                                                $checkPublicMethods = true;
+                                            $checkPublicMethodResponses = false;
+                                            if (isset($ui['public_methods']) && is_array($ui['public_methods']) && in_array('getResponses', $ui['public_methods'])) {
+                                                $checkPublicMethodResponses = true;
                                             }
                                         ?>
-                                        <input type="radio" name="ui[public_methods]" value="getResponses"<?php if ($checkPublicMethods) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="ui[public_methods]" value=""<?php if (!$checkPublicMethods) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="ui[public_methods][getResponses]" value="true"<?php if ($checkPublicMethodResponses) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="ui[public_methods][getResponses]" value="false"<?php if (!$checkPublicMethodResponses) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="getQuestions" class="col-sm-6 control-label">Show getQuestions()</label>
+                                    <div class="col-sm-6">
+                                        <?php
+                                            $checkPublicMethodsQuestions = false;
+                                            if (isset($ui['public_methods']) && is_array($ui['public_methods']) && in_array('getQuestions', $ui['public_methods'])) {
+                                                $checkPublicMethodsQuestions = true;
+                                            }
+                                        ?>
+                                        <input type="radio" name="ui[public_methods][getQuestions]" value="true"<?php if ($checkPublicMethodsQuestions) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="ui[public_methods][getQuestions]" value="false"<?php if (!$checkPublicMethodsQuestions) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                             </div>

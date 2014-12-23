@@ -96,6 +96,15 @@ if (isset($_POST['api_type'])) {
                 $request['base_question_type']['hidden'] = $hiddenAttributes;
                 unset($request['hidden']);
             }
+            if (isset($request['ui']['public_methods']) && is_array($request['ui']['public_methods'])) {
+                $methods = [];
+                foreach ($request['ui']['public_methods'][0] as $h => $val) {
+                    if ($val === true) {
+                        $methods[] = $h;
+                    }
+                }
+                $request['ui']['public_methods'] = $methods;
+            }
             $requestKey = &$request;
             break;
         case 'questioneditor-test-init':
