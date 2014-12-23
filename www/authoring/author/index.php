@@ -6,22 +6,22 @@ include_once 'includes/header.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$item_ref        = Uuid::generate();
+$item_ref = Uuid::generate();
 
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain
 );
 
-$request = [
-    'components' => [
-        [
-            'id'        => 'itemeditor1',
+$request = array(
+    'components' => array(
+        array(
+            'id'        => 'learnosity_author',
             'type'      => 'itemeditor',
             'reference' => $item_ref,
-            'question_editor_options' => [
-                'ui' => [
-                    'public_methods'     => [],
+            'question_editor_options' => array(
+                'ui' => array(
+                    'public_methods'     => array(),
                     'layout'             => '2-column',
                     'question_tiles'     => false,
                     'documentation_link' => false,
@@ -30,11 +30,11 @@ $request = [
                     'fixed_preview'      => true,
                     'advanced_group'     => false,
                     'search_field'       => false
-                ]
-            ]
-        ]
-    ]
-];
+                )
+            )
+        )
+    )
+);
 
 $Init = new Init('author', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
@@ -52,35 +52,22 @@ $signedRequest = $Init->generate();
     <div class="overview">
         <h1>Author API</h1>
         <p>Learnosity's Author API allows searching and integration of Learnosity powered content into your content management system.<p>
+        <p>Below is demo of the Author API editing a new item each time, questions can be created, edited and are persisted to our itembank.</p>
     </div>
 </div>
 
+<style>
+    .lrn-nav-tabs {
+        width: auto;
+    }
+</style>
+
+<!-- Container for the items api to load into -->
 <div class="section">
-    <section>
-        <h3>Sample Author API</h3>
-        <p>Below is demo of the Author API editing a new item each time, questions can be created, edited and are persisted to our itembank.</p>
-        <br>
-    </section>
+    <div id="learnosity_author"></div>
 </div>
 
-<!--
-********************************************************************
-*
-* Setup the Author API html node.
-*
-********************************************************************
--->
-
-<div id="itemeditor1"></div>
-
-<!--
-********************************************************************
-*
-* Load the Author and Items API JavaScript files.
-*
-********************************************************************
--->
-<script src="//authorapi.learnosity.com/?v0.6"></script>
+<script src="//authorapi.learnosity.com?v0.6"></script>
 <script>
     var initOptions = <?php echo $signedRequest; ?>;
 
