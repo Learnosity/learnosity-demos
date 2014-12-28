@@ -1055,56 +1055,104 @@ $request = '{
             "instant_feedback": true
         },
         {
+            "add_point": true,
+            "chart_data": {
+                "data": [{
+                    "x": "A",
+                    "y": 100
+                }, {
+                    "x": "B",
+                    "y": 0
+                }, {
+                    "x": "C",
+                    "y": 90
+                }, {
+                    "x": "D",
+                    "y": 10
+                }, {
+                    "x": "E",
+                    "y": 80
+                }, {
+                    "x": "F",
+                    "y": 20
+                }, {
+                    "x": "G",
+                    "y": 70
+                }, {
+                    "x": "H",
+                    "y": 30
+                }, {
+                    "x": "I",
+                    "y": 60
+                }, {
+                    "x": "J",
+                    "y": 40
+                }, {
+                    "x": "K",
+                    "y": 50
+                }, {
+                    "x": "L",
+                    "y": 50
+                }],
+                "name": "Random data"
+            },
+            "delete_point": true,
+            "edit_label": true,
+            "instant_feedback": true,
+            "max_y_value": 100,
             "response_id": "demo38-'.$uniqueResponseIdSuffix.'",
             "type": "simplechart",
             "ui_style": {
                 "chart_type": "line"
             },
-            "max_y_value": 100,
-            "x_axis_label": "X axis title",
-            "y_axis_label": "Y axis title",
-            "resize_point": true,
-            "delete_point": true,
-            "edit_label": true,
-            "chart_data": {
-                "name": "Random data",
-                "data": [
-                    { "x": "A", "y": 100 },
-                    { "x": "B", "y": 0 },
-                    { "x": "C", "y": 90 },
-                    { "x": "D", "y": 10 },
-                    { "x": "E", "y": 80},
-                    { "x": "F", "y": 20 },
-                    { "x": "G", "y": 70 },
-                    { "x": "H", "y": 30 },
-                    { "x": "I", "y": 60 },
-                    { "x": "J", "y": 40 },
-                    { "x": "K", "y": 50 },
-                    { "x": "L", "y": 50 }
-                ]
-            },
             "validation": {
                 "scoring_type": "exactMatch",
                 "valid_response": {
-                    "value": [
-                        { "x": "A", "y": 100 },
-                        { "x": "B", "y": 0 },
-                        { "x": "C", "y": 90 },
-                        { "x": "D", "y": 10 },
-                        { "x": "E", "y": 80},
-                        { "x": "F", "y": 20 },
-                        { "x": "G", "y": 70 },
-                        { "x": "H", "y": 30 },
-                        { "x": "I", "y": 60 },
-                        { "x": "J", "y": 40 },
-                        { "x": "K", "y": 50 },
-                        { "x": "L", "y": 40 },
-                        { "x": "M", "y": 60 }
-                    ],
-                    "score": 1
+                    "score": 1,
+                    "value": [{
+                        "x": "A",
+                        "y": 100
+                    }, {
+                        "x": "B",
+                        "y": 0
+                    }, {
+                        "x": "C",
+                        "y": 90
+                    }, {
+                        "x": "D",
+                        "y": 10
+                    }, {
+                        "x": "E",
+                        "y": 80
+                    }, {
+                        "x": "F",
+                        "y": 20
+                    }, {
+                        "x": "G",
+                        "y": 70
+                    }, {
+                        "x": "H",
+                        "y": 30
+                    }, {
+                        "x": "I",
+                        "y": 60
+                    }, {
+                        "x": "J",
+                        "y": 40
+                    }, {
+                        "x": "K",
+                        "y": 50
+                    }, {
+                        "x": "L",
+                        "y": 40
+                    }, {
+                        "x": "M",
+                        "y": 60
+                    }]
                 }
             },
-            "instant_feedback": true
+            "x_axis_label": "X axis title",
+            "y_axis_label": "Y axis title"
         },
         {
             "response_id": "demo39-'.$uniqueResponseIdSuffix.'",
