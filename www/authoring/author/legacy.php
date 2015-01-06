@@ -3,24 +3,28 @@
 include_once '../../config.php';
 include_once 'includes/header.php';
 
-use LearnositySdk\Request\Init;
-use LearnositySdk\Utils\Uuid;
+use LearnositySdk\Utils\Json;
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'domain'       => $domain
+    'domain'       => $domain,
+    'timestamp'    => gmdate('Ymd-Hi')
 );
 
 $request = array(
     'limit' => 100,
     'tags'  => array(
-        array('type' => 'course', 'name' =>'commoncore'),
-        array('type' => 'subject', 'name' =>'Maths')
+        array('type' => 'course', 'name' =>'commoncore')
     )
 );
 
-$Init = new Init('author', $security, $consumer_secret, $request);
-$signedRequest = $Init->generate();
+$security['signature'] = generateSignature($security, $consumer_secret, $request);
+$signedRequest = Json::encode(
+    array(
+        'request'  => $request,
+        'security' => $security
+    )
+);
 
 ?>
 
@@ -147,7 +151,7 @@ vulputate bibendum erat, vitae ultricies kneque.</p>') . PHP_EOL; ?>
 *
 ********************************************************************
 -->
-<script src="//authorapi.learnosity.com/"></script>
+<script src="//authorapi.learnosity.com?v0.5"></script>
 <script src="//items.learnosity.com/"></script>
 <script>
     var config = <?php echo $signedRequest; ?>,
@@ -191,3 +195,52 @@ vulputate bibendum erat, vitae ultricies kneque.</p>') . PHP_EOL; ?>
 <?php
     include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';
+
+    /**
+     * Generate a signature hash for the request, this includes:
+     *  - the security credentials
+     *  - the `request` packet (a JSON string) if passed
+     *  - the `action` value if passed
+     *
+     * @return string A signature hash for the request authentication
+     */
+    function generateSignature($securityPacket, $secret, $request)
+    {
+        $signatureArray = array();
+        $validSecurityKeys = getSecurityKeys();
+
+        // Create a pre-hash string based on the security credentials
+        // The order is important
+        foreach ($validSecurityKeys as $key) {
+            if (array_key_exists($key, $securityPacket)) {
+                array_push($signatureArray, $securityPacket[$key]);
+            }
+        }
+
+        // Add the secret
+        array_push($signatureArray, $secret);
+
+        // Add the requestPacket if necessary
+        if (!empty($requestString)) {
+            array_push($signatureArray, $requestString);
+        }
+
+        return hashValue($signatureArray);
+    }
+
+    /**
+     * Hash an array value
+     *
+     * @param  array  $value An array to hash
+     *
+     * @return string The hashed string
+     */
+    function hashValue($value)
+    {
+        return hash('sha256', implode('_', $value));
+    }
+
+    function getSecurityKeys()
+    {
+        return array('consumer_key', 'domain', 'timestamp', 'user_id');
+    }
