@@ -85,10 +85,6 @@ include_once 'includes/header.php';
                 events, to remotely control any assessment in real time.</p></li>
                 <li><h4><a href="<?php echo $env['www'] ?>reporting/data/index.php">Data API</a></h4>
                 <p>A back office service that allows authenticated users to retrieve and store information from within the Learnosity Assessment platform.</p></li>
-                <li><h4><a href="<?php echo $env['www'] ?>reporting/sso/index.php">Single Sign On API</a>
-                <span class="label label-danger">DEPRECATED</span>
-                </h4>
-                <p>Gain quick access to assessments and reports using the Learnosity Dashboards.</p></li>
             </ul>
         </div>
     </div>
