@@ -1,7 +1,7 @@
 <?php
 
-$endpoint = "$URL/$version/itembank/tags";
-$resource = 'tags';
+$endpoint = "$URL/$version/itembank/pools";
+$resource = 'itempools';
 
 ?>
 
@@ -21,38 +21,34 @@ $resource = 'tags';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">type(s)</label>
+                <label class="col-md-2 control-label">reference(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-types" data-type="array" value="">
+                    <input type="text" class="form-control" id="api-references" data-type="array" value="">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">tag(s)</label>
+                <label class="col-md-2 control-label">status(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-tags" data-type="array" value="">
+                    <input type="text" class="form-control" id="api-status" data-type="array" value="published">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">pool reference</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-item_pool_id" data-type="string" value="">
+                <label class="col-md-2 control-label">limit</label>
+                <div class="col-md-2">
+                    <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="5">
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">count only?</label>
-                <div class="col-md-10">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="1">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="0" checked>
-                            No
-                        </label>
-                    </div>
+           <div class="form-group">
+                <label class="col-md-2 control-label">
+                    next
+                    <span class="glyphicon glyphicon-question-sign"
+                        data-toggle="tooltip"
+                        data-placement="right"
+                        title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of results if there are any.">
+                    </span>
+                </label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="api-next" data-type="string" value="">
                 </div>
             </div>
             <div class="form-group">

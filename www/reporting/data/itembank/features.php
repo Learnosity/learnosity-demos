@@ -39,6 +39,12 @@ $resource = 'features';
                 </div>
             </div>
             <div class="form-group">
+                <label class="col-md-2 control-label">pool reference</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="api-item_pool_id" data-type="string" value="">
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="col-md-2 control-label">limit</label>
                 <div class="col-md-2">
                     <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="5">

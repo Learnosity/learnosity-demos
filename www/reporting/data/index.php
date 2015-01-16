@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 // Full base URL of the Data API
 $URL = 'https://data.learnosity.com';
 // Which version of the Data API to use
-$version = 'v0.43';
+$version = 'v0.44';
 
 ?>
 
@@ -130,6 +130,25 @@ $version = 'v0.43';
                     </div>
                 </div>
             </div>
+
+            <!-- Interactives demos for the 'Item Pools' section -->
+            <h2>Item Pools</h2>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#itempools">
+                            <span class="block">action: get</span>
+                            <?php echo '/' . $version . '/itembank/pools'; ?>
+                        </a>
+                    </h4>
+                </div>
+                <div id="itempools" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'itembank/pools.php'; ?>
+                    </div>
+                </div>
+            </div>
+
             <!-- Interactives demos for the 'sessions' section -->
             <h2>Sessions</h2>
             <div class="panel panel-default">
@@ -192,6 +211,7 @@ $version = 'v0.43';
                     </div>
                 </div>
             </div>
+
             <!-- Interactives demos for the 'scoring' section -->
             <h2>Scoring</h2>
             <div class="panel panel-default">
@@ -209,6 +229,7 @@ $version = 'v0.43';
                     </div>
                 </div>
             </div>
+
             <!-- Interactives demos for the 'users' section -->
             <h2>Users</h2>
             <div class="panel panel-default">
@@ -253,38 +274,6 @@ $version = 'v0.43';
                 <div id="usersstatuses" class="panel-collapse collapse">
                     <div class="panel-body">
                         <?php include_once 'users/statuses.php'; ?>
-                    </div>
-                </div>
-            </div>
-            <!-- Interactives demos for the 'schools' section -->
-            <h2>Schools</h2>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#schools">
-                            <span class="block">action: get</span>
-                            <?php echo '/' . $version . '/schools'; ?>
-                        </a>
-                    </h4>
-                </div>
-                <div id="schools" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <?php include_once 'schools/schools.php'; ?>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#schoolsclasses">
-                            <span class="block">action: get</span>
-                            <?php echo '/' . $version . '/schools/classes'; ?>
-                        </a>
-                    </h4>
-                </div>
-                <div id="schoolsclasses" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <?php include_once 'schools/classes.php'; ?>
                     </div>
                 </div>
             </div>
