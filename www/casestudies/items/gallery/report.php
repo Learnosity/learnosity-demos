@@ -88,7 +88,7 @@ $reportsRequest = $init->generate();
 
 <!-- Container for the items api to load into -->
 <script src="//items.learnosity.com"></script>
-<script src="//reports.staging.learnosity.com"></script>
+<script src="//reports.learnosity.com"></script>
 <script>
     var itemsInit = <?php echo $itemsRequest; ?>,
         reportsInit = <?php echo $reportsRequest; ?>,
