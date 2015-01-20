@@ -72,7 +72,7 @@ include './includes/itemsRequest.php';
 </div>
 
 <script src="//items.learnosity.com"></script>
-<script src="//events.staging.learnosity.com"></script>
+<script src="//events.learnosity.com"></script>
 <script>
     var initOptions = <?php echo $itemsRequest; ?>,
         eventOptions = {
