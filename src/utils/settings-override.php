@@ -110,6 +110,13 @@ if (isset($_POST['api_type'])) {
         case 'questioneditor-test-init':
             $request = $_POST['init'];
             break;
+        case 'regions':
+            $itemsConfig = json_decode($_POST['itemsConfig'], true);
+            $request = array_replace_recursive($request, $itemsConfig);
+            unset($request['api_type']);
+            unset($request['regionSelector']);
+            $requestKey = $request;
+            break;
         default:
             # do nothing
             break;
