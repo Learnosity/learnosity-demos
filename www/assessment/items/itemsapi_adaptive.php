@@ -50,7 +50,8 @@ $request = array(
             'intro_item'             => 'adaptive-intro',
             'show_prev'              => false,
             'show_progress'          => false,
-            'show_fullscreencontrol' => false
+            'show_fullscreencontrol' => false,
+            'show_acknowledgements'  => true
         ),
         'time' => array(
             'max_time' => 1800
