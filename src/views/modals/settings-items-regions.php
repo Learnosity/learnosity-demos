@@ -48,22 +48,15 @@
 </div>
 
 <script>
-    var customRegions,
-        defaultRegions,
-        currentRegion;
+    var currentRegion,
+        regions;
 
-    /************************************************
-     *
-     * I'm truly sorry for the code below, it was late
-     * and I was tired. I really have no excuse :(
-     *
-     ************************************************/
-
-    customRegions = {
+    regions = {
         "minimal": {
             "form": {
                 "label": "Minimal",
-                "value": "minimal"
+                "value": "minimal",
+                "optgroup": "customRegions"
             },
             "data": {
                 "config": {
@@ -98,7 +91,8 @@
         "vertical-toolbar": {
             "form": {
                 "label": "Vertical Toolbar",
-                "value": "vertical-toolbar"
+                "value": "vertical-toolbar",
+                "optgroup": "customRegions"
             },
             "data": {
                 "config": {
@@ -132,14 +126,12 @@
                     }
                 }
             }
-        }
-    };
-
-    defaultRegions = {
+        },
         "main": {
             "form": {
                 "label": "Main",
-                "value": "main"
+                "value": "main",
+                "optgroup": "defaultRegions"
             },
             "data": {
                 "config": {
@@ -150,7 +142,8 @@
         "horizontal": {
             "form": {
                 "label": "Horizontal",
-                "value": "horizontal"
+                "value": "horizontal",
+                "optgroup": "defaultRegions"
             },
             "data": {
                 "config": {
@@ -161,7 +154,8 @@
         "horizontal-fixed": {
             "form": {
                 "label": "Horizontal Fixed",
-                "value": "horizontal-fixed"
+                "value": "horizontal-fixed",
+                "optgroup": "defaultRegions"
             },
             "data": {
                 "config": {
@@ -173,34 +167,21 @@
 
     currentRegion = <?php echo json_encode($request['config']['regions']); ?>;
 
-    function setRegionValue (el) {
-        var selectedRegion = $('option:selected', this).val(),
-            optGroup = $('option:selected', this).parent().attr('id');
-
-        if (optGroup === 'defaultRegions') {
-            $('#itemsConfig').val(JSON.stringify(defaultRegions[selectedRegion]['data']));
-        }
-
-        if (optGroup === 'customRegions') {
-            $('#itemsConfig').val(JSON.stringify(customRegions[selectedRegion]['data']));
-        }
+    function loadRegions (currentRegion) {
+        $.each(regions, function (i, val) {
+            var selected = (JSON.stringify(currentRegion) === JSON.stringify(val['data'].config.regions)) ? ' selected': '';
+            $('#' + val['form']['optgroup']).append('<option value="' + val['form']['value'] + '" ' + selected + '>' + val['form']['label'] + '</option>');
+            selected = '';
+        });
     }
 
-    function setupRegionSelects (currentRegion) {
-        $.each(defaultRegions, function (i, val) {
-            var selected = (currentRegion === val['form']['value']) ? ' selected': '';
-            $('#defaultRegions').append('<option value="' + val['form']['value'] + '" ' + selected + '>' + val['form']['label'] + '</option>');
-            selected = '';
-        });
-        $.each(customRegions, function (i, val) {
-            var selected = (JSON.stringify(currentRegion) === JSON.stringify(val['data'].config.regions)) ? ' selected': '';
-            $('#customRegions').append('<option value="' + val['form']['value'] + '" ' + selected + '>' + val['form']['label'] + '</option>');
-            selected = '';
-        });
+    function setRegionValue () {
+        var selectedRegion = $('option:selected', this).val();
+        $('#itemsConfig').val(JSON.stringify(regions[selectedRegion]['data']));
     }
 
     $(function() {
-        setupRegionSelects(currentRegion);
+        loadRegions(currentRegion);
         $('#regionSelector').on('change', setRegionValue);
     });
 </script>
