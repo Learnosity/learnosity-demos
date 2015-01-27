@@ -254,7 +254,7 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h1>Reports API</h1>
+        <h1>Reports API – Report Types</h1>
         <p>A cross domain embeddable service that allows content providers to easily render rich reports.<p>
     </div>
 </div>
