@@ -34,6 +34,22 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <h2 class="panel-title">No UI (Raw data only)</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Gain access to the raw data from the Learnosity platform by turning
+                    off the report rendering (ui).</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./no-ui.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <h2 class="panel-title">Live Progress Tracking</h2>
                 </div>
                 <div class="panel-body">
