@@ -329,6 +329,13 @@
                                         <input type="radio" name="administration[options][show_extend]" value="false"<?php if (isset($admin['options']['show_extend']) && $admin['options']['show_extend'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="show_extend" class="col-sm-6 control-label">Enable opening from icon</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_configuration]" value="true"<?php if (isset($nav['show_configuration']) && $nav['show_configuration'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[show_configuration]" value="false"<?php if (isset($nav['show_configuration']) && $nav['show_configuration'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-lg-6"></div>
                         </div>
