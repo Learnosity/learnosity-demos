@@ -21,41 +21,39 @@ $request = array(
     'user_id'        => $studentid,
     'assess_inline'  => true,
     'adaptive'       => array(
-        'type' => 'branching',
+        'type'                      => 'branching',
+        'item_difficulty_tolerance' => 1,
+        'min_item_difficulty'       => -4,
+        'max_item_difficulty'       => 2,
+        'initial_ability'           => 0,
+        'eap'                       => array(
+            'mean' => -0.25,
+            'standard_deviation' => 0.95,
+            'theta_min' => -3,
+            'theta_max' => 2.25,
+            'num_points' => 40
+        ),
         'sequence' => array(
             array(
-                'activity_id' => 'sequence-1A'
-            ),
-            array(
-                'decision' => array(
-                    array(
-                        'activity_id' => 'decision-1A',
-                        'score' => 3
-                    ),
-                    array(
-                        'activity_id' => 'decision-1B',
-                        'score' => 4
-                    ),
-                    array(
-                        'activity_id' => 'decision-1B',
-                        'score' => 7
-                    ),
-                    array(
-                        'activity_id' => 'decision-1C',
-                        'score' => 8,
-                        'sequence' => array(
-                            array(
-                                'activity_id' => 'sequence-2A'
-                            ),
-                            array(
-                                'activity_id' => 'sequence-2B'
-                            )
-                        )
+                'required_tags' => array(
+                    'Testlet' => array(
+                        'sequence-1A'
                     )
                 )
             ),
             array(
-                'activity_id' => 'sequence-1B'
+                'required_tags' => array(
+                    'Testlet' => array(
+                        'sequence-1B'
+                    )
+                )
+            ),
+            array(
+                'required_tags' => array(
+                    'Testlet' => array(
+                        'sequence-2A'
+                    )
+                )
             )
         )
     ),
@@ -125,7 +123,7 @@ $signedRequest = $Init->generate();
     <!-- Container for the items api to load into -->
     <div id="learnosity_assess"></div>
 </div>
-<script src="//items.learnosity.com?v1.15"></script>
+<script src="//items.learnosity.com"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>,
         itemsApp = LearnosityItems.init(activity);
