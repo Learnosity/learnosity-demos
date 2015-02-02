@@ -131,7 +131,7 @@ $signedRequest = $Init->generate();
     </div>
     <hr />
 
-    <p>3. Custom toolbar buttons</p>
+    <p>4. Custom toolbar buttons</p>
     <div class="question">
         <div class="formula-latex"><h4>LaTeX output</h4><code>&nbsp;</code></div>
         <span class="learnosity-response question-demoformula4_<?php echo $uniqueResponseIdSuffix ?>"></span>
