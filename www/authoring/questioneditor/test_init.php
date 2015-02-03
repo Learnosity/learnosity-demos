@@ -76,10 +76,7 @@ $request = '{
   },
   "configuration": {
     "questionsApiVersion": "v2"
-  },
-  "hide_attribute_group_formatting": true,
-  "hide_attribute_group_metadata": true,
-  "hide_attribute_group_advanced": true
+  }
 }';
 
 include_once 'utils/settings-override.php';
