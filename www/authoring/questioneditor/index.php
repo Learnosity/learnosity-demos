@@ -87,6 +87,18 @@ include_once 'includes/header.php';
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <h2 class="panel-title">Teacher Authoring</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Create super stripped down question templates for your teacher authors. </p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./editteacherquestion.php">Demo (Match List)</a>
+                        <a class="btn btn-primary btn-md" href="./editteacherquestion2.php">Demo (Plot Points)</a>
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <h2 class="panel-title">Test Custom Initialisation JSON</h2>
                 </div>
                 <div class="panel-body">
