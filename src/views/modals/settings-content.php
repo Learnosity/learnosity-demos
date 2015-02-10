@@ -198,6 +198,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="countdown_time" class="col-sm-6 control-label">Idle/Remote Control Timeout Countdown (sec)</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" min="0" step="1" class="form-control" name="configuration[idle_timeout][countdown_time]" value="<?php if (isset($con['configuration']['idle_timeout']['countdown_time'])) { echo $con['configuration']['idle_timeout']['countdown_time']; } else { echo '0'; } ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="auto_save" class="col-sm-6 control-label">Auto Save</label>
                                     <div class="col-sm-6">
                                          <input type="radio" name="navigation[auto_save][use_auto_save]" value="true"<?php if (isset($nav['auto_save']) && $nav['auto_save'] !== false) { echo ' checked'; }; ?>> Enable &nbsp;
@@ -282,12 +288,6 @@
                                     <label for="transition-speed" class="col-sm-6 control-label">Transition Speed (ms)</label>
                                     <div class="col-sm-3">
                                         <input type="number" min="100" max="1000" step="100" class="form-control" name="navigation[transition_speed]" value="<?php if (isset($nav['transition_speed'])) { echo $nav['transition_speed']; }; ?>">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="countdown_time" class="col-sm-6 control-label">Remote Control Countdown Time (sec)</label>
-                                    <div class="col-sm-3">
-                                        <input type="number" min="0" step="1" class="form-control" name="configuration[idle_timeout][countdown_time]" value="<?php if (isset($con['configuration']['idle_timeout']['countdown_time'])) { echo $con['configuration']['idle_timeout']['countdown_time']; } else { echo '0'; } ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
