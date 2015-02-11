@@ -15,9 +15,9 @@ $request = array(
         array(
             'id'          => 'report-1',
             'type'        => 'sessions-summary',
-            'user_id'     => 'brianmoser',
+            'user_id'     => 'mce_student',
             'session_ids' => array(
-                'AC023456-2C73-44DC-82DA28894FCBC3BF'
+                'd7ad7585-a0c1-4c01-9762-44a85f55835c'
             )
         ),
         array(
@@ -29,16 +29,16 @@ $request = array(
         array(
             'id'        => 'report-3',
             'type'      => 'progress-by-tag',
-            'user_id'   => 'brianmoser',
-            'hierarchy' => 'author'
+            'user_id'   => 'mce_student',
+            'hierarchy' => 'CCSS'
         ),
         array(
             'id'          => 'report-4',
             'type'        => 'sessions-summary-by-tag',
-            'user_id'     => 'brianmoser',
-            'hierarchy'   => 'author',
+            'user_id'     => 'mce_student',
+            'hierarchy'   => 'CCSS',
             'session_ids' => array(
-                'B146BA2C-C2D0-4368-B90FFBA2B245F2BA'
+                'd7ad7585-a0c1-4c01-9762-44a85f55835c'
             )
         ),
         array(
@@ -48,22 +48,26 @@ $request = array(
             'ui'           => 'numeric',
             'users'        => array(
                 array(
-                    'id' => 'brianmoser',
-                    'name' => 'Brian Moser'
+                    'id' => 'mce_student',
+                    'name' => 'Jesse Pinkman'
                 ),
                 array(
-                    'id' => '12345678',
-                    'name' => 'John Carter'
+                    'id' => 'mce_student_1',
+                    'name' => 'Walter White'
+                ),
+                array(
+                    'id' => 'mce_student_2',
+                    'name' => 'Skylar White'
                 )
             ),
             'activities' => array(
                 array(
-                    'id' => 'edde56e8-ff65-e42e-b4fe49caad796bd',
-                    'name' => 'Mid Term'
+                    'id' => 'Summer_Test_1',
+                    'name' => 'Summer Test'
                 ),
                 array(
-                    'id' => 'emberDemo2013',
-                    'name' => 'Final'
+                    'id' => 'Weekly_Math_Quiz',
+                    'name' => 'Weekly Math Quiz'
                 )
             )
         ),
@@ -71,15 +75,15 @@ $request = array(
             'id'           => 'report-6',
             'type'         => 'lastscore-by-activity',
             'scoring_type' => 'partial',
-            'user_id'      => 'brianmoser',
+            'user_id'      => 'mce_student',
             'activities'   => array(
                 array(
-                    'id' => 'edde56e8-ff65-e42e-b4fe49caad796bd',
-                    'name' => 'Mid Term'
+                    'id' => 'Summer_Test_1',
+                    'name' => 'Summer Test'
                 ),
                 array(
-                    'id' => 'emberDemo2013',
-                    'name' => 'Final'
+                    'id' => 'Weekly_Math_Quiz',
+                    'name' => 'Weekly Math Quiz'
                 )
             )
         ),
@@ -89,37 +93,55 @@ $request = array(
             'scoring_type' => 'partial',
             'users'        => array(
                 array(
-                    'id' => 'brianmoser',
-                    'name' => 'Brian Moser'
+                    'id' => 'mce_student',
+                    'name' => 'Jesse Pinkman'
                 ),
                 array(
-                    'id' => '12345678',
-                    'name' => 'John Carter'
+                    'id' => 'mce_student_2',
+                    'name' => 'Skylar White'
+                ),
+                array(
+                    'id' => 'mce_student_1',
+                    'name' => 'Walter White'
                 )
             ),
-            'activity_id' => '52f5b81d-9270-914a-7094a1ada4d55e6e'
+            'activity_id' => 'Weekly_Math_Quiz'
         ),
         array(
             'id'    => 'report-8',
             'type'  => 'lastscore-by-tag-by-user',
             'users' => array(
                 array(
-                    'id' => 'brianmoser',
-                    'name' => 'Brian Moser'
+                    'id' => 'mce_student',
+                    'name' => 'Jesse Pinkman'
                 ),
-                array(
-                    'id' => '12345678',
-                    'name' => 'John Carter'
+                 array(
+                    'id' => 'mce_student_1',
+                    'name' => 'Walter White'
+                ),
+                   array(
+                    'id' => 'mce_student_2',
+                    'name' => 'Skylar White'
                 )
             ),
-            'activity_id' => '52f5b81d-9270-914a-7094a1ada4d55e6e',
-            'hierarchy' => 'questiontype'
+            'activity_id' => 'Weekly_Math_Quiz',
+            'hierarchy' => 'DOK'
         ),
         array(
             'id'          => 'report-9',
             'type'        => 'sessions-list',
             'limit'       => 15,
-            'ui'          => 'table'
+            'ui'          => 'table',
+            'activities'  => array(
+                array(
+                    "id" => "Summer_Test_1",
+                    "name" => "Summer Test 1, 2015"
+                    ),
+                array(
+                    "id" => "Weekly_Math_Quiz",
+                    "name" => "Weekly Math Quiz"
+                    )
+                )
         ),
         array(
             'id'          => 'report-10',
