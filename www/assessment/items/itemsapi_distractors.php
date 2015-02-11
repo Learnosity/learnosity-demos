@@ -57,79 +57,69 @@ $signedRequest = $Init->generate();
 
 <!-- Container for the items api to load into -->
 <script src="//items.learnosity.com/"></script>
-<script src="itemsapi_distractors/response-level-map.js"></script>
 <script>
     var eventOptions = {
-            readyListener: function () {
-                //Patching functionality as awaiting a coming release of itemsInstance.questions()
-                itemsInstance.questions = getQuestionResponseIds;
+        readyListener: function () {
 
-                $.each(itemsInstance.questions(), function(index, question) {
-                    question.on("validated", function() {
-                        var distractorQuestionLvl = this.getMetadata().distractor_rationale || "",
-                            distractorResponseLvl = this.getMetadata().distractor_rationale_response_level || "",
-                            validation = this.isValid("detailedWithPartials"),
-                            question = this.getQuestion(),
-                            outputHTML = "";
+            $.each(itemsInstance.questions(), function (index, question) {
+                question.on('validated', function () {
+                    var outputHTML = '';
+                    var map, qid;
+                    if (question.isValid()) {
+                        return;
+                    }
+                    if (question.getResponse().type === 'array') {
+                        map = question.mapValidationMetadata('distractor_rationale_response_level');
+                        $.each(map.incorrect, function (i, data) {
 
-                        if(!validation.correct) { // Could show 'correct' distractors
-                            if(distractorResponseLvl.length) {
-                                var response = this.getResponse(),
-                                    map = mapResponseLevel(question, response, validation),
-                                    list = "";
+                            // Each item in the `map.incorrect` array is an
+                            // object that contains a `value` property that
+                            // holds the response value; an `index` property
+                            // that refers to the shared index of both the
+                            // response area and the metadata; and a `metadata`
+                            // property containing the metadata value.
+                            var distractor = data.metadata;
 
-                                $.each(distractorResponseLvl, function (index, distractor) {
-                                    if (map[index] === false) { // Change here to render unattempted
-                                        list += "<li>" + distractor + "</li>";
-                                    }
-                                });
-
-                                outputHTML += list.length ? "<ul>" + list + "</ul>" : "";
-                            } else if(distractorQuestionLvl.length) { // could render both level
-                                outputHTML += distractorQuestionLvl;
-                            }
-                            if(outputHTML == "" || outputHTML == null) {
-                                outputHTML = "Have you answered all possible responses?";
-                            }
-                            renderDistractor(question.response_id, outputHTML);
-                            MathJax.Hub.Queue(['Typeset', MathJax.Hub, question.response_id]);
+                            outputHTML += '<li>' + distractor + '</li>';
+                        });
+                        if (outputHTML) {
+                            outputHTML = '<ul>' + outputHTML + '</ul>';
                         }
-                    });
-                });
-
-                $.each(itemsInstance.questions(), function(index, question) {
-                    question.on("changed", function() {
-                        removeDistractor(this.getQuestion().response_id);
-                    });
-                });
-            }
-        },
-        itemsInstance = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
-
-        // Host page rendering logic
-        function renderDistractor (id, content) {
-            if($("#" + id + "_distractor").length) {
-                $("#" + id + "_distractor").html(content).fadeIn();
-            } else {
-                var template = "<div id=\"" + id + "_distractor\" class=\"distractor-rationale alert alert-danger\">" + content + "</div>";
-                $("#" + id).append(template);
-            }
-        }
-
-        function removeDistractor (id) {
-            $("#" + id + '_distractor').fadeOut();
-        }
-
-        // Patch effort, itemsInstance.questions() will be released replacing this.
-        function getQuestionResponseIds () {
-            var questions = [];
-            itemsInstance.getQuestions(function (questionsJSON) {
-                $.each(questionsJSON, function (index, value) {
-                    questions.push(itemsInstance.question(index));
+                    } else {
+                        outputHTML = question.getMetadata().distractor_rationale;
+                    }
+                    if (!outputHTML) {
+                        outputHTML = 'Have you answered all possible responses?';
+                    }
+                    qid = question.getQuestion().response_id;
+                    renderDistractor(qid, outputHTML);
+                    MathJax.Hub.Queue(['Typeset', MathJax.Hub, qid]);
                 });
             });
-            return questions;
+
+            $.each(itemsInstance.questions(), function (index, question) {
+                question.on('changed', function () {
+                    removeDistractor(this.getQuestion().response_id);
+                });
+            });
+
         }
+    };
+    var itemsInstance = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+
+    // Host page rendering logic
+    function renderDistractor (id, content) {
+        var template;
+        if ($("#" + id + "_distractor").length) {
+            $("#" + id + "_distractor").html(content).fadeIn();
+        } else {
+            template = "<div id=\"" + id + "_distractor\" class=\"distractor-rationale alert alert-danger\">" + content + "</div>";
+            $("#" + id).append(template);
+        }
+    }
+    function removeDistractor (id) {
+        $("#" + id + '_distractor').fadeOut();
+    }
 
 </script>
 
