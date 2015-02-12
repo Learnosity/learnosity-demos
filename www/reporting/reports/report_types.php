@@ -139,7 +139,7 @@ $request = array(
                 )
             ),
             'activity_id' => 'Weekly_Math_Quiz',
-            'hierarchy' => 'DOK'
+            'hierarchy' => 'DepthofKnowledge'
         ),
         array(
             'id'          => 'report-9',
