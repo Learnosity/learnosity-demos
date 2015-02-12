@@ -29,17 +29,17 @@ $request = array(
         array(
             'id'        => 'report-3',
             'type'      => 'progress-by-tag',
-            'user_id'   => 'mce_student',
+            'user_id'   => 'mce_student_1',
             'hierarchy' => 'CCSS'
         ),
         array(
             'id'          => 'report-4',
             'type'        => 'sessions-summary-by-tag',
-            'user_id'     => 'mce_student',
+            'user_id'     => 'mce_student_3',
             'hierarchy'   => 'CCSS',
             'session_ids' => array(
-                'd7ad7585-a0c1-4c01-9762-44a85f55835c'
-            )
+                'd5cde952-1111-49ad-bfc7-c1ba102f3b22'
+            ),
         ),
         array(
             'id'           => 'report-5',
@@ -55,11 +55,17 @@ $request = array(
                     'id' => 'mce_student_1',
                     'name' => 'Walter White'
                 ),
+               
                 array(
                     'id' => 'mce_student_2',
                     'name' => 'Skylar White'
-                )
-            ),
+                ),
+                 array(
+                    'id' => 'mce_student_3',
+                    'name' => 'Saul Goodman'
+                ),
+                 ),
+
             'activities' => array(
                 array(
                     'id' => 'Summer_Test_1',
@@ -103,6 +109,10 @@ $request = array(
                 array(
                     'id' => 'mce_student_1',
                     'name' => 'Walter White'
+                ),
+                array(
+                    'id' => 'mce_student_3',
+                    'name' => 'Saul Goodman'
                 )
             ),
             'activity_id' => 'Weekly_Math_Quiz'
@@ -122,6 +132,10 @@ $request = array(
                    array(
                     'id' => 'mce_student_2',
                     'name' => 'Skylar White'
+                ),
+                    array(
+                    'id' => 'mce_student_3',
+                    'name' => 'Saul Goodman'
                 )
             ),
             'activity_id' => 'Weekly_Math_Quiz',
