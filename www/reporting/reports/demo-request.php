@@ -54,8 +54,7 @@ if (count($reportVariables)) {
                 'id'          => 'demo-report',
                 'type'        => 'sessions-summary-by-tag',
                 'user_id'     => $reportVariables['user_id'],
-                'ui'          => 'table',
-                'hierarchy'   => 'author',
+                'hierarchy'   => 'CCSS',
                 'session_ids' => array(
                     $reportVariables['session_id']
                 )
@@ -109,7 +108,7 @@ if (count($reportVariables)) {
                     )
                 ),
                 'activity_id' => $reportVariables['activity_id'],
-                'hierarchy' => 'questiontype'
+                'hierarchy' => 'DepthofKnowledge'
             );
             break;
         case 'lastscore-by-item-by-user':
@@ -161,7 +160,10 @@ if (count($reportVariables)) {
         config.configuration = {
             questionsApiVersion: "v2"
         };
+                console.log(config);
+
         window.reportsApp = LearnosityReports.init(config);
+
     </script>
     <?php
 }
