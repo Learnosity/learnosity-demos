@@ -67,5 +67,5 @@ $signedRequest = $Init->generate();
 <div id="learnosity_assess"></div>
 <script src="//items.learnosity.com"></script>
 <script>
-    var app = LearnosityItems.init(<?php echo $signedRequest; ?>);
+    var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);
 </script>
