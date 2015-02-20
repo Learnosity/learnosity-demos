@@ -22,7 +22,6 @@ $request = array(
             'question_editor_options' => array(
                 'ui' => array(
                     'public_methods'     => array(),
-                    'layout'             => '2-column',
                     'question_tiles'     => false,
                     'documentation_link' => false,
                     'change_button'      => true,
@@ -56,18 +55,12 @@ $signedRequest = $Init->generate();
     </div>
 </div>
 
-<style>
-    .lrn-nav-tabs {
-        width: auto;
-    }
-</style>
-
 <!-- Container for the items api to load into -->
 <div class="section">
     <div id="learnosity_author"></div>
 </div>
 
-<script src="//authorapi.learnosity.com?v0.6"></script>
+<script src="//authorapi.learnosity.com?v0.7"></script>
 <script>
     var initOptions = <?php echo $signedRequest; ?>;
 
