@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$render = ($_GET['render'] === 'true') ? true : false;
+$render = ($_GET['render'] === 'false') ? false : true;
 
 $security = array(
     'consumer_key' => $consumer_key,
@@ -52,7 +52,8 @@ $signedRequest = $Init->generate();
         <p>Turn off the default rendering and access the raw data to present reports any way you choose. Preview the
         <a href="#" data-toggle="modal" data-target="#initialisation-preview">initialisation object</a> to see how to turn off rendering.<p>
         <p>View the page source to see how to use event listeners to access the raw data.</p>
-        <p><a href="./no-ui.php?render=<?php echo var_export(!$render, true) ?>">Toggle rendering</a> on or off to compare rendered reports with the raw data.</p>
+            <span>Render visual reports</span>
+            <div style="display=inline-block;" class="lrn-switch"><input id="render_toggle" type="checkbox" class="input" <?php if($render) echo "checked"; ?>><span class="lrn-switch-trigger"></span></div>
     </div>
 </div>
 
@@ -70,6 +71,12 @@ $signedRequest = $Init->generate();
 </div>
 <script src="//reports.learnosity.com"></script>
 <script>
+    
+    $('.lrn-switch').click(function() { 
+        window.location.href = "./no-ui.php?render=" + !$('#render_toggle').prop('checked');
+     });
+    
+
     var eventOptions = {
             readyListener: init
         },
