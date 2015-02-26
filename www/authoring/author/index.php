@@ -25,8 +25,17 @@ include_once 'includes/header.php';
                 </div>
                 <div class="panel-body">
                     <p>An embedded API enabling content authors to create, edit and persist items, questions and features to our itembank.<p>
+                    <h4>Single Question</h4>
+                    <hr>
+                    <p>A simple single column template that allows authors to add a single question.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./latest.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./single-question.php">Demo</a>
+                    </p>
+                    <h4>2 Column (Feature & Question)</h4>
+                    <hr>
+                    <p>A 2-column template (50%/50%) that allows a single feature in the left column, and a question in the right.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./feature-question.php">Demo</a>
                     </p>
                 </div>
             </div>
