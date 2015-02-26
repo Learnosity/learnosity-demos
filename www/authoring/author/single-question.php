@@ -16,9 +16,10 @@ $security = array(
 $request = array(
     'components' => array(
         array(
-            'id'        => 'learnosity_author',
-            'type'      => 'itemeditor',
-            'reference' => $item_ref,
+            'id'                      => 'learnosity_author',
+            'type'                    => 'itemeditor',
+            'reference'               => $item_ref,
+            'template'                => 'single-question',
             'question_editor_options' => array(
                 'ui' => array(
                     'public_methods'     => array(),
@@ -57,10 +58,12 @@ $signedRequest = $Init->generate();
 
 <!-- Container for the items api to load into -->
 <div class="section">
+    <h3>Single Question</h3>
+    <hr>
     <div id="learnosity_author"></div>
 </div>
 
-<script src="//authorapi.learnosity.com?v0.7"></script>
+<script src="//authorapi.learnosity.com?v0.7.2"></script>
 <script>
     var initOptions = <?php echo $signedRequest; ?>;
 
