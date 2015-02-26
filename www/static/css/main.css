@@ -373,6 +373,64 @@ body,
     padding: 20px;
 }
 
+.lrn-switch input {
+    position: absolute;
+    opacity: 0;
+}
+
+:root .lrn-switch-trigger {
+display: inline-block;
+width: 4.28571em;
+height: 1.85714em;
+padding: 0.14286em;
+overflow: hidden;
+border-radius: 2px;
+border: 1px solid transparent;
+font-size: 1em;
+color: #fff;
+background: #e58a84;
+transition-duration: .2s;
+transition-property: padding,background-position,text-indent;
+cursor: pointer;
+}
+
+:root .lrn-switch-trigger:before {
+content: 'Yes';
+border-radius: 2px;
+background: #e8e8e8;
+text-indent: -2em;
+}
+
+:root .lrn-switch-trigger:before, :root .lrn-switch-trigger:after {
+display: inline-block;
+width: 1.57143em;
+height: 1.42857em;
+line-height: 1.5;
+}
+
+:root .lrn-switch-trigger:after {
+content: 'No';
+text-indent: 0.57143em;
+}
+
+:root .lrn-switch-trigger:before, :root .lrn-switch-trigger:after {
+display: inline-block;
+width: 1.57143em;
+height: 1.42857em;
+line-height: 1.5;
+}
+
+.lrn *, .lrn *:before, .lrn *:after {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+:root .lrn-switch input:checked + .lrn-switch-trigger {
+background-position: 0 0;
+padding-left: 2.42857em;
+background: #6fbc92;
+}
 /********************************************************************
 *
 * Home page

@@ -57,6 +57,32 @@ $request = '{
             "ui_style": {
                 "type": "floating-keyboard"
             }
+        },
+        {
+            "type": "formulaV2",
+            "response_id": "demoformula5_'.$uniqueResponseIdSuffix.'",
+            "description": "Enter a math formula.",
+            "symbols": ["handwriting", "basic", "qwerty"],
+            "ui_style": {
+                "type": "block-keyboard"
+            }
+        },
+        {
+            "type": "formulaV2",
+            "response_id": "demoformula6_'.$uniqueResponseIdSuffix.'",
+            "description": "Enter a math formula.",
+            "ui_style": {
+                "type": "fixed-handwriting-only"
+            }
+        },
+        {
+            "type": "formulaV2",
+            "response_id": "demoformula7_'.$uniqueResponseIdSuffix.'",
+            "description": "Enter a math formula.",
+            "symbols": ["handwriting", "basic", "qwerty"],
+            "ui_style": {
+                "type": "block-keyboard"
+            }
         }
     ]
 }';
@@ -87,17 +113,30 @@ $signedRequest = $Init->generate();
     var app = LearnosityApp.init(activity, {
         readyListener: function () {
             // For each formula question on this page...
-            $('.lrn_formulaV2').each(function () {
-                // Get the latex area code element beside the question, and the question object.
-                var codeEl = $(this).closest('.question').find('.formula-latex code');
-                var responseId = $(this).prop('id');
-                console.log(responseId);
+            $('.question').each(function () {
+                var responseId = $('.lrn_qr', this).prop('id');
                 var question = app.question(responseId);
-                console.log(question);
+                var questionElement = this;
+
+                // If there is a code element to display the latex math in.
+                var code = $('.formula-latex code', this);
 
                 // Register a callback to update the latex when the user input changes.
                 question.on('change', function () {
-                    codeEl.text(question.getResponse().value);
+                    code.text(question.getResponse().value);
+                });
+
+                // 'Show handwriting data' button.
+                $('button.handwriting', this).on('click', function () {
+                    // retrieve and stringify handwriting json.
+                    var json = JSON.stringify(question.getHandwriting(), null, '    ');
+                    var pre = $('pre.jsonexample', questionElement);
+
+                    CodeMirror.runMode(json, {name: "javascript", json: true}, pre[0]);
+                    pre.finish().slideToggle(50);
+
+                    // Toggle button labels.
+                    $('span', this).toggle();
                 });
             });
         }
@@ -137,7 +176,33 @@ $signedRequest = $Init->generate();
         <span class="learnosity-response question-demoformula4_<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
     <hr />
+
+    <p>5. Basic handwriting input: try writing a math expression on the grid.</p>
+    <div class="question">
+        <span class="learnosity-response question-demoformula5_<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+    <hr />
+
+    <p>6. Formula question with <em>fixed-handwriting-only</em> style.</p>
+    <div class="question">
+        <span class="learnosity-response question-demoformula6_<?php echo $uniqueResponseIdSuffix ?>"></span>
+    </div>
+    <hr />
+
+    <p>7. Access handwriting data using the <em>getHandwriting</em> public method.</p>
+    <div class="question">
+        <span class="learnosity-response question-demoformula7_<?php echo $uniqueResponseIdSuffix ?>"></span>
+        <button class="handwriting btn btn-md btn-primary">
+            <span>Show Handwriting Data</span>
+            <span style="display:none;">Hide Handwriting Data</span>
+        </button>
+        <br>
+        <pre class="cm-s-default jsonexample" style="max-width:800px;display:none;"></pre>
+    </div>
+    <hr />
 </div>
+
+<script src="<?php echo $env['www'] ?>static/js/codemirror.min.js"></script>
 
 <?php
     include_once 'views/modals/initialisation-preview.php';
