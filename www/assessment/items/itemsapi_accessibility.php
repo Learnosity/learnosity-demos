@@ -23,7 +23,11 @@ $request = array(
         'title'    => 'Accessibility Demo',
         'subtitle' => 'Walter White',
         'navigation' => array(
-            'show_accessibility' => true
+            'show_accessibility' => array(
+                'show_colourscheme' => true,
+                'show_fontsize' => true,
+                'show_zoom' => true
+            ),
         ),
         'administration' => array(
             'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
