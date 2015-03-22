@@ -1218,6 +1218,66 @@ $request = '{
                     ]
                 }
             }
+        },
+        {
+            "response_id": "demo41-'.$uniqueResponseIdSuffix.'",
+            "instant_feedback": true,
+            "type": "imageclozeformula",
+            "image": {
+                "alt": "Scalene triangle with sixty-four degree angle",
+                "src": "//dw6y82u65ww8h.cloudfront.net/organisations/1/triangle.png"
+            },
+            "is_math": true,
+            "response_container": {
+                "pointer": "",
+                "template": ""
+            },
+            "response_containers": [{
+                "template": "",
+                "pointer": "left",
+                "width": "100px",
+                "height": "20px"
+            }, {
+                "template": "",
+                "pointer": "right",
+                "width": "100px",
+                "height": "20px"
+            }],
+            "response_positions": [{
+                "x": 31.25,
+                "y": 0
+            }, {
+                "x": 72.75,
+                "y": 16.8
+            }],
+            "stimulus": "<p>Express the angles a &amp; b in terms of simple arithmetic involving all the angles of the given triangle.</p>\n\n<p>E.g.&nbsp;\\\\(180-2\\\\left(64\\\\right)\\\\)</p>\n",
+            "ui_style": {
+                "type": "block-on-focus-keyboard"
+            },
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 2,
+                    "value": [
+                        [{
+                            "method": "equivValue",
+                            "value": "64",
+                            "options": {
+                                "decimalPlaces": 10,
+                                "inverseResult": false
+                            }
+                        }],
+                        [{
+                            "method": "equivValue",
+                            "value": "52",
+                            "options": {
+                                "decimalPlaces": 10,
+                                "inverseResult": false
+                            }
+                        }]
+                    ]
+                }
+            }
         }
     ]
 }';
@@ -1370,6 +1430,14 @@ $signedRequest = $Init->generate();
         <div class="col-md-8">
             <h3 id="q40">Cloze (fill in the blanks) with Math</h3>
             <span class="learnosity-response question-demo40-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q41">Cloze (fill in the blanks) with Math over an image</h3>
+            <span class="learnosity-response question-demo41-<?php echo $uniqueResponseIdSuffix ?>"></span>
         </div>
     </div>
     <hr>
