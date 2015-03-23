@@ -40,7 +40,11 @@ $request = array(
             'show_outro'               => true,
             'show_next'                => true,
             'show_prev'                => true,
-            'show_accessibility'       => true,
+            'show_accessibility' => array(
+                'show_colourscheme' => true,
+                'show_fontsize' => true,
+                'show_zoom' => true
+            ),
             'show_fullscreencontrol'   => true,
             'show_progress'            => true,
             'show_submit'              => true,

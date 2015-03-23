@@ -157,7 +157,34 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><h3>Accessibility Settings</h3></div>
+                        <div class="panel-body">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="show_colourscheme" class="col-sm-6 control-label">Show Colour Scheme</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_accessibility][show_colourscheme]" value="true"<?php if (isset($nav['show_accessibility']) && isset($nav['show_accessibility']['show_colourscheme']) && $nav['show_accessibility']['show_colourscheme'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[show_accessibility][show_colourscheme]" value="false"<?php if (isset($nav['show_accessibility']) && isset($nav['show_accessibility']['show_colourscheme']) && $nav['show_accessibility']['show_colourscheme'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_fontsize" class="col-sm-6 control-label">Show Font Size</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_accessibility][show_fontsize]" value="true"<?php if (isset($nav['show_accessibility']) && isset($nav['show_accessibility']['show_fontsize']) && $nav['show_accessibility']['show_fontsize'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[show_accessibility][show_fontsize]" value="false"<?php if (isset($nav['show_accessibility']) && isset($nav['show_accessibility']['show_fontsize']) && $nav['show_accessibility']['show_fontsize'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_zoom" class="col-sm-6 control-label">Show Zoom</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_accessibility][show_zoom]" value="true"<?php if (isset($nav['show_accessibility']) && isset($nav['show_accessibility']['show_zoom']) && $nav['show_accessibility']['show_zoom'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[show_accessibility][show_zoom]" value="false"<?php if (isset($nav['show_accessibility']) && isset($nav['show_accessibility']['show_zoom']) && $nav['show_accessibility']['show_zoom'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="panel panel-info">
                         <div class="panel-heading"><h3>UI / Time Settings</h3></div>
                         <div class="panel-body">
