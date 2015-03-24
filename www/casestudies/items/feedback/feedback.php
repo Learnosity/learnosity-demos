@@ -89,17 +89,18 @@ var init = function() {
         itemsApp.getQuestions(function(questions) {
 
             $.each(questions, function(index, element) {
+                if(element.metadata.rubric_reference !== undefined) {
+                    var itemId = element.response_id + "_" + element.metadata.rubric_reference;
 
-                var itemId = element.response_id + "_" + element.metadata.rubric_reference;
+                    $("<span class=\"learnosity-item\" data-reference=\""+ itemId +"\">")
+                    .appendTo($('#' + element.response_id).closest('.row'))
+                    .wrap("<div class=\"col-md-5\"></div>");
 
-                $("<span class=\"learnosity-item\" data-reference=\""+ itemId +"\">")
-                .appendTo($('#' + element.response_id).closest('.row'))
-                .wrap("<div class=\"col-md-5\"></div>");
-
-                itemReferences.push({
-                    "id" : itemId,
-                    "reference" : element.metadata.rubric_reference
-                })
+                    itemReferences.push({
+                        "id" : itemId,
+                        "reference" : element.metadata.rubric_reference
+                    });
+                }
             });
         });
 
