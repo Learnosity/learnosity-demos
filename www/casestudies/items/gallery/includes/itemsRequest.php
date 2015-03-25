@@ -17,7 +17,7 @@ $security = array(
  */
 $dataApi = new DataApi();
 $response = $dataApi->request(
-    'https://data.learnosity.com/latest/itembank/activities',
+    $url_data . '/latest/itembank/activities',
     $security,
     $consumer_secret,
     ['references' => [$activityRef]]

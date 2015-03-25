@@ -26,6 +26,25 @@ $studentid = 'demo_student';
 $teacherid = 'demo_teacher';
 $schoolid  = 'demo_school';
 
+/*
+|--------------------------------------------------------------------------
+| Learnosity URLs
+|--------------------------------------------------------------------------
+|
+| Setup any URLs for external API's to allow them to be conveniently
+| changed depending on the regions.   Use protocol relative urls to ensure
+| it works from http and https sites.
+|
+*/
+
+$url_assess         = "//assess.learnosity.com";
+$url_authorapi      = "//authorapi.learnosity.com?v0.7.2";
+$url_data           = "https://data.learnosity.com";
+$url_events         = "//events.learnosity.com";
+$url_items          = "//items.learnosity.com";
+$url_questioneditor = "//questioneditor.learnosity.com?v2";
+$url_questions      = "//questions.learnosity.com";
+$url_reports        = "//reports.learnosity.com";
 
 /*
 |--------------------------------------------------------------------------

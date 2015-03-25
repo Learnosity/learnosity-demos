@@ -71,8 +71,8 @@ include './includes/itemsRequest.php';
     </section>
 </div>
 
-<script src="//items.learnosity.com"></script>
-<script src="//events.learnosity.com"></script>
+<script src="<?php echo $url_items; ?>"></script>
+<script src="<?php echo $url_events; ?>"></script>
 <script>
     var initOptions = <?php echo $itemsRequest; ?>,
         eventOptions = {

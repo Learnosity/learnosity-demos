@@ -121,7 +121,7 @@ $signedRequest = $Init->generate();
     <div id="learnosity_assess"></div>
 </div>
 
-<script src="//items.learnosity.com"></script>
+<script src="<?php echo $url_items; ?>"></script>
 <script>
     var eventOptions = {
             readyListener: function () {

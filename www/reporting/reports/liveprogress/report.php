@@ -49,7 +49,7 @@ $signedRequest = $Init->generate();
 
 <div id="report-1"></div>
 
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script>
     var initOptions = <?php echo $signedRequest; ?>;
     LearnosityReports.init(initOptions);

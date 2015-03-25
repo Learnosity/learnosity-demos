@@ -4,7 +4,7 @@ include_once '../../config.php';
 include_once 'includes/header.php';
 
 // Full base URL of the Data API
-$URL = 'https://data.learnosity.com';
+$URL = $url_data;
 // Which version of the Data API to use
 $version = 'v0.47';
 
