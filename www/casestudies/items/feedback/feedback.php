@@ -73,7 +73,7 @@ include_once 'utils/settings-override.php';
 </div>
 </div>
 
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script>
 
 var init = function() {
@@ -81,7 +81,7 @@ var init = function() {
     var itemReferences = [];
     var report1 = reportsApp.getReport('report-1');
 
-    report1.on('ready:itemsApi', function(itemsApp) { 
+    report1.on('ready:itemsApi', function(itemsApp) {
 
         //build columns in report.
         $('.lrn_widget').wrap("<div class=\"row\"></div>").wrap("<div class=\"col-md-7\"></div>");
