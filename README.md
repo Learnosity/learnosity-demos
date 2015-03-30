@@ -30,7 +30,7 @@ Visit [localhost:5000](http://localhost:5000) in a browser.
 
 ## Getting Started - Using Vagrant
 
-Vagrant is a wrapper for controlling Virtual Machines in a controlled and isolated manner. Vagrant supports all the major platforms and is simple to use and very handy for other development tasks (if you're not already using it!). Vagrant by default supports VirtualBox as it's VM host, but it does support other like VMWare, Parallels, and even AWS EC2.
+Vagrant is a wrapper for controlling Virtual Machines in a controlled and isolated manner. Vagrant supports all the major platforms and is simple to use and very handy for other development tasks (if you're not already using it!). Vagrant by default supports VirtualBox as it's VM host, but it does support others like VMWare, Parallels, and even AWS EC2.
 
 The included `Vagrantfile` will download a VM image and install all the needed PHP dependancies. Once the VM is running the demos can be used (and modified) without you needing to install anything else.
 
