@@ -17,8 +17,9 @@
             'misc/security_check.php' => 'Security Check'
         ),
         'Case Studies' => array(
-            // 'casestudies/items/gallery' => 'Gallery Style UI',
-            'casestudies/items/xapi'    => 'xAPI Events'
+            'casestudies/items/feedback' => 'Teacher Feedback',
+            'casestudies/items/gallery'  => 'Gallery Style UI',
+            'casestudies/items/xapi'     => 'xAPI Events'
         )
     );
 ?>
