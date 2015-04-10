@@ -102,10 +102,10 @@
                               "type": "flagitem_button"
                            },
                            {
-                              "type": "reviewscreen_button"
+                              "type": "masking_button"
                            },
                            {
-                              "type": "masking_button"
+                              "type": "reviewscreen_button"
                            },
                            {
                               "type": "separator_element"
