@@ -2,7 +2,7 @@
 header("Content-type: application/json");
 
 //external config for key/secret etc.
-include_once '../../../config.php';
+include_once '../../../../config.php';
 
 //use SDK
 use LearnositySdk\Request\Init;
