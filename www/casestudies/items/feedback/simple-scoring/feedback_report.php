@@ -6,8 +6,9 @@ include_once 'includes/header.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
+//session ids for student and teacher sessions
 $session_id = $_GET['session_id'];
-$activity_id = $_GET['activity_id'];
+$feedback_session_id = $_GET['feedback_session_id'];
 
 $security = [
     'user_id'      => $studentid,
@@ -43,11 +44,9 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h1>Teacher Feedback – Step 2</h1>
-        <p>This template renders a student assessment in review, and loads interactive
-        widgets for the teacher to save feedback for the student to see.</p>
-        <p>The feedback widgets can leverage any Learnosity question type, and are authored
-        just like student questions (inside the author site or using the <a href="/authoring/questioneditor">Question Editor API</a>).</p>
+        <h1>Student Feedback Review – Step 3</h1>
+        <p>This template is for students to review any teacher/marker feedback.</p>
+        <div class="previewWrapper preview" style="display: none; height: 300px; overflow: scroll;"><pre><code id="xApiPreview"></code></pre></div>
     </div>
 </div>
 
@@ -63,8 +62,8 @@ $signedRequest = $Init->generate();
     </div>
     <span class="learnosity-report" id="report-1"></span>
     <div class="row">
-        <div class="col-md-10"></div>
-        <div class="col-md-2 pull-right">
+        <div class="col-md-7"></div>
+        <div class="col-md-5">
             <span class="learnosity-save-button"></span>
         </div>
     </div>
@@ -75,69 +74,59 @@ $signedRequest = $Init->generate();
 
 var init = function() {
 
-    var itemReferences = [];
-    var report1 = reportsApp.getReport('report-1');
+  var itemReferences = [];
+  var report1 = reportsApp.getReport('report-1');
 
-    report1.on('ready:itemsApi', function(itemsApp) {
+  report1.on('ready:itemsApi', function(itemsApp) {
 
         //build columns in report.
         $('.lrn_widget').wrap("<div class=\"row\"></div>").wrap("<div class=\"col-md-7\"></div>");
 
         itemsApp.getQuestions(function(questions) {
 
-            $.each(questions, function(index, element) {
-                if(element.metadata.rubric_reference !== undefined) {
-                    var itemId = element.response_id + "_" + element.metadata.rubric_reference;
+          $.each(questions, function(index, element) {
+            if(element.metadata.rubric_reference !== undefined) {
 
-                    $("<span class=\"learnosity-item\" data-reference=\""+ itemId +"\">")
-                    .appendTo($('#' + element.response_id).closest('.row'))
-                    .wrap("<div class=\"col-md-5\"></div>");
+              var itemId = element.response_id + "_" + element.metadata.rubric_reference;
 
-                    itemReferences.push({
-                        "id" : itemId,
-                        "reference" : element.metadata.rubric_reference
-                    });
-                }
-            });
+              $("<span class=\"learnosity-item\" data-reference=\""+ itemId +"\">")
+              .appendTo($('#' + element.response_id).closest('.row'))
+              .wrap("<div class=\"col-md-5\"></div>");
+
+              itemReferences.push({
+                "id" : itemId,
+                "reference" : element.metadata.rubric_reference
+              });
+            }
+          });
         });
 
         console.log(itemReferences);
 
         var itemsActivity = {
-            "domain": location.hostname,
-            "request": {
-                "user_id": "<?php echo $studentid; ?>",
-                "rendering_type": "inline",
-                "name": "Items API demo - feedback activity.",
-                "state": "initial",
-                "activity_id": "feedback_test_1",
-                "session_id": "<?php echo Uuid::generate(); ?>",
-                "course_id": "commoncore",
-                "items": itemReferences,
-                "type": "feedback",
-                "config": {
-                    "renderSaveButton" : true
-                }
-            }
+          "domain": location.hostname,
+          "request": {
+            "user_id": "<?php echo $studentid; ?>",
+            "rendering_type": "inline",
+            "name": "Items API demo - feedback activity.",
+            "state": "review",
+            "activity_id": "feedback_test_1",
+            "session_id": "<?php echo $feedback_session_id; ?>",
+            "course_id": "commoncore",
+            "items": itemReferences,
+            "type": "feedback"
+          }
         };
 
-        $.post('endpoint.php', itemsActivity, function(data, status) {
-            console.log('endpoint response', data);
-            itemsApp = LearnosityItems.init(data, {
-                readyListener: function() {
-                    $('.lrn_save_button').click(function() {
-                        window.setTimeout(function() {
-                            window.location = 'feedback_report.php?session_id=<?php echo $_GET['session_id']; ?>&feedback_session_id=' + itemsActivity.request.session_id;
-                        }, 1000);
-                    });
-                }
-            });
+        $.post("endpoint.php", itemsActivity, function(data, status) {
+          console.log("endpoint response", data);
+          itemsApp = LearnosityItems.init(data);
         });
-    });
+      });
 };
 
 var eventOptions = {
-    readyListener : init
+  readyListener : init
 };
 
 reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, eventOptions);
