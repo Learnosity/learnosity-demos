@@ -22,7 +22,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Teacher Feedback</h2>
+                    <h2 class="panel-title">Teacher Feedback – Rich Scoring</h2>
                 </div>
                 <div class="panel-body">
                     <p>Demonstrates reviewing a student assessment and providing
@@ -36,7 +36,20 @@ include_once 'includes/header.php';
             </div>
         </div>
         <div class="col-md-6">
-
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Teacher Feedback – Simple Scoring</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Demonstrates reviewing a student assessment and providing
+                    Learnosity tools to enable simple teacher scoring.<p>
+                    <p>In this example, scoring is applied to the student response via
+                    the Data API.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./simple-scoring/">Demo</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
