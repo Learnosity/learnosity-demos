@@ -43,11 +43,9 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h1>Teacher Feedback – Step 2</h1>
+        <h1>Teacher Scoring – Step 2</h1>
         <p>This template renders a student assessment in review, and loads interactive
-        widgets for the teacher to save feedback for the student to see.</p>
-        <p>The feedback widgets can leverage any Learnosity question type, and are authored
-        just like student questions (inside the author site or using the <a href="/authoring/questioneditor">Question Editor API</a>).</p>
+        widgets for the teacher to save scoring against the student responses.</p>
     </div>
 </div>
 
@@ -58,14 +56,16 @@ $signedRequest = $Init->generate();
             <h1>Student Report</h1>
         </div>
         <div class="col-md-5">
-            <h1>Teacher Feedback</h1>
+            <h1>Teacher Scoring</h1>
         </div>
     </div>
     <span class="learnosity-report" id="report-1"></span>
     <div class="row">
         <div class="col-md-10"></div>
         <div class="col-md-2 pull-right">
-            <span class="learnosity-save-button"></span>
+            <div class="lrn">
+                <button type="button" class="lrn_btn btn_save_simple_scores"><span>Save Scores</span></button>
+            </div>
         </div>
     </div>
 </div>
@@ -73,65 +73,55 @@ $signedRequest = $Init->generate();
 <script src="//reports.learnosity.com"></script>
 <script>
 
-var init = function() {
+var scoringObjects = [];
 
-    var itemReferences = [];
-    var report1 = reportsApp.getReport('report-1');
+var init = function () {
+
+    var itemReferences = [],
+        report1 = reportsApp.getReport('report-1');
 
     report1.on('ready:itemsApi', function(itemsApp) {
+
+        window.itemsApp = itemsApp;
 
         //build columns in report.
         $('.lrn_widget').wrap("<div class=\"row\"></div>").wrap("<div class=\"col-md-7\"></div>");
 
         itemsApp.getQuestions(function(questions) {
-
             $.each(questions, function(index, element) {
                 if(element.metadata.rubric_reference !== undefined) {
-                    var itemId = element.response_id + "_" + element.metadata.rubric_reference;
+                    var scoringItemId = element.metadata.rubric_reference;
 
-                    $("<span class=\"learnosity-item\" data-reference=\""+ itemId +"\">")
+                    $("<span class=\"learnosity-item\" data-reference=\""+ scoringItemId +"\">")
                     .appendTo($('#' + element.response_id).closest('.row'))
                     .wrap("<div class=\"col-md-5\"></div>");
 
-                    itemReferences.push({
-                        "id" : itemId,
-                        "reference" : element.metadata.rubric_reference
-                    });
+                    itemReferences.push(scoringItemId);
                 }
+                // window.setScoringObjects({
+                //     'studentItemReference': '',
+                //     'teacherItemReference': scoringItemId
+                // });
             });
         });
-
-        console.log(itemReferences);
 
         var itemsActivity = {
             "domain": location.hostname,
             "request": {
                 "user_id": "<?php echo $studentid; ?>",
                 "rendering_type": "inline",
-                "name": "Items API demo - feedback activity.",
+                "name": "Items API demo - teacher scoring activity.",
                 "state": "initial",
-                "activity_id": "feedback_test_1",
+                "activity_id": "scoring_test_1",
                 "session_id": "<?php echo Uuid::generate(); ?>",
                 "course_id": "commoncore",
                 "items": itemReferences,
-                "type": "feedback",
-                "config": {
-                    "renderSaveButton" : true
-                }
+                "type": "local_practice"
             }
         };
 
         $.post('endpoint.php', itemsActivity, function(data, status) {
-            console.log('endpoint response', data);
-            itemsApp = LearnosityItems.init(data, {
-                readyListener: function() {
-                    $('.lrn_save_button').click(function() {
-                        window.setTimeout(function() {
-                            window.location = 'feedback_report.php?session_id=<?php echo $_GET['session_id']; ?>&feedback_session_id=' + itemsActivity.request.session_id;
-                        }, 1000);
-                    });
-                }
-            });
+            window.itemsAppReview = LearnosityItems.init(data);
         });
     });
 };
@@ -140,7 +130,24 @@ var eventOptions = {
     readyListener : init
 };
 
-reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, eventOptions);
+var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, eventOptions);
+
+function saveScores () {
+    var studentQuestions = itemsApp.getQuestions(),
+        studentResponses = itemsApp.getResponses(),
+        teacherScores = itemsAppReview.getResponses();
+
+    window.alert('TODO - implement Data API save score to student record');
+
+    // console.log(studentQuestions);
+    // console.log(studentResponses);
+    // console.log(teacherScores);
+    // console.log(scoringObjects);
+}
+
+$(function() {
+    $('.btn_save_simple_scores').on('click', saveScores);
+});
 
 </script>
 
