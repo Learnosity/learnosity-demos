@@ -18,9 +18,9 @@ $security = [
 $request = array(
     'reports' => array(
         array(
-            'id' => 'report-1',
-            'type' => 'session-detail-by-item',
-            'user_id' => $studentid,
+            'id'         => 'report-1',
+            'type'       => 'session-detail-by-item',
+            'user_id'    => $studentid,
             'session_id' => $session_id
         )
     ),
@@ -38,7 +38,6 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/reportsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
@@ -61,10 +60,10 @@ $signedRequest = $Init->generate();
     </div>
     <span class="learnosity-report" id="report-1"></span>
     <div class="row">
-        <div class="col-md-10"></div>
-        <div class="col-md-2 pull-right">
-            <div class="lrn">
-                <button type="button" class="lrn_btn btn_save_simple_scores"><span>Save Scores</span></button>
+        <div class="col-md-8"></div>
+        <div class="col-md-4">
+            <div class="lrn pull-right">
+                <button type="button" class="ladda-button btn_save_simple_scores" data-style="expand-right"><span class="ladda-label">Save Scores</span></button>
             </div>
         </div>
     </div>
@@ -84,7 +83,8 @@ var init = function () {
 
         window.itemsApp = itemsApp;
 
-        //build columns in report.
+        // Build the 2 columns, left is Reports API (student in review) and the right is Items API
+        // for the teacher to add custom scores. On save() we send the scores to the Data API.
         $('.lrn_widget').wrap('<div class="row"></div>').wrap('<div class="col-md-6"></div>');
 
         itemsApp.getQuestions(function(questions) {
@@ -97,11 +97,8 @@ var init = function () {
                         .wrap('<div class="col-md-6"></div>');
 
                     itemReferences.push(scoringItemId);
+                    window.setScoringObjects(scoringItemId, element);
                 }
-                // window.setScoringObjects({
-                //     'studentItemReference': '',
-                //     'teacherItemReference': scoringItemId
-                // });
             });
         });
 
@@ -112,7 +109,7 @@ var init = function () {
                 'rendering_type': 'inline',
                 'name': 'Items API demo - teacher scoring activity.',
                 'state': 'initial',
-                'activity_id': 'scoring_test_1',
+                'activity_id': '<?php echo $activity_id; ?>',
                 'session_id': '<?php echo Uuid::generate(); ?>',
                 'course_id': 'commoncore',
                 'items': itemReferences,
@@ -121,7 +118,7 @@ var init = function () {
         };
 
         $.post('endpoint.php', itemsActivity, function(data, status) {
-            window.itemsAppReview = LearnosityItems.init(data);
+            window.itemsAppTeacherScoring = LearnosityItems.init(data);
         });
     });
 };
@@ -132,17 +129,60 @@ var eventOptions = {
 
 var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, eventOptions);
 
+var scoringObjects = {};
+
+function setScoringObjects (scoringItemId, question) {
+    scoringObjects[scoringItemId] = question;
+}
+
 function saveScores () {
-    var studentQuestions = itemsApp.getQuestions(),
-        studentResponses = itemsApp.getResponses(),
-        teacherScores = itemsAppReview.getResponses();
 
-    window.alert('TODO - implement Data API save score to student record');
+    // Spinning button
+    var ladda = Ladda.create($('.ladda-button')[0]);
+    ladda.start();
 
-    // console.log(studentQuestions);
-    // console.log(studentResponses);
-    // console.log(teacherScores);
-    // console.log(scoringObjects);
+    var teacherItems = itemsAppTeacherScoring.getItems(),
+        teachersResponses = itemsAppTeacherScoring.getResponses(),
+        questions = [],
+        responses = [],
+        request,
+        endpoint;
+    $.each(itemsAppTeacherScoring.attemptedItems(), function (index, ref) {
+        // Retrieve the teacher score
+        var response_id = teacherItems[ref].response_ids[0],
+            newResponseObject = scoringObjects[ref];
+
+        responses.push({
+            'response_id': newResponseObject.response_id,
+            'score': teachersResponses[response_id].value
+        });
+    });
+
+    request = {
+        'sessions': [
+            {
+                'session_id': '<?php echo $session_id; ?>',
+                'user_id': '<?php echo $studentid; ?>',
+                'responses': responses
+            }
+        ]
+    };
+    endpoint = 'https://data.learnosity.com/latest/sessions/responses/scores';
+
+    $.ajax({
+        url: '/xhr.php',
+        data: {'request': JSON.stringify(request), 'endpoint': endpoint, 'action': 'update'},
+        dataType: 'json',
+        type: 'POST'
+    })
+    .error(function(xhr, status, data) {
+        console.log(xhr.responseText, null, null);
+    })
+    .success(function(data, status, xhr) {
+        window.setTimeout(function () {
+            window.location = './feedback_report.php?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>';
+        }, 1500);
+    });
 }
 
 $(function() {
@@ -162,6 +202,9 @@ $(function() {
     }
 </style>
 
+<script src="<?php echo $env['www'] ?>static/vendor/ladda/spin.min.js"></script>
+<script src="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.js"></script>
+
 <?php
-    include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';
+
