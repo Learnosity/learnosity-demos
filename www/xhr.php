@@ -22,9 +22,10 @@ $security = array(
 );
 $endpoint = (isset($_POST['endpoint'])) ? $_POST['endpoint'] : null;
 $data     = (isset($_POST['request'])) ? json_decode($_POST['request'], true) : null;
+$action   = (isset($_POST['action'])) ? $_POST['action'] : 'get';
 
 $dataapi = new DataApi();
-$response = $dataapi->request($endpoint, $security, $consumer_secret, $data);
+$response = $dataapi->request($endpoint, $security, $consumer_secret, $data, $action);
 
 if (strlen($response->getBody())) {
     echo $response->getBody();
