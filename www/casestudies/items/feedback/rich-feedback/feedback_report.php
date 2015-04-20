@@ -39,7 +39,6 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/reportsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
@@ -146,5 +145,4 @@ reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, eventOptions)
 </style>
 
 <?php
-    include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';
