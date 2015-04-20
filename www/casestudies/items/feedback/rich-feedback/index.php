@@ -32,6 +32,9 @@ $request = [
     'activity_template_id' => 'FEEDBACK_DEMO_TEST',
     'type'           => 'submit_practice',
     'config'         => array(
+        'labelBundle' => array(
+            'item' => 'Question'
+        ),
         'configuration' => array(
             'onsubmit_redirect_url' => 'feedback.php?session_id='. $session_id
         )
@@ -53,7 +56,7 @@ $signedRequest = $Init->generate();
     <div class="overview">
         <h1>Student Assessment – Step 1</h1>
         <p>Here is a sample student assessment, with a mix of auto and non-autoscorable question types.</p>
-        <p>You will be able to provide teacher feedback after completing the assessment.</p>
+        <p>Take the test as a student would, you will then be able to provide teacher feedback after completing the assessment.</p>
         <div class="previewWrapper preview" style="display: none; height: 300px; overflow: scroll;"><pre><code id="xApiPreview"></code></pre></div>
     </div>
 </div>
