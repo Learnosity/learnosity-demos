@@ -15,6 +15,9 @@ $security = [
     'consumer_key' => $consumer_key,
 ];
 
+// Load the student assessment using the Reports API
+// This allows the teacher to review the student responses
+// in the left column
 $request = array(
     'reports' => array(
         array(
@@ -52,12 +55,12 @@ $signedRequest = $Init->generate();
 </div>
 
 <div class="section">
-    <!-- Container for the items api to load into -->
+    <!-- Containers for the reports api to load into -->
     <div class="row">
-        <div class="col-md-7">
-            <h1>Student Report</h1>
+        <div class="col-md-6">
+            <h1>Student Review</h1>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
             <h1>Teacher Feedback</h1>
         </div>
     </div>
@@ -80,22 +83,23 @@ var init = function() {
 
     report1.on('ready:itemsApi', function(itemsApp) {
 
-        //build columns in report.
-        $('.lrn_widget').wrap("<div class=\"row\"></div>").wrap("<div class=\"col-md-7\"></div>");
+        // Build the 2 columns, left is Reports API (student in review) and the right is Items API
+        // for the teacher to add feedback.
+        $('.lrn_widget').wrap('<div class="row"></div>').wrap('<div class="col-md-6"></div>');
 
         itemsApp.getQuestions(function(questions) {
 
             $.each(questions, function(index, element) {
                 if(element.metadata.rubric_reference !== undefined) {
-                    var itemId = element.response_id + "_" + element.metadata.rubric_reference;
+                    var itemId = element.response_id + '_' + element.metadata.rubric_reference;
 
-                    $("<span class=\"learnosity-item\" data-reference=\""+ itemId +"\">")
-                    .appendTo($('#' + element.response_id).closest('.row'))
-                    .wrap("<div class=\"col-md-5\"></div>");
+                    $('<span class="learnosity-item" data-reference="' + itemId + '">')
+                        .appendTo($('#' + element.response_id).closest('.row'))
+                        .wrap('<div class="col-md-6"></div>');
 
                     itemReferences.push({
-                        "id" : itemId,
-                        "reference" : element.metadata.rubric_reference
+                        'id' : itemId,
+                        'reference' : element.metadata.rubric_reference
                     });
                 }
             });
@@ -104,19 +108,19 @@ var init = function() {
         console.log(itemReferences);
 
         var itemsActivity = {
-            "domain": location.hostname,
-            "request": {
-                "user_id": "<?php echo $studentid; ?>",
-                "rendering_type": "inline",
-                "name": "Items API demo - feedback activity.",
-                "state": "initial",
-                "activity_id": "feedback_test_1",
-                "session_id": "<?php echo Uuid::generate(); ?>",
-                "course_id": "commoncore",
-                "items": itemReferences,
-                "type": "feedback",
-                "config": {
-                    "renderSaveButton" : true
+            'domain': location.hostname,
+            'request': {
+                'user_id': '<?php echo $studentid; ?>',
+                'rendering_type': 'inline',
+                'name': 'Items API demo - feedback activity.',
+                'state': 'initial',
+                'activity_id': 'feedback_test_1',
+                'session_id': '<?php echo Uuid::generate(); ?>',
+                'course_id': 'commoncore',
+                'items': itemReferences,
+                'type': 'feedback',
+                'config': {
+                    'renderSaveButton' : true
                 }
             }
         };

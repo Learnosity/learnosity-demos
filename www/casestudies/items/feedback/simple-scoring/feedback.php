@@ -52,10 +52,10 @@ $signedRequest = $Init->generate();
 <div class="section">
     <!-- Container for the items api to load into -->
     <div class="row">
-        <div class="col-md-7">
-            <h1>Student Report</h1>
+        <div class="col-md-6">
+            <h1>Student Review</h1>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
             <h1>Teacher Scoring</h1>
         </div>
     </div>
@@ -85,16 +85,16 @@ var init = function () {
         window.itemsApp = itemsApp;
 
         //build columns in report.
-        $('.lrn_widget').wrap("<div class=\"row\"></div>").wrap("<div class=\"col-md-7\"></div>");
+        $('.lrn_widget').wrap('<div class="row"></div>').wrap('<div class="col-md-6"></div>');
 
         itemsApp.getQuestions(function(questions) {
             $.each(questions, function(index, element) {
                 if(element.metadata.rubric_reference !== undefined) {
                     var scoringItemId = element.metadata.rubric_reference;
 
-                    $("<span class=\"learnosity-item\" data-reference=\""+ scoringItemId +"\">")
-                    .appendTo($('#' + element.response_id).closest('.row'))
-                    .wrap("<div class=\"col-md-5\"></div>");
+                    $('<span class="learnosity-item" data-reference="' + scoringItemId + '">')
+                        .appendTo($('#' + element.response_id).closest('.row'))
+                        .wrap('<div class="col-md-6"></div>');
 
                     itemReferences.push(scoringItemId);
                 }
@@ -106,17 +106,17 @@ var init = function () {
         });
 
         var itemsActivity = {
-            "domain": location.hostname,
-            "request": {
-                "user_id": "<?php echo $studentid; ?>",
-                "rendering_type": "inline",
-                "name": "Items API demo - teacher scoring activity.",
-                "state": "initial",
-                "activity_id": "scoring_test_1",
-                "session_id": "<?php echo Uuid::generate(); ?>",
-                "course_id": "commoncore",
-                "items": itemReferences,
-                "type": "local_practice"
+            'domain': location.hostname,
+            'request': {
+                'user_id': '<?php echo $studentid; ?>',
+                'rendering_type': 'inline',
+                'name': 'Items API demo - teacher scoring activity.',
+                'state': 'initial',
+                'activity_id': 'scoring_test_1',
+                'session_id': '<?php echo Uuid::generate(); ?>',
+                'course_id': 'commoncore',
+                'items': itemReferences,
+                'type': 'local_practice'
             }
         };
 
