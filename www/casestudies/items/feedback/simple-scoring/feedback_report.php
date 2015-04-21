@@ -49,8 +49,10 @@ $report = $report['data'][0];
     </div>
     <div class="overview">
         <h1>Student Feedback Review – Step 3</h1>
-        <p>This template renders the customs scores per student response
+        <p>This template renders the customs score(s), as added by a teacher, per student response
         in a simple table.</p>
+        <p>In this example we pull the scores from the Data API and render them as an HTML table. You could
+        also use one of the supported reports in the <a href="<?php echo $env['www'] ?>/reporting/reports">Reports API</a>.</p>
         <div class="previewWrapper preview" style="display: none; height: 300px; overflow: scroll;"><pre><code id="xApiPreview"></code></pre></div>
     </div>
 </div>
