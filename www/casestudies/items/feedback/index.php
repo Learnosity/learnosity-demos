@@ -14,7 +14,7 @@ include_once 'includes/header.php';
     <div class="section-intro">
         <p>Although the majority of Learnosity question types are auto-scorable, some (like open
         response or audio recording) require teacher/marker attention.<p>
-        <p>This can take shape as feedback for the student, or giving an actual score to
+        <p>This can take shape as feedback for the student, or providing an actual score to
         be saved with the original student response.</p>
     </div>
 
@@ -22,12 +22,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Teacher Feedback – Rich Feedback</h2>
+                    <h2 class="panel-title">Rich Feedback</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Demonstrates reviewing a student assessment and providing
+                    <p>Demonstrates reviewing a student assessment, and providing
                     Learnosity tools to enable rich teacher feedback.<p>
-                    <p>In this example, no scoring is applied to the student responses, just
+                    <p>In this example, no scoring is applied to the student responses. Only
                     feedback from the teacher for the student to review.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./rich-feedback/">Demo</a>
@@ -38,11 +38,11 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Teacher Feedback – Simple Scoring</h2>
+                    <h2 class="panel-title">Simple Scoring</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Demonstrates reviewing a student assessment and providing
-                    Learnosity tools enabling the teacher to apply a score to each response.<p>
+                    <p>Demonstrates reviewing a student assessment, and providing
+                    Learnosity tools enabling the teacher to apply a score to each student response.<p>
                     <p>In this example, scoring is applied to student responses via
                     the Data API.</p>
                     <p class="text-right">
