@@ -74,7 +74,7 @@ $request = array(
         'time' => array(
             'max_time' => 1800
         ),
-        'assessApiVersion'    => 'v2.27.1',
+        'assessApiVersion'    => 'v2',
         'questionsApiVersion' => 'v2',
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_branching.php',
