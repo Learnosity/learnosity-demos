@@ -45,6 +45,7 @@ $signedRequest = $Init->generate();
         <h1>Teacher Scoring – Step 2</h1>
         <p>This template renders a student assessment in review, and loads interactive
         widgets for the teacher to save scoring against the student responses.</p>
+        <p>This way, scores can be access via the Reports or Data APIs.</p>
     </div>
 </div>
 

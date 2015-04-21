@@ -49,7 +49,7 @@ $signedRequest = $Init->generate();
         <p>This template renders a student assessment in review, and loads interactive
         widgets for the teacher to save feedback for the student to see.</p>
         <p>The feedback widgets can leverage any Learnosity question type, and are authored
-        just like student questions (inside the author site or using the <a href="/authoring/questioneditor">Question Editor API</a>).</p>
+        just like student questions (inside the author site or using the <a href="/authoring/author">Author API</a>).</p>
     </div>
 </div>
 
