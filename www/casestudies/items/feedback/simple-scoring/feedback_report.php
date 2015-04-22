@@ -37,7 +37,7 @@ if (strlen($response->getBody())) {
 }
 
 $report = json_decode($report, true);
-$report = $report['data'][0];
+$scores = $report['data'][0];
 
 ?>
 
@@ -67,7 +67,7 @@ $report = $report['data'][0];
                     <tr>
                         <th>Student</th>
                         <?php
-                        foreach($report['responses'] as $i => $val) {
+                        foreach ($scores['responses'] as $i => $val) {
                             echo '<th>Question ' . ($i+1) . '</th>';
                         }
                         ?>
@@ -75,9 +75,9 @@ $report = $report['data'][0];
                 </thead>
                 <tbody>
                     <tr>
-                        <td><?php echo $report['user_id']; ?></td>
+                        <td><?php echo $scores['user_id']; ?></td>
                         <?php
-                        foreach($report['responses'] as $i => $val) {
+                        foreach ($scores['responses'] as $i => $val) {
                             echo '<td>' . $val['score'] . '</td>';
                         }
                         ?>
