@@ -56,12 +56,13 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Adaptive Assessment</h2>
+                    <h2 class="panel-title">Regions</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
+                    <p>Regions are a part of the Assess API configuration that allow you to create a personalized,
+                    fluid and extensible assessment UI.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_adaptive.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./regions.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -69,12 +70,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Branching Assessment</h2>
+                    <h2 class="panel-title">Adaptive Assessment</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A branching assessment that adapts which testlet to show a user based on performance.</p>
+                    <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_branching.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_adaptive.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -112,12 +113,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Activities</h2>
+                    <h2 class="panel-title">Branching Assessment</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows examples of loading assessments using activities authored in the Learnosity item bank.</p>
+                    <p>A branching assessment that adapts which testlet to show a user based on performance.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_activities.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_branching.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -171,13 +172,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Regions</h2>
+                    <h2 class="panel-title">Activities</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Regions are a part of the Assess API configuration that allow you to create a personalized,
-                    fluid and extensible assessment UI.</p>
+                    <p>Shows examples of loading assessments using activities authored in the Learnosity item bank.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./regions.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_activities.php">Demo</a>
                     </p>
                 </div>
             </div>

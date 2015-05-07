@@ -39,23 +39,6 @@ $resource = 'activities';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">count only?</label>
-                <div class="col-md-10">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="1">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="0" checked>
-                            No
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
                 <label class="col-md-2 control-label">limit</label>
                 <div class="col-md-2">
                     <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="5">
