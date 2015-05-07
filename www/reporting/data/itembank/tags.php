@@ -39,23 +39,6 @@ $resource = 'tags';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">count only?</label>
-                <div class="col-md-10">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="1">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="0" checked>
-                            No
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <button type="submit" class="ladda-button" data-style="expand-right"><span class="ladda-label">Submit</span></button>
                 </div>
