@@ -83,10 +83,16 @@ $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
 <!-- Container for the items api to load into -->
 <div id="learnosity_assess"></div>
 <script src="//items.learnosity.com"></script>
 <script>
     var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);
 </script>
+</body>
+</html>
