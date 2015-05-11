@@ -10,17 +10,19 @@ $security = array(
     'domain'       => $domain
 );
 
+// Decide which items your want to print
 $items = array('printing-mcq', 'printing-mcq-multi', 'printing-token', 'printing-fillintheblank');
 $sessionid = Uuid::generate();
 
+// Load the assessment in `local_practice` (you won't want to submit actual responses)
+// and using the `inline` rendering type
 $request = array(
     'user_id'              => $studentid,
     'session_id'           => $sessionid,
-    'activity_template_id' => 'printing-demo',
     'state'                => 'initial',
-    'items'                => $items,
     'rendering_type'       => 'inline',
     'type'                 => 'local_practice',
+    'items'                => $items,
     'config'               => array(
         'fontsize'            => 'xlarge',
         'renderSubmitButton'  => false,
@@ -59,6 +61,10 @@ $signedRequest = $Init->generate();
     var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);
 </script>
 
+<!--
+Add some basic CSS to style the items, including adding
+a transparent layer to make the items appear disabled.
+ -->
 <style>
 h2 {
     border-bottom: 1px solid #dfdfdf;
