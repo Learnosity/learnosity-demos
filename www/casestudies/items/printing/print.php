@@ -58,7 +58,17 @@ $signedRequest = $Init->generate();
 <!-- Container for the items api to load into -->
 <script src="//items.learnosity.com"></script>
 <script>
-    var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);
+    var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, {readyListener: init});
+
+    /**
+     * On load of the Items API, call the browser
+     * print page function.
+     *
+     * @return void
+     */
+    function init () {
+        window.print();
+    }
 </script>
 
 <!--
