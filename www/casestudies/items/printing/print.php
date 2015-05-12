@@ -34,6 +34,12 @@ $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
 
 <div class="print-container">
     <div class="item-container">
@@ -114,3 +120,6 @@ h2 {
     }*/
 }
 </style>
+
+</body>
+</html>
