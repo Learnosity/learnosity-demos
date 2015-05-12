@@ -184,7 +184,7 @@ function saveScores () {
         // retrieving responses that have been immediately set/updated
         window.setTimeout(function () {
             window.location = './feedback_report.php?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>';
-        }, 5000);
+        }, 7000);
     });
 }
 
