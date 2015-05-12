@@ -14,24 +14,20 @@ $security = array(
 );
 
 $request = array(
-    'components' => array(
-        array(
-            'id'                      => 'learnosity_author',
-            'type'                    => 'itemeditor',
-            'reference'               => $item_ref,
-            'template'                => 'feature-question',
-            'question_editor_options' => array(
-                'ui' => array(
-                    'public_methods'     => array(),
-                    'question_tiles'     => false,
-                    'documentation_link' => false,
-                    'change_button'      => true,
-                    'source_button'      => false,
-                    'fixed_preview'      => true,
-                    'advanced_group'     => false,
-                    'search_field'       => false
-                )
-            )
+    'id'                      => 'learnosity_author',
+    'type'                    => 'itemeditor',
+    'reference'               => $item_ref,
+    'template'                => 'feature-question',
+    'question_editor_options' => array(
+        'ui' => array(
+            'public_methods'     => array(),
+            'question_tiles'     => false,
+            'documentation_link' => false,
+            'change_button'      => true,
+            'source_button'      => false,
+            'fixed_preview'      => true,
+            'advanced_group'     => false,
+            'search_field'       => false
         )
     )
 );

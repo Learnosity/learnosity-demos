@@ -14,12 +14,8 @@ $security = array(
 );
 
 $request = array(
-    'components' => array(
-        array(
-            'id'   => 'learnosity_author',
-            'type' => 'itemlist'
-        )
-    )
+    'id'   => 'learnosity_author',
+    'type' => 'itemlist'
 );
 
 $Init = new Init('author', $security, $consumer_secret, $request);
