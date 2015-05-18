@@ -14,21 +14,27 @@ $security = array(
 );
 
 $request = array(
-    'id'                      => 'learnosity_author',
-    'type'                    => 'itemeditor',
+    'mode'                    => 'item_edit',
     'reference'               => $item_ref,
-    'template'                => 'single-question',
-    'question_editor_options' => array(
-        'ui' => array(
-            'public_methods'     => array(),
-            'question_tiles'     => false,
-            'documentation_link' => false,
-            'change_button'      => true,
-            'source_button'      => false,
-            'fixed_preview'      => true,
-            'advanced_group'     => false,
-            'search_field'       => false
+    'config' => array(
+        'question_editor_init_options' => array(
+            'ui' => array(
+                'public_methods'     => array(),
+                'question_tiles'     => false,
+                'documentation_link' => false,
+                'change_button'      => true,
+                'source_button'      => false,
+                'fixed_preview'      => true,
+                'advanced_group'     => false,
+                'search_field'       => false
+            )
         )
+    ),
+    'user' => array(
+        'id' => 'demos-site',
+        'firstname' => 'Test',
+        'lastname' => 'Test',
+        'email' => 'test@test.com'
     )
 );
 
@@ -56,7 +62,7 @@ $signedRequest = $Init->generate();
 <div class="section">
     <h3>Single Question</h3>
     <hr>
-    <div id="learnosity_author"></div>
+    <div id="learnosity-author"></div>
 </div>
 
 <script src="<?php echo $url_authorapi; ?>"></script>

@@ -14,8 +14,13 @@ $security = array(
 );
 
 $request = array(
-    'id'   => 'learnosity_author',
-    'type' => 'itemlist'
+    'mode' => 'item_list',
+    'user' => array(
+        'id' => 'demos-site',
+        'firstname' => 'Test',
+        'lastname' => 'Test',
+        'email' => 'test@test.com'
+    )
 );
 
 $Init = new Init('author', $security, $consumer_secret, $request);
@@ -42,7 +47,7 @@ $signedRequest = $Init->generate();
 <div class="section">
     <h3>Item List View</h3>
     <hr>
-    <div id="learnosity_author"></div>
+    <div id="learnosity-author"></div>
 </div>
 
 <script src="<?php echo $url_authorapi; ?>"></script>

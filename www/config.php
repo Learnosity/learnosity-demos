@@ -38,7 +38,7 @@ $schoolid  = 'demo_school';
 */
 
 $url_assess         = "//assess.learnosity.com";
-$url_authorapi      = "//authorapi.learnosity.com?v0.7.2";
+$url_authorapi      = "//authorapi.learnosity.com?v0.8";
 $url_data           = "https://data.learnosity.com";
 $url_events         = "//events.learnosity.com";
 $url_items          = "//items.learnosity.com";
