@@ -70,7 +70,7 @@ $signedRequest = $Init->generate();
     </div>
 </div>
 
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script>
 
 var scoringObjects = [];
@@ -168,7 +168,7 @@ function saveScores () {
             }
         ]
     };
-    endpoint = 'https://data.learnosity.com/latest/sessions/responses/scores';
+    endpoint = '<?php echo $url_data; ?>/latest/sessions/responses/scores';
 
     $.ajax({
         url: '/xhr.php',
