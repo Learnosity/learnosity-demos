@@ -55,7 +55,7 @@ $request = array(
                     'id' => 'mce_student_1',
                     'name' => 'Walter White'
                 ),
-               
+
                 array(
                     'id' => 'mce_student_2',
                     'name' => 'Skylar White'
@@ -273,6 +273,19 @@ $request = array(
                     'name'  => 'clozetext'
                 )
             )
+        ),
+        array(
+            'id'           => 'report-22',
+            'type'         => 'sessions-list-by-item',
+            'limit'        => 15,
+            'activity_id'  => 'itemadaptivedemo',
+            'display_user' => true,
+            'users'        => array(
+                array(
+                    'id'   => 'demo_student',
+                    'name' => 'Demo Name'
+                )
+            )
         )
     )
 );
@@ -312,6 +325,7 @@ $signedRequest = $Init->generate();
                             <ul class="nav nav-tabs tabs-left">
                               <li class="active"><a id="report-session-summary" href="#sessions-summary" data-toggle="tab">Sessions Summary</a></li>
                               <li><a id="report-session-list" href="#sessions-list" data-toggle="tab">Sessions List</a></li>
+                              <li><a id="report-session-list-by-item" href="#sessions-list-by-item" data-toggle="tab">Sessions List By Item</a></li>
                               <li><a id="report-session-detail" href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
                               <li><a id="report-session-tags" href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
                             </ul>
@@ -332,6 +346,16 @@ $signedRequest = $Init->generate();
                                     <span class="learnosity-report" id="report-9"></span>
                                 </section>
                                 <div id="lrn-report-sessions-list-events"></div>
+                            </div>
+                            <div class="tab-pane" id="sessions-list-by-item">
+                                <section>
+                                    <h3 class="report-title">Sessions List By Item</h3>
+                                    <p class="lrn-report-summary">Get a quick glimpse of the latest sessions with a score break-down for each item per session.</p>
+                                    <p class="lrn-report-summary">Names can trigger onClick events to tie into other reports.</p>
+                                    <p class="lrn-report-summary">Hover over items to see the fine grain score break-down.</p>
+                                    <span class="learnosity-report" id="report-22"></span>
+                                </section>
+                                <div id="lrn-report-sessions-list-by-item-events"></div>
                             </div>
                             <div class="tab-pane" id="sessions-detail">
                                 <section>
@@ -683,6 +707,12 @@ $signedRequest = $Init->generate();
         var lastScoreSingleSix = lrnReports.getReport('report-15');
         lastScoreSingleSix.on('click:score', function (data) {
             onClickFunction(data, 'lrn-report-lastscore-single-events', false);
+        });
+
+        /* sessions-list onclick events */
+        var sessionsListByItem = lrnReports.getReport('report-22');
+            sessionsListByItem.on('click:user', function (data) {
+            onClickFunction(data, 'lrn-report-sessions-list-by-item-events', false);
         });
 
         // Sessions detail hidden width fix
