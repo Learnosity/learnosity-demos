@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../../config.php';
+include_once '../../../../config.php';
 include_once 'includes/header.php';
 
 use LearnositySdk\Request\Init;
@@ -27,7 +27,7 @@ $activityRefs = ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5'
  */
 $DataApi = new DataApi();
 $response = $DataApi->request(
-    'https://data.learnosity.com/latest/itembank/activities',
+    $url_data . '/latest/itembank/activities',
     $security,
     $consumer_secret,
     ['references' => $activityRefs]
@@ -163,7 +163,7 @@ $signedRequest = $Init->generate();
 </div>
 
 <!-- Container for the items api to load into -->
-<script src="//items.learnosity.com/"></script>
+<script src="<?php echo $url_items; ?>"></script>
 <script>
     var eventOptions = {
             readyListener: function () {

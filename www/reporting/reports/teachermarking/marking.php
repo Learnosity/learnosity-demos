@@ -85,8 +85,8 @@ $signedRequest = $Init->generate();
         </div>
     </div>
 </div>
-<script src="//reports.learnosity.com"></script>
-<script src="//items.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
+<script src="<?php echo $url_items; ?>"></script>
 <script>
     var reportsApp = LearnosityReports.init(<?php echo $signedReportRequest; ?>);
     var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);

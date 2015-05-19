@@ -55,7 +55,7 @@ $request = array(
                     'id' => 'mce_student_1',
                     'name' => 'Walter White'
                 ),
-               
+
                 array(
                     'id' => 'mce_student_2',
                     'name' => 'Skylar White'
@@ -560,7 +560,7 @@ $signedRequest = $Init->generate();
     </div>
 </div>
 
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/head.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/reveal/reveal.js"></script>
 <script>

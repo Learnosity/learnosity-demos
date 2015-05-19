@@ -619,7 +619,7 @@ $signedRequest = ($request);
     <div class="learnosity-question-editor"></div>
 </div>
 
-<script src="//questioneditor.learnosity.com?v2"></script>
+<script src="<?php echo $url_questioneditor; ?>"></script>
 <script>
     var init, questionEditorApp;
 
