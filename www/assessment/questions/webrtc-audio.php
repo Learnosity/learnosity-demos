@@ -58,7 +58,7 @@ $signedRequest = $Init->generate();
 </div>
 
 <!-- Container for the questions api to load into -->
-<script src="//questions.learnosity.com"></script>
+<script src="<?php echo $url_questions; ?>"></script>
 <script>
     $(function(){
         var options = {

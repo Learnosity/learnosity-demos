@@ -49,7 +49,7 @@ $signedRequest = $Init->generate();
     <div id="learnosity_author"></div>
 </div>
 
-<script src="//authorapi.vg.learnosity.com?latest"></script>
+<script src="<?php echo $url_authorapi; ?>"></script>
 <script>
     var initOptions = <?php echo $signedRequest; ?>;
 
