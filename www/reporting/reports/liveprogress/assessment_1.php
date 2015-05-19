@@ -17,15 +17,14 @@ $student = array(
 
 $request = array(
     'activity_id'    => 'itemsassessdemo',
-    'name'           => 'Items API demo - assess activity',
+    'name'           => 'Demo showcasing remote control events',
     'rendering_type' => 'assess',
     'state'          => 'initial',
     'type'           => 'submit_practice',
     'course_id'      => $courseid,
     'session_id'     => Uuid::generate(),
     'user_id'        => $student['id'],
-    'assess_inline'  => true,
-    'items'          => array('Demo3', 'Demo4', 'Demo5', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10'),
+    'items'          => array('Demo4', 'Demo3', 'Demo6', 'Demo7', 'Demo8', 'Demo9'),
     'config'         => array(
         'title'          => 'Demo showcasing remote control events',
         'subtitle'       => $student['name'],
@@ -33,20 +32,42 @@ $request = array(
             'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
         ),
         'navigation' => array(
-            'intro_item' => 'demo-intro-live-progress',
-            'show_fullscreencontrol' => false
+            'intro_item' => 'demo-intro-live-progress'
+        ),
+        'regions' => array(
+            'top-right' => array(
+                array(
+                    'type' => 'timer_element'
+                ),
+                array(
+                    'type' => 'pause_button'
+                )
+            ),
+            'right' => array(
+               array(
+                  'type' => 'previous_button'
+               ),
+               array(
+                  'type' => 'next_button'
+               ),
+               array(
+                  'type' => 'separator_element'
+               ),
+               array(
+                  'type' => 'flagitem_button'
+               ),
+               array(
+                  'type' => 'masking_button'
+               )
+            )
         ),
         'time' => array(
             'max_time'     => 1500,
             'limit_type'   => 'soft',
-            'show_pause'   => false,
             'warning_time' => 120,
+            'show_pause'   => true,
             'show_time'    => true
         ),
-        'labelBundle' => array(
-            'item' => 'Question'
-        ),
-        'ui_style'            => 'horizontal-fixed',
         'questionsApiVersion' => 'v2',
         'assessApiVersion'    => 'v2',
         'configuration'       => array(
@@ -62,10 +83,16 @@ $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
-<!-- Container for the items api to load into -->
-<div id="learnosity_assess"></div>
-<script src="<?php echo $url_items; ?>"></script>
-<script>
-    var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);
-</script>
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <!-- Container for the items api to load into -->
+    <div id="learnosity_assess"></div>
+    <script src="//items.learnosity.com"></script>
+    <script>
+        var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);
+    </script>
+</body>
+</html>

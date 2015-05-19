@@ -51,17 +51,17 @@ $resource = 'items';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">count only?</label>
+                <label class="col-md-2 control-label">split question/feature references?</label>
                 <div class="col-md-10">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="1">
+                            <input type="radio" name="split_feature_references" id="api-split_feature_references" data-type="boolean" value="1">
                             Yes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="0" checked>
+                            <input type="radio" name="split_feature_references" id="api-split_feature_references" data-type="boolean" value="0" checked>
                             No
                         </label>
                     </div>

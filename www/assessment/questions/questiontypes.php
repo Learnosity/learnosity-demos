@@ -174,6 +174,7 @@ $request = '{
             "possible_responses": ["\\\(20{{g}^{5}}{{h}^{7}}\\\)", "\\\(\\\text{-}20{{g}^{5}}{{h}^{7}}\\\)", "\\\(20{{g}^{8}}{{h}^{9}}\\\)", "\\\(\\\text{-}20{{g}^{8}}{{h}^{9}}\\\)", "\\\(4{{t}^{6}}{{p}^{2}}\\\)", "\\\(\\\dfrac{4{{t}^{6}}}{{{p}^{2}}}\\\)", "\\\(\\\dfrac{4{{p}^{2}}}{{{t}^{6}}}\\\)", "\\\(\\\dfrac{27{{t}^{6}}}{{{p}^{2}}}\\\)"],
             "description": "<p>Simplify the following, expressing your answers with positive indices.</p>",
             "is_math": true,
+            "instant_feedback" : true,
             "valid_responses": [
             [{
                 "value": "\\\(\\\text{-}20{{g}^{5}}{{h}^{7}}\\\)"
@@ -217,7 +218,7 @@ $request = '{
                 "scoring_type": "partialMatch",
                 "valid_response": {
                     "score": 1,
-                    "value": ["Florida", "Texas", "California"]
+                    "value": ["California", "Texas", "Florida"]
                 }
             }
         },
@@ -246,7 +247,7 @@ $request = '{
                 "scoring_type": "partialMatch",
                 "valid_response": {
                     "score": 1,
-                    "value": ["Florida", "Texas", "California"]
+                    "value": ["California", "Texas", "Florida"]
                 }
             }
         },
@@ -358,21 +359,7 @@ $request = '{
                 "penalty_score": "0",
                 "pairwise": "0"
             }
-        },
-        {
-            "response_id": "demo19-'.$uniqueResponseIdSuffix.'",
-            "type": "texthighlight",
-            "description": "In this question, the student needs to highlight the <strong>adjectives</strong> in the extract.",
-            "template": "His manner was not <valid>effusive</valid>. It seldom was; but he was <valid>glad</valid>, I think, to see me. With hardly a word spoken, but with a <valid>kindly</valid> eye, he waved me to an armchair, threw across his case of cigars, and indicated a spirit case and a gasogene in the corner. Then he stood before the fire and looked me over in his <valid>singular</valid> <valid>introspective</valid> fashion.",
-            "instant_feedback": true,
-            "feedback_attempts": 2,
-            "word_bound": true,
-            "validation": {
-                "valid_score": 1,
-                "partial_scoring": true,
-                "penalty_score": -1
-            }
-        },
+        },        
         {
             "response_id": "demo20-'.$uniqueResponseIdSuffix.'",
             "type": "association",
@@ -995,6 +982,7 @@ $request = '{
             },
             "description": "An empty bar chart.",
             "max_y_value": 10,
+            "add_point": true,
             "chart_data": {
                 "name": "Favourite movie type",
                 "data": [
@@ -1448,15 +1436,6 @@ $signedRequest = $Init->generate();
 
     <div class="row">
         <div class="col-md-8">
-            <h3 id="q19">Text Highlight</h3>
-            <p>Select all the <strong>adjectives</strong> in the text.</p>
-            <span class="learnosity-response question-demo19-<?php echo $uniqueResponseIdSuffix ?>"></span>
-        </div>
-    </div>
-    <hr>
-
-    <div class="row">
-        <div class="col-md-8">
             <h3 id="q20">Token Highlight</h3>
             <p>Select all the <strong>relevant sections</strong> in the text.</p>
             <span class="learnosity-response question-demo23-<?php echo $uniqueResponseIdSuffix ?>"></span>
@@ -1544,7 +1523,7 @@ $signedRequest = $Init->generate();
     <div class="row">
         <div class="col-md-8">
             <h3 id="q28">Plot Rays</h3>
-            <p>Graph a Ray originating at \((4,0)\) in the direction towards \((7,-2)\)</p>
+            <p>Graph a Ray originating at \((4,0)\) in the direction towards \((7,2)\)</p>
             <p><span class="label label-info">Hint</span> You'll need to use the <strong>Ray</strong> tool</p>
             <span class="learnosity-response question-demo28-<?php echo $uniqueResponseIdSuffix ?>"></span>
         </div>

@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 // Full base URL of the Data API
 $URL = $url_data;
 // Which version of the Data API to use
-$version = 'v0.47';
+$version = 'v0.48';
 
 ?>
 
@@ -244,36 +244,6 @@ $version = 'v0.47';
                 <div id="users" class="panel-collapse collapse">
                     <div class="panel-body">
                         <?php include_once 'users/users.php'; ?>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#usersactivities">
-                            <span class="block">action: get</span>
-                            <?php echo '/' . $version . '/users/activities'; ?>
-                        </a>
-                    </h4>
-                </div>
-                <div id="usersactivities" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <?php include_once 'users/activities.php'; ?>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#usersstatuses">
-                            <span class="block">action: get</span>
-                            <?php echo '/' . $version . '/users/statuses'; ?>
-                        </a>
-                    </h4>
-                </div>
-                <div id="usersstatuses" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <?php include_once 'users/statuses.php'; ?>
                     </div>
                 </div>
             </div>
