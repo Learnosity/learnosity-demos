@@ -51,7 +51,7 @@ $signedRequest = $Init->generate();
 
 <p><a href="index.php" class="btn btn-default">Back to test</a></p>
 
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script src="response-level-map.js"></script>
 
 <script>

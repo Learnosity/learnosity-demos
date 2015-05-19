@@ -22,7 +22,7 @@ $request = array(
     )
 );
 
-$endpoint = 'https://data.learnosity.com/latest/sessions/responses/scores';
+$endpoint = '<?php echo $url_data; ?>/latest/sessions/responses/scores';
 $action = 'get';
 
 $dataapi = new DataApi();

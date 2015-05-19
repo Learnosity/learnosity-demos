@@ -20,7 +20,7 @@ include_once 'includes/header.php';
 
 <div class="section">
     <!-- Container for the question editor api to load into -->
-    <script src="//questioneditor.learnosity.com?v2"></script>
+    <script src="<?php echo $url_questioneditor; ?>"></script>
     <div class="learnosity-question-editor"></div>
 </div>
 

@@ -69,13 +69,13 @@ $signedRequest = $Init->generate();
         <div class="previewWrapper preview"><pre><code></code></pre></div>
     </div>
 </div>
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script>
-    
-    $('.lrn-switch').click(function() { 
+
+    $('.lrn-switch').click(function() {
         window.location.href = "./no-ui.php?render=" + !$('#render_toggle').prop('checked');
      });
-    
+
 
     var eventOptions = {
             readyListener: init

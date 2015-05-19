@@ -56,7 +56,7 @@ $signedRequest = $Init->generate();
 ?>
 
 
-<script src="//questions.vg.learnosity.com"></script>
+<script src="<?php echo $url_questions; ?>"></script>
 <script>
     function loadLearnosity() {
         var activity = <?php echo $signedRequest; ?>;

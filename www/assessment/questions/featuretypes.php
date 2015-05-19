@@ -14,7 +14,7 @@ include_once 'includes/header.php';
 </div>
 
 <!-- Container for the questions api to load into -->
-<script src="//questions.learnosity.com"></script>
+<script src="<?php echo $url_questions; ?>"></script>
 <script>
     LearnosityApp.init();
 </script>

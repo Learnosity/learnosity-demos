@@ -20,7 +20,7 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<script src="//events.learnosity.com"></script>
+<script src="<?php echo $url_events; ?>"></script>
 <script>
     var initOptions = <?php echo $signedRequest; ?>,
         handleEvent,

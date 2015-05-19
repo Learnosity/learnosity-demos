@@ -540,7 +540,7 @@ $signedRequest = $Init->generate();
     <div id="learnosity_assess"></div>
 </div>
 
-<script src="//assess.learnosity.com?inline"></script>
+<script src="<?php echo $url_assess; ?>?inline"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>,
         assessApp = LearnosityAssess.init(activity, 'learnosity_assess');
