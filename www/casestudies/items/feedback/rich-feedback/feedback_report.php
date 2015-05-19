@@ -68,7 +68,7 @@ $signedRequest = $Init->generate();
     </div>
 </div>
 
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script>
 
 var init = function() {

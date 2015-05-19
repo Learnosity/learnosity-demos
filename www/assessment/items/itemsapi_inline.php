@@ -61,7 +61,7 @@ $signedRequest = $Init->generate();
 </div>
 
 <!-- Container for the items api to load into -->
-<script src="//items.learnosity.com"></script>
+<script src="<?php echo $url_items; ?>"></script>
 <script>
     var eventOptions = {
             readyListener: function () {

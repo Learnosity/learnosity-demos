@@ -46,7 +46,7 @@ $signedRequest = $Init->generate();
     <span class="learnosity-report" id="report-detail"></span>
 </div>
 
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script>
     var eventOptions = {
             readyListener: init

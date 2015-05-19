@@ -104,7 +104,7 @@ $signedRequest = $Init->generate();
     <p>Input is captured in the popular <a href="http://www.latex-project.org/">LaTeX format</a>. Try entering some maths below to see the resulting LaTeX output.</p>
 </div>
 
-<script src="//questions.learnosity.com"></script>
+<script src="<?php echo $url_questions; ?>"></script>
 <script>
     var activity = <?php echo $signedRequest; ?>;
 
