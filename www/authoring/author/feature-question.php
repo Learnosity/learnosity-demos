@@ -14,25 +14,34 @@ $security = array(
 );
 
 $request = array(
-    'components' => array(
-        array(
-            'id'                      => 'learnosity_author',
-            'type'                    => 'itemeditor',
-            'reference'               => $item_ref,
-            'template'                => 'feature-question',
-            'question_editor_options' => array(
-                'ui' => array(
-                    'public_methods'     => array(),
-                    'question_tiles'     => false,
-                    'documentation_link' => false,
-                    'change_button'      => true,
-                    'source_button'      => false,
-                    'fixed_preview'      => true,
-                    'advanced_group'     => false,
-                    'search_field'       => false
+    'mode'      => 'item_edit',
+    'reference' => $item_ref,
+    'config'    => array(
+        'item_edit' => array(
+            'item' => array(
+                'template' => array(
+                    'type' => 'feature_question'
                 )
             )
+        ),
+        'question_editor_init_options' => array(
+            'ui' => array(
+                'public_methods'     => array(),
+                'question_tiles'     => false,
+                'documentation_link' => false,
+                'change_button'      => true,
+                'source_button'      => false,
+                'fixed_preview'      => true,
+                'advanced_group'     => false,
+                'search_field'       => false
+            )
         )
+    ),
+    'user' => array(
+        'id' => 'demos-site',
+        'firstname' => 'Test',
+        'lastname' => 'Test',
+        'email' => 'test@test.com'
     )
 );
 
@@ -60,7 +69,7 @@ $signedRequest = $Init->generate();
 <div class="section">
     <h3>2 Column – Feature & Question</h3>
     <hr>
-    <div id="learnosity_author"></div>
+    <div id="learnosity-author"></div>
 </div>
 
 <script src="<?php echo $url_authorapi; ?>"></script>
