@@ -278,12 +278,12 @@ $request = array(
             'id'           => 'report-22',
             'type'         => 'sessions-list-by-item',
             'limit'        => 15,
-            'activity_id'  => 'itemadaptivedemo',
+            'activity_id'  => 'MCE_5.MD.5b',
             'display_user' => true,
             'users'        => array(
                 array(
-                    'id'   => 'demo_student',
-                    'name' => 'Demo Name'
+                    'id'   => 'mce_student',
+                    'name' => 'Brian Moser'
                 )
             )
         )
