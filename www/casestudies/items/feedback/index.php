@@ -26,7 +26,7 @@ include_once 'includes/header.php';
                 </div>
                 <div class="panel-body">
                     <p>Demonstrates reviewing a student assessment, and providing
-                    Learnosity tools to enable rich teacher feedback.<p>
+                    Learnosity tools to enable rich teacher feedback using rubrics.<p>
                     <p>In this example, no scoring is applied to the student responses. Only
                     feedback from the teacher for the student to review.</p>
                     <p class="text-right">
