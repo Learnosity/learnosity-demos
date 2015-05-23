@@ -13,7 +13,7 @@ include_once 'includes/header.php';
         to be taken offline.</p>
         <p>To render items for printing, a simple way is to use the <a href="http://docs.learnosity.com/assessment/items/quickstart_inline">Items API Inline</a>. Content administrators can then use native browser behaviour to print as a PDF for more flexibility.</p>
         <p>Added to this basic demonstration, are some very basic CSS rules to add page breaks after each question when printing, and to increase the font size to translate items better in print form.</p>
-        <p>We also disable interacting with the questions to avoid polluting the final printout.</p>
+        <p>We also render questions in a <em>preview</em> state (read only) to avoid polluting the final printout.</p>
     </div>
 
     <div class="row">

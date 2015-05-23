@@ -19,7 +19,7 @@ $sessionid = Uuid::generate();
 $request = array(
     'user_id'              => $studentid,
     'session_id'           => $sessionid,
-    'state'                => 'initial',
+    'state'                => 'preview',
     'rendering_type'       => 'inline',
     'type'                 => 'local_practice',
     'items'                => $items,
@@ -42,23 +42,22 @@ $signedRequest = $Init->generate();
 <body>
 
 <div class="print-container">
-    <div class="item-container">
+    <div>
         <h2>MCQ</h2>
         <span class="learnosity-item" data-reference="printing-mcq"></span>
     </div>
-    <div class="item-container page-break">
+    <div class="page-break">
         <h2>MCQ Multi</h2>
         <span class="learnosity-item" data-reference="printing-mcq-multi"></span>
     </div>
-    <div class="item-container page-break">
+    <div class="page-break">
         <h2>Token Highlight</h2>
         <span class="learnosity-item" data-reference="printing-token"></span>
     </div>
-    <div class="item-container page-break">
+    <div class="page-break">
         <h2>Fill in the blanks</h2>
         <span class="learnosity-item" data-reference="printing-fillintheblank"></span>
     </div>
-    <div class="overlay"></div>
 </div>
 
 <!-- Container for the items api to load into -->
@@ -77,10 +76,7 @@ $signedRequest = $Init->generate();
     }
 </script>
 
-<!--
-Add some basic CSS to style the items, including adding
-a transparent layer to make the items appear disabled.
- -->
+<!-- Add some basic CSS to style the items -->
 <style>
 h2 {
     border-bottom: 1px solid #dfdfdf;
@@ -93,21 +89,9 @@ h2 {
     padding-left: 5px;
     position: relative;
 }
-.print-container .learnosity-item {
-    z-index: -1;
-}
 /* Just to give padding between each question for screens */
 .learnosity-item {
     padding-bottom: 50px;
-}
-.overlay {
-    opacity:0;
-    filter: alpha(opacity = 0);
-    position:absolute;
-    top:0; bottom:0; left:0; right:0;
-    display:block;
-    z-index:2;
-    background:transparent;
 }
 @media print {
     .page-break {
