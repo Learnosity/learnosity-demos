@@ -37,6 +37,12 @@ include_once 'includes/header.php';
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./feature-question.php">Demo</a>
                     </p>
+                    <h4>Event binding</h4>
+                    <hr>
+                    <p>A demonstration of event binding with the <a href="http://docs.learnosity.com/authoring/author/publicmethods#on-events">'on' public method</a>.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./events.php">Demo</a>
+                    </p>
                 </div>
             </div>
         </div>
