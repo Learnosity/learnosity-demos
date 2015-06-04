@@ -83,6 +83,12 @@ $request = '{
             "ui_style": {
                 "type": "block-keyboard"
             }
+        },
+        {
+            "type": "formulaessay",
+            "response_id": "demoformula8_'.$uniqueResponseIdSuffix.'",
+            "is_math": true,
+            "stimulus": "Prove by induction that \\\\(1 + 2 + 4 + 8 + \\\\dots + 2n-1 = 2n - 1 \\\\)"
         }
     ]
 }';
@@ -198,6 +204,12 @@ $signedRequest = $Init->generate();
         </button>
         <br>
         <pre class="cm-s-default jsonexample" style="max-width:800px;display:none;"></pre>
+    </div>
+    <hr />
+
+    <p>8. Formula essay question type. <small>Each line of input is either math or text.</small></p>
+    <div class="question">
+        <span class="learnosity-response question-demoformula8_<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
     <hr />
 </div>

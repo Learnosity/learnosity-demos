@@ -14,9 +14,9 @@ $security = array(
 );
 
 $request = array(
-    'mode'                    => 'item_edit',
-    'reference'               => $item_ref,
-    'config' => array(
+    'mode'      => 'item_edit',
+    'reference' => $item_ref,
+    'config'    => array(
         'question_editor_init_options' => array(
             'ui' => array(
                 'public_methods'     => array(),

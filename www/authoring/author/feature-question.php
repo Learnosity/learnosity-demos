@@ -74,9 +74,8 @@ $signedRequest = $Init->generate();
 
 <script src="<?php echo $url_authorapi; ?>"></script>
 <script>
-    var initOptions = <?php echo $signedRequest; ?>;
-
-    LearnosityAuthor.init(initOptions);
+    var initOptions = <?php echo $signedRequest; ?>,
+        authorApp = LearnosityAuthor.init(initOptions);
 </script>
 
 <?php

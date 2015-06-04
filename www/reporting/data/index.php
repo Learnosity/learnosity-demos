@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 // Full base URL of the Data API
 $URL = $url_data;
 // Which version of the Data API to use
-$version = 'v0.48';
+$version = 'v0.50';
 
 ?>
 
