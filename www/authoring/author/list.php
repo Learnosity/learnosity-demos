@@ -16,10 +16,10 @@ $security = array(
 $request = array(
     'mode' => 'item_list',
     'user' => array(
-        'id' => 'demos-site',
-        'firstname' => 'Test',
-        'lastname' => 'Test',
-        'email' => 'test@test.com'
+        'id'        => 'demos-site',
+        'firstname' => 'Demos',
+        'lastname'  => 'User',
+        'email'     => 'demos@learnosity.com'
     )
 );
 
