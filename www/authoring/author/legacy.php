@@ -151,7 +151,7 @@ vulputate bibendum erat, vitae ultricies kneque.</p>') . PHP_EOL; ?>
 *
 ********************************************************************
 -->
-<script src="<?php echo $url_authorapi; ?>"></script>
+<script src="<?php echo $url_authorapi_legacy; ?>"></script>
 <script src="<?php echo $url_items; ?>"></script>
 <script>
     var config = <?php echo $signedRequest; ?>,
