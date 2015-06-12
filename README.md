@@ -13,7 +13,7 @@ There is also a SignatureUtils class which simplifies the generation of the secu
 ## Getting Started - Native
 
 * <strike>[Download the package](https://github.com/Learnosity/learnosity-demos/archive/master.zip)</strike>
-* ``` git clone --recursive https://github.com/Learnosity/learnosity-demos.git```
+* ``` git clone --recursive https://github.com/Learnosity/learnosity-demos.git``` (make sure you have set up an SSH key in GitHub when you do the clone as the PHP SDK will not clone properly through HTTPS. [Instructions here](https://help.github.com/articles/generating-ssh-keys/))
 * Put in a web accessible directory ^
 * Test it out by browsing to index.php
 
