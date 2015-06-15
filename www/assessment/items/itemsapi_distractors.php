@@ -40,7 +40,9 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <h1>Items API – Inline</h1>
-    <p>Display items from the Learnosity Item Bank in no time with the Items API.  The Items API builds on the Questions API's power and makes it quicker to integrate.<p>
+    <p>Distractor rationale are hints shown to a student when they select an incorrect answer.<br>Try choosing
+    an incorrect answer for the questions below to see distractor rationale in action.<br>You can specify distractor rationale 
+    in the author API and then write code to display them.<br> For an example of how to implement distractor rationale, refer to <a href="https://docs.learnosity.com/tutorials/tutorial_202"></a>this tutorial.</a><p>
 </div>
 
 <div class="section">
