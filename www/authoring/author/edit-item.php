@@ -27,6 +27,10 @@ $request = array(
                         )
                     )
                 )
+            ),
+            'widget' => array(
+                'delete' => true,
+                'edit' => true
             )
         ),
         'question_editor_init_options' => array(
