@@ -27,7 +27,7 @@ $request = array(
     'type'                 => 'local_practice',
     'config'               => array(
         'renderSubmitButton'  => false,
-        'questionsApiVersion' => 'v2'
+        'questionsApiVersion' => $version_questionsapi
     )
 );
 
