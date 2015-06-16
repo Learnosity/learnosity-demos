@@ -65,7 +65,7 @@ a:hover {
 }
 
 table {
-    border-collapse: inherit !important;
+    border-collapse: inherit;
 }
 
 th {
@@ -605,6 +605,12 @@ h6 a {
     padding-left: 60px;
     padding-right: 60px;
     margin-bottom: 20px;
+}
+
+.section.pad-sml {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
 }
 
 .container .jumbotron {
