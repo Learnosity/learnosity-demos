@@ -38,23 +38,20 @@ $signedRequest = $Init->generate();
     </div>
     <div class="overview">
         <h1>Author API</h1>
-        <p>Learnosity's Author API allows searching and integration of Learnosity powered content into your content management system.<p>
-        <p>Below is demo of the Author API editing a new item each time, questions can be created, edited and are persisted to our itembank.</p>
+        <p><span class="label label-warning">BETA</span> The item list view allows authors to search the Learnosity item bank for existing items. From there
+        it can be configured to allows users to edit items, or just select them for activity creation.</p>
     </div>
 </div>
 
-<!-- Container for the items api to load into -->
-<div class="section">
-    <h3>Item List View</h3>
-    <hr>
+<div class="section pad-sml">
+    <!-- Container for the author api to load into -->
     <div id="learnosity-author"></div>
 </div>
 
 <script src="<?php echo $url_authorapi; ?>"></script>
 <script>
-    var initOptions = <?php echo $signedRequest; ?>;
-
-    LearnosityAuthor.init(initOptions);
+    var initOptions = <?php echo $signedRequest; ?>,
+        authorApp = LearnosityAuthor.init(initOptions);
 </script>
 
 <?php
