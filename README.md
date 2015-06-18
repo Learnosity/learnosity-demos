@@ -59,7 +59,7 @@ This package comes with demo security (consumer) credentials. If you have your o
 
 ## Requirements
 
-* PHP 5.3+
+* PHP 5.4+
 * You must be connected to the internet to use this site
 
 ## Documentation
