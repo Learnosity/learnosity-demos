@@ -78,8 +78,8 @@ $request = array(
         ),
         'ui_style'            => 'main',
         'ignore_validation'   => false,
-        'questionsApiVersion' => 'v2',
-        'assessApiVersion'    => 'v2',
+        'questionsApiVersion' => $version_questionsapi,
+        'assessApiVersion'    => $version_assesssapi,
         'configuration'       => array(
             'fontsize'               => 'normal',
             'stylesheet'             => '',

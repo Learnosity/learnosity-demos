@@ -27,7 +27,7 @@ $request = array(
     'type'           => 'submit_practice',
     'config'         => array(
         'renderSubmitButton'  => true,
-        'questionsApiVersion' => 'v2'
+        'questionsApiVersion' => $version_questionsapi
     )
 );
 

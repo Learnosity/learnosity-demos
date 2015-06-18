@@ -24,7 +24,7 @@ $request = array(
     'type'           => 'submit_practice',
     'config'         => array(
         'renderSubmitButton'  => true,
-        'questionsApiVersion' => 'v2'
+        'questionsApiVersion' => $version_questionsapi
     )
 );
 
@@ -41,8 +41,8 @@ $signedRequest = $Init->generate();
     </div>
     <h1>Items API – Inline</h1>
     <p>Distractor rationale are hints shown to a student when they select an incorrect answer.<br>Try choosing
-    an incorrect answer for the questions below to see distractor rationale in action.<br>You can specify distractor rationale 
-    in the author API and then write code to display them.<br> For an example of how to implement distractor rationale, refer to <a href="https://docs.learnosity.com/tutorials/tutorial_202"></a>this tutorial.</a><p>
+    an incorrect answer for the questions below to see distractor rationale in action.<br>You can specify distractor rationale
+    in the author API and then write code to display them.<br> For an example of how to implement distractor rationale, refer to <a href="https://docs.learnosity.com/tutorials/tutorial_202">this tutorial.</a><p>
 </div>
 
 <div class="section">
