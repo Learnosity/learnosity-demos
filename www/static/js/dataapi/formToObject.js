@@ -58,7 +58,9 @@ var formToObject = (function($) {
                             val.push($.trim(this));
                         });
                         if (val.length) {
-                            request[param[0]] = {}
+                            if (request[param[0]] === undefined) {
+                                request[param[0]] = {}
+                            }
                             request[param[0]][param[1]] = val;
                         }
                     }
