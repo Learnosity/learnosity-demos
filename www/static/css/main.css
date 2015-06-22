@@ -1124,3 +1124,7 @@ textarea.form-control {
     color: #444;
     padding-right: 2px;
 }
+
+.panel-title a {
+    display: block;
+}

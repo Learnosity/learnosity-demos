@@ -21,21 +21,37 @@ $resource = 'sessionstatuses';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">user(s)</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-user_id" data-type="array" value="">
-                </div>
-            </div>
-            <div class="form-group">
                 <label class="col-md-2 control-label">activity(s)</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-activity_id" data-type="array" value="">
                 </div>
             </div>
             <div class="form-group">
+                <label class="col-md-2 control-label">session(s)</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="api-session_id" data-type="array" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">user(s)</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="api-user_id" data-type="array" value="">
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="col-md-2 control-label">status(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-status" data-type="array" value="">
+                    <div class="checkbox">
+                        <label for="api-status~incomplete4">
+                            <input type="checkbox" id="api-status~incomplete4" data-type="checkboxarray" value="incomplete">
+                            Incomplete
+                        </label>
+                        <br>
+                        <label for="api-status~completed4">
+                            <input type="checkbox" id="api-status~completed4" data-type="checkboxarray" value="completed">
+                            Completed
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -71,23 +87,6 @@ $resource = 'sessionstatuses';
                 </label>
                 <div class="col-md-2">
                     <input type="input" class="form-control" id="api-maxtime" data-type="string" value="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">count only?</label>
-                <div class="col-md-10">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="1">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="count" id="api-count" data-type="boolean" value="0" checked>
-                            No
-                        </label>
-                    </div>
                 </div>
             </div>
             <div class="form-group">

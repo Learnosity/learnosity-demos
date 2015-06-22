@@ -27,7 +27,7 @@ $resource = 'activities';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">pool reference</label>
+                <label class="col-md-2 control-label">item pool id</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-item_pool_id" data-type="string" value="">
                 </div>
@@ -35,7 +35,17 @@ $resource = 'activities';
             <div class="form-group">
                 <label class="col-md-2 control-label">status(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-status" data-type="array" value="published, unpublished, deleted">
+                    <div class="checkbox">
+                        <label for="api-status~unpublished">
+                            <input type="checkbox" id="api-status~unpublished" data-type="checkboxarray" value="unpublished">
+                            Unpublished
+                        </label>
+                        <br>
+                        <label for="api-status~published">
+                            <input type="checkbox" id="api-status~published" data-type="checkboxarray" value="published">
+                            Published
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -50,7 +60,7 @@ $resource = 'activities';
                     <span class="glyphicon glyphicon-question-sign"
                           data-toggle="tooltip"
                           data-placement="right"
-                          title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of results if there are any.">
+                          title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of data if there are any.">
                     </span>
                 </label>
                 <div class="col-md-4">

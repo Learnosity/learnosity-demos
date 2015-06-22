@@ -27,18 +27,6 @@ $resource = 'users';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">school(s)</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-school_id" data-type="array" value="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">type(s)</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-types" data-type="array" value="student, teacher">
-                </div>
-            </div>
-            <div class="form-group">
                 <label class="col-md-2 control-label">limit</label>
                 <div class="col-md-2">
                     <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="5">

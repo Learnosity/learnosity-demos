@@ -45,7 +45,7 @@ var formToObject = (function($) {
             value;
         for (var i = 0, len = els.length; i < len; i++) {
             type = $(els[i]).data('type');
-            parameter = $(els[i]).attr('id').replace('api-', '');
+            parameter = $(els[i]).attr('id').replace('api-', '').split('~')[0];
             value = $.trim($(els[i]).val());
             if (parameter === 'endpoint') {
                 continue;
@@ -58,7 +58,9 @@ var formToObject = (function($) {
                             val.push($.trim(this));
                         });
                         if (val.length) {
-                            request[param[0]] = {}
+                            if (request[param[0]] === undefined) {
+                                request[param[0]] = {}
+                            }
                             request[param[0]][param[1]] = val;
                         }
                     }
@@ -69,6 +71,14 @@ var formToObject = (function($) {
                         $.each(value.split(','), function() {
                             request[parameter].push($.trim(this));
                         });
+                    }
+                    break;
+                case 'checkboxarray':
+                    if ($(els[i]).is(':checked')) {
+                        if (request[parameter] === undefined) {
+                            request[parameter] = [];
+                        }
+                        request[parameter].push($(els[i]).val());
                     }
                     break;
                 case 'boolean':
