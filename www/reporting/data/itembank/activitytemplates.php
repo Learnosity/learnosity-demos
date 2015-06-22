@@ -21,44 +21,8 @@ $resource = 'activitytemplates';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">reference(s)</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-references" data-type="array" value="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">status(s)</label>
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        <label for="api-status~unpublished2">
-                            <input type="checkbox" id="api-status~unpublished2" data-type="checkboxarray" value="unpublished">
-                            Unpublished
-                        </label>
-                        <br>
-                        <label for="api-status~published2">
-                            <input type="checkbox" id="api-status~published2" data-type="checkboxarray" value="published">
-                            Published
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">limit</label>
-                <div class="col-md-2">
-                    <input type="number" class="form-control" id="api-limit" data-type="integer" min="1" max="1000" value="5">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">
-                    next
-                    <span class="glyphicon glyphicon-question-sign"
-                          data-toggle="tooltip"
-                          data-placement="right"
-                          title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of results if there are any.">
-                    </span>
-                </label>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" id="api-next" data-type="string" value="">
+                <div class="col-md-offset-2 col-md-10">
+                    <em>No filtering available</em>
                 </div>
             </div>
             <div class="form-group">

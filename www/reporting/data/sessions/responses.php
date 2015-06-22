@@ -21,12 +21,6 @@ $resource = 'responses';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">user(s)</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-user_id" data-type="array" value="">
-                </div>
-            </div>
-            <div class="form-group">
                 <label class="col-md-2 control-label">activity(s)</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-activity_id" data-type="array" value="">
@@ -36,6 +30,12 @@ $resource = 'responses';
                 <label class="col-md-2 control-label">session(s)</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-session_id" data-type="array" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">user(s)</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="api-user_id" data-type="array" value="">
                 </div>
             </div>
             <div class="form-group">

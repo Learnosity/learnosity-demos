@@ -89,7 +89,7 @@ $resource = 'items';
                     <span class="glyphicon glyphicon-question-sign"
                         data-toggle="tooltip"
                         data-placement="right"
-                        title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of results if there are any.">
+                        title="The 'next' value may be returned from an initial call to the Data API. Use it to retrieve the next pageset of data if there are any.">
                     </span>
                 </label>
                 <div class="col-md-4">
