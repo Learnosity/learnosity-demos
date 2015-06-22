@@ -51,6 +51,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#activities">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/activities'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -66,6 +67,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#activitytemplates">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/activities/templates'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -81,6 +83,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#items">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/items'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -96,6 +99,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#itembankquestions">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/questions'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -111,6 +115,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#itembankfeatures">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/features'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -126,6 +131,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#itembanktags">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/tags'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -144,6 +150,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#itempools">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/pools'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -162,6 +169,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#sessionsresponses">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/responses'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -177,6 +185,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#responsescores">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/responses/scores'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -192,6 +201,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#sessionsscores">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/scores'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -207,6 +217,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#sessionsstatuses">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/statuses'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -225,6 +236,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#scoring">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/scoring'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
@@ -243,6 +255,7 @@ $version = 'v0.50';
                         <a data-toggle="collapse" data-parent="#accordion" href="#users">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/users'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>

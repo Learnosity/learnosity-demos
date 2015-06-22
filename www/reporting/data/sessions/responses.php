@@ -39,9 +39,19 @@ $resource = 'responses';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">school(s)</label>
+                <label class="col-md-2 control-label">status(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-school_id" data-type="array" value="">
+                    <div class="checkbox">
+                        <label for="api-status~incomplete">
+                            <input type="checkbox" id="api-status~incomplete" data-type="checkboxarray" value="incomplete">
+                            Incomplete
+                        </label>
+                        <br>
+                        <label for="api-status~completed">
+                            <input type="checkbox" id="api-status~completed" data-type="checkboxarray" value="completed">
+                            Completed
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="form-group">

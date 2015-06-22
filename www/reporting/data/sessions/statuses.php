@@ -33,9 +33,25 @@ $resource = 'sessionstatuses';
                 </div>
             </div>
             <div class="form-group">
+                <label class="col-md-2 control-label">session(s)</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="api-session_id" data-type="array" value="">
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="col-md-2 control-label">status(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-status" data-type="array" value="">
+                    <div class="checkbox">
+                        <label for="api-status~incomplete4">
+                            <input type="checkbox" id="api-status~incomplete4" data-type="checkboxarray" value="incomplete">
+                            Incomplete
+                        </label>
+                        <br>
+                        <label for="api-status~completed4">
+                            <input type="checkbox" id="api-status~completed4" data-type="checkboxarray" value="completed">
+                            Completed
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="form-group">

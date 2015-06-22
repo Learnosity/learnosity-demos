@@ -39,7 +39,7 @@ $resource = 'questions';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">pool reference</label>
+                <label class="col-md-2 control-label">item pool id</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-item_pool_id" data-type="string" value="">
                 </div>

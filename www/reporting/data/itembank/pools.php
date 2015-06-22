@@ -29,7 +29,17 @@ $resource = 'itempools';
             <div class="form-group">
                 <label class="col-md-2 control-label">status(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-status" data-type="array" value="published">
+                    <div class="checkbox">
+                        <label for="api-status~unpublished4">
+                            <input type="checkbox" id="api-status~unpublished4" data-type="checkboxarray" value="unpublished">
+                            Unpublished
+                        </label>
+                        <br>
+                        <label for="api-status~published4">
+                            <input type="checkbox" id="api-status~published4" data-type="checkboxarray" value="published">
+                            Published
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
