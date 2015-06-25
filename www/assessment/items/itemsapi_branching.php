@@ -51,7 +51,7 @@ $request = array(
             array(
                 'required_tags' => array(
                     'Testlet' => array(
-                        'sequence-2A'
+                        'decision-1A'
                     )
                 )
             )
