@@ -40,7 +40,7 @@ include_once 'includes/header.php';
                     <p>The item list view allows authors to search the item bank for existing items. From there
                     it can be configured to allows users to edit items, or just select them for activity creation.</p>
                     <p class="text-right">
-                        <!-- <a class="btn btn-primary btn-md" href="./list.php">Demo</a> -->
+                        <a class="btn btn-primary btn-md" href="./list.php">Demo</a>
                     </p>
                 </div>
             </div>

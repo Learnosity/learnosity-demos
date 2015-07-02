@@ -14,7 +14,14 @@ $security = array(
 );
 
 $request = array(
-    'mode' => 'item_list',
+    'mode'      => 'item_list',
+    'config'    => array(
+        'item_list' => array(
+            'toolbar' => array(
+                'add' => true
+            )
+        )
+    ),
     'user' => array(
         'id'        => 'demos-site',
         'firstname' => 'Demos',
@@ -39,7 +46,7 @@ $signedRequest = $Init->generate();
     <div class="overview">
         <h1>Author API</h1>
         <p><span class="label label-warning">BETA</span> The item list view allows authors to search the Learnosity item bank for existing items. From there
-        it can be configured to allows users to edit items, or just select them for activity creation.</p>
+        it can be configured to allow users to create items, or just select them for activity creation.</p>
     </div>
 </div>
 
