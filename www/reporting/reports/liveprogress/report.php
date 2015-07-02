@@ -51,6 +51,15 @@ $signedRequest = $Init->generate();
 
 <script src="<?php echo $url_reports; ?>"></script>
 <script>
-    var initOptions = <?php echo $signedRequest; ?>;
-    LearnosityReports.init(initOptions);
+    var initOptions = <?php echo $signedRequest; ?>,
+        eventOptions = {
+            readyListener: init
+        },
+        reportsApp = LearnosityReports.init(initOptions, eventOptions);
+
+    function init () {
+        reportsApp.getReport('report-1').on('progressed', function (events) {
+            console.log('Received events: ', events);
+        });
+    }
 </script>
