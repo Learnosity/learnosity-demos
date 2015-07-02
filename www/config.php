@@ -25,7 +25,7 @@ $courseid   = 'demo_' . $consumer_key;
 $studentid  = 'demo_student';
 $teacherid  = 'demo_teacher';
 $schoolid   = 'demo_school';
-$customMode = $_GET['mode'];
+$customMode = (isset($_GET['mode'])) ? $_GET['mode'] : 'production';
 
 /*
 |--------------------------------------------------------------------------
