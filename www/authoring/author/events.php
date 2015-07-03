@@ -98,9 +98,31 @@ $signedRequest = $Init->generate();
             learnosityApp.on('save:error', function (event) {
                 showNotification('Failed to save widget of type "' + event.data.json.type + '", because of "' + event.data.error.meta.message + '"');
             });
+            learnosityApp.on('item:render', function () {
+                var questionsApp = learnosityApp.questionsApp();
+                var features = getMappedWidgetData(questionsApp.getFeatures());
+                var questions = getMappedWidgetData(questionsApp.getQuestions());
+                var widgets = features.concat(questions);
+                var notification = 'Rendered item';
+                if (widgets.length) {
+                    notification += ' containing ' + widgets.join(', ');
+                }
+                showNotification(notification);
+            });
         }
 
     });
+
+    function getMappedWidgetData (widgetCollection) {
+        var mapped = [];
+        var prop;
+        for (prop in widgetCollection) {
+            if (widgetCollection.hasOwnProperty(prop)) {
+                mapped.push('"' + widgetCollection[prop].type + '"');
+            }
+        }
+        return mapped;
+    }
 
     function showNotification (message) {
         var $message = $('<p/>').text(message);
