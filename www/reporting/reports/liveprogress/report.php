@@ -58,8 +58,30 @@ $signedRequest = $Init->generate();
         reportsApp = LearnosityReports.init(initOptions, eventOptions);
 
     function init () {
-        reportsApp.getReport('report-1').on('progressed', function (events) {
-            console.log('Received events: ', events);
+        reportsApp.getReport('report-1').on('started', function (events) {
+            console.log('Received events: started');
         });
+        reportsApp.getReport('report-1').on('paused', function (events) {
+            console.log('Received events: paused');
+        });
+        reportsApp.getReport('report-1').on('resumed', function (events) {
+            console.log('Received events: resumed');
+        });
+        reportsApp.getReport('report-1').on('saved', function (events) {
+            console.log('Received events: saved');
+        });
+        reportsApp.getReport('report-1').on('submitted', function (events) {
+            console.log('Received events: submitted');
+        });
+        reportsApp.getReport('report-1').on('progressed', function (events) {
+            console.log('Received events: progressed');
+        });
+        reportsApp.getReport('report-1').on('consumed', function (events) {
+            console.log('Received events: consumed');
+        });
+        reportsApp.getReport('report-1').on('terminated', function (events) {
+            console.log('Received events: terminated');
+        });
+
     }
 </script>
