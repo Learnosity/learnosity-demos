@@ -37,6 +37,26 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Printing Key Answer Demo</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Uses Items API (inline) to render items for print. In this simple
+                        demo we use the following question types:</p>
+                    <ul>
+                        <li>MCQ
+                        <li>MCQ Multi</li>
+                        <li>Token highlight</li>
+                        <li>Fill in the blanks</li>
+                    </ul>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./print-key-answer.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
