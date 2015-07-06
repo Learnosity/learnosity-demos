@@ -82,12 +82,14 @@ $signedRequest = $Init->generate();
 <script>
     var initOptions = <?php echo $signedRequest; ?>;
     var itemIDs = new Array();
+    var activeItemID = '<?php echo $item_ref; ?>';
+
 
     var authorApp = LearnosityAuthor.init(initOptions, {
 
         readyListener: function () {            
             authorApp.on('save:success', function (event) {
-                saveItemID(initOptions.request.reference);
+                saveItemID(activeItemID);
             });
         }
 
@@ -96,8 +98,8 @@ $signedRequest = $Init->generate();
     $(document).ready(function(){
         //add more question handler
         $(".btn-addMore").click(function(){            
-            initOptions.request.reference = guid();
-            authorApp.setItem(initOptions.request.reference);
+            activeItemID = guid();
+            authorApp.setItem(activeItemID);
         });
         //go to assessment handler
         $(".btn-goToAssessment").click(function(){            
@@ -146,7 +148,7 @@ $signedRequest = $Init->generate();
     }
 
     function editItem(itemID) {        
-        initOptions.request.reference = itemID;
+        activeItemID = itemID;
         authorApp.setItem(itemID);
     }
 </script>
