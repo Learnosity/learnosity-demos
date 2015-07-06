@@ -82,6 +82,9 @@ $request = array(
                 ]
             ]
         ],
+        'labelBundle' => array(
+            'close' => 'Go to Reporting'
+        ),
         'time' => [
             'show_pause' => true,
             'max_time' => 300
