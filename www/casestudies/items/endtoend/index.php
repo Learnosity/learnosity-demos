@@ -13,7 +13,7 @@ include_once 'includes/header.php';
     <h1>End to End Demo</h1>
     <div class="section-intro">
         <p>This is an End to End demo covering the main areas of Learnosity APIs.<p>
-        <p>Starting <strong>Authoring</strong> questions to turn them into an <strong>Assessment</strong> and finally <strong>Reporting</strong> to review the results and provide feedback.</p>
+        <p>Starting with <strong>Authoring</strong> questions to turn them into an <strong>Assessment</strong> and finally <strong>Reporting</strong> to review the results and provide feedback.</p>
     </div>
     <div class="row">
         <div class="col-md-6">

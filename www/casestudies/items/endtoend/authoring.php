@@ -73,8 +73,8 @@ $signedRequest = $Init->generate();
     </div>  
     <p class="text-right">
         <br>
-        <a class="btn btn-primary btn-md" href="javascript:addNextQuestion();">Add more</a>
-        <a class="btn btn-primary btn-md" href="javascript:goToAssessment();">Go to Assessment</a>
+        <a class="btn btn-primary btn-md btn-addMore">Add more</a>
+        <a class="btn btn-primary btn-md btn-goToAssessment">Go to Assessment</a>
     </p>
 </div>
 
@@ -93,14 +93,27 @@ $signedRequest = $Init->generate();
 
     });
 
+    $(document).ready(function(){
+        //add more question handler
+        $(".btn-addMore").click(function(){            
+            initOptions.request.reference = guid();
+            authorApp.setItem(initOptions.request.reference);
+        });
+        //go to assessment handler
+        $(".btn-goToAssessment").click(function(){            
+            window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
+        });        
+    });
+
     function showNotification (itemID) {            
-        var $message = $('<a/>').text('Question ' + itemIDs.indexOf(itemID))
-                                .attr('href','javascript:editItem("' + itemID + '")')
+         var $message = $('<a/>').text('Question ' + itemIDs.length)
+                                 .attr('onclick','editItem("' + itemID + '")')
+                                 .attr('style','cursor:pointer')
         var $closeBtn = $('<button/>').attr('type', 'button')
                                       .attr('data-dismiss', 'alert')
                                       .attr('aria-hidden', 'true')
                                       .attr('title', 'Delete question')
-                                      .attr('onclick', 'javascript:removeItem("' + itemID + '")')
+                                      .attr('onclick', 'removeItem("' + itemID + '")')
                                       .addClass('close')
                                       .text('×');
         var $notification = $('<div/>').addClass('alert alert-info alert-dismissable')
@@ -108,15 +121,6 @@ $signedRequest = $Init->generate();
                                        .append($closeBtn)
                                        .append($message);
         $('#notifications').append($notification);
-    }
-
-    function addNextQuestion() {
-        initOptions.request.reference = guid();
-        authorApp.setItem(initOptions.request.reference);
-    }
-
-    function goToAssessment() {
-        window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
     }
 
     function guid() {
@@ -130,9 +134,7 @@ $signedRequest = $Init->generate();
     }
 
     function saveItemID(itemID) {
-        var idx = itemIDs.indexOf(itemID);
-
-        if(idx == -1){
+        if(jQuery.inArray(itemID, itemIDs) == -1){
             itemIDs.push(itemID);
             showNotification(itemID);
         }

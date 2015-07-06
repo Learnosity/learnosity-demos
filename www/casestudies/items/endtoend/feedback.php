@@ -7,7 +7,7 @@ use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
 $session_id = $_GET['session_id'];
-$activity_id = 'NBS_Demo';
+$activity_id = 'Demo_Activity';
 
 
 $security = [
@@ -40,7 +40,7 @@ $signedRequest = $Init->generate();
         <div class="overview">
             <h1>End to End Demo – Reporting Feedback</h1>
             <p>Using Reports API on the left side you can see the student answers.</p>
-            <p>On the right side of the page the teacher can provide feedback to the student.</p>
+            <p>On the right side of the page the teacher can provide additional subjective feedback to the student, alongside the existing objective scoring.</p>
         </div>
     </div>
 

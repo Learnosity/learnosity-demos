@@ -103,7 +103,7 @@ var init = function() {
             'rendering_type': 'inline',
             'name': 'Items API demo - feedback activity.',
             'state': 'review',
-            'activity_id': 'NBS_Demo',
+            'activity_id': 'Demo_Activity',
             'session_id': '<?php echo $feedback_session_id; ?>',
             'course_id': 'commoncore',
             'items': itemReferences,
