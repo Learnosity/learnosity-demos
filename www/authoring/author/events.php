@@ -98,7 +98,7 @@ $signedRequest = $Init->generate();
             learnosityApp.on('save:error', function (event) {
                 showNotification('Failed to save widget of type "' + event.data.json.type + '", because of "' + event.data.error.meta.message + '"');
             });
-            learnosityApp.on('item:render', function () {
+            learnosityApp.on('render:item', function () {
                 var questionsApp = learnosityApp.questionsApp();
                 var features = getMappedWidgetData(questionsApp.getFeatures());
                 var questions = getMappedWidgetData(questionsApp.getQuestions());
