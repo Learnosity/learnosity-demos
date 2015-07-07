@@ -52,7 +52,7 @@ include_once 'includes/header.php';
                         <li>Fill in the blanks</li>
                     </ul>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./print-key-answer.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./print-answer-key.php">Demo</a>
                     </p>
                 </div>
             </div>
