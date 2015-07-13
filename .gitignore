@@ -6,3 +6,4 @@
 *.sublime-project
 .idea/*
 .vagrant/*
+www/config_override*
