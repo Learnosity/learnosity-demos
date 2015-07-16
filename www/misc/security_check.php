@@ -28,7 +28,7 @@ include_once 'includes/header.php';
                         </div>
                         <div class="help-block">
                             Unique id provided by Learnosity that allows the server to identify the
-                            client and retrive its <em>consumer_secret</em>.
+                            client and retrieve its <em>consumer_secret</em>.
                         </div>
                     </div>
 

@@ -61,8 +61,7 @@ $env = array(
     'path'     => $_SERVER['REQUEST_URI'],
     'protocol' => (($_SERVER['SERVER_PORT'] === '443') ? 'https://' : 'http://'),
     'section'  => $section,
-    'www'      => $UrlGenerator->getRelativePath($_SERVER['REQUEST_URI'], $baseWebPath),
-    'mode'     => getEnvironmentMode($customMode)
+    'www'      => $UrlGenerator->getRelativePath($_SERVER['REQUEST_URI'], $baseWebPath)
 );
 
 // Make sure we have a trailing slash for the www path
@@ -80,62 +79,24 @@ if (substr($env['www'], -1) !== '/') {
 | it works from http and https sites.
 |
 */
-switch ($env['mode']) {
-    case 'development':
-        $url_assess           = '//assess.vg.learnosity.com?latest';
-        $url_authorapi        = '//authorapi.vg.learnosity.com?latest';
-        $url_authorapi_legacy = '//authorapi.vg.learnosity.com?latest';
-        $url_data             = '//data.vg.learnosity.com?latest';
-        $url_events           = '//events.vg.learnosity.com?latest';
-        $url_items            = '//items.vg.learnosity.com?latest';
-        $url_questioneditor   = '//questioneditor.vg.learnosity.com?latest';
-        $url_questions        = '//questions.vg.learnosity.com?latest';
-        $url_reports          = '//reports.vg.learnosity.com?latest';
-        $version_questionsapi = 'v2';
-        $version_assesssapi   = 'latest';
-        break;
-    case 'staging':
-        $url_assess           = '//assess.staging.learnosity.com';
-        $url_authorapi        = '//authorapi.staging.learnosity.com?v0.10';
-        $url_authorapi_legacy = '//authorapi.staging.learnosity.com?v0.5';
-        $url_data             = 'https://data.staging.learnosity.com';
-        $url_events           = '//events.staging.learnosity.com';
-        $url_items            = '//items.staging.learnosity.com';
-        $url_questioneditor   = '//questioneditor.staging.learnosity.com?v2';
-        $url_questions        = '//questions.staging.learnosity.com';
-        $url_reports          = '//reports.staging.learnosity.com';
-        $version_questionsapi = 'v2';
-        $version_assesssapi   = 'v2';
-        break;
-    default:
-        $url_assess           = '//assess.learnosity.com';
-        $url_authorapi        = '//authorapi.learnosity.com?v0.10';
-        $url_authorapi_legacy = '//authorapi.learnosity.com?v0.5';
-        $url_data             = 'https://data.learnosity.com';
-        $url_events           = '//events.learnosity.com';
-        $url_items            = '//items.learnosity.com';
-        $url_questioneditor   = '//questioneditor.learnosity.com?v2';
-        $url_questions        = '//questions.learnosity.com';
-        $url_reports          = '//reports.learnosity.com';
-        $version_questionsapi = 'v2';
-        $version_assesssapi   = 'v2';
-        break;
-}
 
-function getEnvironmentMode($mode = null)
-{
-    // Allow an override via URL
-    if (!empty($mode) && in_array(trim($mode), ['development', 'staging', 'production'])) {
-        return trim($mode);
-    }
+$url_assess           = '//assess.learnosity.com';
+$url_authorapi        = '//authorapi.learnosity.com?v0.11';
+$url_authorapi_legacy = '//authorapi.learnosity.com?v0.5';
+$url_data             = 'https://data.learnosity.com';
+$url_events           = '//events.learnosity.com';
+$url_items            = '//items.learnosity.com';
+$url_questioneditor   = '//questioneditor.learnosity.com?v2';
+$url_questions        = '//questions.learnosity.com';
+$url_reports          = '//reports.learnosity.com';
+$version_questionsapi = 'v2';
+$version_assessapi    = 'v2';
 
-    if (strpos($_SERVER['HTTP_HOST'], 'vg') > 0) {
-        return 'development';
-    } elseif (strpos($_SERVER['HTTP_HOST'], 'staging') > 0) {
-        return 'staging';
-    } else {
-        return 'production';
-    }
+/**
+ * Allow override file to replace config options
+ **/
+if (file_exists(dirname(__FILE__) . '/config_override.php')) {
+    require dirname(__FILE__) . '/config_override.php';
 }
 
 include_once 'sdk/src/LearnositySdk/autoload.php';
