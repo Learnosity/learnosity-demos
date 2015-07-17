@@ -547,17 +547,6 @@ $request = '{
             }
         },
         {
-            "response_id": "demo10-'.$uniqueResponseIdSuffix.'",
-            "type": "clozeinlinetext",
-            "description": "The student needs to fill in the blanks ",
-            "template": "<p>Sherlock Homes had sprung out and seized the {{response}} by the collar. The other dived down the hole, and I heard the sound of {{response}} cloth as Jones clutched at his skirts. The light flashed upon the barrel of a revolver, but Holmes’ {{response}} came down on the man’s wrist, and the pistol {{response}} upon the stone floor.</p>",
-            "instant_feedback": true,
-            "case_sensitive": false,
-            "validation": {
-                   "valid_responses": [["intruder"],["rending"],["hunting crop"],["clinked"]]
-                }
-            },
-        {
             "response_id": "demo23-'.$uniqueResponseIdSuffix.'",
             "instant_feedback": true,
             "stimulus": "<strong>Which sentence or sentences imply that the cheetahs run fast?</strong>",
@@ -1341,15 +1330,6 @@ $signedRequest = $Init->generate();
             <h3 id="q9">Cloze (fill in the blanks) with drag and drop</h3>
             <p>Simplify the following, expressing your answers with positive indices.</p>
             <span class="learnosity-response question-demo9-<?php echo $uniqueResponseIdSuffix ?>"></span>
-        </div>
-    </div>
-    <hr>
-
-    <div class="row">
-        <div class="col-md-8">
-            <h3 id="q10">Cloze Text Expanding (Extended Fill in the blanks)</h3>
-            <p>Fill in the blanks.</p>
-            <span class="learnosity-response question-demo10-<?php echo $uniqueResponseIdSuffix ?>"></span>
         </div>
     </div>
     <hr>
