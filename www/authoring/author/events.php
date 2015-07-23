@@ -81,10 +81,10 @@ $signedRequest = $Init->generate();
 <script>
     var initOptions = <?php echo $signedRequest; ?>;
 
-    var learnosityApp = LearnosityAuthor.init(initOptions, {
+    var authorApp = LearnosityAuthor.init(initOptions, {
 
         readyListener: function () {
-            learnosityApp.on('save', function (event) {
+            authorApp.on('save', function (event) {
                 if (shouldPreventDefault()) {
                     event.preventDefault();
                     showNotification('Prevented saving widget of type "' + event.data.type + '"')
@@ -92,14 +92,14 @@ $signedRequest = $Init->generate();
                     showNotification('Saving widget of type "' + event.data.type + '"')
                 }
             });
-            learnosityApp.on('save:success', function (event) {
+            authorApp.on('save:success', function (event) {
                 showNotification('Saved widget');
             });
-            learnosityApp.on('save:error', function (event) {
+            authorApp.on('save:error', function (event) {
                 showNotification('Failed to save widget of type "' + event.data.json.type + '", because of "' + event.data.error.meta.message + '"');
             });
-            learnosityApp.on('render:item', function () {
-                var questionsApp = learnosityApp.questionsApp();
+            authorApp.on('render:item', function () {
+                var questionsApp = authorApp.questionsApp();
                 var features = getMappedWidgetData(questionsApp.getFeatures());
                 var questions = getMappedWidgetData(questionsApp.getQuestions());
                 var widgets = features.concat(questions);
