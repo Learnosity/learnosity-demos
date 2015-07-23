@@ -81,7 +81,7 @@ if (substr($env['www'], -1) !== '/') {
 */
 
 $url_assess           = '//assess.learnosity.com';
-$url_authorapi        = '//authorapi.learnosity.com?v0.11';
+$url_authorapi        = '//authorapi.learnosity.com?v0.12';
 $url_authorapi_legacy = '//authorapi.learnosity.com?v0.5';
 $url_data             = 'https://data.learnosity.com';
 $url_events           = '//events.learnosity.com';
