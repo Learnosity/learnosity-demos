@@ -21,7 +21,8 @@
             'casestudies/items/printing' => 'Printing Items',
             'casestudies/items/gallery'  => 'Gallery Style UI',
             'casestudies/items/xapi'     => 'xAPI Events',
-            'casestudies/items/endtoend' => 'End to End Demo'
+            'casestudies/items/endtoend' => 'End to End Demo',
+            'casestudies/items/customquestions' => 'Custom Questions',
         )
     );
 ?>
