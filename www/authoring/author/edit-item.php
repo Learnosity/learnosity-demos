@@ -109,10 +109,10 @@ $signedRequest = $Init->generate();
         var isValid = true;
 
         if (widget.type === 'sharedpassage') {
-            if (widget.data.metadata.flesch_kincaid !== undefined) {
+            if (typeof widget.data.metadata !== 'undefined' && typeof widget.data.metadata.flesch_kincaid !== 'undefined') {
                 isValid = (/^[0-9.]+$/.test(+widget.data.metadata.flesch_kincaid));
             }
-            if (isValid && widget.data.metadata.lexile !== undefined) {
+            if (isValid && (typeof widget.data.metadata !== 'undefined' && typeof widget.data.metadata.lexile !== 'undefined')) {
                 isValid = (/^\d+$/.test(+widget.data.metadata.lexile));
             }
         }
