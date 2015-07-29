@@ -82,7 +82,43 @@ $signedRequest = $Init->generate();
 <script src="<?php echo $url_authorapi; ?>"></script>
 <script>
     var initOptions = <?php echo $signedRequest; ?>,
-        authorApp = LearnosityAuthor.init(initOptions);
+        eventOptions = {
+            readyListener: init
+        },
+        authorApp = LearnosityAuthor.init(initOptions, eventOptions);
+
+    function init () {
+        /*
+         * On save(), validate the `Lexile` and `Flesch Kincaid`
+         * values for the Shared Passage feature type.
+         */
+        authorApp.on('save', function (evt) {
+            if (!validateReadabilityMeasures(evt.data)) {
+                evt.preventDefault();
+                // Rough validation on the Lexile/Flesch Kincaid values
+                alert('Invalid value for Lexile and/or Flesch Kincaid');
+            }
+        });
+    }
+
+    /*
+     * For shared passages, Lexile must be a whole number
+     * and Flesch Kincaid must be a whole number or a float
+     */
+    function validateReadabilityMeasures (widget) {
+        var isValid = true;
+
+        if (widget.type === 'sharedpassage') {
+            if (widget.data.metadata.flesch_kincaid !== undefined) {
+                isValid = (/^[0-9.]+$/.test(+widget.data.metadata.flesch_kincaid));
+            }
+            if (isValid && widget.data.metadata.lexile !== undefined) {
+                isValid = (/^\d+$/.test(+widget.data.metadata.lexile));
+            }
+        }
+
+        return isValid;
+    }
 </script>
 
 <?php
