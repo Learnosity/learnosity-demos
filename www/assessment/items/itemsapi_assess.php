@@ -64,6 +64,9 @@ $request = array(
             'auto_save'                => array(
                 'ui' => false,
                 'saveIntervalDuration' => 500
+            ),
+            'item_count' => array(
+                'question_count_option' => false
             )
         ),
         'time' => array(
