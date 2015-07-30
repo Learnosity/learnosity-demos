@@ -17,6 +17,9 @@ $request = array(
     'mode'      => 'item_list',
     'config'    => array(
         'item_list' => array(
+            'item' => array(
+                'status' =>false
+            ),
             'toolbar' => array(
                 'add' => true
             )
