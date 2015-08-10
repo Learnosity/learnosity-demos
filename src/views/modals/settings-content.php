@@ -212,6 +212,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="question_count_option" class="col-sm-6 control-label">Item Count based off Questions</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[item_count][question_count_option]" value="true"<?php if (isset($nav['item_count']['question_count_option']) && $nav['item_count']['question_count_option'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[item_count][question_count_option]" value="false"<?php if (isset($nav['item_count']['question_count_option']) && $nav['item_count']['question_count_option'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="idle_timeout" class="col-sm-6 control-label">Idle Timout Warning</label>
                                     <div class="col-sm-6">
                                          <input type="radio" name="configuration[idle_timeout][use_idle_timeout]" value="true"<?php if (isset($con['configuration']['idle_timeout']) &&  $con['configuration']['idle_timeout'] !== false) { echo ' checked'; }; ?>> Enable &nbsp;
