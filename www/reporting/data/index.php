@@ -11,7 +11,7 @@ if (isset($_REQUEST['data-url'])) {
 }
 
 // Which version of the Data API to use
-$version = 'v0.51';
+$version = 'v0.52';
 
 ?>
 
@@ -157,6 +157,25 @@ $version = 'v0.51';
                 <div id="itempools" class="panel-collapse collapse">
                     <div class="panel-body">
                         <?php include_once 'itembank/pools.php'; ?>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive demo for the 'QTI' section -->
+            <h2>QTI</h2>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#qti">
+                            <span class="block">action: get</span>
+                            <?php echo '/' . $version . '/itembank/conversion'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="qti" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'qti/qti.php'; ?>
                     </div>
                 </div>
             </div>
