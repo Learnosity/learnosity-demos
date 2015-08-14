@@ -69,6 +69,9 @@ if (substr($env['www'], -1) !== '/') {
     $env['www'] .= '/';
 }
 
+// Turn on remote SSL certificate verification in curl
+$curl_ssl_verify = true;
+
 /*
 |--------------------------------------------------------------------------
 | Learnosity URLs
@@ -81,7 +84,7 @@ if (substr($env['www'], -1) !== '/') {
 */
 
 $url_assess           = '//assess.learnosity.com';
-$url_authorapi        = '//authorapi.learnosity.com?v0.13';
+$url_authorapi        = '//authorapi.learnosity.com';
 $url_authorapi_legacy = '//authorapi.learnosity.com?v0.5';
 $url_data             = 'https://data.learnosity.com';
 $url_events           = '//events.learnosity.com';
