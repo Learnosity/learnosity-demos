@@ -69,6 +69,9 @@ if (substr($env['www'], -1) !== '/') {
     $env['www'] .= '/';
 }
 
+// Turn on remote SSL certificate verification in curl
+$curl_ssl_verify = true;
+
 /*
 |--------------------------------------------------------------------------
 | Learnosity URLs

@@ -24,7 +24,7 @@ $endpoint = (isset($_POST['endpoint'])) ? $_POST['endpoint'] : null;
 $data     = (isset($_POST['request'])) ? json_decode($_POST['request'], true) : null;
 $action   = (isset($_POST['action'])) ? $_POST['action'] : 'get';
 
-$dataapi = new DataApi();
+$dataapi = new DataApi(['ssl_verify' => $curl_ssl_verify]);
 $response = $dataapi->request($endpoint, $security, $consumer_secret, $data, $action);
 
 if (strlen($response->getBody())) {
