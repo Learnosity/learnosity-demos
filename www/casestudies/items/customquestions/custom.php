@@ -46,7 +46,13 @@
     }
 </style>
 
-<div class="jumbotron section">       
+<div class="jumbotron section">
+     <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/assessment/questions/knowledgebase/customquestions" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+        </ul>
+    </div>
     <div class="overview">
         <h1>Custom Question - Short Text</h1>
         <p>Here is a demo which shows an example custom implementation of the Short Text question type. You can rewrite the question JSON to define your own custom questions.</p>
