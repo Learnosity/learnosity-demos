@@ -13,37 +13,18 @@ $security = array(
 
 $request = array(
     'activity_id'    => 'itemsassessdemo',
-    'name'           => '',
+    'name'           => 'Items API demo - assess activity',
     'rendering_type' => 'assess',
     'state'          => 'initial',
     'type'           => 'submit_practice',
+    'course_id'      => $courseid,
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
-    'assess_inline'  => true,
-    'sections' => array(
-        array(
-            'items' => array('Demo3', 'Demo4', 'Demo5'),
-            'config' => array(
-                'subtitle' => 'Vocabulary section'
-            )
-        ),
-        array(
-            'items' => array('Demo6', 'Demo7', 'Demo8'),
-            'config' => array(
-                'subtitle' => 'Grammar section'
-            )
-        ),
-        array(
-            'items' => array('Demo9', 'Demo10'),
-            'config' => array(
-                'subtitle' => 'Spelling section'
-            )
-        )
-    ),
+    'items'          => array("Demo3", "Demo4", "Demo5", "Demo6", "Demo7", "Demo8", "Demo9", "Demo10"),
     'assess_inline'  => true,
     'config'         => array(
-        'title'          => 'Demo activity - showcasing sections',
-        'subtitle'       => 'Will be overridden',
+        'title'          => 'Demo activity - showcasing xAPI events',
+        'subtitle'       => 'Walter White',
         'administration' => array(
             'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', // `password`
             'options' => array(
@@ -99,11 +80,12 @@ $request = array(
         'questionsApiVersion' => 'v2',
         'assessApiVersion'    => 'v2',
         'configuration'       => array(
+            'events'                 => true,
             'fontsize'               => 'normal',
             'stylesheet'             => '',
-            'onsubmit_redirect_url'  => 'itemsapi_sections.php',
-            'onsave_redirect_url'    => 'itemsapi_sections.php',
-            'ondiscard_redirect_url' => 'itemsapi_sections.php',
+            'onsubmit_redirect_url'  => 'index.php',
+            'onsave_redirect_url'    => 'index.php',
+            'ondiscard_redirect_url' => 'index.php',
             'idle_timeout'           => array(
                 'interval'       => 300,
                 'countdown_time' => 60
@@ -125,14 +107,12 @@ $signedRequest = $Init->generate();
             <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted" data-toggle="modal" data-target="#settings"><span class="glyphicon glyphicon-list-alt"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
         </ul>
     </div>
     <div class="overview">
-        <h1>Items API – Sections</h1>
-        <p>Sections are a way to split up a single activity into discreet buckets of items, with
-        the ability to have different activity configuration per section.</p>
-        <p>Once students progress to a new <em>section</em>, they cannot navigate back.</p>
+        <h1>Items API – xAPI Events</h1>
+        <p>Preview xAPI (Experience API) events thrown by the Assess API. New events are prepended at the top of the box:</p>
+        <div class="previewWrapper preview" style="display: none; height: 300px; overflow: scroll;"><pre><code id="xApiPreview"></code></pre></div>
     </div>
 </div>
 
@@ -140,17 +120,30 @@ $signedRequest = $Init->generate();
     <!-- Container for the items api to load into -->
     <div id="learnosity_assess"></div>
 </div>
+
 <script src="<?php echo $url_items; ?>"></script>
 <script>
     var eventOptions = {
             readyListener: function () {
-                console.log('Learnosity Items API is ready');
-                LearnosityAssess.on('test:submit:success', function () {
-                    toggleModalClass();
-                });
+                initialiseEventsPosting();
             }
         },
         itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+
+    function initialiseEventsPosting() {
+        itemsApp.eventsApp().on(function (events) {
+            $('.previewWrapper').show();
+            $('#xApiPreview').prepend(
+                prettyPrint.render(events)
+                + '\n\n'
+                + '\\**************************************************************\\'
+                + '\n\n'
+            );
+        });
+        LearnosityAssess.on('test:submit:success', function () {
+            toggleModalClass();
+        });
+    }
 
     function toggleModalClass () {
         $('.modal-backdrop').css('display', 'none');

@@ -154,6 +154,13 @@
                                         <input type="radio" name="navigation[scroll_to_top]" value="false"<?php if (isset($nav['scroll_to_top']) && $nav['scroll_to_top'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="ignore_question_attributes" class="col-sm-6 control-label">Suppress validation object</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[ignore_question_attributes][validation]" value="validation"<?php if (isset($nav['ignore_question_attributes']) && isset($nav['ignore_question_attributes']['validation']) && $nav['ignore_question_attributes']['validation'] === 'validation') { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[ignore_question_attributes][validation]" value=""<?php if (!isset($nav['ignore_question_attributes']) || !isset($nav['ignore_question_attributes']['validation'])) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,6 @@ $request = array(
     'activity_id'          => 'itemsinlinedemo',
     'activity_template_id' => 'printing-demo',
     'session_id'           => $sessionid,
-    'course_id'            => $courseid,
     'type'                 => 'local_practice',
     'config'               => array(
         'renderSubmitButton'  => false,

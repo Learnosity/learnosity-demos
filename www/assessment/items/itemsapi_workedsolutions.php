@@ -20,7 +20,6 @@ $request = array(
     'state'          => 'initial',
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => $session_id,
-    'course_id'      => $courseid,
     'items'          => array('workedsolutions_1', 'workedsolutions_2', 'workedsolutions_3'),
     'type'           => 'submit_practice',
     'config'         => array(
