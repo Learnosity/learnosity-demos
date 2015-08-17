@@ -16,7 +16,6 @@ $request = array(
     'name'           => 'Items API demo - adaptive activity',
     'rendering_type' => 'assess',
     'state'          => 'initial',
-    'course_id'      => $courseid,
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
     'assess_inline'  => true,

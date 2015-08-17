@@ -15,7 +15,6 @@ $request = array(
     'activity_template_id' => 'NCI_Study-2',
     'activity_id'          => 'my-demo-activity',
     'name'                 => 'NCI Test',
-    'course_id'            => $courseid,
     'session_id'           => Uuid::generate(),
     'user_id'              => $studentid,
     'assess_inline'        => false,

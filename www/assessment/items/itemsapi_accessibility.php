@@ -15,7 +15,6 @@ $request = array(
     'activity_template_id' => 'demo-activity-4',
     'activity_id'          => 'my-demo-activity',
     'name'                 => 'Accessibility Demo',
-    'course_id'            => $courseid,
     'session_id'           => Uuid::generate(),
     'user_id'              => $studentid,
     'assess_inline'        => true,

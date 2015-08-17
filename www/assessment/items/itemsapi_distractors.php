@@ -19,7 +19,6 @@ $request = array(
     'state'          => 'initial',
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => Uuid::generate(),
-    'course_id'      => $courseid,
     'items'          => array('act1','act2','act3','act4','act5','act6'),
     'type'           => 'submit_practice',
     'config'         => array(

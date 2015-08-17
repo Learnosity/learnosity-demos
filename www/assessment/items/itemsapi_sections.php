@@ -17,7 +17,6 @@ $request = array(
     'rendering_type' => 'assess',
     'state'          => 'initial',
     'type'           => 'submit_practice',
-    'course_id'      => $courseid,
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
     'assess_inline'  => true,

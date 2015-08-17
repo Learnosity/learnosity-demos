@@ -17,7 +17,6 @@ $request = array(
     'rendering_type' => 'assess',
     'state'          => 'initial',
     'type'           => 'submit_practice',
-    'course_id'      => $courseid,
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
     'items'          => array('Demo3', 'Demo4', 'Demo12', 'accessibility_demo_6', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10'),
