@@ -1,0 +1,42 @@
+.qti-xml, .lrn-json {
+    min-height: 600px;
+    min-width: 570px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.container { }
+
+.file-select-row {
+    margin-bottom: 20px;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+
+.output-json-row {
+    padding-top: 10px;
+}
+
+.error-message {
+    background: indianred;
+}
+
+.validate-response {
+    float: right;
+}
+
+.clipboard {
+    cursor: pointer;
+}
+
+.clipboard:hover {
+    background-color: #EAEAEA;
+}
+
+.success, .success:hover {
+    background-color: #E9FFED;
+}

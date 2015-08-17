@@ -1,0 +1,83 @@
+{
+    "reference": "DEMO_1",
+    "content": "<div class=\"alert alert-info\"><strong>This is an example of a multiple response MCQ. Students can select more than one option.</strong></div>\r\n\r\n<p><span class=\"learnosity-response question-DEMO_1_3\"></span></p>\r\n\r\n<div class=\"alert alert-info\"><strong>This is an example of a single response MCQ. Students can only select one option. Instant feedback is turned <em>ON</em></strong></div>\r\n\r\n<p><span class=\"learnosity-response question-DEMO_1_2\"></span></p>\r\n\r\n<p>&nbsp;</p>",
+    "tags": {
+        "Difficulty": [
+            "advanced"
+        ]
+    },
+    "questions": [
+        {
+            "type": "mcq",
+            "widget_type": "response",
+            "reference": "DEMO_1_3",
+            "data": {
+                "is_math": true,
+                "multiple_responses": true,
+                "options": [{
+                    "value": "0",
+                    "label": "\\(5^2+\\sqrt[n]{19}\\)"
+                }, {
+                    "value": "1",
+                    "label": "\\(9\\)"
+                }, {
+                    "value": "2",
+                    "label": "\\(8+3\\)"
+                }, {
+                    "value": "3",
+                    "label": "\\(\\left(\\frac{5}{9}\\right)+\\pi\\)"
+                }],
+                "stimulus": "Which of the following are not equals to 1",
+                "type": "mcq",
+                "ui_style": {},
+                "validation": {
+                    "scoring_type": "exactMatch",
+                    "valid_response": {
+                        "score": 1,
+                        "value": ["0", "1", "3"]
+                    }
+                }
+            }
+        },
+        {
+            "type": "mcq",
+            "widget_type": "response",
+            "reference": "DEMO_1_2",
+            "data": {
+                "instant_feedback": true,
+                "options": [
+                    {
+                        "value": "0",
+                        "label": "Tomato"
+                    },
+                    {
+                        "value": "1",
+                        "label": "Orange"
+                    },
+                    {
+                        "value": "2",
+                        "label": "Celery"
+                    },
+                    {
+                        "value": "3",
+                        "label": "Pear"
+                    }
+                ],
+                "stimulus": "Pick the odd one out",
+                "type": "mcq",
+                "ui_style": {
+                    "type": "block"
+                },
+                "validation": {
+                    "scoring_type": "exactMatch",
+                    "valid_response": {
+                        "score": 1,
+                        "value": [
+                            "2"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

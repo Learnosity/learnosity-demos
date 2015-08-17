@@ -1,0 +1,23 @@
+{
+    "reference": "shorttexttestreference",
+    "type": "shorttext",
+    "data": {
+        "case_sensitive": true,
+        "placeholder": "placeholdertext",
+        "stimulus": "<p>[This is the stem.]</p>",
+        "type": "shorttext",
+        "validation": {
+            "alt_responses": [{
+                "score": 1,
+                "value": "anotherhello"
+            }],
+            "scoring_type": "exactMatch",
+            "valid_response": {
+                "score": 1,
+                "value": "hello"
+            }
+        }
+    },
+    "widget_type": "response"
+}
+

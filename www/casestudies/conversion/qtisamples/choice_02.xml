@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Thie example adapted from the PET Handbook, copyright University of Cambridge ESOL Examinations -->
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="choice2" title="Saturday's Disco" adaptive="false" timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+        <correctResponse>
+            <value>C</value>
+        </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+        <defaultValue>
+            <value>0</value>
+        </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+        <p>Look at the text in the notice.</p>
+        <p>
+            <img src="sign2.png" alt="Saturday't Disco: There aren't any tickets left. Anyone who ordered a ticket and hasn't given me the money should do so before tomorrow.  José Martin"/>
+        </p>
+        <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+            <prompt>What does it say?</prompt>
+            <simpleChoice identifier="A">Tickets for the disco can be collected after tomorrow.</simpleChoice>
+            <simpleChoice identifier="B">It is possible to reserve a disco ticket if you do so by tomorrow.</simpleChoice>
+            <simpleChoice identifier="C">Reserved tickets for the disco must be paid for today.</simpleChoice>
+        </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+</assessmentItem>

@@ -1,0 +1,40 @@
+{
+    "type": "mcq",
+    "widget_type": "response",
+    "reference": "6b29c4b7-5352-444c-bca1-b328181ec2cc_3",
+    "data": {
+        "options": [
+            {
+                "label": "[Choice A]",
+                "value": "0"
+            },
+            {
+                "label": "[Choice B]",
+                "value": "1"
+            },
+            {
+                "label": "[Choice C]",
+                "value": "2"
+            },
+            {
+                "label": "[Choice D]",
+                "value": "3"
+            }
+        ],
+        "stimulus": "<p>[This is the stem.]</p>",
+        "type": "mcq",
+        "ui_style": {
+            "choice_label": "upper-alpha",
+            "type": "block"
+        },
+        "validation": {
+            "scoring_type": "exactMatch",
+            "valid_response": {
+                "score": 1,
+                "value": [
+                    "2"
+                ]
+            }
+        }
+    }
+}
