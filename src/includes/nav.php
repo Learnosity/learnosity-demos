@@ -17,11 +17,11 @@
             'misc/security_check.php' => 'Security Check'
         ),
         'Case Studies' => array(
-            'casestudies/items/feedback' => 'Teacher Feedback',
-            'casestudies/items/printing' => 'Printing Items',
-            'casestudies/items/gallery'  => 'Gallery Style UI',
-            'casestudies/items/xapi'     => 'xAPI Events',
-            'casestudies/items/endtoend' => 'End to End Demo'
+            'casestudies/feedback' => 'Teacher Feedback',
+            'casestudies/printing' => 'Printing Items',
+            'casestudies/gallery'  => 'Gallery Style UI',
+            'casestudies/xapi'     => 'xAPI Events',
+            'casestudies/endtoend' => 'End to End Demo'
         )
     );
 ?>
