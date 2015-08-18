@@ -1,36 +1,35 @@
 <?php
-    include_once '../../../config.php';
-    include_once 'includes/header.php';
 
-    use LearnositySdk\Request\Init;
-    use LearnositySdk\Utils\Uuid;
+include_once '../../config.php';
+include_once 'includes/header.php';
 
-    $session_id = Uuid::generate();
+use LearnositySdk\Request\Init;
+use LearnositySdk\Utils\Uuid;
 
-    $security = [
+$session_id = Uuid::generate();
+
+$security = [
     'user_id'      => $studentid,
     'domain'       => $_SERVER['SERVER_NAME'],
-    'consumer_key' => $consumer_key,
-    'timestamp'    => gmdate('Ymd-Hi')
-    ];
+    'consumer_key' => $consumer_key
+];
 
-    $init = new Init('questions', $security, $consumer_secret, [
-        'id'                   => 'custom-shorttext',
-        'name'                 => 'Custom Short Text',
-        'course_id'            => $courseid,
-        'type'                 => 'local_practice',
-        'state'                => 'initial',
-        'session_id'           => $session_id
-        ]);
+$init = new Init('questions', $security, $consumer_secret, [
+    'id'                   => 'custom-shorttext',
+    'name'                 => 'Custom Short Text',
+    'type'                 => 'local_practice',
+    'state'                => 'initial',
+    'session_id'           => $session_id
+]);
 
-    $request = '{
-    "response_id": "custom-shorttext-response-' . $session_id .'",
-    "type": "custom",
-    "js": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/items/customquestions/custom_shorttext.js",
-    "css": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/items/customquestions/custom_shorttext.css",
-    "stimulus": "What is the capital of Australia?",
-    "valid_response": "Canberra",
-    "score": 1
+$request = '{
+  "response_id": "custom-shorttext-response-' . $session_id .'",
+  "type": "custom",
+  "js": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/items/customquestions/custom_shorttext.js",
+  "css": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/items/customquestions/custom_shorttext.css",
+  "stimulus": "What is the capital of Australia?",
+  "valid_response": "Canberra",
+  "score": 1
 }';
 
 ?>
@@ -81,7 +80,7 @@
     </div>
 </div>    
 
-<script src="//questions.learnosity.com"></script>
+<script src="<?php echo $url_questions; ?>"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
 
 <script>

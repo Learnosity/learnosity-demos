@@ -1,40 +1,42 @@
 <?php
-    include_once '../../../config.php';
-    include_once 'includes/header.php';
 
-    use LearnositySdk\Request\Init;
-    use LearnositySdk\Utils\Uuid;
+include_once '../../config.php';
+include_once 'includes/header.php';
 
-    $session_id = Uuid::generate();
+use LearnositySdk\Request\Init;
+use LearnositySdk\Utils\Uuid;
 
-    $security = [
+$session_id = Uuid::generate();
+
+$security = [
     'user_id'      => $studentid,
     'domain'       => $_SERVER['SERVER_NAME'],
-    'consumer_key' => $consumer_key,
-    'timestamp'    => gmdate('Ymd-Hi')
-    ];
-    
-    $request = '{
-        "id": "custom-shorttext",
-        "name": "Custom Short Text",
-        "course_id": "' . $courseid . '",
-        "type": "local_practice",
-        "state": "initial",
-        "session_id": "' . $session_id . '",
-        "questions": [{
-            "response_id": "custom-shorttext-response-1",
-            "type": "custom",
-            "js": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/items/customquestions/custom_shorttext.js",
-            "css": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/items/customquestions/custom_shorttext.css",
-            "stimulus": "What is the capital of Australia?",
-            "valid_response": "Canberra",
-            "score": 1
-        }]
-    }';
+    'consumer_key' => $consumer_key
+];
+
+$request = '{
+  "id": "custom-shorttext",
+  "name": "Custom Short Text",
+  "course_id": "' . $courseid . '",
+  "type": "local_practice",
+  "state": "initial",
+  "session_id": "' . $session_id . '",
+  "questions": [
+    {
+      "response_id": "custom-shorttext-response-1",
+      "type": "custom",
+      "js": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/items/customquestions/custom_shorttext.js",
+      "css": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/items/customquestions/custom_shorttext.css",
+      "stimulus": "What is the capital of Australia?",
+      "valid_response": "Canberra",
+      "score": 1
+    }
+  ]
+}';
 
 
-    $init = new Init('questions', $security, $consumer_secret, $request);
-    $signedRequest = $init->generate();
+$init = new Init('questions', $security, $consumer_secret, $request);
+$signedRequest = $init->generate();
 
 ?>
 
@@ -70,7 +72,7 @@
     </div>
 </div>    
 
-<script src="//questions.learnosity.com"></script>
+<script src="<?php echo $url_questions; ?>"></script>
 <script>
 
     var questionsApp = window.questionsApp = LearnosityApp.init(<?php echo $signedRequest; ?>,  {

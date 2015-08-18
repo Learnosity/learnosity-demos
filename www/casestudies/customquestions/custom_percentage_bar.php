@@ -1,49 +1,50 @@
 <?php
-    include_once '../../../config.php';
-    include_once 'includes/header.php';
 
-    use LearnositySdk\Request\Init;
-    use LearnositySdk\Utils\Uuid;
+include_once '../../config.php';
+include_once 'includes/header.php';
 
-    $session_id = Uuid::generate();
+use LearnositySdk\Request\Init;
+use LearnositySdk\Utils\Uuid;
 
-    $security = [
+$session_id = Uuid::generate();
+
+$security = [
     'user_id'      => $studentid,
     'domain'       => $_SERVER['SERVER_NAME'],
-    'consumer_key' => $consumer_key,
-    'timestamp'    => gmdate('Ymd-Hi')
-    ];
+    'consumer_key' => $consumer_key
+];
 
-    $request = '{
-        "id": "custom-percentage-bar",
-        "name": "Custom Percentage Bar",
-        "course_id": "' . $courseid . '",
-        "type": "local_practice",
-        "state": "initial",
-        "session_id": "' . $session_id . '",
-        "questions": [{
-            "response_id": "custom-percentage-bar-response-1",
-            "type": "custom",
-            "js": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/items/customquestions/custom_percentage_bar.js",
-            "css": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/items/customquestions/custom_percentage_bar.css",
-            "stimulus": "If Luke has $150 and he spends $30 on beer, how much money has he got left?",
-            "prepend_unit": "$",
-            "append_unit": "",
-            "min_value": "0",
-            "max_value": "150",
-            "step": "10",
-            "min_percentage": 0,
-            "max_percentage": 100,
-            "init_value": "20",
-            "bar_color": "#9ae5c9",
-            "valid_response": "120",
-            "score": 1
-        }]
-    }';
+$request = '{
+  "id": "custom-percentage-bar",
+  "name": "Custom Percentage Bar",
+  "type": "local_practice",
+  "state": "initial",
+  "session_id": "' . $session_id . '",
+  "questions": [
+    {
+      "response_id": "custom-percentage-bar-response-1",
+      "type": "custom",
+      "js": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/items/customquestions/custom_percentage_bar.js",
+      "css": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/items/customquestions/custom_percentage_bar.css",
+      "stimulus": "If Luke has $150 and he spends $30 on beer, how much money has he got left?",
+      "prepend_unit": "$",
+      "append_unit": "",
+      "min_value": "0",
+      "max_value": "150",
+      "step": "10",
+      "min_percentage": 0,
+      "max_percentage": 100,
+      "init_value": "20",
+      "bar_color": "#9ae5c9",
+      "valid_response": "120",
+      "score": 1
+    }
+  ]
+}';
 
 
-    $init = new Init('questions', $security, $consumer_secret, $request);
-    $signedRequest = $init->generate();
+$init = new Init('questions', $security, $consumer_secret, $request);
+$signedRequest = $init->generate();
 
 ?>
 
@@ -79,7 +80,7 @@
     </div>
 </div>    
 
-<script src="//questions.learnosity.com"></script>
+<script src="<?php echo $url_questions; ?>"></script>
 <script>
     
     var questionsApp = window.questionsApp = LearnosityApp.init(<?php echo $signedRequest; ?>,  {
