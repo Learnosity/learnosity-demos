@@ -7,7 +7,7 @@ include_once 'includes/header.php';
 <div class="jumbotron section">
     <div class="pull-right toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/assessment/questions/knowledgebase/customquestions" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
     <h1>Custom Questions</h1>
