@@ -17,7 +17,6 @@ $security = [
 $request = '{
   "id": "custom-shorttext",
   "name": "Custom Short Text",
-  "course_id": "' . $courseid . '",
   "type": "local_practice",
   "state": "initial",
   "session_id": "' . $session_id . '",
