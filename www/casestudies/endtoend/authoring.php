@@ -21,7 +21,7 @@ $request = array(
         'item_edit' => array(
             'widget' => array(
                 'edit'   => true,
-                'delete' => false
+                'delete' => true
             )
         ),
         'question_editor_init_options' => array(
@@ -102,7 +102,7 @@ $signedRequest = $Init->generate();
     });
 
     function showNotification (itemID) {
-         var $message = $('<a/>').text('Question ' + itemIDs.length)
+         var $message = $('<a/>').text('Item ' + itemIDs.length)
                                  .attr('onclick','editItem("' + itemID + '")')
                                  .attr('style','cursor:pointer')
         var $closeBtn = $('<button/>').attr('type', 'button')

@@ -35,33 +35,33 @@ $signedRequest = $Init->generate();
 
 ?>
 
-    <div class="jumbotron section">
-        <div class="overview">
-            <h1>End to End Demo – Reporting Feedback</h1>
-            <p>Using Reports API on the left side you can see the student answers.</p>
-            <p>On the right side of the page the teacher can provide additional subjective feedback to the student, alongside the existing objective scoring.</p>
+<div class="jumbotron section">
+    <div class="overview">
+        <h1>End to End Demo – Reporting Feedback</h1>
+        <p>Using Reports API on the left side you can see the student answers.</p>
+        <p>On the right side of the page the teacher can provide additional subjective feedback to the student, alongside the existing objective scoring.</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Student Review</h1>
+        </div>
+        <div class="col-md-6">
+            <h1>Teacher Feedback</h1>
         </div>
     </div>
-
-    <div class="section">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>Student Review</h1>
-            </div>
-            <div class="col-md-6">
-                <h1>Teacher Feedback</h1>
-            </div>
-        </div>
-        <span class="learnosity-report" id="report-1"></span>
-        <div class="row">
-            <div class="col-md-10"></div>
-            <div class="col-md-2 pull-right">
-                <span class="learnosity-save-button"></span>
-            </div>
+    <span class="learnosity-report" id="report-1"></span>
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2 pull-right">
+            <span class="learnosity-save-button"></span>
         </div>
     </div>
+</div>
 
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script>
 
     var init = function() {
@@ -101,7 +101,6 @@ $signedRequest = $Init->generate();
                     'state': 'initial',
                     'activity_id': '<?php echo $activity_id; ?>',
                     'session_id': '<?php echo Uuid::generate(); ?>',
-                    'course_id': 'commoncore',
                     'items': itemReferences,
                     'type': 'feedback',
                     'config': {

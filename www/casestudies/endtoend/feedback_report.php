@@ -36,34 +36,34 @@ $signedRequest = $Init->generate();
 
 ?>
 
-    <div class="jumbotron section">
-        <div class="overview">
-            <h1>End to End Demo – Reporting Review</h1>
-            <p>Finally the student can review any teacher feedback.</p>
+<div class="jumbotron section">
+    <div class="overview">
+        <h1>End to End Demo – Reporting Review</h1>
+        <p>Finally the student can review any teacher feedback.</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Student Review</h1>
+        </div>
+        <div class="col-md-6">
+            <h1>Teacher Feedback</h1>
         </div>
     </div>
-
-    <div class="section">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>Student Review</h1>
-            </div>
-            <div class="col-md-6">
-                <h1>Teacher Feedback</h1>
-            </div>
-        </div>
-        <span class="learnosity-report" id="report-1"></span>
-        <div class="row">
-            <div class="col-md-8"></div>
-            <div class="col-md-4">
-                <div class="lrn pull-right">
-                        <span class="learnosity-save-button"></span>
-                </div>
+    <span class="learnosity-report" id="report-1"></span>
+    <div class="row">
+        <div class="col-md-8"></div>
+        <div class="col-md-4">
+            <div class="lrn pull-right">
+                    <span class="learnosity-save-button"></span>
             </div>
         </div>
     </div>
+</div>
 
-<script src="//reports.learnosity.com"></script>
+<script src="<?php echo $url_reports; ?>"></script>
 <script>
 
 var init = function() {
@@ -105,7 +105,6 @@ var init = function() {
             'state': 'review',
             'activity_id': 'Demo_Activity',
             'session_id': '<?php echo $feedback_session_id; ?>',
-            'course_id': 'commoncore',
             'items': itemReferences,
             'type': 'feedback'
           }

@@ -31,7 +31,6 @@ $request = array(
     'rendering_type' => 'assess',
     'state'          => 'initial',
     'type'           => 'submit_practice',
-    'course_id'      => $courseid,
     'session_id'     => $session_id,
     'user_id'        => $studentid,
     'items'          => getItemsArray(),
@@ -103,24 +102,24 @@ $signedRequest = $Init->generate();
 
 ?>
 
-    <div class="jumbotron section">
-        <div class="overview">
-            <h1>End to End Demo – Assessment</h1>
-            <p>Here is a sample student assessment containing the questions created by the author in step 1.</p>
-            <p>Take the test as a student would, you will then be able to provide teacher feedback after completing the assessment.</p>
-        </div>
+<div class="jumbotron section">
+    <div class="overview">
+        <h1>End to End Demo – Assessment</h1>
+        <p>Here is a sample student assessment containing the questions created by the author in step 1.</p>
+        <p>Take the test as a student would, you will then be able to provide teacher feedback after completing the assessment.</p>
     </div>
+</div>
 
-    <div class="section">
-        <div id="learnosity_assess"></div>
-    </div>
+<div class="section">
+    <div id="learnosity_assess"></div>
+</div>
 
-    <script src="//items.learnosity.com"></script>
-    <script>
-        var initOptions = <?php echo $signedRequest; ?>;
+<script src="<?php echo $url_items; ?>"></script>
+<script>
+    var initOptions = <?php echo $signedRequest; ?>;
 
-        var itemsApp = LearnosityItems.init(initOptions);
-    </script>
+    var itemsApp = LearnosityItems.init(initOptions);
+</script>
 
 <?php
     include_once 'includes/footer.php';

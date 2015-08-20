@@ -1,0 +1,22 @@
+.response_wrapper {
+    border: 1px solid silver;
+    background-color: white;
+    padding: 10px;
+}
+
+.response_wrapper input {
+    border: none !important;
+    background-color: transparent;
+    padding: 10px;
+    outline: none !important;
+}
+
+.response_wrapper.valid {
+    border: 1px solid #62ae41;
+    background-color: #e7f4e1;
+}
+
+.response_wrapper.notValid {
+    border: 1px solid #da1919;
+    background-color: #fbdddd;
+}

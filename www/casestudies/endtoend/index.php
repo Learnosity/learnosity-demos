@@ -5,11 +5,6 @@ include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron section">
-    <div class="pull-right toolbar">
-        <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
-        </ul>
-    </div>
     <h1>End to End Demo</h1>
     <div class="section-intro">
         <p>This is an End to End demo covering the main areas of Learnosity APIs.<p>
