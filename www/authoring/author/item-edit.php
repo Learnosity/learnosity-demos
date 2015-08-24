@@ -19,6 +19,13 @@ $request = array(
     'config'    => array(
         'item_edit' => array(
             'item' => array(
+                "columns" => true,
+                "save" => true,
+                "status" => false,
+                "reference" => array(
+                    "edit" => false,
+                    "show" => false
+                ),
                 'tags' => array(
                     'include_tags_on_edit' => array(
                         array(

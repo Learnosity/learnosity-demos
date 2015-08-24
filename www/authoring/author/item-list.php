@@ -23,6 +23,11 @@ $request = array(
             'toolbar' => array(
                 'add' => true
             )
+        ),
+        'item_edit' => array(
+            'item' => array(
+                "back" => true
+            )
         )
     ),
     'user' => array(
