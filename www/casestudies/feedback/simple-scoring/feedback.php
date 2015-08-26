@@ -99,7 +99,7 @@ var init = function () {
                         .wrap('<div class="col-md-6"></div>');
 
                     itemReferences.push({'reference': scoringItemId, 'id': feedbackItemId});
-                    window.setScoringObjects(scoringItemId, element);
+                    window.setScoringObjects(feedbackItemId, element);
                 }
             });
         });
