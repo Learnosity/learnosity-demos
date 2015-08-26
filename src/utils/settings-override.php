@@ -16,30 +16,32 @@ function trueFalseConverter (&$object)
     return $object;
 }
 
-if (isset($_POST['api_type'])) {
-    trueFalseConverter($_POST);
+$filter_post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-    switch ($_POST['api_type']) {
+if (isset($filter_post['api_type'])) {
+    trueFalseConverter($filter_post);
+
+    switch ($filter_post['api_type']) {
         case 'activities':
-            $request = array_replace_recursive($request, $_POST);
+            $request = array_replace_recursive($request, $filter_post);
             unset($request['api_type']);
             $requestKey = $request;
             break;
         case 'assess':
-            $request = array_replace_recursive($request, $_POST);
+            $request = array_replace_recursive($request, $filter_post);
             $requestKey = &$request;
             break;
         case 'items':
             if (array_key_exists('config', $request)) {
-                $request['config'] = array_replace_recursive($request['config'], $_POST);
+                $request['config'] = array_replace_recursive($request['config'], $filter_post);
                 $requestKey = &$request['config'];
             } else {
-                $request = array_replace_recursive($request, $_POST);
+                $request = array_replace_recursive($request, $filter_post);
                 $requestKey = &$request;
             }
             break;
         case 'questioneditor':
-            $request = array_replace_recursive($request, $_POST);
+            $request = array_replace_recursive($request, $filter_post);
             if (isset($request['ui']['public_methods'])) {
                 if (!empty($request['ui']['public_methods'])) {
                     $request['ui']['public_methods'] = [$request['ui']['public_methods']];
@@ -108,11 +110,20 @@ if (isset($_POST['api_type'])) {
             $requestKey = &$request;
             break;
         case 'questioneditor-test-init':
-            $request = $_POST['init'];
+            $request = $filter_post['init'];
             break;
         case 'regions':
-            $itemsConfig = json_decode($_POST['itemsConfig'], true);
+
+            // unfudge the quoting in the filter_input_array because you can't use FILTER_FLAG_NO_ENCODE_QUOTES
+            $json = str_replace(
+                array("&#34;", "&#39;"),
+                array("\"", "'"),
+                $filter_post['itemsConfig']
+            );
+
+            $itemsConfig = json_decode($json, true);
             $request = array_replace_recursive($request, $itemsConfig);
+
             unset($request['api_type']);
             unset($request['regionSelector']);
             $requestKey = $request;
