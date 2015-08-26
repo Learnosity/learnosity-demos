@@ -91,13 +91,14 @@ var init = function () {
         itemsApp.getQuestions(function(questions) {
             $.each(questions, function(index, element) {
                 if(element.metadata.rubric_reference !== undefined) {
-                    var scoringItemId = element.metadata.rubric_reference;
+                    var scoringItemId = element.metadata.rubric_reference,
+                        feedbackItemId = scoringItemId + '_' + Math.random();
 
-                    $('<span class="learnosity-item" data-reference="' + scoringItemId + '">')
+                    $('<span class="learnosity-item" data-reference="' + feedbackItemId + '">')
                         .appendTo($('#' + element.response_id).closest('.row'))
                         .wrap('<div class="col-md-6"></div>');
 
-                    itemReferences.push(scoringItemId);
+                    itemReferences.push({'reference': scoringItemId, 'id': feedbackItemId});
                     window.setScoringObjects(scoringItemId, element);
                 }
             });
@@ -113,7 +114,7 @@ var init = function () {
                 'activity_id': '<?php echo $activity_id; ?>',
                 'session_id': '<?php echo Uuid::generate(); ?>',
                 'items': itemReferences,
-                'type': 'local_practice'
+                'type': 'feedback'
             }
         };
 
