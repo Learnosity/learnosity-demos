@@ -1,6 +1,6 @@
 <?php
 
-$endpoint = "$URL/$version/itembank/conversion";
+$endpoint = "$URL/$version/itembank/conversion/fromqti";
 $resource = 'qti';
 
 ?>
@@ -13,7 +13,6 @@ $resource = 'qti';
 <div class="tab-content">
     <div class="tab-pane active" id="tab-request-form-<?php echo $resource; ?>">
         <form class="form-horizontal" role="form" method="post" id="frm-data-api-<?php echo $resource; ?>" data-resource="<?php echo $resource; ?>">
-            <input type="hidden" id="api-mode" data-type="string" value="from_qti">
             <div class="form-group">
                 <label class="col-md-2 control-label">URL</label>
                 <div class="col-md-10">
@@ -24,47 +23,37 @@ $resource = 'qti';
                 <label class="col-md-2 control-label">QTI</label>
                 <div class="col-md-10">
                     <textarea class="form-control" id="api-items" data-type="array">
-<?xml version="1.0" encoding="UTF-8"?>
+                        <?xml version="1.0" encoding="UTF-8"?>
 <assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
-    identifier="choice2" title="Saturday's Disco" adaptive="false" timeDependent="false">
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1  http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+                identifier="choice" title="Unattended Luggage" adaptive="false" timeDependent="false">
     <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
         <correctResponse>
-            <value>A</value>
+            <value>ChoiceA</value>
         </correctResponse>
     </responseDeclaration>
-    <outcomeDeclaration identifier="SIGNSCORE" cardinality="single" baseType="integer">
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
         <defaultValue>
             <value>0</value>
         </defaultValue>
     </outcomeDeclaration>
     <itemBody>
-        <p>Look at the text in the notice.</p>
+        <p>Look at the text in the picture.</p>
         <p>
-            <img src="sign3.png" alt="WAIT FOR LIFT DOORS TO CLOSE BEFORE PRESSING BUTTON"/>
+            <img src="images/sign.png" alt="NEVER LEAVE LUGGAGE UNATTENDED"/>
         </p>
         <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
             <prompt>What does it say?</prompt>
-            <simpleChoice identifier="A">Press the button after the doors close.</simpleChoice>
-            <simpleChoice identifier="B">Press the button while the doors are closing.</simpleChoice>
-            <simpleChoice identifier="C">Press the button to close the lift doors.</simpleChoice>
+            <simpleChoice identifier="ChoiceA">You must stay with your luggage at all times.</simpleChoice>
+            <simpleChoice identifier="ChoiceB">Do not let someone else look after your luggage.</simpleChoice>
+            <simpleChoice identifier="ChoiceC">Remember your luggage when you leave.</simpleChoice>
         </choiceInteraction>
     </itemBody>
-    <responseProcessing>
-        <responseCondition>
-            <responseIf>
-                <match>
-                    <variable identifier="RESPONSE"/>
-                    <correct identifier="RESPONSE"/>
-                </match>
-                <setOutcomeValue identifier="SIGNSCORE">
-                    <baseValue baseType="integer">1</baseValue>
-                </setOutcomeValue>
-            </responseIf>
-        </responseCondition>
-    </responseProcessing>
-</assessmentItem></textarea>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+</assessmentItem>
+                    </textarea>
                 </div>
             </div>
             <div class="form-group">
