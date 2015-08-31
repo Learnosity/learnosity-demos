@@ -81,23 +81,6 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Legacy</h2>
-                </div>
-                <div class="panel-body">
-                    <p>Learnosity's Author API allows searching and integration of Learnosity powered content into your content management system.<p>
-                    <p><em>Note:</em> This version is only supported to <a href="http://docs.learnosity.com/authorapi-v0.5/index.php">v0.5</a></p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./legacy.php">Demo</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <?php include_once 'includes/footer.php';
