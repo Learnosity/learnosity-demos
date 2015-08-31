@@ -23,7 +23,7 @@ include_once 'includes/header.php';
                 </div>
                 <div class="media-body">
                     <p>You may also download the entire site to see how you can easily integrate our services into your own technology stack,
-            or you can <a href="https://github.com/Learnosity/learnosity-demos/tree/master">browse the code directly</a> on github.</p>
+                    or you can <a href="https://github.com/Learnosity/learnosity-demos/tree/master">browse the code directly</a> on github.</p>
                 </div>
             </div>
 
@@ -37,7 +37,25 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
- <div class="row landing-panel">
+
+    <div class="row landing-panel">
+        <div class="col-md-3 landing-panel-heading">
+            <h3>Authoring</h3>
+        </div>
+        <div class="col-md-8 content-panel">
+            <ul class="list-unstyled">
+                <li><h4><a href="<?php echo $env['www'] ?>authoring/author/index.php">Author API</a>
+                <span class="label label-info">Start here!</span></h4>
+                <p>Allows searching and integration of Learnosity powered content into your content management systems, while still leveraging the
+                power of the Learnosity Author site for creation of rich items with a simple interface.</p></li>
+                <li><h4><a href="<?php echo $env['www'] ?>authoring/questioneditor/index.php">Question Editor API</a></h4>
+                <p>A fully featured Question and Feature creation tool, with an easy-to-use interface and a live preview and interaction panel,
+                allowing on-the-fly interactive creation and testing for Authors.</p></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row landing-panel">
         <div class="col-md-3 landing-panel-heading">
             <h3>Assessment</h3>
         </div>
@@ -59,21 +77,6 @@ include_once 'includes/header.php';
         </div>
     </div>
 
-    <div class="row landing-panel">
-        <div class="col-md-3 landing-panel-heading">
-            <h3>Authoring</h3>
-        </div>
-        <div class="col-md-8 content-panel">
-            <ul class="list-unstyled">
-                <li><h4><a href="<?php echo $env['www'] ?>authoring/questioneditor/index.php">Question Editor API</a></h4>
-                <p>A fully featured Question and Feature creation tool, with an easy-to-use interface and a live preview and interaction panel,
-                allowing on-the-fly interactive creation and testing for Authors.</p></li>
-                <li><h4><a href="<?php echo $env['www'] ?>authoring/author/index.php">Author API</a></h4>
-                <p>Allows searching and integration of Learnosity powered content into your content management systems, while still leveraging the
-                power of the Learnosity Author site for creation of rich items with a simple interface.</p></li>
-            </ul>
-        </div>
-    </div>
     <div class="row landing-panel">
         <div class="col-md-3 landing-panel-heading">
             <h3>Reporting</h3>
