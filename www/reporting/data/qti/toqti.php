@@ -20,7 +20,7 @@ $resource = 'scoring';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">QTI</label>
+                <label class="col-md-2 control-label">Items or Questions</label>
                 <div class="col-md-10">
                     <textarea class="form-control" id="api-items" data-type="json">
 [
