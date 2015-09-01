@@ -1,8 +1,8 @@
 <?php
     $pages = array(
         'Authoring' => array(
-            'authoring/questioneditor/index.php' => 'Question Editor API',
-            'authoring/author/index.php'         => 'Author API'
+            'authoring/author/index.php'         => 'Author API',
+            'authoring/questioneditor/index.php' => 'Question Editor API'
         ),
         'Assessment' => array(
             'assessment/items/index.php'     => 'Items API',
