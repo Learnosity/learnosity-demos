@@ -1,7 +1,7 @@
 <?php
 
 $endpoint = "$URL/$version/itembank/conversion/toqti";
-$resource = 'scoring';
+$resource = 'toqti';
 
 ?>
 
