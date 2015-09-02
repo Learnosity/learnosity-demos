@@ -1,7 +1,7 @@
 <?php
 
 $endpoint = "$URL/$version/itembank/conversion/fromqti";
-$resource = 'qti';
+$resource = 'fromqti';
 
 ?>
 
