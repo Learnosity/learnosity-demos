@@ -72,7 +72,7 @@ $request = array(
             'show_time'    => true
         ),
         'questionsApiVersion' => 'v2',
-        'assessApiVersion'    => 'v2',
+        'assessApiVersion'    => $version_assessapi,
         'configuration'       => array(
             'ondiscard_redirect_url' => './assessment_3.php?user_id=' . $_GET['user_id'],
             'onsubmit_redirect_url' => './assessment_3.php?user_id=' . $_GET['user_id'],
