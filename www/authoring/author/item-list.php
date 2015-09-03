@@ -26,7 +26,18 @@ $request = array(
         ),
         'item_edit' => array(
             'item' => array(
-                "back" => true
+                "back" => true,
+                "columns" => true,
+                "save" => true,
+                "status" => false,
+                "reference" => array(
+                    "edit" => false,
+                    "show" => false
+                )
+            ),
+            'widget' => array(
+                'delete' => true,
+                'edit' => true
             )
         )
     ),
