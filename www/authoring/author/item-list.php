@@ -33,6 +33,18 @@ $request = array(
                 "reference" => array(
                     "edit" => false,
                     "show" => false
+                ),
+                'tags' => array(
+                    'include_tags_on_edit' => array(
+                        array(
+                            'type' => 'course',
+                            'name' => 'commoncore'
+                        ),
+                        array(
+                            'type' => 'grade',
+                            'name' => '2'
+                        )
+                    )
                 )
             ),
             'widget' => array(
