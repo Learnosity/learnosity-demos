@@ -34,7 +34,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Item List <span class="label label-warning">BETA</span></h2>
+                    <h2 class="panel-title">Item List</h2>
                 </div>
                 <div class="panel-body">
                     <p>The item list view allows authors to search the item bank for existing items. From there

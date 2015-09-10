@@ -76,7 +76,7 @@ $signedRequest = $Init->generate();
     </div>
     <div class="overview">
         <h1>Author API</h1>
-        <p><span class="label label-warning">BETA</span> The item list view allows authors to search the Learnosity item bank for existing items. From there
+        <p>The item list view allows authors to search the Learnosity item bank for existing items. From there
         it can be configured to allow users to create items, or just select them for activity creation.</p>
     </div>
 </div>
