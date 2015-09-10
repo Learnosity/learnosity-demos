@@ -87,13 +87,13 @@ $signedRequest = $Init->generate();
             authorApp.on('save', function (event) {
                 if (shouldPreventDefault()) {
                     event.preventDefault();
-                    showNotification('Prevented saving widget of type "' + event.data.type + '"')
+                    showNotification('Prevented saving item')
                 } else {
-                    showNotification('Saving widget of type "' + event.data.type + '"')
+                    showNotification('Saving item')
                 }
             });
             authorApp.on('save:success', function (event) {
-                showNotification('Saved widget');
+                showNotification('Saved item');
             });
             authorApp.on('save:error', function (event) {
                 showNotification('Failed to save widget of type "' + event.data.json.type + '", because of "' + event.data.error.meta.message + '"');
