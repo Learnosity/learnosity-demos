@@ -93,7 +93,7 @@ $url_questioneditor   = '//questioneditor.learnosity.com?v2';
 $url_questions        = '//questions.learnosity.com';
 $url_reports          = '//reports.learnosity.com';
 $version_assessapi    = 'v2';
-$version_dataapi      = 'v0.53';
+$version_dataapi      = 'v0.54';
 $version_questionsapi = 'v2';
 
 /**
