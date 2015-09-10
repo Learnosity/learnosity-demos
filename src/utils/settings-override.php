@@ -2,7 +2,7 @@
 
 // Examine the settings modal from post and replace the default
 // $request variables.
-function trueFalseConverter (&$object)
+function trueFalseConverter(&$object)
 {
     foreach ($object as $key => $value) {
         if (is_array($value)) {
@@ -30,6 +30,15 @@ if (isset($filter_post['api_type'])) {
         case 'assess':
             $request = array_replace_recursive($request, $filter_post);
             $requestKey = &$request;
+            break;
+        case 'author':
+            if (array_key_exists('config', $request)) {
+                $request['config'] = array_replace_recursive($request['config'], $filter_post);
+                $requestKey = &$request['config'];
+            } else {
+                $request = array_replace_recursive($request, $filter_post);
+                $requestKey = &$request;
+            }
             break;
         case 'items':
             if (array_key_exists('config', $request)) {
