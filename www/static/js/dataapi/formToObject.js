@@ -73,6 +73,12 @@ var formToObject = (function($) {
                         });
                     }
                     break;
+                case 'array_single':
+                    if (value.length) {
+                        request[parameter] = [];
+                        request[parameter].push($.trim(value));
+                    }
+                    break;
                 case 'checkboxarray':
                     if ($(els[i]).is(':checked')) {
                         if (request[parameter] === undefined) {
