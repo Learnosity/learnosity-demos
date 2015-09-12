@@ -22,7 +22,7 @@ $resource = 'fromqti';
             <div class="form-group">
                 <label class="col-md-2 control-label">QTI</label>
                 <div class="col-md-10">
-                    <textarea class="form-control" id="api-items" data-type="array"><?xml version="1.0" encoding="UTF-8"?>
+                    <textarea class="form-control" id="api-items" data-type="array_single"><?xml version="1.0" encoding="UTF-8"?>
 <assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1  http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
