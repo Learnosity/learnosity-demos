@@ -359,7 +359,7 @@ $request = '{
                 "penalty_score": "0",
                 "pairwise": "0"
             }
-        },        
+        },
         {
             "response_id": "demo20-'.$uniqueResponseIdSuffix.'",
             "type": "association",

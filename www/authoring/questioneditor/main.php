@@ -35,7 +35,19 @@ include_once 'includes/header.php';
 <script>
 
 
-    var initOptions = {};
+    var initOptions = {
+            configuration: {
+                questionsApiVersion: 'v2'
+            },
+            widgetType: 'response',
+            ui: {
+                public_methods: ['getResponses'],
+                layout: '2-column',
+                fixedPreview: {
+                    marginTop: 50
+                }
+            }
+        };
 
     var qeApp = LearnosityQuestionEditor.init(initOptions);
 

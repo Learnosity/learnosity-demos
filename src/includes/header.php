@@ -6,13 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="<?php echo $env['www'] ?>static/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/codemirror/codemirror.css">
-    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.css">
-    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/css/main.css?20150622">
-    <script src="<?php echo $env['www'] ?>static/vendor/jquery/jquery-1.11.0.min.js"></script>
-    <script src="<?php echo $env['www'] ?>static/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?php echo $env['www'] ?>static/js/prettyPrint.js"></script>
+    <link rel="stylesheet" href="<?php echo $env['www'] ?>static/dist/all.min.css?<?php echo $assetVersion ?>">
+    <script src="<?php echo $env['www'] ?>static/dist/all.min.js?<?php echo $assetVersion ?>"></script>
     <script>
         var config = {
             www: '<?php echo $env["www"]; ?>',

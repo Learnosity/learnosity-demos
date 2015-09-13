@@ -34,7 +34,7 @@ $request = '{
 
 ?>
 
-<style>    
+<style>
     .custom-score {
         position: absolute;
         font-size: 17px;
@@ -58,7 +58,7 @@ $request = '{
     </div>
 </div>
 
-<div class="section">        
+<div class="section">
     <div class="row">
         <div class="col-md-6">
             <h2 class="page-heading">Question JSON</h2>
@@ -78,14 +78,14 @@ $request = '{
             <button class="btn btn-primary pull-right" id="validate_question">Check Answer</button>
         </div>
     </div>
-</div>    
+</div>
 
 <script src="<?php echo $url_questions; ?>"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
 
 <script>
     var activity = <?php echo $init->generate(); ?>;
-    var editor = ace.edit('editor');           
+    var editor = ace.edit('editor');
         editor.setTheme('ace/theme/kuroir');
         editor.getSession().setMode('ace/mode/json');
         editor.setShowPrintMargin(false);
@@ -97,7 +97,7 @@ $request = '{
 
 
     $(function(){
-        
+
         function init() {
             var json;
 
@@ -127,7 +127,7 @@ $request = '{
 
                     $('#validate_question').off().click(function() {
                         questionsApp.validateQuestions();
-                    }); 
+                    });
                 }
             });
         }

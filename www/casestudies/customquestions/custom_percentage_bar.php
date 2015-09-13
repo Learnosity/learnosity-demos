@@ -48,17 +48,17 @@ $signedRequest = $init->generate();
 
 ?>
 
-<style>    
+<style>
     .custom-score {
         position: absolute;
         font-size: 17px;
         margin-top: 5px;
-    } 
+    }
 </style>
 
 <div class="jumbotron section">
      <div class="toolbar">
-        <ul class="list-inline">            
+        <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/assessment/questions/knowledgebase/customquestions" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
@@ -70,19 +70,19 @@ $signedRequest = $init->generate();
     </div>
 </div>
 
-<div class="section">        
+<div class="section">
     <div class="row">
         <div class="question-container">
             <span class="learnosity-response question-custom-percentage-bar-response-1"></span>
-            <div class="custom-score"><strong>Score: </strong> <span id="question_score">0</span> / <span id="question_max_score">0</span></div>            
+            <div class="custom-score"><strong>Score: </strong> <span id="question_score">0</span> / <span id="question_max_score">0</span></div>
             <button class="btn btn-primary pull-right" id="validate_question">Check Answer</button>
         </div>
     </div>
-</div>    
+</div>
 
 <script src="<?php echo $url_questions; ?>"></script>
 <script>
-    
+
     var questionsApp = window.questionsApp = LearnosityApp.init(<?php echo $signedRequest; ?>,  {
         errorListener: window.widgetApiErrorListener,
         readyListener: function () {
@@ -96,7 +96,7 @@ $signedRequest = $init->generate();
 
             $('#validate_question').off().click(function() {
                 questionsApp.validateQuestions();
-            }); 
+            });
         }
     });
 
