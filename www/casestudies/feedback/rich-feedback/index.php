@@ -70,7 +70,7 @@ $signedRequest = $Init->generate();
     var eventOptions = {
             readyListener: function () {
                 //add to history to support back button and show in resume mode
-                history.pushState({}, '', window.location.pathname + '?session_id=' + activity.request.session_id);
+                history.pushState({}, '', window.location.pathname + '?session_id=<?php echo $session_id; ?>');
             }
         },
         itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
@@ -80,5 +80,4 @@ $signedRequest = $Init->generate();
     }
 </script>
 
-<?php
-    include_once 'includes/footer.php';
+<?php include_once 'includes/footer.php';

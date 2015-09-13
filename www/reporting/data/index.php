@@ -316,5 +316,4 @@ $version = $version_dataapi;
 <script src="<?php echo $env['www'] ?>static/js/dataapi/formToObject.js?20150622"></script>
 <script src="<?php echo $env['www'] ?>static/js/dataapi/dataApiRequest.js"></script>
 
-<?php
-    include_once 'includes/footer.php';
+<?php include_once 'includes/footer.php'; ?>

@@ -111,3 +111,4 @@ $signedRequest = $Init->generate();
     include_once 'views/modals/settings-content-author.php';
     include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';
+

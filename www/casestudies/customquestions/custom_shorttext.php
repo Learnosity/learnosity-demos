@@ -39,12 +39,12 @@ $signedRequest = $init->generate();
 
 ?>
 
-<style>    
+<style>
     .custom-score {
         position: absolute;
         font-size: 17px;
         margin-top: 5px;
-    } 
+    }
 </style>
 
 <div class="jumbotron section">
@@ -61,15 +61,15 @@ $signedRequest = $init->generate();
     </div>
 </div>
 
-<div class="section">        
+<div class="section">
     <div class="row">
         <div class="question-container">
             <span class="learnosity-response question-custom-shorttext-response-1"></span>
-            <div class="custom-score"><strong>Score: </strong> <span id="question_score">0</span> / <span id="question_max_score">0</span></div>            
+            <div class="custom-score"><strong>Score: </strong> <span id="question_score">0</span> / <span id="question_max_score">0</span></div>
             <button class="btn btn-primary pull-right" id="validate_question">Check Answer</button>
         </div>
     </div>
-</div>    
+</div>
 
 <script src="<?php echo $url_questions; ?>"></script>
 <script>
@@ -87,7 +87,7 @@ $signedRequest = $init->generate();
 
             $('#validate_question').off().click(function() {
                 questionsApp.validateQuestions();
-            }); 
+            });
         }
     });
 
