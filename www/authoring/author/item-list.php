@@ -51,6 +51,18 @@ $request = array(
                 'delete' => true,
                 'edit' => true
             )
+        ),
+        'question_editor_init_options' => array(
+            'ui' => array(
+                'public_methods'     => array(),
+                'question_tiles'     => false,
+                'documentation_link' => false,
+                'change_button'      => true,
+                'source_button'      => true,
+                'fixed_preview'      => true,
+                'advanced_group'     => false,
+                'search_field'       => true
+            )
         )
     ),
     'user' => array(
@@ -78,9 +90,9 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h1>Author API</h1>
-        <p>The item list view allows authors to search the Learnosity item bank for existing items. From there
-        it can be configured to allow users to create items, or just select them for activity creation.</p>
+        <h1>Author API – Item List</h1>
+        <p>The item list mode allows authors to search the Learnosity hosted item bank for existing items. From there
+        it can be configured to allows users to edit items, or just select them for activity creation.</p>
     </div>
 </div>
 
