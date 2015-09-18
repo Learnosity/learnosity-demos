@@ -19,4 +19,5 @@ $security = [
 //initialize Items API with provided request object
 $init = new Init('items', $security, $consumer_secret, $_POST['request']);
 echo $init->generate();
+
 ?>
