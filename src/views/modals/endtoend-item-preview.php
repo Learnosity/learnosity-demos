@@ -95,7 +95,7 @@ $(document).ready(function(){
 </script>
 
 
-<script src="//items.learnosity.com"></script>
+<script src="<?php echo $url_items; ?>"></script>
 
 <div class="modal fade preview" id="endtoend-item-preview" data-parameterone="custom">
     <div class="modal-dialog">
