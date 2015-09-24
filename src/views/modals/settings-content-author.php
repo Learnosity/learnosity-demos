@@ -46,6 +46,13 @@
                                         <input type="radio" name="item_list[toolbar][add]" value="false"<?php if (isset($list['toolbar']['add']) && $list['toolbar']['add'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Filter items to current user</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_list[filter][restricted][current_user]" value="true"<?php if (isset($list['filter']['restricted']['current_user']) && $list['filter']['restricted']['current_user'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_list[filter][restricted][current_user]" value="false"<?php if (isset($list['filter']['restricted']['current_user']) && $list['filter']['restricted']['current_user'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
