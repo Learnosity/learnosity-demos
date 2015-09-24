@@ -9,7 +9,8 @@
     // Shortcuts for convenience
     $con  = $request['config'];
     $list  = $request['config']['item_list'];
-    $edit = $request['config']['item_edit'];
+    $item_edit = $request['config']['item_edit'];
+    $widget_templates = $request['config']['widget_templates'];
     $mode = $request['mode'];
 
     $service = 'Author API';
@@ -59,23 +60,23 @@
                                 <div class="form-group">
                                     <label for="show_intro" class="col-sm-6 control-label">Show <em>Back</em> button</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[item][back]" value="true"<?php if (isset($edit['item']['back']) && $edit['item']['back'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[item][back]" value="false"<?php if (isset($edit['item']['back']) && $edit['item']['back'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="item_edit[item][back]" value="true"<?php if (isset($item_edit['item']['back']) && $item_edit['item']['back'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][back]" value="false"<?php if (isset($item_edit['item']['back']) && $item_edit['item']['back'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                                 <?php } ?>
                                 <div class="form-group">
                                     <label for="show_outro" class="col-sm-6 control-label">Show <em>Columns</em> button</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[item][columns]" value="true"<?php if (isset($edit['item']['columns']) && $edit['item']['columns'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[item][columns]" value="false"<?php if (isset($edit['item']['columns']) && $edit['item']['columns'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="item_edit[item][columns]" value="true"<?php if (isset($item_edit['item']['columns']) && $item_edit['item']['columns'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][columns]" value="false"<?php if (isset($item_edit['item']['columns']) && $item_edit['item']['columns'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="show_outro" class="col-sm-6 control-label">Show <em>Save</em> button</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[item][save]" value="true"<?php if (isset($edit['item']['save']) && $edit['item']['save'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[item][save]" value="false"<?php if (isset($edit['item']['save']) && $edit['item']['save'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="item_edit[item][save]" value="true"<?php if (isset($item_edit['item']['save']) && $item_edit['item']['save'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][save]" value="false"<?php if (isset($item_edit['item']['save']) && $item_edit['item']['save'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                             </div>
@@ -83,22 +84,41 @@
                                 <div class="form-group">
                                     <label for="show_outro" class="col-sm-6 control-label">Show item reference</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[item][reference][show]" value="true"<?php if (isset($edit['item']['reference']['show']) && $edit['item']['reference']['show'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[item][reference][show]" value="false"<?php if (isset($edit['item']['reference']['show']) && $edit['item']['reference']['show'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="item_edit[item][reference][show]" value="true"<?php if (isset($item_edit['item']['reference']['show']) && $item_edit['item']['reference']['show'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][reference][show]" value="false"<?php if (isset($item_edit['item']['reference']['show']) && $item_edit['item']['reference']['show'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="show_outro" class="col-sm-6 control-label">Edit item reference</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[item][reference][edit]" value="true"<?php if (isset($edit['item']['reference']['edit']) && $edit['item']['reference']['edit'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[item][reference][edit]" value="false"<?php if (isset($edit['item']['reference']['edit']) && $edit['item']['reference']['edit'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="item_edit[item][reference][edit]" value="true"<?php if (isset($item_edit['item']['reference']['edit']) && $item_edit['item']['reference']['edit'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][reference][edit]" value="false"<?php if (isset($item_edit['item']['reference']['edit']) && $item_edit['item']['reference']['edit'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="show_outro" class="col-sm-6 control-label">Show item status</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[item][status]" value="true"<?php if (isset($edit['item']['status']) && $edit['item']['status'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[item][status]" value="false"<?php if (isset($edit['item']['status']) && $edit['item']['status'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="item_edit[item][status]" value="true"<?php if (isset($item_edit['item']['status']) && $item_edit['item']['status'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][status]" value="false"<?php if (isset($item_edit['item']['status']) && $item_edit['item']['status'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="panel-body">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="show_intro" class="col-sm-6 control-label">Enable widget edit</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[widget][edit]" value="true"<?php if (isset($item_edit['widget']['edit']) && $item_edit['widget']['edit'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[widget][edit]" value="false"<?php if (isset($item_edit['widget']['edit']) && $item_edit['widget']['edit'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Enable widget delete</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[widget][delete]" value="true"<?php if (isset($item_edit['widget']['delete']) && $item_edit['widget']['delete'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[widget][delete]" value="false"<?php if (isset($item_edit['widget']['delete']) && $item_edit['widget']['delete'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                             </div>
@@ -106,21 +126,35 @@
                     </div>
 
                     <div class="panel panel-info">
-                        <div class="panel-heading"><h3>Widgets</h3></div>
+                        <div class="panel-heading"><h3>Widget Edit</h3></div>
                         <div class="panel-body">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="show_intro" class="col-sm-6 control-label">Enable widget edit</label>
+                                    <label for="show_intro" class="col-sm-6 control-label">Show Back button</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[widget][edit]" value="true"<?php if (isset($edit['widget']['edit']) && $edit['widget']['edit'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[widget][edit]" value="false"<?php if (isset($edit['widget']['edit']) && $edit['widget']['edit'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="widget_templates[back]" value="true"<?php if (isset($widget_templates['back']) && $widget_templates['back'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="widget_templates[back]" value="false"<?php if (isset($widget_templates['back']) && $widget_templates['back'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="show_outro" class="col-sm-6 control-label">Enable widget delete</label>
+                                    <label for="show_outro" class="col-sm-6 control-label">Show Save button</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[widget][delete]" value="true"<?php if (isset($edit['widget']['delete']) && $edit['widget']['delete'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[widget][delete]" value="false"<?php if (isset($edit['widget']['delete']) && $edit['widget']['delete'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="widget_templates[save]" value="true"<?php if (isset($widget_templates['save']) && $widget_templates['save'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="widget_templates[save]" value="false"<?php if (isset($widget_templates['save']) && $widget_templates['save'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Default widget type</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="widget_templates[widget_types][default]" value="questions"<?php if (isset($widget_templates['widget_types']['default']) && $widget_templates['widget_types']['default'] === 'questions') { echo ' checked'; }; ?>> Questions &nbsp;
+                                        <input type="radio" name="widget_templates[widget_types][default]" value="features"<?php if (isset($widget_templates['widget_types']['default']) && $widget_templates['widget_types']['default'] === 'features') { echo ' checked'; }; ?>> Features
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Show widget types</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="widget_templates[widget_types][show]" value="true"<?php if (isset($widget_templates['widget_types']['show']) && $widget_templates['widget_types']['show'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="widget_templates[widget_types][show]" value="false"<?php if (isset($widget_templates['widget_types']['show']) && $widget_templates['widget_types']['show'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                             </div>
