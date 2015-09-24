@@ -22,6 +22,11 @@ $request = array(
             ),
             'toolbar' => array(
                 'add' => true
+            ),
+            'filter' => array(
+                'restricted' => array(
+                    'current_user' => false
+                )
             )
         ),
         'item_edit' => array(
