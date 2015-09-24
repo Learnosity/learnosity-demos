@@ -81,19 +81,26 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Show item reference</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[item][reference][show]" value="true"<?php if (isset($edit['item']['reference']['show']) && $edit['item']['reference']['show'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][reference][show]" value="false"<?php if (isset($edit['item']['reference']['show']) && $edit['item']['reference']['show'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Edit item reference</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[item][reference][edit]" value="true"<?php if (isset($edit['item']['reference']['edit']) && $edit['item']['reference']['edit'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][reference][edit]" value="false"<?php if (isset($edit['item']['reference']['edit']) && $edit['item']['reference']['edit'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="show_outro" class="col-sm-6 control-label">Show item status</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="item_edit[item][status]" value="true"<?php if (isset($edit['item']['status']) && $edit['item']['status'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
                                         <input type="radio" name="item_edit[item][status]" value="false"<?php if (isset($edit['item']['status']) && $edit['item']['status'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <label for="show_outro" class="col-sm-6 control-label">Show item reference</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[item][reference][show]" value="true"<?php if (isset($edit['item']['reference']['show']) && $edit['item']['reference']['show'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[item][reference][show]" value="false"<?php if (isset($edit['item']['reference']['show']) && $edit['item']['reference']['show'] === false) { echo ' checked'; }; ?>> Disable
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                     </div>
