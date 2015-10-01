@@ -72,6 +72,10 @@ $signedRequest = $Init->generate();
     var itemIDs = new Array();
     var activeItemID = '<?php echo $item_ref; ?>';
 
+    // These are used to ensure that the list contains at least one item which has a question.
+    var itemHasQuestions = false;
+    var itemWithQuestionsAdded = false;
+
     var authorApp = LearnosityAuthor.init(initOptions, {
 
         readyListener: function () {
@@ -80,8 +84,14 @@ $signedRequest = $Init->generate();
                 // Prevent the default action (open) when an item in the list is clicked
                 event.preventDefault();
 
+                // Check if the Item contains questions set a flag accordingly
+                if(event.data.item.questions.length > 0) {
+                    itemHasQuestions = true;
+                } 
+
                 // For unpublished Items we do not provide the Modal as these can not be added to assessments
                 if(event.data.item.status == 'published') {
+
                     // Find the items ID and add it to the list.
                     // Add the Item ID to a custom paramater on the Modal DIV
                     $('#endtoend-item-preview').data().parameter_1 = event.data.item.reference;
@@ -104,7 +114,14 @@ $signedRequest = $Init->generate();
         });
         //go to assessment handler
         $(".btn-goToAssessment").click(function(){
-            window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
+            
+            // Do not proceed to assessment if the list does not conatin at least one question
+            if(itemWithQuestionsAdded == true){
+                window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");    
+            } else {
+                alert('None of the Items in the list contain Questions. An assessment requires a minimum of one Question.');
+            }
+            
         });
     });
 

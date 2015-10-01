@@ -84,8 +84,12 @@ $(document).ready(function(){
                 $(this).parent().addClass('alert-success'); // Add a class to the parent to highlight this Item
             }
         });
+
         // Save the item to the list
         saveItemID(item_ref);
+        if(itemHasQuestions == true){
+          itemWithQuestionsAdded = true;
+        }
         // Finally close the Modal
         $('#endtoend-item-preview').modal('hide');
          
