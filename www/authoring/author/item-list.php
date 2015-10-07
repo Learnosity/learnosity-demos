@@ -57,6 +57,14 @@ $request = array(
                 'edit' => true
             )
         ),
+        'widget_templates' => array(
+            'back' => true,
+            'save' => true,
+            'widget_types' => array(
+                'default' => 'questions',
+                'show' => true,
+            ),
+        ),
         'question_editor_init_options' => array(
             'ui' => array(
                 'public_methods'     => array(),
