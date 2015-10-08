@@ -16,6 +16,18 @@ function trueFalseConverter(&$object)
     return $object;
 }
 
+function numberConverter(&$object)
+{
+    foreach ($object as $key => $value) {
+        if (is_array($value)) {
+            $object[$key] = numberConverter($value);
+        } elseif (is_numeric($value)) {
+            $object[$key] = (float) $value;
+        }
+    }
+    return $object;
+}
+
 $filter_post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 if (isset($filter_post['api_type'])) {
@@ -38,6 +50,9 @@ if (isset($filter_post['api_type'])) {
             } else {
                 $request = array_replace_recursive($request, $filter_post);
                 $requestKey = &$request;
+            }
+            if (isset($requestKey['item_list']['limit'])) {
+                $requestKey['item_list']['limit'] = intval($requestKey['item_list']['limit']);
             }
             break;
         case 'items':
