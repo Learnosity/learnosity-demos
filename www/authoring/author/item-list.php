@@ -17,6 +17,7 @@ $request = array(
     'mode'      => 'item_list',
     'config'    => array(
         'item_list' => array(
+            'limit' => 10,
             'item' => array(
                 'status' => false
             ),
