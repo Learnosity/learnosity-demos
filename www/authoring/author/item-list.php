@@ -26,19 +26,35 @@ $request = array(
             ),
             'filter' => array(
                 'restricted' => array(
-                    'current_user' => false
+                    'current_user' => false,
+                    // 'tags' => array(
+                    //     'all' => array(
+                    //         array(
+                    //             'type' => 'grade'
+                    //         )
+                    //     ),
+                    //     'either' => array(
+                    //         array(
+                    //             'type' => 'subject',
+                    //             'name' => array(
+                    //                 'English',
+                    //                 'Math'
+                    //             )
+                    //         )
+                    //     )
+                    // )
                 )
             )
         ),
         'item_edit' => array(
             'item' => array(
-                "back" => true,
-                "columns" => true,
-                "save" => true,
-                "status" => false,
-                "reference" => array(
-                    "edit" => false,
-                    "show" => false
+                'back' => true,
+                'columns' => true,
+                'save' => true,
+                'status' => false,
+                'reference' => array(
+                    'edit' => false,
+                    'show' => false
                 ),
                 'tags' => array(
                     'include_tags_on_edit' => array(
