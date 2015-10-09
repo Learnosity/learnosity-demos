@@ -54,8 +54,10 @@
                                         <input type="radio" name="item_list[filter][restricted][current_user]" value="false"<?php if (isset($list['filter']['restricted']['current_user']) && $list['filter']['restricted']['current_user'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="show_intro" class="col-sm-6 control-label">Pagination limit</label>
+                                    <label for="show_intro" class="col-sm-6 control-label">Number of items per page (max 50)</label>
                                     <div class="col-sm-6">
                                         <input type="number" name="item_list[limit]" value="<?php if (isset($list['limit'])) { echo $list['limit']; }; ?>">
                                     </div>
