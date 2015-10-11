@@ -94,10 +94,11 @@ $request = array(
             )
         ),
         array(
-            'id'           => 'report-7',
-            'type'         => 'lastscore-by-item-by-user',
-            'scoring_type' => 'partial',
-            'users'        => array(
+            'id'                   => 'report-7',
+            'type'                 => 'lastscore-by-item-by-user',
+            'display_item_numbers' => true,
+            'scoring_type'         => 'partial',
+            'users'                => array(
                 array(
                     'id' => 'mce_student',
                     'name' => 'Jesse Pinkman'
