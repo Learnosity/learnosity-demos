@@ -98,6 +98,9 @@ var init = function () {
                         .appendTo($('#' + element.response_id).closest('.row'))
                         .wrap('<div class="col-md-6"></div>');
 
+                    $('<div class="pull-right"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#rubricViewer">View Rubric</button></div>')
+                        .appendTo($('#' + element.response_id).closest('.row'))
+
                     itemReferences.push({'reference': scoringItemId, 'id': feedbackItemId});
                     window.setScoringObjects(feedbackItemId, element);
                 }
@@ -191,7 +194,6 @@ function saveScores () {
 $(function() {
     $('.btn_save_simple_scores').on('click', saveScores);
 });
-
 </script>
 
 <style type="text/css">
@@ -209,5 +211,6 @@ $(function() {
 <script src="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.js"></script>
 
 <?php
+    include_once '../includes/rubric.php';
     include_once 'includes/footer.php';
 
