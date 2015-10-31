@@ -25,14 +25,6 @@ $request = array(
                 'reference' => array(
                     'edit' => false,
                     'show' => false
-                ),
-                'tags' => array(
-                    'include_tags_on_edit' => array(
-                        array(
-                            'type' => 'course',
-                            'name' => 'commoncore'
-                        )
-                    )
                 )
             ),
             'widget' => array(
@@ -48,16 +40,21 @@ $request = array(
                 'show' => true,
             ),
         ),
-        'question_editor_init_options' => array(
-            'ui' => array(
-                'public_methods'     => array(),
-                'question_tiles'     => false,
-                'documentation_link' => false,
-                'change_button'      => true,
-                'source_button'      => false,
-                'fixed_preview'      => true,
-                'advanced_group'     => false,
-                'search_field'       => true
+        'dependencies' => array(
+            'question_editor_api' => array(
+                'version' => 'v2',
+                'init_options' => array(
+                    'ui' => array(
+                        'public_methods'     => array(),
+                        'question_tiles'     => false,
+                        'documentation_link' => false,
+                        'change_button'      => true,
+                        'source_button'      => false,
+                        'fixed_preview'      => true,
+                        'advanced_group'     => false,
+                        'search_field'       => true
+                    )
+                )
             )
         )
     ),
