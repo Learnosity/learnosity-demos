@@ -55,6 +55,10 @@ $request = array(
                 'reference' => array(
                     'edit' => false,
                     'show' => false
+                ),
+                'mode' => array(
+                    'default' => 'edit',
+                    'show' => false
                 )
             ),
             'widget' => array(

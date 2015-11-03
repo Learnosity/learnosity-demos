@@ -94,6 +94,20 @@
                                         <input type="radio" name="item_edit[item][save]" value="false"<?php if (isset($item_edit['item']['save']) && $item_edit['item']['save'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Default item mode</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[item][mode][default]" value="edit"<?php if (isset($item_edit['item']['mode']['default']) && $item_edit['item']['mode']['default'] == 'edit') { echo ' checked'; }; ?>> Edit &nbsp;
+                                        <input type="radio" name="item_edit[item][mode][default]" value="preview"<?php if (isset($item_edit['item']['mode']['default']) && $item_edit['item']['mode']['default'] == 'preview') { echo ' checked'; }; ?>> Preview
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Show toggle item mode</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[item][mode][show]" value="true"<?php if (isset($item_edit['item']['mode']['show']) && $item_edit['item']['mode']['show'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][mode][show]" value="false"<?php if (isset($item_edit['item']['mode']['show']) && $item_edit['item']['mode']['show'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
