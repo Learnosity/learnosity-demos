@@ -86,18 +86,19 @@ $curl_ssl_verify = true;
 |
 */
 
-$url_assess           = '//assess.learnosity.com';
-$url_authorapi        = '//authorapi.learnosity.com';
-$url_authorapi_legacy = '//authorapi.learnosity.com?v0.5';
-$url_data             = 'https://data.learnosity.com';
-$url_events           = '//events.learnosity.com';
-$url_items            = '//items.learnosity.com';
-$url_questioneditor   = '//questioneditor.learnosity.com?v2';
-$url_questions        = '//questions.learnosity.com';
-$url_reports          = '//reports.learnosity.com';
-$version_assessapi    = 'v2';
-$version_dataapi      = 'v0.56';
-$version_questionsapi = 'v2';
+$url_assess                = '//assess.learnosity.com';
+$url_authorapi             = '//authorapi.learnosity.com';
+$url_authorapi_legacy      = '//authorapi.learnosity.com?v0.5';
+$url_data                  = 'https://data.learnosity.com';
+$url_events                = '//events.learnosity.com';
+$url_items                 = '//items.learnosity.com';
+$url_questioneditor        = '//questioneditor.learnosity.com?v2';
+$url_questions             = '//questions.learnosity.com';
+$url_reports               = '//reports.learnosity.com';
+$version_assessapi         = 'v2';
+$version_dataapi           = 'v0.56';
+$version_questionsapi      = 'v2';
+$version_questioneditorapi = 'v2';
 
 /**
  * Allow override file to replace config options
