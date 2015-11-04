@@ -76,7 +76,7 @@ $request = array(
         ),
         'dependencies' => array(
             'question_editor_api' => array(
-                'version' => 'v2',
+                'version' => $version_questioneditorapi,
                 'init_options' => array(
                     'ui' => array(
                         'public_methods'     => array(),

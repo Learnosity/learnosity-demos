@@ -24,16 +24,21 @@ $request = array(
                 )
             )
         ),
-        'question_editor_init_options' => array(
-            'ui' => array(
-                'public_methods'     => array(),
-                'question_tiles'     => false,
-                'documentation_link' => false,
-                'change_button'      => true,
-                'source_button'      => false,
-                'fixed_preview'      => true,
-                'advanced_group'     => false,
-                'search_field'       => false
+        'dependencies' => array(
+            'question_editor_api' => array(
+                'version' => $version_questioneditorapi,
+                'init_options' => array(
+                    'ui' => array(
+                        'public_methods'     => array(),
+                        'question_tiles'     => false,
+                        'documentation_link' => false,
+                        'change_button'      => true,
+                        'source_button'      => false,
+                        'fixed_preview'      => true,
+                        'advanced_group'     => false,
+                        'search_field'       => false
+                    )
+                )
             )
         )
     ),
