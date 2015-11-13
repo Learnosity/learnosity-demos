@@ -1128,3 +1128,30 @@ textarea.form-control {
 .panel-title a {
     display: block;
 }
+
+/********************************************************************
+*
+* Visibility Utility
+*
+********************************************************************/
+.hide {
+    display: none;
+}
+
+
+/********************************************************************
+*
+* Spacing Utility
+*
+********************************************************************/
+.margin-top-small {
+    margin-top: 15px;
+}
+
+.margin-bottom-small {
+    margin-bottom: 15px;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
