@@ -207,7 +207,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-                                <h4>Version settings 3 only</h4>
+                                <h4 style="border-bottom: 1px solid #ebf0f0; padding-bottom: 15px; margin-bottom: 20px;">Version 3 settings only</h4>
                                 <div class="form-group">
                                     <label for="show_intro" class="col-sm-6 control-label">Global Layout</label>
                                     <div class="col-sm-6">
