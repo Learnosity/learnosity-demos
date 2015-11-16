@@ -8,7 +8,7 @@ include_once 'includes/header.php';
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/v3/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
             </ul>
         </div>
@@ -32,20 +32,6 @@ include_once 'includes/header.php';
         <div class="margin-bottom-small">
             <button type="button" class="lrn-question-button btn btn-default">Question</button>
             <button type="button" class="lrn-feature-button btn btn-default">Feature</button>
-            <div class="display-inline-block">
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="globallayout" value="edit">Single page layout (edit)
-                    </label>
-                </div>
-
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="globallayout" value="edit_preview">Two columns layout (edit_preview)
-                    </label>
-                </div>
-            </div>
-
         </div>
         <div class="lrn-change-button-wrapper hide margin-bottom-small">
             <button type="button" class="lrn-change-button btn btn-primary">Change</button>
