@@ -133,6 +133,33 @@ if (isset($filter_post['api_type'])) {
             }
             $requestKey = &$request;
             break;
+        case 'questioneditorV3':
+            if (isset($filter_post['ui']) && isset($filter_post['ui']['layout'])) {
+                $request['ui']['layout']['global_template'] = $filter_post['ui']['layout'];
+            }
+
+            if (isset($filter_post['widget_type'])) {
+                $request['widget_type'] = $filter_post['widget_type'];
+                if ($filter_post['widget_type'] !== 'response') {
+                    unset($request['widget_json']);
+                } else {
+                    $request['question_type'] = $filter_post['question_type'];
+                    switch($filter_post['question_type']) {
+                        case 'association':
+                            $request['widget_json'] = $questionJsonAssociation;
+                            break;
+                        case 'choicematrix':
+                            $request['widget_json'] = $questionJsonChoiceMatrix;
+                            break;
+                        default:
+                        case 'mcq':
+                            $request['widget_json'] = $questionJsonMcq;
+                            break;
+
+                    }
+                }
+            }
+            break;
         case 'questioneditor-test-init':
             $request = $filter_post['init'];
             break;

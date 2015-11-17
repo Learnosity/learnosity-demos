@@ -36,7 +36,7 @@ include_once 'includes/header.php';
                     <div class="panel-body">
                         <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./main.php">Demo</a>
+                            <a class="btn btn-primary btn-md" href="./editquestion.php">Demo</a>
                         </p>
                     </div>
                 </div>
