@@ -29,9 +29,6 @@ include_once 'includes/header.php';
                     </div>
                 </div>
 
-            </div>
-            <div class="col-md-6">
-
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h2 class="panel-title">Directly Edit a Question</h2>
@@ -43,7 +40,8 @@ include_once 'includes/header.php';
                         </p>
                     </div>
                 </div>
-
+            </div>
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h2 class="panel-title">Customise global layout</h2>
@@ -53,6 +51,19 @@ include_once 'includes/header.php';
 
                         <p class="text-right">
                             <a class="btn btn-primary btn-md" href="./globallayout.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Edit panel layout</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Customise the Question Editor edit panel's layout for each question type to suite your design needs.</p>
+
+                        <p class="text-right">
+                            <a class="btn btn-primary btn-md" href="./editlayout.php">Demo</a>
                         </p>
                     </div>
                 </div>
