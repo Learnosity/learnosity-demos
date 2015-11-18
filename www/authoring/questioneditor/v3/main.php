@@ -14,7 +14,7 @@ include_once 'includes/header.php';
         </div>
         <div class="overview">
             <h1>Question Editor API V3 - Beta</h1>
-            <p>Our editor. Your item bank platform.<p>
+            <p>This demo shows the Question Editor API loaded with barebones config. Refer to <a href="http://docs.learnosity.com/authoring/questioneditor/v3/quickstart">the Quick Start guide</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/v3/initialisation">the Initialisation Options docs</a>.<p>
         </div>
     </div>
 

@@ -70,6 +70,9 @@ $questionJsonAssociation = array(
     )
 );
 
+// load mcq as default
+$request['widget_json'] = $questionJsonMcq;
+
 include_once 'utils/settings-override.php';
 
 $signedRequest = array_merge_recursive(array(), $request);
@@ -102,8 +105,8 @@ $signedRequest = json_encode($signedRequest);
         <div class="overview">
             <h1>Question Editor API V3 – Edit Question</h1>
 
-            <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen.
-
+            <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen. For more information refer to <a href="http://docs.learnosity.com/authoring/questioneditor/v3/initialisation#widget_json">the init options docs</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/v3/publicmethods#setWidget">the setWidget</a> public method.<p>
+            
             <p>
         </div>
     </div>

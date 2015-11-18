@@ -10,17 +10,33 @@ include_once 'includes/header.php';
         .panel-title {
             padding-left: 20px;
         }
+        .panel-group {
+            margin-top: 20px;
+        }
+        #accordion .panel {
+            border-radius: 0;
+        }
+        #accordion .panel-heading {
+            background: #666;
+            border-radius: 0;
+        }
+        #accordion .panel-heading a {
+            color: #fff;
+        }
+        #accordion .panel-heading a:hover {
+            color: #eee;
+        }
     </style>
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/v3/globallayout" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/v3" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
             </ul>
         </div>
         <div class="overview">
             <h1>Question Editor API V3 - Beta</h1>
-            <p>Our editor. Your item bank platform. You can customise the question's layout to suit your design needs.<p>
+            <p>Our editor. Your item bank platform. You can customise the question's layout to suit your design needs. For more information, refer to <a href="http://docs.learnosity.com/authoring/questioneditor/v3/editlayout">the docs page</a>.<p>
         </div>
     </div>
 
