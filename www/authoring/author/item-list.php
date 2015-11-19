@@ -58,7 +58,7 @@ $request = array(
                 ),
                 'mode' => array(
                     'default' => 'edit',
-                    'show' => false
+                    'show' => true
                 )
             ),
             'widget' => array(
@@ -86,7 +86,10 @@ $request = array(
                         'source_button'      => true,
                         'fixed_preview'      => true,
                         'advanced_group'     => false,
-                        'search_field'       => true
+                        'search_field'       => true,
+                        'layout' => array(
+                            'global_template' => 'edit'
+                        )
                     )
                 )
             )
