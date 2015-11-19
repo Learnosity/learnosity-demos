@@ -67,6 +67,15 @@ $signedRequest = $Init->generate();
         submitNumber = 0;
 
         function init () {
+            itemsApp.assessApp().on('test:save:error', function (e) {
+                console.log('test:save:error');
+                console.log(e);
+            });
+            itemsApp.assessApp().on('test:submit:error', function (e) {
+                console.log('test:submit:error');
+                console.log(e);
+            });
+
             itemsApp.assessApp().questionsApp().submit = function (settings) {
                 submitNumber++;
                 settings.error({message: 'error'});
