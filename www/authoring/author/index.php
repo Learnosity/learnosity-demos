@@ -80,6 +80,19 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Item List – Routing</h2>
+                </div>
+                <div class="panel-body">
+                    <p>A demonstration that uses the <a href="http://docs.learnosity.com/authoring/author/publicmethods#on-events">&lsquo;navigate&rsquo; event</a> and the <a href="http://docs.learnosity.com/authoring/author/publicmethods#navigate">&lsquo;navigate&rsquo; public method</a> to enable linkable, bookmarkable, shareable URLs that allow navigation directly to locations within the app.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./routing.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
