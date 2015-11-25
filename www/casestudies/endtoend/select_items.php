@@ -85,7 +85,8 @@ $signedRequest = $Init->generate();
                 event.preventDefault();
 
                 // Check if the Item contains questions set a flag accordingly
-                if(event.data.item.questions.length > 0) {
+                //   Need to add the test for "learnosity-response" because data.questions does not contain questions data due to recent reworking of Author API.
+                if(event.data.questions.length > 0 || event.data.item.content.indexOf("learnosity-response") >= 0) {
                     itemHasQuestions = true;
                 } 
 
