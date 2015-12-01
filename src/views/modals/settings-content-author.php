@@ -7,14 +7,14 @@
 -->
 <?php
     // Shortcuts for convenience
-    $con  = $request['config'];
-    $list  = $request['config']['item_list'];
-    $item_edit = $request['config']['item_edit'];
-    $widget_templates = $request['config']['widget_templates'];
+    $con                 = $request['config'];
+    $list                = $request['config']['item_list'];
+    $item_edit           = $request['config']['item_edit'];
+    $widget_templates    = $request['config']['widget_templates'];
     $question_editor_api = $request['config']['dependencies']['question_editor_api'];
-    $mode = $request['mode'];
+    $mode                = $request['mode'];
 
-    $service = 'Author API';
+    $service         = 'Author API';
     $serviceShortcut = 'author';
 ?>
 
@@ -194,25 +194,26 @@
                     <div class="panel panel-info">
                         <div class="panel-heading"><h3>Question Editor</h3></div>
                         <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="show_intro" class="col-sm-6 control-label">Version</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="dependencies[question_editor_api][version]" value="v2"<?php if (isset($question_editor_api['version']) && $question_editor_api['version'] === 'v2') { echo ' checked'; }; ?>> v2 &nbsp;<br>
-                                        <input type="radio" name="dependencies[question_editor_api][version]" value="v3"<?php if (isset($question_editor_api['version']) && $question_editor_api['version'] === 'v3') { echo ' checked'; }; ?>> v3
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="show_intro" class="col-sm-6 control-label">Version</label>
+                                        <div class="col-sm-6">
+                                            <input type="radio" name="dependencies[question_editor_api][version]" value="v2"<?php if (isset($question_editor_api['version']) && $question_editor_api['version'] === 'v2') { echo ' checked'; }; ?>> v2 &nbsp;<br>
+                                            <input type="radio" name="dependencies[question_editor_api][version]" value="v3"<?php if (isset($question_editor_api['version']) && $question_editor_api['version'] === 'v3') { echo ' checked'; }; ?>> v3
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h4 style="border-bottom: 1px solid #ebf0f0; padding-bottom: 15px; margin-bottom: 20px;">Version 3 settings only</h4>
-                                <div class="form-group">
-                                    <label for="show_intro" class="col-sm-6 control-label">Global Layout</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="dependencies[question_editor_api][init_options][ui][layout][global_template]" value="edit"<?php if (isset($question_editor_api['init_options']['ui']['layout']['global_template']) && $question_editor_api['init_options']['ui']['layout']['global_template'] === 'edit') { echo ' checked'; }; ?>> Edit only &nbsp;<br>
-                                        <input type="radio" name="dependencies[question_editor_api][init_options][ui][layout][global_template]" value="edit_preview"<?php if (isset($question_editor_api['init_options']['ui']['layout']['global_template']) && $question_editor_api['init_options']['ui']['layout']['global_template'] === 'edit_preview') { echo ' checked'; }; ?>> Edit and Preview &nbsp;
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h4 style="border-bottom: 1px solid #ebf0f0; padding-bottom: 15px; margin-bottom: 20px;">Version 3 settings only</h4>
+                                    <div class="form-group">
+                                        <label for="show_intro" class="col-sm-6 control-label">Global Layout</label>
+                                        <div class="col-sm-6">
+                                            <input type="radio" name="dependencies[question_editor_api][init_options][ui][layout][global_template]" value="edit"<?php if (isset($question_editor_api['init_options']['ui']['layout']['global_template']) && $question_editor_api['init_options']['ui']['layout']['global_template'] === 'edit') { echo ' checked'; }; ?>> Edit only &nbsp;<br>
+                                            <input type="radio" name="dependencies[question_editor_api][init_options][ui][layout][global_template]" value="edit_preview"<?php if (isset($question_editor_api['init_options']['ui']['layout']['global_template']) && $question_editor_api['init_options']['ui']['layout']['global_template'] === 'edit_preview') { echo ' checked'; }; ?>> Edit and Preview &nbsp;
+                                        </div>
                                     </div>
                                 </div>
                             </div>
