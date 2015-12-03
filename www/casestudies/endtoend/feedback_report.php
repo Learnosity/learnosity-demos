@@ -69,6 +69,7 @@ $signedRequest = $Init->generate();
 var init = function() {
 
   var itemReferences = [];
+
   var report1 = reportsApp.getReport('report-1');
 
   report1.on('ready:itemsApi', function(itemsApp) {
@@ -106,7 +107,8 @@ var init = function() {
             'activity_id': 'Demo_Activity',
             'session_id': '<?php echo $feedback_session_id; ?>',
             'items': itemReferences,
-            'type': 'feedback'
+            'type': 'feedback',
+            'config': { "eventWorkaround" : true } //This is a temp workaround for LRN-7011
           }
         };
 
