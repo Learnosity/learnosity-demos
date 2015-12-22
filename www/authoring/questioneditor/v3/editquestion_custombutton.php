@@ -82,14 +82,17 @@ $signedRequest = json_encode($signedRequest);
                             $customContent;
 
                         buttonClickHandler = function () {
-                                $customContent = $('textarea#ck-custom-content').val()
+                                $customContent = $('#ck-custom-content').prop('outerHTML');
                                 $modal.modal('hide');
                                 return callback($customContent);
                         };
+                        $embedButton.unbind('click');
+                        $embedButton.on('click', buttonClickHandler);
+
                         $modal.modal({
                             backdrop: 'static'
                         });
-                        $embedButton.on('click', buttonClickHandler);
+
                     },
                     attributes: ['stimulus']
                 },{
@@ -99,7 +102,7 @@ $signedRequest = json_encode($signedRequest);
                     func:  function(attribute, callback) {
                         return callback('Evernote');
                     },
-                    attributes: ['stimulus']
+                    attributes: ['stimulus', 'metadata.distractor_rationale']
                 }
                 ]
             };
