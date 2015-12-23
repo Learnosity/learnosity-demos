@@ -16,14 +16,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Please enter you youtube embed link</h4>
+                <h4 class="modal-title">Are you sure you want to embed this video?</h4>
             </div>
             <div class="modal-body">
-                <p>Please chose an image in the gallery.</p>
                 <div class="ck-wrapper">
                     <iframe id="ck-custom-content" width="520" height="293" src="https://www.youtube.com/embed/8ejKWAP5vCU" frameborder="0"></iframe>
                 </div>
-                <button id="embed">Embed</button>
+                <button id="embed">Confirm</button>
             </div>
         </div>
     </div>
