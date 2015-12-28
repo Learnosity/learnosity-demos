@@ -281,25 +281,6 @@ $version = $version_dataapi;
                     </div>
                 </div>
             </div>
-
-            <!-- Interactives demos for the 'users' section -->
-            <h2>Users</h2>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#users">
-                            <span class="block">action: get</span>
-                            <?php echo '/' . $version . '/users'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
-                        </a>
-                    </h4>
-                </div>
-                <div id="users" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <?php include_once 'users/users.php'; ?>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
