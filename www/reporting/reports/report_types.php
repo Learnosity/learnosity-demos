@@ -27,6 +27,12 @@ $request = array(
             'session_id' => '8151DD9E-9029-4D13-AC773EC9C05E7FF2'
         ),
         array(
+            'id'         => 'report-23',
+            'type'       => 'session-detail-by-item',
+            'user_id'    => 'brianmoser',
+            'session_id' => '8151DD9E-9029-4D13-AC773EC9C05E7FF2'
+        ),
+        array(
             'id'        => 'report-3',
             'type'      => 'progress-by-tag',
             'user_id'   => 'mce_student_1',
@@ -328,6 +334,7 @@ $signedRequest = $Init->generate();
                               <li><a id="report-session-list" href="#sessions-list" data-toggle="tab">Sessions List</a></li>
                               <li><a id="report-session-list-by-item" href="#sessions-list-by-item" data-toggle="tab">Sessions List By Item</a></li>
                               <li><a id="report-session-detail" href="#sessions-detail" data-toggle="tab">Session Detail</a></li>
+                              <li><a id="report-session-detail-by-item" href="#sessions-detail-by-item" data-toggle="tab">Session Detail By Item</a></li>
                               <li><a id="report-session-tags" href="#sessions-tags" data-toggle="tab">Sessions Summary By Tag Chart</a></li>
                             </ul>
                         </div>
@@ -361,8 +368,15 @@ $signedRequest = $Init->generate();
                             <div class="tab-pane" id="sessions-detail">
                                 <section>
                                     <h3 class="report-title">Session Detail</h3>
-                                    <p class="lrn-report-summary">A fine-grain approach to gleaning strengths and weaknesses from a students session.</p>
+                                    <p class="lrn-report-summary">A fine-grain approach to gleaning strengths and weaknesses from a students session with scores broken down per question.</p>
                                     <span class="learnosity-report" id="report-2"></span>
+                                </section>
+                            </div>
+                            <div class="tab-pane" id="sessions-detail-by-item">
+                                <section>
+                                    <h3 class="report-title">Session Detail By Item</h3>
+                                    <p class="lrn-report-summary">A fine-grain approach to gleaning strengths and weaknesses from a students session with scores broken down per item.</p>
+                                    <span class="learnosity-report" id="report-23"></span>
                                 </section>
                             </div>
                             <div class="tab-pane" id="sessions-tags">
