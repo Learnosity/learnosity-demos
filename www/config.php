@@ -15,7 +15,7 @@ $consumer_key = 'yis0TYCu7U9V4o7M';
 $consumer_secret = '74c5fd430cf1242a527f6223aebd42d30464be22';
 
 // Some products need the domain as part of the security signature. Demos has been tested on "localhost"
-$domain = $_SERVER['SERVER_NAME'];
+$domain = $_SERVER['HTTP_HOST'];
 
 // Generate timestamp in format YYYYMMDD-HHMM for use in signature
 $timestamp = gmdate('Ymd-Hi');
@@ -28,7 +28,7 @@ $schoolid   = 'demo_school';
 $customMode = (isset($_GET['mode'])) ? $_GET['mode'] : 'production';
 
 // Asset version
-$assetVersion = '20150913';
+$assetVersion = '20151228';
 
 /*
 |--------------------------------------------------------------------------

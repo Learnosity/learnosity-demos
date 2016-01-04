@@ -65,13 +65,13 @@ $resource = 'items';
                 <div class="col-md-10">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="split_feature_references" id="api-split_feature_references" data-type="boolean" value="1">
+                            <input type="radio" name="split_feature_references" id="api-split_feature_references" data-type="boolean" value="1" checked>
                             Yes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="split_feature_references" id="api-split_feature_references" data-type="boolean" value="0" checked>
+                            <input type="radio" name="split_feature_references" id="api-split_feature_references" data-type="boolean" value="0">
                             No
                         </label>
                     </div>

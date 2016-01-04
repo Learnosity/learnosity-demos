@@ -20,7 +20,7 @@ gulp.task(
 
 gulp.task('scripts', function () {
     return gulp.src([
-        './www/static/vendor/jquery/jquery-1.11.0.min.js',
+        './www/static/vendor/jquery/jquery-1.11.?.min.js',
         './www/static/vendor/bootstrap/js/bootstrap.min.js',
         './www/static/js/prettyPrint.js',
         './www/static/js/main.js'
