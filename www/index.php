@@ -79,14 +79,14 @@ include_once 'includes/header.php';
 
     <div class="row landing-panel">
         <div class="col-md-3 landing-panel-heading">
-            <h3>Reporting</h3>
+            <h3>Analytics</h3>
         </div>
         <div class="col-md-8 content-panel">
             <ul class="list-unstyled">
-                <li><h4><a href="<?php echo $env['www'] ?>reporting/reports/index.php">Reports API</a></h4>
+                <li><h4><a href="<?php echo $env['www'] ?>analytics/reports/index.php">Reports API</a></h4>
                 <p>Allows rendering of rich reports on any page. Includes a live progress report with control
                 events, to remotely control any assessment in real time.</p></li>
-                <li><h4><a href="<?php echo $env['www'] ?>reporting/data/index.php">Data API</a></h4>
+                <li><h4><a href="<?php echo $env['www'] ?>analytics/data/index.php">Data API</a></h4>
                 <p>A back office service that allows authenticated users to retrieve and store information from within the Learnosity Assessment platform.</p></li>
             </ul>
         </div>
