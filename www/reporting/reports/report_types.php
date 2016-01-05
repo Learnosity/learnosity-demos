@@ -11,6 +11,9 @@ $security = array(
 );
 
 $request = array(
+    'configuration' => array(
+        'questionsApiVersion' => 'v2'
+    ),
     'reports' => array(
         array(
             'id'          => 'report-1',
@@ -589,13 +592,9 @@ $signedRequest = $Init->generate();
 <script src="<?php echo $env['www'] ?>static/vendor/head.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/reveal/reveal.js"></script>
 <script>
-    var config = <?php echo $signedRequest; ?>;
-    config.configuration = {
-        questionsApiVersion: "v2"
-    };
-    var lrnReports = LearnosityReports.init(
-        config,
-        {
+    var initOptions = <?php echo $signedRequest; ?>;
+    
+    var lrnReports = LearnosityReports.init(initOptions, {
             readyListener: onReportsReady
         }
     );
