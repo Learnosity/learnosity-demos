@@ -70,7 +70,7 @@ $signedRequest = json_encode($signedRequest);
     <script>
 
         var initOptions = JSON.parse(<?php echo json_encode($signedRequest)?>);
-            initOptions.editor = {
+            initOptions.rich_text_editor = {
                 type: 'ckeditor',
                 customButtons: [{
                     name: 'custombutton1',
@@ -86,6 +86,7 @@ $signedRequest = json_encode($signedRequest);
                                 $modal.modal('hide');
                                 return callback($customContent);
                         };
+
                         $embedButton.unbind('click');
                         $embedButton.on('click', buttonClickHandler);
 
