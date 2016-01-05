@@ -108,6 +108,7 @@ $signedRequest = json_encode($signedRequest);
                 ]
             };
 
+
         var qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');
     </script>
 
