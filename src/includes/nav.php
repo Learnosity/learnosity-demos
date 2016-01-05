@@ -10,9 +10,9 @@
             'assessment/questions/index.php' => 'Questions API',
             'assessment/assess/index.php'    => 'Assess API'
         ),
-        'Reporting' => array(
-            'reporting/reports/index.php' => 'Reports API',
-            'reporting/data/index.php'    => 'Data API'
+        'Analytics' => array(
+            'analytics/reports/index.php' => 'Reports API',
+            'analytics/data/index.php'    => 'Data API'
         ),
         'Misc' => array(
             'misc/security_check.php' => 'Security Check'
