@@ -82,7 +82,6 @@ $request = array(
             'paletteInstructions' => 'Instructions...colour'
         ),
         'ui_style'            => 'main',
-        'ignore_validation'   => false,
         'questionsApiVersion' => $version_questionsapi,
         'assessApiVersion'    => $version_assessapi,
         'configuration'       => array(
