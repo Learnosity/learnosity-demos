@@ -33,9 +33,7 @@ include_once 'includes/header.php';
             <button type="button" class="lrn-question-button btn btn-default">Question</button>
             <button type="button" class="lrn-feature-button btn btn-default">Feature</button>
         </div>
-        <div class="lrn-change-button-wrapper hide margin-bottom-small">
-            <button type="button" class="lrn-change-button btn btn-primary">Change</button>
-        </div>
+        
         <div class="my-question-editor"></div>
     </div>
     <script>
@@ -47,15 +45,8 @@ include_once 'includes/header.php';
             },
             widgetType: 'response'
         };
-        var changeButtonWrapper = document.querySelector('.lrn-change-button-wrapper');
 
         var qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');
-        qeApp.on('widget:changed', function () {
-            changeButtonWrapper.classList.remove('hide');
-        });
-        qeApp.on('editor:ready', function () {
-
-        });
 
         document.querySelector('.lrn-question-button')
             .addEventListener('click', function () {
@@ -66,12 +57,6 @@ include_once 'includes/header.php';
             .addEventListener('click', function () {
                 qeApp.reset('feature');
             });
-
-        var changeButton = document.querySelector('.lrn-change-button');
-        changeButton.addEventListener('click', function () {
-            qeApp.reset();
-            changeButtonWrapper.classList.add('hide');
-        });
     </script>
 
 <?php
