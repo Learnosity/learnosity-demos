@@ -93,6 +93,9 @@ $request = array(
             'idle_timeout'           => array(
                 'interval'       => 300,
                 'countdown_time' => 60
+            ),
+            'submit_criteria' => array(
+                'type' => 'attempted'
             )
         )
     )

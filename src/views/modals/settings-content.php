@@ -101,8 +101,8 @@
                                 <div class="form-group">
                                     <label for="show_accessibility" class="col-sm-6 control-label">Accessibility Options</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="navigation[show_accessibility]" value="true"<?php if (isset($nav['show_accessibility']) && $nav['show_accessibility'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="navigation[show_accessibility]" value="false"<?php if (isset($nav['show_accessibility']) && $nav['show_accessibility'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="navigation[show_accessibility]" value="true"<?php if (isset($nav['show_accessibility'])) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[show_accessibility]" value="false"<?php if (!isset($nav['show_accessibility'])) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -157,8 +157,8 @@
                                 <div class="form-group">
                                     <label for="ignore_question_attributes" class="col-sm-6 control-label">Suppress validation object</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="navigation[ignore_question_attributes][validation]" value="validation"<?php if (isset($nav['ignore_question_attributes']) && isset($nav['ignore_question_attributes']['validation']) && $nav['ignore_question_attributes']['validation'] === 'validation') { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="navigation[ignore_question_attributes][validation]" value=""<?php if (!isset($nav['ignore_question_attributes']) || !isset($nav['ignore_question_attributes']['validation'])) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="ignore_question_attributes[]" value="validation"<?php if (isset($con['ignore_question_attributes']) && in_array('validation', $con['ignore_question_attributes'])) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="ignore_question_attributes[]" value=""<?php if (!isset($con['ignore_question_attributes']) || !in_array('validation', $con['ignore_question_attributes'])) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                             </div>
