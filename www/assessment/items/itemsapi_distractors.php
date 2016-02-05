@@ -22,7 +22,7 @@ $request = array(
     'items'          => array('act1','act2','act3','act4','act5','act6'),
     'type'           => 'submit_practice',
     'config'         => array(
-        'renderSubmitButton'  => true,
+        'renderSubmitButton'  => false,
         'questionsApiVersion' => $version_questionsapi
     )
 );
@@ -52,7 +52,6 @@ $signedRequest = $Init->generate();
         <span class="learnosity-item" data-reference="act4"></span>
         <span class="learnosity-item" data-reference="act5"></span>
         <span class="learnosity-item" data-reference="act6"></span>
-        <span class="learnosity-submit-button"></span>
     </p>
 </div>
 
