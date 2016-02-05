@@ -22,7 +22,44 @@ $request = array(
     'items'          => array('Demo3', 'Demo4', 'Demo12', 'accessibility_demo_6', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10'),
     'assess_inline'  => true,
     'config'         => array(
-        'regions'  => 'main',
+
+     // was 'regions' => 'main' as the default option
+     // 4 Feb 2016 (after QCAA meeting: Dima, Adam, Mark L)
+     // we decided to provide this Demo to QCAA but without Quit and FullScreen buttons (as they do not work properly)
+
+        //'regions'  => 'main',
+
+        'regions' =>
+            [
+                'right' => [
+                    array(
+                        'type' => 'verticaltoc_element'
+                    ),
+                    array(
+                        'type' => 'reviewscreen_button'
+                    ),
+                    array(
+                        'type' => 'accessibility_button'
+                    ),
+                    array(
+                        'type' => 'separator_element'
+                    ),
+                    array(
+                        'type' => 'calculator_button'
+                    ),
+                    array(
+                        'type' => 'flagitem_button'
+                    )
+                ],
+                'bottom-right' => [
+                    array(
+                        'type' => 'next_button'
+                    ),
+                    array(
+                        'type' => 'previous_button'
+                    )
+                ]
+            ],
         'title'    => 'Demo activity - showcasing question types and assess options',
         'subtitle' => 'Walter White',
         'time'     => array(
