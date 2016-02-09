@@ -168,7 +168,7 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
-        <div class="row">
+    <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -178,6 +178,19 @@ include_once 'includes/header.php';
                     <p>Shows examples of loading assessments using activities authored in the Learnosity item bank.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_activities.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Locking Questions</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Shows how to ustomize the questions Check Answer button logic</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_locking_questions.php">Demo</a>
                     </p>
                 </div>
             </div>

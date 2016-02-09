@@ -133,8 +133,19 @@ $signedRequest = $Init->generate();
 
 <script src="<?php echo $url_authorapi; ?>"></script>
 <script>
-    var initOptions = <?php echo $signedRequest; ?>,
-        authorApp = LearnosityAuthor.init(initOptions);
+    var eventOptions = {
+            readyListener: init
+        },
+        initOptions = <?php echo $signedRequest; ?>,
+        authorApp = LearnosityAuthor.init(initOptions, eventOptions);
+
+    function init () {
+        // authorApp.navigate('items/new/widgets/new/' + JSON.stringify(
+        //     {
+        //         widgetTemplate: 'Choice Matrix – Inline'
+        //     }
+        // ));
+    }
 </script>
 
 <?php
