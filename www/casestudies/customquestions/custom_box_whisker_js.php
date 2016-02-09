@@ -1,8 +1,11 @@
+<?php
+    header('Content-Type: application/javascript; charset=utf-8' );
+?>
 LearnosityAmd.define([
-    'jquery-v1.10.2', 
+    'jquery-v1.10.2',
     'require-v2.1.9',
     'underscore-v1.5.2',
-    'vendor/d3'
+    '//<?php echo $_SERVER['HTTP_HOST']; ?>/casestudies/customquestions/custom_box_whisker_d3.js'
 ], function ($, require, _, theD3) {
     'use strict';
 
@@ -12,10 +15,7 @@ LearnosityAmd.define([
 
     var padding = 10;
     var defaults = {
-        "response_id": "custom-box-whisker-response-<?php echo $session_id; ?>",
         "type": "custom",
-        "js": "//docs.vg.learnosity.com/demos/products/questionsapi/questiontypes/assets/bnw/js/bnw.js",
-        "css": "//docs.vg.learnosity.com/demos/products/questionsapi/questiontypes/assets/bnw/css/bnw.css",
         "stimulus": "Draw a <b>box &amp; whisker</b> chart for the following: <b>6, 2, 5, 3, 6, 10, 11, 6</b>",
         "params_line_min"      :       0,
         "params_line_max"      :       17,
@@ -1061,7 +1061,7 @@ LearnosityAmd.define([
         options.events.trigger('ready');
         triggerChanged();
 
-    };    
+    };
 
     var bnwS = function (question, response) {
         var self = this;
@@ -1090,7 +1090,7 @@ LearnosityAmd.define([
                 pack.push('range_2');
 
             return pack;
-        }});        
+        }});
     };
 
     bnwS.prototype.updateResponse = function() {
@@ -1112,8 +1112,8 @@ LearnosityAmd.define([
     };
 
     return {
-        Question: bnwQ, 
+        Question: bnwQ,
         Scorer: bnwS//bnwQuestion.scorer
-    };    
+    };
 
 });
