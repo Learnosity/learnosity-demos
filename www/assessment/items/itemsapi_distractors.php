@@ -20,9 +20,8 @@ $request = array(
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => Uuid::generate(),
     'items'          => array('act1','act2','act3','act4','act5','act6'),
-    'type'           => 'submit_practice',
+    'type'           => 'local_practice',
     'config'         => array(
-        'renderSubmitButton'  => false,
         'questionsApiVersion' => $version_questionsapi
     )
 );
@@ -38,7 +37,7 @@ $signedRequest = $Init->generate();
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
-    <h1>Items API – Inline</h1>
+    <h1>Items API – Formative Distractor Rationale</h1>
     <p>Distractor rationale are hints shown to a student when they select an incorrect answer.<br>Try choosing
     an incorrect answer for the questions below to see distractor rationale in action.<br>You can specify distractor rationale
     in the author API and then write code to display them.<br> For an example of how to implement distractor rationale, refer to <a href="https://docs.learnosity.com/tutorials/tutorial_202">this tutorial.</a><p>
