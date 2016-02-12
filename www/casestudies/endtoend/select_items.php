@@ -13,6 +13,15 @@ $security = array(
     'domain'       => $domain
 );
 
+// This file is reused in the Demo Tour (misc/tour/end-to-end01.php) via an include, in that instance some restriction filters are applied.
+// To make this work in both cases we need to add a setting for the default http://demos.learnosity.com/casestudies/endtoend/select_items.php case.
+if (!strpos($_SERVER['PHP_SELF'], 'tour') > 0){
+    // Create the restrictions array to include the filter
+    $restricted = array(
+                   'current_user' => false,
+    );
+}
+
 $request = array(
     'mode'      => 'item_list',
     'config'    => array(
@@ -22,6 +31,9 @@ $request = array(
             ),
             'toolbar' => array(
                 'add' => false
+            ),
+            'filter' => array(
+                'restricted' => $restricted
             )
         ),
         'item_edit' => array(
@@ -81,37 +93,52 @@ $signedRequest = $Init->generate();
         readyListener: function () {
 
             authorApp.on('open:item', function (event) {
-                // Prevent the default action (open) when an item in the list is clicked
-                event.preventDefault();
+                
+                // Do not proceed if the array is undefined (as would be the case when adding a new item)
+                if(typeof(event.data.questions) != 'undefined'){
+                
+                    // Prevent the default action (open) when an item in the list is clicked
+                    event.preventDefault();
 
-                // Check if the Item contains questions set a flag accordingly
-                //   Need to add the test for "learnosity-response" because data.questions does not contain questions data due to recent reworking of Author API.
-                if(event.data.questions.length > 0 || event.data.item.content.indexOf("learnosity-response") >= 0) {
-                    itemHasQuestions = true;
-                } 
+                    // Check if the Item contains questions set a flag accordingly
+                    //   Need to add the test for "learnosity-response" because data.questions does not contain questions data due to recent reworking of Author API.
+                    if(event.data.questions.length > 0 || event.data.item.content.indexOf("learnosity-response") >= 0) {
+                        itemHasQuestions = true;
+                    } 
 
-                // For unpublished Items we do not provide the Modal as these can not be added to assessments
-                if(event.data.item.status == 'published') {
+                    // For unpublished Items we do not provide the Modal as these can not be added to assessments
+                    if(event.data.item.status == 'published') {
 
-                    // Find the items ID and add it to the list.
-                    // Add the Item ID to a custom paramater on the Modal DIV
-                    $('#endtoend-item-preview').data().parameter_1 = event.data.item.reference;
-                    // Open a Modal to preview the Item and provide 'Add' and 'Cancel' options
-                    $('#endtoend-item-preview').modal('show');
-                    
-                } else {
-                    alert('This item is unpublished and therefore can not be added to the assessment.');
+                        // Find the items ID and add it to the list.
+                        // Add the Item ID to a custom paramater on the Modal DIV
+                        $('#endtoend-item-preview').data().parameter_1 = event.data.item.reference;
+                        // Open a Modal to preview the Item and provide 'Add' and 'Cancel' options
+                        $('#endtoend-item-preview').modal('show');
+                        
+                    } else {
+                        alert('This item is unpublished and therefore can not be added to the assessment.');
+                    }
                 }
+
             });
+
+            // When a newly created item is saved save it to our array and redirect back to list view
+            authorApp.on('save:success', function (event) {
+                saveItemID(activeItemID);
+                authorApp.navigate('items');
+            });
+
         }
     });
-
 
     $(document).ready(function(){
         //add more question handler
         $(".btn-addMore").click(function(){
             activeItemID = guid();
             authorApp.setItem(activeItemID);
+            // Redirect to  new item view
+            //authorApp.navigate('items/new/widgets/new');
+            authorApp.navigate('items/new');
         });
         //go to assessment handler
         $(".btn-goToAssessment").click(function(){
