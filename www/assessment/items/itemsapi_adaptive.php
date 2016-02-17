@@ -50,7 +50,8 @@ $request = array(
             'show_prev'              => false,
             'show_progress'          => false,
             'show_fullscreencontrol' => false,
-            'show_acknowledgements'  => true
+            'show_acknowledgements'  => true,
+            'toc'                    => false
         ),
         'time' => array(
             'max_time' => 1800
