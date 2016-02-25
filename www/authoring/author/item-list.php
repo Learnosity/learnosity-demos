@@ -145,6 +145,12 @@ $signedRequest = $Init->generate();
         //         widgetTemplate: 'Choice Matrix – Inline'
         //     }
         // ));
+        authorApp.on('save:success', function (event) {
+            console.log(event);
+        });
+        authorApp.on('save:error', function (event) {
+            console.log('Error ' + event);
+        });
     }
 </script>
 
