@@ -79,7 +79,8 @@ $request = array(
         'labelBundle' => array(
             'item' => 'Question',
             'colorScheme' => 'Colour Scheme',
-            'paletteInstructions' => 'Instructions...colour'
+            'paletteInstructions' => 'Instructions...colour',
+            'answerMasking' => 'Answer Eliminator'
         ),
         'ui_style'            => 'main',
         'questionsApiVersion' => $version_questionsapi,
