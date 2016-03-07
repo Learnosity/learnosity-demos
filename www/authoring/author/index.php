@@ -51,17 +51,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Item Edit – Templates</h2>
+                    <h2 class="panel-title">Item List – Read Only</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A simple single column template that allows authors to add a single question.</p>
+                    <p>By disabling certain configuration flags, you can easily setup read only access to your item bank.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./single-question.php">Demo</a>
-                    </p>
-                    <hr>
-                    <p>A 2-column template (50%/50%) that allows a single feature in the left column, and a question in the right.</p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./feature-question.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./item-list-readonly.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -76,6 +71,24 @@ include_once 'includes/header.php';
                     <p>You can prevent the default save event (back to Learnosity) to add custom workflow.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./events.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Item Edit – Templates</h2>
+                </div>
+                <div class="panel-body">
+                    <p>A simple single column template that allows authors to add a single question.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./single-question.php">Demo</a>
+                    </p>
+                    <hr>
+                    <p>A 2-column template (50%/50%) that allows a single feature in the left column, and a question in the right.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./feature-question.php">Demo</a>
                     </p>
                 </div>
             </div>
