@@ -57,7 +57,7 @@ $request = array(
             'max_time' => 1800
         ),
         'questionsApiVersion' => $version_questionsapi,
-        'assessApiVersion'    => "v2.42.0",
+        'assessApiVersion'    => "latest",
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_adaptive.php',
             'onsave_redirect_url'   => 'itemsapi_adaptive.php'
