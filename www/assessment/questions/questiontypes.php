@@ -450,6 +450,10 @@ $request = '{
             "mode": "point",
             "response_id": "demo24-'.$uniqueResponseIdSuffix.'",
             "type": "graphplotting",
+            "toolbar": {
+                "default_tool": "vector",
+                "tools": ["move", "point", ["line", "ray", "segment", "vector"], "circle", ["parabola", "sine"], "polygon", "label"]
+            },
             "validation": {
                 "penalty_score": "0",
                 "valid_responses": [
@@ -515,6 +519,10 @@ $request = '{
             "mode": "line",
             "response_id": "demo25-'.$uniqueResponseIdSuffix.'",
             "type": "graphplotting",
+            "toolbar": {
+                "default_tool": "vector",
+                "tools": ["move", "point", ["line", "ray", "segment", "vector"], "circle", ["parabola", "sine"], "polygon", "label"]
+            },
             "validation": {
                 "penalty_score": "0",
                 "valid_responses": [
