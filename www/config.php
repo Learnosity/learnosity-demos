@@ -28,7 +28,7 @@ $schoolid   = 'demo_school';
 $customMode = (isset($_GET['mode'])) ? $_GET['mode'] : 'production';
 
 // Asset version
-$assetVersion = '20160302';
+$assetVersion = '20160323';
 
 /*
 |--------------------------------------------------------------------------
