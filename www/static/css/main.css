@@ -431,6 +431,37 @@ background-position: 0 0;
 padding-left: 2.42857em;
 background: #6fbc92;
 }
+/* Fixing report_types responsive issues */
+.inner-heading{
+    background-color:#fdfdfd !important;
+    padding: 0 0 0 0 !important;
+    border:none;
+}
+.inner-heading a{
+    padding:10px 12px 0px 8px !important;
+    margin-bottom: 6px;
+    backgr55ound-color:yellow;
+
+}
+.inner-heading .glyphicon{
+    margin-right:10px;
+}
+.inner-heading :hover .glyphicon{
+    color:#62AE41;
+}
+.panel-no-border{
+    border:none;
+    padding-bottom:0px;
+    margin-bottom:0px;
+
+}
+.panel-border-bottom{
+    border:none;
+    border-bottom:1px solid #cccccc;
+}
+.no-padding-bottom{
+    padding-bottom:0px;
+}
 /********************************************************************
 *
 * Home page
