@@ -350,7 +350,7 @@ $signedRequest = $Init->generate();
                                     </a>
                                 </h4>
                             </div>
-                            <div id="lrn-reports-demos-sessions-inner-1" class="panel-collapse collapse">
+                            <div id="lrn-reports-demos-sessions-inner-1" class="panel-collapse collapse in">
                                 <div class="panel-body">  
                                     <div class="tab-pane active" id="sessions-summary">
                                         <section>
@@ -531,7 +531,7 @@ $signedRequest = $Init->generate();
                                     </a>
                                 </h4>
                             </div>
-                            <div id="lastscore-activity" class="panel-collapse collapse">
+                            <div id="lastscore-activity" class="panel-collapse collapse in">
                                 <div class="panel-body">  
                                     <section>
                                         <h3 class="report-title">Last Score By Activity</h3>
@@ -694,7 +694,7 @@ $signedRequest = $Init->generate();
                                     </a>
                                 </h4>
                             </div>
-                            <div id="progress-by-tag-table" class="panel-collapse collapse">
+                            <div id="progress-by-tag-table" class="panel-collapse collapse in">
                                 <div class="panel-body">  
                                     <section>
                                         <h3 class="report-title">Progress by Tag Table</h3>
@@ -779,7 +779,7 @@ $signedRequest = $Init->generate();
                                     </a>
                                 </h4>
                             </div>
-                            <div id="live-progress" class="panel-collapse collapse">
+                            <div id="live-progress" class="panel-collapse collapse in">
                                 <div class="panel-body">  
                                     <section>
                                         <h3 class="report-title">Live Progress Tracking</h3>
