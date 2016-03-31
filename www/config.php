@@ -97,9 +97,9 @@ $url_questioneditor_v3     = '//questioneditor.learnosity.com?v3';
 $url_questions             = '//questions.learnosity.com';
 $url_reports               = '//reports.learnosity.com';
 $version_assessapi         = 'v2';
-$version_dataapi           = 'v0.58';
+$version_dataapi           = 'v0.59';
 $version_questionsapi      = 'v2';
-$version_questioneditorapi = 'v2';
+$version_questioneditorapi = 'v3';
 
 /**
  * Allow override file to replace config options
