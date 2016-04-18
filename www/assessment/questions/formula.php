@@ -134,10 +134,10 @@ $signedRequest = $Init->generate();
 
                 // 'Show handwriting data' button.
                 $('button.handwriting', this).on('click', function () {
+                    injectCodeMirrorCss();
                     // retrieve and stringify handwriting json.
                     var json = JSON.stringify(question.getHandwriting(), null, '    ');
                     var pre = $('pre.jsonexample', questionElement);
-
                     CodeMirror.runMode(json, {name: "javascript", json: true}, pre[0]);
                     pre.finish().slideToggle(50);
 
@@ -147,6 +147,24 @@ $signedRequest = $Init->generate();
             });
         }
     });
+
+    function injectCodeMirrorCss() {
+        var $head = $('head');
+        var $codeMirrorCss = $head.find('link[href=\'../../static/vendor/codemirror/codemirror.css\']');
+
+        if ($codeMirrorCss.length) {
+            return;
+        }
+
+        var $headlinklast = $head.find('link[rel=\'stylesheet\']:last');
+        var linkElement = '<link rel=\'stylesheet\' href=\'../../static/vendor/codemirror/codemirror.css\' type=\'text/css\' media=\'screen\'>';
+        if ($headlinklast.length){
+           $headlinklast.after(linkElement);
+        }
+        else {
+           $head.append(linkElement);
+        }
+    }
 </script>
 
 <div class="section">

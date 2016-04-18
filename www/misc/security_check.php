@@ -153,6 +153,26 @@ include_once 'includes/header.php';
             define: define
         },
         timestamp = '<?php echo gmdate('Ymd-Hi'); ?>';
+
+    injectCodeMirrorCss();
+
+    function injectCodeMirrorCss() {
+        var $head = $('head');
+        var $codeMirrorCss = $head.find('link[href=\'../../static/vendor/codemirror/codemirror.css\']');
+
+        if ($codeMirrorCss.length) {
+            return;
+        }
+
+        var $headlinklast = $head.find('link[rel=\'stylesheet\']:last');
+        var linkElement = '<link rel=\'stylesheet\' href=\'../../static/vendor/codemirror/codemirror.css\' type=\'text/css\' media=\'screen\'>';
+        if ($headlinklast.length){
+           $headlinklast.after(linkElement);
+        }
+        else {
+           $head.append(linkElement);
+        }
+    }
 </script>
 
 <script src="<?php echo $env['www'] ?>static/js/sha256.js"></script>
