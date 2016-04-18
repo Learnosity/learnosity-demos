@@ -56,6 +56,39 @@ $resource = 'scoring';
         ]
       }
     }
+  },
+  {
+    "response_id": "10001",
+    "options": [
+      {
+        "label": "A",
+        "value": "0"
+      },
+      {
+        "label": "B",
+        "value": "1"
+      },
+      {
+        "label": "C",
+        "value": "2"
+      },
+      {
+        "label": "D",
+        "value": "3"
+      }
+    ],
+    "stimulus": "<p>Choose the right response</p>",
+    "type": "mcq",
+    "ui_style": {},
+    "validation": {
+      "scoring_type": "exactMatch",
+      "valid_response": {
+        "score": 1,
+        "value": [
+          "3"
+        ]
+      }
+    }
   }
 ]</textarea>
                 </div>
@@ -68,6 +101,13 @@ $resource = 'scoring';
   "10000": {
     "value": [
       "0"
+    ],
+    "type": "array",
+    "apiVersion": "v2.45.1"
+  },
+  "10001": {
+    "value": [
+      "3"
     ],
     "type": "array",
     "apiVersion": "v2.45.1"

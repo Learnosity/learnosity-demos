@@ -33,7 +33,6 @@ gulp.task('scripts', function () {
 gulp.task('styles', function () {
     gulp.src([
         './www/static/vendor/bootstrap/css/bootstrap.min.css',
-        './www/static/vendor/codemirror/codemirror.css',
         './www/static/vendor/ladda/ladda.min.css',
         './www/static/css/main.css'
     ])

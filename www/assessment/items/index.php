@@ -188,7 +188,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Locking Questions</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows how to ustomize the questions Check Answer button logic</p>
+                    <p>Shows how to customize the questions Check Answer button logic</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_locking_questions.php">Demo</a>
                     </p>
