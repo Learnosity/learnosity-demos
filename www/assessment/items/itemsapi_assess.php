@@ -83,8 +83,6 @@ $request = array(
             'answerMasking' => 'Answer Eliminator'
         ),
         'ui_style'            => 'main',
-        'questionsApiVersion' => $version_questionsapi,
-        'assessApiVersion'    => $version_assessapi,
         'configuration'       => array(
             'fontsize'               => 'normal',
             'stylesheet'             => '',
