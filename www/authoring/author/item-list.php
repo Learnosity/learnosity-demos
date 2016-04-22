@@ -78,6 +78,12 @@ $request = array(
             'question_editor_api' => array(
                 'version' => $version_questioneditorapi,
                 'init_options' => array(
+                    'rich_text_editor' => array(
+                        'type' => 'wysihtml'
+                    ),
+                    'label_bundle' => array(
+                        'stimulus' => 'Compose question'
+                    ),
                     'ui' => array(
                         'public_methods'     => array(),
                         'question_tiles'     => false,

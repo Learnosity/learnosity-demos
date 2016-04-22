@@ -95,7 +95,7 @@ $signedRequest = $signedRequest;
         </ul>
     </div>
     <div class="overview">
-        <h1>Question Editor API – Test Custom Initialisation</h1>
+        <h1>Question Editor API V2 – Test Custom Initialisation</h1>
         <p><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">Enter a JSON initialisation</a> object to test your settings.<p>
     </div>
 </div>

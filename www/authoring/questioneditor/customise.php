@@ -68,7 +68,7 @@ $signedRequest = json_encode($signedRequest);
         </ul>
     </div>
     <div class="overview">
-        <h1>Question Editor API – Customise</h1>
+        <h1>Question Editor API V2 – Customise</h1>
         <p><a href="#" class="text-muted" data-toggle="modal" data-target="#settings">Customise</a> the Question Editor to suit your individual needs.<p>
     </div>
 </div>

@@ -73,7 +73,6 @@ $request = array(
         'time' => array(
             'max_time' => 1800
         ),
-        'questionsApiVersion' => $version_questionsapi,
         'assessApiVersion'    => "latest",
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_branching.php',

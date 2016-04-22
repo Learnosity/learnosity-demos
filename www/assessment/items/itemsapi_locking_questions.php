@@ -20,10 +20,7 @@ $request = array(
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => Uuid::generate(),
     'items'          => array('act1','act2','act3','act4','act5','act6'),
-    'type'           => 'local_practice',
-    'config'         => array(
-        'questionsApiVersion' => $version_questionsapi
-    )
+    'type'           => 'local_practice'
 );
 
 $Init = new Init('items', $security, $consumer_secret, $request);
@@ -39,7 +36,7 @@ $signedRequest = $Init->generate();
     </div>
     <h1>Items API – Locking Questions</h1>
     <p>
-        In this demo we customize the <em>Check Answer</em> button logic to display a message on every question attempt. When the question max <em>feedback_attempts</em> is reached the question is locked and the correct answers displayed. 
+        In this demo we customize the <em>Check Answer</em> button logic to display a message on every question attempt. When the question max <em>feedback_attempts</em> is reached the question is locked and the correct answers displayed.
         <br>Try choosing an incorrect answer for the questions below to see this in action.
     <p>
 </div>

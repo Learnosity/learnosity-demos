@@ -97,7 +97,7 @@ $signedRequest = json_encode($signedRequest);
         </ul>
     </div>
     <div class="overview">
-        <h1>Question Editor API – Edit Question</h1>
+        <h1>Question Editor API V2 – Edit Question</h1>
         <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen.<p>
     </div>
 </div>

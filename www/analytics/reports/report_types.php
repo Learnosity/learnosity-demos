@@ -10,6 +10,8 @@ $security = array(
     'domain'       => $domain
 );
 
+echo $url_reports;
+
 $request = array(
     'configuration' => array(
         'questionsApiVersion' => 'v2'

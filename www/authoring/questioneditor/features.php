@@ -13,7 +13,7 @@ include_once 'includes/header.php';
         </ul>
     </div>
     <div class="overview">
-        <h1>Question Editor API</h1>
+        <h1>Question Editor API V2</h1>
         <p>Features are reusable question and/or stimulus UI widgets that you can embed in an assessment.<p>
     </div>
 </div>

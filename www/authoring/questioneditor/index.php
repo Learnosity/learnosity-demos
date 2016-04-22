@@ -9,7 +9,7 @@ include_once 'includes/header.php';
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
-    <h1>Question Editor API</h1>
+    <h1>Question Editor API V2</h1>
     <div class="section-intro">
         <p>Our editor. Your item bank platform. Embed our Question Editor into your existing CMS to author rich question types
         directly in the system your content authors and SMEs already know.<p>
