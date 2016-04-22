@@ -608,7 +608,7 @@ $signedRequest = ($request);
         </ul>
     </div>
     <div class="overview">
-        <h1>Question Editor API – Custom Templates</h1>
+        <h1>Question Editor API V2 – Custom Templates</h1>
         <p>Create custom question type templates to suit your organisations authoring needs. Here we've removed the
         <em>search</em> and <em>advanced</em> elements as well as creating 4 custom question template groups.</p>
     </div>

@@ -94,7 +94,7 @@ $signedRequest = json_encode($signedRequest);
         </ul>
     </div>
     <div class="overview">
-        <h1>Question Editor API – Teacher Templates</h1>
+        <h1>Question Editor API V2 – Teacher Templates</h1>
         <p>Create templates suitable for teacher authoring.<p>
     </div>
 </div>

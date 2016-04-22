@@ -35,7 +35,7 @@ include_once 'includes/header.php';
             </ul>
         </div>
         <div class="overview">
-            <h1>Question Editor API V3 - Beta</h1>
+            <h1>Question Editor API</h1>
             <p>Our editor. Your item bank platform. You can customise the question's layout to suit your design needs. For more information, refer to <a href="http://docs.learnosity.com/authoring/questioneditor/v3/editlayout">the docs page</a>.<p>
         </div>
     </div>
