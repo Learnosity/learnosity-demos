@@ -33,13 +33,16 @@ include_once 'includes/header.php';
             <button type="button" class="lrn-question-button btn btn-default">Question</button>
             <button type="button" class="lrn-feature-button btn btn-default">Feature</button>
         </div>
-        
+
         <div class="my-question-editor"></div>
     </div>
     <script>
 
 
         var initOptions = {
+            rich_text_editor: {
+                type: 'wysihtml'
+            },
             configuration: {
                 questionsApiVersion: 'v2'
             },
