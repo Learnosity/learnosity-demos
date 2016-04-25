@@ -78,24 +78,6 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Item Edit – Templates</h2>
-                </div>
-                <div class="panel-body">
-                    <p>A simple single column template that allows authors to add a single question.</p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./single-question.php">Demo</a>
-                    </p>
-                    <hr>
-                    <p>A 2-column template (50%/50%) that allows a single feature in the left column, and a question in the right.</p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./feature-question.php">Demo</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
                     <h2 class="panel-title">Item List – Routing</h2>
                 </div>
                 <div class="panel-body">
@@ -105,6 +87,9 @@ include_once 'includes/header.php';
                     </p>
                 </div>
             </div>
+        </div>
+        <div class="col-md-6">
+
         </div>
     </div>
 </div>
