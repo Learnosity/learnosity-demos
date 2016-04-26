@@ -4,6 +4,9 @@ include_once '../../../config.php';
 include_once 'includes/header.php';
 
 $request = array(
+    'configuration' => array(
+        'consumer_key' => $consumer_key
+    ),
     'widget_type' => 'response',
     'ui' => array(
         'layout' => array(
@@ -114,7 +117,7 @@ $signedRequest = json_encode($signedRequest);
     <div class="section">
 
         <!-- Container for the question editor api to load into -->
-        <script src="<?php echo $url_questioneditor_v3; ?>"></script>
+        <script src="<?php echo /*$url_questioneditor_v3;*/ "https://questioneditor.vg.learnosity.com"; ?>"></script>
         <div class="my-question-editor"></div>
     </div>
     <script>
