@@ -545,6 +545,10 @@ a {
     border-bottom: 1px dashed #428bca;
 }
 
+.lrn a {
+    padding-bottom: 0;
+}
+
 a:hover,
 a:focus {
     border-bottom-color: transparent;
