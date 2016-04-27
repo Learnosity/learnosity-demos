@@ -2,7 +2,7 @@
     $pages = array(
         'Authoring' => array(
             'authoring/author/index.php'         => 'Author API',
-            'authoring/questioneditor/v3/index.php' => 'Question Editor API',
+            'authoring/questioneditor/v3/index.php' => 'Question Editor API V3',
             'authoring/questioneditor/index.php' => 'Question Editor API V2'
         ),
         'Assessment' => array(
