@@ -74,6 +74,10 @@ th {
     border-bottom-width: inherit;
 }
 
+.lrn th {
+    border-left: none;
+}
+
 td {
     border: 0px;
     border-left: 1px solid #ddd;

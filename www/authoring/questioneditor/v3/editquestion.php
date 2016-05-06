@@ -15,117 +15,222 @@ $request = array(
     )
 );
 
-$questionJsonMcq = array(
-    'options' => array(
-        array(
-            'label' => '[Choice A]',
-            'value' => '0'
-        ),
-        array(
-            'label' => '[Choice B]',
-            'value' => '1'
-        ),
-        array(
-            'label' => '[Choice C]',
-            'value' => '2'
-        ),
-        array(
-            'label' => '[Choice D]',
-            'value' => '3'
-        )
-    ),
-    'stimulus' => '<p>This is the question the student will answer</p>',
-    'type' => 'mcq',
-    'validation' => array(
-        'scoring_type' => 'exactMatch',
-        'valid_response' => array(
-            'score' => 1,
-            'value' => array('')
-        )
-    )
-);
-
-$questionJsonChoiceMatrix = array(
-    'stimulus' => '<p>[This is the stem.]</p>',
-    'type' => 'choicematrix',
-    'options' => array('True', 'False'),
-    'stems' => array('[Stem 1]', '[Stem 2]', '[Stem 3]', '[Stem 4]'),
-    'validation' => array(
-        'scoring_type' => 'exactMatch',
-        'valid_response' => array(
-            'score' => 1,
-            'value' => array(null, null, null, null)
-        )
-    )
-);
-
-$questionJsonAssociation = array(
-    'stimulus' => 'In this question, the student needs to match the cities to the parent nation.',
-    'type' => 'association',
-    'stimulus_list' => array('London', 'Dublin', 'Paris', 'Boston', 'Sydney'),
-    'possible_responses' => array('United States', 'Australia', 'France', 'Ireland', 'England'),
-    'validation' => array(
-        'scoring_type' => 'exactMatch',
-        'valid_response' => array(
-            'score' => 1,
-            'value' => array('England', 'Ireland', 'France', 'United States', 'Australia')
-        )
-    )
-);
-
-// load mcq as default
-$request['widget_json'] = $questionJsonMcq;
-
 include_once 'utils/settings-override.php';
 
-$signedRequest = array_merge_recursive(array(), $request);
+if (empty($request['question_type'])) {
+    $request['question_type'] = 'choicematrix';
+}
 
+switch ($request['question_type']) {
+    case 'mcq':
+        $widget_json = '{
+            "options": [
+                {
+                    "label": "[Choice A]",
+                    "value": "0"
+                },
+                {
+                    "label": "[Choice B]",
+                    "value": "1"
+                },
+                {
+                    "label": "[Choice C]",
+                    "value": "2"
+                },
+                {
+                    "label": "[Choice D]",
+                    "value": "3"
+                }
+            ],
+            "stimulus": "<p>This is the question the student will answer</p>",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "2"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            }
+        }';
+        $widget_template = 'Multiple Choice – Standard';
+        break;
+    case 'mcq-block':
+        $widget_json = '{
+            "options": [
+                {
+                    "label": "[Choice A]",
+                    "value": "0"
+                },
+                {
+                    "label": "[Choice B]",
+                    "value": "1"
+                },
+                {
+                    "label": "[Choice C]",
+                    "value": "2"
+                },
+                {
+                    "label": "[Choice D]",
+                    "value": "3"
+                }
+            ],
+            "stimulus": "<p>This is the question the student will answer using the block UI</p>",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "1"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "block",
+                "choice_label": "upper-alpha"
+            }
+        }';
+        $widget_template = 'Multiple Choice – Block UI';
+        break;
+    case 'choicematrix':
+        $widget_json = '{
+            "options": [
+                "True",
+                "False"
+            ],
+            "stems": [
+                "[Stem 1]",
+                "[Stem 2]",
+                "[Stem 3]",
+                "[Stem 4]"
+            ],
+            "stimulus": "<p>[This is the stem.]</p>",
+            "type": "choicematrix",
+            "ui_style": {
+                "stem_numeration": "upper-alpha",
+                "type": "table",
+                "horizontal_lines": false
+            },
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
+        }';
+        $widget_template = 'Choice Matrix – Labels';
+        break;
+    case 'association':
+        $widget_json = '{
+            "possible_responses": [
+                "[Choice A]",
+                "[Choice B]",
+                "[Choice C]"
+            ],
+            "stimulus": "<p>[This is the stem.]</p>",
+            "stimulus_list": [
+                "[Stem 1]",
+                "[Stem 2]",
+                "[Stem 3]"
+            ],
+            "type": "association",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            }
+        }';
+        $widget_template = 'Match List';
+        break;
+    default:
+        die('Missing question type');
+        break;
+}
+
+$request['widget_json'] = json_decode($widget_json, true);
+$signedRequest = array_merge_recursive(array(), $request);
 // remove variable for demo page internal use.
 unset($signedRequest['question_type']);
-
 $signedRequest = json_encode($signedRequest);
 
 ?>
 
-    <div class="jumbotron section">
-        <div class="toolbar">
-            <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted"
-                                                                                          data-toggle="modal"
-                                                                                          data-target="#settings"><span
-                            class="glyphicon glyphicon-list-alt"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"
-                                                                                                     data-toggle="modal"
-                                                                                                     data-target="#initialisation-preview"><span
-                            class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a
-                        href="http://docs.learnosity.com/questioneditorapi/" title="Documentation"><span
-                            class="glyphicon glyphicon-book"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span
-                            class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
-            </ul>
-        </div>
-        <div class="overview">
-            <h1>Question Editor API – Edit Question</h1>
-
-            <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen. For more information refer to <a href="http://docs.learnosity.com/authoring/questioneditor/v3/initialisation#widget_json">the init options docs</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/v3/publicmethods#setWidget">the setWidget</a> public method.<p>
-            
-            <p>
-        </div>
+<div class="jumbotron section">
+    <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Customise API Settings">
+                <a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
+                    <span class="glyphicon glyphicon-list-alt"></span>
+                </a>
+            </li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object">
+                <a href="#" data-toggle="modal" data-target="#initialisation-preview">
+                    <span class="glyphicon glyphicon-search"></span>
+                </a>
+            </li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation">
+                <a href="http://docs.learnosity.com/questioneditorapi/" title="Documentation">
+                    <span class="glyphicon glyphicon-book"></span>
+                </a>
+            </li>
+            <li data-toggle="tooltip" data-original-title="Toggle product overview box">
+                <a href="#">
+                    <span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span>
+                </a>
+            </li>
+        </ul>
     </div>
-
-    <div class="section">
-
-        <!-- Container for the question editor api to load into -->
-        <script src="<?php echo /*$url_questioneditor_v3;*/ "https://questioneditor.vg.learnosity.com"; ?>"></script>
-        <div class="my-question-editor"></div>
+    <div class="overview">
+        <h1>Question Editor API – Edit Question</h1>
+        <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen. For more information refer to <a href="http://docs.learnosity.com/authoring/questioneditor/v3/initialisation#widget_json">the init options docs</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/v3/publicmethods#setWidget">the setWidget</a> public method.</p>
     </div>
-    <script>
+</div>
 
-        var initOptions = JSON.parse(<?php echo json_encode($signedRequest)?>);
+<div class="section">
+    <!-- Container for the question editor api to load into -->
+    <div class="learnosity-question-editor"></div>
+</div>
 
-        var qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');
-    </script>
+<script src="<?php echo $url_questioneditor_v3; ?>"></script>
+<script>
+    var initOptions = <?php echo $signedRequest ?>,
+        domHook = 'learnosity-question-editor',
+        eventOptions = {
+            readyListener: function () {
+                qeApp.setWidget(
+                    <?php echo $widget_json; ?>,
+                    '<?php echo $widget_template; ?>'
+                );
+            },
+            errorListener: function (event) {
+                console.log(event);
+            }
+        },
+        qeApp;
+
+    qeApp = LearnosityQuestionEditor.init(
+        initOptions,
+        domHook,
+        eventOptions
+    );
+</script>
 
 <?php
 include_once 'views/modals/settings-questioneditor-v3.php';

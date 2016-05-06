@@ -24,12 +24,13 @@
             <div class="modal-body">
                 <form class="form-horizontal" role="form" id="frmSettings" method="post">
                     <input type="hidden" name="api_type" value="<?php echo $serviceShortcut ?>">
+                    <input type="hidden" name="widget_type" value="response">
 
                     <div class="panel panel-info">
                         <div class="panel-heading"><h3>Basic Settings</h3></div>
                         <div class="panel-body">
                             <div class="col-lg-6">
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="widget_type" class="col-sm-6 control-label">Editor Type</label>
                                     <div class="col-sm-6">
                                         <select id="widget_type" name="widget_type">
@@ -37,12 +38,13 @@
                                             <option value="feature"<?php if (isset($request['widget_type']) && $request['widget_type'] === 'feature') { echo ' selected'; }; ?>>Features</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div id="question_type_wrapper" class="form-group">
                                     <label for="widget_type" class="col-sm-6 control-label">Question Type </label>
                                     <div class="col-sm-6">
                                         <select id="question_type" name="question_type">
-                                            <option value="mcq"<?php if (isset($request['question_type']) && $request['question_type'] === 'mcq') { echo ' selected'; }; ?>>MCQ</option>
+                                            <option value="mcq"<?php if (isset($request['question_type']) && $request['question_type'] === 'mcq') { echo ' selected'; }; ?>>MCQ Standard</option>
+                                            <option value="mcq-block"<?php if (isset($request['question_type']) && $request['question_type'] === 'mcq-block') { echo ' selected'; }; ?>>MCQ Block UI</option>
                                             <option value="choicematrix"<?php if (isset($request['question_type']) && $request['question_type'] === 'choicematrix') { echo ' selected'; }; ?>>Choice Matrix</option>
                                             <option value="association"<?php if (isset($request['question_type']) && $request['question_type'] === 'association') { echo ' selected'; }; ?>>Association</option>
                                         </select>
