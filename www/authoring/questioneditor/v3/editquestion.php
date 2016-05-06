@@ -87,45 +87,48 @@ $signedRequest = json_encode($signedRequest);
 
 ?>
 
-    <div class="jumbotron section">
-        <div class="toolbar">
-            <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted"
-                                                                                          data-toggle="modal"
-                                                                                          data-target="#settings"><span
-                            class="glyphicon glyphicon-list-alt"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"
-                                                                                                     data-toggle="modal"
-                                                                                                     data-target="#initialisation-preview"><span
-                            class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a
-                        href="http://docs.learnosity.com/questioneditorapi/" title="Documentation"><span
-                            class="glyphicon glyphicon-book"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span
-                            class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
-            </ul>
-        </div>
-        <div class="overview">
-            <h1>Question Editor API – Edit Question</h1>
-
-            <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen. For more information refer to <a href="http://docs.learnosity.com/authoring/questioneditor/v3/initialisation#widget_json">the init options docs</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/v3/publicmethods#setWidget">the setWidget</a> public method.<p>
-            
-            <p>
-        </div>
+<div class="jumbotron section">
+    <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Customise API Settings">
+                <a href="#" class="text-muted" data-toggle="modal" data-target="#settings">
+                    <span class="glyphicon glyphicon-list-alt"></span>
+                </a>
+            </li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object">
+                <a href="#" data-toggle="modal" data-target="#initialisation-preview">
+                    <span class="glyphicon glyphicon-search"></span>
+                </a>
+            </li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation">
+                <a href="http://docs.learnosity.com/questioneditorapi/" title="Documentation">
+                    <span class="glyphicon glyphicon-book"></span>
+                </a>
+            </li>
+            <li data-toggle="tooltip" data-original-title="Toggle product overview box">
+                <a href="#">
+                    <span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span>
+                </a>
+            </li>
+        </ul>
     </div>
-
-    <div class="section">
-
-        <!-- Container for the question editor api to load into -->
-        <script src="<?php echo /*$url_questioneditor_v3;*/ "https://questioneditor.vg.learnosity.com"; ?>"></script>
-        <div class="my-question-editor"></div>
+    <div class="overview">
+        <h1>Question Editor API – Edit Question</h1>
+        <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen. For more information refer to <a href="http://docs.learnosity.com/authoring/questioneditor/v3/initialisation#widget_json">the init options docs</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/v3/publicmethods#setWidget">the setWidget</a> public method.</p>
     </div>
-    <script>
+</div>
 
-        var initOptions = JSON.parse(<?php echo json_encode($signedRequest)?>);
+<div class="section">
+    <!-- Container for the question editor api to load into -->
+    <script src="<?php echo /*$url_questioneditor_v3;*/ "https://questioneditor.vg.learnosity.com"; ?>"></script>
+    <div class="my-question-editor"></div>
+</div>
 
-        var qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');
-    </script>
+<script>
+    var initOptions = JSON.parse(<?php echo json_encode($signedRequest)?>);
+
+    var qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');
+</script>
 
 <?php
 include_once 'views/modals/settings-questioneditor-v3.php';
