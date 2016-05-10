@@ -24,6 +24,7 @@ $request = array(
                 '8524a7f7-169f-4b0b-b2ef-23df7c3ad51f'
             )
         ),
+        //changed to progress by tag
         array(
             'id'          => 'progress-by-tag',
             'render'      => $render,
