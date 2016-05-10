@@ -19,18 +19,21 @@ $request = array(
             'id'          => 'session-summary',
             'render'      => $render,
             'type'        => 'session-summary',
-            'user_id'     => 'brianmoser',
+            'user_id'     => 'demo_student',
             'session_ids' => array(
-                'AC023456-2C73-44DC-82DA28894FCBC3BF'
+                '8524a7f7-169f-4b0b-b2ef-23df7c3ad51f'
             )
         ),
         array(
-            'id'        => 'progress-by-tag',
-            'render'    => $render,
-            'type'      => 'progress-by-tag',
-            'user_id'   => 'brianmoser',
-            'hierarchy' => 'author'
-        )
+            'id'          => 'progress-by-tag',
+            'render'      => $render,
+            'type'        => 'sessions-summary-by-tag',
+            'user_id'     => 'mce_student_3',
+            'hierarchy'   => 'CCSS',
+            'session_ids' => array(
+                'd5cde952-1111-49ad-bfc7-c1ba102f3b22'
+            ),
+        ),
     )
 );
 
