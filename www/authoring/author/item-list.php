@@ -89,11 +89,12 @@ $request = array(
                         'question_tiles'     => false,
                         'documentation_link' => false,
                         'change_button'      => true,
+                        'help_button'        => true,
                         'source_button'      => true,
                         'fixed_preview'      => true,
                         'advanced_group'     => false,
                         'search_field'       => true,
-                        'layout' => array(
+                        'layout'             => array(
                             'global_template' => 'edit'
                         )
                     )
