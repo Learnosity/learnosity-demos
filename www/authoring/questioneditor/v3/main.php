@@ -5,62 +5,57 @@ include_once 'includes/header.php';
 
 ?>
 
-    <div class="jumbotron section">
-        <div class="toolbar">
-            <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/v3/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
-            </ul>
-        </div>
-        <div class="overview">
-            <h1>Question Editor API</h1>
-            <p>This demo shows the Question Editor API loaded with barebones config. Refer to <a href="http://docs.learnosity.com/authoring/questioneditor/quickstart">the Quick Start guide</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/initialisation">the Initialisation Options docs</a>.<p>
-        </div>
+<div class="jumbotron section">
+    <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/v3/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+        </ul>
+    </div>
+    <div class="overview">
+        <h1>Question Editor API</h1>
+        <p>This demo shows the Question Editor API loaded with barebones config. Refer to <a href="http://docs.learnosity.com/authoring/questioneditor/quickstart">the Quick Start guide</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/initialisation">the Initialisation Options docs</a>.<p>
+    </div>
+</div>
+
+<!--
+********************************************************************
+*
+* Nav for different Question Editor API examples
+*
+********************************************************************
+-->
+<div class="section">
+    <!-- Container for the question editor api to load into -->
+    <script src="<?php echo $url_questioneditor_v3; ?>"></script>
+    <div class="margin-bottom-small">
+        <button type="button" class="lrn-question-button btn btn-default">Question</button>
+        <button type="button" class="lrn-feature-button btn btn-default">Feature</button>
     </div>
 
-    <!--
-    ********************************************************************
-    *
-    * Nav for different Question Editor API examples
-    *
-    ********************************************************************
-    -->
-    <div class="section">
+    <div class="learnosity-question-editor"></div>
+</div>
 
-        <!-- Container for the question editor api to load into -->
-        <script src="<?php echo $url_questioneditor_v3; ?>"></script>
-        <div class="margin-bottom-small">
-            <button type="button" class="lrn-question-button btn btn-default">Question</button>
-            <button type="button" class="lrn-feature-button btn btn-default">Feature</button>
-        </div>
+<script>
+    var initOptions = {
+        rich_text_editor: {
+            _type: 'ckeditor'
+        },
+        widget_type: 'response'
+    };
 
-        <div class="my-question-editor"></div>
-    </div>
-    <script>
+    var qeApp = LearnosityQuestionEditor.init(initOptions);
 
+    document.querySelector('.lrn-question-button')
+        .addEventListener('click', function () {
+            qeApp.reset('response');
+        });
 
-        var initOptions = {
-            rich_text_editor: {
-                type: 'wysihtml'
-            },
-            configuration: {
-                questionsApiVersion: 'v2'
-            },
-            widgetType: 'response'
-        };
-
-        var qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');
-
-        document.querySelector('.lrn-question-button')
-            .addEventListener('click', function () {
-                qeApp.reset('response');
-            });
-
-        document.querySelector('.lrn-feature-button')
-            .addEventListener('click', function () {
-                qeApp.reset('feature');
-            });
-    </script>
+    document.querySelector('.lrn-feature-button')
+        .addEventListener('click', function () {
+            qeApp.reset('feature');
+        });
+</script>
 
 <?php
 include_once 'views/modals/asset-upload.php';
