@@ -38,8 +38,11 @@ include_once 'includes/header.php';
 
 <script>
     var initOptions = {
+        configuration: {
+            consumer_key: '<?php echo $consumer_key; ?>'
+        },
         rich_text_editor: {
-            _type: 'ckeditor'
+            type: 'ckeditor'
         },
         widget_type: 'response'
     };
