@@ -49,7 +49,7 @@ $request = array(
                 'version' => $version_questioneditorapi,
                 'init_options' => array(
                     'rich_text_editor' => array(
-                        'type' => 'wysihtml'
+                        'type' => 'ckeditor'
                     ),
                     'ui' => array(
                         'public_methods'     => array(),
