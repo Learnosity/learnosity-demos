@@ -95,7 +95,7 @@ $request = array(
                         'advanced_group'     => false,
                         'search_field'       => true,
                         'layout'             => array(
-                            'global_template' => 'edit'
+                            'global_template' => 'edit_preview'
                         )
                     )
                 )
