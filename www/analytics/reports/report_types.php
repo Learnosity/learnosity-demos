@@ -300,7 +300,16 @@ $request = array(
                     'name' => 'Brian Moser'
                 )
             )
-        )
+        ),
+        array(
+            'id'          => 'report-23',
+            'type'        => 'sessions-summary-by-question',
+            'user_id'     => 'open_web_demo',
+            'session_ids' => array(
+                '7ff55d16-6850-4c24-a4fb-c3ae7a1653d5',
+                '2d316936-046f-470c-89da-5f24a42a238b'
+            )
+        ),
     )
 );
 
@@ -351,12 +360,64 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="lrn-reports-demos-sessions-inner-1" class="panel-collapse collapse in">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <div class="tab-pane active" id="sessions-summary">
                                         <section>
                                             <h3 class="report-title">Sessions Summary</h3>
                                             <p class="lrn-report-summary">Gain quick, meaningful information about a students session at a glance.</p>
                                             <span class="learnosity-report" id="report-1"></span>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default panel-border-bottom">
+                            <div class="panel-heading inner-heading">
+                                <h4 class="panel-title">
+                                    <a id="accordion-report-session" data-toggle="collapse" data-parent="#lrn-reports-demos-sessions-content" href="#lrn-reports-demos-sessions-inner-6">
+                                        <div class="row">
+                                            <div class="col-sm-4"><span class="glyphicon glyphicon-chevron-down"> </span> Sessions Summary By Tag Chart</div>
+                                            <div class="col-sm-8">
+                                                <p class="lrn-report-summary">A sessions summary broken down into its constituent tags</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="lrn-reports-demos-sessions-inner-6" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="tab-pane" id="sessions-tags">
+                                        <section>
+                                            <h3 class="report-title">Sessions Summary By Tag Chart</h3>
+                                            <p class="lrn-report-summary">A sessions summary broken down into its constituent tags.</p>
+                                            <span class="learnosity-report" id="report-4"></span>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default panel-border-bottom">
+                            <div class="panel-heading inner-heading">
+                                <h4 class="panel-title">
+                                    <a id="accordion-report-session" data-toggle="collapse" data-parent="#lrn-reports-demos-sessions-content" href="#lrn-reports-demos-sessions-inner-7">
+                                        <div class="row">
+                                            <div class="col-sm-4"><span class="glyphicon glyphicon-chevron-down"> </span> Sessions Summary By Question</div>
+                                            <div class="col-sm-8">
+                                                <p class="lrn-report-summary">A sessions summary broken down into its questions</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="lrn-reports-demos-sessions-inner-7" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="tab-pane" id="sessions-summary-by-quesiton">
+                                        <section>
+                                            <h3 class="report-title">Sessions Summary By Question</h3>
+                                            <p class="lrn-report-summary">A sessions summary broken down into its questions.</p>
+                                            <span class="learnosity-report" id="report-23"></span>
                                         </section>
                                     </div>
                                 </div>
@@ -377,7 +438,7 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="lrn-reports-demos-sessions-inner-2" class="panel-collapse collapse">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <div class="tab-pane" id="sessions-list">
                                         <section>
                                             <h3 class="report-title">Sessions List</h3>
@@ -405,7 +466,7 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="lrn-reports-demos-sessions-inner-3" class="panel-collapse collapse">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <div class="tab-pane" id="sessions-list-by-item">
                                         <section>
                                             <h3 class="report-title">Sessions List By Item</h3>
@@ -427,14 +488,14 @@ $signedRequest = $Init->generate();
                                         <div class="row">
                                             <div class="col-sm-4"><span class="glyphicon glyphicon-chevron-down"> </span> Session Detail By Question</div>
                                             <div class="col-sm-8">
-                                                <p class="lrn-report-summary">For a single user session, shows the specific responses of the user for each question</p> 
+                                                <p class="lrn-report-summary">For a single user session, shows the specific responses of the user for each question</p>
                                             </div>
                                         </div>
                                     </a>
                                 </h4>
                             </div>
                             <div id="lrn-reports-demos-sessions-inner-5" class="panel-collapse collapse">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <div class="tab-pane" id="sessions-detail">
                                         <section>
                                             <h3 class="report-title">Session Detail By Question</h3>
@@ -447,7 +508,7 @@ $signedRequest = $Init->generate();
                             </div>
                         </div>
 
-                        <div class="panel panel-default panel-border-bottom">
+                        <div class="panel panel-default panel-no-border">
                             <div class="panel-heading inner-heading">
                                 <h4 class="panel-title">
                                     <a id="accordion-report-session" data-toggle="collapse" data-parent="#lrn-reports-demos-sessions-content" href="#lrn-reports-demos-sessions-inner-4">
@@ -455,14 +516,14 @@ $signedRequest = $Init->generate();
                                             <div class="col-sm-4"><span class="glyphicon glyphicon-chevron-down"> </span> Session Detail By Item</div>
                                             <div class="col-sm-8">
                                                 <p class="lrn-report-summary">For a single user session, shows the specific responses of the user for each item</p>
-                                            
+
                                             </div>
                                         </div>
                                     </a>
                                 </h4>
                             </div>
                             <div id="lrn-reports-demos-sessions-inner-4" class="panel-collapse collapse">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <div class="tab-pane" id="sessions-detail">
                                         <section>
                                             <h3 class="report-title">Session Detail By Item</h3>
@@ -474,34 +535,7 @@ $signedRequest = $Init->generate();
                                 </div>
                             </div>
                         </div>
-
-                        <div class="panel panel-default panel-no-border">
-                            <div class="panel-heading inner-heading">
-                                <h4 class="panel-title">
-                                    <a id="accordion-report-session" data-toggle="collapse" data-parent="#lrn-reports-demos-sessions-content" href="#lrn-reports-demos-sessions-inner-6">
-                                        <div class="row">
-                                            <div class="col-sm-4"><span class="glyphicon glyphicon-chevron-down"> </span> Sessions Summary By Tag Chart</div>
-                                            <div class="col-sm-8">
-                                                <p class="lrn-report-summary">A sessions summary broken down into its constituent tags</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="lrn-reports-demos-sessions-inner-6" class="panel-collapse collapse">
-                                <div class="panel-body">  
-                                    <div class="tab-pane" id="sessions-tags">
-                                        <section>
-                                            <h3 class="report-title">Sessions Summary By Tag Chart</h3>
-                                            <p class="lrn-report-summary">A sessions summary broken down into its constituent tags.</p>
-                                            <span class="learnosity-report" id="report-4"></span>
-                                        </section>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>
@@ -532,7 +566,7 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="lastscore-activity" class="panel-collapse collapse in">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <section>
                                         <h3 class="report-title">Last Score By Activity</h3>
                                         <p class="lrn-report-summary">Obtain the latest activity scores for a particular student, represented by either a progress bar (shown), or a numeric result.</p>
@@ -559,14 +593,14 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="lastscore-user" class="panel-collapse collapse">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <section>
                                         <h3 class="report-title">Last Score By Activity By User</h3>
                                         <p class="lrn-report-summary">Obtain the latest activity scores for a group of students, represented by either a numeric result (shown), or a progress bar.</p>
                                         <p class="lrn-report-summary">Hover over student scores to gather a meaningful score break-down.</p>
                                         <p class="lrn-report-summary">Names, activities and scores can trigger onClick events to tie into other reports.</p>
                                         <span class="learnosity-report" id="report-5"></span>
-                                    </section>    
+                                    </section>
                                 </div>
                             </div>
                         </div>
@@ -585,7 +619,7 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="lastscore-single" class="panel-collapse collapse">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <section>
                                         <h3 class="report-title">Last Score Single</h3>
                                         <p class="lrn-report-summary">Single reports are designed to be embedded within content pages.</p>
@@ -623,7 +657,7 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="lastscore-item" class="panel-collapse collapse">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <section>
                                         <h3 class="report-title">Last Score By Item By User</h3>
                                         <p class="lrn-report-summary">Obtain the latest activity score with a break-down of its constituent items.</p>
@@ -631,7 +665,7 @@ $signedRequest = $Init->generate();
                                         <p class="lrn-report-summary">Names and scores can trigger onClick events to tie into other reports.</p>
                                         <span class="learnosity-report" id="report-7"></span>
                                     </section>
-                                    <div id="lrn-report-lastscore-item-events"></div>    
+                                    <div id="lrn-report-lastscore-item-events"></div>
                                 </div>
                             </div>
                         </div>
@@ -650,7 +684,7 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="lastscore-tag" class="panel-collapse collapse">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <section>
                                         <h3 class="report-title">Last Score by Tag by User</h3>
                                         <p class="lrn-report-summary">Obtain the latest activity score with a break-down of scores according its constituent tags.  </p>
@@ -658,11 +692,11 @@ $signedRequest = $Init->generate();
                                         <p class="lrn-report-summary">Names and scores can trigger onClick events to tie into other reports.</p>
                                         <span class="learnosity-report" id="report-8"></span>
                                     </section>
-                                    <div id="lrn-report-lastscore-tag-events"></div>    
+                                    <div id="lrn-report-lastscore-tag-events"></div>
                                 </div>
                             </div>
                         </div>
-                     
+
                     </div>
                 </div>
             </div>
@@ -695,7 +729,7 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="progress-by-tag-table" class="panel-collapse collapse in">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <section>
                                         <h3 class="report-title">Progress by Tag Table</h3>
                                         <p class="lrn-report-summary">Gather insight into user progress according to your assigned tag hierarchy.</p>
@@ -707,7 +741,7 @@ $signedRequest = $Init->generate();
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="panel panel-default panel-no-border">
                             <div class="panel-heading inner-heading">
                                 <h4 class="panel-title">
@@ -722,7 +756,7 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="progress-single" class="panel-collapse collapse">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <section>
                                         <h3 class="report-title">Progress Single</h3>
                                         <p class="lrn-report-summary">
@@ -780,7 +814,7 @@ $signedRequest = $Init->generate();
                                 </h4>
                             </div>
                             <div id="live-progress" class="panel-collapse collapse in">
-                                <div class="panel-body">  
+                                <div class="panel-body">
                                     <section>
                                         <h3 class="report-title">Live Progress Tracking</h3>
                                         <p class="lrn-report-summary">Displays a real-time report of students status for an activity.</p>
@@ -827,7 +861,7 @@ $signedRequest = $Init->generate();
 <script src="<?php echo $env['www'] ?>static/vendor/reveal/reveal.js"></script>
 <script>
     var initOptions = <?php echo $signedRequest; ?>;
-    
+
     var lrnReports = LearnosityReports.init(initOptions, {
             readyListener: onReportsReady
         }
