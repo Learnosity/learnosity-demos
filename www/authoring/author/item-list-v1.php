@@ -138,7 +138,7 @@ $signedRequest = $Init->generate();
     <div id="learnosity-author"></div>
 </div>
 
-<script src="//authorapi.staging.learnosity.com?v1.0"></script>
+<script src="//authorapi.staging.learnosity.com?v1.99999999.0-rc.4"></script>
 <script>
     var eventOptions = {
             readyListener: init
