@@ -52,6 +52,7 @@ $request = array(
                 'columns' => true,
                 'save' => true,
                 'status' => false,
+                'dynamic_content' => true,
                 'reference' => array(
                     'edit' => false,
                     'show' => false
