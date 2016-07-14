@@ -55,6 +55,13 @@
                                         <input type="radio" name="item_list[filter][restricted][current_user]" value="false"<?php if (isset($list['filter']['restricted']['current_user']) && $list['filter']['restricted']['current_user'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="item_edit[item][dynamic_content]" class="col-sm-6 control-label">Show <em>Dynamic Content</em> button</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[item][dynamic_content]" value="true"<?php if (isset($item_edit['item']['dynamic_content']) && $item_edit['item']['dynamic_content'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][dynamic_content]" value="false"<?php if (isset($item_edit['item']['dynamic_content']) && $item_edit['item']['dynamic_content'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -82,10 +89,17 @@
                                 </div>
                                 <?php } ?>
                                 <div class="form-group">
-                                    <label for="show_outro" class="col-sm-6 control-label">Show <em>Columns</em> button</label>
+                                    <label for="item_edit[item][columns]" class="col-sm-6 control-label">Show <em>Columns</em> button</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="item_edit[item][columns]" value="true"<?php if (isset($item_edit['item']['columns']) && $item_edit['item']['columns'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
                                         <input type="radio" name="item_edit[item][columns]" value="false"<?php if (isset($item_edit['item']['columns']) && $item_edit['item']['columns'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="item_edit[item][tabs]" class="col-sm-6 control-label">Show <em>Tabs</em> button</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[item][tabs]" value="true"<?php if (isset($item_edit['item']['tabs']) && $item_edit['item']['tabs'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][tabs]" value="false"<?php if (isset($item_edit['item']['tabs']) && $item_edit['item']['tabs'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">
