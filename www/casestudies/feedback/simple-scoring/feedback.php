@@ -185,9 +185,13 @@ function saveScores () {
     .success(function(data, status, xhr) {
         // The only reason we wait 7 seconds _after_ the Data API update is due to a latency
         // retrieving responses that have been immediately set/updated
-        window.setTimeout(function () {
-            window.location = './feedback_report.php?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>';
-        }, 7000);
+        window.itemsAppTeacherScoring.save({
+            "success" : function() {
+                window.setTimeout(function () {
+                    window.location = './feedback_report.php?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>';
+                }, 7000);
+            }
+        });
     });
 }
 
