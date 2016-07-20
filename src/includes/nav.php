@@ -18,12 +18,12 @@
             'misc/security_check.php' => 'Security Check'
         ),
         'Case Studies' => array(
-            'casestudies/feedback' => 'Teacher Feedback',
-            'casestudies/printing' => 'Printing Items',
-            'casestudies/gallery'  => 'Gallery Style UI',
-            'casestudies/xapi'     => 'xAPI Events',
-            'casestudies/endtoend' => 'End to End Demo',
-            'casestudies/customquestions' => 'Custom Questions',
+            'casestudies/feedback/index.php' => 'Teacher Feedback',
+            'casestudies/printing/index.php' => 'Printing Items',
+            'casestudies/gallery/index.php'  => 'Gallery Style UI',
+            'casestudies/xapi/index.php'     => 'xAPI Events',
+            'casestudies/endtoend/index.php' => 'End to End Demo',
+            'casestudies/customquestions/index.php' => 'Custom Questions',
         )
     );
 ?>
