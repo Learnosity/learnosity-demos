@@ -95,7 +95,7 @@ $signedRequest = $Init->generate();
     <div class="overview">
         <h1>Author API – Item Edit</h1>
         <p>Learnosity's Author API allows searching and integration of Learnosity powered content into your content management system.<p>
-        <p>Below is demo of the Author API editing a new item each time, questions and features can be created or edited and are persisted to your Learnosity hosted item bank.</p>
+        <p>Below is a demo of the Author API editing a new item each time, questions and features can be created or edited and are persisted to your Learnosity hosted item bank.</p>
     </div>
 </div>
 
