@@ -87,7 +87,7 @@ $curl_ssl_verify = true;
 */
 
 $url_assess                = '//assess.learnosity.com';
-$url_authorapi             = '//authorapi.learnosity.com';
+$url_authorapi             = '//authorapi.learnosity.com?v1';
 $url_authorapi_legacy      = '//authorapi.learnosity.com?v0.5';
 $url_data                  = 'https://data.learnosity.com';
 $url_events                = '//events.learnosity.com';
