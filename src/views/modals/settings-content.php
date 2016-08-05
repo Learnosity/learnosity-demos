@@ -120,6 +120,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="show_calculator" class="col-sm-6 control-label">Extend Basic Calculator</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_calculator][extended]" value="true"<?php if (isset($nav['show_calculator']['extended']) && $nav['show_calculator']['extended'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[show_calculator][extended]" value="false"<?php if (isset($nav['show_calculator']['extended']) && $nav['show_calculator']['extended'] !== true) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="toc" class="col-sm-6 control-label">Table of Contents</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="navigation[toc]" value="true"<?php if (isset($nav['toc']) && $nav['toc'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
