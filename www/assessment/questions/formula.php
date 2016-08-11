@@ -14,7 +14,6 @@ $security = array(
 
 $uniqueResponseIdSuffix = Uuid::generate();
 
-// Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
 $request = '{
     "type": "local_practice",
     "state": "initial",
@@ -57,33 +56,7 @@ $request = '{
             "ui_style": {
                 "type": "floating-keyboard"
             }
-        },
-        {
-            "type": "formulaV2",
-            "response_id": "demoformula5_'.$uniqueResponseIdSuffix.'",
-            "description": "Enter a math formula.",
-            "symbols": ["handwriting", "basic", "qwerty"],
-            "ui_style": {
-                "type": "block-keyboard"
-            }
-        },
-        {
-            "type": "formulaV2",
-            "response_id": "demoformula6_'.$uniqueResponseIdSuffix.'",
-            "description": "Enter a math formula.",
-            "ui_style": {
-                "type": "fixed-handwriting-only"
-            }
-        },
-        {
-            "type": "formulaV2",
-            "response_id": "demoformula7_'.$uniqueResponseIdSuffix.'",
-            "description": "Enter a math formula.",
-            "symbols": ["handwriting", "basic", "qwerty"],
-            "ui_style": {
-                "type": "block-keyboard"
-            }
-        },
+        },        
         {
             "type": "formulaessay",
             "response_id": "demoformula8_'.$uniqueResponseIdSuffix.'",
@@ -130,20 +103,7 @@ $signedRequest = $Init->generate();
                 // Register a callback to update the latex when the user input changes.
                 question.on('change', function () {
                     code.text(question.getResponse().value);
-                });
-
-                // 'Show handwriting data' button.
-                $('button.handwriting', this).on('click', function () {
-                    injectCodeMirrorCss();
-                    // retrieve and stringify handwriting json.
-                    var json = JSON.stringify(question.getHandwriting(), null, '    ');
-                    var pre = $('pre.jsonexample', questionElement);
-                    CodeMirror.runMode(json, {name: "javascript", json: true}, pre[0]);
-                    pre.finish().slideToggle(50);
-
-                    // Toggle button labels.
-                    $('span', this).toggle();
-                });
+                });                
             });
         }
     });
@@ -201,31 +161,7 @@ $signedRequest = $Init->generate();
     </div>
     <hr />
 
-    <p>5. Basic handwriting input: try writing a math expression on the grid.</p>
-    <div class="question">
-        <span class="learnosity-response question-demoformula5_<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-    <hr />
-
-    <p>6. Formula question with <em>fixed-handwriting-only</em> style.</p>
-    <div class="question">
-        <span class="learnosity-response question-demoformula6_<?php echo $uniqueResponseIdSuffix ?>"></span>
-    </div>
-    <hr />
-
-    <p>7. Access handwriting data using the <em>getHandwriting</em> public method.</p>
-    <div class="question">
-        <span class="learnosity-response question-demoformula7_<?php echo $uniqueResponseIdSuffix ?>"></span>
-        <button class="handwriting btn btn-md btn-primary">
-            <span>Show Handwriting Data</span>
-            <span style="display:none;">Hide Handwriting Data</span>
-        </button>
-        <br>
-        <pre class="cm-s-default jsonexample" style="max-width:800px;display:none;"></pre>
-    </div>
-    <hr />
-
-    <p>8. Formula essay question type. <small>Each line of input is either math or text.</small></p>
+    <p>5. Formula essay question type. <small>Each line of input is either math or text.</small></p>
     <div class="question">
         <span class="learnosity-response question-demoformula8_<?php echo $uniqueResponseIdSuffix ?>"></span>
     </div>
