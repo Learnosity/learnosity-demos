@@ -51,12 +51,15 @@ $request = array(
             'show_progress'          => false,
             'show_fullscreencontrol' => false,
             'show_acknowledgements'  => true,
-            'toc'                    => false
+            'toc'                    => false,
+            "auto_save" => [
+               "ui" => false,
+               "saveIntervalDuration" => 60
+            ]
         ),
         'time' => array(
             'max_time' => 1800
         ),
-        'assessApiVersion'    => "latest",
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_adaptive.php',
             'onsave_redirect_url'   => 'itemsapi_adaptive.php'
