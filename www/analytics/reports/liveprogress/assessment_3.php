@@ -11,7 +11,7 @@ $security = array(
 );
 
 $student = array(
-    'id'   => $_GET['user_id'],
+    'id'   => htmlspecialchars($_GET['user_id'], ENT_QUOTES),
     'name' => 'Hank Schrader'
 );
 
@@ -74,9 +74,9 @@ $request = array(
         'questionsApiVersion' => 'v2',
         'assessApiVersion'    => $version_assessapi,
         'configuration'       => array(
-            'ondiscard_redirect_url' => './assessment_3.php?user_id=' . $_GET['user_id'],
-            'onsubmit_redirect_url' => './assessment_3.php?user_id=' . $_GET['user_id'],
-            'onsave_redirect_url'   => './assessment_3.php?user_id=' . $_GET['user_id'],
+            'ondiscard_redirect_url' => './assessment_3.php?user_id=' . htmlspecialchars($_GET['user_id'], ENT_QUOTES),
+            'onsubmit_redirect_url' => './assessment_3.php?user_id=' . htmlspecialchars($_GET['user_id'], ENT_QUOTES),
+            'onsave_redirect_url'   => './assessment_3.php?user_id=' . htmlspecialchars($_GET['user_id'], ENT_QUOTES),
             'events'                => true
         )
     )

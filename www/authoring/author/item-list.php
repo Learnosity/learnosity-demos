@@ -27,22 +27,25 @@ $request = array(
             'filter' => array(
                 'restricted' => array(
                     'current_user' => false,
-                    // 'tags' => array(
-                    //     'all' => array(
-                    //         array(
-                    //             'type' => 'grade'
-                    //         )
-                    //     ),
-                    //     'either' => array(
-                    //         array(
-                    //             'type' => 'subject',
-                    //             'name' => array(
-                    //                 'English',
-                    //                 'Math'
-                    //             )
-                    //         )
-                    //     )
-                    // )
+                    '_tags' => array(
+                        'all' => array(
+                            array(
+                                'type' => 'author',
+                                'name' => array(
+                                    'CCSToolbox'
+                                )
+                            )
+                        ),
+                        'either' => array(
+                            array(
+                                'type' => 'subject',
+                                'name' => array(
+                                    'English',
+                                    'Math'
+                                )
+                            )
+                        )
+                    )
                 )
             )
         ),
@@ -51,17 +54,17 @@ $request = array(
                 'back' => true,
                 'columns' => true,
                 'tabs' => true,
-                'dynamic_content' => false,
                 'save' => true,
                 'status' => false,
                 'reference' => array(
-                    'edit' => false,
-                    'show' => false
+                    'edit' => true,
+                    'show' => true
                 ),
                 'mode' => array(
                     'default' => 'edit',
                     'show' => true
-                )
+                ),
+                'dynamic_content' => false
             ),
             'widget' => array(
                 'delete' => true,
@@ -78,7 +81,7 @@ $request = array(
         ),
         'dependencies' => array(
             'question_editor_api' => array(
-                'version' => $version_questioneditorapi,
+                'version' => 'v3',
                 'init_options' => array(
                     'rich_text_editor' => array(
                         'type' => 'ckeditor'
@@ -105,7 +108,7 @@ $request = array(
         )
     ),
     'user' => array(
-        'id'        => 'demos-site',
+        'id'        => 'michael@learnosity.com',
         'firstname' => 'Demos',
         'lastname'  => 'User',
         'email'     => 'demos@learnosity.com'
@@ -138,6 +141,7 @@ $signedRequest = $Init->generate();
 <div class="section pad-sml">
     <!-- Container for the author api to load into -->
     <div id="learnosity-author"></div>
+    <button onclick="loadWidget();">Edit Widget</button>
 </div>
 
 <script src="<?php echo $url_authorapi; ?>"></script>
@@ -154,12 +158,91 @@ $signedRequest = $Init->generate();
         //         widgetTemplate: 'Choice Matrix – Inline'
         //     }
         // ));
+
+        // var itemRef = '8c5bc69d-a358-41df-912e-298ebb021635';
+        // var widgetRef = '67b07c46-436e-4b20-9504-7d86d2a96b9c';
+        // var templateRef = '33d53a22-1a59-4a03-9671-7f5104edd62e';
+        // authorApp.navigate('items/'+itemRef+'/widgets/'+widgetRef+'/{"widgetJson": {"options": [{"label": "A","value": "0"}, {"label": "B","value": "1"}, {"label": "C","value": "2"}, {"label": "D","value": "3"}],"stimulus": "<p>Original content</p>","type": "mcq","validation": {"scoring_type": "exactMatch","valid_response": {"score": 1,"value": []}},"is_math": true,"ui_style": {"type": "block","choice_label": "upper-alpha"}},"widgetTemplate": {"template_reference": "'+templateRef+'"}}');
+
+        // authorApp.on('open:item', function (event) {
+        //     console.log(event);
+        //     event.preventDefault();
+        //     var itemRef = event.data.item.reference;
+        //     var widgetRef = 'hi';
+        //     var templateRef = '33d53a22-1a59-4a03-9671-7f5104edd62e';
+        //     authorApp.navigate('items/'+itemRef+'/widgets/'+widgetRef);
+        // });
+
         authorApp.on('save:success', function (event) {
             console.log(event);
         });
         authorApp.on('save:error', function (event) {
             console.log('Error ' + event);
         });
+
+        // authorApp.on('render:item', function (event) {
+        //     if (authorApp.getItem().questions.length || authorApp.getItem().features.length) {
+        //         setTimeout(() => {authorApp.changeItemMode('preview')}, 500);
+        //         // authorApp.changeItemMode('preview');
+        //     }
+        // });
+    }
+
+    function loadWidget () {
+        // Vg
+        var itemRef = '8e283c09-6ac1-4760-9ce3-8d0435ba1a28';
+        var widgetRef = '43fac767-371c-4d59-918b-535bd0cad883';
+        var templateRef = '33d53a22-1a59-4a03-9671-7f5104edd62e';
+        // Stage
+        // var itemRef = '8c5bc69d-a358-41df-912e-298ebb021635';
+        // var widgetRef = '67b07c46-436e-4b20-9504-7d86d2a96b9c';
+        // var templateRef = '33d53a22-1a59-4a03-9671-7f5104edd62e';
+        console.log('Loading widget');
+        authorApp.setWidget({
+                "options": [
+                    {
+                        "label": "A",
+                        "value": "0"
+                    },
+                    {
+                        "label": "B",
+                        "value": "1"
+                    },
+                    {
+                        "label": "C",
+                        "value": "2"
+                    },
+                    {
+                        "label": "D",
+                        "value": "3"
+                    }
+                ],
+                "stimulus": "<p>New content</p>",
+                "type": "mcq",
+                "ui_style": {
+                    "choice_label": "upper-alpha",
+                    "type": "block"
+                },
+                "validation": {
+                    "scoring_type": "exactMatch",
+                    "valid_response": {
+                        "score": 1,
+                        "value": []
+                    }
+                }
+            },
+            {
+                "template_reference": templateRef
+            }
+        );
+
+        // {
+        //             "template_reference": templateRef
+        //         }
+        // authorApp.navigate('items/'+itemRef+'/widgets/'+widgetRef+'/{"widgetJson": {"options": [{"label": "A","value": "0"}, {"label": "B","value": "1"}, {"label": "C","value": "2"}, {"label": "D","value": "3"}],"stimulus": "<p>Original content</p>","type": "mcq","validation": {"scoring_type": "exactMatch","valid_response": {"score": 1,"value": []}},"is_math": true,"ui_style": {"type": "block","choice_label": "upper-alpha"}},"widgetTemplate": {"template_reference": "'+templateRef+'"}}');
+        // authorApp.navigate('items/'+itemRef+'/widgets/'+widgetRef+'/{"widgetJson": {"options": [{"label": "A","value": "0"}, {"label": "B","value": "1"}, {"label": "C","value": "2"}, {"label": "D","value": "3"}],"stimulus": "<p>Original content</p>","type": "mcq","validation": {"scoring_type": "exactMatch","valid_response": {"score": 1,"value": []}},"is_math": true,"ui_style": {"type": "block","choice_label": "upper-alpha"}},"widgetTemplate": "Multiple Choice – Block UI"}');
+        // authorApp.navigate('items/'+itemRef+'/widgets/'+widgetRef+'/{"widgetJson": {"options": [{"label": "A","value": "0"}, {"label": "B","value": "1"}, {"label": "C","value": "2"}, {"label": "D","value": "3"}],"stimulus": "<p>Original content</p>","type": "mcq","validation": {"scoring_type": "exactMatch","valid_response": {"score": 1,"value": []}},"is_math": true,"ui_style": {"type": "block","choice_label": "upper-alpha"}},"widgetTemplate": "'+templateRef+'"}');
+        console.log('items/'+itemRef+'/widgets/'+widgetRef+'/{"widgetJson": {"options": [{"label": "A","value": "0"}, {"label": "B","value": "1"}, {"label": "C","value": "2"}, {"label": "D","value": "3"}],"stimulus": "<p>Original content</p>","type": "mcq","validation": {"scoring_type": "exactMatch","valid_response": {"score": 1,"value": []}},"is_math": true,"ui_style": {"type": "block","choice_label": "upper-alpha"}},"widgetTemplate": {"template_reference": "'+templateRef+'"}}');
     }
 </script>
 
