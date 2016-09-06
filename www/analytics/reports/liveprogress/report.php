@@ -10,7 +10,7 @@ $security = array(
     'domain'       => $domain
 );
 
-$userIds = explode(',', $_GET['user_ids']);
+$userIds = explode(',', htmlspecialchars($_GET['user_ids'], ENT_QUOTES));
 
 $request  = array(
     'reports' => array(
