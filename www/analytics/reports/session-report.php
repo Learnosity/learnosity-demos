@@ -37,6 +37,21 @@ $reportsRequest = [ 'reports' =>
 $reportsInit = new Init('reports', $security, $consumer_secret, $reportsRequest);
 $signedRequest = $reportsInit->generate();
 
+$dataRequest =  [
+            'session_id' => [ $session_id ],
+];
+$dataAction = 'get';
+
+$dataApi = new DataApi();
+$adaptiveReportUrl = "{$url_data}/{$version_dataapi}/sessions/reports/adaptive";
+$dataOutput = $dataApi->request(
+    $adaptiveReportUrl,
+    $security,
+    $consumer_secret,
+    $dataRequest,
+    $dataAction
+);
+
 ?>
 
 <div class="jumbotron section">
@@ -57,8 +72,20 @@ $signedRequest = $reportsInit->generate();
 
 <?php if (isset($session_id)) { ?>
 <div class="section">
-<h2>Session summary</h2>
+<h2>Session summary (Reports API)</h2>
 <div id="sessions-summary-div"></div>
+</div>
+
+<div class="section">
+<h2>Report Data (Data API)</h2>
+<h3>Request for <?php print($adaptiveReportUrl); ?></h3>
+<pre>
+<?php print(json_encode($dataRequest, JSON_PRETTY_PRINT)); ?>
+</pre>
+<h3>Response</h3>
+<pre>
+<?php print(json_encode(json_decode($dataOutput->getBody()), JSON_PRETTY_PRINT)); ?>
+</pre>
 </div>
 
 <div class="section">
