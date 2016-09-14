@@ -70,6 +70,8 @@ $signedRequest = $Init->generate();
 
 <script>
 
+    console.log('Testing');
+
     var initOptions = <?php echo $signedRequest; ?> 
 
     var itemsApp = LearnosityItems.init(initOptions, {
