@@ -54,23 +54,61 @@ $signedRequest = $Init->generate();
 </div>
 
 <div class="section">
+
+<!-- The Texthelp reader will ignore everything prior to this when $rw_setStartPoint is called below -->
+    <span id="start"></span>
+
     <h4>Sessions Summary</h4>
     <div id="session-summary"></div>
 
     <h4>Session Detail By Question</h4>
     <div id="session-detail-by-item"></div>
+    
+    <div class="text-center" style="padding:40px;">
+        <a class="btn btn-primary" href=itemsapi_texthelp.php>Start Again</a>
+    </div>
 </div>
 
+<!--  Lead the Learnosity Reports API -->
 <script src="<?php echo $url_reports; ?>"></script>
+
+<!-- Load the TextHelp library -->
+<script type="text/javascript" src="//learnositytoolbar.speechstream.net/learnosity/standardconfig.js"></script>
 
 <script>
 
     var eventOptions = {
             readyListener: init
-        },
-        reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, eventOptions);
-        function init () {        
+    },
+    reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, eventOptions);
+    function init () {        
+        console.log('Starting Texthelp now');
+        TexthelpSpeechStream.addToolbar('1','1');
     }
+
+    // This is called by the toolbar when it has loaded and finished processing.
+    function $rw_toolbarLoadedCallback() {
+
+        // Set the start point for the TextHelp reader 
+        $rw_setStartPoint("start");
+
+        // Change the Session Summary report HTML to make it more readable
+        // Replace '#' with 'Number' as the reader does not read the hash symbol. It would othewrwise read "Total of items", "of items correct" etc
+        $(".lrn-report-area").each(function(i,e) {
+          var updated_html =  $(e).html().replace("#", "Number");
+          $(e).html(updated_html);
+        });
+
+        // Ignore the following parts of the report
+        // This is the circle that shows the score for each item, typical content might be '1/91'
+        $(".lrn-circle").attr('ignore', '1');
+        // The response Index is the number of the response for question types such as ordered lists
+        $(".lrn_responseIndex").attr('ignore', '1');
+        // No need to read the header or column options in Choice Matrix tables
+        $(".lrn-choicematrix-column-title").attr('ignore', '1');
+        $(".lrn_choicematrix_cell").attr('ignore', '1');
+        
+    }    
 
 </script>
 

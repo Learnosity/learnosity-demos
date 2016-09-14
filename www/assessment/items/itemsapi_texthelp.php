@@ -50,7 +50,7 @@ $signedRequest = $Init->generate();
         <p>This demo shows how Texthelp's SpeechStream product can be integrated into a Learnosity assessment with ease.</p>
         <p> Texthelp's SpeechStream is a cloud based JavaScript software solution that allows publishers to embed text-to-speech read aloud within their assessment items. This text-to-speech read aloud accommodation feature is frequently used by students with learning disabilities, such as dyslexia, struggling readers, English language learners, auditory learners, and students with mild vision impairments. SpeechStream also offers additional reading and writing support tools. https://www.texthelp.com/en-us/products/speechstream
         </p>
-        <p>The Texthelp Toolbar will appear when the assessment is started.</p>
+        <p>The Texthelp Toolbar will appear when the assessment is started and each Item will be read as soon as it loads.</p>
     </div>
 </div>
 
@@ -94,6 +94,8 @@ $signedRequest = $Init->generate();
             assessApp.on('item:load', function () {
                 var cur_item = this.getCurrentItem();
                 console.log(cur_item);
+                setTimeout('$rw_speakFirstSentence()',500);
+                console.log('Reading');
             });
 
         }
