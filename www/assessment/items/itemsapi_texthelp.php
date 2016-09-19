@@ -8,12 +8,12 @@ use LearnositySdk\Utils\Uuid;
 
 $session_id = Uuid::generate();
 
-$security = array(
+$security = [
     "consumer_key"    => $consumer_key ,
     "domain"          => $domain
-);
+];
 
-$request = array(
+$request = [
     'rendering_type' => "assess",
     'user_id' => "demo_student",
     'session_id' => $session_id,
@@ -27,7 +27,7 @@ $request = array(
             'onsubmit_redirect_url' => 'summary_report.php?session_id='. $session_id
         ]
     ]
-);
+];
 
 include_once 'utils/settings-override.php';
 
@@ -70,8 +70,6 @@ $signedRequest = $Init->generate();
 
 <script>
 
-    console.log('Testing');
-
     var initOptions = <?php echo $signedRequest; ?> 
 
     var itemsApp = LearnosityItems.init(initOptions, {
@@ -83,10 +81,7 @@ $signedRequest = $Init->generate();
             assessApp.on('test:start', function() {
 
                 // When the assessment starts we find the elements within the assessment wrapper that we want the Texthelp reader to ignore and add the 'ignore' attribute to them.
-                $(".test-title-text").attr('ignore', '1');
-                $(".subtitle").attr('ignore', '1');
-                $(".item-count").attr('ignore', '1');
-                $(".timer").attr('ignore', '1');
+                
 
                 // Initiate Texthelp only when the Learnoisty assessment starts
                 TexthelpSpeechStream.addToolbar('1','1');
@@ -94,8 +89,16 @@ $signedRequest = $Init->generate();
 
             // Log the current item.
             assessApp.on('item:load', function () {
-                var cur_item = this.getCurrentItem();
-                console.log(cur_item);
+                
+                setTimeout('$rw_tagSentences()',500);
+
+                $(".test-title-text").attr('ignore', '1');
+                $(".subtitle").attr('ignore', '1');
+                $(".item-count").attr('ignore', '1');
+                $(".timer").attr('ignore', '1');
+                $(".lrn_sort_gripper").attr('ignore', '1');
+                $(".lrn-choicematrix-column-title").attr('ignore', '1');
+
                 setTimeout('$rw_speakFirstSentence()',500);
                 console.log('Reading');
             });
