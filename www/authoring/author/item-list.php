@@ -126,8 +126,64 @@ $signedRequest = $Init->generate();
 
 <script src="<?php echo $url_authorapi; ?>"></script>
 <script>
+    var assetRequestFunction = function(mediaRequested, returnType, callback) {
+        if (mediaRequested === 'image') {
+            var $modal = $('.modal.img-upload'),
+            $images = $('.asset-img-gallery img'),
+            imgClickHandler = function () {
+                if (returnType === 'HTML') {
+                    callback('<img src="' + $(this).data('img') + '"/>');
+                } else {
+                    callback($(this).data('img'));
+                }
+                $modal.modal('hide');
+            };
+            $images.on('click', imgClickHandler);
+            $modal.modal({
+                backdrop: 'static'
+            }).on('hide', function () {
+                $images.off('click', imgClickHandler);
+            });
+        }
+    };
+
     var eventOptions = {
-            readyListener: init
+            readyListener: init,
+            customButtons: [{
+                name: 'custombutton1',
+                label: 'youtube',
+                icon: 'http://itubepk.com/themes/ytspace/images/favicon.png',
+                func: function(attribute, callback) {
+                    var $modal = $('.modal.img-upload'),
+                        $embedButton = $('button#embed'),
+                        $customContent;
+
+                    buttonClickHandler = function () {
+                            $customContent = $('#ck-custom-content').prop('outerHTML');
+                            $modal.modal('hide');
+                            return callback($customContent);
+                    };
+
+                    $embedButton.unbind('click');
+                    $embedButton.on('click', buttonClickHandler);
+
+                    $modal.modal({
+                        backdrop: 'static'
+                    });
+
+                },
+                attributes: ['stimulus']
+            },{
+                name: 'custombutton2',
+                label: 'evernote',
+                icon: 'http://tidbits.com/images/favicons/evernote.png',
+                func:  function(attribute, callback) {
+                    return callback('Evernote');
+                },
+                attributes: ['stimulus', 'metadata.distractor_rationale']
+            }
+            ],
+            assetRequest: assetRequestFunction,
         },
         initOptions = <?php echo $signedRequest; ?>,
         authorApp = LearnosityAuthor.init(initOptions, eventOptions);
@@ -139,10 +195,70 @@ $signedRequest = $Init->generate();
         authorApp.on('save:error', function (event) {
             console.log('Error ' + event);
         });
+
     }
+
+    function loadWidget () {
+        // Vg
+        var itemRef = '8e283c09-6ac1-4760-9ce3-8d0435ba1a28';
+        var widgetRef = '43fac767-371c-4d59-918b-535bd0cad883';
+        var templateRef = '33d53a22-1a59-4a03-9671-7f5104edd62e';
+        // Stage
+        // var itemRef = '8c5bc69d-a358-41df-912e-298ebb021635';
+        // var widgetRef = '67b07c46-436e-4b20-9504-7d86d2a96b9c';
+        // var templateRef = '33d53a22-1a59-4a03-9671-7f5104edd62e';
+        console.log('Loading widget');
+        authorApp.setWidget({
+                "options": [
+                    {
+                        "label": "A",
+                        "value": "0"
+                    },
+                    {
+                        "label": "B",
+                        "value": "1"
+                    },
+                    {
+                        "label": "C",
+                        "value": "2"
+                    },
+                    {
+                        "label": "D",
+                        "value": "3"
+                    }
+                ],
+                "stimulus": "<p>New content</p>",
+                "type": "mcq",
+                "ui_style": {
+                    "choice_label": "upper-alpha",
+                    "type": "block"
+                },
+                "validation": {
+                    "scoring_type": "exactMatch",
+                    "valid_response": {
+                        "score": 1,
+                        "value": []
+                    }
+                }
+            },
+            {
+                "template_reference": templateRef
+            }
+        );
+
+        // {
+        //             "template_reference": templateRef
+        //         }
+        // authorApp.navigate('items/'+itemRef+'/widgets/'+widgetRef+'/{"widgetJson": {"options": [{"label": "A","value": "0"}, {"label": "B","value": "1"}, {"label": "C","value": "2"}, {"label": "D","value": "3"}],"stimulus": "<p>Original content</p>","type": "mcq","validation": {"scoring_type": "exactMatch","valid_response": {"score": 1,"value": []}},"is_math": true,"ui_style": {"type": "block","choice_label": "upper-alpha"}},"widgetTemplate": {"template_reference": "'+templateRef+'"}}');
+        // authorApp.navigate('items/'+itemRef+'/widgets/'+widgetRef+'/{"widgetJson": {"options": [{"label": "A","value": "0"}, {"label": "B","value": "1"}, {"label": "C","value": "2"}, {"label": "D","value": "3"}],"stimulus": "<p>Original content</p>","type": "mcq","validation": {"scoring_type": "exactMatch","valid_response": {"score": 1,"value": []}},"is_math": true,"ui_style": {"type": "block","choice_label": "upper-alpha"}},"widgetTemplate": "Multiple Choice – Block UI"}');
+        // authorApp.navigate('items/'+itemRef+'/widgets/'+widgetRef+'/{"widgetJson": {"options": [{"label": "A","value": "0"}, {"label": "B","value": "1"}, {"label": "C","value": "2"}, {"label": "D","value": "3"}],"stimulus": "<p>Original content</p>","type": "mcq","validation": {"scoring_type": "exactMatch","valid_response": {"score": 1,"value": []}},"is_math": true,"ui_style": {"type": "block","choice_label": "upper-alpha"}},"widgetTemplate": "'+templateRef+'"}');
+        console.log('items/'+itemRef+'/widgets/'+widgetRef+'/{"widgetJson": {"options": [{"label": "A","value": "0"}, {"label": "B","value": "1"}, {"label": "C","value": "2"}, {"label": "D","value": "3"}],"stimulus": "<p>Original content</p>","type": "mcq","validation": {"scoring_type": "exactMatch","valid_response": {"score": 1,"value": []}},"is_math": true,"ui_style": {"type": "block","choice_label": "upper-alpha"}},"widgetTemplate": {"template_reference": "'+templateRef+'"}}');
+    };
+
 </script>
 
 <?php
     include_once 'views/modals/settings-content-author.php';
     include_once 'views/modals/initialisation-preview.php';
+    include_once 'views/modals/asset-upload.php';
     include_once 'includes/footer.php';
