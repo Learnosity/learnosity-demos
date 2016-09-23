@@ -150,30 +150,6 @@ $signedRequest = $Init->generate();
     var eventOptions = {
             readyListener: init,
             customButtons: [{
-                name: 'custombutton1',
-                label: 'youtube',
-                icon: 'http://itubepk.com/themes/ytspace/images/favicon.png',
-                func: function(attribute, callback) {
-                    var $modal = $('.modal.img-upload'),
-                        $embedButton = $('button#embed'),
-                        $customContent;
-
-                    buttonClickHandler = function () {
-                            $customContent = $('#ck-custom-content').prop('outerHTML');
-                            $modal.modal('hide');
-                            return callback($customContent);
-                    };
-
-                    $embedButton.unbind('click');
-                    $embedButton.on('click', buttonClickHandler);
-
-                    $modal.modal({
-                        backdrop: 'static'
-                    });
-
-                },
-                attributes: ['stimulus']
-            },{
                 name: 'custombutton2',
                 label: 'evernote',
                 icon: 'http://tidbits.com/images/favicons/evernote.png',
