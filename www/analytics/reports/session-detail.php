@@ -5,6 +5,14 @@ include_once 'includes/header.php';
 
 use LearnositySdk\Request\Init;
 
+if ($_GET["session_id"]) {
+    $session_id = $_GET["session_id"];
+} elseif ($_POST["session_id"]) {
+    $session_id = $_POST["session_id"];
+} else {
+    $session_id = 'fd09e334-875f-42c1-838c-aa90aba2bab1';
+}
+
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain
@@ -15,8 +23,8 @@ $request = array(
         array(
             'id'         => 'report-detail',
             'type'       => 'session-detail-by-item',
-            'user_id'    => 'demo_student',
-            'session_id' => 'fd09e334-875f-42c1-838c-aa90aba2bab1'
+            'user_id'    => $studentid,
+            'session_id' => $session_id,
         )
     ),
     'configuration' => array(
