@@ -65,7 +65,7 @@ $request = array(
                 'version' => 'v3',
                 'init_options' => array(
                     'rich_text_editor' => array(
-                        'type' => 'ckeditor'
+                        'type' => 'wysihtml'
                     ),
                     'label_bundle' => array(
                         'stimulus' => 'Compose question'

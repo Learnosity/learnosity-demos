@@ -149,32 +149,6 @@ $signedRequest = $Init->generate();
 
     var eventOptions = {
             readyListener: init,
-            customButtons: [{
-                name: 'custombutton1',
-                label: 'youtube',
-                icon: 'http://vignette1.wikia.nocookie.net/i-chu/images/1/18/Youtube_favicon.png',
-                func: function(attribute, callback) {
-                    var $modal = $('.modal-yt.img-upload'),
-                        $embedButton = $('button#embed'),
-                        $customContent;
-
-                    buttonClickHandler = function () {
-                            $customContent = $('#ck-custom-content').prop('outerHTML');
-                            $modal.modal('hide');
-                            return callback($customContent);
-                    };
-
-                    $embedButton.unbind('click');
-                    $embedButton.on('click', buttonClickHandler);
-
-                    $modal.modal({
-                        backdrop: 'static'
-                    });
-
-                },
-                attributes: ['stimulus']
-            }
-            ],
             assetRequest: assetRequestFunction,
         },
         initOptions = <?php echo $signedRequest; ?>,
