@@ -65,7 +65,7 @@ $request = array(
                 'version' => 'v3',
                 'init_options' => array(
                     'rich_text_editor' => array(
-                        'type' => 'wysihtml'
+                        'type' => 'ckeditor'
                     ),
                     'label_bundle' => array(
                         'stimulus' => 'Compose question'
@@ -126,27 +126,6 @@ $signedRequest = $Init->generate();
 
 <script src="<?php echo $url_authorapi; ?>"></script>
 <script>
-    var assetRequestFunction = function(mediaRequested, returnType, callback) {
-        if (mediaRequested === 'image') {
-            var $modal = $('.modal.img-upload'),
-            $images = $('.asset-img-gallery img'),
-            imgClickHandler = function () {
-                if (returnType === 'HTML') {
-                    callback('<img src="' + $(this).data('img') + '"/>');
-                } else {
-                    callback($(this).data('img'));
-                }
-                $modal.modal('hide');
-            };
-            $images.on('click', imgClickHandler);
-            $modal.modal({
-                backdrop: 'static'
-            }).on('hide', function () {
-                $images.off('click', imgClickHandler);
-            });
-        }
-    };
-
     var eventOptions = {
             readyListener: init,
             customButtons: [{
@@ -174,8 +153,7 @@ $signedRequest = $Init->generate();
                 },
                 attributes: ['stimulus']
             }
-            ],
-            assetRequest: assetRequestFunction,
+            ]
         },
         initOptions = <?php echo $signedRequest; ?>,
         authorApp = LearnosityAuthor.init(initOptions, eventOptions);
