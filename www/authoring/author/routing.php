@@ -42,7 +42,7 @@ $request = array(
                 ),
                 'mode' => array(
                     'default' => 'edit',
-                    'show' => false
+                    'show' => true
                 )
             ),
             'widget' => array(

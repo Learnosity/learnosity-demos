@@ -33,13 +33,13 @@ $request = '{
             "response_id": "demo1-'.$uniqueResponseIdSuffix.'",
             "type": "mcq",
             "options" : [
-                {"value" : "red"    , "label" : "Red"},
-                {"value" : "violet"  , "label" : "Violet"},
-                {"value" : "blue"   , "label" : "Blue"},
-                {"value" : "orange" , "label" : "Orange"}
+                {"value" : "0"    , "label" : "Red"},
+                {"value" : "1"  , "label" : "Violet"},
+                {"value" : "2"   , "label" : "Blue"},
+                {"value" : "3" , "label" : "Orange"}
             ],
             "valid_responses" : [
-                {"value" : "violet", "score": 1}
+                {"value" : "1", "score": 1}
             ],
             "instant_feedback" : true,
             "multiple_responses": false,
@@ -49,9 +49,9 @@ $request = '{
             "response_id": "demo1b-'.$uniqueResponseIdSuffix.'",
             "type": "mcq",
             "options": [
-                {"label": "Dublin", "value": "1"},
-                {"label": "Bristol", "value": "2"},
-                {"label": "Liverpool", "value": "3"},
+                {"label": "Dublin", "value": "0"},
+                {"label": "Bristol", "value": "1"},
+                {"label": "Liverpool", "value": "2"},
                 {"label": "London", "value": "4"}
             ],
             "ui_style": {
@@ -70,14 +70,14 @@ $request = '{
             "type": "mcq",
             "description" : "The <strong>student</strong> needs to say which of these are state capitals.",
             "options": [
-                {"label": "Wilmington, NC", "value": "wilmington"},
-                {"label": "Trenton, NJ", "value": "trenton"},
-                {"label": "Topeka, KS", "value": "topeka"},
-                {"label": "St. Louis, MO", "value": "stlouis"}
+                {"label": "Wilmington, NC", "value": "0"},
+                {"label": "Trenton, NJ", "value": "1"},
+                {"label": "Topeka, KS", "value": "2"},
+                {"label": "St. Louis, MO", "value": "3"}
             ],
             "valid_responses": [
-                { "value":"trenton", "score": "1" },
-                { "value":"topeka", "score": "1"}
+                { "value":"1", "score": "1" },
+                { "value":"2", "score": "1"}
             ],
             "instant_feedback": true,
             "feedback_attempts": 2,

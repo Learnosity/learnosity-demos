@@ -48,9 +48,9 @@ $signedRequest = $Init->generate();
     <div class="overview">
         <h1>TextHelp - Learnosity integration</h1>
         <p>This demo shows how Texthelp's SpeechStream product can be integrated into a Learnosity assessment with ease.</p>
-        <p> Texthelp's SpeechStream is a cloud based JavaScript software solution that allows publishers to embed text-to-speech read aloud within their assessment items. This text-to-speech read aloud accommodation feature is frequently used by students with learning disabilities, such as dyslexia, struggling readers, English language learners, auditory learners, and students with mild vision impairments. SpeechStream also offers additional reading and writing support tools. https://www.texthelp.com/en-us/products/speechstream
+        <p><a href="https://www.texthelp.com/en-us/products/speechstream">SpeechStream</a> is a cloud based JavaScript software solution that allows publishers to embed text-to-speech read aloud within their products. This feature is used by students with learning disabilities, such as dyslexia, struggling readers, English language learners, auditory learners, and students with mild vision impairments. Note that this is licensed directly from Texthelp, and not included in a Learnosity license.
         </p>
-        <p>The Texthelp Toolbar will appear when the assessment is started and each Item will be read as soon as it loads.</p>
+        <p>The SpeechStream Toolbar will appear when the assessment is started and each Item will be read as soon as it loads.</p>
     </div>
 </div>
 
@@ -70,7 +70,7 @@ $signedRequest = $Init->generate();
 
 <script>
 
-    var initOptions = <?php echo $signedRequest; ?> 
+    var initOptions = <?php echo $signedRequest; ?>
 
     var itemsApp = LearnosityItems.init(initOptions, {
         readyListener: function () {
@@ -81,7 +81,7 @@ $signedRequest = $Init->generate();
             assessApp.on('test:start', function() {
 
                 // When the assessment starts we find the elements within the assessment wrapper that we want the Texthelp reader to ignore and add the 'ignore' attribute to them.
-                
+
 
                 // Initiate Texthelp only when the Learnoisty assessment starts
                 TexthelpSpeechStream.addToolbar('1','1');
@@ -89,7 +89,7 @@ $signedRequest = $Init->generate();
 
             // Log the current item.
             assessApp.on('item:load', function () {
-                
+
                 setTimeout('$rw_tagSentences()',500);
 
                 $(".test-title-text").attr('ignore', '1');
@@ -110,12 +110,12 @@ $signedRequest = $Init->generate();
     // This is called by the toolbar when it has loaded and finished processing.
     function $rw_toolbarLoadedCallback() {
 
-        // Set the start point for the TextHelp reader 
+        // Set the start point for the TextHelp reader
         $rw_setStartPoint("start");
     }
 
 </script>
-      
+
 <?php
     include_once 'views/modals/settings-items.php';
     include_once 'views/modals/initialisation-preview.php';
