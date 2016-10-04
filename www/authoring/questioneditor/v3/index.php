@@ -53,6 +53,18 @@ include_once 'includes/header.php';
                         </p>
                     </div>
                 </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Teacher Authoring</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>For busy teachers you can create super stripped down question templates.</p>
+
+                        <p class="text-right">
+                            <a class="btn btn-primary btn-md" href="./editteacher.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
