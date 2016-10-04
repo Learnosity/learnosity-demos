@@ -126,40 +126,34 @@ $signedRequest = $Init->generate();
 
 <script src="<?php echo $url_authorapi; ?>"></script>
 <script>
-    var assetRequestFunction = function(mediaRequested, returnType, callback) {
-        if (mediaRequested === 'image') {
-            var $modal = $('.modal.img-upload'),
-            $images = $('.asset-img-gallery img'),
-            imgClickHandler = function () {
-                if (returnType === 'HTML') {
-                    callback('<img src="' + $(this).data('img') + '"/>');
-                } else {
-                    callback($(this).data('img'));
-                }
-                $modal.modal('hide');
-            };
-            $images.on('click', imgClickHandler);
-            $modal.modal({
-                backdrop: 'static'
-            }).on('hide', function () {
-                $images.off('click', imgClickHandler);
-            });
-        }
-    };
-
     var eventOptions = {
             readyListener: init,
             customButtons: [{
-                name: 'custombutton2',
-                label: 'evernote',
-                icon: 'http://tidbits.com/images/favicons/evernote.png',
-                func:  function(attribute, callback) {
-                    return callback('Evernote');
+                name: 'custombutton1',
+                label: 'youtube',
+                icon: 'http://vignette1.wikia.nocookie.net/i-chu/images/1/18/Youtube_favicon.png',
+                func: function(attribute, callback) {
+                    var $modal = $('.modal.img-upload'),
+                        $embedButton = $('button#embed'),
+                        $customContent;
+
+                    buttonClickHandler = function () {
+                            $customContent = $('#ck-custom-content').prop('outerHTML');
+                            $modal.modal('hide');
+                            return callback($customContent);
+                    };
+
+                    $embedButton.unbind('click');
+                    $embedButton.on('click', buttonClickHandler);
+
+                    $modal.modal({
+                        backdrop: 'static'
+                    });
+
                 },
-                attributes: ['stimulus', 'metadata.distractor_rationale']
+                attributes: ['stimulus']
             }
-            ],
-            assetRequest: assetRequestFunction,
+            ]
         },
         initOptions = <?php echo $signedRequest; ?>,
         authorApp = LearnosityAuthor.init(initOptions, eventOptions);
@@ -236,5 +230,5 @@ $signedRequest = $Init->generate();
 <?php
     include_once 'views/modals/settings-content-author.php';
     include_once 'views/modals/initialisation-preview.php';
-    include_once 'views/modals/asset-upload.php';
+    include_once 'views/modals/youtube-embed.php';
     include_once 'includes/footer.php';
