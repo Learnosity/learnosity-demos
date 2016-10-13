@@ -53,47 +53,45 @@ include_once 'includes/header.php';
 
 
 
-        <!-- Global Custom layout -->
-        <script type="text/template" data-lrn-qe-layout="custom_global_layout">
 
-        </script>
 
         <!--  Custom MCQ layout -->
-        <script type="text/template" data-lrn-qe-layout="custom_mcq_layout">
-    <span data-lrn-qe-label="stimulus" value="Question:"></span>
-    <span data-lrn-qe-input="stimulus" class="lrn-qe-lg-ckeditor"></span>
+        <script type="text/template" data-lrn-qe-layout="custom_formulaV2_layout">
+<div class="lrn-qe-edit-form">
+    <span data-lrn-qe-label="stimulus"></span>
+    <span data-lrn-qe-input="stimulus" class="lrn-qe-ckeditor-lg"></span>
 
-    <span data-lrn-qe-label="options" value="Options:" class=" mts"></span>
-    <div data-lrn-qe-loop="options[*]">
-        <span data-lrn-qe-input="options[*]" data-lrn-qe-hide-delete="false"></span>
-    </div>
-    <span data-lrn-qe-action-add="options"></span>
-
-    <div class="lrn-qe-row-flex">
-        <div class="lrn-qe-col-sm-6">
-            <span data-lrn-qe-label="multiple_responses"></span>
-            <span data-lrn-qe-input="multiple_responses"></span>
-        </div>
-        <div class="lrn-qe-col-sm-6">
-            <span data-lrn-qe-label="shuffle_options"></span>
-            <span data-lrn-qe-input="shuffle_options"></span>
+    <div data-lrn-qe-loop="validation.valid_response.value[*]">
+        <div class="lrn-qe-row-flex">
+            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-12 lrn-qe-col-md-9">
+                <span data-lrn-qe-label="validation.valid_response.value[*].value"></span>
+                <span data-lrn-qe-input="validation.valid_response.value[*].value"></span>
+            </div>
+            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-12 lrn-qe-col-md-3">
+                <span data-lrn-qe-label="validation.valid_response.value[*].options.ignoreOrder"></span>
+                <span data-lrn-qe-input="validation.valid_response.value[*].options.ignoreOrder"></span>
+            </div>
         </div>
     </div>
-
-    <hr>
-    <span data-lrn-qe-label="validation.valid_response.value" value="Select the correct answer:" ></span>
-    <span data-lrn-qe-input="validation.valid_response.value"></span>
+</div>
         </script>
         <!--/ Custom Layout -->
 
         <div>
             <button class="btn btn-info btn-review-edit-layout">View HTML Markup</button>
-<!--             <button class="btn btn-info btn-view-question-source">View Question Source</button> -->
+            <button class="btn btn-info btn-view-toggle-preview">Edit/Preview</button>
         </div>
 
 
         <div class="my-question-editor">
-            <span data-lrn-qe-layout-edit-panel></span>
+            <div class="view_edit" style="display: none">
+                <span data-lrn-qe-layout-edit-panel></span>
+            </div>
+            <div class="view_preview" >
+                <!-- ML - needs to be styled better
+                 <span data-lrn-qe-layout-live-score></span> -->
+                <span data-lrn-qe-layout-preview-panel></span>
+            </div>
         </div>
 
 
@@ -114,53 +112,43 @@ include_once 'includes/header.php';
     </div>
     <script>
         var widget_json = {
-                "description": "",
-                "feedback_attempts": "unlimited",
-                "is_math": false,
-                "metadata": {
-                    "acknowledgements": "",
-                    "distractor_rationale": "",
-                    "rubric_reference": "",
-                    "sample_answer": ""
-                },
-                "multiple_responses": false,
-                "options": [{
-                    "label": "[Choice A]",
-                    "value": "0"
-                }, {
-                    "label": "[Choice B]",
-                    "value": "1"
-                }, {
-                    "label": "[Choice C]",
-                    "value": "2"
-                }, {
-                    "label": "[Choice D]",
-                    "value": "3"
-                }],
-                "shuffle_options": false,
-                "stimulus": "<p>[This is the stem.]</p>",
-                "stimulus_review": "",
-                "type": "mcq",
-                "ui_style": {
-                    "fontsize": "normal",
-                    "type": ""
-                },
+                "is_math": true,
+                "stimulus": "<p>Expand the following equation:</p><p>\\(3\\left(1+4\\right)\\)</p>",
+                "type": "formulaV2",
                 "validation": {
                     "scoring_type": "exactMatch",
                     "valid_response": {
                         "score": 1,
-                        "value": ["0"]
+                        "value": [{
+                            "method": "equivLiteral",
+                            "value": "15",
+                            "options": {
+                               "allowThousandsSeparator": true,
+                                "ignoreOrder": false,
+                                "inverseResult": false,
+                                "ignoreTrailingZeros": true,
+                                "setThousandsSeparator": [","],
+                                "setDecimalSeparator": "."
+                            }
+                        }]
                     }
-                }
+                },
+                "ui_style": {
+                    "type": "floating-keyboard"
+                },
+                "math_renderer": "mathquill"
             },
             initOptions = {
                 widgetType: 'response',
                 widget_json: widget_json,
+                rich_text_editor: {
+                    type: 'wysihtml'
+                },
                 ui: {
                     layout: {
                         edit_panel: {
-                            mcq: [{
-                                layout: 'custom_mcq_layout'
+                            formulaV2: [{
+                                layout: 'custom_formulaV2_layout'
                             }]
                         },
                         global_template: 'custom'
@@ -173,7 +161,7 @@ include_once 'includes/header.php';
                     debug: false,
                     stimulus: "Question:",
                     options: "Options:",
-                    'validation.valid_response.value':'Select the correct answer:'
+                    'validation.valid_response.value.value':'Correct answer:'
                 }
             },
             qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');
@@ -183,7 +171,7 @@ include_once 'includes/header.php';
 
         $(function () {
             var $reviewModal = $('.qe-edit-layout-modal'),
-                editLayoutContent = $('[data-lrn-qe-layout="custom_mcq_layout"]').html();
+                editLayoutContent = $('[data-lrn-qe-layout="custom_formulaV2_layout"]').html();
 
 
 
@@ -203,6 +191,25 @@ include_once 'includes/header.php';
             //     prettyPrint();
             //     $reviewModal.modal('show');
             // })
+
+            var view_edit = $('.view_edit');
+            var view_preview = $('.view_preview');
+            var edit_mode = false;
+
+            $('.btn-view-toggle-preview').on('click', function () {
+                if(edit_mode){
+                    view_edit.hide();
+                    view_preview.show();
+                    qeApp.updatePreview();
+                    edit_mode = false;
+                }else{
+                    view_edit.show();
+                    view_preview.hide();
+                    edit_mode = true;
+                }
+
+            })
+
 
         });
     </script>
