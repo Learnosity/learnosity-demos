@@ -52,12 +52,6 @@ include_once 'includes/header.php';
         <script src="<?php echo $url_questioneditor_v3; ?>"></script>
 
 
-
-        <!-- Global Custom layout -->
-        <script type="text/template" data-lrn-qe-layout="custom_global_layout">
-
-        </script>
-
         <!--  Custom MCQ layout -->
         <script type="text/template" data-lrn-qe-layout="custom_mcq_layout">
     <span data-lrn-qe-label="stimulus" value="Question:"></span>
@@ -88,12 +82,18 @@ include_once 'includes/header.php';
 
         <div>
             <button class="btn btn-info btn-review-edit-layout">View HTML Markup</button>
-<!--             <button class="btn btn-info btn-view-question-source">View Question Source</button> -->
+            <button class="btn btn-info btn-view-toggle-preview">Edit/Preview</button>
         </div>
 
-
         <div class="my-question-editor">
-            <span data-lrn-qe-layout-edit-panel></span>
+            <div class="view_edit" style="display: none">
+                <span data-lrn-qe-layout-edit-panel></span>
+            </div>
+            <div class="view_preview" >
+                <!-- ML - needs to be styled better
+                 <span data-lrn-qe-layout-live-score></span> -->
+                <span data-lrn-qe-layout-preview-panel></span>
+            </div>
         </div>
 
 
@@ -156,6 +156,9 @@ include_once 'includes/header.php';
             initOptions = {
                 widgetType: 'response',
                 widget_json: widget_json,
+                rich_text_editor: {
+                    type: 'wysihtml'
+                },
                 ui: {
                     layout: {
                         edit_panel: {
@@ -203,6 +206,24 @@ include_once 'includes/header.php';
             //     prettyPrint();
             //     $reviewModal.modal('show');
             // })
+
+            var view_edit = $('.view_edit');
+            var view_preview = $('.view_preview');
+            var edit_mode = false;
+
+            $('.btn-view-toggle-preview').on('click', function () {
+                if(edit_mode){
+                    view_edit.hide();
+                    view_preview.show();
+                    qeApp.updatePreview();
+                    edit_mode = false;
+                }else{
+                    view_edit.show();
+                    view_preview.hide();
+                    edit_mode = true;
+                }
+
+            })
 
         });
     </script>

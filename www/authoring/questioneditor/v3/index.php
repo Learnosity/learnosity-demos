@@ -61,7 +61,9 @@ include_once 'includes/header.php';
                         <p>For busy teachers you can create super stripped down question templates.</p>
 
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./editteacher.php">Demo</a>
+                            <a class="btn btn-primary btn-md" href="./editteachermcq.php">MCQ</a>
+                            <a class="btn btn-primary btn-md" href="./editteacherequation.php">Math</a>
+                            <a class="btn btn-primary btn-md" href="./editteacheclozedd.php">Cloze D&amp;D</a>
                         </p>
                     </div>
                 </div>
