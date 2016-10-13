@@ -63,7 +63,7 @@ include_once 'includes/header.php';
                         <p class="text-right">
                             <a class="btn btn-primary btn-md" href="./editteachermcq.php">MCQ</a>
                             <a class="btn btn-primary btn-md" href="./editteacherequation.php">Math</a>
-                            <a class="btn btn-primary btn-md" href="./editteacheclozedd.php">Cloze D&amp;D</a>
+                            <a class="btn btn-primary btn-md" href="./editteacherclozedd.php">Cloze D&amp;D</a>
                         </p>
                     </div>
                 </div>

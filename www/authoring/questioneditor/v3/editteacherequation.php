@@ -134,7 +134,7 @@ include_once 'includes/header.php';
                     }
                 },
                 "ui_style": {
-                    "type": "floating-keyboard"
+                    "type": "block-keyboard"
                 },
                 "math_renderer": "mathquill"
             },
