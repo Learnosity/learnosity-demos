@@ -68,7 +68,8 @@ include_once 'includes/header.php';
     <span data-lrn-qe-label="possible_responses"></span>
     <div data-lrn-qe-loop="possible_responses[*]">
         <span data-lrn-qe-input="possible_responses[*]"></span>
-        <span data-lrn-qe-input="metadata.distractor_rationale_response_level[*]"></div>
+        <!-- Use for interleaving distractors
+        <span data-lrn-qe-input="metadata.distractor_rationale_response_level[*]"></div -->>
     </div>
     <span data-lrn-qe-action-add="possible_responses"></span>
 
@@ -150,6 +151,9 @@ include_once 'includes/header.php';
             },
             initOptions = {
                 widgetType: 'response',
+                configuration :{
+                    consumer_key :"yis0TYCu7U9V4o7M"
+                },
                 widget_json: widget_json,
                 rich_text_editor: {
                     type: 'wysihtml'
