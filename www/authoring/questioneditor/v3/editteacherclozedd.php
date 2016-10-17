@@ -85,15 +85,6 @@ include_once 'includes/header.php';
             <span data-lrn-qe-input="duplicate_responses"></span>
         </div>
     </div>
-
-    <div class="lrn-qe-divider"></div>
-
-    <!-- More options -->
-    <label class="lrn-qe-form-label lrn-qe-margin-top-none" data-lrn-qe-adv-toggle>
-        <span class="lrn-qe-i-arrow lrn-qe-inline-block"></span>
-        <span class="lrn-qe-inline-block lrn-qe-text-bold"><label class="lrn-qe-label lrn-qe-form-label-name" data-lrn-qe-i18n-label="heading.moreOptions" value="More options" ></label></span>
-    </label>
-
 </div>
         </script>
         <!--/ Custom Layout -->
@@ -166,9 +157,6 @@ include_once 'includes/header.php';
                             }]
                         },
                         global_template: 'custom'
-                    },
-                    editor: {
-                        response_shortcut: 'singleunderscore'
                     }
                 },
                 question_types: {
@@ -178,7 +166,7 @@ include_once 'includes/header.php';
                     debug: false,
                     stimulus: "Question:",
                     options: "Options:",
-                    template: "Template (use _ for new response location)",
+                    template: "Template (use 'double underscore' for new response location)",
                     'validation.valid_response.value.value':'Correct answer:'
                 }
             },
