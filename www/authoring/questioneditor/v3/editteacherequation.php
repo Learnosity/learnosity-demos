@@ -140,6 +140,9 @@ include_once 'includes/header.php';
             },
             initOptions = {
                 widgetType: 'response',
+                configuration :{
+                    consumer_key :"yis0TYCu7U9V4o7M"
+                },
                 widget_json: widget_json,
                 rich_text_editor: {
                     type: 'wysihtml'
