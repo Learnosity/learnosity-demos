@@ -156,7 +156,7 @@ include_once 'includes/header.php';
             initOptions = {
                 widgetType: 'response',
                 configuration :{
-                    consumer_key :"yis0TYCu7U9V4o7M"
+                    consumer_key : '<?php echo $consumer_key; ?>'
                 },
                 widget_json: widget_json,
                 rich_text_editor: {
