@@ -21,9 +21,6 @@ $request = '{
     "id": "questionsapi-demo",
     "name": "Questions API Demo",
     "course_id": "' . $courseid . '",
-    "beta_flags": {
-        "use_webrtc": true
-    },
     "questions": [
         {
             "response_id": "demoaudio_1-' . $uniqueResponseIdSuffix . '",
