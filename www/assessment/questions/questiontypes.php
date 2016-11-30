@@ -28,9 +28,13 @@ $request = '{
     "id": "questionsapi-demo",
     "name": "Questions API Demo",
     "course_id": "'.$courseid.'",
+    "renderSubmitButton" : ' . ($state === 'initial' ? "true" : "false") . ',
+    "beta_flags": {
+        "use_webrtc": true
+    },
     "questions": [
         {
-            "response_id": "demo1-'.$uniqueResponseIdSuffix.'",
+            "response_id": "demo1-'. $uniqueResponseIdSuffix.'",
             "type": "mcq",
             "options" : [
                 {"value" : "0"    , "label" : "Red"},
@@ -1504,17 +1508,11 @@ $signedRequest = $Init->generate();
     $(function(){
         var options = {
                 saveSuccess: function(response_ids) {
-                    $('button.finish').text('Going to Review...');
-                    window.location = $('a#reviewButton').attr('href');
+                    window.location = "?uniqueResponseIdSuffix=<?php echo $uniqueResponseIdSuffix; ?>&state=review";
                 }
             };
         window.questionsApp = LearnosityApp.init(<?php echo $signedRequest; ?>, options);
 
-        // submit questions..
-        $('button.save-review').on('click', function() {
-            $(this).removeClass('save-review').text($(this).attr('data-saving-text'));
-            LearnosityApp.save();
-        });
     });
 </script>
 
@@ -1884,8 +1882,7 @@ $signedRequest = $Init->generate();
 
     <div class="row">
         <div class="form-actions">
-            <button class="btn btn-xlarge btn-primary save-review finish" data-saving-text="Saving..." <?php if ($state !== 'initial') { echo 'disabled'; } ?>>Save and Review</button>
-            <a id="reviewButton" style="display:none;" class="btn btn-primary" href="?uniqueResponseIdSuffix=<?php echo $uniqueResponseIdSuffix; ?>&state=review">Review answers</a>
+            <span class="learnosity-submit-button"></span>
         </div>
     </div>
 </div>
