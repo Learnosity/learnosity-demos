@@ -6,6 +6,8 @@ include_once 'includes/header.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
+$session_id = Uuid::generate();
+
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain
@@ -16,7 +18,7 @@ $request = array(
     'name'           => 'Items API demo - adaptive activity',
     'rendering_type' => 'assess',
     'state'          => 'initial',
-    'session_id'     => Uuid::generate(),
+    'session_id'     => $session_id,
     'user_id'        => $studentid,
     'assess_inline'  => true,
     'adaptive'       => array(
@@ -61,7 +63,7 @@ $request = array(
             'max_time' => 1800
         ),
         'configuration'       => array(
-            'onsubmit_redirect_url' => 'itemsapi_adaptive.php',
+            'onsubmit_redirect_url' => '../../analytics/reports/session-report.php?session_id=' . $session_id,
             'onsave_redirect_url'   => 'itemsapi_adaptive.php'
         )
     )
@@ -102,6 +104,7 @@ $signedRequest = $Init->generate();
     </div>
     <h1>Items API – Adaptive Assessment</h1>
     <p>A dynamic assessment that adapts to the user's ability in real time.<p>
+    <p>Your session ID is <?php print($session_id)?>.</p>
 </div>
 
 <div class="section">
