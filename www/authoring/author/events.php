@@ -85,7 +85,7 @@ $signedRequest = $Init->generate();
     <div id="learnosity-author"></div>
 </div>
 
-<script src="//authorapi.learnosity.com?v1.3"></script>
+<script src="<?php echo $url_authorapi; ?>"></script>
 <script>
     var initOptions = <?php echo $signedRequest; ?>;
 
@@ -108,13 +108,18 @@ $signedRequest = $Init->generate();
             });
             authorApp.on('render:item', function () {
                 var questionsApp = authorApp.questionsApp();
-                var features = getMappedWidgetData(questionsApp.getFeatures());
-                var questions = getMappedWidgetData(questionsApp.getQuestions());
-                var widgets = features.concat(questions);
                 var notification = 'Rendered item';
-                if (widgets.length) {
-                    notification += ' containing ' + widgets.join(', ');
+
+                if(questionsApp){
+                    var features = getMappedWidgetData(questionsApp.getFeatures());
+                    var questions = getMappedWidgetData(questionsApp.getQuestions());
+                    var widgets = features.concat(questions);
+                    
+                    if (widgets.length) {
+                        notification += ' containing ' + widgets.join(', ');
+                    }
                 }
+                
                 showNotification(notification);
             });
         }

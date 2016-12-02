@@ -14,9 +14,6 @@
             'analytics/reports/index.php' => 'Reports API',
             'analytics/data/index.php'    => 'Data API'
         ),
-        'Misc' => array(
-            'misc/security_check.php' => 'Security Check'
-        ),
         'Case Studies' => array(
             'casestudies/feedback/index.php' => 'Teacher Feedback',
             'casestudies/printing/index.php' => 'Printing Items',
