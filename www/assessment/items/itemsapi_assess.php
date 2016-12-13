@@ -84,6 +84,7 @@ $request = array(
         ),
         'ui_style'            => 'main',
         'configuration'       => array(
+            'lazyload'               => false,
             'fontsize'               => 'normal',
             'stylesheet'             => '',
             'onsubmit_redirect_url'  => 'itemsapi_assess.php',
