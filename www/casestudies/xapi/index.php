@@ -94,6 +94,11 @@ $request = array(
     )
 );
 
+$eventSpec = json_encode([[
+    'kind' => 'assess_logging',
+    'user_id' => $studentid,
+]]);
+
 include_once 'utils/settings-override.php';
 
 $Init = new Init('items', $security, $consumer_secret, $request);
@@ -131,7 +136,7 @@ $signedRequest = $Init->generate();
         itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
 
     function initialiseEventsPosting() {
-        itemsApp.eventsApp().on(function (events) {
+        itemsApp.eventsApp().on(<?php echo $eventSpec ?>, function (events) {
             $('.previewWrapper').show();
             $('#xApiPreview').prepend(
                 prettyPrint.render(events)
