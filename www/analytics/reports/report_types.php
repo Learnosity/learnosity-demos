@@ -869,7 +869,7 @@ $signedRequest = $Init->generate();
     function onReportsReady() {
         var onClickFunction = function(data, target, modal) {
             if (modal) {
-                var sessionReports = ['sessions-summary', 'session-detail', 'sessions-summary-by-tag'];
+                var sessionReports = ['sessions-summary', 'session-detail-by-question', 'sessions-summary-by-tag'];
                 var reportType = sessionReports[Math.floor(Math.random() * sessionReports.length)];
 
                 $('#lrn-reports-demos-modal').modal({

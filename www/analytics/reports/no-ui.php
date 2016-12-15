@@ -18,7 +18,7 @@ $request = array(
         array(
             'id'          => 'session-summary',
             'render'      => $render,
-            'type'        => 'session-summary',
+            'type'        => 'sessions-summary',
             'user_id'     => 'demo_student',
             'session_ids' => array(
                 '8524a7f7-169f-4b0b-b2ef-23df7c3ad51f'
