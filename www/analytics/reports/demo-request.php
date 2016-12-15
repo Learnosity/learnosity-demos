@@ -39,11 +39,11 @@ if (count($reportVariables)) {
                 )
             );
             break;
-        case 'session-detail':
-            $reportTitle = 'Session Detail';
+        case 'session-detail-by-question':
+            $reportTitle = 'Session Detail By Question';
             $buildReport = array(
                 'id'          => 'demo-report',
-                'type'        => 'session-detail',
+                'type'        => 'session-detail-by-question',
                 'user_id'     => $reportVariables['user_id'],
                 'session_id' => $reportVariables['session_id']
             );
