@@ -13,8 +13,8 @@ include_once 'includes/header.php';
         </ul>
     </div>
     <div class="overview">
-        <h1>Custom Question Editor Templates </h1>
-        <p>This demo is a customized version of the Question Editor API.<p>
+        <h1> Question Editor API - Custom Layout </h1>
+        <p>This demo shows the Question Editor API with custom layouts and templates. Refer to <a href="https://docs.learnosity.com/authoring/questioneditor/editlayout">Editor Layouts</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/initialisation">the Initialisation Options docs</a>. <p>
     </div>
 </div>
 
