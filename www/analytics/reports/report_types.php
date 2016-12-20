@@ -55,11 +55,12 @@ $request = array(
             ),
         ),
         array(
-            'id'           => 'report-5',
-            'type'         => 'lastscore-by-activity-by-user',
-            'scoring_type' => 'partial',
-            'ui'           => 'numeric',
-            'users'        => array(
+            'id'                 => 'report-5',
+            'type'               => 'lastscore-by-activity-by-user',
+            'scoring_type'       => 'partial',
+            'ui'                 => 'numeric',
+            'display_time_spent' => true,
+            'users'              => array(
                 array(
                     'id' => 'mce_student',
                     'name' => 'Jesse Pinkman'
@@ -91,11 +92,12 @@ $request = array(
             )
         ),
         array(
-            'id'           => 'report-6',
-            'type'         => 'lastscore-by-activity',
-            'scoring_type' => 'partial',
-            'user_id'      => 'mce_student',
-            'activities'   => array(
+            'id'                 => 'report-6',
+            'type'               => 'lastscore-by-activity',
+            'scoring_type'       => 'partial',
+            'user_id'            => 'mce_student',
+            'display_time_spent' => true,
+            'activities'         => array(
                 array(
                     'id' => 'Summer_Test_1',
                     'name' => 'Summer Test'
@@ -109,6 +111,7 @@ $request = array(
         array(
             'id'                   => 'report-7',
             'type'                 => 'lastscore-by-item-by-user',
+            'display_time_spent'   => true,
             'display_item_numbers' => true,
             'scoring_type'         => 'partial',
             'users'                => array(
@@ -132,9 +135,10 @@ $request = array(
             'activity_id' => 'Weekly_Math_Quiz'
         ),
         array(
-            'id'    => 'report-8',
-            'type'  => 'lastscore-by-tag-by-user',
-            'users' => array(
+            'id'                 => 'report-8',
+            'type'               => 'lastscore-by-tag-by-user',
+            'display_time_spent' => true,
+            'users'              => array(
                 array(
                     'id' => 'mce_student',
                     'name' => 'Jesse Pinkman'
