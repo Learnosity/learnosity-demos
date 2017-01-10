@@ -10,6 +10,42 @@ $security = array(
     'domain'       => $domain
 );
 
+$activitySummaryByGroupColumns = [
+    [
+        "type" => "group_name",
+    ],
+    [
+        "type" => "numeric",
+        "field" => "population",
+        "label" => "Students"
+    ],
+    [
+        "type" => "numeric",
+        "field" => "lowest_percent",
+        "label" => "Lowest score %"
+    ],
+    [
+        "type" => "numeric",
+        "field" => "highest_percent",
+        "label" => "Highest score %"
+    ],
+    [
+        "type" => "numeric",
+        "field" => "mean_percent",
+        "label" => "Average score %"
+    ],
+    [
+        "type" => "numeric",
+        "field" => "median_percent",
+        "label" => "Median score %"
+    ],
+    [
+        "type" => "numeric",
+        "field" => "p75_percent",
+        "label" => "75th percentile"
+    ]
+];
+
 $request = array(
     'configuration' => array(
         'questionsApiVersion' => 'v2'
@@ -313,6 +349,13 @@ $request = array(
                 'd7ad7585-a0c1-4c01-9762-44a85f55835c'
             )
         ),
+        array(
+            'id'          => 'activity-summary-by-group-report',
+            'type'        => 'activity-summary-by-group',
+            'dataset_id'  => 'a1a8e23e-7fce-4146-b079-9b607697df23',
+            "group_path" => [],
+            "columns" => $activitySummaryByGroupColumns,
+        )
     )
 );
 
@@ -789,6 +832,56 @@ $signedRequest = $Init->generate();
             </div>
         </div>
 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a id="accordion-report-aggregate" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-aggregate">
+                        Reports By District, School, Class or Cohort
+                    </a>
+                </h4>
+            </div>
+            <div id="lrn-reports-demos-aggregate" class="panel-collapse collapse">
+                <div class="panel-body no-padding-bottom">
+                    <div class="panel-group" id="lrn-reports-demos-aggregate-content">
+
+                        <div class="panel panel-default panel-border-bottom">
+                            <div class="panel-heading inner-heading">
+                                <h4 class="panel-title">
+                                    <a id="report-activity-summary-by-group" data-toggle="collapse" data-parent="#lrn-reports-demos-aggregate-content" href="#aggregate-reports">
+                                        <div class="row">
+                                            <div class="col-sm-4"><span class="glyphicon glyphicon-chevron-down"> </span>Aggregate Reports</div>
+                                            <div class="col-sm-8">
+                                                <p class="lrn-report-summary">Analyse aggregate results for large cohorts; drill down to classes and individuals</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="aggregate-reports" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <section>
+                                        <h3 class="report-title">Aggregate Reports</h3>
+                                        <p class="lrn-report-summary">Calculate the average score, median, minumum/maximum, standard deviation, percentiles and other statistics for custom groupings of users. Summarise, drill down, explore and compare results across regions, schools, classes, departments, age group, and any other arbitrary cohort.</p>
+                                        <p>Two variants are available depending on how data should be selected:
+                                            <ul>
+                                                <li>Activity Summary by Group: compare results for users attempting one or more common learning activities</li>
+                                                <li>Sessions Summary by Group: compare results for users across a specific set of assessment sessions</li>
+                                            </ul>
+                                        </p>
+                                        <div class="alert alert-info">
+                                            <strong>Note:</strong> Aggregate reports are prepared asynchronously in advance using Data API. See the <a href="//docs.learnosity.com/analytics/reports/aggregatereports/implementationguide">implementation guide</a> for details.
+                                        </div>
+                                        <span class="learnosity-report" id="activity-summary-by-group-report"></span>
+                                        <div>Access <a onclick="showGroupReportData();">raw data</a> for the rendered report too.</div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Real time reports -->
         <div class="panel panel-default">
@@ -846,14 +939,6 @@ $signedRequest = $Init->generate();
     <div class="modal fade" id="lrn-reports-demos-modal" tabindex="-1" role="dialog" aria-labelledby="lrn-reports-demos-modal-label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="lrn-reports-demos-modal-label">Demo Report</h4>
-                </div>
-                <div id="lrn-reports-demos-modal-content" class="modal-body"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
             </div>
         </div>
     </div>
@@ -869,6 +954,35 @@ $signedRequest = $Init->generate();
             readyListener: onReportsReady
         }
     );
+
+    var activitySummaryByGroupColumns = <?php echo json_encode($activitySummaryByGroupColumns, JSON_PRETTY_PRINT); ?>;
+
+    var showGroupReportData = function() {
+        var reportObj = lrnReports.getReport('activity-summary-by-group-report');
+        reportObj.getGroup({path:reportObj.getCurrentGroupPath()}, function(groupData) {
+            modal = $('.modal-content');
+            var html = '';
+                html += '<div class="modal-header">';
+                html += '    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+                html += '    <h4 class="modal-title" id="lrn-reports-demos-modal-label">Aggregate Reports - Raw Data</h4>';
+                html += '</div>';
+                html += '<div id="lrn-reports-demos-modal-content" class="modal-body">';
+                html += '    <div class="alert alert-info">';
+                html += '        <pre>' + JSON.stringify(groupData, null, 2) + '</pre>';
+                html += '    </div>';
+                html += '<div class="modal-footer">';
+                html += '    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+                html += '</div>';
+
+            modal.html(html);
+            $('#lrn-reports-demos-modal').modal();
+
+            $('body').on('hidden.bs.modal', '.modal', function () {
+                $(this).removeData('bs.modal');
+                $('.modal-content').html("");
+            });
+        });
+    };
 
     function onReportsReady() {
         var onClickFunction = function(data, target, modal) {
@@ -886,6 +1000,7 @@ $signedRequest = $Init->generate();
 
                 $('body').on('hidden.bs.modal', '.modal', function () {
                     $(this).removeData('bs.modal');
+                    $('.modal-content').html("");
                 });
             } else {
                 var html = '<div class="alert alert-info alert-dismissable">';
@@ -896,6 +1011,23 @@ $signedRequest = $Init->generate();
                     html += '</p></div>';
                     $('#' + target).append(html);
             }
+        };
+
+        // Update the column headers of the group report based on the depth of the current path.
+        var updateGroupReportHeaders = function(reportObj) {
+            var levelLabels = {
+                0: "District",
+                1: "School",
+                2: "Class"
+            };
+            var currentPath = reportObj.getCurrentGroupPath() || [];
+            var currentLevel = currentPath.length;
+            var columnDefs = activitySummaryByGroupColumns;
+            columnDefs[0] = {
+                type: "group_name",
+                label: levelLabels[currentLevel] || "Group Name",
+            };
+            reportObj.setOptions({columns: columnDefs});
         };
 
         /* group-lastscore-by-activity onclick events */
@@ -986,6 +1118,13 @@ $signedRequest = $Init->generate();
             onClickFunction(data, 'lrn-report-sessions-list-by-item-events', false);
         });
 
+        // Aggregate report events
+        var activitySummaryByGroup = lrnReports.getReport('activity-summary-by-group-report');
+        activitySummaryByGroup.on('change:data', function (eventName) {
+            updateGroupReportHeaders(activitySummaryByGroup);
+        });
+        updateGroupReportHeaders(activitySummaryByGroup);
+
         // Sessions detail hidden width fix
         $('a#report-session-detail').click(function (e) {
             e.preventDefault();
@@ -993,6 +1132,8 @@ $signedRequest = $Init->generate();
             $('.lrn_response_innerbody').width('100%');
             $('.lrn_graph_plotter .lrn_btn').click();
         });
+
+
 
         // lastscore-single hidden width fix
         // $('a#report-lastscore-single').click(function (e) {
