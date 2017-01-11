@@ -847,7 +847,7 @@ $signedRequest = $Init->generate();
                         <div class="panel panel-default panel-border-bottom">
                             <div class="panel-heading inner-heading">
                                 <h4 class="panel-title">
-                                    <a id="report-activity-summary-by-group" data-toggle="collapse" data-parent="#lrn-reports-demos-aggregate-content" href="#aggregate-reports">
+                                    <a id="report-aggregate-all" data-toggle="collapse" data-parent="#lrn-reports-demos-aggregate-content" href="#aggregate-reports">
                                         <div class="row">
                                             <div class="col-sm-4"><span class="glyphicon glyphicon-chevron-down"> </span>Aggregate Reports</div>
                                             <div class="col-sm-8">
