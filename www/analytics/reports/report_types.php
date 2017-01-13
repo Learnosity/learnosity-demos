@@ -46,6 +46,8 @@ $activitySummaryByGroupColumns = [
     ]
 ];
 
+$usersMap = json_decode(file_get_contents(__DIR__ . "/aggregatereports/usersMap.json"), true);
+
 $request = array(
     'configuration' => array(
         'questionsApiVersion' => 'v2'
@@ -955,8 +957,6 @@ $signedRequest = $Init->generate();
         }
     );
 
-    var activitySummaryByGroupColumns = <?php echo json_encode($activitySummaryByGroupColumns, JSON_PRETTY_PRINT); ?>;
-
     var showGroupReportData = function() {
         var reportObj = lrnReports.getReport('activity-summary-by-group-report');
         reportObj.getGroup({path:reportObj.getCurrentGroupPath()}, function(groupData) {
@@ -982,6 +982,75 @@ $signedRequest = $Init->generate();
                 $('.modal-content').html("");
             });
         });
+    };
+
+    // Array of ColumnDefinition objects we can pass to activitySummaryByGroup.setOptions({columns: ...}), eg.
+    //   [
+    //     {
+    //         "type" => "group_name",
+    //     },
+    //     {
+    //         "type" => "numeric",
+    //         "field" => "population",
+    //         "label" => "Students"
+    //     },
+    //     {
+    //         "type" => "numeric",
+    //         "field" => "lowest_percent",
+    //         "label" => "Lowest score %"
+    //     },
+    //     ...
+    //   ]
+    var activitySummaryByGroupColumns = <?php echo json_encode($activitySummaryByGroupColumns, JSON_PRETTY_PRINT); ?>;
+
+    // Map of user_id: user_name, eg.
+    //   {
+    //      "a3bcada4-0730-4d41-a661-6645088e765e": "Bart Simpson",
+    //      "c1a4d492-4de7-45d5-b071-f80d80698b57": "Milhouse Vanhouten",
+    //      "1896991f-e6a3-4cfb-b5c9-b44ec57f6c0e": "Nelson Muntz",
+    //      ...
+    //   }
+    var usersMap = <?php echo json_encode($usersMap, JSON_PRETTY_PRINT); ?>;
+    function mapUserId(userId) {
+        return usersMap[userId];
+    }
+
+    // Change the header of the group_name to reflect the current level in the group hiererchy.
+    function updateGroupReportHeaders(reportObj, rawJson) {
+        var levelLabels = {
+            0: "District",
+            1: "School",
+            2: "Class"
+        };
+        var currentPath = reportObj.getCurrentGroupPath() || {};
+        var currentLevel = currentPath.length;
+        var columnDefs = activitySummaryByGroupColumns;
+        columnDefs[0] = {
+            type: "group_name",
+            label: levelLabels[currentLevel] || "Group Name",
+        };
+        reportObj.setOptions({columns: columnDefs});
+    };
+
+    // Scrape the DOM and replace user_ids with real user names.
+    function remapUserIDs(reportObj, rawJson) {
+        // Get the first field cell for each row (assume group_name is first column).
+        var cells = document.querySelectorAll('.learnosity-report.activity-summary-by-group .lrn-table-row > :first-child .lrn-report-field');
+        cells.forEach(function(cell) {
+            cell.innerHTML = mapUserId(cell.innerText.trim()) || cell.innerHTML;
+        });
+    }
+
+    // Called each time the activity-summary-by-group is navigated, to manually override/remap certain labels.
+    function enhanceGroupReportUI(reportObj, rawJson) {
+        updateGroupReportHeaders(reportObj, rawJson);
+
+        // If we're viewing user rows, render real user names in place of user_ids.
+        if (rawJson && rawJson.users) {
+            setTimeout(function() {
+                remapUserIDs(reportObj, rawJson);
+            }, 0); // Wait til after the DOM is rendered before remapping.
+        }
     };
 
     function onReportsReady() {
@@ -1011,23 +1080,6 @@ $signedRequest = $Init->generate();
                     html += '</p></div>';
                     $('#' + target).append(html);
             }
-        };
-
-        // Update the column headers of the group report based on the depth of the current path.
-        var updateGroupReportHeaders = function(reportObj) {
-            var levelLabels = {
-                0: "District",
-                1: "School",
-                2: "Class"
-            };
-            var currentPath = reportObj.getCurrentGroupPath() || [];
-            var currentLevel = currentPath.length;
-            var columnDefs = activitySummaryByGroupColumns;
-            columnDefs[0] = {
-                type: "group_name",
-                label: levelLabels[currentLevel] || "Group Name",
-            };
-            reportObj.setOptions({columns: columnDefs});
         };
 
         /* group-lastscore-by-activity onclick events */
@@ -1120,10 +1172,10 @@ $signedRequest = $Init->generate();
 
         // Aggregate report events
         var activitySummaryByGroup = lrnReports.getReport('activity-summary-by-group-report');
-        activitySummaryByGroup.on('change:data', function (eventName) {
-            updateGroupReportHeaders(activitySummaryByGroup);
+        activitySummaryByGroup.on('change:data', function (eventData) {
+            enhanceGroupReportUI(activitySummaryByGroup, eventData.dataset_group);
         });
-        updateGroupReportHeaders(activitySummaryByGroup);
+        enhanceGroupReportUI(activitySummaryByGroup);
 
         // Sessions detail hidden width fix
         $('a#report-session-detail').click(function (e) {
