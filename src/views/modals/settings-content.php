@@ -218,6 +218,31 @@
                                         <input type="radio" name="time[show_time]" value="false"<?php if (isset($time['show_time']) && $time['show_time'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="configuration[reading_mode][reading_time]" class="col-sm-6 control-label">Reading Time (sec)</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" min="0" step="1" class="form-control" name="configuration[reading_mode][reading_time]" value="<?php if (isset($con['configuration']['reading_mode']['reading_time'])) { echo $con['configuration']['reading_mode']['reading_time']; } else { echo '0'; } ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="configuration[reading_mode][warning_time]" class="col-sm-6 control-label">Warning Reading Time (sec)</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" min="0" step="1" class="form-control" name="configuration[reading_mode][warning_time]" value="<?php if (isset($con['configuration']['reading_mode']['warning_time'])) { echo $con['configuration']['reading_mode']['warning_time']; } else { echo '0'; } ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label">Go To First Item When Reading Time Over</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="configuration[reading_mode][goto_first_item_on_reading_time_completion]" value="true"<?php if (isset($con['configuration']['reading_mode']['goto_first_item_on_reading_time_completion']) && $con['configuration']['reading_mode']['goto_first_item_on_reading_time_completion'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="configuration[reading_mode][goto_first_item_on_reading_time_completion]" value="false"<?php if (isset($con['configuration']['reading_mode']['goto_first_item_on_reading_time_completion']) && $con['configuration']['reading_mode']['goto_first_item_on_reading_time_completion'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+
+
+
                                 <div class="form-group">
                                     <label for="show_itemcount" class="col-sm-6 control-label">Item Count</label>
                                     <div class="col-sm-6">
