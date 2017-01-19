@@ -87,21 +87,21 @@ $signedRequest = $Init->generate();
                 TexthelpSpeechStream.addToolbar('1','1');
             });
 
-            // Log the current item.
-            assessApp.on('item:load', function () {
+            // // Log the current item.
+            // assessApp.on('item:load', function () {
 
-                setTimeout('$rw_tagSentences()',500);
+            //     setTimeout('$rw_tagSentences()',500);
 
-                $(".test-title-text").attr('ignore', '1');
-                $(".subtitle").attr('ignore', '1');
-                $(".item-count").attr('ignore', '1');
-                $(".timer").attr('ignore', '1');
-                $(".lrn_sort_gripper").attr('ignore', '1');
-                $(".lrn-choicematrix-column-title").attr('ignore', '1');
+            //     $(".test-title-text").attr('ignore', '1');
+            //     $(".subtitle").attr('ignore', '1');
+            //     $(".item-count").attr('ignore', '1');
+            //     $(".timer").attr('ignore', '1');
+            //     $(".lrn_sort_gripper").attr('ignore', '1');
+            //     $(".lrn-choicematrix-column-title").attr('ignore', '1');
 
-                setTimeout('$rw_speakFirstSentence()',500);
-                console.log('Reading');
-            });
+            //     setTimeout('$rw_speakFirstSentence()',500);
+            //     console.log('Reading');
+            // });
 
         }
 
