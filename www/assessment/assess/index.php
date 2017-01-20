@@ -81,6 +81,11 @@ $request = array(
         'idle_timeout'           => array(
             'interval'       => 300,
             'countdown_time' => 60
+        ),
+        'reading_mode'           => array(
+            'reading_time'   => 0,
+            'goto_first_item_on_reading_time_completion' => true,
+            'warning_time'   => 0
         )
     ),
     'items' => array(
