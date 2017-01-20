@@ -92,7 +92,10 @@ $signedRequest = $Init->generate();
 
                 setTimeout('$rw_tagSentences()',500);
 
+                $(".lrn-accessibility-label").attr('ignore', '1');
+
                 $(".test-title-text").attr('ignore', '1');
+
                 $(".subtitle").attr('ignore', '1');
                 $(".item-count").attr('ignore', '1');
                 $(".timer").attr('ignore', '1');
