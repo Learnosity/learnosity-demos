@@ -20,7 +20,6 @@ foreach ($reportVariables as $key => $var) {
 }
 
 if (count($reportVariables)) {
-
     $security = array(
         'consumer_key' => $consumer_key,
         'domain'       => $domain
@@ -155,12 +154,13 @@ if (count($reportVariables)) {
             <span class="learnosity-report" id="demo-report"></span>
         </section>
     </div>
+    <script src="<?php echo $url_reports; ?>"></script>
     <script type="text/javascript">
         var config = <?php echo $signedRequest; ?>;
         config.configuration = {
             questionsApiVersion: "v2"
         };
-                console.log(config);
+        console.log(config);
 
         window.reportsApp = LearnosityReports.init(config);
 
