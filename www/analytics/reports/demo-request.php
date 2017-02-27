@@ -20,7 +20,6 @@ foreach ($reportVariables as $key => $var) {
 }
 
 if (count($reportVariables)) {
-
     $security = array(
         'consumer_key' => $consumer_key,
         'domain'       => $domain
@@ -155,14 +154,28 @@ if (count($reportVariables)) {
             <span class="learnosity-report" id="demo-report"></span>
         </section>
     </div>
+    <script src="<?php echo $url_reports; ?>"></script>
     <script type="text/javascript">
         var config = <?php echo $signedRequest; ?>;
         config.configuration = {
             questionsApiVersion: "v2"
         };
-                console.log(config);
+        console.log('config:', config);
 
-        window.reportsApp = LearnosityReports.init(config);
+        lrnReports = LearnosityReports.init(config, {
+            readyListener: onReportsReady
+                }
+        );
+
+        function onReportsReady() {
+            var report = lrnReports.getReport('demo-report');
+            // Test for LRN-11880: load:data should be called with null with a non-existent session_id
+            report.on('load:data', function (data) {
+                console.log(
+                    'load:data called with data =', data
+                );
+            });
+        }
 
     </script>
     <?php
