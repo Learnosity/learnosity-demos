@@ -130,7 +130,7 @@ var init = function() {
                     $('.lrn_save_button').click(function() {
                         window.setTimeout(function() {
                             window.location = 'feedback_report.php?session_id=<?php echo $_GET['session_id']; ?>&feedback_session_id=' + itemsActivity.request.session_id;
-                        }, 1000);
+                        }, 2000);
                     });
                 }
             });
