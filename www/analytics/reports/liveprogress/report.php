@@ -46,7 +46,15 @@ $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
+<!doctype html>
+<html>
+<head>
+<title>
+        Proctor view &mdash; Demo showcasing remote control events
+</title>
+</head>
+<body>
+<!-- Container for the report to load into -->
 <div id="report-1"></div>
 
 <script src="<?php echo $url_reports; ?>"></script>
@@ -85,3 +93,5 @@ $signedRequest = $Init->generate();
 
     }
 </script>
+</body>
+</html>

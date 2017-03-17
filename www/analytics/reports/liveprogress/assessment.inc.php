@@ -81,13 +81,16 @@ $signedRequest = $Init->generate();
 <!doctype html>
 <html>
 <head>
+<title>
+        <?php echo $student['name']; ?> &mdash; Demo showcasing remote control events
+</title>
 </head>
 <body>
 <!-- Container for the items api to load into -->
 <div id="learnosity_assess"></div>
 <script src="<?php echo $url_items; ?>"></script>
 <script>
-    var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);
+var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);
 </script>
 </body>
 </html>
