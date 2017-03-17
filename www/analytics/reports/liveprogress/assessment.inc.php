@@ -28,9 +28,6 @@ $request = array(
         ),
         'navigation' => array(
             'intro_item' => 'demo-intro-live-progress',
-            'item_count' => array(
-               'question_count_option' => true
-            )
         ),
         'regions' => array(
             'top-right' => array(
