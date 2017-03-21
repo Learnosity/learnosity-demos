@@ -21,6 +21,7 @@
             'casestudies/xapi/index.php'     => 'xAPI Events',
             'casestudies/endtoend/index.php' => 'End to End Demo',
             'casestudies/customquestions/index.php' => 'Custom Questions',
+            'casestudies/spanish/index.php' => 'Spanish Demo'
         )
     );
 ?>
