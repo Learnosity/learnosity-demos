@@ -2,7 +2,7 @@
 
 $student = array(
     'id'   => htmlspecialchars($_GET['user_id'], ENT_QUOTES),
-    'name' => 'Walter White'
+    'name' => 'Mike Ehrmantraut'
 );
 
 include_once 'assessment.inc.php';
