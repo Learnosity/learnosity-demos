@@ -67,18 +67,15 @@ $signedRequest = $Init->generate();
         assessApp.on('item:beforeunload', function (event) {
             console.log('event item:beforeunload fired!');
 
-            var questions = assessApp.getQuestions();
-            var responses = assessApp.getResponses();
-
             // loop through question responses to check if the student is missing responses
             $.each(itemsApp.getCurrentItem().response_ids, function (index, response_id) {
-
-                var valid_response_count = questions[response_id].metadata.valid_response_count;
-                var questionResponse = responses[response_id];
+                var questionObject = itemsApp.question(response_id);
+                var valid_response_count = questionObject.getQuestion().metadata.valid_response_count;
+                var questionResponse = questionObject.getResponse();
 
                 if (valid_response_count) {
                     // calculate the currentResponseCount using .reduce() to count the student responses
-                    var currentResponseCount = (questionResponse !== undefined) ? questionResponse
+                    var currentResponseCount = (questionResponse) ? questionResponse
                         .value
                         .reduce(function(acc, curr) {
                             return acc + (curr ? 1 : 0);
