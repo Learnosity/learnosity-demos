@@ -5,7 +5,7 @@ include_once 'includes/header.php';
 
 use LearnositySdk\Utils\Uuid;
 
-$studentIds = array(Uuid::generate(), Uuid::generate(), Uuid::generate());
+$studentIds = array(Uuid::generate(), Uuid::generate(), Uuid::generate(), Uuid::generate());
 
 ?>
 

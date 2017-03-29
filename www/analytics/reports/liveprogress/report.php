@@ -46,8 +46,17 @@ $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
+<!doctype html>
+<html>
+<head>
+<title>
+        Proctor view &mdash; Demo showcasing remote control events
+</title>
+</head>
+<body>
+<!-- Container for the report to load into -->
 <div id="report-1"></div>
+<button id="add-user" type="button" class="btn btn-default">Add a user</button>
 
 <script src="<?php echo $url_reports; ?>"></script>
 <script>
@@ -83,5 +92,18 @@ $signedRequest = $Init->generate();
             console.log('Received events: terminate', events);
         });
 
+        document.getElementById('add-user').onclick = function() {
+            reportsApp.getReport('report-1').addUsers([
+                {
+                    "id": "<?php echo $userIds[3]; ?>",
+                    "name": "Mike Ehrmantraut",
+                    "hash": "<?php echo hash("sha256", $userIds[3] . $consumer_secret)?>"
+                }
+            ]);
+            window.open("./assessment_4.php?user_id=<?php echo $userIds[3]; ?>");
+        }
+
     }
 </script>
+</body>
+</html>
