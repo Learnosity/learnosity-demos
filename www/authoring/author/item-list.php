@@ -45,7 +45,8 @@ $request = array(
                     'default' => 'edit',
                     'show' => true
                 ),
-                'dynamic_content' => false
+                'dynamic_content' => false,
+                'shared_passage' => true
             ),
             'widget' => array(
                 'delete' => true,
