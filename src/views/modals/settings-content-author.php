@@ -62,6 +62,14 @@
                                         <input type="radio" name="item_edit[item][dynamic_content]" value="false"<?php if (isset($item_edit['item']['dynamic_content']) && $item_edit['item']['dynamic_content'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="item_edit[item][shared_passage]" class="col-sm-6 control-label">Show <em>Find existing passage</em> button</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[item][shared_passage]" value="true"<?php if (isset($item_edit['item']['shared_passage']) && $item_edit['item']['shared_passage'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][shared_passage]" value="false"<?php if (isset($item_edit['item']['shared_passage']) && $item_edit['item']['shared_passage'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
