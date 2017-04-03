@@ -160,7 +160,16 @@ $request = array(
             $uniqueResponseIdSuffix.'_Demo10'
           ),
           'feature_ids'  => array()
-        )
+      ),
+      array(
+        'reference'    => 'LRN-8930',
+        'content'      => '<span class="learnosity-response question-'.$uniqueResponseIdSuffix.'_LRN-8930"></span>',
+        'workflow'     => array(),
+        'response_ids' => array(
+          $uniqueResponseIdSuffix.'_LRN-8930'
+        ),
+        'feature_ids'  => array()
+      )
     ),
     'questionsApiActivity' => json_decode(
         '{
@@ -171,6 +180,28 @@ $request = array(
             "course_id": "' . $courseid . '",
             "session_id": "' . Uuid::generate() . '",
             "questions": [
+                {
+                    "options":
+                    [
+                        {
+                            "label":"[Choice A]",
+                            "value":"0"}, {"label":"[Choice B]",
+                            "value":"1"}, {"label":"[Choice C]",
+                            "value":"2"}, {"label":"[Choice D]",
+                            "value":"3"}
+                    ],
+                    "stimulus":"<p>[This is the stem.]</ p>",
+                    "type":"mcq",
+                    "response_id": "'.$uniqueResponseIdSuffix.'_LRN-8930",
+                    "validation":
+                        {
+                            "scoring_type":"exactMatch",
+                            "valid_response":{"score":1,
+                                "value":["1"]}
+                            },
+                            "ui_style":{"type":"horizontal"},
+                            "shuffle_options":true
+                        },
              {
                 "type": "orderlist",
                 "list": [
