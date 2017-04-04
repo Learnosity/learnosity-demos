@@ -23,10 +23,6 @@ $request = array(
     'assess_inline'  => true,
     'config'         => array(
 
-     // was 'regions' => 'main' as the default option
-     // 4 Feb 2016 (after QCAA meeting: Dima, Adam, Mark L)
-     // we decided to provide this Demo to QCAA but without Quit and FullScreen buttons (as they do not work properly)
-
         //'regions'  => 'main',
 
         'regions' =>
