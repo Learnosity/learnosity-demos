@@ -11,12 +11,14 @@ $security = array(
     'domain'       => $domain
 );
 
+$sessionId = Uuid::generate();
+
 $request = array(
     'activity_id'    => 'branchingadaptivedemo',
     'name'           => 'Items API demo - branching activity',
     'rendering_type' => 'assess',
     'state'          => 'initial',
-    'session_id'     => Uuid::generate(),
+    'session_id'     => $sessionId,
     'user_id'        => $studentid,
     'assess_inline'  => true,
     'adaptive'       => array(
@@ -75,7 +77,7 @@ $request = array(
         ),
         'assessApiVersion'    => "latest",
         'configuration'       => array(
-            'onsubmit_redirect_url' => 'itemsapi_branching.php',
+            'onsubmit_redirect_url' => 'itemsapi_adaptive_report.php?session_id=' . $sessionId,
             'onsave_redirect_url'   => 'itemsapi_branching.php'
         )
     )
