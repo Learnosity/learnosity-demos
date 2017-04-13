@@ -7,11 +7,7 @@ use \LearnositySdk\Request\Init;
 use \LearnositySdk\Request\DataApi;
 use \LearnositySdk\Utils\Uuid;
 
-if (isset($_GET["session_id"])) {
-    $session_id = $_GET["session_id"];
-} elseif (isset($_POST["session_id"])) {
-    $session_id = $_POST["session_id"];
-}
+$sessionId = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 $security = array(
     'consumer_key' => $consumer_key,
@@ -24,13 +20,13 @@ $reportsRequest = [ 'reports' =>
             'id' => 'sessions-summary-div',
             'type' => 'sessions-summary',
             'user_id' => $studentid,
-            'session_ids' => [ $session_id ],
+            'session_ids' => [ $sessionId ],
         ],
         [
             'id' => 'session-detail-by-item-div',
             'type' => 'session-detail-by-item',
             'user_id' => $studentid,
-            'session_id' => $session_id,
+            'session_id' => $sessionId,
         ],
     ],
 ];
@@ -39,12 +35,12 @@ $reportsInit = new Init('reports', $security, $consumer_secret, $reportsRequest)
 $signedRequest = $reportsInit->generate();
 
 $dataRequest =  [
-    'session_id' => [ $session_id ],
+    'session_id' => [ $sessionId ],
 ];
 $dataAction = 'get';
 
 $dataApi = new DataApi();
-$adaptiveReportUrl = "{$url_data}/latest/sessions/reports/adaptive";
+$adaptiveReportUrl = "{$url_data}/{$version_dataapi}/sessions/reports/adaptive";
 $dataOutput = $dataApi->request(
     $adaptiveReportUrl,
     $security,

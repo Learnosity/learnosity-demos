@@ -11,11 +11,11 @@ $security = array(
     'domain'       => $domain
 );
 
-$session_id = Uuid::generate();
+$sessionId = Uuid::generate();
 $state = 'initial';
 if (isset($_GET['session_id'])) {
     $state = 'resume';
-    $session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $sessionId = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 }
 
 $request = array(
@@ -23,7 +23,7 @@ $request = array(
     'name'           => 'Items API demo - Item Branching Assessment',
     'rendering_type' => 'assess',
     'state'          => $state,
-    'session_id'     => $session_id,
+    'session_id'     => $sessionId,
     'user_id'        => $studentid,
     'assess_inline'  => true,
     'adaptive'       => array(
@@ -116,7 +116,7 @@ $request = array(
         ),
         'assessApiVersion'    => "latest",
         'configuration'       => array(
-            'onsubmit_redirect_url' => 'itemsapi_itembranching.php',
+            'onsubmit_redirect_url' => 'itemsapi_adaptive_report.php?session_id=' . $sessionId,
             'onsave_redirect_url'   => 'itemsapi_itembranching.php'
         )
     )
@@ -156,7 +156,7 @@ $signedRequest = $Init->generate();
     </div>
     <h1>Items API - Item Branching Assessment</h1>
     <p>A dynamic assessment that presents different selected items depending on the performance so far.
-    <a href="<?php print(($_SERVER['PHP_SELF']). '?session_id=' . $session_id); ?>">Resume the session here</a>.<p>
+    <a href="<?php print(($_SERVER['PHP_SELF']). '?session_id=' . $sessionId); ?>">Resume the session here</a>.<p>
 </div>
 
 <div class="section">
