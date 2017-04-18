@@ -62,6 +62,15 @@
                                         <input type="radio" name="item_edit[item][dynamic_content]" value="false"<?php if (isset($item_edit['item']['dynamic_content']) && $item_edit['item']['dynamic_content'] === false) { echo ' checked'; }; ?>> Disable
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="item_edit[item][duplicate]" class="col-sm-6 control-label">Show <em>Duplicate</em> button</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="item_edit[item][duplicate]" value="true"<?php if (isset($item_edit['item']['duplicate']) && $item_edit['item']['duplicate'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="item_edit[item][duplicate]" value="false"<?php if (isset($item_edit['item']['duplicate']) && $item_edit['item']['duplicate'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="item_edit[item][shared_passage]" class="col-sm-6 control-label">Show <em>Find existing passage</em> button</label>
                                     <div class="col-sm-6">
