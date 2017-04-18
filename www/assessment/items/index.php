@@ -70,12 +70,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Adaptive Assessment</h2>
+                    <h2 class="panel-title">Accessibility</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
+                    <p>Showcases the Accessibility panel that allows students to configure accessibility options during an assessment.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_adaptive.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_accessibility.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -113,10 +113,38 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <h2 class="panel-title">Activities</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Shows examples of loading assessments using activities authored in the Learnosity item bank.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_activities.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Adaptive Assessment</h2>
+                </div>
+                <div class="panel-body">
+                    <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_adaptive.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <h2 class="panel-title">Branching Assessment</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A branching assessment that adapts which testlet to show a user based on performance.</p>
+                    <p>A dynamic assessment that adapts which testlet to show a user based on performance.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_branching.php">Demo</a>
                     </p>
@@ -126,12 +154,14 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Accessibility</h2>
+                    <h2 class="panel-title">Item Branching Assessment</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Showcases the Accessibility panel that allows students to configure accessibility options during an assessment.</p>
+                    <p>A simple dynamic assessment that selects the next item or branch based on past performance.
+                        This assessment does not require complex server-side algorithms,
+                        and can be entirely parametrized from the activity definition.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_accessibility.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_itembranching.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -172,12 +202,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Activities</h2>
+                    <h2 class="panel-title">Locking Questions</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows examples of loading assessments using activities authored in the Learnosity item bank.</p>
+                    <p>Shows how to customize the questions Check Answer button logic</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_activities.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_locking_questions.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -185,12 +215,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Locking Questions</h2>
+                    <h2 class="panel-title">Restrict Responses Demo</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows how to customize the questions Check Answer button logic</p>
+                    <p>Shows the ability to restrict the assessment navigation and display a message to the student when is missing question responses.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_locking_questions.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_restrict_responses.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -211,19 +241,8 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Restrict Responses Demo</h2>
-                </div>
-                <div class="panel-body">
-                    <p>Shows the ability to restrict the assessment navigation and display a message to the student when is missing question responses.</p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_restrict_responses.php">Demo</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="row">
     </div>
 
 </div>

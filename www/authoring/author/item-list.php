@@ -46,6 +46,7 @@ $request = array(
                     'show' => true
                 ),
                 'dynamic_content' => false,
+                'duplicate' => false,
                 'shared_passage' => true
             ),
             'widget' => array(
