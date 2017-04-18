@@ -143,9 +143,9 @@ $request = array(
             'id'    => 'open-questions',
             'title' => 'Open Questions',
             'items' => array(
-                'itembranching-demo-open-1',
-                'itembranching-demo-open-2',
-                'itembranching-demo-open-3',
+                'itembranching-demo-open1',
+                'itembranching-demo-open2',
+                'itembranching-demo-open3',
             )
         ),
     ),
