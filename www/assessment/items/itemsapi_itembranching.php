@@ -27,74 +27,74 @@ $request = array(
     'user_id'        => $studentid,
     'assess_inline'  => true,
     'adaptive'       => array(
-        "type"       => "itembranching",
-        "steps"      => array(
+        'type'       => 'itembranching',
+        'steps'      => array(
             array(
-                "id"                => "question-1",
-                "reference"         => "itembranching-demo-algebra-1",
-                /* "organisation_id"   => 2, */
-                /* "pool_id"           => "2017", */
-                "next"              => array(
-                    "correct"             => "question-2",
-                    "incorrect"           => "question-1.1"
+                'id'                => 'question-1',
+                'reference'         => 'itembranching-demo-algebra-1',
+                /* 'organisation_id'   => 2, */
+                /* 'pool_id'           => '2017', */
+                'next'              => array(
+                    'correct'             => 'question-2',
+                    'incorrect'           => 'question-1.1'
                 )
             ),
             array(
-                "id"                => "question-2",
-                "reference"         => "itembranching-demo-calculus-1",
-                "next"              => array(
-                    "type"                => "binary",
-                    "correct"             => "question-3",
-                    "incorrect"           => "question-2.1"
+                'id'                => 'question-2',
+                'reference'         => 'itembranching-demo-calculus-1',
+                'next'              => array(
+                    'type'                => 'binary',
+                    'correct'             => 'question-3',
+                    'incorrect'           => 'question-2.1'
                 )
             ),
             array(
-                "id"                => "question-3",
-                "reference"         => "itembranching-demo-algebra-1-longtext",
-                "organisation_id"   => 2,
-                "pool_id"           => "2017",
-                "next"              => array(
-                    "type"                => "binary",
-                    "correct"             => "decision-1",
-                    "incorrect"           => "question-3.1"
+                'id'                => 'question-3',
+                'reference'         => 'itembranching-demo-algebra-1-longtext',
+                'organisation_id'   => 2,
+                'pool_id'           => '2017',
+                'next'              => array(
+                    'type'                => 'binary',
+                    'correct'             => 'decision-1',
+                    'incorrect'           => 'question-3.1'
                 )
             ),
             array(
-                "id"                => "decision-1",
-                "type"              => "global-score",
-                "percentage"        => 50,
-                ">="                => "open-question-2",
-                "<"                 => "open-question-1",
+                'id'                => 'decision-1',
+                'type'              => 'global-score',
+                'percentage'        => 50,
+                '>='                => 'open-question-2',
+                '<'                 => 'open-question-1',
             ),
             array(
-                "id"                => "open-question-1",
-                "reference"         => "itembranching-demo-open1",
-                "next"              => "open-question-2"
+                'id'                => 'open-question-1',
+                'reference'         => 'itembranching-demo-open1',
+                'next'              => 'open-question-2'
             ),
             array(
-                "id"                => "open-question-2",
-                "reference"         => "itembranching-demo-open2",
-                "next"              => "open-question-3"
+                'id'                => 'open-question-2',
+                'reference'         => 'itembranching-demo-open2',
+                'next'              => 'open-question-3'
             ),
             array(
-                "id"                => "open-question-3",
-                "reference"         => "itembranching-demo-open3",
-                "next"              => null
+                'id'                => 'open-question-3',
+                'reference'         => 'itembranching-demo-open3',
+                'next'              => null
             ),
             array(
-                "id"                => "question-1.1",
-                "reference"         => "itembranching-demo-algebra-1.1",
-                "next"              => "question-2"
+                'id'                => 'question-1.1',
+                'reference'         => 'itembranching-demo-algebra-1.1',
+                'next'              => 'question-2'
             ),
             array(
-                "id"                => "question-2.1",
-                "reference"         => "itembranching-demo-calculus-1-easier",
-                "next"              => "question-3"
+                'id'                => 'question-2.1',
+                'reference'         => 'itembranching-demo-calculus-1-easier',
+                'next'              => 'question-3'
             ),
             array(
-                "id"                => "question-3.1",
-                "reference"         => "itembranching-demo-algebra-1.2",
-                "next"              => "decision-1"
+                'id'                => 'question-3.1',
+                'reference'         => 'itembranching-demo-algebra-1.2',
+                'next'              => 'decision-1'
             )
         )
     ),
@@ -119,7 +119,36 @@ $request = array(
             'onsubmit_redirect_url' => 'itemsapi_adaptive_report.php?session_id=' . $sessionId,
             'onsave_redirect_url'   => 'itemsapi_itembranching.php'
         )
-    )
+    ),
+    'subscores' => array(
+        array(
+            'id'    => 'initial-questions',
+            'title' => 'Initial Questions',
+            'items' => array(
+                'itembranching-demo-algebra-1',
+                'itembranching-demo-calculus-1',
+                'itembranching-demo-algebra-1-longtext',
+            )
+        ),
+        array(
+            'id'    => 'review-questions',
+            'title' => 'Review Questions',
+            'items' => array(
+                'itembranching-demo-algebra-1.1',
+                'itembranching-demo-calculus-1-easier',
+                'itembranching-demo-algebra-1.2',
+            ),
+        ),
+        array(
+            'id'    => 'open-questions',
+            'title' => 'Open Questions',
+            'items' => array(
+                'itembranching-demo-open-1',
+                'itembranching-demo-open-2',
+                'itembranching-demo-open-3',
+            )
+        ),
+    ),
 );
 
 if (isset($_POST['adaptive'])) {
