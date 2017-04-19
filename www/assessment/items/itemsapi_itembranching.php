@@ -30,72 +30,42 @@ $request = array(
         'type'       => 'itembranching',
         'steps'      => array(
             array(
-                'id'                => 'question-1',
+                'id'                => 'item-1',
                 'reference'         => 'itembranching-demo-algebra-1',
                 /* 'organisation_id'   => 2, */
                 /* 'pool_id'           => '2017', */
                 'next'              => array(
-                    'correct'             => 'question-2',
-                    'incorrect'           => 'question-1.1'
+                    'correct'             => 'item-3',
+                    'incorrect'           => 'item-2'
                 )
             ),
             array(
-                'id'                => 'question-2',
+                'id'                => 'item-2',
+                'reference'         => 'itembranching-demo-algebra-1.1',
+                'next'              => 'item-3'
+            ),
+            array(
+                'id'                => 'item-3',
                 'reference'         => 'itembranching-demo-calculus-1',
-                'next'              => array(
-                    'type'                => 'binary',
-                    'correct'             => 'question-3',
-                    'incorrect'           => 'question-2.1'
-                )
-            ),
-            array(
-                'id'                => 'question-3',
-                'reference'         => 'itembranching-demo-algebra-1-longtext',
-                'organisation_id'   => 2,
-                'pool_id'           => '2017',
-                'next'              => array(
-                    'type'                => 'binary',
-                    'correct'             => 'decision-1',
-                    'incorrect'           => 'question-3.1'
-                )
+                'next'              => 'decision-1',
             ),
             array(
                 'id'                => 'decision-1',
                 'type'              => 'global-score',
                 'percentage'        => 50,
-                '>='                => 'open-question-2',
-                '<'                 => 'open-question-1',
+                '>='                => 'item-5',
+                '<'                 => 'item-4',
             ),
             array(
-                'id'                => 'open-question-1',
+                'id'                => 'item-4',
                 'reference'         => 'itembranching-demo-open1',
-                'next'              => 'open-question-2'
+                'next'              => 'item-5'
             ),
             array(
-                'id'                => 'open-question-2',
+                'id'                => 'item-5',
                 'reference'         => 'itembranching-demo-open2',
-                'next'              => 'open-question-3'
-            ),
-            array(
-                'id'                => 'open-question-3',
-                'reference'         => 'itembranching-demo-open3',
                 'next'              => null
             ),
-            array(
-                'id'                => 'question-1.1',
-                'reference'         => 'itembranching-demo-algebra-1.1',
-                'next'              => 'question-2'
-            ),
-            array(
-                'id'                => 'question-2.1',
-                'reference'         => 'itembranching-demo-calculus-1-easier',
-                'next'              => 'question-3'
-            ),
-            array(
-                'id'                => 'question-3.1',
-                'reference'         => 'itembranching-demo-algebra-1.2',
-                'next'              => 'decision-1'
-            )
         )
     ),
     'config' => array(
@@ -127,7 +97,6 @@ $request = array(
             'items' => array(
                 'itembranching-demo-algebra-1',
                 'itembranching-demo-calculus-1',
-                'itembranching-demo-algebra-1-longtext',
             )
         ),
         array(
@@ -135,8 +104,6 @@ $request = array(
             'title' => 'Review Questions',
             'items' => array(
                 'itembranching-demo-algebra-1.1',
-                'itembranching-demo-calculus-1-easier',
-                'itembranching-demo-algebra-1.2',
             ),
         ),
         array(
@@ -145,7 +112,6 @@ $request = array(
             'items' => array(
                 'itembranching-demo-open1',
                 'itembranching-demo-open2',
-                'itembranching-demo-open3',
             )
         ),
     ),
