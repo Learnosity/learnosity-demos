@@ -126,12 +126,13 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Adaptive Assessment</h2>
+                    <h2 class="panel-title">Item Branching Assessment</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
+                    <p>A simple dynamic assessment that selects the next item or branch based on past performance,
+                       according to a pre-defined configuration.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_adaptive.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_itembranching.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -141,12 +142,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Branching Assessment</h2>
+                    <h2 class="panel-title">Item Adaptive Assessment</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A dynamic assessment that adapts which testlet to show a user based on performance.</p>
+                    <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_branching.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_itemadaptive.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -154,14 +155,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Item Branching Assessment</h2>
+                    <h2 class="panel-title">Testlet Adaptive Assessment</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A simple dynamic assessment that selects the next item or branch based on past performance.
-                        This assessment does not require complex server-side algorithms,
-                        and can be entirely parametrized from the activity definition.</p>
+                    <p>A dynamic assessment that adapts to the user's ability, choosing which testlet to go through next.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_itembranching.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_testletadaptive.php">Demo</a>
                     </p>
                 </div>
             </div>

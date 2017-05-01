@@ -58,7 +58,7 @@
             <div class="nav-sec-wrapper">
                 <ul class="nav navbar-nav nav-sec">
                     <li>
-                        <a href="https://github.com/Learnosity/learnosity-demos" class="text-muted">
+                        <a href="https://github.com/Learnosity/learnosity-demos/blob/master/www<?php echo $_SERVER['REQUEST_URI']?>" class="text-muted">
                             <span class="glyphicon glyphicon-file"></span> <span class="nav-source-text">View source</span>
                         </a>
                     </li>

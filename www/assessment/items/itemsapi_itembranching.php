@@ -20,7 +20,7 @@ if (isset($_GET['session_id'])) {
 
 $request = array(
     'activity_id'    => 'itembranchingadaptivedemo',
-    'name'           => 'Items API demo - Item Branching Assessment',
+    'name'           => 'Items API - Item Branching dynamic activity',
     'rendering_type' => 'assess',
     'state'          => $state,
     'session_id'     => $sessionId,
@@ -146,12 +146,11 @@ $signedRequest = $Init->generate();
     <div class="pull-right toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/assessment/items/knowledgebase/adaptiveassessment#branching" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/assessment/items/knowledgebase/adaptiveassessment#itembranching" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
-    <h1>Items API - Item Branching Assessment</h1>
-    <p>A dynamic assessment that presents different selected items depending on the performance so far.
-    <a href="<?php print(($_SERVER['PHP_SELF']). '?session_id=' . $sessionId); ?>">Resume the session here</a>.<p>
+    <h1>Items API &mdash; Item Branching Assessment</h1>
+    <p>A simple dynamic assessment that selects the next item or branch based on past performance, according to a pre-defined configuration.<p>
 </div>
 
 <div class="section">
