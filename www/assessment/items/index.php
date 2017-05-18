@@ -173,7 +173,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Sections</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Sections are a way to split up a single activity into discreet buckets of items, with
+                    <p>Sections are a way to split up a single activity into discrete buckets of items, with
                     the ability to have different activity configuration per section.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_sections.php">Demo</a>
