@@ -19,9 +19,35 @@ $request = array(
     'type'           => 'submit_practice',
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
-    'items'          => array('Demo3', 'Demo4', 'accessibility_demo_6', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10', 'audioplayer-demo-1'),
+    'items'          => array(
+        'Demo3',
+        'Demo4',
+        'accessibility_demo_6',
+        'Demo6',
+        'Demo7',
+        'Demo8',
+        'Demo9',
+        'Demo10',
+        'audioplayer-demo-1'
+    ),
     'assess_inline'  => true,
     'config'         => array(
+        'metadata' => [
+            'items' => [
+                [
+                    'reference' => 'Demo3',
+                    'display_name' => 'Question 3'
+                ],
+                [
+                    'reference' => 'Demo4',
+                    'display_name' => 'Question 4'
+                ],
+                [
+                    'reference' => 'Demo6',
+                    'display_name' => 'Question 6'
+                ]
+            ]
+        ],
         'ignore_question_attributes' => array(''), // validation
         'title'                      => 'Demo activity - showcasing question types and assess options',
         'subtitle'                   => 'Walter White',
@@ -84,6 +110,7 @@ $request = array(
         ),
         'ui_style'            => 'main',
         'configuration'       => array(
+            'shuffle_items'          => false,
             'lazyload'               => false,
             'fontsize'               => 'normal',
             'stylesheet'             => '',
