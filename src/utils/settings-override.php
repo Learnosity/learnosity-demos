@@ -54,6 +54,9 @@ if (isset($filter_post['api_type'])) {
             if (isset($requestKey['item_list']['limit'])) {
                 $requestKey['item_list']['limit'] = intval($requestKey['item_list']['limit']);
             }
+            if (isset($requestKey['activity_list']['limit'])) {
+                $requestKey['activity_list']['limit'] = intval($requestKey['activity_list']['limit']);
+            }
             break;
         case 'items':
             if (array_key_exists('config', $request)) {

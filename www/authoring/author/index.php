@@ -20,6 +20,35 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <h2 class="panel-title">Activity List</h2>
+                </div>
+                <div class="panel-body">
+                    <p>The activity list mode allows authors to search the Learnosity hosted activities. From there it can be configured to allows users to edit activities.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./activity-list.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Activity Edit</h2>
+                </div>
+                <div class="panel-body">
+                    <p>The activity edit mode enables professional authors (as well as teachers) to create and edit activities to your Learnosity hosted item bank.<p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./activity-edit.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <h2 class="panel-title">Item List</h2>
                 </div>
                 <div class="panel-body">
@@ -89,7 +118,6 @@ include_once 'includes/header.php';
             </div>
         </div>
         <div class="col-md-6">
-
         </div>
     </div>
 </div>
