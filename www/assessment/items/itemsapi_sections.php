@@ -96,8 +96,6 @@ $request = array(
         ),
         'ui_style'            => 'main',
         'ignore_validation'   => false,
-        'questionsApiVersion' => 'v2',
-        'assessApiVersion'    => 'v2',
         'configuration'       => array(
             'fontsize'               => 'normal',
             'stylesheet'             => '',
@@ -130,7 +128,7 @@ $signedRequest = $Init->generate();
     </div>
     <div class="overview">
         <h1>Items API – Sections</h1>
-        <p>Sections are a way to split up a single activity into discreet buckets of items, with
+        <p>Sections are a way to split up a single activity into discrete buckets of items, with
         the ability to have different activity configuration per section.</p>
         <p>Once students progress to a new <em>section</em>, they cannot navigate back.</p>
     </div>

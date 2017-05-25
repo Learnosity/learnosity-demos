@@ -63,8 +63,8 @@ $request = array(
             'show_pause'   => true,
             'show_time'    => true
         ),
-        'questionsApiVersion' => 'v2',
-        'assessApiVersion'    => $version_assessapi,
+        'questionsApiVersion' => 'latest',
+        'assessApiVersion'    => 'latest',
         'configuration'       => array(
             'ondiscard_redirect_url' => $_SERVER['REQUEST_URI'],
             'onsubmit_redirect_url'  => $_SERVER['REQUEST_URI'],
