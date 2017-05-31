@@ -6,13 +6,23 @@
 ********************************************************************
 -->
 <?php
+function getConfigFromRequest($config, $key) {
+    $emptyObject = new stdclass;
+    if (!empty($config[$key])) {
+        return $config[$key];
+    }
+    return (array)$emptyObject;
+}
+
     // Shortcuts for convenience
     $con                 = $request['config'];
-    $list                = $request['config']['item_list'];
-    $item_edit           = $request['config']['item_edit'];
-    $widget_templates    = $request['config']['widget_templates'];
-    $question_editor_api = $request['config']['dependencies']['question_editor_api'];
     $mode                = $request['mode'];
+    $list                = getConfigFromRequest($con, 'item_list');
+    $activity_list       = getConfigFromRequest($con, 'activity_list');
+    $item_edit           = getConfigFromRequest($con, 'item_edit');
+    $activity_edit       = getConfigFromRequest($con, 'activity_edit');
+    $widget_templates    = getConfigFromRequest($con, 'widget_templates');
+    $question_editor_api = getConfigFromRequest($con, 'dependencies')['question_editor_api'];
 
     $service         = 'Author API';
     $serviceShortcut = 'author';
@@ -28,6 +38,109 @@
             <div class="modal-body">
                 <form class="form-horizontal" role="form" id="frmSettings" method="post">
                     <input type="hidden" name="api_type" value="<?php echo $serviceShortcut ?>">
+
+                    <?php if ($mode === 'activity_list') { ?>
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><h3>Activity List</h3></div>
+                        <div class="panel-body">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="show_intro" class="col-sm-6 control-label">Show activity status</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_list[status]" value="true"<?php if (isset($activity_list['status']) && $activity_list['status'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="activity_list[status]" value="false"<?php if (isset($activity_list['status']) && $activity_list['status'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Show <em>CREATE</em> button</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_list[toolbar][add]" value="true"<?php if (isset($activity_list['toolbar']['add']) && $activity_list['toolbar']['add'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="activity_list[toolbar][add]" value="false"<?php if (isset($activity_list['toolbar']['add']) && $activity_list['toolbar']['add'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Show <em>SEARCH</em> button</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_list[toolbar][search]" value="true"<?php if (isset($activity_list['toolbar']['add']) && $activity_list['toolbar']['add'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="activity_list[toolbar][search]" value="false"<?php if (isset($activity_list['toolbar']['add']) && $activity_list['toolbar']['add'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="show_intro" class="col-sm-6 control-label">Number of activities per page (max 50)</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" name="activity_list[limit]" value="<?php if (isset($activity_list['limit'])) { echo $activity_list['limit']; }; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><h3>Activity Edit</h3></div>
+                        <div class="panel-body">
+                            <div class="col-lg-6">
+                                <?php if ($mode === 'activity_list') { ?>
+                                <div class="form-group">
+                                    <label for="show_intro" class="col-sm-6 control-label">Show <em>Back</em> button</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_edit[back]" value="true"<?php if (isset($activity_edit['back']) && $activity_edit['back'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="activity_edit[back]" value="false"<?php if (isset($activity_edit['back']) && $activity_edit['back'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Show <em>Save</em> button</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_edit[save][show]" value="true"<?php if (isset($activity_edit['save']['show']) && $activity_edit['save']['show'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="activity_edit[save][show]" value="false"<?php if (isset($activity_edit['save']['show']) && $activity_edit['save']['show'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Show <em>Source</em> button</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_edit[source]" value="true"<?php if (isset($activity_edit['source']) && $activity_edit['source'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="activity_edit[source]" value="false"<?php if (isset($activity_edit['source']) && $activity_edit['source'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Show activity reference</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_edit[reference][show]" value="true"<?php if (isset($activity_edit['reference']['show']) && $activity_edit['reference']['show'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="activity_edit[reference][show]" value="false"<?php if (isset($activity_edit['reference']['show']) && $activity_edit['reference']['show'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Edit activity reference</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_edit[reference][edit]" value="true"<?php if (isset($activity_edit['reference']['edit']) && $activity_edit['reference']['edit'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="activity_edit[reference][edit]" value="false"<?php if (isset($activity_edit['reference']['edit']) && $activity_edit['reference']['edit'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Default activity mode</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_edit[mode][default]" value="edit"<?php if (isset($activity_edit['mode']['default']) && $activity_edit['mode']['default'] == 'edit') { echo ' checked'; }; ?>> Edit &nbsp;
+                                        <input type="radio" name="activity_edit[mode][default]" value="preview"<?php if (isset($activity_edit['mode']['default']) && $activity_edit['mode']['default'] == 'preview') { echo ' checked'; }; ?>> Preview
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Show toggle activity mode</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="activity_edit[mode][show]" value="true"<?php if (isset($activity_edit['mode']['show']) && $activity_edit['mode']['show'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="activity_edit[mode][show]" value="false"<?php if (isset($activity_edit['mode']['show']) && $activity_edit['mode']['show'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <?php if ($mode === 'item_list') { ?>
                     <div class="panel panel-info">
