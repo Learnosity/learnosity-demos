@@ -16,7 +16,7 @@ include_once 'includes/header.php';
         It leverages the <a href="../questions/index.php">Questions API</a> and the
         <a href="../assess/index.php">Assess API</a> as appropriate.</p>
         <p>The Items API also supports both items and testlet
-        <a href="http://docs.learnosity.com/itemsapi/knowledgebase/adaptiveassessment.php" target="_blank">
+        <a href="https://docs.learnosity.com/assessment/items/knowledgebase/adaptiveassessment" target="_blank">
         adaptive assessments</a>.
         </p>
     </div>
