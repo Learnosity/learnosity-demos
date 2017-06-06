@@ -22,7 +22,7 @@ function numberConverter(&$object)
         if (is_array($value)) {
             $object[$key] = numberConverter($value);
         } elseif (is_numeric($value)) {
-            $object[$key] = (float) $value;
+            $object[$key] = (float)$value;
         }
     }
     return $object;
@@ -60,12 +60,36 @@ if (isset($filter_post['api_type'])) {
             break;
         case 'items':
             if (array_key_exists('config', $request)) {
+//                $map = array();
+//                foreach ($filter_post['regionsSetting'] as $key => $value) {
+//                    if (!array_key_exists($value, $map)) {
+//                        $map[$value] = array();
+//                    }
+//                    $content = array();
+//                    $content['type'] = str_replace("'", "", $key);
+//                    $content['position'] = $filter_post['regions_position'][$key];
+//                    array_push($map[$value], $content);//push everything for now, reorder later
+//
+//                }
+//                unset($filter_post['regionsSetting']);
+//                unset($request['config']['regions']);
+//                var_dump($filter_post['regionsSetting']);
+//                var_dump(json_decode(html_entity_decode($filter_post['regionsSetting'])));
+                $regionTemp = json_decode(html_entity_decode($filter_post['regionsSetting']));
+//                var_dump($regionTemp);
+                unset($filter_post['regionsSetting']);
+                unset($filter_post['regionsPresetsSelector']);
+                unset($request['config']['regions']);
                 $request['config'] = array_replace_recursive($request['config'], $filter_post);
+//                $request['config']['regions'] = $map;
+                $request['config']['regions'] = $regionTemp;
+//                var_dump($request['config']['regions']);
                 $requestKey = &$request['config'];
             } else {
                 $request = array_replace_recursive($request, $filter_post);
                 $requestKey = &$request;
             }
+
             break;
         case 'questioneditor':
             $request = array_replace_recursive($request, $filter_post);
@@ -147,7 +171,7 @@ if (isset($filter_post['api_type'])) {
                     unset($request['widget_json']);
                 } else {
                     $request['question_type'] = $filter_post['question_type'];
-                    switch($filter_post['question_type']) {
+                    switch ($filter_post['question_type']) {
                         case 'association':
                             $request['widget_json'] = $questionJsonAssociation;
                             break;
@@ -181,6 +205,7 @@ if (isset($filter_post['api_type'])) {
             unset($request['api_type']);
             unset($request['regionSelector']);
             $requestKey = $request;
+            echo "<p>regions: " . json_encode($requestKey) . "</p>";//checker
             break;
         default:
             # do nothing
@@ -209,4 +234,5 @@ if (isset($filter_post['api_type'])) {
     if (!$requestKey['configuration']['api_type']) {
         unset($requestKey['api_type']);
     }
+
 }

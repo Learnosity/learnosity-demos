@@ -1,0 +1,219 @@
+.regions-row {
+    clear: both;
+}
+.searchboxTopLeft {
+    display: flex;
+    float: right;
+    margin-right: 25px;
+}
+
+#topLeftElementAdder {
+    float: right;
+    width: 150px;
+     
+}
+
+.top-left {
+    display: flex;
+}
+
+.regionContainer {
+    display: block;
+    margin: 0px 10px 0px 10px;
+    /*overflow-x: auto;*/
+    /*overflow-y: visible;*/
+    /*width: 1200px;*/
+    height: auto;
+}
+
+.searchboxTopRight {
+    display: flex;
+    float: right;
+    margin-right: 25px;
+}
+
+#topRightElementAdder {
+    float: right;
+    width: 150px;
+     
+}
+
+.top-right {
+    display: flex;
+}
+
+.searchboxRight {
+    display: flex;
+    float: right;
+    margin-right: 25px;
+}
+
+#rightElementAdder {
+    float: right;
+    width: 150px;
+}
+
+.right {
+    display: flex;
+
+}
+
+
+.searchboxBottomLeft {
+    display: flex;
+    float: right;
+    margin-right: 25px;
+}
+
+#bottomLeftElementAdder {
+    float: right;
+    width: 150px;
+     
+}
+
+.bottom-left {
+    display: flex;
+
+}
+
+.searchboxBottomRight {
+    display: flex;
+    float: right;
+    margin-right: 25px;
+}
+
+#bottomRightElementAdder {
+    float: right;
+    width: 150px;
+     
+}
+
+.bottom-right {
+    display: flex;
+
+}
+
+
+.searchboxBottom {
+    display: flex;
+    float: right;
+    margin-right: 25px;
+}
+
+#bottomElementAdder {
+    float: right;
+    width: 150px;
+     
+}
+
+.bottom {
+    display: flex;
+
+}
+
+
+.searchboxItems {
+    display: flex;
+    float: right;
+    margin-right: 25px;
+}
+
+#itemsElementAdder {
+    float: right;
+    width: 150px;
+     
+}
+
+.items {
+    display: flex;
+
+}
+
+/*.elemContainer {*/
+    /*!*display: inline-flex;*!*/
+    /*display: inline-block;*/
+    /*margin: 0px 2px 0px 0px;*/
+    /*min-height: 20px;*/
+/*}*/
+/*.elemContainer h4{*/
+    /*margin: 0;*/
+    /*min-width: 40px;*/
+/*}*/
+
+/*.remove {*/
+    /*height: 20px;*/
+    /*padding: 0px 2px 0px 2px;*/
+    /*box-shadow: none !important;*/
+/*}*/
+
+.regionLabel {
+    margin: 0px 0px 0px 25px;
+    vertical-align: bottom;
+    min-width: 100px;
+}
+
+/*.elemLabel {*/
+    /*min-height: 20px;*/
+/*}*/
+
+/*.removeButtonWrapper {*/
+    /*display: table-cell;*/
+    /*!*vertical-align: middle;*!*/
+/*}*/
+
+.presetsLabel {
+    margin: 0px 0px 0px 25px;
+    min-width: 100px;
+}
+
+.presetsWrapper {
+    display: flex;
+    height: 45px;
+    float: right;
+    margin-top: 20px;
+
+}
+
+.presetsSelector {
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+}
+
+#regionsPresetsSelector {
+    width: 150px;
+}
+
+.elem-container {
+    display: inline-block;
+    color: #fff;
+    background-color: #1877b1;
+    padding: 0;
+    font-size: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.elem-label {
+    float: left;
+    padding: 5px 5px 5px 5px;
+}
+.close-btn-container {
+    float: right;
+
+}
+.close-btn {
+    vertical-align: top;
+    color: #fff;
+    background-color: #1877b1;
+    border: 0;
+    padding: 0px 3px;
+    margin-right: 2px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.close-btn:hover {
+    cursor: pointer;
+}
