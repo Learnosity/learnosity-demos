@@ -13,7 +13,7 @@ include_once 'includes/header.php';
         </ul>
     </div>
     <div class="overview">
-        <h1>Question Editor API - Simpley Layouts</h1>
+        <h1>Question Editor API - Simple Layouts</h1>
     </div>
 </div>
 
