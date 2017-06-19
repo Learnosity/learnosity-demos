@@ -82,7 +82,7 @@ include_once 'includes/header.php';
                 </div>
             </div>
             <div class="col-md-6">
-            <div class="panel panel-default">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h2 class="panel-title">WysiHTML Editor</h2>
                     </div>
@@ -90,6 +90,19 @@ include_once 'includes/header.php';
                         <p>Try our WysiHTML editor - smaller, lighter, and soon to replace the current editor. Also provides new functionality like inline Audio in questions.</p>
                         <p class="text-right">
                             <a class="btn btn-primary btn-md" href="./wysihtml.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Simple Layouts</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Simple layouts for question types.</p>
+                        <p class="text-right">
+                            <a class="btn btn-primary btn-md" href="./simple.php">Demo</a>
                         </p>
                     </div>
                 </div>
