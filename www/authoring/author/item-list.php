@@ -22,7 +22,34 @@ $request = array(
                 'status' => false
             ),
             'toolbar' => array(
-                'add' => true
+                'add' => true,
+                'browse' => array(
+                    'controls' => [
+                        array(
+                            'type' => 'hierarchy',
+                            'hierarchies' => [
+                                array(
+                                    'reference' => 'Standards'
+                                )
+                            ]
+                        ),
+                        array(
+                            'type' => 'separator'
+                        ),
+                        array(
+                            'type' => 'tag',
+                            'tag' => array(
+                                'type' => 'Depth of Knowledge'
+                            )
+                        ),
+                        array(
+                            'type' => 'tag',
+                            'tag' => array(
+                                'type' => 'Blooms Taxonomy'
+                            )
+                        )
+                    ]
+                )
             ),
             'filter' => array(
                 'restricted' => array(
