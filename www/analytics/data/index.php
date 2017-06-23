@@ -161,41 +161,6 @@ $version = $version_dataapi;
                 </div>
             </div>
 
-            <!-- Interactive demo for the 'QTI' section -->
-            <h2>QTI</h2>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#fromqti">
-                            <span class="block">action: get</span>
-                            <?php echo '/' . $version . '/itembank/conversion/fromqti'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
-                        </a>
-                    </h4>
-                </div>
-                <div id="fromqti" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <?php include_once 'qti/fromqti.php'; ?>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#toqti">
-                            <span class="block">action: get</span>
-                            <?php echo '/' . $version . '/itembank/conversion/toqti'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
-                        </a>
-                    </h4>
-                </div>
-                <div id="toqti" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <?php include_once 'qti/toqti.php'; ?>
-                    </div>
-                </div>
-            </div>
-
             <!-- Interactives demos for the 'sessions' section -->
             <h2>Sessions</h2>
             <div class="panel panel-default">

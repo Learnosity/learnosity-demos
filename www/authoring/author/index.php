@@ -93,13 +93,13 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Item Edit – Events</h2>
+                    <h2 class="panel-title">Item List – Simple authoring</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A demonstration of event binding with the <a href="http://docs.learnosity.com/authoring/author/publicmethods#on-events">'on' public method</a>.</p>
-                    <p>You can prevent the default save event (back to Learnosity) to add custom workflow.</p>
+                    <p>The simple authoring mode is an opinionated subset of the full authoring templates
+                        and layouts available by default.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./events.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./item-list-simple.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -118,6 +118,18 @@ include_once 'includes/header.php';
             </div>
         </div>
         <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Item Edit – Events</h2>
+                </div>
+                <div class="panel-body">
+                    <p>A demonstration of event binding with the <a href="http://docs.learnosity.com/authoring/author/publicmethods#on-events">'on' public method</a>.</p>
+                    <p>You can prevent the default save event (back to Learnosity) to add custom workflow.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./events.php">Demo</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
