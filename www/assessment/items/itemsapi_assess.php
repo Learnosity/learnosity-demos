@@ -36,15 +36,15 @@ $request = array(
             'items' => [
                 [
                     'reference' => 'Demo3',
-                    'display_name' => 'Question 3'
+                    'display_name' => 'Question 1'
                 ],
                 [
                     'reference' => 'Demo4',
-                    'display_name' => 'Question 4'
+                    'display_name' => 'Question 2'
                 ],
                 [
                     'reference' => 'Demo6',
-                    'display_name' => 'Question 6'
+                    'display_name' => 'Question 4'
                 ]
             ]
         ],
