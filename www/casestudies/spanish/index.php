@@ -144,7 +144,6 @@ $request = array(
             'zoomInResult' => 'El navegador aumentará el zoom cuando presione la tecla de suma (+).',
             'zoomOutResult' => 'El navegador disminuirá el zoom cuando presione la tecla de restar (-).',
             'collapseMenu' => 'Menú desplegable',
-            'itemCountOf' => 'de',
             'submitActionConfirmation' => 'Está seguro que desea finalizar la actividad?',
             'submitWithUnattemptedQuestion' => '{{unattemptedResponsesCount}} pregunta no tiene respuestas. Está seguro que desea finalizar la actividad?',
             'submitWithUnattemptedQuestions' => '{{unattemptedResponsesCount}} preguntas no tienen respuestas. Está seguro que desea finalizar la actividad?',
