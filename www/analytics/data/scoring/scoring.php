@@ -103,14 +103,14 @@ $resource = 'scoring';
       "0"
     ],
     "type": "array",
-    "apiVersion": "v2.45.1"
+    "apiVersion": "v2.105.2"
   },
   "10001": {
     "value": [
       "3"
     ],
     "type": "array",
-    "apiVersion": "v2.45.1"
+    "apiVersion": "v2.105.2"
   }
 }</textarea>
                 </div>

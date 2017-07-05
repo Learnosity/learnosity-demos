@@ -23,7 +23,6 @@ $request = array(
     'items'          => array('workedsolutions_1', 'workedsolutions_2', 'workedsolutions_3'),
     'type'           => 'submit_practice',
     'config'         => array(
-        'questionsApiVersion' => 'v2',
         'renderSubmitButton'  => false
     )
 );

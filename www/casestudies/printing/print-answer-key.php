@@ -26,8 +26,7 @@ $request = array(
     'config'               => array(
         'showCorrectAnswers'  => true,
         'fontsize'            => 'xlarge',
-        'renderSubmitButton'  => false,
-        'questionsApiVersion' => 'v2'
+        'renderSubmitButton'  => false
     )
 );
 

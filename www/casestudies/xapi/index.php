@@ -77,8 +77,6 @@ $request = array(
         ),
         'ui_style'            => 'main',
         'ignore_validation'   => false,
-        'questionsApiVersion' => 'v2',
-        'assessApiVersion'    => 'v2',
         'configuration'       => array(
             'events'                 => true,
             'fontsize'               => 'normal',

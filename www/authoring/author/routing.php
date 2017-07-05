@@ -60,7 +60,6 @@ $request = array(
         ),
         'dependencies' => array(
             'question_editor_api' => array(
-                'version' => $version_questioneditorapi,
                 'init_options' => array(
                     'rich_text_editor' => array(
                         'type' => 'ckeditor'

@@ -111,9 +111,6 @@ include_once 'includes/header.php';
     </div>
 <script>
     var initOptions = {
-            configuration: {
-                questionsApiVersion: 'v2'
-            },
             widgetType: 'response',
             ui: {
                 layout: {

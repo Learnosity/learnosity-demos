@@ -75,7 +75,6 @@ $request = array(
         'time' => array(
             'max_time' => 1800
         ),
-        'assessApiVersion'    => "latest",
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_adaptive_report.php?session_id=' . $sessionId,
             'onsave_redirect_url'   => 'itemsapi_testletadaptive.php'

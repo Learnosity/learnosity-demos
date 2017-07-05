@@ -35,11 +35,6 @@ $request = array(
                 'advanced_group'     => false,
                 'search_field'       => false
             )
-        ),
-        'dependencies' => array(
-            'question_editor_api' => array(
-                'version' => 'v3'
-            )
         )
     ),
     'user' => array(
