@@ -99,6 +99,7 @@ $request = array(
             'testPaused' => 'Actividad detenida',
             'tryAgain' => 'Vuelva a intentar',
             'idleSaveError' => 'Se produjo un error al guardar la actividad.',
+            'errorOccurredWhile' => 'Se ha producido un error',
             'submitFailed' => 'Su actividad no pudo ser guardada, posiblemente debido a un error de red.',
             'submitWarningMsg' => 'Su actividad ha sido guardada y enviada por un administrador y finalizará en ',
             'submitFailedWithOnlyAccessRawDataOption' => 'Tiene la opción de intentar de nuevo o acceder a una copia de su actividad y enviársela a un administrador.',
