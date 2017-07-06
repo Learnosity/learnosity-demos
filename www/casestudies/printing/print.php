@@ -25,8 +25,7 @@ $request = array(
     'items'                => $items,
     'config'               => array(
         'fontsize'            => 'xlarge',
-        'renderSubmitButton'  => false,
-        'questionsApiVersion' => 'v2'
+        'renderSubmitButton'  => false
     )
 );
 

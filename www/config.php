@@ -86,15 +86,15 @@ $curl_ssl_verify = true;
 |
 */
 
-$url_assess                = '//assess-va.learnosity.com';
-$url_authorapi             = '//authorapi.learnosity.com?v1';
+$url_assess                = 'https://assess-va.learnosity.com';
+$url_authorapi             = 'https://authorapi.learnosity.com?v1';
 $url_data                  = 'https://data-va.learnosity.com';
-$url_events                = '//events-va.learnosity.com';
-$url_items                 = '//items-va.learnosity.com';
-$url_questioneditor        = '//questioneditor.learnosity.com?v2';
-$url_questioneditor_v3     = '//questioneditor.learnosity.com?v3';
-$url_questions             = '//questions-va.learnosity.com';
-$url_reports               = '//reports-va.learnosity.com';
+$url_events                = 'https://events-va.learnosity.com';
+$url_items                 = 'https://items-va.learnosity.com';
+$url_questioneditor        = 'https://questioneditor.learnosity.com?v2';
+$url_questioneditor_v3     = 'https://questioneditor.learnosity.com?v3';
+$url_questions             = 'https://questions-va.learnosity.com';
+$url_reports               = 'https://reports-va.learnosity.com';
 $version_assessapi         = 'v2';
 $version_dataapi           = 'v1';
 $version_questionsapi      = 'v2';

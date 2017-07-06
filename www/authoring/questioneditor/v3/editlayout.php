@@ -309,9 +309,6 @@ include_once 'includes/header.php';
                 }
             },
             initOptions = {
-                configuration: {
-                    questionsApiVersion: 'v2'
-                },
                 widgetType: 'response',
                 widget_json: widget_json,
                 ui: {

@@ -39,11 +39,6 @@ $request = [
             'status' => true,
             'limit' => 10,
         ],
-        'dependencies' => [
-            'question_editor_api' => [
-                'version' => 'v3',
-            ]
-        ]
     ],
     'user' => [
         'id'        => 'demos-site',

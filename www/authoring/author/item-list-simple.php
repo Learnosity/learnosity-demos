@@ -91,7 +91,6 @@ $request = array(
         ),
         'dependencies' => array(
             'question_editor_api' => array(
-                'version' => 'v3',
                 'init_options' => array(
                     'rich_text_editor' => array(
                         'type' => 'wysihtml'
