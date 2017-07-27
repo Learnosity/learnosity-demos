@@ -34,9 +34,7 @@ include_once 'includes/header.php';
 <script src="<?php echo $url_questioneditor_v3; ?>"></script>
 <script>
 var initOptions = {
-  "configuration": {
-     "questionsApiVersion": "2"
-  },
+  "configuration": {},
   "template_defaults": false,
   "question_type_groups": [
     {
