@@ -53,20 +53,6 @@ include_once 'includes/header.php';
             </div>
         </div>
         <div class="row">
-            <!--        <div class="col-md-6">-->
-            <!--            <div class="panel panel-default">-->
-            <!--                <div class="panel-heading">-->
-            <!--                    <h2 class="panel-title">Regions</h2>-->
-            <!--                </div>-->
-            <!--                <div class="panel-body">-->
-            <!--                    <p>Regions are a part of the Assess API configuration that allow you to create a personalized,-->
-            <!--                    fluid and extensible assessment UI.</p>-->
-            <!--                    <p class="text-right">-->
-            <!--                        <a class="btn btn-primary btn-md" href="./regions.php">Demo</a>-->
-            <!--                    </p>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--        </div>-->
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">

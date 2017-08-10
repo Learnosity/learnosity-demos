@@ -10,6 +10,31 @@
                     <input type="hidden" name="api_type" value="<?php echo $serviceShortcut ?>">
                     <input type="hidden" id="regionsSetting" name="regionsSetting" value="">
                     <div class="panel panel-info">
+                        <div class="panel-heading"><h3>Title</h3></div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="title" class="col-sm-2 control-label">Activity Title</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="title" id="title"
+                                           placeholder="Override the default activity name"
+                                           value="<?php if (isset($con['title'])) {
+                                               echo $con['title'];
+                                           }; ?>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subtitle" class="col-sm-2 control-label">Activity Subtitle</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="subtitle" id="subtitle"
+                                           placeholder="Subtitle of the activity"
+                                           value="<?php if (isset($con['subtitle'])) {
+                                               echo $con['subtitle'];
+                                           }; ?>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <div class="presetsWrapper">
                                 <div class="presetsLabel">
@@ -30,114 +55,8 @@
                             </div>
                             <h3>Region Settings</h3></div>
                         <div class="panel-body">
-
-                                <div class="form-group">
-
-                                    <?php include 'regions-settings.php'?>
-<!--                                    --><?php //include 'table.php'; ?>
-<!--                                    --><?php //include 'region-settings-content.php';?>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><h3>Navigation/Control Settings</h3></div>
-                        <div class="panel-body">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="show_intro" class="col-sm-6 control-label">Intro Item</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="navigation[show_intro]"
-                                               value="true"<?php if (isset($nav['show_intro']) && $nav['show_intro'] === true) {
-                                            echo ' checked';
-                                        }; ?>> Enable &nbsp;
-                                        <input type="radio" name="navigation[show_intro]"
-                                               value="false"<?php if (isset($nav['show_intro']) && $nav['show_intro'] === false) {
-                                            echo ' checked';
-                                        }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="show_outro" class="col-sm-6 control-label">Outro Item</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="navigation[show_outro]"
-                                               value="true"<?php if (isset($nav['show_outro']) && $nav['show_outro'] === true) {
-                                            echo ' checked';
-                                        }; ?>> Enable &nbsp;
-                                        <input type="radio" name="navigation[show_outro]"
-                                               value="false"<?php if (isset($nav['show_outro']) && $nav['show_outro'] === false) {
-                                            echo ' checked';
-                                        }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="submit_criteria" class="col-sm-6 control-label">Submit Criteria</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="configuration[submit_criteria][use_submit_criteria]"
-                                               value="true"<?php if (isset($con['configuration']['submit_criteria']) && $con['configuration']['submit_criteria'] !== false) {
-                                            echo ' checked';
-                                        }; ?>> Enable &nbsp;
-                                        <input type="radio" name="configuration[submit_criteria][use_submit_criteria]"
-                                               value="false"<?php if (isset($con['configuration']['submit_criteria']) === false || $con['configuration']['submit_criteria'] === false) {
-                                            echo ' checked';
-                                        }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="type" class="col-sm-6 control-label">Submit Criteria Type</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="configuration[submit_criteria][type]"
-                                               value="attempted"<?php if (isset($con['configuration']['submit_criteria']['type']) && $con['configuration']['submit_criteria']['type'] === 'attempted') {
-                                            echo ' checked';
-                                        }; ?>> Attempted &nbsp;
-                                        <input type="radio" name="configuration[submit_criteria][type]"
-                                               value="valid"<?php if (isset($con['configuration']['submit_criteria']['type']) && $con['configuration']['submit_criteria']['type'] === 'valid') {
-                                            echo ' checked';
-                                        }; ?>> Valid
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="threshold" class="col-sm-6 control-label">Submit Criteria
-                                        Threshold</label>
-                                    <div class="col-sm-3">
-                                        <input type="number" min="0" max="100" step="10" class="form-control"
-                                               name="configuration[submit_criteria][threshold]"
-                                               value="<?php if (isset($con['configuration']['submit_criteria']['threshold'])) {
-                                                   echo $con['configuration']['submit_criteria']['threshold'];
-                                               } else {
-                                                   echo '0';
-                                               } ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="warning_on_change" class="col-sm-6 control-label">Warning if question(s)
-                                        not attempted</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="navigation[warning_on_change]"
-                                               value="true"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === true) {
-                                            echo ' checked';
-                                        }; ?>> Enable &nbsp;
-                                        <input type="radio" name="navigation[warning_on_change]"
-                                               value="false"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === false) {
-                                            echo ' checked';
-                                        }; ?>> Disable
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="skip_submit_confirmation" class="col-sm-6 control-label">Skip
-                                        confirmation window on submit</label>
-                                    <div class="col-sm-6">
-                                        <input type="radio" name="navigation[skip_submit_confirmation]"
-                                               value="true"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === true) {
-                                            echo ' checked';
-                                        }; ?>> Enable &nbsp;
-                                        <input type="radio" name="navigation[skip_submit_confirmation]"
-                                               value="false"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === false) {
-                                            echo ' checked';
-                                        }; ?>> Disable
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <?php include 'regions-settings.php' ?>
                             </div>
                         </div>
                     </div>
@@ -348,31 +267,107 @@
                         </div>
                     </div>
                     <div class="panel panel-info">
-                        <div class="panel-heading"><h3>Title Settings</h3></div>
+                        <div class="panel-heading"><h3>Other Settings</h3></div>
                         <div class="panel-body">
-                            <div class="form-group">
-                                <label for="title" class="col-sm-2 control-label">Activity Title</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="title" id="title"
-                                           placeholder="Override the default activity name"
-                                           value="<?php if (isset($con['title'])) {
-                                               echo $con['title'];
-                                           }; ?>">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="show_intro" class="col-sm-6 control-label">Intro Item</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_intro]"
+                                               value="true"<?php if (isset($nav['show_intro']) && $nav['show_intro'] === true) {
+                                            echo ' checked';
+                                        }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[show_intro]"
+                                               value="false"<?php if (isset($nav['show_intro']) && $nav['show_intro'] === false) {
+                                            echo ' checked';
+                                        }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_outro" class="col-sm-6 control-label">Outro Item</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[show_outro]"
+                                               value="true"<?php if (isset($nav['show_outro']) && $nav['show_outro'] === true) {
+                                            echo ' checked';
+                                        }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[show_outro]"
+                                               value="false"<?php if (isset($nav['show_outro']) && $nav['show_outro'] === false) {
+                                            echo ' checked';
+                                        }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="submit_criteria" class="col-sm-6 control-label">Submit Criteria</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="configuration[submit_criteria][use_submit_criteria]"
+                                               value="true"<?php if (isset($con['configuration']['submit_criteria']) && $con['configuration']['submit_criteria'] !== false) {
+                                            echo ' checked';
+                                        }; ?>> Enable &nbsp;
+                                        <input type="radio" name="configuration[submit_criteria][use_submit_criteria]"
+                                               value="false"<?php if (isset($con['configuration']['submit_criteria']) === false || $con['configuration']['submit_criteria'] === false) {
+                                            echo ' checked';
+                                        }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type" class="col-sm-6 control-label">Submit Criteria Type</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="configuration[submit_criteria][type]"
+                                               value="attempted"<?php if (isset($con['configuration']['submit_criteria']['type']) && $con['configuration']['submit_criteria']['type'] === 'attempted') {
+                                            echo ' checked';
+                                        }; ?>> Attempted &nbsp;
+                                        <input type="radio" name="configuration[submit_criteria][type]"
+                                               value="valid"<?php if (isset($con['configuration']['submit_criteria']['type']) && $con['configuration']['submit_criteria']['type'] === 'valid') {
+                                            echo ' checked';
+                                        }; ?>> Valid
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="threshold" class="col-sm-6 control-label">Submit Criteria
+                                        Threshold</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" min="0" max="100" step="10" class="form-control"
+                                               name="configuration[submit_criteria][threshold]"
+                                               value="<?php if (isset($con['configuration']['submit_criteria']['threshold'])) {
+                                                   echo $con['configuration']['submit_criteria']['threshold'];
+                                               } else {
+                                                   echo '0';
+                                               } ?>">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="subtitle" class="col-sm-2 control-label">Activity Subtitle</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="subtitle" id="subtitle"
-                                           placeholder="Subtitle of the activity"
-                                           value="<?php if (isset($con['subtitle'])) {
-                                               echo $con['subtitle'];
-                                           }; ?>">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="warning_on_change" class="col-sm-6 control-label">Warning if question(s)
+                                        not attempted</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[warning_on_change]"
+                                               value="true"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === true) {
+                                            echo ' checked';
+                                        }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[warning_on_change]"
+                                               value="false"<?php if (isset($nav['warning_on_change']) && $nav['warning_on_change'] === false) {
+                                            echo ' checked';
+                                        }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="skip_submit_confirmation" class="col-sm-6 control-label">Skip
+                                        confirmation window on submit</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="navigation[skip_submit_confirmation]"
+                                               value="true"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === true) {
+                                            echo ' checked';
+                                        }; ?>> Enable &nbsp;
+                                        <input type="radio" name="navigation[skip_submit_confirmation]"
+                                               value="false"<?php if (isset($nav['skip_submit_confirmation']) && $nav['skip_submit_confirmation'] === false) {
+                                            echo ' checked';
+                                        }; ?>> Disable
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </form>
             </div>
             <div class="modal-footer">
@@ -385,187 +380,8 @@
     </div>
 </div>
 <script>
-    var main = {
-        'top-left': [
-            { type: 'title_element' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderTopLeft'
-            }
-        ],
-        'top-right': [
-            {
-                type: 'pause_button',
-                position: 'right'
-            },
-            { type: 'timer_element' },
-            { type: 'reading_timer_element' },
-            { type: 'itemcount_element' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderTopRight'
-            }
-        ],
-        right: [
-            { type: 'verticaltoc_element' },
-            { type: 'save_button' },
-            { type: 'fullscreen_button' },
-            { type: 'reviewscreen_button' },
-            { type: 'accessibility_button' },
-            { type: 'calculator_button' },
-            { type: 'flagitem_button' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderRight'
-            }
-        ],
-        'bottom-right': [
-            { type: 'next_button' },
-            { type: 'previous_button' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderBottomRight'
-            }
-        ]
-    };
 
-    var horizontal = {
-        'top-left': [
-            { type: 'title_element' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderTopLeft'
-            }
-        ],
-        'top-right': [
-            {
-                type: 'pause_button',
-                position: 'right'
-            },
-            { type: 'timer_element' },
-            { type: 'reading_timer_element' },
-            { type: 'itemcount_element' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderTopRight'
-            }
-        ],
-        right: [
-            { type: 'save_button' },
-            { type: 'fullscreen_button' },
-            { type: 'reviewscreen_button' },
-            { type: 'accessibility_button' },
-            { type: 'calculator_button' },
-            { type: 'flagitem_button' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderRight'
-            }
-        ],
-        bottom: [
-            { type: 'next_button' },
-            { type: 'horizontaltoc_element' },
-            { type: 'previous_button' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderBottom'
-            }
-        ]
-    };
-
-    var horizontal_fixed = {
-        'top-left': [
-            { type: 'title_element' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderTopLeft'
-            }
-        ],
-        'top-right': [
-            {
-                type: 'pause_button',
-                position: 'right'
-            },
-            { type: 'timer_element' },
-            { type: 'reading_timer_element' },
-            { type: 'itemcount_element' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderTopRight'
-            }
-        ],
-        items: [
-        {
-            type: 'slider_element',
-            scrollable_option: true
-        },
-        { type: 'progress_element' },
-        {
-            type: 'header_element',
-            default_label_option: 'regionHeaderItems'
-        }
-    ],
-        right: [
-            { type: 'save_button' },
-            { type: 'fullscreen_button' },
-            { type: 'reviewscreen_button' },
-            { type: 'accessibility_button' },
-            { type: 'calculator_button' },
-            { type: 'flagitem_button' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderRight'
-            }
-        ],
-        bottom: [
-            { type: 'next_button' },
-            { type: 'horizontaltoc_element' },
-            { type: 'previous_button' },
-            {
-                type: 'header_element',
-                default_label_option: 'regionHeaderBottom'
-            }
-        ]
-    };
     $(function () {
-
-        $('#submitForm').on('click',function(){
-            setTopLeftRegion();
-
-            setTopRightRegion();
-
-            setItemsRegion();
-
-            setRightRegion();
-
-            setBottomLeftRegion();
-
-            setBottomRightRegion();
-
-            setBottomRegion();
-
-            region = {
-                'top-left': topLeftRegion,
-                'top-right': topRightRegion,
-                'items': itemsRegion,
-                'right': rightRegion,
-                'bottom-left': bottomLeftRegion,
-                'bottom-right': bottomRightRegion,
-                'bottom': bottomRegion
-            };
-
-            $.each(region, function (index, reg){
-                if (reg.length == 1){
-                    delete(region[index]);
-                }
-            });
-
-            $('#regionsSetting').val(JSON.stringify(region));
-
-            $('#frmSettings').submit();
-
-
-        });
 
     });
 </script>

@@ -60,30 +60,16 @@ if (isset($filter_post['api_type'])) {
             break;
         case 'items':
             if (array_key_exists('config', $request)) {
-//                $map = array();
-//                foreach ($filter_post['regionsSetting'] as $key => $value) {
-//                    if (!array_key_exists($value, $map)) {
-//                        $map[$value] = array();
-//                    }
-//                    $content = array();
-//                    $content['type'] = str_replace("'", "", $key);
-//                    $content['position'] = $filter_post['regions_position'][$key];
-//                    array_push($map[$value], $content);//push everything for now, reorder later
-//
-//                }
-//                unset($filter_post['regionsSetting']);
-//                unset($request['config']['regions']);
-//                var_dump($filter_post['regionsSetting']);
-//                var_dump(json_decode(html_entity_decode($filter_post['regionsSetting'])));
+                //decode regionsSetting string into json and store in $regionTemp
                 $regionTemp = json_decode(html_entity_decode($filter_post['regionsSetting']));
-//                var_dump($regionTemp);
+                //unset $filter_post keys
                 unset($filter_post['regionsSetting']);
                 unset($filter_post['regionsPresetsSelector']);
                 unset($request['config']['regions']);
+                //overwrite current $request['config'] with what was sent via POST
                 $request['config'] = array_replace_recursive($request['config'], $filter_post);
-//                $request['config']['regions'] = $map;
+                //replace current $request['config']['regions'] with what was sent via POST
                 $request['config']['regions'] = $regionTemp;
-//                var_dump($request['config']['regions']);
                 $requestKey = &$request['config'];
             } else {
                 $request = array_replace_recursive($request, $filter_post);
@@ -205,7 +191,6 @@ if (isset($filter_post['api_type'])) {
             unset($request['api_type']);
             unset($request['regionSelector']);
             $requestKey = $request;
-            echo "<p>regions: " . json_encode($requestKey) . "</p>";//checker
             break;
         default:
             # do nothing

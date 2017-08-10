@@ -1,5 +1,5 @@
 <div class="regions-row">
-    <div class="searchboxTopLeft">
+    <div class="regions-element-dropdown">
         <select id="topLeftElementAdder">
             <option value="none"></option>
             <optgroup label="Buttons">
@@ -34,7 +34,7 @@
 </div>
 <br>
 <div class="regions-row">
-    <div class="searchboxTopRight">
+    <div class="regions-element-dropdown">
         <select id="topRightElementAdder">
             <option value="none"></option>
             <optgroup label="Buttons">
@@ -68,13 +68,11 @@
 </div>
 <br>
 <div class="regions-row">
-    <div class="searchboxItems">
+    <div class="regions-element-dropdown">
         <select id="itemsElementAdder">
             <option value="none"></option>
             <optgroup label="Elements">
                 <option value="progress_element">Progress</option>
-                <option value="slider_element">Slider</option>
-                <option value="vertical_element">Vertical</option>
             </optgroup>
         </select>
     </div>
@@ -89,7 +87,7 @@
 </div>
 <br>
 <div class="regions-row">
-    <div class="searchboxRight">
+    <div class="regions-element-dropdown">
         <select id="rightElementAdder">
             <option value="none"></option>
             <optgroup label="Buttons">
@@ -107,7 +105,7 @@
             </optgroup>
             <optgroup label="Elements">
                 <option value="itemcount_element">Item Count</option>
-                <option value="verticaltoc_element">Vertical TOC</option>
+                <option value="verticaltoc_element">Pager Navigation</option>
             </optgroup>
         </select>
     </div>
@@ -122,7 +120,7 @@
 </div>
 <br>
 <div class="regions-row">
-    <div class="searchboxBottomLeft">
+    <div class="regions-element-dropdown">
         <select id="bottomLeftElementAdder">
             <option value="none"></option>
             <optgroup label="Buttons">
@@ -139,7 +137,7 @@
                 <option value="submit_button">Submit</option>
             </optgroup>
             <optgroup label="Elements">
-                <option value="horizontaltoc_element">Horizontal TOC</option>
+                <option value="horizontaltoc_element">Table of Contents</option>
             </optgroup>
         </select>
     </div>
@@ -154,7 +152,7 @@
 </div>
 <br>
 <div class="regions-row">
-    <div class="searchboxBottomRight">
+    <div class="regions-element-dropdown">
         <select id="bottomRightElementAdder">
             <option value="none"></option>
             <optgroup label="Buttons">
@@ -171,7 +169,7 @@
                 <option value="submit_button">Submit</option>
             </optgroup>
             <optgroup label="Elements">
-                <option value="horizontaltoc_element">Horizontal TOC</option>
+                <option value="horizontaltoc_element">Table of Contents</option>
                 <option value="itemcount_element">Item Count</option>
                 <option value="reading_timer_element">Reading Timer</option>
                 <option value="timer_element">Timer</option>
@@ -189,7 +187,7 @@
 </div>
 <br>
 <div class="regions-row">
-    <div class="searchboxBottom">
+    <div class="regions-element-dropdown">
         <select id="bottomElementAdder">
             <option value="none"></option>
             <optgroup label="Buttons">
@@ -206,7 +204,7 @@
                 <option value="submit_button">Submit</option>
             </optgroup>
             <optgroup label="Elements">
-                <option value="horizontaltoc_element">Horizontal TOC</option>
+                <option value="horizontaltoc_element">Table of Contents</option>
             </optgroup>
         </select>
     </div>
