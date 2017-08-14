@@ -22,7 +22,7 @@ function numberConverter(&$object)
         if (is_array($value)) {
             $object[$key] = numberConverter($value);
         } elseif (is_numeric($value)) {
-            $object[$key] = (float) $value;
+            $object[$key] = (float)$value;
         }
     }
     return $object;
@@ -60,12 +60,22 @@ if (isset($filter_post['api_type'])) {
             break;
         case 'items':
             if (array_key_exists('config', $request)) {
+                //decode regionsSetting string into json and store in $regionTemp
+                $regionTemp = json_decode(html_entity_decode($filter_post['regionsSetting']));
+                //unset $filter_post keys
+                unset($filter_post['regionsSetting']);
+                unset($filter_post['regionsPresetsSelector']);
+                unset($request['config']['regions']);
+                //overwrite current $request['config'] with what was sent via POST
                 $request['config'] = array_replace_recursive($request['config'], $filter_post);
+                //replace current $request['config']['regions'] with what was sent via POST
+                $request['config']['regions'] = $regionTemp;
                 $requestKey = &$request['config'];
             } else {
                 $request = array_replace_recursive($request, $filter_post);
                 $requestKey = &$request;
             }
+
             break;
         case 'questioneditor':
             $request = array_replace_recursive($request, $filter_post);
@@ -147,7 +157,7 @@ if (isset($filter_post['api_type'])) {
                     unset($request['widget_json']);
                 } else {
                     $request['question_type'] = $filter_post['question_type'];
-                    switch($filter_post['question_type']) {
+                    switch ($filter_post['question_type']) {
                         case 'association':
                             $request['widget_json'] = $questionJsonAssociation;
                             break;
@@ -209,4 +219,5 @@ if (isset($filter_post['api_type'])) {
     if (!$requestKey['configuration']['api_type']) {
         unset($requestKey['api_type']);
     }
+
 }
