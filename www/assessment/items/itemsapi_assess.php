@@ -170,19 +170,10 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted"
-                                                                                      data-toggle="modal"
-                                                                                      data-target="#settings"><span
-                            class="glyphicon glyphicon-list-alt"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"
-                                                                                                 data-toggle="modal"
-                                                                                                 data-target="#initialisation-preview"><span
-                            class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a
-                        href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span
-                            class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span
-                            class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted" data-toggle="modal" data-target="#settings"><span class="glyphicon glyphicon-list-alt"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#" data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -552,17 +543,26 @@ $signedRequest = $Init->generate();
 
         function addElem(selectElemID, container) {
             var $selectElem = $(selectElemID);
+            var hasTitle = false, hasBottomElement = false, hasBottomLeftElement = false;
             if ($selectElem.val() === 'none') {
                 return;
             }
-
+            if($('.top-leftContainer').children()[0] && $($('.top-leftContainer').children()[0]).find('span').html() === "Title"){
+                hasTitle = true;
+            }
+            if($('.bottomContainer').children().length > 0){
+                hasBottomElement = true;
+            }
+            if($('.bottom-leftContainer').children().length > 0){
+                hasBottomLeftElement = true;
+            }
             var text = $selectElem.val();
             $selectElem.val("");
             var elementLabelString = '<div class="elem-label"><span>' + regionElementMap[text] + '</span></div>';
             var buttonString = '<div class="close-btn-container"><button class="close-btn" id="close-btn-' + btnIdCounter + '">' + "×" + "</button></div>";
             var divElem = '<div class="elem-container">' + elementLabelString + buttonString + "</div>";
             var childCount = $(container).children().length;
-            if(((container === ".top-leftContainer") && childCount < 3) ||
+            if(((container === ".top-leftContainer") && childCount < 4) ||
                 ((container === ".top-rightContainer") && childCount < 4) ||
                 ((container === ".itemsContainer") && childCount < 2) ||
                 ((container === ".rightContainer") && childCount < 7) ||
@@ -570,11 +570,23 @@ $signedRequest = $Init->generate();
                 ((container === ".bottom-rightContainer") && childCount < 3) ||
                 ((container === ".bottomContainer") && childCount < 6)
             ) {
-                $(container).append(divElem);
-                $('#close-btn-' + btnIdCounter).click(function () {
-                    removeElem(this);
-                });
-                btnIdCounter++;
+                if((hasTitle && (container === ".top-leftContainer")) ||
+                    ((!(hasTitle)) && (container === ".top-leftContainer") && childCount > 0 && regionElementMap[text] === "Title")
+                ) {
+                    alert("If you have a Title, it is not advisable to place additional elements in the Top Left Region. Please remove Title if you would like to place other elements.");
+                }
+                else if((hasBottomElement && (container === ".bottom-leftContainer"))||
+                    (hasBottomLeftElement && (container === ".bottomContainer"))
+                ){
+                    alert("Bottom and Bottom Left Regions cannot be specified at the same time.");
+                }
+                else {
+                    $(container).append(divElem);
+                    $('#close-btn-' + btnIdCounter).click(function () {
+                        removeElem(this);
+                    });
+                    btnIdCounter++;
+                }
             }
             else{
                 alert("You have reached the maximum number of elements which can be added in this region for this demo.");
