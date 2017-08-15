@@ -36,7 +36,7 @@ include_once 'includes/header.php';
         </div>
         <div class="overview">
             <h1>Question Editor API</h1>
-            <p>Teacher's are busy and we need to give them the simplest authoring experience. You can customise the question's layout to suit your design needs. For more information, refer to <a href="http://docs.learnosity.com/authoring/questioneditor/editlayout">the docs page</a>.<p>
+            <p>Teachers are busy and we need to give them the simplest authoring experience. You can customise the question's layout to suit your design needs. For more information, refer to <a href="http://docs.learnosity.com/authoring/questioneditor/editlayout">the docs page</a>.<p>
         </div>
     </div>
 
