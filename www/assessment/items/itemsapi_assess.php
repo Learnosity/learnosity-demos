@@ -187,7 +187,7 @@ $signedRequest = $Init->generate();
 
     $(document).ready(function () {
 
-        function loadcssfile(filename, filetype){
+        function loadCssFile(filename, filetype){
             if (filetype=="css"){ //if filename is an external CSS file
                 var fileref=document.createElement("link")
                 fileref.setAttribute("rel", "stylesheet")
@@ -198,7 +198,7 @@ $signedRequest = $Init->generate();
                 document.getElementsByTagName("head")[0].appendChild(fileref)
         }
 
-        loadcssfile("regionsSettingsStyle.css", "css") ////dynamically load and add this .css file
+        loadCssFile("regionsSettingsStyle.css", "css") ////dynamically load and add this .css file
         window.appHelper = {
             setTopLeftRegion: function () {
                 var topLeftRegion = [];
