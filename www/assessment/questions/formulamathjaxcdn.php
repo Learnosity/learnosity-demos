@@ -63,7 +63,7 @@ $signedRequest = $Init->generate();
         }
     </script>
     <script type="text/javascript"
-            src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured">
+            src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured">
     </script>
     <script type="text/javascript">
         MathJax.Hub.Register.StartupHook("Begin Config", function () {
