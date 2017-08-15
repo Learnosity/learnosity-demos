@@ -1,8 +1,3 @@
-<link href="regionsSettingsStyle.css" rel="stylesheet" type="text/css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <?php
 
 include_once '../../config.php';
@@ -191,6 +186,19 @@ $signedRequest = $Init->generate();
 <script>
 
     $(document).ready(function () {
+
+        function loadcssfile(filename, filetype){
+            if (filetype=="css"){ //if filename is an external CSS file
+                var fileref=document.createElement("link")
+                fileref.setAttribute("rel", "stylesheet")
+                fileref.setAttribute("type", "text/css")
+                fileref.setAttribute("href", filename)
+            }
+            if (typeof fileref!="undefined")
+                document.getElementsByTagName("head")[0].appendChild(fileref)
+        }
+
+        loadcssfile("regionsSettingsStyle.css", "css") ////dynamically load and add this .css file
         window.appHelper = {
             setTopLeftRegion: function () {
                 var topLeftRegion = [];
