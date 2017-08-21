@@ -117,7 +117,14 @@ var init = function () {
                 'activity_id': '<?php echo $activity_id; ?>',
                 'session_id': '<?php echo Uuid::generate(); ?>',
                 'items': itemReferences,
-                'type': 'feedback'
+                'type': 'feedback',
+                'config': {
+                    'questions_api_init_options': {
+                        'beta_flags': {
+                            'reactive_views': true
+                        }
+                    }
+                }
             }
         };
 
@@ -217,4 +224,3 @@ $(function() {
 <?php
     include_once '../includes/rubric.php';
     include_once 'includes/footer.php';
-

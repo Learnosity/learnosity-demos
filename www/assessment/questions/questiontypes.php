@@ -30,7 +30,8 @@ $request = '{
     "course_id": "'.$courseid.'",
     "renderSubmitButton" : ' . ($state === 'initial' ? "true" : "false") . ',
     "beta_flags": {
-        "use_webrtc": true
+        "use_webrtc": true,
+        "reactive_views": true
     },
     "questions": [
         {

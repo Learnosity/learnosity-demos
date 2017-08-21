@@ -170,6 +170,9 @@ $request = array(
             "name": "Assess API - Demo",
             "course_id": "' . $courseid . '",
             "session_id": "' . Uuid::generate() . '",
+            "beta_flags": {
+                "reactive_views": true
+            },
             "questions": [
              {
                 "type": "orderlist",

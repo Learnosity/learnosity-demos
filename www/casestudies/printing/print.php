@@ -25,7 +25,12 @@ $request = array(
     'items'                => $items,
     'config'               => array(
         'fontsize'            => 'xlarge',
-        'renderSubmitButton'  => false
+        'renderSubmitButton'  => false,
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 );
 

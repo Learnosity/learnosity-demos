@@ -46,6 +46,15 @@ include_once 'includes/header.php';
                 fixedPreview: {
                     marginTop: 50
                 }
+            },
+            dependencies: {
+                questions_api: {
+                    init_options: {
+                        beta_flags: {
+                            reactive_views: true
+                        }
+                    }
+                }
             }
         };
 

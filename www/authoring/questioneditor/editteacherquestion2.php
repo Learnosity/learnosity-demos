@@ -71,7 +71,16 @@ $request = array(
     ),
     'configuration'     => array(
         'questionsApiVersion' => 'v2'
-    )
+    ),
+    'dependencies' => [
+        'questions_api' => [
+            'init_options' => [
+                'beta_flags' => [
+                    'reactive_views' => true
+                ]
+            ]
+        ]
+    ]
 );
 
 $removeOverrideFields = ['widget_type'];

@@ -37,7 +37,12 @@ $request = [
         ),
         'configuration' => array(
             'onsubmit_redirect_url' => 'feedback.php?session_id='. $session_id
-        )
+        ),
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 ];
 

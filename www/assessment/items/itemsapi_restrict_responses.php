@@ -19,11 +19,16 @@ $request = array(
     'type'           => 'submit_practice',
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
-    'items'          => array('act2','act3','act17','act4','act5'),    
+    'items'          => array('act2','act3','act17','act4','act5'),
     'config'         => array(
         'ignore_question_attributes' => array('validation'),
         'title'                      => 'Restrict Responses',
-        'ui_style'                   => 'main'
+        'ui_style'                   => 'main',
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 );
 
@@ -45,7 +50,7 @@ $signedRequest = $Init->generate();
     </div>
     <div class="overview">
         <h1>Items API - Restrict Responses</h1>
-        <p>This demos uses Items API (assess) to set a callback function on <em>item:beforeunload</em> and display a message when student haven't answered all the possible responses.<p>        
+        <p>This demos uses Items API (assess) to set a callback function on <em>item:beforeunload</em> and display a message when student haven't answered all the possible responses.<p>
     </div>
 </div>
 
@@ -96,7 +101,7 @@ $signedRequest = $Init->generate();
             });
         });
     }
-    
+
 </script>
 
 <?php

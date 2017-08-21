@@ -165,6 +165,15 @@ include_once 'includes/header.php';
                     stimulus: "Question:",
                     options: "Options:",
                     'validation.valid_response.value.value':'Correct answer:'
+                },
+                dependencies: {
+                    questions_api: {
+                        init_options: {
+                            beta_flags: {
+                                reactive_views: true
+                            }
+                        }
+                    }
                 }
             },
             qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');

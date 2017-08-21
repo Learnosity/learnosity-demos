@@ -77,7 +77,12 @@ $request = array(
             'onsubmit_redirect_url'  => 'regions.php',
             'onsave_redirect_url'    => 'regions.php',
             'ondiscard_redirect_url' => 'regions.php'
-        )
+        ),
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 );
 

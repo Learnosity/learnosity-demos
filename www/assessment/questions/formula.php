@@ -20,6 +20,9 @@ $request = '{
     "id": "questionsapi-demo",
     "name": "Questions API Demo",
     "course_id": "'.$courseid.'",
+    "beta_flags": {
+        "reactive_views": true
+    },
     "questions": [
         {
             "type": "formulaV2",
@@ -56,7 +59,7 @@ $request = '{
             "ui_style": {
                 "type": "floating-keyboard"
             }
-        },        
+        },
         {
             "type": "formulaessay",
             "response_id": "demoformula8_'.$uniqueResponseIdSuffix.'",
@@ -103,7 +106,7 @@ $signedRequest = $Init->generate();
                 // Register a callback to update the latex when the user input changes.
                 question.on('change', function () {
                     code.text(question.getResponse().value);
-                });                
+                });
             });
         }
     });

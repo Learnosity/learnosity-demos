@@ -116,6 +116,15 @@ include_once 'includes/header.php';
                 layout: {
                     global_template: 'custom'
                 }
+            },
+            dependencies: {
+                questions_api: {
+                    init_options: {
+                        beta_flags: {
+                            reactive_views: true
+                        }
+                    }
+                }
             }
         },
         qeApp;

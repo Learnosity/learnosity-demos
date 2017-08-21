@@ -25,6 +25,11 @@ $request = [
     'config'         => [
         'configuration' => [
             'onsubmit_redirect_url' => 'summary_report.php?session_id='. $session_id
+        ],
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
         ]
     ]
 ];
