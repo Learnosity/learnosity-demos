@@ -41,7 +41,14 @@ $request = array(
                         'search_field'       => false
                     )
                 )
-            )
+            ),
+            'questions_api' => [
+                'init_options' => [
+                    'beta_flags' => [
+                        'reactive_views' => true
+                    ]
+                ]
+            ]
         )
     ),
     'user' => array(
@@ -113,12 +120,12 @@ $signedRequest = $Init->generate();
                     var features = getMappedWidgetData(questionsApp.getFeatures());
                     var questions = getMappedWidgetData(questionsApp.getQuestions());
                     var widgets = features.concat(questions);
-                    
+
                     if (widgets.length) {
                         notification += ' containing ' + widgets.join(', ');
                     }
                 }
-                
+
                 showNotification(notification);
             });
         }

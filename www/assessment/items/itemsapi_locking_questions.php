@@ -20,7 +20,14 @@ $request = array(
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => Uuid::generate(),
     'items'          => array('act1','act2','act3','act4','act5','act6'),
-    'type'           => 'local_practice'
+    'type'           => 'local_practice',
+    'config'         => [
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
+    ]
 );
 
 $Init = new Init('items', $security, $consumer_secret, $request);

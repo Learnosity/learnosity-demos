@@ -1961,7 +1961,16 @@ var initOptions = {
       "global_template": "edit_preview"
     },
     "question_tiles": true
-  }
+  },
+    dependencies: {
+        questions_api: {
+            init_options: {
+                beta_flags: {
+                    reactive_views: true
+                }
+            }
+        }
+    }
 };
 
 var editorApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');

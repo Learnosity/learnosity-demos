@@ -46,7 +46,16 @@ $request = array(
     'widget_type'       => 'response',
     'configuration'     => array(
         'questionsApiVersion' => 'v2'
-    )
+    ),
+    'dependencies' => [
+        'questions_api' => [
+            'init_options' => [
+                'beta_flags' => [
+                    'reactive_views' => true
+                ]
+            ]
+        ]
+    ]
 );
 
 include_once 'utils/settings-override.php';

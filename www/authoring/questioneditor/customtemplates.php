@@ -590,6 +590,15 @@ $request = '{
                 }
             }
         ]
+    },
+    "dependencies": {
+        "questions_api": {
+            "init_options": {
+                "beta_flags": {
+                    "reactive_views": true
+                }
+            }
+        }
     }
 }';
 

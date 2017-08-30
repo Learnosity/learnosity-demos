@@ -38,7 +38,14 @@ $request = array(
     'course_id'            => 'demo',
     'type'                 => 'submit_practice',
     'rendering_type'       => 'inline',
-    'activity_template_id' => $activityRef
+    'activity_template_id' => $activityRef,
+    'config'               => [
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
+    ]
 );
 
 $init = new Init('items', $security, $consumer_secret, $request);

@@ -111,9 +111,25 @@ $request = array(
                         'layout'             => array(
                             'global_template' => 'edit_preview'
                         )
-                    )
+                    ),
+                    'dependencies' => [
+                        'questions_api' => [
+                            'init_options' => [
+                                'beta_flags' => [
+                                    'reactive_views' => true
+                                ]
+                            ]
+                        ]
+                    ]
                 )
-            )
+            ),
+            'questions_api' => [
+                'init_options' => [
+                    'beta_flags' => [
+                        'reactive_views' => true
+                    ]
+                ]
+            ]
         )
     ),
     'user' => array(

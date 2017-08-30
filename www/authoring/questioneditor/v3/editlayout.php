@@ -319,6 +319,15 @@ include_once 'includes/header.php';
                             }]
                         }
                     }
+                },
+                dependencies: {
+                    questions_api: {
+                        init_options: {
+                            beta_flags: {
+                                reactive_views: true
+                            }
+                        }
+                    }
                 }
             },
             qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');

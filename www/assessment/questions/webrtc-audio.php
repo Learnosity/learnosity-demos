@@ -29,7 +29,8 @@ $request = '{
     "name": "Questions API Demo",
     "course_id": "'.$courseid.'",
     "beta_flags": {
-        "use_webrtc": true
+        "use_webrtc": true,
+        "reactive_views": true
     },
     "questions": [
         {

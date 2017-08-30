@@ -87,6 +87,11 @@ $request = array(
         'time' => [
             'show_pause' => true,
             'max_time' => 300
+        ],
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
         ]
     ]
 );

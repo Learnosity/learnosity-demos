@@ -48,7 +48,10 @@ $request = '{
       "valid_quartile_3": 8.5,
       "score": 1
     }
-  ]
+  ],
+    "beta_flags": {
+        "reactive_views": true
+    }
 }';
 
 

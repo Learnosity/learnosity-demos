@@ -74,6 +74,15 @@ $request = '{
     },
     "label_bundle": {
         "debug": false
+    },
+    "dependencies": {
+        "questions_api": {
+            "init_options": {
+                "beta_flags": {
+                    "reactive_views": true
+                }
+            }
+        }
     }
 }';
 

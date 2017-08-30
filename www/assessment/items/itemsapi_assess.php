@@ -150,6 +150,11 @@ $request = [
             'submit_criteria' => [
                 'type' => 'attempted'
             ]
+        ],
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
         ]
     ]
 ];

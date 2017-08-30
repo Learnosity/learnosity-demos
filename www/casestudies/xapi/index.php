@@ -88,7 +88,12 @@ $request = array(
                 'interval'       => 300,
                 'countdown_time' => 60
             )
-        )
+        ),
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 );
 

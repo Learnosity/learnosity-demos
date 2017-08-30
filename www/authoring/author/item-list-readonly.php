@@ -44,7 +44,16 @@ $request = array(
                 'delete' => false,
                 'edit' => false
             )
-        )
+        ),
+        'dependencies' => [
+            'questions_api' => [
+                'init_options' => [
+                    'beta_flags' => [
+                        'reactive_views' => true
+                    ]
+                ]
+            ]
+        ]
     ),
     'user' => array(
         'id'        => 'demos-site',

@@ -25,7 +25,12 @@ $request = array(
     'items'          => $items,
     'type'           => 'submit_practice',
     'config'         => array(
-        'renderSubmitButton'  => true
+        'renderSubmitButton'  => true,
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 );
 

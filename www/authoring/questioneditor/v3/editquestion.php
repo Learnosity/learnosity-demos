@@ -12,7 +12,16 @@ $request = array(
         'layout' => array(
             'global_template' => 'edit'
         )
-    )
+    ),
+    'dependencies' => [
+        'questions_api' => [
+            'init_options' => [
+                'beta_flags' => [
+                    'reactive_views' => true
+                ]
+            ]
+        ]
+    ]
 );
 
 include_once 'utils/settings-override.php';
