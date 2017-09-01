@@ -28,7 +28,16 @@ include_once 'includes/header.php';
     var initObjects, questionEditorApp;
 
     initObjects = {
-        widget_type: 'feature'
+        widget_type: 'feature',
+        dependencies: {
+            questions_api: {
+                init_options: {
+                    beta_flags: {
+                        reactive_views: true
+                    }
+                }
+            }
+        }
     };
 
     questionEditorApp = LearnosityQuestionEditor.init(initObjects);

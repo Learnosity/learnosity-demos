@@ -168,6 +168,15 @@ include_once 'includes/header.php';
                     options: "Options:",
                     template: "Template (use 'double underscore' for new response location)",
                     'validation.valid_response.value.value':'Correct answer:'
+                },
+                dependencies: {
+                    questions_api: {
+                        init_options: {
+                            beta_flags: {
+                                reactive_views: true
+                            }
+                        }
+                    }
                 }
             },
             qeApp = LearnosityQuestionEditor.init(initOptions, '.my-question-editor');

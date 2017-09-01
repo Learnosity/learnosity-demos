@@ -87,6 +87,15 @@ include_once 'includes/header.php';
         assetRequest: assetRequestFunction,
         ui: {
             layout: "2-column"
+        },
+        dependencies: {
+            questions_api: {
+                init_options: {
+                    beta_flags: {
+                        reactive_views: true
+                    }
+                }
+            }
         }
     };
 

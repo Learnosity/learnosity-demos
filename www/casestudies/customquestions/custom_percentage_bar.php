@@ -39,7 +39,10 @@ $request = '{
       "valid_response": "120",
       "score": 1
     }
-  ]
+  ],
+    "beta_flags": {
+        "reactive_views": true
+    }
 }';
 
 

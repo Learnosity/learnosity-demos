@@ -68,7 +68,12 @@ $request = array(
             'onsubmit_redirect_url'  => $_SERVER['REQUEST_URI'],
             'onsave_redirect_url'    => $_SERVER['REQUEST_URI'],
             'events'                 => true
-        )
+        ),
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 );
 

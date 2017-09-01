@@ -19,7 +19,7 @@ $request = array(
     'name'           => 'Learnosity Spanish Demo',
     'state'          => 'initial',
     'activity_id'    => 'spanish-demo',
-    'session_id'     => $session_id,    
+    'session_id'     => $session_id,
     'type'           => 'submit_practice',
     'assess_inline'  => true,
     'items'          => array('LEAR_222416777787000072', 'LEAR_222416777787000078','LEAR_222416777787000080','LEAR_222416777787000079','LEAR_222416777787000074','LEAR_222416777787000081','LEAR_222416777787000082', 'LEAR_222416777787000085', 'LEAR_99455450458884454545539'),
@@ -162,11 +162,16 @@ $request = array(
                 'editorUnderlineIcon' => 'S',
                 'editorUnderlineTitle' => 'Subrayado',
                 'graphingTools.parabola' => 'Parábola',
-                'reset' => 'Reiniciar',                
+                'reset' => 'Reiniciar',
                 'undo' => 'Deshacer',
                 'redo' => 'Rehacer'
             )
-        )
+        ),
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 );
 
@@ -198,7 +203,7 @@ $signedRequest = $Init->generate();
 <script src="<?php echo $url_items; ?>"></script>
 <script>
     var itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>);
-    
+
 </script>
 
 <?php

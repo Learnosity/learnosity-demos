@@ -44,7 +44,16 @@ include_once 'includes/header.php';
         rich_text_editor: {
             type: 'wysihtml'
         },
-        widget_type: 'response'
+        widget_type: 'response',
+        dependencies: {
+            questions_api: {
+                init_options: {
+                    beta_flags: {
+                        reactive_views: true
+                    }
+                }
+            }
+        }
     };
 
     var qeApp = LearnosityQuestionEditor.init(initOptions);

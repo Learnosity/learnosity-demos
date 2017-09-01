@@ -26,7 +26,12 @@ $request = array(
     'config'               => array(
         'showCorrectAnswers'  => true,
         'fontsize'            => 'xlarge',
-        'renderSubmitButton'  => false
+        'renderSubmitButton'  => false,
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 );
 

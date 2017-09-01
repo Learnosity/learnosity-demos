@@ -30,7 +30,10 @@ $request = '{
       "valid_response": "Canberra",
       "score": 1
     }
-  ]
+  ],
+    "beta_flags": {
+        "reactive_views": true
+    }
 }';
 
 

@@ -39,6 +39,15 @@ $request = [
             'status' => true,
             'limit' => 10,
         ],
+        'dependencies' => [
+            'questions_api' => [
+                'init_options' => [
+                    'beta_flags' => [
+                        'reactive_views' => true
+                    ]
+                ]
+            ]
+        ]
     ],
     'user' => [
         'id'        => 'demos-site',

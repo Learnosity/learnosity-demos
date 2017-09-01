@@ -16,6 +16,9 @@ $request = '{
     "id": "questionsapi-demo",
     "name": "Questions API Demo",
     "course_id": "'.$courseid.'",
+    "beta_flags": {
+        "reactive_views": true
+    },
     "questions": [
         {
             "type": "formulaV2",

@@ -16,7 +16,11 @@ include_once 'includes/header.php';
 <!-- Container for the questions api to load into -->
 <script src="<?php echo $url_questions; ?>"></script>
 <script>
-    LearnosityApp.init();
+    LearnosityApp.init({
+        "beta_flags": {
+            "reactive_views": true
+        }
+    });
 </script>
 
 <div class="section">

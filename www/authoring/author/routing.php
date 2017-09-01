@@ -73,9 +73,25 @@ $request = array(
                         'fixed_preview'      => true,
                         'advanced_group'     => false,
                         'search_field'       => true
-                    )
+                    ),
+                    'dependencies' => [
+                        'questions_api' => [
+                            'init_options' => [
+                                'beta_flags' => [
+                                    'reactive_views' => true
+                                ]
+                            ]
+                        ]
+                    ]
                 )
-            )
+            ),
+            'questions_api' => [
+                'init_options' => [
+                    'beta_flags' => [
+                        'reactive_views' => true
+                    ]
+                ]
+            ]
         )
     ),
     'user' => array(
@@ -134,4 +150,3 @@ $signedRequest = $Init->generate();
     include_once 'views/modals/settings-content-author.php';
     include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';
-

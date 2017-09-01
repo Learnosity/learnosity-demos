@@ -104,7 +104,12 @@ $signedRequest = $Init->generate();
                     'items': itemReferences,
                     'type': 'feedback',
                     'config': {
-                        'renderSaveButton' : true
+                        'renderSaveButton' : true,
+                        'questions_api_init_options': {
+                            'beta_flags': {
+                                'reactive_views': true
+                            }
+                        }
                     }
                 }
             };

@@ -23,7 +23,12 @@ $request = array(
     'items'          => array('workedsolutions_1', 'workedsolutions_2', 'workedsolutions_3'),
     'type'           => 'submit_practice',
     'config'         => array(
-        'renderSubmitButton'  => false
+        'renderSubmitButton'  => false,
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     )
 );
 

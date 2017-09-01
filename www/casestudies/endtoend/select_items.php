@@ -40,7 +40,27 @@ $request = array(
             'item' => array(
                 "back" => true
             )
-        )
+        ),
+        'dependencies' => [
+            'question_editor_api' => [
+                'dependencies' => [
+                    'questions_api' => [
+                        'init_options' => [
+                            'beta_flags' => [
+                                'reactive_views' => true
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            'questions_api' => [
+                'init_options' => [
+                    'beta_flags' => [
+                        'reactive_views' => true
+                    ]
+                ]
+            ]
+        ]
     ),
     'user' => array(
         'id'        => 'demos-site',
@@ -93,10 +113,10 @@ $signedRequest = $Init->generate();
         readyListener: function () {
 
             authorApp.on('open:item', function (event) {
-                
+
                 // Do not proceed if the array is undefined (as would be the case when adding a new item)
                 if(typeof(event.data.questions) != 'undefined'){
-                
+
                     // Prevent the default action (open) when an item in the list is clicked
                     event.preventDefault();
 
@@ -104,7 +124,7 @@ $signedRequest = $Init->generate();
                     //   Need to add the test for "learnosity-response" because data.questions does not contain questions data due to recent reworking of Author API.
                     if(event.data.questions.length > 0 || event.data.item.content.indexOf("learnosity-response") >= 0) {
                         itemHasQuestions = true;
-                    } 
+                    }
 
                     // For unpublished Items we do not provide the Modal as these can not be added to assessments
                     if(event.data.item.status == 'published') {
@@ -114,7 +134,7 @@ $signedRequest = $Init->generate();
                         $('#endtoend-item-preview').data().parameter_1 = event.data.item.reference;
                         // Open a Modal to preview the Item and provide 'Add' and 'Cancel' options
                         $('#endtoend-item-preview').modal('show');
-                        
+
                     } else {
                         alert('This item is unpublished and therefore can not be added to the assessment.');
                     }
@@ -142,14 +162,14 @@ $signedRequest = $Init->generate();
         });
         //go to assessment handler
         $(".btn-goToAssessment").click(function(){
-            
+
             // Do not proceed to assessment if the list does not conatin at least one question
             if(itemWithQuestionsAdded == true){
-                window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");    
+                window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
             } else {
                 alert('None of the Items in the list contain Questions. An assessment requires a minimum of one Question.');
             }
-            
+
         });
     });
 

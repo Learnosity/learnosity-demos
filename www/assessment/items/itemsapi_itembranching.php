@@ -87,7 +87,12 @@ $request = array(
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_adaptive_report.php?session_id=' . $sessionId,
             'onsave_redirect_url'   => 'itemsapi_itembranching.php'
-        )
+        ),
+        'questions_api_init_options' => [
+            'beta_flags' => [
+                'reactive_views' => true
+            ]
+        ]
     ),
     'subscores' => array(
         array(

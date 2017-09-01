@@ -24,18 +24,38 @@ $request = array(
                 'delete' => true
             )
         ),
-        'question_editor_init_options' => array(
-            'ui' => array(
-                'public_methods'     => array(),
-                'question_tiles'     => false,
-                'documentation_link' => false,
-                'change_button'      => true,
-                'source_button'      => false,
-                'fixed_preview'      => true,
-                'advanced_group'     => false,
-                'search_field'       => false
-            )
-        )
+        'dependencies' => [
+            'question_editor_api' => [
+                'init_options' => array(
+                    'ui' => array(
+                        'public_methods'     => array(),
+                        'question_tiles'     => false,
+                        'documentation_link' => false,
+                        'change_button'      => true,
+                        'source_button'      => false,
+                        'fixed_preview'      => true,
+                        'advanced_group'     => false,
+                        'search_field'       => false
+                    ),
+                    'dependencies' => [
+                        'questions_api' => [
+                            'init_options' => [
+                                'beta_flags' => [
+                                    'reactive_views' => true
+                                ]
+                            ]
+                        ]
+                    ]
+                )
+            ],
+            'questions_api' => [
+                'init_options' => [
+                    'beta_flags' => [
+                        'reactive_views' => true
+                    ]
+                ]
+            ]
+        ]
     ),
     'user' => array(
         'id'        => 'demos-site',
