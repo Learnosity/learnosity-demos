@@ -212,6 +212,12 @@ $signedRequest = $Init->generate();
         assessApp.on('test:submit:success', function () {
             toggleModalClass();
         });
+
+        // Uncomment if you don't want a warning when leaving the
+        // page with unsaved changes
+        // window.onbeforeunload = function () {
+        //     return;
+        // }
     }
 
     /**
