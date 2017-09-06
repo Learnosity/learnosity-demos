@@ -25,7 +25,7 @@ include_once 'includes/header.php';
 *
 ********************************************************************
 -->
-<div class="section">
+<div class="section" id="qe-main-container">
     <!-- Container for the question editor api to load into -->
     <script src="<?php echo $url_questioneditor_v3; ?>"></script>
     <div class="margin-bottom-small">
@@ -39,7 +39,8 @@ include_once 'includes/header.php';
 <script>
     var initOptions = {
         configuration: {
-            consumer_key: '<?php echo $consumer_key; ?>'
+            consumer_key: '<?php echo $consumer_key; ?>',
+            main_container_selector: '#qe-main-container'
         },
         rich_text_editor: {
             type: 'ckeditor'
