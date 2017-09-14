@@ -212,6 +212,12 @@ $signedRequest = $Init->generate();
         assessApp.on('test:submit:success', function () {
             toggleModalClass();
         });
+
+        // Uncomment if you don't want a warning when leaving the
+        // page with unsaved changes
+        // window.onbeforeunload = function () {
+        //     return;
+        // }
     }
 
     /**
@@ -234,7 +240,7 @@ $signedRequest = $Init->generate();
 <script type="text/javascript" src="regions_settings.js">
 </script>
 <?php
-include_once 'views/modals/settings-items.php';
+include_once 'views/modals/settings-items2.php';
 include_once 'views/modals/initialisation-preview.php';
 include_once 'includes/footer.php';
 
