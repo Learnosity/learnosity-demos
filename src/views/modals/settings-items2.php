@@ -15,4 +15,4 @@ $admin = $request['config']['administration'];
 $service = 'Items API';
 $serviceShortcut = 'items';
 
-include_once 'views/modals/settings-content.php';
+include_once 'views/modals/settings-content2.php';
