@@ -924,7 +924,7 @@ $signedRequest = $Init->generate();
                                             <li>Exit &amp; Discard</li>
                                         </ul>
                                         <p>Visit our <a href="./live_progress.php">interactive demo</a> to see this in action.</p>
-                                        <p>Review the <a href="http://docs.learnosity.com/reportsapi/reporttypes.php#live-activitystatus-by-user">documentation here</a>.</p>
+                                        <p>Review the <a href="https://docs.learnosity.com/analytics/reports/reporttypes#liveActivityStatusByUser">documentation here</a>.</p>
                                     </section>
                                 </div>
                             </div>
