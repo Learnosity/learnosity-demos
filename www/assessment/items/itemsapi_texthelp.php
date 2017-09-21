@@ -109,7 +109,6 @@ $signedRequest = $Init->generate();
                 $(".lrn_sort_gripper").attr('ignore', '1');
                 $(".lrn-choicematrix-column-title").attr('ignore', '1');
 
-                setTimeout('$rw_speakFirstSentence()',500);
                 console.log('Reading');
             });
 
