@@ -9,7 +9,8 @@ $reportVariables = array(
     'session_id',
     'user_id',
     'activity_id',
-    'report'
+    'report',
+    'context'
 );
 
 foreach ($reportVariables as $key => $var) {
@@ -154,7 +155,13 @@ if (count($reportVariables)) {
             <span class="learnosity-report" id="demo-report"></span>
         </section>
     </div>
+    <?php
+    if (!isset($reportVariables['context']) || $reportVariables['context'] !== 'modal') {
+    ?>
     <script src="<?php echo $url_reports; ?>"></script>
+    <?php
+    }
+    ?>
     <script type="text/javascript">
         var config = <?php echo $signedRequest; ?>;
         config.configuration = {

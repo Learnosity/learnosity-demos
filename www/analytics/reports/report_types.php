@@ -1065,6 +1065,7 @@ $signedRequest = $Init->generate();
                     + '&user_id=' + data.user_id
                     + '&activity_id=' + data.activity_id
                     + '&report=' + reportType
+                    + '&context=modal'
                 });
 
                 $('body').on('hidden.bs.modal', '.modal', function () {
