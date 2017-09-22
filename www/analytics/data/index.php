@@ -130,7 +130,7 @@ $version = $version_dataapi;
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#itembanktags">
                             <span class="block">action: get</span>
-                            <?php echo '/' . $version . '/itembank/tags'; ?>
+                            <?php echo '/' . $version . '/itembank/tagging/tags'; ?>
                             <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>

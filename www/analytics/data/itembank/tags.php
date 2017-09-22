@@ -1,6 +1,6 @@
 <?php
 
-$endpoint = "$URL/$version/itembank/tags";
+$endpoint = "$URL/$version/itembank/tagging/tags";
 $resource = 'tags';
 
 ?>
