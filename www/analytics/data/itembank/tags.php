@@ -27,9 +27,9 @@ $resource = 'tags';
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">tag(s)</label>
+                <label class="col-md-2 control-label">name(s)</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="api-tags" data-type="array" value="">
+                    <input type="text" class="form-control" id="api-names" data-type="array" value="">
                 </div>
             </div>
             <div class="form-group">
