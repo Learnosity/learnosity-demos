@@ -7,7 +7,7 @@
 -->
 <?php
     // Shortcuts for convenience
-    $base  = $request['base_question_type'];
+    $base  = isset($request['base_question_type']) ? $request['base_question_type'] : [];
     $ui = $request['ui'];
     $layout = isset($request['ui']) ? $request['ui']['layout'] : [];
     $service = 'Question Editor API';
