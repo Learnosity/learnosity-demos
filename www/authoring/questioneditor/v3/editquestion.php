@@ -66,7 +66,9 @@ switch ($request['question_type']) {
                 "type": "horizontal"
             }
         }';
-        $widget_template = 'Multiple Choice – Standard';
+        // https://docs.learnosity.com/authoring/questioneditor/knowledgebase/author-api-template-references
+        // Template Name is case sensitive
+        $widget_template = 'Multiple choice – standard';
         break;
     case 'mcq-block':
         $widget_json = '{
@@ -104,7 +106,9 @@ switch ($request['question_type']) {
                 "choice_label": "upper-alpha"
             }
         }';
-        $widget_template = 'Multiple Choice – Block UI';
+        // https://docs.learnosity.com/authoring/questioneditor/knowledgebase/author-api-template-references
+        // Template Name is case sensitive
+        $widget_template = 'Multiple choice – block layout';
         break;
     case 'choicematrix':
         $widget_json = '{
@@ -138,7 +142,9 @@ switch ($request['question_type']) {
                 }
             }
         }';
-        $widget_template = 'Choice Matrix – Labels';
+        // https://docs.learnosity.com/authoring/questioneditor/knowledgebase/author-api-template-references
+        // Template Name is case sensitive
+        $widget_template = 'Choice matrix – labels';
         break;
     case 'association':
         $widget_json = '{
@@ -166,7 +172,9 @@ switch ($request['question_type']) {
                 }
             }
         }';
-        $widget_template = 'Match List';
+        // https://docs.learnosity.com/authoring/questioneditor/knowledgebase/author-api-template-references
+        // Template Name is case sensitive
+        $widget_template = 'Match list';
         break;
     default:
         die('Missing question type');
