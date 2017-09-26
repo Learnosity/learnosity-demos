@@ -389,6 +389,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="show_submit" class="col-sm-6 control-label">Submit</label>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="administration[options][show_submit]" value="true"<?php if (isset($admin['options']['show_submit']) && $admin['options']['show_submit'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
+                                        <input type="radio" name="administration[options][show_submit]" value="false"<?php if (isset($admin['options']['show_submit']) && $admin['options']['show_submit'] === false) { echo ' checked'; }; ?>> Disable
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="show_exit" class="col-sm-6 control-label">Exit</label>
                                     <div class="col-sm-6">
                                         <input type="radio" name="administration[options][show_exit]" value="true"<?php if (isset($admin['options']['show_exit']) && $admin['options']['show_exit'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
