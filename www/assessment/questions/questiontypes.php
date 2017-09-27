@@ -1213,7 +1213,7 @@ $request = '{
             "response_id": "demo41-'.$uniqueResponseIdSuffix.'",
             "type":"hotspot",
             "image":{
-                "source":"//dw6y82u65ww8h.cloudfront.net/organisations/1/bead7655-fb71-41af-aeea-9e08a47eac68.png",
+                "source":"//assets.learnosity.com/organisations/1/bead7655-fb71-41af-aeea-9e08a47eac68.png",
                 "width":700,
                 "height":370
             },
