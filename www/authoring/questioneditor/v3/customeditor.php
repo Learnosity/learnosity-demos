@@ -67,7 +67,7 @@ var initOptions = {
       {
         "name": "Fill Circle",
         "description": "Circle",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
+        "image": "//assets.learnosity.com/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
         "group_reference": "MathJr",
         "hidden": [
           "is_math",
@@ -222,7 +222,7 @@ var initOptions = {
           }
         },
         "description": "Select true or false",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
         "group_reference": "ELAjr",
         "name": "True or False"
       }
@@ -231,7 +231,7 @@ var initOptions = {
       {
         "name": "Plot on the Numberline",
         "description": "Place points on numberline",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
+        "image": "//assets.learnosity.com/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
         "group_reference": "MathSr",
         "hidden": [
           "ticks.show",
@@ -322,7 +322,7 @@ var initOptions = {
       {
         "name": "Image Highlight",
         "description": "Highlight the image",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/027e8499-5a56-4075-82ae-06e336c2d52d.jpg",
+        "image": "//assets.learnosity.com/organisations/6/027e8499-5a56-4075-82ae-06e336c2d52d.jpg",
         "group_reference": "SciJr",
         "hidden": [
           "ui_style.fontsize",
@@ -366,7 +366,7 @@ var initOptions = {
       {
         "name": "Dropdown Image",
         "description": "Choose from the menus",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/a6c0afb2-6eff-480f-971f-07cf9835614a.jpg",
+        "image": "//assets.learnosity.com/organisations/6/a6c0afb2-6eff-480f-971f-07cf9835614a.jpg",
         "group_reference": "SciSr",
         "hidden": [
           "ui_style.fontsize",
@@ -449,7 +449,7 @@ var initOptions = {
       {
         "name": "Token Highlight",
         "description": "Highlight the correct piece of text",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/a6c0afb2-6eff-480f-971f-07cf9835614a.jpg",
+        "image": "//assets.learnosity.com/organisations/6/a6c0afb2-6eff-480f-971f-07cf9835614a.jpg",
         "group_reference": "SciSr",
         "hidden": [
           "ui_style.fontsize",
@@ -495,7 +495,7 @@ var initOptions = {
       {
         "name": "Highlight",
         "description": "Highlight the sentence",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
         "group_reference": "ELAjr",
         "hidden": [
           "ui_style.fontsize",
@@ -541,7 +541,7 @@ var initOptions = {
       {
         "name": "Drag & Drop - Numberline",
         "description": "Drag the points to the number line",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
+        "image": "//assets.learnosity.com/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
         "group_reference": "MathJr",
         "hidden": [
           "ticks.show",
@@ -637,7 +637,7 @@ var initOptions = {
       {
         "name": "Chemistry Formula",
         "description": "Complete the chemical equation",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/027e8499-5a56-4075-82ae-06e336c2d52d.jpg",
+        "image": "//assets.learnosity.com/organisations/6/027e8499-5a56-4075-82ae-06e336c2d52d.jpg",
         "group_reference": "SciJr",
         "hidden": [
           "is_math",
@@ -700,7 +700,7 @@ var initOptions = {
       {
         "name": "Image Drag and Drop",
         "description": "Drag and drop to the image",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
         "group_reference": "ELAsr",
         "hidden": [
           "ui_style.fontsize",
@@ -735,7 +735,7 @@ var initOptions = {
         ],
         "defaults": {
           "image": {
-            "src": "//dw6y82u65ww8h.cloudfront.net/demos/docs/blank_us_map_v2.png"
+            "src": "//assets.learnosity.com/demos/docs/blank_us_map_v2.png"
           },
           "possible_responses": [
             "Pacific Ocean",
@@ -777,7 +777,7 @@ var initOptions = {
       {
         "name": "Cloze Drag drop",
         "description": "The eye",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/027e8499-5a56-4075-82ae-06e336c2d52d.jpg",
+        "image": "//assets.learnosity.com/organisations/6/027e8499-5a56-4075-82ae-06e336c2d52d.jpg",
         "group_reference": "SciJr",
         "hidden": [
           "ui_style.fontsize",
@@ -804,7 +804,7 @@ var initOptions = {
         ],
         "defaults": {
           "image": {
-            "src": "//dw6y82u65ww8h.cloudfront.net/organisations/130/8e95e725-d92c-4cc0-b033-834f25d883a4.jpeg"
+            "src": "//assets.learnosity.com/organisations/130/8e95e725-d92c-4cc0-b033-834f25d883a4.jpeg"
           },
           "possible_responses": [
             "Vitreous Humour",
@@ -912,7 +912,7 @@ var initOptions = {
       {
         "name": "Audio",
         "description": "Record an audio",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
         "group_reference": "ELAsr",
         "hidden": [
           "waveform",
@@ -936,7 +936,7 @@ var initOptions = {
       {
         "name": "Hotspot Science",
         "description": "Click on the right part",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/a6c0afb2-6eff-480f-971f-07cf9835614a.jpg",
+        "image": "//assets.learnosity.com/organisations/6/a6c0afb2-6eff-480f-971f-07cf9835614a.jpg",
         "group_reference": "SciSr",
         "hidden_sections": [
           "more_options.heading",
@@ -947,7 +947,7 @@ var initOptions = {
           "type": "hotspot",
           "stimulus": "<p>Click on the Right Ventricle.</p>\n",
           "image": {
-            "source": "//dw6y82u65ww8h.cloudfront.net/organisations/130/e3886133-703f-472c-a404-fd172987901e.jpg",
+            "source": "//assets.learnosity.com/organisations/130/e3886133-703f-472c-a404-fd172987901e.jpg",
             "width": 450,
             "height": 593
           },
@@ -1051,7 +1051,7 @@ var initOptions = {
       {
         "name": "Fill in the Blanks",
         "description": "Provide the correct answers",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
+        "image": "//assets.learnosity.com/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
         "group_reference": "MathSr",
         "hidden_sections": [
           "more_options.heading",
@@ -1087,7 +1087,7 @@ var initOptions = {
       {
         "name": "Math Formula",
         "description": "Solve the equation",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
+        "image": "//assets.learnosity.com/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
         "group_reference": "MathJr",
         "hidden_sections": [
           "more_options.heading",
@@ -1127,7 +1127,7 @@ var initOptions = {
       {
         "name": "Essay",
         "description": "Write an essay",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
         "group_reference": "ELAsr",
         "hidden": [
           "ui_style.fontsize",
@@ -1157,7 +1157,7 @@ var initOptions = {
       {
         "name": "Math - Cloze",
         "description": "Enter the answer",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
+        "image": "//assets.learnosity.com/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
         "group_reference": "MathSr",
         "hidden": [
           "ui_style.fontsize",
@@ -1221,7 +1221,7 @@ var initOptions = {
       {
         "name": "Cloze Drag & Drop",
         "description": "Drag and drop",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
         "group_reference": "ELAjr",
         "hidden": [
           "ui_style.fontsize",
@@ -1280,7 +1280,7 @@ var initOptions = {
       {
         "name": "Bar Chart",
         "description": "Bar chart question",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
+        "image": "//assets.learnosity.com/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
         "group_reference": "MathJr",
         "hidden": [
           "ui_style.fontsize",
@@ -1352,7 +1352,7 @@ var initOptions = {
       {
         "name": "Line Chart",
         "description": "Plot the line",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
+        "image": "//assets.learnosity.com/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
         "group_reference": "MathSr",
         "hidden": [
           "ui_style.fontsize",
@@ -1431,7 +1431,7 @@ var initOptions = {
       {
         "name": "Math Essay",
         "description": "A Math Essay",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
+        "image": "//assets.learnosity.com/organisations/6/66236e47-7325-4731-bf86-12b5716ac6de.jpg",
         "group_reference": "MathSr",
         "hidden": [
           "ui_style.fontsize",
@@ -1471,7 +1471,7 @@ var initOptions = {
       {
         "name": "Simple Shading",
         "description": "Shade",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
+        "image": "//assets.learnosity.com/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
         "group_reference": "MathJr",
         "hidden": [
           "ui_style.fontsize",
@@ -1515,7 +1515,7 @@ var initOptions = {
       {
         "name": "Cloze Text",
         "description": "Fill in the missing word",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
         "group_reference": "ELAsr",
         "hidden": [
           "ui_style.fontsize",
@@ -1564,7 +1564,7 @@ var initOptions = {
       {
         "name": "Sort List",
         "description": "Sort the list in a certain order",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/e006fb25-ecf0-4285-8bed-7cc94144b5eb.jpg",
         "group_reference": "ELAsr",
         "hidden": [
           "ui_style.fontsize",
@@ -1615,7 +1615,7 @@ var initOptions = {
       {
         "name": "Multiple Choice Question",
         "description": "Pick one response",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
         "group_reference": "ELAjr",
         "hidden": [
           "multiple_responses",
@@ -1685,7 +1685,7 @@ var initOptions = {
       {
         "name": "Multiple Responses",
         "description": "Choose one or more correct responses",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
+        "image": "//assets.learnosity.com/organisations/6/86ff1667-37f0-4436-990a-cbabbd334b66.jpg",
         "group_reference": "MathJr",
         "hidden": [
           "multiple_responses",
@@ -1752,7 +1752,7 @@ var initOptions = {
       {
         "name": "MCQ Physics",
         "description": "Choose the correct equation",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/a6c0afb2-6eff-480f-971f-07cf9835614a.jpg",
+        "image": "//assets.learnosity.com/organisations/6/a6c0afb2-6eff-480f-971f-07cf9835614a.jpg",
         "group_reference": "SciSr",
         "hidden": [
           "multiple_responses",
@@ -1816,7 +1816,7 @@ var initOptions = {
       {
         "name": "Junior Physics",
         "description": "Physics density",
-        "image": "//dw6y82u65ww8h.cloudfront.net/organisations/6/027e8499-5a56-4075-82ae-06e336c2d52d.jpg",
+        "image": "//assets.learnosity.com/organisations/6/027e8499-5a56-4075-82ae-06e336c2d52d.jpg",
         "group_reference": "SciJr",
         "hidden": [
           "multiple_responses",
@@ -1882,7 +1882,7 @@ var initOptions = {
       {
         "name": "Essay Junior",
         "description": "A short essay",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
         "group_reference": "ELAjr",
         "hidden": [
           "is_math",
@@ -1923,7 +1923,7 @@ var initOptions = {
       {
         "name": "ShortText",
         "description": "Short text",
-        "image": "https://dw6y82u65ww8h.cloudfront.net/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
+        "image": "https://assets.learnosity.com/organisations/1/64403e14-095f-4e51-a97a-75cc36f531df.jpg",
         "group_reference": "ELAjr",
         "hidden_sections": [
           "more_options.heading",

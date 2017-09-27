@@ -24,7 +24,7 @@ $request = '{
     ],
     "question_types": {
         "mcq": {
-            "image": "http://dw6y82u65ww8h.cloudfront.net/questiontypes/templates/mcqblock.png"
+            "image": "http://assets.learnosity.com/questiontypes/templates/mcqblock.png"
         }
     },
     "template_defaults": false,

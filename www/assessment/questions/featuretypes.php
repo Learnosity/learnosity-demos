@@ -30,15 +30,15 @@ include_once 'includes/header.php';
     <section>
         <h3 id="audioplayer">Audio Player</h3>
         <h4>Example (Block Player)</h4>
-        <span class="learnosity-feature" data-type="audioplayer" data-src="//dw6y82u65ww8h.cloudfront.net/organisations/1/codie_award.mp3" data-waveform="//dw6y82u65ww8h.cloudfront.net/organisations/1/codie_award.png"></span>
+        <span class="learnosity-feature" data-type="audioplayer" data-src="//assets.learnosity.com/organisations/1/codie_award.mp3" data-waveform="//assets.learnosity.com/organisations/1/codie_award.png"></span>
         <br />
-        <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="audioplayer" data-src="audio-source.mp3" data-waveform="//dw6y82u65ww8h.cloudfront.net/demos/docs/waveform.png"&gt;&lt;/span&gt;</pre>
+        <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="audioplayer" data-src="audio-source.mp3" data-waveform="//assets.learnosity.com/demos/docs/waveform.png"&gt;&lt;/span&gt;</pre>
         <hr />
     </section>
 
     <section>
         <h4>Example (Bar Player)</h4>
-        <span class="learnosity-feature" data-type="audioplayer" data-player="bar" data-src="//dw6y82u65ww8h.cloudfront.net/organisations/1/codie_award.mp3"></span>
+        <span class="learnosity-feature" data-type="audioplayer" data-player="bar" data-src="//assets.learnosity.com/organisations/1/codie_award.mp3"></span>
         <br />
         <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="audioplayer" data-player="bar" data-src="audio-source.mp3"&gt;&lt;/span&gt;</pre>
         <hr />
@@ -46,7 +46,7 @@ include_once 'includes/header.php';
 
     <section>
         <h4>Example (Minimal Player)</h4>
-        <span class="learnosity-feature" data-type="audioplayer" data-player="minimal" data-src="//dw6y82u65ww8h.cloudfront.net/organisations/1/codie_award.mp3"></span>
+        <span class="learnosity-feature" data-type="audioplayer" data-player="minimal" data-src="//assets.learnosity.com/organisations/1/codie_award.mp3"></span>
         <br />
         <pre class="feature htmlexample">&lt;span class="learnosity-feature" data-type="audioplayer" data-player="minimal" data-src="audio-source.mp3"&gt;&lt;/span&gt;</pre>
         <hr />
