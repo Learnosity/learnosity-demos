@@ -86,10 +86,9 @@ $jsonId = isset($_GET['id']) ? $_GET['id'] : '';
 
             $('[data-action="review"]').on('click', function () {
                 var $btn = $(this);
-debugger;
+
                 window.questionsApp.save({
                     success: function () {
-                        debugger;
                         var url = window.location.href;
 
                         if (url.indexOf('?') < 0) {

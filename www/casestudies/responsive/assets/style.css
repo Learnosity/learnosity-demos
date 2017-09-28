@@ -73,6 +73,16 @@
   height: 1024px;
 }
 
+.widgets-container .widget {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.widgets-container .widget:last-child {
+  border-bottom: none;
+}
+
 .responsiveApp__toolbar .btn {
   height: 40px;
   border-radius: 4px;
