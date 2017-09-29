@@ -101,7 +101,7 @@
         {
             "type": "imageclozeassociation",
             "image": {
-                "src": "//dw6y82u65ww8h.cloudfront.net/organisations/250/Microsh.png"
+                "src": "//assets.learnosity.com/organisations/250/Microsh.png"
             },
             "possible_responses": ["Cylinder", "Pyramid", "Cone", "Sphere"],
             "response_container": {
@@ -135,7 +135,7 @@
         },
         {
             "image": {
-                "src": "//dw6y82u65ww8h.cloudfront.net/organisations/250/Vertebrates Groups.jpg"
+                "src": "//assets.learnosity.com/organisations/250/Vertebrates Groups.jpg"
             },
             "possible_responses": [
                 ["Amphibians", "Reptiles", "Fish"],
@@ -172,7 +172,7 @@
         {
             "case_sensitive": true,
             "image": {
-                "src": "//dw6y82u65ww8h.cloudfront.net/organisations/1/Continents_map.png"
+                "src": "//assets.learnosity.com/organisations/1/Continents_map.png"
             },
             "response_container": {
                 "width": "93px"
@@ -293,7 +293,7 @@
             }
         },
         {
-            "img_src": "//dw6y82u65ww8h.cloudfront.net/organisations/250/Map of Europe_2016722165235.jpg",
+            "img_src": "//assets.learnosity.com/organisations/250/Map of Europe_2016722165235.jpg",
             "line_color": ["rgba(255, 0, 0, 0.8)"],
             "stimulus": "<p>Highlight <b>Spain</b> on the map.&nbsp;</p>",
             "type": "highlight"
@@ -583,7 +583,7 @@
             ],
             "image": {
                 "height": 380,
-                "source": "https:\/\/dw6y82u65ww8h.cloudfront.net\/organisations\/1\/750a8988-94dc-408e-a211-47b067d121ca.jpg",
+                "source": "https:\/\/assets.learnosity.com\/organisations\/1\/750a8988-94dc-408e-a211-47b067d121ca.jpg",
                 "width": 500
             },
             "stimulus": "<p>Click on Saturn in this image.<\/p>\n",
