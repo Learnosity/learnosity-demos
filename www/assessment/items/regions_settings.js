@@ -18,6 +18,18 @@ $(document).ready(function () {
     //dynamically load and add this css file for regions setting UI
     loadCssFile("regions_settings_style.css", "css");
     window.appHelper = {
+        setTopRegion: function () {
+            var topRegion = [];
+            var topElems = $('.topContainer').children().toArray();
+
+            for (var i = 0; i < topElems.length; i++) {
+                var spanElem = $($(topElems[i]).find('div')[0]).find('span');
+                var elem = $(spanElem[0]).html();
+                topRegion.push({'type': regionLabelToElement[elem]});
+            }
+            topRegion.push({'type': 'header_element', 'default_label_option': 'regionHeaderTop'});
+            return topRegion;
+        },
         setTopLeftRegion: function () {
             var topLeftRegion = [];
             var topLeftElems = $('.top-leftContainer').children().toArray();
@@ -127,27 +139,33 @@ $(document).ready(function () {
     };
     //to be used for loading the elements in UI
     const regionElementMap = {
-        "pause_button": "Pause",
-        "accessibility_button": "Accessibility",
-        "calculator_button": "Calculator",
-        "flagitem_button": "Flag Item",
-        "fullscreen_button": "Full Screen",
-        "masking_button": "Response Masking",
-        "next_button": "Next",
-        "previous_button": "Previous",
-        "reviewscreen_button": "Review Screen",
-        "save_button": "Save",
-        "submit_button": "Submit",
-        "itemcount_element": "Item Count",
-        "reading_timer_element": "Reading Timer",
-        "timer_element": "Timer",
-        "title_element": "Title",
-        "progress_element": "Progress",
-        "slider_element": "Slider",
-        "vertical_element": "Vertical",
-        "verticaltoc_element": "Pager Navigation",
-        "horizontaltoc_element": "Table of Contents"
+        // Buttons
+        'accessibility_button': 'Accessibility',
+        'calculator_button': 'Calculator',
+        'flagitem_button': 'Flag Item',
+        'fullscreen_button': 'Full Screen',
+        'masking_button': 'Masking',
+        'next_button': 'Next',
+        'pause_button': 'Pause',
+        'previous_button': 'Previous',
+        'protractor_button': 'Protractor',
+        'reviewscreen_button': 'Review Screen',
+        'ruler_button': 'Ruler',
+        'save_button': 'Save',
+        'submit_button': 'Submit',
 
+        // Elements
+        'horizontaltoc_element': 'Pager Navigation',
+        'itemcount_element': 'Item Count',
+        'progress_element': 'Progress',
+        'reading_timer_element': 'Reading Timer',
+        'separator_element': 'Separator',
+        'timer_element': 'Timer',
+        'title_element': 'Title',
+        'verticaltoc_element': 'Table of Contents',
+
+        // Items
+        'slider_element': 'Slider'
     };
     //to be used for setting up regions object
     const regionLabelToElement = swap(regionElementMap);
@@ -332,7 +350,6 @@ $(document).ready(function () {
     //this function removes the region element from its container
     function removeElem(elem) {
         $(elem).parent().parent().remove();
-
     }
 
     //this function appends the element to corresponding region
@@ -359,7 +376,8 @@ $(document).ready(function () {
         var childCount = $(container).children().length;
 
         //condition below is for setting a limit to the number of elements that can be added per region
-        if (((container === ".top-leftContainer") && childCount < 4) ||
+        if (((container === ".topContainer") && childCount < 6) ||
+            ((container === ".top-leftContainer") && childCount < 4) ||
             ((container === ".top-rightContainer") && childCount < 4) ||
             ((container === ".itemsContainer") && childCount < 2) ||
             ((container === ".rightContainer") && childCount < 7) ||
@@ -410,14 +428,24 @@ $(document).ready(function () {
 
     }
 
+    // add on change event handler for top dropdown
+    $('#topElementAdder').on('change', function () {
+        addElem('#topElementAdder', '.topContainer');
+    });
+
     // add on change event handler for top left dropdown
-    $('#topLeftElementAdder').on('change', function () {
-        addElem('#topLeftElementAdder', '.top-leftContainer');
+    $('#top-leftElementAdder').on('change', function () {
+        addElem('#top-leftElementAdder', '.top-leftContainer');
     });
 
     // add on change event handler for top right dropdown
-    $('#topRightElementAdder').on('change', function () {
-        addElem('#topRightElementAdder', '.top-rightContainer');
+    $('#top-rightElementAdder').on('change', function () {
+        addElem('#top-rightElementAdder', '.top-rightContainer');
+    });
+
+    // add on change event handler for items dropdown
+    $('#itemsElementAdder').on('change', function () {
+        addElem('#itemsElementAdder', '.itemsContainer');
     });
 
     // add on change event handler for right dropdown
@@ -426,26 +454,20 @@ $(document).ready(function () {
     });
 
     // add on change event handler for bottom left dropdown
-    $('#bottomLeftElementAdder').on('change', function () {
-        addElem('#bottomLeftElementAdder', '.bottom-leftContainer');
+    $('#bottom-leftElementAdder').on('change', function () {
+        addElem('#bottom-leftElementAdder', '.bottom-leftContainer');
     });
-
 
     // add on change event handler for bottom right dropdown
-    $('#bottomRightElementAdder').on('change', function () {
-        addElem('#bottomRightElementAdder', '.bottom-rightContainer');
+    $('#bottom-rightElementAdder').on('change', function () {
+        addElem('#bottom-rightElementAdder', '.bottom-rightContainer');
     });
-
 
     // aadd on change event handler for bottom dropdown
     $('#bottomElementAdder').on('change', function () {
         addElem('#bottomElementAdder', '.bottomContainer');
     });
 
-    // add on change event handler for items dropdown
-    $('#itemsElementAdder').on('change', function () {
-        addElem('#itemsElementAdder', '.itemsContainer');
-    });
 
     //load current elements
     $.each(currentRegions, function (key, value) {
@@ -524,6 +546,7 @@ $(document).ready(function () {
 
         //set up regions object before form submission
         region = {
+            'top': appHelper.setTopRegion(),
             'top-left': appHelper.setTopLeftRegion(),
             'top-right': appHelper.setTopRightRegion(),
             'items': appHelper.setItemsRegion(),
