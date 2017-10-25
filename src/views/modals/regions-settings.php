@@ -1,220 +1,114 @@
+<?php
+/**
+ * Text Mappings to convert the element name to a human readable description.
+ */
+$regionElements = array(
+    // Buttons
+    'accessibility_button' => 'Accessibility',
+    'calculator_button' => 'Calculator',
+    'flagitem_button' => 'Flag Item',
+    'fullscreen_button' => 'Full Screen',
+    'masking_button' => 'Masking',
+    'next_button' => 'Next',
+    'pause_button' => 'Pause',
+    'previous_button' => 'Previous',
+    'protractor_button' => 'Protractor',
+    'reviewscreen_button' => 'Review Screen',
+    'ruler_button' => 'Ruler',
+    'save_button' => 'Save',
+    'submit_button' => 'Submit',
+
+    // Elements
+    'horizontaltoc_element' => 'Pager Navigation',
+    'itemcount_element' => 'Item Count',
+    'progress_element' => 'Progress',
+    'reading_timer_element' => 'Reading Timer',
+    'separator_element' => 'Separator',
+    'timer_element' => 'Timer',
+    'title_element' => 'Title',
+    'verticaltoc_element' => 'Table of Contents',
+);
+
+/**
+ * Create a readable title from the region key (ex. 'top-right' => 'Top Right')
+ * @param $region - the region string to be titilised
+ */
+function regionTitle($region) {
+    return ucwords(str_replace('-', ' ', $region));
+}
+
+$allButtons = ['accessibility_button', 'calculator_button', 'flagitem_button', 'fullscreen_button', 'masking_button', 'next_button', 'pause_button', 'previous_button', 'protractor_button', 'reviewscreen_button', 'ruler_button', 'save_button', 'submit_button'];
+
+/**
+ * Mapping of which elements are permitted in which regions, used to generate the select lists for each region
+ */
+$regionElementMapping = array(
+    'top' => array(
+        'elements' => ['horizontaltoc_element', 'itemcount_element', 'reading_timer_element', 'timer_element', 'title_element'],
+        'buttons' => $allButtons
+    ),
+    'top-left' => array(
+        'elements' => ['itemcount_element', 'reading_timer_element', 'timer_element', 'title_element'],
+        'buttons' => $allButtons
+    ),
+    'top-right' => array(
+        'elements' => ['itemcount_element', 'reading_timer_element', 'timer_element'],
+        'buttons' => $allButtons
+    ),
+    'items' => array(
+        'elements' => ['progress_element'],
+        'buttons' => []
+    ),
+    'right' => array(
+        'elements' => ['separator_element', 'verticaltoc_element'],
+        'buttons' => $allButtons
+    ),
+    'bottom-left' => array(
+        'elements' => ['horizontaltoc_element'],
+        'buttons' => $allButtons
+    ),
+    'bottom-right' => array(
+        'elements' => ['horizontaltoc_element', 'itemcount_element', 'reading_timer_element', 'timer_element'],
+        'buttons' => $allButtons
+    ),
+    'bottom' => array(
+        'elements' => ['horizontaltoc_element'],
+        'buttons' => $allButtons
+    ),
+);
+
+foreach ($regionElementMapping as $region => $elements) { ?>
 <div class="regions-row">
     <div class="regions-element-dropdown">
-        <select id="topLeftElementAdder">
+        <select id="<?= $region; ?>ElementAdder">
             <option value="none"></option>
-            <optgroup label="Buttons">
-                <option value="accessibility_button">Accessibility</option>
-                <option value="calculator_button">Calculator</option>
-                <option value="flagitem_button">Flag Item</option>
-                <option value="fullscreen_button">Full Screen</option>
-                <option value="masking_button">Masking</option>
-                <option value="next_button">Next</option>
-                <option value="pause_button">Pause</option>
-                <option value="previous_button">Previous</option>
-                <option value="reviewscreen_button">Review Screen</option>
-                <option value="save_button">Save</option>
-                <option value="submit_button">Submit</option>
-            </optgroup>
-            <optgroup label="Elements">
-                <option value="itemcount_element">Item Count</option>
-                <option value="reading_timer_element">Reading Timer</option>
-                <option value="timer_element">Timer</option>
-                <option value="title_element">Title</option>
-            </optgroup>
+
+            <?php if (count($elements['elements']) > 0) { ?>
+                <optgroup label="Elements">
+                    <?php foreach($elements['elements'] as $element) { ?>
+                        <option value="<?= $element; ?>"><?= $regionElements[$element] ?></option>
+                    <?php } ?>
+                </optgroup>
+            <?php } // if count(elements) > 0
+
+            if (count($elements['buttons']) > 0) { ?>
+                <optgroup label="Buttons">
+                    <?php foreach($elements['buttons'] as $button) { ?>
+                        <option value="<?= $button; ?>"><?= $regionElements[$button] ?></option>
+                    <?php } ?>
+                </optgroup>
+            <?php } // if count(buttons) > 0 ?>
+
         </select>
     </div>
 
-    <div class="top-left">
+    <div class="regions-element-summary <?= $region; ?>">
         <div class="regionLabel">
-             <label class="control-label" for="Top-Left">Top Left</label>
+             <label class="control-label" for="<?= str_replace(' ', '-', regionTitle($region)); ?>"><?= regionTitle($region); ?></label>
         </div>
-        <div class="top-leftContainer regionContainer">
+        <div class="<?= $region; ?>Container regionContainer">
         </div>
     </div>
 </div>
 <br>
-<div class="regions-row">
-    <div class="regions-element-dropdown">
-        <select id="topRightElementAdder">
-            <option value="none"></option>
-            <optgroup label="Buttons">
-                <option value="accessibility_button">Accessibility</option>
-                <option value="calculator_button">Calculator</option>
-                <option value="flagitem_button">Flag Item</option>
-                <option value="fullscreen_button">Full Screen</option>
-                <option value="masking_button">Masking</option>
-                <option value="next_button">Next</option>
-                <option value="pause_button">Pause</option>
-                <option value="previous_button">Previous</option>
-                <option value="reviewscreen_button">Review Screen</option>
-                <option value="save_button">Save</option>
-                <option value="submit_button">Submit</option>
-            </optgroup>
-            <optgroup label="Elements">
-                <option value="itemcount_element">Item Count</option>
-                <option value="reading_timer_element">Reading Timer</option>
-                <option value="timer_element">Timer</option>
-            </optgroup>
-        </select>
-    </div>
-
-    <div class="top-right">
-        <div class="regionLabel">
-             <label class="control-label" for="Top-Right">Top Right</label>
-        </div>
-        <div class="top-rightContainer regionContainer">
-        </div>
-    </div>
-</div>
-<br>
-<div class="regions-row">
-    <div class="regions-element-dropdown">
-        <select id="itemsElementAdder">
-            <option value="none"></option>
-            <optgroup label="Elements">
-                <option value="progress_element">Progress</option>
-            </optgroup>
-        </select>
-    </div>
-
-    <div class="items">
-        <div class="regionLabel">
-             <label class="control-label" for="Items">Items</label>
-        </div>
-        <div class="itemsContainer regionContainer">
-        </div>
-    </div>
-</div>
-<br>
-<div class="regions-row">
-    <div class="regions-element-dropdown">
-        <select id="rightElementAdder">
-            <option value="none"></option>
-            <optgroup label="Buttons">
-                <option value="accessibility_button">Accessibility</option>
-                <option value="calculator_button">Calculator</option>
-                <option value="flagitem_button">Flag Item</option>
-                <option value="fullscreen_button">Full Screen</option>
-                <option value="masking_button">Masking</option>
-                <option value="next_button">Next</option>
-                <option value="pause_button">Pause</option>
-                <option value="previous_button">Previous</option>
-                <option value="reviewscreen_button">Review Screen</option>
-                <option value="save_button">Save</option>
-                <option value="submit_button">Submit</option>
-            </optgroup>
-            <optgroup label="Elements">
-                <option value="itemcount_element">Item Count</option>
-                <option value="verticaltoc_element">Pager Navigation</option>
-            </optgroup>
-        </select>
-    </div>
-
-    <div class="right">
-        <div class="regionLabel">
-             <label class="control-label" for="Right">Right</label>
-        </div>
-        <div class="rightContainer regionContainer">
-        </div>
-    </div>
-</div>
-<br>
-<div class="regions-row">
-    <div class="regions-element-dropdown">
-        <select id="bottomLeftElementAdder">
-            <option value="none"></option>
-            <optgroup label="Buttons">
-                <option value="accessibility_button">Accessibility</option>
-                <option value="calculator_button">Calculator</option>
-                <option value="flagitem_button">Flag Item</option>
-                <option value="fullscreen_button">Full Screen</option>
-                <option value="masking_button">Masking</option>
-                <option value="next_button">Next</option>
-                <option value="pause_button">Pause</option>
-                <option value="previous_button">Previous</option>
-                <option value="reviewscreen_button">Review Screen</option>
-                <option value="save_button">Save</option>
-                <option value="submit_button">Submit</option>
-            </optgroup>
-            <optgroup label="Elements">
-                <option value="horizontaltoc_element">Table of Contents</option>
-            </optgroup>
-        </select>
-    </div>
-
-    <div class="bottom-left">
-        <div class="regionLabel">
-             <label class="control-label" for="Bottom-Left">Bottom Left</label>
-        </div>
-        <div class="bottom-leftContainer regionContainer">
-        </div>
-    </div>
-</div>
-<br>
-<div class="regions-row">
-    <div class="regions-element-dropdown">
-        <select id="bottomRightElementAdder">
-            <option value="none"></option>
-            <optgroup label="Buttons">
-                <option value="accessibility_button">Accessibility</option>
-                <option value="calculator_button">Calculator</option>
-                <option value="flagitem_button">Flag Item</option>
-                <option value="fullscreen_button">Full Screen</option>
-                <option value="masking_button">Masking</option>
-                <option value="next_button">Next</option>
-                <option value="pause_button">Pause</option>
-                <option value="previous_button">Previous</option>
-                <option value="reviewscreen_button">Review Screen</option>
-                <option value="save_button">Save</option>
-                <option value="submit_button">Submit</option>
-            </optgroup>
-            <optgroup label="Elements">
-                <option value="horizontaltoc_element">Table of Contents</option>
-                <option value="itemcount_element">Item Count</option>
-                <option value="reading_timer_element">Reading Timer</option>
-                <option value="timer_element">Timer</option>
-            </optgroup>
-        </select>
-    </div>
-
-    <div class="bottom-right">
-        <div class="regionLabel">
-             <label class="control-label" for="Bottom-Right">Bottom Right</label>
-        </div>
-        <div class="bottom-rightContainer regionContainer">
-        </div>
-    </div>
-</div>
-<br>
-<div class="regions-row">
-    <div class="regions-element-dropdown">
-        <select id="bottomElementAdder">
-            <option value="none"></option>
-            <optgroup label="Buttons">
-                <option value="accessibility_button">Accessibility</option>
-                <option value="calculator_button">Calculator</option>
-                <option value="flagitem_button">Flag Item</option>
-                <option value="fullscreen_button">Full Screen</option>
-                <option value="masking_button">Masking</option>
-                <option value="next_button">Next</option>
-                <option value="pause_button">Pause</option>
-                <option value="previous_button">Previous</option>
-                <option value="reviewscreen_button">Review Screen</option>
-                <option value="save_button">Save</option>
-                <option value="submit_button">Submit</option>
-            </optgroup>
-            <optgroup label="Elements">
-                <option value="horizontaltoc_element">Table of Contents</option>
-            </optgroup>
-        </select>
-    </div>
-
-    <div class="bottom">
-        <div class="regionLabel">
-             <label class="control-label" for="Bottom">Bottom</label>
-        </div>
-        <div class="bottomContainer regionContainer">
-        </div>
-    </div>
-</div>
-<br>
+<?php } ?>
