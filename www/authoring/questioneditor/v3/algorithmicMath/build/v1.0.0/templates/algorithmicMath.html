@@ -1,0 +1,83 @@
+<div class="lrn-qe-edit-form">
+    <span data-lrn-qe-label="stimulus"></span>
+    <span data-lrn-qe-input="stimulus" class="lrn-qe-ckeditor-lg"></span>
+
+    <div>
+        <span data-lrn-qe-label="template" class="lrn-qe-inline lrn-qe-margin-right-none"></span>
+        <span class="lrn-qe-note-text">(Max 6 variables)</span>
+    </div>
+
+    <div class="lrn-qe-template-markup-controls lrn-qe-row-flex">
+        <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+            <span class="lrn-qe-inline-block lrn-qe-margin-right-sm lrn-qe-btn-add-variables-wrapper"
+                  data-lrn-qe-action-add="metadata.dynamic_content_data.variables"></span>
+            <button type="button" class="lrn-qe-btn lrn-qe-btn-default lrn-qe-btn-add-response"
+                    data-action="addResponse" title="Add Response">
+                <span class="lrn-qe-editor-toolbar-i-response lrn-qe-margin-right-sm"></span>
+                <span class="lrn-qe-btn-name">Response</span>
+            </button>
+        </div>
+        <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6 lrn-qe-datatable-controls">
+            <div class="lrn-qe-reloading">
+                <span class="lrn-qe-loader">Calculating...</span>
+            </div>
+            <button type="button" class="lrn-qe-btn lrn-qe-btn-edit-datatable"
+                    data-action="editDatatable" title="Edit data">
+                <span class="lrn-qe-i-dynamic-data lrn-qe-margin-right-sm"></span>
+                <span class="lrn-qe-btn-name">Data</span>
+            </button>
+        </div>
+    </div>
+
+    <div data-component="templateMarkup" class="lrn-qe-form-group-wrapper"></div>
+
+    <div class="lrn-qe-hide" data-lrn-mathcore-failed-notification>
+        We could not auto create the correct answers for you. Your math problem is too complex or not valid.
+    </div>
+
+    <div data-component="useEquation"></div>
+
+    <div data-component="variableList" class="lrn-qe-row-flex"></div>
+
+    <div class="lrn-qe-row-flex">
+        <div data-lrn-qe-loop="metadata.dynamic_content_data.variables[*]" class="lrn-qe-col-xs-12 lrn-qe-col-sm-6 lrn-qe-margin-top-md lrn-qe-margin-bottom-md">
+            <span class="lrn-qe-hide" data-lrn-qe-action-remove="metadata.dynamic_content_data.variables[*]"></span>
+            <fieldset class="lrn-qe-fieldset">
+                <div class="lrn-qe-legend">
+                    Variable<span class="lrn-qe-padding-left-xs" data-lrn-component="label"></span>
+                </div>
+
+                <div class="lrn-qe-row-flex">
+                    <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-3">
+                        <span data-lrn-qe-label="metadata.dynamic_content_data.variables[*].min" class="lrn-qe-text-bold"></span>
+                        <span data-lrn-qe-input="metadata.dynamic_content_data.variables[*].min" class="lrn-qe-form-control-sm"></span>
+                    </div>
+                    <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-3">
+                        <span data-lrn-qe-label="metadata.dynamic_content_data.variables[*].max" class="lrn-qe-text-bold"></span>
+                        <span data-lrn-qe-input="metadata.dynamic_content_data.variables[*].max" class="lrn-qe-form-control-sm"></span>
+                    </div>
+                    <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-3">
+                        <span data-lrn-qe-label="metadata.dynamic_content_data.variables[*].step" class="lrn-qe-text-bold"></span>
+                        <span data-lrn-qe-input="metadata.dynamic_content_data.variables[*].step" class="lrn-qe-form-control-sm"></span>
+                    </div>
+                    <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-3">
+                        <span data-lrn-qe-label="metadata.dynamic_content_data.variables[*].decimal_place" class="lrn-qe-text-bold"></span>
+                        <span data-lrn-qe-input="metadata.dynamic_content_data.variables[*].decimal_place" class="lrn-qe-form-control-sm"></span>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <span data-lrn-qe-label="validation.valid_response.score" class="lrn-qe-inline-block lrn-qe-margin-left-none lrn-qe-margin-right-none"></span>
+    <span data-lrn-qe-input="validation.valid_response.score" class="lrn-qe-inline-block lrn-qe-text-center lrn-qe-form-control-xs lrn-qe-margin-left-none"></span>
+
+    <!--  lrn-qe-hide input to allow Question API update its validation valid_response value correctly  -->
+    <div class="lrn-qe-hide" data-lrn-qe-adv-content>
+        <div data-lrn-qe-loop="validation.valid_response.value[*]">
+            <span data-lrn-qe-input="validation.valid_response.value[*].value"></span>
+            <span data-lrn-qe-input="validation.valid_response.value[*].method"></span>
+        </div>
+        <span data-lrn-qe-action-add="validation.valid_response.value"></span>
+    </div>
+</div>
