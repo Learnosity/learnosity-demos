@@ -109,17 +109,6 @@ include_once 'includes/header.php';
                     </p>
                 </div>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Test Dynamic Content with Questions Editor</h2>
-                </div>
-                <div class="panel-body">
-                    <p>An advanced example to show how Questions Editor dynamically generate the content for your question.</p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./v3/algorithmicMath/demo.php">Demo (Algorithmic Math)</a>
-                    </p>
-                </div>
-            </div>
         </div>
     </div>
 </div>
