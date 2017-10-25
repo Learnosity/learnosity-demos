@@ -1,0 +1,650 @@
+{
+    "questions": [
+        {
+            "options": [{
+                "label": "\\(-8\\)",
+                "value": "0"
+            }, {
+                "label": "\\(4+13\\)",
+                "value": "1"
+            }, {
+                "label": "\\(8\\)",
+                "value": "2"
+            }, {
+                "label": "\\(\\left(2\\right)\\left(4\\right)\\)",
+                "value": "3"
+            }],
+            "stimulus": "Simplify&nbsp;\\(\\abs{14+\\left(-6\\right)}\\)&nbsp;and then select <strong>two</strong> answers that show the same value.",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["2", "3"]
+                }
+            },
+            "is_math": true,
+            "ui_style": {
+                "type": "horizontal"
+            },
+            "multiple_responses": true
+        },
+        {
+            "options": ["True", "False"],
+            "stems": ["Horatio is Hamlet's closest friend and advisor throughout the proceedings.", "Hamlet's uncle Polonius is believed to be guilty of killing the titular characters father.", "Rosencrantz and Guildenstern are dead.", "Ophelia and Hamlet are married by the end of the play."],
+            "stimulus": "<p>In William Shakespeare's seminal work&nbsp;<em><strong>Hamlet</strong>,&nbsp;</em>which of the following is true and which is false?</p>",
+            "type": "choicematrix",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        [1],
+                        [0],
+                        [0],
+                        [1]
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "table",
+                "horizontal_lines": false
+            }
+        },
+        {
+            "type": "clozetext",
+            "stimulus": "<p>This is an extract from&nbsp;one of if not the most famous soliloquy from Shakespeare's <em>Macbeth.&nbsp;</em></p>\n\n<p><strong>Fill in<em> </em></strong>the blanks.</p>\n\n<p>&nbsp;</p>\n",
+            "template": "<h5><em>\"Is this a&nbsp;{{response}}&nbsp; which I see before me,<br />\nThe handle toward my hand? Come, let me clutch thee.<br />\nI have thee not, and yet I see thee still.<br />\nArt thou not,&nbsp;fatal&nbsp;vision,&nbsp;sensible&nbsp;<br />\nTo feeling as to sight? or art thou but&nbsp;<br />\nA dagger of the mind, a false creation,<br />\nProceeding from the&nbsp;heat-oppressed brain?&nbsp;<br />\nI see thee yet, in form as palpable<br />\nAs this which now I draw.&nbsp;<br />\nThou&nbsp;marshall'st&nbsp;me the way that I was going;<br />\nAnd such an&nbsp;{{response}}&nbsp;I was to use.<br />\nMine eyes are made the fools o' the other senses,<br />\nOr else worth all the rest; I see thee still,<br />\nAnd on thy blade and&nbsp;dudgeon&nbsp;gouts&nbsp;of blood,&nbsp;<br />\nWhich was not so before. There's no such thing:<br />\nIt is the bloody business which&nbsp;informs<br />\nThus to mine eyes.</em></h5>\n",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["dagger", "instrument"]
+                }
+            }
+        },
+        {
+            "possible_responses": ["\\(x &lt; 4\\)", "\\(7 &lt; x\\)"],
+            "template": "<p>In the inequality&nbsp;\\(x+3-3 &lt; 7-3\\)&nbsp;if we subtract \\(3\\)&nbsp;from both sides, we get&nbsp;{{response}}&nbsp;. And that is our solution. Following on from this, if we subtract&nbsp;\\(5\\)&nbsp;from both sides of&nbsp;\\(12-5 &lt; x+5-5\\)&nbsp;then we will get&nbsp;{{response}}&nbsp;, but it is normal to put '\\(x\\)' on the opposite side, which means you must also then change the inequality sound.&nbsp;</p>\n",
+            "stimulus": "<p>Drag and drop to complete the following sentences.</p>",
+            "type": "clozeassociation",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["\\(x &lt; 4\\)", "\\(7 &lt; x\\)"]
+                }
+            },
+            "ui_style": {
+                "show_drag_handle": false
+            },
+            "is_math": true
+        },
+        {
+            "type": "clozedropdown",
+            "possible_responses": [
+                ["right angle", "obtuse angle", "acute angle"],
+                ["acute angle", "obtuse angle", "right angle"],
+                ["straight angle", "reflex angle", "obtuse angle"]
+            ],
+            "stimulus": "<p>Fill in the blanks by selecting the most appropriate answer in the drop down menu.</p>\n",
+            "template": "<p>An angle that is less than&nbsp;\\(90\\degree\\)&nbsp;is called an&nbsp;{{response}}. An angle that is greater than&nbsp;\\(90\\degree\\)&nbsp;is called an&nbsp;{{response}}. An angles that is greater than&nbsp;\\(180\\degree\\)&nbsp;is called &nbsp;a&nbsp;{{response}}.</p>\n",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["acute angle", "obtuse angle", "reflex angle"]
+                }
+            },
+            "is_math": true
+        },
+        {
+            "type": "imageclozeassociation",
+            "image": {
+                "src": "//assets.learnosity.com/organisations/250/Microsh.png"
+            },
+            "possible_responses": ["Cylinder", "Pyramid", "Cone", "Sphere"],
+            "response_container": {
+                "pointer": "none",
+                "width": "70px"
+            },
+            "response_positions": [{
+                "x": 28.02,
+                "y": 30.84
+            }, {
+                "x": 28.02,
+                "y": 80.98
+            }, {
+                "x": 56.59,
+                "y": 80.98
+            }, {
+                "x": 56.59,
+                "y": 30.84
+            }],
+            "stimulus": "<p>A student sketched some pictures of some shapes but mixed up the names, help them<strong> match</strong> the correct name with each shape.</p>\n",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["Cone", "Sphere", "Pyramid", "Cylinder"]
+                }
+            },
+            "ui_style": {
+                "show_drag_handle": false
+            }
+        },
+        {
+            "image": {
+                "src": "//assets.learnosity.com/organisations/250/Vertebrates Groups.jpg"
+            },
+            "possible_responses": [
+                ["Amphibians", "Reptiles", "Fish"],
+                ["Reptiles", "Birds", "Mammals"],
+                ["Fish", "Reptiles", "Mammals"],
+                ["Mammals", "Birds", "Amphibians"]
+            ],
+            "response_container": {
+                "width": "100px"
+            },
+            "response_positions": [{
+                "x": 31.77,
+                "y": 36.12
+            }, {
+                "x": 67.22,
+                "y": 36.12
+            }, {
+                "x": 31.77,
+                "y": 80.27
+            }, {
+                "x": 67.22,
+                "y": 80.27
+            }],
+            "stimulus": "<p>Select the correct vertebrate group for each animal in the image.</p>",
+            "type": "imageclozedropdown",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["Reptiles", "Mammals", "Fish", "Birds"]
+                }
+            }
+        },
+        {
+            "case_sensitive": true,
+            "image": {
+                "src": "//assets.learnosity.com/organisations/1/Continents_map.png"
+            },
+            "response_container": {
+                "width": "93px"
+            },
+            "response_positions": [{
+                "x": 58.67,
+                "y": 10.67
+            }, {
+                "x": 3,
+                "y": 17.39
+            }, {
+                "x": 32.67,
+                "y": 48
+            }],
+            "stimulus": "Label the continents",
+            "type": "imageclozetext",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["Asia", "North America", "Africa"]
+                }
+            }
+        },
+        {
+            "type": "classification",
+            "possible_responses": ["\\(NaCl\\)", "\\(C_2H_6O\\)", "\\(C_2H_6\\)", "\\(H_2S\\)", "\\(O_3\\)", "\\(CH_4\\)"],
+            "stimulus": "Drag the organic and inorganic compounds to the respective boxes.",
+            "ui_style": {
+                "column_count": 2,
+                "column_titles": ["Organic", "Inorganic"],
+                "show_drag_handle": false
+            },
+            "validation": {
+                "scoring_type": "partialMatch",
+                "valid_response": {
+                    "score": 3,
+                    "value": [
+                        [1, 2, 5],
+                        [0, 3, 4]
+                    ]
+                }
+            },
+            "is_math": true
+        },
+        {
+            "list": [
+                "Paris",
+                "Tokyo",
+                "Moscow",
+                "London",
+                "New York"
+            ],
+            "stimulus": "<p>Arrange these cities by population, from largest to smallest.</p>",
+            "type": "orderlist",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        1,
+                        2,
+                        4,
+                        3,
+                        0
+                    ]
+                }
+            }
+        },
+        {
+            "type": "association",
+            "duplicate_responses": true,
+            "possible_responses": [
+                "Adverb",
+                "Adjective"
+            ],
+            "stimulus": "<p>Match each word with the correct grammar category.</p>",
+            "stimulus_list": [
+                "Hourly",
+                "Happy",
+                "Cheerfully",
+                "Lazy",
+                "Sunny"
+            ],
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "Adverb",
+                        "Adjective",
+                        "Adverb",
+                        "Adjective",
+                        "Adjective"
+                    ]
+                }
+            }
+        },
+        {
+            "type": "audio",
+            "max_length": 600,
+            "stimulus": "<p>In French, briefly describe what you did&nbsp;<strong>yesterday</strong>&nbsp;and what you will do&nbsp;<strong>tomorrow.</strong></p>\n"
+        },
+        {
+            "type": "longtext",
+            "show_word_limit": "off",
+            "stimulus": "<p>Write a short summary of Homer&#39;s Oddysey.</p>"
+        },
+        {
+            "stimulus": "<p>How do you say <i>\"butterfly\"</i> in French? Write you answer below.&nbsp;</p>",
+            "type": "shorttext",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": "Papillon"
+                }
+            }
+        },
+        {
+            "img_src": "//assets.learnosity.com/organisations/250/Map of Europe_2016722165235.jpg",
+            "line_color": ["rgba(255, 0, 0, 0.8)"],
+            "stimulus": "<p>Highlight <b>Spain</b> on the map.&nbsp;</p>",
+            "type": "highlight"
+        },
+        {
+            "canvas": {
+                "cell_height": 2,
+                "cell_width": 2,
+                "column_count": 6,
+                "row_count": 1
+            },
+            "stimulus": "Highlight&nbsp;\\(\\frac{1}{3}\\) of the model.",
+            "type": "simpleshading",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": {
+                        "method": "byCount",
+                        "value": 2
+                    }
+                }
+            },
+            "is_math": true
+        },
+        {
+            "type": "hotspot",
+            "area_attributes": {
+                "global": {
+                    "fill": "rgba(12, 176, 216, 0.48)",
+                    "stroke": "rgb(255, 255, 255)"
+                }
+            },
+            "areas": [
+                [
+                    {
+                        "x": 75.5,
+                        "y": 29.276315789474
+                    },
+                    {
+                        "x": 78.25,
+                        "y": 27.302631578947
+                    },
+                    {
+                        "x": 82.5,
+                        "y": 25.657894736842
+                    },
+                    {
+                        "x": 85.75,
+                        "y": 25.328947368421
+                    },
+                    {
+                        "x": 89,
+                        "y": 23.026315789474
+                    },
+                    {
+                        "x": 94.25,
+                        "y": 18.092105263158
+                    },
+                    {
+                        "x": 98,
+                        "y": 17.763157894737
+                    },
+                    {
+                        "x": 96.5,
+                        "y": 23.355263157895
+                    },
+                    {
+                        "x": 93,
+                        "y": 28.618421052632
+                    },
+                    {
+                        "x": 91.25,
+                        "y": 32.565789473684
+                    },
+                    {
+                        "x": 91.5,
+                        "y": 36.842105263158
+                    },
+                    {
+                        "x": 89.25,
+                        "y": 42.434210526316
+                    },
+                    {
+                        "x": 86.75,
+                        "y": 46.381578947368
+                    },
+                    {
+                        "x": 81.75,
+                        "y": 48.026315789474
+                    },
+                    {
+                        "x": 79,
+                        "y": 48.026315789474
+                    },
+                    {
+                        "x": 75.75,
+                        "y": 50.657894736842
+                    },
+                    {
+                        "x": 72.5,
+                        "y": 53.618421052632
+                    },
+                    {
+                        "x": 69.75,
+                        "y": 55.592105263158
+                    },
+                    {
+                        "x": 67,
+                        "y": 55.263157894737
+                    },
+                    {
+                        "x": 67.75,
+                        "y": 50
+                    },
+                    {
+                        "x": 69.75,
+                        "y": 45.394736842105
+                    },
+                    {
+                        "x": 71.5,
+                        "y": 42.105263157895
+                    },
+                    {
+                        "x": 73.25,
+                        "y": 39.802631578947
+                    },
+                    {
+                        "x": 73.5,
+                        "y": 34.868421052632
+                    }
+                ],
+                [
+                    {
+                        "x": 72,
+                        "y": 25.328947368421
+                    },
+                    {
+                        "x": 74.5,
+                        "y": 19.407894736842
+                    },
+                    {
+                        "x": 74.25,
+                        "y": 14.144736842105
+                    },
+                    {
+                        "x": 72.5,
+                        "y": 9.2105263157895
+                    },
+                    {
+                        "x": 69.25,
+                        "y": 5.9210526315789
+                    },
+                    {
+                        "x": 66.5,
+                        "y": 3.6184210526316
+                    },
+                    {
+                        "x": 61,
+                        "y": 3.2894736842105
+                    },
+                    {
+                        "x": 57,
+                        "y": 5.5921052631579
+                    },
+                    {
+                        "x": 54.75,
+                        "y": 8.5526315789474
+                    },
+                    {
+                        "x": 53.5,
+                        "y": 13.486842105263
+                    },
+                    {
+                        "x": 53,
+                        "y": 17.434210526316
+                    },
+                    {
+                        "x": 53.75,
+                        "y": 21.710526315789
+                    },
+                    {
+                        "x": 55.75,
+                        "y": 25.657894736842
+                    },
+                    {
+                        "x": 57.75,
+                        "y": 28.947368421053
+                    },
+                    {
+                        "x": 62.25,
+                        "y": 30.263157894737
+                    },
+                    {
+                        "x": 67,
+                        "y": 29.605263157895
+                    }
+                ],
+                [
+                    {
+                        "x": 10.75,
+                        "y": 44.078947368421
+                    },
+                    {
+                        "x": 15.5,
+                        "y": 43.421052631579
+                    },
+                    {
+                        "x": 18,
+                        "y": 45.065789473684
+                    },
+                    {
+                        "x": 20,
+                        "y": 50
+                    },
+                    {
+                        "x": 19.5,
+                        "y": 52.960526315789
+                    },
+                    {
+                        "x": 17,
+                        "y": 57.565789473684
+                    },
+                    {
+                        "x": 12.25,
+                        "y": 59.539473684211
+                    },
+                    {
+                        "x": 9.25,
+                        "y": 56.578947368421
+                    },
+                    {
+                        "x": 8,
+                        "y": 51.315789473684
+                    },
+                    {
+                        "x": 8.25,
+                        "y": 47.039473684211
+                    }
+                ],
+                [
+                    {
+                        "x": 55.75,
+                        "y": 80.263157894737
+                    },
+                    {
+                        "x": 60.5,
+                        "y": 81.578947368421
+                    },
+                    {
+                        "x": 62.75,
+                        "y": 85.526315789474
+                    },
+                    {
+                        "x": 63.5,
+                        "y": 90.131578947368
+                    },
+                    {
+                        "x": 62,
+                        "y": 94.407894736842
+                    },
+                    {
+                        "x": 58.75,
+                        "y": 96.710526315789
+                    },
+                    {
+                        "x": 55.5,
+                        "y": 97.039473684211
+                    },
+                    {
+                        "x": 52,
+                        "y": 94.407894736842
+                    },
+                    {
+                        "x": 50.5,
+                        "y": 90.460526315789
+                    },
+                    {
+                        "x": 50.25,
+                        "y": 85.526315789474
+                    },
+                    {
+                        "x": 52.5,
+                        "y": 82.565789473684
+                    }
+                ]
+            ],
+            "image": {
+                "height": 380,
+                "source": "https:\/\/assets.learnosity.com\/organisations\/1\/750a8988-94dc-408e-a211-47b067d121ca.jpg",
+                "width": 500
+            },
+            "stimulus": "<p>Click on Saturn in this image.<\/p>\n",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": ["0"]
+                }
+            }
+        },
+        {
+            "type": "formulaV2",
+            "is_math": true,
+            "stimulus": "<p>Convert the following into decimals.&nbsp;</p>\n\n<p>\\(\\frac{1}{2}+\\frac{1}{4}+\\frac{1}{4}=\\frac{1}{1}\\)</p>\n",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [{
+                        "method": "equivSymbolic",
+                        "options": {
+                            "inverseResult": false,
+                            "decimalPlaces": 10
+                        },
+                        "value": "0.5+0.25+0.25=1.0"
+                    }]
+                }
+            },
+            "ui_style": {
+                "type": "block-keyboard"
+            },
+            "showHints": false,
+            "symbols": ["basic"]
+        },
+        {
+            "type": "chemistry",
+            "stimulus": "<p>Enter the molecular formula for Glucose<\/p>\n",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        {
+                            "method": "equivLiteral",
+                            "options": {
+                                "allowDecimal": false,
+                                "inverseResult": false,
+                                "ignoreOrder": false
+                            },
+                            "value": "C_6H_{12}O_6"
+                        }
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "block-keyboard"
+            },
+            "showHints": false,
+            "symbols": ["chemistry"]
+        }
+    ],
+    "features": []
+}
