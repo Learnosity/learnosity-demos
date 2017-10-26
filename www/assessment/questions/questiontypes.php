@@ -388,43 +388,67 @@ $request = '{
         },
         {
             "response_id": "demo21-'.$uniqueResponseIdSuffix.'",
-            "description": "The student needs to categorise the triangles.",
-            "type": "classification",
-            "ui_style": {
-                "column_count": 3,
-                "row_count": 1,
-                "column_titles": ["Isoceles", "Scalene", "Equilateral"],
-                "row_min_height": "100px"
-            },
-            "possible_responses": [
-                "<img src=\"//demos.learnosity.com/static/images/questiontypes/triangle1.png\" />",
-                "<img src=\"//demos.learnosity.com/static/images/questiontypes/triangle2.png\" />",
+             "description": "The student needs to categorise the triangles.",
+              "type": "classification",
+              "ui_style": {
+                  "column_count": 3,
+                  "column_titles": [
+                     "Isoceles", 
+                     "Scalene", 
+                     "Equilateral"
+                  ],
+                  "row_min_height": "100px"
+              },
+             "possible_responses": [
+                "<img src=\"//demos.learnosity.com/static/images/questiontypes/triangle1.png\" />", 
+                "<img src=\"//demos.learnosity.com/static/images/questiontypes/triangle2.png\" />", 
                 "<img src=\"//demos.learnosity.com/static/images/questiontypes/triangle3.png\" />"
-            ],
-            "validation": {
-                "valid_responses": [
-                    [[1], [0], [2]]
                 ],
-                "partial_scoring": true,
-                "valid_score": 1,
-                "penalty_score": -0.5
-            },
-            "duplicate_responses": false,
-            "instant_feedback": true
+              "validation": {
+                  "scoring_type": "partialMatchElementV2",
+                  "valid_response": {
+                      "score": 1,
+                      "value": [
+                          [1],
+                          [0],
+                          [2]
+                      ]
+                  },
+                  "penalty": 0.5,
+                  "rounding": "none"
+              },
+              "instant_feedback": true
         },
         {
             "response_id": "demo22-'.$uniqueResponseIdSuffix.'",
-            "type": "sortlist",
-            "description": "In this question, the student needs to sort the events, chronologically earliest to latest.",
-            "list": ["Russian Revolution", "Discovery of the Americas", "Storming of the Bastille", "Battle of Plataea", "Founding of Rome", "First Crusade"],
-            "instant_feedback": true,
-            "feedback_attempts": 2,
-            "validation": {
-                "valid_response": [4, 3, 5, 1, 2, 0],
-                "valid_score": 1,
-                "partial_scoring": true,
-                "penalty_score": -1
-            }
+             "type": "sortlist",
+             "description": "In this question, the student needs to sort the events, chronologically earliest to latest.",
+             "list": [
+                "Russian Revolution",
+                "Discovery of the Americas",
+                "Storming of the Bastille",
+                "Battle of Plataea",
+                "Founding of Rome",
+                "First Crusade"
+             ],
+             "instant_feedback": true,
+             "feedback_attempts": 2,
+             "validation": {
+                "penalty": -1,
+                "scoring_type": "partialMatchV2",
+                "rounding": "none",
+                "valid_response": {
+                   "score": 1,
+                   "value": [
+                      4,
+                      3,
+                      5,
+                      1,
+                      2,
+                      0
+                   ]
+                }   
+             }
         },
         {
             "axis_x": {
