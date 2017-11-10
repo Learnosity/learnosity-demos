@@ -30,6 +30,11 @@ LearnosityAmd.define([
                 // like myCustomButton.addEventListener('click', function () { this.init.getFacade().validate(); })
                 .append('<div data-lrn-component="checkAnswer"/>');
 
+            this.$el
+                .find('input')
+                .width(this.question.width)
+                .height(this.question.height);
+
             this.lrnUtils.renderComponent('CheckAnswerButton', this.$el.find('[data-lrn-component="checkAnswer"]').get(0));
         },
 
