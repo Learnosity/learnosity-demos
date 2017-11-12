@@ -20,7 +20,6 @@ $request = array(
     'session_id'     => Uuid::generate(),
     'user_id'        => $student['id'],
     'items'          => array('Demo4', 'Demo3', 'Demo6', 'Demo7', 'Demo8', 'Demo9'),
-    'events'         => true,
     'config'         => array(
         'title'          => 'Demo showcasing remote control events',
         'subtitle'       => $student['name'],
@@ -67,7 +66,8 @@ $request = array(
         'configuration'       => array(
             'ondiscard_redirect_url' => $_SERVER['REQUEST_URI'],
             'onsubmit_redirect_url'  => $_SERVER['REQUEST_URI'],
-            'onsave_redirect_url'    => $_SERVER['REQUEST_URI']
+            'onsave_redirect_url'    => $_SERVER['REQUEST_URI'],
+            'events'                 => true
         ),
         'questions_api_init_options' => [
             'beta_flags' => [
