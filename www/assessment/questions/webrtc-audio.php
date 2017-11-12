@@ -54,8 +54,7 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <h1>Questions API – WebRTC Audio Demo</h1>
-    <p>Learnosity's audio question can now be used without a flash dependency!</p>
-    <p>Available on latest versions of Chrome and Firefox for Android devices.</p>
+    <p>Learnosity's audio question types work across all popular browsers and devices (see the <a href="https://docs.learnosity.com/faqs/system" target="new">system requirements</a>).</p>
 </div>
 
 <!-- Container for the questions api to load into -->
