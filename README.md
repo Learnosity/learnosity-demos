@@ -40,6 +40,8 @@ In order to use Vagrant you need to have installed:
 
 Once these are installed using this demo is as easy as :
 
+Make sure you have set up an SSH key in GitHub when you do the clone as the PHP SDK will not clone properly through HTTPS. [Instructions here](https://help.github.com/articles/generating-ssh-keys/)
+
 ```
 git clone --recursive https://github.com/Learnosity/learnosity-demos.git
 cd learnosity-demos
