@@ -86,7 +86,8 @@ $request = array(
             'reading_time'   => 0,
             'goto_first_item_on_reading_time_completion' => true,
             'warning_time'   => 0
-        )
+        ),
+        'responsive_regions' => true
     ),
     'items' => array(
         array(

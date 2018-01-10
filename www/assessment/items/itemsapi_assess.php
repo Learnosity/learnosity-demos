@@ -149,7 +149,8 @@ $request = [
             ],
             'submit_criteria' => [
                 'type' => 'attempted'
-            ]
+            ],
+            'responsive_regions' => true
         ],
         'questions_api_init_options' => [
             'beta_flags' => [

@@ -47,7 +47,8 @@ $request = array(
         'ui_style'            => 'main',
         'configuration' => array(
             'lazyload'               => false,
-            'onsubmit_redirect_url' => 'report.php?session_id='. $session_id
+            'onsubmit_redirect_url' => 'report.php?session_id='. $session_id,
+            'responsive_regions' => true
         ),
         'time' => array(
             'show_time'  => true,

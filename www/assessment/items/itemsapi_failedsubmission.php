@@ -23,7 +23,8 @@ $request = array(
             'submit_failed_options' => array(
                 'mailto' => true,
                 'download' => true
-            )
+            ),
+            'responsive_regions' => true
         ),
         'questions_api_init_options' => [
             'beta_flags' => [

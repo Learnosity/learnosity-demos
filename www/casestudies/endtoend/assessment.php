@@ -38,7 +38,8 @@ $request = array(
     'config'         => [
         'title' => 'Demo Activity',
         'configuration' => [
-            'onsubmit_redirect_url' => 'feedback.php?session_id='. $session_id
+            'onsubmit_redirect_url' => 'feedback.php?session_id='. $session_id,
+            'responsive_regions' => true
         ],
         'regions' => [
             'top-right' => [

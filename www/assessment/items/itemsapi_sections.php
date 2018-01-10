@@ -105,7 +105,8 @@ $request = array(
             'idle_timeout'           => array(
                 'interval'       => 300,
                 'countdown_time' => 60
-            )
+            ),
+            'responsive_regions' => true
         ),
         'questions_api_init_options' => [
             'beta_flags' => [

@@ -40,6 +40,9 @@ $request = array(
     'rendering_type'       => 'inline',
     'activity_template_id' => $activityRef,
     'config'               => [
+        'configuration' => [
+            'responsive_regions' => true
+        ],
         'questions_api_init_options' => [
             'beta_flags' => [
                 'reactive_views' => true

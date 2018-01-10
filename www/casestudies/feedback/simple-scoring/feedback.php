@@ -119,6 +119,9 @@ var init = function () {
                 'items': itemReferences,
                 'type': 'feedback',
                 'config': {
+                    'configuration': {
+                        'responsive_regions': true
+                    },
                     'questions_api_init_options': {
                         'beta_flags': {
                             'reactive_views': true

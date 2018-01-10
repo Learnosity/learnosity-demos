@@ -22,6 +22,9 @@ $request = array(
     'items'          => array('act1','act2','act3','act4','act5','act6'),
     'type'           => 'local_practice',
     'config'         => [
+        'configuration' => [
+            'responsive_regions' => true
+        ],
         'questions_api_init_options' => [
             'beta_flags' => [
                 'reactive_views' => true

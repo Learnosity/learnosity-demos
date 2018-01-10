@@ -47,6 +47,9 @@ $(window).on('shown.bs.modal', function (e) {  // When the Modal is shown
           ],
           "type": "",
           "config": {
+            "configuration" : {
+                "responsive_regions": true
+            },
             "questions_api_init_options": {
                 "beta_flags": {
                     "reactive_views": true

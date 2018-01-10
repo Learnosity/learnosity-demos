@@ -110,6 +110,9 @@ var init = function() {
             'type': 'feedback',
             'config': {
                 "eventWorkaround" : true, //This is a temp workaround for LRN-7011
+                'configuration': {
+                    'responsive_regions': true
+                },
                 'questions_api_init_options': {
                     'beta_flags': {
                         'reactive_views': true
