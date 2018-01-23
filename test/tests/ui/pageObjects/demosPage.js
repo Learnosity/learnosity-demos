@@ -19,6 +19,21 @@ module.exports = class DemosPage {
         browser.url(url);
     }
 
+    /**
+     * waitForDocumentReady
+     */
+    waitForDocumentReady() {
+        browser.executeAsync(function(done) {
+            var newTimeout = setInterval(function() {myTimer();}, 100);
+            function myTimer() {
+                if(window.document.readyState === "complete"){
+                    clearInterval(newTimeout);
+                    done();
+                }
+            }
+        });
+    }
+
     panelClick(section1, section2, panelName, buttonName) {
         browser.waitForVisible("=" + section1, 5000)
         browser.click("=" + section1);
@@ -26,9 +41,11 @@ module.exports = class DemosPage {
         browser.waitForVisible("=" + section2, 5000)
         browser.click("=" + section2);
 
-        browser.pause(5000);
+        //browser.pause(5000);
 
-        if (panel_title != '' ) {
+        this.waitForDocumentReady();
+
+        if (panelName != '' ) {
             browser.waitForVisible('.panel-title=' + panelName, 5000)
             var panel_title = browser.element('.panel-title=' + panelName)
             if (panel_title != '' ) {
@@ -43,7 +60,8 @@ module.exports = class DemosPage {
             }
         }
 
-
+        this.waitForDocumentReady();
+        
         var fail = false;
         try {
             if (browser.alertText()) {
