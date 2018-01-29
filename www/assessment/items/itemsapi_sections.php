@@ -15,11 +15,9 @@ $request = array(
     'activity_id'    => 'itemsassessdemo',
     'name'           => '',
     'rendering_type' => 'assess',
-    'state'          => 'initial',
     'type'           => 'submit_practice',
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
-    'assess_inline'  => true,
     'sections' => array(
         array(
             'items' => array('Demo3', 'Demo4', 'Demo5'),

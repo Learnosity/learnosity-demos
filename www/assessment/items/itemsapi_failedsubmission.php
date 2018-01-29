@@ -17,7 +17,6 @@ $request = array(
     'name'                 => 'Demo Activity',
     'session_id'           => Uuid::generate(),
     'user_id'              => $studentid,
-    'assess_inline'        => true,
     'config'               => array(
         'configuration' => array(
             'submit_failed_options' => array(

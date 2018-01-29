@@ -15,7 +15,6 @@ $request = array(
     'activity_id'    => 'itemsassessdemo',
     'name'           => 'Items API - Restrict Responses',
     'rendering_type' => 'assess',
-    'state'          => 'initial',
     'type'           => 'submit_practice',
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,

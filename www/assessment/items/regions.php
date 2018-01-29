@@ -15,12 +15,10 @@ $request = array(
     'activity_id'    => 'itemsassessdemo',
     'name'           => 'Items API demo - assess activity',
     'rendering_type' => 'assess',
-    'state'          => 'initial',
     'type'           => 'submit_practice',
     'session_id'     => Uuid::generate(),
     'user_id'        => $studentid,
     'items'          => array('Demo3', 'Demo4', 'Demo12', 'accessibility_demo_6', 'Demo6', 'Demo7', 'Demo8', 'Demo9', 'Demo10'),
-    'assess_inline'  => true,
     'config'         => array(
 
         //'regions'  => 'main',
