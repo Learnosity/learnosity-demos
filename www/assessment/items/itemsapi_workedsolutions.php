@@ -17,7 +17,6 @@ $request = array(
     'user_id'        => $studentid,
     'rendering_type' => 'inline',
     'name'           => 'Items API demo - Inline Activity.',
-    'state'          => 'initial',
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => $session_id,
     'items'          => array('workedsolutions_1', 'workedsolutions_2', 'workedsolutions_3'),

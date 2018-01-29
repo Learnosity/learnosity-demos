@@ -19,7 +19,6 @@ $request = [
     'session_id' => $session_id,
     'activity_template_id'=> 'TEXTHELP_ACTIVITY',
     'type' => "submit_practice",
-    'state' => "initial",
     'activity_id' => 'Activity_Test',
     'name' => "Test Assessment",
     'config'         => [

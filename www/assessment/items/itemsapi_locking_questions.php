@@ -16,7 +16,6 @@ $request = array(
     'user_id'        => $studentid,
     'rendering_type' => 'inline',
     'name'           => 'Items API demo - Inline Activity.',
-    'state'          => 'initial',
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => Uuid::generate(),
     'items'          => array('act1','act2','act3','act4','act5','act6'),
