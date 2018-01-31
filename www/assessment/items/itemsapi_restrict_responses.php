@@ -23,6 +23,9 @@ $request = array(
         'ignore_question_attributes' => array('validation'),
         'title'                      => 'Restrict Responses',
         'ui_style'                   => 'main',
+        'configuration' => [
+            'responsive_regions' => true
+        ],
         'questions_api_init_options' => [
             'beta_flags' => [
                 'reactive_views' => true

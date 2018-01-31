@@ -25,6 +25,9 @@ $request = array(
     'type'           => 'submit_practice',
     'config'         => array(
         'renderSubmitButton'  => true,
+        'configuration' => [
+            'responsive_regions' => true
+        ],
         'questions_api_init_options' => [
             'beta_flags' => [
                 'reactive_views' => true

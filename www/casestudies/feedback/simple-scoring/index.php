@@ -27,7 +27,8 @@ $request = [
     'type'                 => 'submit_practice',
     'config'               => array(
         'configuration' => array(
-            'onsubmit_redirect_url' => 'feedback.php?session_id='. $session_id . '&activity_id='. $activity_id
+            'onsubmit_redirect_url' => 'feedback.php?session_id='. $session_id . '&activity_id='. $activity_id,
+            'responsive_regions' => true
         ),
         'questions_api_init_options' => [
             'beta_flags' => [

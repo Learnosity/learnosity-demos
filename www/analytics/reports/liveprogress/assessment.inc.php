@@ -67,7 +67,8 @@ $request = array(
             'ondiscard_redirect_url' => $_SERVER['REQUEST_URI'],
             'onsubmit_redirect_url'  => $_SERVER['REQUEST_URI'],
             'onsave_redirect_url'    => $_SERVER['REQUEST_URI'],
-            'events'                 => true
+            'events'                 => true,
+            'responsive_regions'     => true
         ),
         'questions_api_init_options' => [
             'beta_flags' => [

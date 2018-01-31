@@ -26,6 +26,9 @@ $request = array(
     'config'               => array(
         'fontsize'            => 'xlarge',
         'renderSubmitButton'  => false,
+        'configuration' => [
+            'responsive_regions' => true
+        ],
         'questions_api_init_options' => [
             'beta_flags' => [
                 'reactive_views' => true

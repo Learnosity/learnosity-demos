@@ -105,6 +105,9 @@ $signedRequest = $Init->generate();
                     'type': 'feedback',
                     'config': {
                         'renderSaveButton' : true,
+                        'configuration': {
+                            'responsive_regions': true
+                        },
                         'questions_api_init_options': {
                             'beta_flags': {
                                 'reactive_views': true

@@ -23,7 +23,8 @@ $request = [
     'name' => "Test Assessment",
     'config'         => [
         'configuration' => [
-            'onsubmit_redirect_url' => 'summary_report.php?session_id='. $session_id
+            'onsubmit_redirect_url' => 'summary_report.php?session_id='. $session_id,
+            'responsive_regions' => true
         ],
         'questions_api_init_options' => [
             'beta_flags' => [

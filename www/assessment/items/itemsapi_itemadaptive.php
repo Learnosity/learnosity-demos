@@ -62,7 +62,8 @@ $request = array(
         ),
         'configuration'       => array(
             'onsubmit_redirect_url' => 'itemsapi_adaptive_report.php?session_id=' . $sessionId,
-            'onsave_redirect_url'   => 'itemsapi_itemadaptive.php'
+            'onsave_redirect_url'   => 'itemsapi_itemadaptive.php',
+            'responsive_regions' => true
         ),
         'questions_api_init_options' => [
             'beta_flags' => [
