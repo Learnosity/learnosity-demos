@@ -1,5 +1,5 @@
 {
-    "seleniumPort": 4438,
-    "seleniumTestpagePort": 8878,
+    "seleniumPort": 4439,
+    "seleniumTestpagePort": 8879,
     "manualTestpagePort": 8880
 }
