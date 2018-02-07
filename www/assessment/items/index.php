@@ -225,7 +225,21 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Assess Question Indexing Demo</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Shows the effect of the assess question_indexing option, which indents and numbers all questions.</p>
+                        <p class="text-right">
+                            <a class="btn btn-primary btn-md" href="./itemsapi_question_indexing.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
         </div>
 
