@@ -112,6 +112,10 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
         return this.question.score || 1;
     };
 
+    PercentageBarScorer.prototype.canValidateResponse = function() {
+        return !!this.question.valid_response;
+    };
+
     return {
         Question: PercentageBar,
         Scorer:   PercentageBarScorer

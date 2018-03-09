@@ -54,7 +54,7 @@ LearnosityAmd.define([
             }
 
             // Developer is responsible to know when to clean up the validation UI as well as when to trigger the 'changed' event to update
-            // the model value 
+            // the model value
             this.$response
                 .on('focus', function () {
                     this.clearValidationUI();
@@ -129,7 +129,7 @@ LearnosityAmd.define([
                         self.suggestedAnswersList = component;
 
                         setAnswersToSuggestedList();
-                    });    
+                    });
             } else {
                 setAnswersToSuggestedList();
             }
@@ -138,13 +138,13 @@ LearnosityAmd.define([
         hideCorrectAnswers: function () {
             if (this.suggestedAnswersList) {
                 // Clear current suggsted answer list
-                this.suggestedAnswersList.reset();    
+                this.suggestedAnswersList.reset();
             }
         },
 
         updatePublicMethods: function (facade) {
             var self = this;
-            
+
             // Override mandatory public methods
             var _enable = facade.enable;
             facade.enable = function () {
@@ -164,7 +164,7 @@ LearnosityAmd.define([
                     .val('')
                     .trigger('changed');
             };
-            
+
         }
     });
 
@@ -185,6 +185,10 @@ LearnosityAmd.define([
 
         maxScore: function () {
             return this.validResponse.score || 1;
+        },
+
+        canValidateResponse: function () {
+            return !!this.question.valid_response;
         }
     });
 
