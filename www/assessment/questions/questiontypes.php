@@ -303,7 +303,9 @@ $request = '{
             "type": "orderlist",
             "description": "In this question, the student needs to order the events, chronologically earliest to latest.",
             "list": ["Russian Revolution", "Discovery of the Americas", "Storming of the Bastille", "Battle of Plataea", "Founding of Rome", "First Crusade"],
-            "ui_style": "bulletlist",
+            "ui_style": {
+                "type": list"
+            },
             "instant_feedback": true,
             "feedback_attempts": 2,
             "validation": {
@@ -323,7 +325,9 @@ $request = '{
                "<div class=\"album\"><img src=\"//demos.learnosity.com/static/images/questiontypes/beatles_a-hard-days-night.jpg\"><span class=\"caption\"> A Hard Day\'s Night</span></div>",
                "<div class=\"album\"><img src=\"//demos.learnosity.com/static/images/questiontypes/beatles_the-beatles.jpg\"><span class=\"caption\"> The Beatles</span></div>"
              ],
-            "ui_style": "button",
+            "ui_style": {
+                "type": button"
+            },
             "instant_feedback": true,
             "feedback_attempts": 2,
             "validation": {
@@ -337,7 +341,9 @@ $request = '{
             "response_id": "demo17-'.$uniqueResponseIdSuffix.'",
             "type": "orderlist",
             "list": ["Un peregrino llega a la cumbre agotado por la sed. El diablo, disfrazado de caminante, se ofrece a indicarle una fuente oculta, a condición de que reniegue de Dios, de la Virgen o de Santiago. Pero el peregrino mantiene su fe a toda costa, aun cuando se encuentra exhausto.", "Es entonces cuando se aparece Santiago vestido de peregrino, recoge al moribundo y le lleva a la escondida fuente, dándole de beber con su vieira.", "<h4>Fuente Reniega</h4>", "La acción tiene lugar en el Alto del Perdón, a pocos kilómetros de Pamplona."],
-            "ui_style": "plainlist",
+            "ui_style": {
+                "type": list"
+            },
             "instant_feedback": true,
             "validation": {
                 "valid_response": [2, 3, 0, 1],
@@ -355,7 +361,9 @@ $request = '{
         "It was a quarter past six when we left Baker Street, and it still wanted ten minutes to the hour when we found ourselves in Serpentine Avenue.",
         "The house was just such as I had pictured it from Sherlock Holmes’ succinct description, but the locality appeared to be less private than I expected.",
         "It was already dusk, and the lamps were just being lighted as we paced up and down in front of Briony Lodge, waiting for the coming of its occupant." ],
-            "ui_style": "inline",
+            "ui_style": {
+                "type": inline"
+            },
             "instant_feedback": true,
             "validation": {
                 "valid_response": [2, 4, 3, 0, 1],

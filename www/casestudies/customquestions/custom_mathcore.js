@@ -95,6 +95,10 @@ LearnosityAmd.define([
         return this.question.score || 1;
     };
 
+    Scorer.prototype.canValidateResponse = function() {
+        return true;
+    };
+
     return {
         Question: Question,
         Scorer: Scorer
