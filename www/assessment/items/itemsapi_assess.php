@@ -81,9 +81,6 @@ $request = [
                     'type' => 'save_button'
                 ],
                 [
-                    'type' => 'fullscreen_button'
-                ],
-                [
                     'type' => 'reviewscreen_button'
                 ],
                 [
@@ -94,6 +91,11 @@ $request = [
                 ],
                 [
                     'type' => 'flagitem_button'
+                ],
+                // do not remove masking as it's referred on
+                // https://docs.learnosity.com/authoring/authorguide/tutorials/othertutorials/responsemasking
+                [
+                    'type' => 'masking_button'
                 ],
                 [
                     'type' => 'header_element',
@@ -112,7 +114,6 @@ $request = [
                     'default_label_option' => 'regionHeaderBottomRight'
                 ]
             ]
-
         ],
         'navigation' => [
             'show_progress' => false,
