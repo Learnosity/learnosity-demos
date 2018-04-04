@@ -136,7 +136,7 @@ $signedRequest = $Init->generate();
         authorApp = LearnosityAuthor.init(initOptions, {
             readyListener: function () {
                 authorApp.on('navigate', function (e) {
-                    window.location.hash = '#' + e.data.location;
+                    window.location.hash = '#' + e.data.locationEncoded;
                 });
                 authorApp.navigate(window.location.hash.replace(/^#/, ''));
                 window.onhashchange = function () {
