@@ -19,6 +19,9 @@ $request = array(
     'config'    => array(
         'item_edit' => array(
             'item' => array(
+                'duplicate' => [
+                    'duplicate_shared_passages' => true
+                ],
                 'columns' => true,
                 'save' => true,
                 'status' => false,
