@@ -54,10 +54,23 @@ include_once 'includes/header.php';
                 </div>
                 <div class="panel-body">
                     <p>An interactive demo, simulating 3 students taking a test with an administrator viewing their
-                    progress in real time. Also shows the power of <em>control events</em>, the ability to control end users
-                    assessments in real time.</p>
+                    progress in real time. Also shows the power of <em>control events</em>, which can be used to remote control an end user's
+                    assessment in real time.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./live_progress.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Learning Outcomes Reporting</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Interactive drill down report of class results by topic area.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./item_scores_report.php">Demo</a>
                     </p>
                 </div>
             </div>
