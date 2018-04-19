@@ -386,7 +386,7 @@ $signedRequest = $Init->generate();
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a id="accordion-report-session" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-sessions">
-                        Reports By Session
+                        Reports by Session
                     </a>
                 </h4>
             </div>
@@ -592,7 +592,7 @@ $signedRequest = $Init->generate();
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a id="accordion-report-lastscore" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-lastscore">
-                        Reports By Last Score
+                        Reports by Last Score
                     </a>
                 </h4>
             </div>
@@ -755,7 +755,7 @@ $signedRequest = $Init->generate();
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a id="accordion-report-progress" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-progress">
-                        Reports By Progress
+                        Reports by Progress
                     </a>
                 </h4>
             </div>
@@ -837,8 +837,58 @@ $signedRequest = $Init->generate();
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
+                    <a id="accordion-report-outcomes" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-outcomes">
+                        Reports by Learning Outcome or Topic Area
+                    </a>
+                </h4>
+            </div>
+            <div id="lrn-reports-demos-outcomes" class="panel-collapse collapse">
+                <div class="panel-body no-padding-bottom">
+                    <div class="panel-group" id="lrn-reports-demos-outcomes-content">
+
+                        <div class="panel panel-default panel-border-bottom">
+                            <div class="panel-heading inner-heading">
+                                <h4 class="panel-title">
+                                    <a id="report-outcomes-all" data-toggle="collapse" data-parent="#lrn-reports-demos-outcomes-content" href="#learning-outcomes">
+                                        <div class="row">
+                                            <div class="col-sm-4"><span class="glyphicon glyphicon-chevron-down"> </span>Item Score Analysis</div>
+                                            <div class="col-sm-8">
+                                                <p class="lrn-report-summary">Report on student results by learning outcome, topic area, curriculum code, etc.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="outcomes-reports" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <section>
+                                        <h3 class="report-title">Item Score Analysis</h3>
+                                        <p class="lrn-report-summary">
+                                            Item Scores by Tag by User report offers exploration and drilldown of student scores by topic area, learning outcome, or any other Item tags you use:
+                                        </p>
+                                        <ul>
+                                            <li>Analyse, compare and visualize results for a class of students</li>
+                                            <li>Navigate to scores for specific topic and sub-topic areas</li>
+                                            <li>Subdivide results by learning outcome, Item difficulty, or any other Tag on your content.</li>
+                                            <li>Understand student's exposure and progress through your content</li>
+                                        </ul>
+                                        <div class="alert alert-info">
+                                            See the live demo page: <a href="//<?php echo $domain ?>/analytics/reports/item_scores_report.php"><?php echo $domain ?>/analytics/reports/item_scores_report.php</a>.
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
                     <a id="accordion-report-aggregate" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-aggregate">
-                        Reports By District, School, Class or Cohort
+                        Reports by District, School, Class or Cohort
                     </a>
                 </h4>
             </div>
@@ -884,13 +934,12 @@ $signedRequest = $Init->generate();
             </div>
         </div>
 
-
         <!-- Real time reports -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a id="accordion-report-live" data-toggle="collapse" data-parent="#lrn-reports-demos-accordion" href="#lrn-reports-demos-live">
-                        Reports By Live Progress
+                        Reports by Live Progress
                     </a>
                 </h4>
             </div>
