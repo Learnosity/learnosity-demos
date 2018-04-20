@@ -16,7 +16,8 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/ui/specs/ui/demos/*.js'
+        //'./tests/ui/specs/ui/demos/test*.js'
+        './tests/ui/specs/ui/demos/test001.js'
     ],
 
     // Patterns to exclude.
@@ -39,8 +40,10 @@ exports.config = {
     //
     capabilities: [{
         browserName: 'chrome',
+        maxInstances: 10,
+        // browserName: 'firefox',
         chromeOptions: {
-            args: ['window-size=1920,1080', '--headless']
+            args: ['window-size=1920,1080']
         }
     }],
     //
@@ -50,7 +53,9 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'silent',
+    logLevel: 'error',
+
+    
 
     // Enables colors for log output.
     coloredLogs: true,
@@ -66,7 +71,7 @@ exports.config = {
     waitforTimeout: 80000,
 
     // Framework you want to run your specs with.
-    framework: 'mocha',
+    framework: 'jasmine',
 
     services: ['chromedriver', 'static-server'],
     path: '/',
@@ -97,12 +102,16 @@ exports.config = {
     // Test reporter for stdout.
     // The following are supported: dot (default), spec and xunit
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    reporters: ['spec', 'junit'],
+    // reporters: ['spec', 'junit'],
+    reporters: ['junit'],
 
     reporterOptions: {
         junit: {
-            outputDir: './reports/js/ui/results/'
-        }
+            outputDir: './reports/js/ui/results/',
+            //outputFileFormat: function(opts) { // optional
+            //     return `results-junit.xml`
+            //}
+        },
     },
 
     //
@@ -110,7 +119,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        retries: 2,
+        retries: 0,
         timeout: 80000
     },
 
@@ -173,7 +182,7 @@ exports.config = {
         // =================================================
 
         // Set known timeout for scripts
-        browser.timeouts('script', 50000);
+        browser.timeouts('script', 10000);
     },
 
     // Gets executed after all tests are done. You still have access to all global variables from
@@ -185,6 +194,7 @@ exports.config = {
     afterTest: function (test) {
         const browserLogs = [];
 
+        
         if (!test.err) {
             return;
         }
