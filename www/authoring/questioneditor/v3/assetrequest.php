@@ -59,9 +59,6 @@
     };
 
     var initOptions = {
-        "base_question_type" : {
-            "hidden": [ "img_src" ]
-        },
         "ui": {
             "layout": "2-column"
         },
