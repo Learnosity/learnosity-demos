@@ -67,24 +67,37 @@
         },
         "widgetType": "response",
         "widget_json": {
-            "type": "imageclozeassociation",
+            "type": "imageclozeassociationV2",
             "image": {
-                "src": "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg"
+                "src": "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
+                "width": 600,
+                "height": 400
             },
             "possible_responses": ["North Sydney", "Harbour Bridge", "The Rocks"],
-            "response_container": {"pointer": "left"},
-            "response_positions": [{
-                "x": 45,
-                "y": 42.47
+            "response_containers": [{
+                "x": 43,
+                "y": 46,
+                "width": "22%",
+                "height": "7%",
+                "aria_label": "",
+                "pointer": "left"
             }, {
                 "x": 12.22,
-                "y": 64.2
+                "y": 65.2,
+                "width": "22%",
+                "height": "7%",
+                "aria_label": "",
+                "pointer": "left"
             }, {
                 "x": 45,
-                "y": 24.94
+                "y": 21,
+                "width": "22%",
+                "height": "7%",
+                "aria_label": "",
+                "pointer": "left"
             }]
         },
-        "template_defaults": "false"
+        "assetRequest": assetRequestFunction
     };
 
     var hook = "learnosity-question-editor";
