@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../../config.php';
+include_once '../../config.php';
 include_once 'includes/header.php';
 
 ?>
@@ -52,31 +52,40 @@ include_once 'includes/header.php';
         <script src="<?php echo $url_questioneditor_v3; ?>"></script>
 
 
+
         <!--  Custom MCQ layout -->
-        <script type="text/template" data-lrn-qe-layout="custom_mcq_layout">
-    <span data-lrn-qe-label="stimulus" value="Question:"></span>
-    <span data-lrn-qe-input="stimulus" class="lrn-qe-lg-ckeditor"></span>
+        <script type="text/template" data-lrn-qe-layout="custom_layout">
+<div class="lrn-qe-edit-form">
 
-    <span data-lrn-qe-label="options" value="Options:" class=" mts"></span>
-    <div data-lrn-qe-loop="options[*]">
-        <span data-lrn-qe-input="options[*]" data-lrn-qe-hide-delete="false"></span>
+    <!-- Stimulus -->
+    <span data-lrn-qe-label="stimulus"></span>
+    <span data-lrn-qe-input="stimulus"></span>
+
+    <span data-lrn-qe-label="template"></span>
+    <span data-lrn-qe-input="template"></span>
+
+    <!-- Possible responses -->
+    <span data-lrn-qe-label="possible_responses"></span>
+    <div data-lrn-qe-loop="possible_responses[*]">
+        <span data-lrn-qe-input="possible_responses[*]"></span>
+        <!-- Use for interleaving distractors
+        <span data-lrn-qe-input="metadata.distractor_rationale_response_level[*]"></div -->
     </div>
-    <span data-lrn-qe-action-add="options"></span>
+    <span data-lrn-qe-action-add="possible_responses"></span>
 
-    <div class="lrn-qe-row-flex">
-        <div class="lrn-qe-col-sm-6">
-            <span data-lrn-qe-label="multiple_responses"></span>
-            <span data-lrn-qe-input="multiple_responses"></span>
-        </div>
-        <div class="lrn-qe-col-sm-6">
-            <span data-lrn-qe-label="shuffle_options"></span>
-            <span data-lrn-qe-input="shuffle_options"></span>
-        </div>
-    </div>
+    <!-- Validation -->
+    <span data-lrn-qe-label="validation"></span>
 
-    <hr>
-    <span data-lrn-qe-label="validation.valid_response.value" value="Select the correct answer:" ></span>
     <span data-lrn-qe-input="validation.valid_response.value"></span>
+
+    <!-- Basic options -->
+    <div class="lrn-qe-row-flex">
+        <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6" data-lrn-qe-layout-wrapper>
+            <span data-lrn-qe-label="duplicate_responses"></span>
+            <span data-lrn-qe-input="duplicate_responses"></span>
+        </div>
+    </div>
+</div>
         </script>
         <!--/ Custom Layout -->
 
@@ -84,6 +93,7 @@ include_once 'includes/header.php';
             <button class="btn btn-info btn-review-edit-layout">View HTML Markup</button>
             <button class="btn btn-info btn-view-toggle-preview">Edit/Preview</button>
         </div>
+
 
         <div class="my-question-editor">
             <div class="view_edit" style="display: none">
@@ -114,44 +124,21 @@ include_once 'includes/header.php';
     </div>
     <script>
         var widget_json = {
-                "description": "",
-                "feedback_attempts": "unlimited",
-                "is_math": false,
-                "metadata": {
-                    "acknowledgements": "",
-                    "distractor_rationale": "",
-                    "rubric_reference": "",
-                    "sample_answer": ""
+                "possible_responses": ["Chicago", "New York City", "Los Angeles"],
+                "response_container": {
+                    "pointer": "left"
                 },
-                "multiple_responses": false,
-                "options": [{
-                    "label": "[Choice A]",
-                    "value": "0"
-                }, {
-                    "label": "[Choice B]",
-                    "value": "1"
-                }, {
-                    "label": "[Choice C]",
-                    "value": "2"
-                }, {
-                    "label": "[Choice D]",
-                    "value": "3"
-                }],
-                "shuffle_options": false,
-                "stimulus": "<p>[This is the stem.]</p>",
-                "stimulus_review": "",
-                "type": "mcq",
-                "ui_style": {
-                    "fontsize": "normal",
-                    "type": ""
-                },
+                "stimulus": "<p>Complete the following sentence:</p>\n",
+                "template": "<p>The most populated city in the US is {{response}}, followed by {{response}}&nbsp;and {{response}}.</p>\n",
+                "type": "clozeassociation",
                 "validation": {
                     "scoring_type": "exactMatch",
                     "valid_response": {
                         "score": 1,
-                        "value": ["0"]
+                        "value": ["New York City", "Los Angeles", "Chicago"]
                     }
                 }
+
             },
             initOptions = {
                 widgetType: 'response',
@@ -165,21 +152,22 @@ include_once 'includes/header.php';
                 ui: {
                     layout: {
                         edit_panel: {
-                            mcq: [{
-                                layout: 'custom_mcq_layout'
+                            clozeassociation: [{
+                                layout: 'custom_layout'
                             }]
                         },
                         global_template: 'custom'
                     }
                 },
                 question_types: {
-                    mcq: {dependency:['options','metadata.distractor_rationale_response_level']}
+                    clozeassociation: {dependency:['possible_responses','metadata.distractor_rationale_response_level']}
                 },
                 label_bundle:{
                     debug: false,
                     stimulus: "Question:",
                     options: "Options:",
-                    'validation.valid_response.value':'Select the correct answer:'
+                    template: "Template (use 'double underscore' for new response location)",
+                    'validation.valid_response.value.value':'Correct answer:'
                 },
                 dependencies: {
                     questions_api: {
@@ -198,7 +186,7 @@ include_once 'includes/header.php';
 
         $(function () {
             var $reviewModal = $('.qe-edit-layout-modal'),
-                editLayoutContent = $('[data-lrn-qe-layout="custom_mcq_layout"]').html();
+                editLayoutContent = $('[data-lrn-qe-layout="custom_layout"]').html();
 
 
 
@@ -236,6 +224,7 @@ include_once 'includes/header.php';
                 }
 
             })
+
 
         });
     </script>
