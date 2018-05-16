@@ -1,7 +1,7 @@
 <?php
 
-include_once '../../config.php';
-include_once 'includes/header.php';
+    include_once '../../config.php';
+    include_once 'includes/header.php';
 
 ?>
 
@@ -13,10 +13,10 @@ include_once 'includes/header.php';
         </ul>
     </div>
     <div class="overview">
-        <h1>Question Editor API V2</h1>
+        <h1>Question Editor API V3</h1>
         <p>The Question Editor API can be extended to tie seamlessly in with your existing Digital Asset Management System.<p>
-        </div>
     </div>
+</div>
 
 <!--
 ********************************************************************
@@ -27,7 +27,7 @@ include_once 'includes/header.php';
 -->
 <div class="section">
     <!-- Container for the question editor api to load into -->
-    <script src="<?php echo $url_questioneditor; ?>"></script>
+    <script src="<?php echo $url_questioneditor_v3; ?>"></script>
     <div class="learnosity-question-editor"></div>
 </div>
 <script>
@@ -48,62 +48,58 @@ include_once 'includes/header.php';
                     callback($(this).data('img'));
                 }
                 $modal.modal('hide');
+                $images.off('click', imgClickHandler);
             };
             $images.on('click', imgClickHandler);
             $modal.modal({
                 backdrop: 'static'
-            }).on('hide', function () {
-                $images.off('click', imgClickHandler);
-            });
+            })
         }
     };
 
     var initOptions = {
-        base_question_type: {
-            hidden: [
-                 "img_src"
-            ]
+        "ui": {
+            "layout": "2-column"
         },
-        template_defaults: false,
-        widget_json: {
-            "type": "imageclozeassociation",
+        "widgetType": "response",
+        "widget_json": {
+            "type": "imageclozeassociationV2",
             "image": {
-                "src": "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg"
+                "src": "//upload.wikimedia.org/wikipedia/commons/5/5f/Sydney_1932.jpg",
+                "width": 600,
+                "height": 400
             },
             "possible_responses": ["North Sydney", "Harbour Bridge", "The Rocks"],
-            "response_container": {"pointer": "left"},
-            "response_positions": [{
-                "x": 45,
-                "y": 42.47
+            "response_containers": [{
+                "x": 43,
+                "y": 46,
+                "width": "22%",
+                "height": "7%",
+                "aria_label": "",
+                "pointer": "left"
             }, {
                 "x": 12.22,
-                "y": 64.2
+                "y": 65.2,
+                "width": "22%",
+                "height": "7%",
+                "aria_label": "",
+                "pointer": "left"
             }, {
                 "x": 45,
-                "y": 24.94
+                "y": 21,
+                "width": "22%",
+                "height": "7%",
+                "aria_label": "",
+                "pointer": "left"
             }]
-        }
-        ,
-        assetRequest: assetRequestFunction,
-        ui: {
-            layout: "2-column"
         },
-        dependencies: {
-            questions_api: {
-                init_options: {
-                    beta_flags: {
-                        reactive_views: true
-                    }
-                }
-            }
-        }
+        "assetRequest": assetRequestFunction
     };
 
+    var questionEditorApp = LearnosityQuestionEditor.init(initOptions);
 
-    LearnosityQuestionEditor.init(initOptions);
+</script>
 
-    </script>
-
-    <?php
+<?php
     include_once 'views/modals/asset-upload.php';
     include_once 'includes/footer.php';
