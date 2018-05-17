@@ -48,7 +48,7 @@ include_once 'includes/header.php';
                 <span class="label label-info">Start here!</span></h4>
                 <p>Allows searching and integration of Learnosity powered content into your content management systems, while still leveraging the
                 power of the Learnosity Author site for creation of rich items with a simple interface.</p></li>
-                <li><h4><a href="<?php echo $env['www'] ?>authoring/questioneditor/v3/index.php">Question Editor API</a></h4>
+                <li><h4><a href="<?php echo $env['www'] ?>authoring/questioneditor/index.php">Question Editor API</a></h4>
                 <p>A fully featured Question and Feature creation tool, with an easy-to-use interface and a live preview and interaction panel,
                 allowing on-the-fly interactive creation and testing for Authors.</p></li>
             </ul>
