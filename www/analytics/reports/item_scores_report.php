@@ -23,7 +23,7 @@ $request = [
     ],
     'reports' => [
         [
-            "id" => "report-1",
+            "id" => "item-scores-report",
             "type" => "item-scores-by-tag-by-user",
             "items_tags_live_dataset_reference" => "content-hierarchy-items-dataset-00001",
             "session_items_live_dataset_reference" => "content-hierarchy-sessions-dataset-00001",
@@ -169,11 +169,15 @@ $signedRequest = $Init->generate();
                     <td style="min-width:200px"><label for="exclude-low-exposure"><input type="checkbox" id="exclude-low-exposure" name="exclude-low-exposure"> Exclude low exposure</input></label></td>
                     <td>Disable highlighting for scores based on fewer than 20 questions.</td>
                 </tr>
+                <tr>
+                    <td style="min-width:200px"><label for="ignore-unattempted"><input type="checkbox" id="ignore-unattempted" name="ignore-unattempted"> Ignore unattempted Items</input></label></td>
+                    <td>Ignore unattempted Items from score calculations.</td>
+                </tr>
             </tbody>
         </table>
     </div>
-    <div class="report-container">
-        <div id="report-1"></div>
+    <div id="item-scores-report-container" class="report-container">
+        <div id="item-scores-report"></div>
     </div>
 
     <!-- Demo Report OnClick Modal -->
@@ -189,18 +193,35 @@ $signedRequest = $Init->generate();
 <script src="<?php echo $env['www'] ?>static/vendor/head.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/reveal/reveal.js"></script>
 <script>
-    var initOptions = <?php echo $signedRequest; ?>;
-    var eventOpts = {
+    window.reportsApp = null;
+    initReport();
+    initCustomControls();
+    applyVisualization();
+
+    function initReport() {
+        var initOptions = <?php echo $signedRequest; ?>;
+        var eventOpts = {
             scoreMutator: function(scores) {
-                processScores(scores);
+                processScores(scores, ignoreUnattempted());
             }
         };
-    var lrnReports = LearnosityReports.init(initOptions, eventOpts);
-    initVisualization();
 
-    function processScores(scores) {
+        // reset existing report, if there is one.
+        if (window.reportsApp) {
+            document.getElementById('item-scores-report-container').innerHTML = '<div id="item-scores-report"></div>';
+        }
+
+        // initialise the report.
+        window.reportsApp = LearnosityReports.init(initOptions, eventOpts);
+    }
+
+    function processScores(scores, ignoreUnattempted) {
         scores.forEach(function(score) {
-            var maxScore = score.correct() + score.incorrect() + score.unattempted() + score.unmarked();
+            if (ignoreUnattempted) {
+                score.unattempted(0);
+            }
+
+            var maxScore = score.correct() + score.incorrect() + score.unmarked() + score.unattempted();
             var performanceBand = 'none';
             var exposure = 'low';
             if (maxScore > 0) {
@@ -222,19 +243,18 @@ $signedRequest = $Init->generate();
         });
     }
 
-    function initVisualization() {
+    function initCustomControls() {
         window.highscoreStyles = document.getElementById('band-4-styles');
         window.lowscoreStyles = document.getElementById('band-1-styles');
         window.exposureStyles = document.getElementById('exposure-styles');
 
-        document.getElementById('highlight-band-1').addEventListener('click', applyStyles);
-        document.getElementById('highlight-band-4').addEventListener('click', applyStyles);
-        document.getElementById('exclude-low-exposure').addEventListener('click', applyStyles);
-
-        applyStyles();
+        document.getElementById('highlight-band-1').addEventListener('click', applyVisualization);
+        document.getElementById('highlight-band-4').addEventListener('click', applyVisualization);
+        document.getElementById('exclude-low-exposure').addEventListener('click', applyVisualization);
+        document.getElementById('ignore-unattempted').addEventListener('click', initReport);
     }
 
-    function applyStyles() {
+    function applyVisualization() {
         if (document.getElementById('highlight-band-4').checked) {
             document.body.appendChild(window.highscoreStyles);
         }
@@ -255,6 +275,10 @@ $signedRequest = $Init->generate();
         else {
             window.exposureStyles.remove();
         }
+    }
+
+    function ignoreUnattempted() {
+        return document.getElementById('ignore-unattempted').checked;
     }
 </script>
 
