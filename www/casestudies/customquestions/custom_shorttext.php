@@ -27,11 +27,7 @@ $request = '{
       "js": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_shorttext.js",
       "css": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_shorttext.css",
       "stimulus": "What is the capital of Australia?",
-      "validation": {
-        "valid_response": {
-            "value": "Canberra"
-        }
-      },
+      "valid_response": "Canberra",
       "score": 1
     }
   ],
