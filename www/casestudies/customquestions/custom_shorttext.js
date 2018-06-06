@@ -110,7 +110,7 @@ LearnosityAmd.define([
 
         showCorrectAnswers: function () {
             var self = this;
-            var correctAnswerText = _.getNested(this.question, 'validation.valid_response.value') || '';
+            var correctAnswerText = _.getNested(this.question, 'valid_response') || '';
             var setAnswersToSuggestedList = function () {
                 // Pass in string to display correct answer list without the index
                 // this.suggestedAnswersList.setAnswers(correctAnswerText);
@@ -171,12 +171,12 @@ LearnosityAmd.define([
     function CustomShorttextScorer(question, response) {
         this.question = question;
         this.response = response;
-        this.validResponse = _.getNested(question, 'validation.valid_response') || {};
+        this.validResponse = _.getNested(question, 'valid_response') || {};
     }
 
     _.extend(CustomShorttextScorer.prototype, {
         isValid: function () {
-            return this.response === this.validResponse.value;
+            return this.response === this.validResponse;
         },
 
         score: function () {
