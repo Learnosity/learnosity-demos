@@ -178,7 +178,7 @@ function saveScores () {
             }
         ]
     };
-    endpoint = '<?php echo $url_data; ?>/latest/sessions/responses/scores';
+    endpoint = '<?php echo $url_data; ?>/sessions/responses/scores';
 
     $.ajax({
         url: '/xhr.php',
