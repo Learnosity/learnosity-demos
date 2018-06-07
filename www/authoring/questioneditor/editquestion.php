@@ -225,7 +225,7 @@ $signedRequest = json_encode($signedRequest);
     <div class="learnosity-question-editor"></div>
 </div>
 
-<script src="<?php echo $url_questioneditor_v3; ?>"></script>
+<script src="<?php echo $url_questioneditor; ?>"></script>
 <script>
     var initOptions = <?php echo $signedRequest ?>,
         domHook = 'learnosity-question-editor',

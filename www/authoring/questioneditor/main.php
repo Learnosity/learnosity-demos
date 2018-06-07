@@ -27,7 +27,7 @@ include_once 'includes/header.php';
 -->
 <div class="section" id="qe-main-container">
     <!-- Container for the question editor api to load into -->
-    <script src="<?php echo $url_questioneditor_v3; ?>"></script>
+    <script src="<?php echo $url_questioneditor; ?>"></script>
     <div class="margin-bottom-small">
         <button type="button" class="lrn-question-button btn btn-default">Question</button>
         <button type="button" class="lrn-feature-button btn btn-default">Feature</button>

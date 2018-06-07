@@ -11,7 +11,7 @@ if (isset($_REQUEST['data-url'])) {
 }
 
 // Which version of the Data API to use
-$version = $version_dataapi;
+$version = $lts_version;
 
 ?>
 

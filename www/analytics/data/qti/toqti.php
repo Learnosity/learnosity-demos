@@ -1,6 +1,6 @@
 <?php
 
-$endpoint = "$URL/$version/itembank/conversion/toqti";
+$endpoint = "$URL/itembank/conversion/toqti";
 $resource = 'toqti';
 
 ?>

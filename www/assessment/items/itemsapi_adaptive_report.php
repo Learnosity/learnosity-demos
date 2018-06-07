@@ -40,7 +40,7 @@ $dataRequest =  [
 $dataAction = 'get';
 
 $dataApi = new DataApi();
-$adaptiveReportUrl = "{$url_data}/{$version_dataapi}/sessions/reports/adaptive";
+$adaptiveReportUrl = "{$url_data}/sessions/reports/adaptive";
 $dataOutput = $dataApi->request(
     $adaptiveReportUrl,
     $security,
