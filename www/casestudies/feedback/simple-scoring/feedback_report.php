@@ -22,7 +22,7 @@ $request = array(
     )
 );
 
-$endpoint = $url_data . '/latest/sessions/responses/scores';
+$endpoint = $url_data . '/sessions/responses/scores';
 $action = 'get';
 
 $dataapi = new DataApi();
