@@ -49,7 +49,7 @@ $signedRequest = $init->generate();
     </div>
 </div>
 
-<script src="<?php echo $url_questioneditor_v3; ?>"></script>
+<script src="<?php echo $url_questioneditor; ?>"></script>
 <script src="<?php echo $url_questions; ?>"></script>
 <script>
     // Learnosity - An example on how to create inline custom element when author custom question type

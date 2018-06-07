@@ -119,7 +119,7 @@ $request = '{
     <div class="learnosity-question-editor"></div>
 </div>
 
-<script src="<?php echo $url_questioneditor_v3; ?>"></script>
+<script src="<?php echo $url_questioneditor; ?>"></script>
 <script>
     var initOptions = <?php echo $request ?>,
         domHook = 'learnosity-question-editor',

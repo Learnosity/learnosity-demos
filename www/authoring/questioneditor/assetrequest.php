@@ -27,7 +27,7 @@
 -->
 <div class="section">
     <!-- Container for the question editor api to load into -->
-    <script src="<?php echo $url_questioneditor_v3; ?>"></script>
+    <script src="<?php echo $url_questioneditor; ?>"></script>
     <div class="learnosity-question-editor"></div>
 </div>
 <script>

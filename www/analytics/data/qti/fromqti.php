@@ -1,6 +1,6 @@
 <?php
 
-$endpoint = "$URL/$version/itembank/conversion/fromqti";
+$endpoint = "$URL/itembank/conversion/fromqti";
 $resource = 'fromqti';
 $sampleXml = htmlspecialchars(file_get_contents(__DIR__ . '/sample.xml'));
 
