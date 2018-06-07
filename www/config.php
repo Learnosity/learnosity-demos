@@ -95,7 +95,7 @@ $url_authorapi             = 'https://authorapi.learnosity.com?' . $lts_version;
 $url_data                  = 'https://data-va.learnosity.com/' . $lts_version;
 $url_events                = 'https://events-va.learnosity.com?' . $lts_version;
 $url_items                 = 'https://items-va.learnosity.com?' . $lts_version;
-$url_questioneditor     = 'https://questioneditor-va.learnosity.com?' . $lts_version;
+$url_questioneditor        = 'https://questioneditor-va.learnosity.com?' . $lts_version;
 $url_questions             = 'https://questions-va.learnosity.com?' . $lts_version;
 $url_reports               = 'https://reports-va.learnosity.com?' . $lts_version;
 
