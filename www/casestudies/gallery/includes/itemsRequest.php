@@ -17,7 +17,7 @@ $security = array(
  */
 $dataApi = new DataApi();
 $response = $dataApi->request(
-    $url_data . '/latest/itembank/activities',
+    $url_data . '/itembank/activities',
     $security,
     $consumer_secret,
     ['references' => [$activityRef]]
