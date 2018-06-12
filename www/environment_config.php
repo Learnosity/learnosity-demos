@@ -13,6 +13,9 @@ $rootPath    = $_SERVER['DOCUMENT_ROOT'];
 $subDir      = strpos($_SERVER['REQUEST_URI'], '/www');
 $baseWebPath = ($subDir !== false) ? substr($_SERVER['REQUEST_URI'], 0, $subDir + 4) : '/';
 
+// Asset version
+$assetVersion = '20160426';
+
 $includePaths = array(
     $rootPath,
     $rootPath . $baseWebPath,

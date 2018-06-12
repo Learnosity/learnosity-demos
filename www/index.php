@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once 'environment_config.php';
 include_once 'includes/header.php';
 ?>
 

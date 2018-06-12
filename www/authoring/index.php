@@ -30,7 +30,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Browse Items in Your Item Bank</h2>
                 </div>
                 <div class="panel-body">
-                    <p>The item list mode allows authors to search the Learnosity hosted item bank for existing items.</p>
+                    <p>The item list mode allows authors to browse and search the Learnosity hosted item bank for existing items.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./item-list.php">Demo</a>
                     </p>
@@ -59,7 +59,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Filter Items in Your Item Bank</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Use tags to control which items in your item bank are visible.</p>
+                    <p>Use tags to control which items in your Item Bank are visible to different users.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./item-list-filtered.php">Demo</a>
                     </p>
