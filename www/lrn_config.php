@@ -48,4 +48,11 @@ $version_dataapi           = 'v1';
 $version_questionsapi      = 'v2';
 $version_questioneditorapi = 'v3';
 
+/**
+ * Allow override file to replace config options
+ **/
+if (file_exists(dirname(__FILE__) . '/config_override.php')) {
+    require dirname(__FILE__) . '/config_override.php';
+}
+
 include_once 'sdk/src/LearnositySdk/autoload.php';

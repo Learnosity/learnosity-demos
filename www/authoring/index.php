@@ -1,6 +1,6 @@
 <?php
 
-include_once '../environment_config.php';
+include_once '../env_config.php';
 include_once 'includes/header.php';
 ?>
 

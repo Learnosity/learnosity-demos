@@ -48,9 +48,4 @@ if (substr($env['www'], -1) !== '/') {
 // Turn on remote SSL certificate verification in curl
 $curl_ssl_verify = true;
 
-/**
- * Allow override file to replace config options
- **/
-if (file_exists(dirname(__FILE__) . '/config_override.php')) {
-    require dirname(__FILE__) . '/config_override.php';
-}
+
