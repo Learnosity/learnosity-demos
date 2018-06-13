@@ -180,7 +180,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Create New Items</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<p>
+                    <p>The item edit mode allows authors to create and edit Items. Questions and features can be created or edited and are persisted to your Learnosity item bank.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./item-create.php">Demo</a>
                     </p>
