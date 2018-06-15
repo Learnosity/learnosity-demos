@@ -40,14 +40,15 @@ LearnosityAmd.define([
         };
 
         self.validate = function () {
-            var scorer = new Scorer(options.question, $input.val()),
-                isValid = scorer.isValid();
+   
+            var isValid = options.getFacade().isValid();
             self.clear();
             if (isValid) {
                 $response.addClass('valid');
             } else {
                 $response.addClass('notValid');
             }
+
         };
 
         options.events.on('validate', function () {
@@ -71,34 +72,6 @@ LearnosityAmd.define([
         $input.on('change keydown', triggerChanged);
         triggerChanged();
     };
-    
-    var Scorer = function (question, response) {
-        this.question = question;
-        this.response = response;
-    };
-
-    Scorer.prototype.isValid = function() {
-        var i, temp,
-            isValid = true;
-        for(i = 0; i < this.question.specs.length; i ++) {
-            temp = mathcore.validate(this.question.specs[i], this.response);
-            isValid = isValid && temp.result;
-        }
-        return isValid;
-    };
-
-    Scorer.prototype.score = function() {
-        return this.isValid() ? this.maxScore() : 0;
-    };
-
-    Scorer.prototype.maxScore = function() {
-        return this.question.score || 1;
-    };
-
-    Scorer.prototype.canValidateResponse = function() {
-        return true;
-    };
-
 
     return {
         Question: Question

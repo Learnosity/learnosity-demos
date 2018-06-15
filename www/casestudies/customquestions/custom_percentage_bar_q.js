@@ -68,11 +68,8 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
             $percentageBarWrapper.removeClass('percentage-bar-valid').removeClass('percentage-bar-invalid');
         });
 
-        // Create scorer
-        this.scorer = new PercentageBarScorer(options.question, $bar.val());
-
         function validate() {
-            if (self.scorer.updateResponse($bar.val()).isValid()) {
+            if (options.getFacade().isValid()) {
                 $percentageBarWrapper.addClass('percentage-bar-valid');
             } else {
                 $percentageBarWrapper.addClass('percentage-bar-invalid');
@@ -90,32 +87,7 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
         options.events.trigger('ready');
     };
 
-    function PercentageBarScorer(question, response) {
-        this.question = question;
-        this.response = response;
-    }
-
-    PercentageBarScorer.prototype.updateResponse = function(response) {
-        this.response = response;
-        return this;
-    };
-
-    PercentageBarScorer.prototype.isValid = function() {
-        return this.response === this.question.valid_response;
-    };
-
-    PercentageBarScorer.prototype.score = function() {
-        return this.isValid() ? this.maxScore() : 0;
-    };
-
-    PercentageBarScorer.prototype.maxScore = function () {
-        return this.question.score || 1;
-    };
-
-    PercentageBarScorer.prototype.canValidateResponse = function() {
-        return !!this.question.valid_response;
-    };
-
+    
     return {
         Question: PercentageBar
     };
