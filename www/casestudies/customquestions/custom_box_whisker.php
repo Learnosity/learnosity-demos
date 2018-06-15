@@ -24,10 +24,7 @@ $request = '{
     {
       "response_id": "custom-box-whisker-response-1",
       "type": "custom",
-      "js": {
-        "question":"//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_box_whisker_q_js.php",
-        "scorer":"//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_box_whisker_s.js"
-      },
+      "js": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_box_whisker_js.php",
       "css": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_box_whisker.css",
       "stimulus": "Draw a <b>box &amp; whisker</b> chart for the following: <b>6, 2, 5, 3, 6, 10, 11, 6</b>",
       "params_line_min": 0,
