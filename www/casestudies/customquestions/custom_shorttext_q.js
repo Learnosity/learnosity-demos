@@ -1,6 +1,6 @@
 /*global LearnosityAmd*/
 LearnosityAmd.define([
-    'underscore',
+    'underscore-v1.5.2',
     'jquery-v1.10.2'
 ], function (
     _,
