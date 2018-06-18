@@ -1,15 +1,11 @@
 /*global LearnosityAmd*/
-LearnosityAmd.define([
-    'underscore'
-], function (
-    _
-) {
+LearnosityAmd.define(['underscore-v1.5.2'], function (_) {
     'use strict';
 
     function CustomShorttextScorer(question, response) {
         this.question = question;
         this.response = response;
-        this.validResponse = _.getNested(question, 'valid_response') || {};
+        this.validResponse = question.valid_response || {};
     }
 
     _.extend(CustomShorttextScorer.prototype, {
