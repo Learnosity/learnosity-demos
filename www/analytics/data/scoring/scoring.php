@@ -1,6 +1,6 @@
 <?php
 
-$endpoint = "$URL/scoring";
+$endpoint = "{$URL}/{$version}/scoring";
 $resource = 'scoring';
 
 ?>

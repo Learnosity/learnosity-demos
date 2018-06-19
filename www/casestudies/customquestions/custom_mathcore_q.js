@@ -1,26 +1,11 @@
 LearnosityAmd.define([
     'jquery-v1.10.2',
     'underscore-v1.5.2',
-    'vendor/mathcore'
+    'mathcore'
 ], function ($, _, mathcore) {
     'use strict';
 
     var padding = 10,
-        defaults = {
-            "is_math": true,
-            "response_id": "custom-mathcore-response-<?php echo $session_id; ?>",
-            "type": "custom",
-            "js": "//docs.vg.learnosity.com/demos/products/questionsapi/questiontypes/assets/mathcore/mathcore.js",
-            "css": "//docs.vg.learnosity.com/demos/products/questionsapi/questiontypes/assets/mathcore/mathcore.css",
-            "stimulus": "Simplify following expression: <b>\\(2x^2 + 3x - 5 + 5x - 4x^2 + 20\\)</b>",
-            "score": 1,
-            "specs": [{
-                "method": "isSimplified"
-            }, {
-                "method": "equivSymbolic",
-                "value": "2x^2 + 3x - 5 + 5x - 4x^2 + 20"
-            }]
-        },
         template = _.template('<div class="response_wrapper"><input type="text" /></div>');
 
     var Question = function(options) {

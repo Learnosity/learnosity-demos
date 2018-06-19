@@ -88,7 +88,7 @@ $curl_ssl_verify = true;
 
 //Latest Long Term Support version of Learnosity APIs.
 
-$lts_version = "v2018.1.LTS";
+$lts_version = "latest";
 
 $url_assess                = 'https://assess-va.learnosity.com?' . $lts_version;
 $url_authorapi             = 'https://authorapi.learnosity.com?' . $lts_version;

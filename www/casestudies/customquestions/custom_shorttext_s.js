@@ -22,7 +22,7 @@ LearnosityAmd.define(['underscore-v1.5.2'], function (_) {
         },
 
         canValidateResponse: function () {
-            return !!this.question.valid_response;
+            return !!this.validResponse;
         }
     });
 
