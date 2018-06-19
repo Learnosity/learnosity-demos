@@ -24,10 +24,6 @@ LearnosityAmd.define([
             this.$el
                 .html('<div><div class="input-wrapper"><input type="text" /></div></div>')
                 .append('<div data-lrn-component="suggestedAnswersList"/>')
-                // Add correct answer list UI
-                // .append('<div class="lrn_correctAnswers lrn_hide"><span>' + this.init.getI18nLabel('correctAnswers') + '</span><ul class="lrn_correctAnswerList"></ul></div>')
-                // Add LRN Check Answer button. If you plan to have different html structure (no lrn_validate class) for this Check Anwser, you will need to write your own validation function
-                // like myCustomButton.addEventListener('click', function () { this.init.getFacade().validate(); })
                 .append('<div data-lrn-component="checkAnswer"/>');
 
             this.$el
