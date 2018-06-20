@@ -24,7 +24,10 @@ $request = '{
     {
       "response_id": "custom-shorttext-response-1",
       "type": "custom",
-      "js": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_shorttext.js",
+      "js": {
+        "question":"//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_shorttext_q.js",
+        "scorer":"//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_shorttext_s.js"
+      },
       "css": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_shorttext.css",
       "stimulus": "What is the capital of Australia?",
       "valid_response": "Canberra",

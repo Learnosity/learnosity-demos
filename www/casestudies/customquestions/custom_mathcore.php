@@ -24,7 +24,10 @@ $request = '{
     {
       "response_id": "custom-mathcore-response-1",
       "type": "custom",
-      "js": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_mathcore.js",
+      "js": {
+        "question":"//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_mathcore_q.js",
+        "scorer":"//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_mathcore_s.js"
+      },
       "css": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_mathcore.css",
       "stimulus": "Simplify following expression: <b>\\\\(2x^2 + 3x - 5 + 5x - 4x^2 + 20\\\\)</b>",
       "is_math": true,
