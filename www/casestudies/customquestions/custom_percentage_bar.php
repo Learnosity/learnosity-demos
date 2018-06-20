@@ -24,10 +24,7 @@ $request = '{
     {
       "response_id": "custom-percentage-bar-response-1",
       "type": "custom",
-      "js": {
-        "question":"//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_percentage_bar_q.js",
-        "scorer":"//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_percentage_bar_s.js"
-      },
+      "js": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_percentage_bar.js",
       "css": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_percentage_bar.css",
       "stimulus": "If Luke has $150 and he spends $30 on beer, how much money has he got left?",
       "prepend_unit": "$",

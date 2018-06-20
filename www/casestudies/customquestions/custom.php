@@ -25,10 +25,7 @@ $init = new Init('questions', $security, $consumer_secret, [
 $request = '{
   "response_id": "custom-shorttext-response-' . $session_id .'",
   "type": "custom",
-  "js": {
-    "question":"//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_shorttext_q.js",
-    "scorer":"//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_shorttext_s.js"
-  },
+  "js": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_shorttext.js",
   "css": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_shorttext.css",
   "stimulus": "What is the capital of Australia?",
   "valid_response": "Canberra",
