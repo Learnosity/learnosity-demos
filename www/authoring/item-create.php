@@ -19,7 +19,7 @@ $security = [
     'domain' => $domain
 ];
 
-//simple api request object for item list view
+//simple api request object for item edit view
 $request = [
     'mode' => 'item_edit',
     'reference' => Uuid::generate(),
