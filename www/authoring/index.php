@@ -156,10 +156,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Binding to Item Events</h2>
+                    <h2 class="panel-title">Binding to Author API Events</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>A demonstration of event binding with the Author API 'on' public method to display custom notifications.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./events.php">Demo</a>
                     </p>
