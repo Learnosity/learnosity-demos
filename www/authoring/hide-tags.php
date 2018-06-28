@@ -19,7 +19,7 @@
     //common environment attributes including search paths. not specific to Learnosity
 	include_once '../env_config.php';
 
-    //site scaffolding
+	//site scaffolding
 	include_once 'includes/header.php';
 
     //common Learnosity config elements including API version control vars
@@ -42,56 +42,21 @@
 	$request = [
 		'mode'      => 'item_list',
 		'config'    => [
-			'item_list' => [
-				//demo specific: filter content by user and tag
-				'filter' => [
-					'restricted' => [
-						//display only items created by the current user (user.id, defined at top-level)
-						'current_user' => false,
-						//display only items created by specific users (array of strings from user.id)
-                        //TODO: not working. confirm created_by filter syntax. user.id isn't included:
-                        //{first_name: "Demos", surname: "User", email: "demos@learnosity.com"}
-						//'created_by' => ['Manual User/Data GUI'],
-						//display only items with a specific status
-						'status' => ['published'],
-						/*
-						 * filter by tag:
-						 * display items with all tags listed (all), any tags listed (either)
-						 * hide items with any tags listed (none)
-						 * multiple tags can be included (see either > subject)
-						 */
-						"tags" => [
-							"all" => [
-								[
-									"type" => "course",
-									"name" => ["commoncore"]
-								]
-							],
-							"either" => [
-								[
-									"type" => "subject",
-									"name" => ["Math", "English"]
-								],
-								[
-									"type" => "Grade",
-									"name" => ["Grade 11"]
-								]
-							],
-							"none" => [
-								[
-									"type" => "adaptive-lifecycle",
-									"name" => ["operational"]
-								]
-							]
-						]
-					]
-				]
-			],
+			"global" => [
+                // All tags of type "course", name "commoncore" are hidden in the UI
+                //TODO: confirm if blacklisting is only at type level, not type>name
+                "hide_tags" => [
+                    [
+					    "type" => "course",
+					    "name" => "commoncore"
+                    ]
+                ]
+            ],
 			'item_edit' => [
 				'item' => [
 					//show item reference and allow editing
 					'reference' => [
-					    'show' => true,
+						'show' => true,
 						'edit' => true
 					],
 					/*
@@ -127,9 +92,8 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Filter items in your Item Bank</h2>
-            <p>The item list mode allows authors to search the Learnosity hosted item bank for existing items.
-                In this case, we've also passed configuration to only show items that match certain criteria, using tagging.</p>
+            <h2>Hide tags from the authoring UI</h2>
+            <p>Hide tags from display in the item list, as well as in the Settings > Tags tab, when editing an item, so the hidden tags cannot be added.</p>
         </div>
     </div>
 

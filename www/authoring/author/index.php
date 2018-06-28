@@ -2,7 +2,7 @@
 
 
 //common environment attributes including search paths. not specific to Learnosity
-include_once '../env_config.php';
+include_once '../../env_config.php';
 
 //site scaffolding
 include_once 'includes/header.php';

@@ -43,49 +43,40 @@
 		'mode'      => 'item_list',
 		'config'    => [
 			'item_list' => [
-				//demo specific: filter content by user and tag
-				'filter' => [
-					'restricted' => [
-						//display only items created by the current user (user.id, defined at top-level)
-						'current_user' => false,
-						//display only items created by specific users (array of strings from user.id)
-                        //TODO: not working. confirm created_by filter syntax. user.id isn't included:
-                        //{first_name: "Demos", surname: "User", email: "demos@learnosity.com"}
-						//'created_by' => ['Manual User/Data GUI'],
-						//display only items with a specific status
-						'status' => ['published'],
-						/*
-						 * filter by tag:
-						 * display items with all tags listed (all), any tags listed (either)
-						 * hide items with any tags listed (none)
-						 * multiple tags can be included (see either > subject)
-						 */
-						"tags" => [
-							"all" => [
-								[
-									"type" => "course",
-									"name" => ["commoncore"]
-								]
-							],
-							"either" => [
-								[
-									"type" => "subject",
-									"name" => ["Math", "English"]
-								],
-								[
-									"type" => "Grade",
-									"name" => ["Grade 11"]
-								]
-							],
-							"none" => [
-								[
-									"type" => "adaptive-lifecycle",
-									"name" => ["operational"]
-								]
-							]
-						]
-					]
-				]
+			    /*
+			     * add browse control to filter by hierarchy
+			     * show separator space
+			     * add menus of tag types, displaying all tag names within each type
+			     */
+                "toolbar" => [
+                    "browse" => [
+                        "controls" => [
+                            [
+                                "type" => "hierarchy",
+                                "hierarchies" => [
+                                    [
+                                        "reference" => "Standards",
+                                    ]
+                                ]
+                            ],
+                            [
+                                "type" => "separator"
+                            ],
+                            [
+                                "type" => "tag",
+                                "tag" => [
+                                    "type" => "Depth of Knowledge",
+                                ]
+                            ],
+                            [
+                                "type" => "tag",
+                                "tag" => [
+                                    "type" => "Blooms Taxonomy",
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
 			],
 			'item_edit' => [
 				'item' => [
@@ -127,9 +118,8 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Filter items in your Item Bank</h2>
-            <p>The item list mode allows authors to search the Learnosity hosted item bank for existing items.
-                In this case, we've also passed configuration to only show items that match certain criteria, using tagging.</p>
+            <h2>Browse your Item Bank using tag hierarchies</h2>
+            <p>Add a search control to the item list toolbar that filters by tag hierarchy and/or specific tags.</p>
         </div>
     </div>
 

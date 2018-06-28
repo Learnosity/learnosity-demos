@@ -90,7 +90,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>By disabling certain configuration flags, you can easily setup read only access to your item bank.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./item-list-readonly.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="item-list-read-only.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -119,7 +119,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Discover items through tag hierarchies.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./item-list-hierarchies.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./item-list-browse-tag-hierarchy.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -132,7 +132,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Hide specific tags from the item and activity tagging UI.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./tags-blacklist.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./hide-tags.php">Demo</a>
                     </p>
                 </div>
             </div>
