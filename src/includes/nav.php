@@ -23,6 +23,7 @@
             'casestudies/spanish/index.php' => 'Spanish Demo'
         )
     );
+
 ?>
 
 <div class="navbar navbar-default" role="navigation">
@@ -40,9 +41,8 @@
             <ul class="nav navbar-nav">
                 <?php
                     foreach ($pages as $page => $name) {
-                        $active = strcasecmp($env['section'], $page) ? '' : ' active_';
                         echo '
-                        <li class="dropdown' . $active . '">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $page . ' <b class="caret"></b></a>
                             <ul class="dropdown-menu">';
                             foreach ($name as $subpage => $subname) {

@@ -11,8 +11,8 @@
 |   - request (body of form POST)
 |
 */
-
-include_once 'config.php';
+include_once '../../env_config.php';
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\DataApi;
 

@@ -14,14 +14,10 @@ $consumer_key = 'yis0TYCu7U9V4o7M';
 // Note - Consumer secret should never get displayed on the page - only used for creation of signature server side
 $consumer_secret = '74c5fd430cf1242a527f6223aebd42d30464be22';
 
-// Some products need the domain as part of the security signature. Demos has been tested on "localhost"
+/* Some products need the domain as part of the security signature.
+** Learnosity whitelists "localhost" - any requests from other domains will be rejected.
+*/
 $domain = $_SERVER['SERVER_NAME'];
-
-// Generate timestamp in format YYYYMMDD-HHMM for use in signature
-$timestamp = gmdate('Ymd-Hi');
-
-// Asset version
-$assetVersion = '20160426';
 
 /*
 |--------------------------------------------------------------------------
@@ -34,23 +30,21 @@ $assetVersion = '20160426';
 |
 */
 
-$url_assess                = 'https://assess-va.learnosity.com';
-$url_authorapi             = 'https://authorapi.learnosity.com?v1';
-$url_data                  = 'https://data-va.learnosity.com';
-$url_events                = 'https://events-va.learnosity.com';
-$url_items                 = 'https://items-va.learnosity.com';
-$url_questioneditor        = 'https://questioneditor.learnosity.com?v2';
-$url_questioneditor_v3     = 'https://questioneditor.learnosity.com?v3';
-$url_questions             = 'https://questions-va.learnosity.com';
-$url_reports               = 'https://reports-va.learnosity.com';
-$version_assessapi         = 'v2';
-$version_dataapi           = 'v1';
-$version_questionsapi      = 'v2';
-$version_questioneditorapi = 'v3';
+$lts_version = "v2018.1.LTS";
+
+$url_assess                = 'https://assess-va.learnosity.com/?' . $lts_version;
+$url_authorapi             = 'https://authorapi.learnosity.com/?' . $lts_version;
+$url_data                  = 'https://data-va.learnosity.com/' . $lts_version;
+$url_events                = 'https://events-va.learnosity.com/?' . $lts_version;
+$url_items                 = 'https://items-va.learnosity.com/?' . $lts_version;
+$url_questioneditor        = 'https://questioneditor-va.learnosity.com/?' . $lts_version;
+$url_questions             = 'https://questions-va.learnosity.com/?' . $lts_version;
+$url_reports               = 'https://reports-va.learnosity.com/?' . $lts_version;
 
 /**
  * Allow override file to replace config options
  **/
+
 if (file_exists(dirname(__FILE__) . '/config_override.php')) {
     require dirname(__FILE__) . '/config_override.php';
 }

@@ -1,7 +1,12 @@
 <?php
 
-include_once '../../config.php';
+
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
 ?>
 
 <div class="jumbotron section">

@@ -8,19 +8,6 @@
     <link rel="shortcut icon" href="<?php echo $env['www'] ?>static/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/dist/all.min.css?<?php echo $assetVersion ?>">
     <script src="<?php echo $env['www'] ?>static/dist/all.min.js?<?php echo $assetVersion ?>"></script>
-    <script>
-        var config = {
-            www: '<?php echo $env["www"]; ?>',
-            apiRequest: {
-                security: {
-                    consumer_key: '<?php echo $consumer_key; ?>',
-                    domain: '<?php echo $domain; ?>',
-                    timestamp: '<?php echo $timestamp; ?>',
-                    signature: '[add request signature here]'
-                }
-            }
-        }
-    </script>
 </head>
 <body>
 <!-- Google Tag Manager -->

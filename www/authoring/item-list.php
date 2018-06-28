@@ -30,7 +30,6 @@ $request = [
                     'edit' => true,
                 ],
                 'dynamic_content' => true,
-                'duplicate' => true,
                 'shared_passage' => true
             ]
         ],

@@ -256,10 +256,22 @@ $version = $version_dataapi;
             container: 'body'
         })
     });
+
+    var config = {
+        apiRequest: {
+            security: {
+                consumer_key: '<?php echo $consumer_key; ?>',
+                domain: '<?php echo $domain; ?>',
+                timestamp: '<?php echo $timestamp; ?>',
+                signature: '[add request signature here]'
+            }
+        }
+    };
+
 </script>
 <script src="<?php echo $env['www'] ?>static/vendor/ladda/spin.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/js/dataapi/formToObject.js?20150622"></script>
-<script src="<?php echo $env['www'] ?>static/js/dataapi/dataApiRequest.js"></script>
+<script src="<?php echo $env['www'] ?>static/js/dataapi/dataApiRequest.js"></script
 
 <?php include_once 'includes/footer.php'; ?>
