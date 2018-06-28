@@ -1,70 +1,57 @@
 <?php
 
 	/*
-	 *** demo revamp questions: we need to: ***
-	 * TODO: composer update to 5.4 or later to support PHPStorm
-	 * TODO: check with Sydney about PHP 7 guidelines and linting
-	 * TODO: default reactive views?
-	 * TODO: address settings overrides
-	 * Style Guide: align consistently; consistent quotes; variable names
-	 *** end demo revamp questions ***
-	 *
-	 *** unique to this demo ***
 	 * TODO: Create custom tag set for filtering
-	 *** end unique to this demo ***
 	 */
 
 
 
-    //common environment attributes including search paths. not specific to Learnosity
+	//common environment attributes including search paths. not specific to Learnosity
 	include_once '../env_config.php';
 
-    //site scaffolding
+	//site scaffolding
 	include_once 'includes/header.php';
 
-    //common Learnosity config elements including API version control vars
+	//common Learnosity config elements including API version control vars
 	include_once '../lrn_config.php';
 
-    //alias(es) to eliminate the need for fully qualified classname(s) from sdk
+	//alias(es) to eliminate the need for fully qualified classname(s) from sdk
 	use LearnositySdk\Request\Init;
 
 
-    //security object. timestamp added by SDK
+	//security object. timestamp added by SDK
 	$security = [
 		'consumer_key' => $consumer_key,
 		'domain'       => $domain
 	];
 
-
-	//TODO: org id, including get rid of it and try it yourself. Rich to create org. Name?
-
-    //simple api request object, with additional common features added and commented
+	//simple api request object, with additional common features added and commented
 	$request = [
-		'mode'      => 'item_list',
+		'mode'      => 'activity_list',
 		'config'    => [
-			'item_list' => [
+			'activity_list' => [
 				//demo specific: filter content by user and tag
 				'filter' => [
 					'restricted' => [
-						//display only items created by the current user (user.id, defined at top-level)
+						//display only items created by the current user (defined at top-level)
 						'current_user' => false,
 						//display only items created by specific users (array of strings from user.id)
-                        //TODO: not working. confirm created_by filter syntax. user.id isn't included:
-                        //{first_name: "Demos", surname: "User", email: "demos@learnosity.com"}
-						//'created_by' => ['Manual User/Data GUI'],
-						//display only items with a specific status
-						'status' => ['published'],
+						//TODO: not working. confirm created_by filter syntax. user.id isn't included:
+						//{first_name: "Demos", surname: "User", email: "demos@learnosity.com"}
 						/*
-						 * filter by tag:
-						 * display items with all tags listed (all), any tags listed (either)
+						 * additionally filter by tag:
+						 * show items with all tags listed (all), any tags listed (either)
 						 * hide items with any tags listed (none)
-						 * multiple tags can be included (see either > subject)
+						 * multiple tags can be included (see either > subject
 						 */
 						"tags" => [
 							"all" => [
 								[
 									"type" => "course",
 									"name" => ["commoncore"]
+								],
+								[
+									"type" => "Grade"
 								]
 							],
 							"either" => [
@@ -85,20 +72,6 @@
 							]
 						]
 					]
-				]
-			],
-
-			'item_edit' => [
-				'item' => [
-					//show item reference and allow editing
-					'reference' => [
-					    'show' => true,
-						'edit' => true
-					],
-					//enable dynamic content in items
-					'dynamic_content' => true,
-					'duplicate' => true,
-					'shared_passage' => true
 				]
 			]
 		],
@@ -125,9 +98,9 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Filter items in your Item Bank</h2>
-            <p>The item list mode allows authors to search the Learnosity hosted item bank for existing items.
-                In this case, we've also passed configuration to only show items that match certain criteria, using tagging.</p>
+            <h2>Filter activities in your Item Bank</h2>
+            <p>The activity list mode allows authors to search the Learnosity hosted item bank for existing activities.
+                In this case, we've also passed configuration to only show activities that match certain criteria, using tagging.</p>
         </div>
     </div>
 
