@@ -23,94 +23,75 @@ $request = [
     'mode'      => 'item_edit',
     'reference' => Uuid::generate(),
     'config'    => [
-        'item_edit' => [
-            'item' => [
-                'columns' => true,
-                'save' => false,
-                'status' => false,
-                'reference' => [
-                    'edit' => false,
-                    'show' => false
-                ],
-                'mode' => [
-                    'default' => 'edit',
-                    'show' => true
-                ]
-            ],
-            'widget' => [
-                'delete' => true,
-                'edit' => true
-            ]
-        ],
         'widget_templates' => [
-            'back' => true,
-            'save' => true,
             'widget_types' => [
                 'default' => 'features',
-                'show' => true,
-            ],
+                'show' => true
+            ]
         ],
         'dependencies' => [
             'question_editor_api' => [
-                'version' => $version_questioneditorapi,
                 'init_options' => [
                     'ui'=> [
                         'layout'=> [
                              'global_template'=> 'edit_preview'
                         ]
                     ],
-                    'custom_feature_types'=> [[
-                        'custom_type'=> 'simplegallery',
-                        'name'=> 'Custom Image Gallery',
-                        'js'=> "https://demos.vg.learnosity.com/authoring/customfeature/simplegallery.js",
-                        'css'=> "https://demos.vg.learnosity.com/authoring/customfeature/simplegallery.css",
-                        'version'=> 'v0.0.1',
-                        'editor_layout'=> "https://demos.vg.learnosity.com/authoring/customfeature/simplegallery.html",
-                        'editor_schema'=> [
-                            'hidden_question'=> false,
-                            'properties'=> [
-                                'photos'=>[
-                                    'name'=> 'Photos',
-                                    'description'=> 'Photos',
-                                    'type'=> 'array',
-                                    'required'=> true,
-                                    'items'=> [
-                                        'name'=> 'Photo',
-                                        'type'=> 'imageObject',
-                                        'attributes'=> [
-                                            'source'=> [
-                                                'name'=> 'Add image',
-                                                'description'=> 'The image that should be displayed.',
-                                                'type'=> 'string',
-                                                'required'=> true,
-                                                'asset'=> [
-                                                    'mediaType'=> 'image',
-                                                    'returnType'=> 'URL'
+                    'custom_feature_types'=> [
+                        [
+                            'custom_type'=> 'simplegallery',
+                            'name'=> 'Custom Image Gallery',
+                            'js'=> "https://demos.vg.learnosity.com/authoring/customfeature/simplegallery.js",
+                            'css'=> "https://demos.vg.learnosity.com/authoring/customfeature/simplegallery.css",
+                            'version'=> 'v0.0.1',
+                            'editor_layout'=> "https://demos.vg.learnosity.com/authoring/customfeature/simplegallery.html",
+                            'editor_schema'=> [
+                                'hidden_question'=> false,
+                                'properties'=> [
+                                    'photos'=>[
+                                        'name'=> 'Photos',
+                                        'description'=> 'Photos',
+                                        'type'=> 'array',
+                                        'required'=> true,
+                                        'items'=> [
+                                            'name'=> 'Photo',
+                                            'type'=> 'imageObject',
+                                            'attributes'=> [
+                                                'source'=> [
+                                                    'name'=> 'Add image',
+                                                    'description'=> 'The image that should be displayed.',
+                                                    'type'=> 'string',
+                                                    'required'=> true,
+                                                    'asset'=> [
+                                                        'mediaType'=> 'image',
+                                                        'returnType'=> 'URL'
+                                                    ]
+                                                ],
+                                                'alt'=> [
+                                                    'name'=> 'Image alternative text',
+                                                    'description'=> 'The alternative text of the image.',
+                                                    'type'=> 'string',
+                                                    'required'=> false
+                                                ],
+                                                'credit'=> [
+                                                    'name'=> 'Image Credit',
+                                                    'description'=> 'The Credit text of the image.',
+                                                    'type'=> 'string',
+                                                    'required'=> false
                                                 ]
-                                            ],
-                                            'alt'=> [
-                                                'name'=> 'Image alternative text',
-                                                'description'=> 'The alternative text of the image.',
-                                                'type'=> 'string',
-                                                'required'=> false
-                                            ],
-                                            'credit'=> [
-                                                'name'=> 'Image Credit',
-                                                'description'=> 'The Credit text of the image.',
-                                                'type'=> 'string',
-                                                'required'=> false
                                             ]
+                                        ],
+                                        'default'=> [
+                                            ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/newstandard.png","alt"=>"photo 1", "credit"=>"Learnosity"],
+                                            ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/savetime.png","alt"=>"photo 2", "credit"=>"Learnosity"],
+                                            ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/alwaysmovingfwd.png","alt"=>"photo 3", "credit"=>"Learnosity"],
+                                            ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/seamlessintegration.png","alt"=>"photo 4", "credit"=>"Learnosity"]
                                         ]
-                                    ],
-                                    'default'=> [
-                                        ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/newstandard.png","alt"=>"photo 1", "credit"=>"Learnosity"],
-                                        ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/savetime.png","alt"=>"photo 2", "credit"=>"Learnosity"],
-                                        ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/alwaysmovingfwd.png","alt"=>"photo 3", "credit"=>"Learnosity"],
-                                        ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/seamlessintegration.png","alt"=>"photo 4", "credit"=>"Learnosity"]
                                     ]
                                 ]
                             ]
-                    ]]]
+                        ]
+                    ]
                 ]
             ]
         ]
@@ -138,7 +119,7 @@ $signedRequest = $Init->generate();
         <div class="overview">
             <h2>Authoring Custom Feature</h2>
             <p>
-                Set up the editor layout using the Author API to author Custom Features. In this demo, we've added a Custom Image Gallery Feature where you can add/remove and navigate through images.                                
+                Set up the editor layout using the Author API to author Custom Features. In this demo, we've added a Custom Image Gallery Feature where you can add/remove and navigate through images.
             </p>
         </div>
     </div>

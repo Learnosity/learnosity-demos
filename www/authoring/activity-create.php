@@ -50,7 +50,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Creating a New Activity / Test (using Author API)</h2>
+            <h2>Creating a new Activity / Test (using Author API)</h2>
             <p>
                 The activity edit mode allows authors to create and edit actvities.
             </p>

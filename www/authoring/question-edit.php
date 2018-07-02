@@ -25,7 +25,6 @@ $request = [
     'config'    => [
         'dependencies' => [
             'question_editor_api' => [
-                'version' => $version_questioneditorapi,
                 'init_options' => [
                     'widget_type' => 'response',
                     'ui' => array(
@@ -59,7 +58,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Editing an existing Item & a Question using Author API</h2>
-            <p>Initialise the Author API to directly load a question. For more information refer to the init options docs and the setWidget public method.</p>
+            <p>Initialise the Author API to directly load a question. For more information refer to the init options docs and the <a href="https://docs.learnosity.com/authoring/author/methods#setWidget">setWidget</a> public method.</p>
         </div>
     </div>
 
@@ -75,6 +74,7 @@ $signedRequest = $Init->generate();
         //optional callbacks for ready
         var callbacks = {
             readyListener: function () {
+                // setTimeout - Temporary work around for readylistener race condition issue. Currently working on a fix
                 setTimeout(function(){authorApp.setWidget(
                     {
                         "options": [
@@ -112,7 +112,7 @@ $signedRequest = $Init->generate();
                     },
                     'Multiple choice – standard'
                 );
-            },700)},
+            },1000)},
             errorListener: function (err) {
                 console.log(err);
             }
