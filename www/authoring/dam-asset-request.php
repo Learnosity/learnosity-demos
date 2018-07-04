@@ -27,7 +27,7 @@ $request = [
         'item_edit' => [
             'item' => [
                 'reference' => [
-                    'edit' => true,
+                    'edit' => true
                 ],
                 'dynamic_content' => true,
                 'shared_passage' => true
@@ -81,7 +81,7 @@ $signedRequest = $Init->generate();
 <script src="<?php echo $url_authorapi; ?>"></script>
 <script>
     // example function to be called by assetRequest
-    var assetRequestFunction = function(mediaRequested, returnType, callback) {
+    var assetRequestFunction = function (mediaRequested, returnType, callback) {
         if (mediaRequested === 'image') {
             var $modal = $('.modal.img-upload'),
             $images = $('.asset-img-gallery img'),

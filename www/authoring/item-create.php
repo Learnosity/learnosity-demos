@@ -27,7 +27,7 @@ $request = [
         'item_edit' => [
             'item' => [
                 'reference' => [
-                    'edit' => true,
+                    'edit' => true
                 ],
                 'dynamic_content' => true,
                 'shared_passage' => true
