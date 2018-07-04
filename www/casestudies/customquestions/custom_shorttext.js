@@ -11,9 +11,8 @@ LearnosityAmd.define([
     function getValidResponse(question) {
         return (
             _.isObject(question) &&
-            _.isObject(question.validation) &&
-            question.validation.valid_response
-        ) || {};
+            question.valid_response
+        ) || '';
     }
 
     function CustomShorttext(init, lrnUtils) {
@@ -118,7 +117,7 @@ LearnosityAmd.define([
 
         showCorrectAnswers: function () {
             var self = this;
-            var correctAnswerText = getValidResponse(this.question).value || '';
+            var correctAnswerText = getValidResponse(this.question);
             var setAnswersToSuggestedList = function () {
                 // Pass in string to display correct answer list without the index
                 // this.suggestedAnswersList.setAnswers(correctAnswerText);
