@@ -8,6 +8,14 @@ LearnosityAmd.define([
 ) {
     'use strict';
 
+    function getValidResponse(question) {
+        return (
+            _.isObject(question) &&
+            _.isObject(question.validation) &&
+            question.validation.valid_response
+        ) || {};
+    }
+
     function CustomShorttext(init, lrnUtils) {
         this.init = init;
         this.lrnUtils = lrnUtils;
@@ -110,7 +118,7 @@ LearnosityAmd.define([
 
         showCorrectAnswers: function () {
             var self = this;
-            var correctAnswerText = _.getNested(this.question, 'valid_response') || '';
+            var correctAnswerText = getValidResponse(this.question).value || '';
             var setAnswersToSuggestedList = function () {
                 // Pass in string to display correct answer list without the index
                 // this.suggestedAnswersList.setAnswers(correctAnswerText);
@@ -171,7 +179,7 @@ LearnosityAmd.define([
     function CustomShorttextScorer(question, response) {
         this.question = question;
         this.response = response;
-        this.validResponse = _.getNested(question, 'valid_response') || {};
+        this.validResponse = getValidResponse(question);
     }
 
     _.extend(CustomShorttextScorer.prototype, {
