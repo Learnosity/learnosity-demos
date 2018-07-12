@@ -11,6 +11,9 @@ Vagrant.configure(2) do |config|
      apt-get install -y vim curl git-core
      apt-get install -y php7.0 apache2 libapache2-mod-php7.0 php7.0-curl php7.0-gd php7.0-mcrypt php7.0-cli
 
+     # Install dependencies
+     su - vagrant -c 'cd /vagrant; make devbuild'
+
      # Make us the default site
      sed -i 's^DocumentRoot.*^DocumentRoot /vagrant/www^' /etc/apache2/sites-available/000-default.conf
      cat << EOF > /etc/apache2/conf-available/vagrant-www.conf

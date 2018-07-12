@@ -23,7 +23,7 @@ a stand-alone site.
 
 First, get the code with
 
-    git clone --recursive https://github.com/Learnosity/learnosity-demos.git
+    git clone https://github.com/Learnosity/learnosity-demos.git
 
 Note: To simplify the next steps, you'll need the `make` utility (usually available
 in the development tools of your platform). If this option is not available to
@@ -49,11 +49,36 @@ to *localhost*.
 
 ### Using PHP's native server
 
-You can use the local server to quickly get up and running, no Apache/IIS is required.
+You can use the local server to quickly get up and running, no Apache/IIS is
+required.
 
-    git clone --recursive https://github.com/Learnosity/learnosity-demos.git
-    cd learnosity-demos/www
+*Additional requirement*: You will need [composer] to fetch dependencies such as
+the Learnosity SDK. Please refer to the next section about installing composer.
+Note that the `make`-based instructions in the “Getting Started” section take
+care of this for you.
+
+    git clone https://github.com/Learnosity/learnosity-demos.git
+    cd learnosity-demos
+    composer install
+    cd www
     php -S localhost:8080
+
+#### Installing composer
+
+See [composer-getting-started] for instructions on setting it up on your
+platform.
+
+Note that the `make`-based instructions in the “Getting Started” section take
+care of the following for you.
+
+For simplicity, the `get-composer.sh` script can be used to fetch a
+local version of composer. It will be named `composer.phar`, and will have to be
+called as `./composer.phar` instead of just `composer`.
+
+If using Mac OS X, you can set up [Homebrew] to use a specific tap.
+
+    brew tap homebrew/php
+    brew install composer
 
 ### Using Vagrant
 
@@ -67,13 +92,13 @@ The included `Vagrantfile` will download a VM image and install all the needed
 PHP dependencies. Once the VM is running the demos can be used (and modified)
 without you needing to install anything else.
 
-In order to use Vagrant you need to have installed:
+*Additional requirements*: In order to use this method, you need to have installed:
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 
 Once these are installed using this demo is as easy as :
 
-    git clone --recursive https://github.com/Learnosity/learnosity-demos.git
+    git clone https://github.com/Learnosity/learnosity-demos.git
     cd learnosity-demos
     vagrant up
 
@@ -83,6 +108,7 @@ To control the VM you can do one of the following :
 * Stop the VM: `vagrant halt`
 * Start the VM: `vagrant up`
 * Destroy the VM: `vagrant destroy`
+
 
 ## Consumer
 
@@ -95,4 +121,6 @@ This package comes with demo security (consumer) credentials. If you have your o
 More API documentation is available at the [Learnosity Docs site](http://docs.learnosity.com)
 
 
+[composer]: https://getcomposer.org
+[composer-getting-started]: https://getcomposer.org/doc/00-intro.md
 [homebrew]: https://brew.sh/
