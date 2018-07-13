@@ -21,14 +21,6 @@ $security = [
 $request = [
     'mode'      => 'activity_edit',
     'reference' => Uuid::generate(),
-    'config'    => [
-        'activity_edit' => [
-            'mode' => [
-                'show' => true,
-                'default' => 'edit'
-            ]
-         ]
-    ],
     'user' => [
         'id'        => 'demos-site',
         'firstname' => 'Demos',

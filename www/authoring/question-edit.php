@@ -27,11 +27,11 @@ $request = [
             'question_editor_api' => [
                 'init_options' => [
                     'widget_type' => 'response',
-                    'ui' => array(
-                        'layout' => array(
+                    'ui' => [
+                        'layout' => [
                             'global_template' => 'edit'
-                        )
-                    )
+                        ]
+                    ]
                 ]
             ]
         ]

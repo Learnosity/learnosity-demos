@@ -42,35 +42,36 @@
 	$request = [
 		'mode'      => 'item_list',
 		'config'    => [
-		    //hide ability to add new item
-		    'item_list' => [
-				'toolbar' => [
-					'add' => false
-				]
-		    ],
-			/*
-			 * show item reference but disallow editing
-			 * disallow duplication
-			 * show preview only
-			 * disallow editing or deleting widgets within items
-			 */
+		    /*
+		     * dependent API settings: QuestionEditor init options
+		     * ui layout mode "simple" for simple authoring
+		     */
+			"dependencies" => [
+                "question_editor_api" => [
+                    "init_options" => [
+                        "ui" => [
+                            "layout" => [
+                                "mode" => "simple"
+                            ]
+                        ]
+                    ]
+
+                ]
+            ],
 			'item_edit' => [
 				'item' => [
+					//show item reference and allow editing
 					'reference' => [
-					    'show' => true,
-						'edit' => false
+						'show' => true,
+						'edit' => true
 					],
-                    'duplicate' => [
-	                    'show' => false
-                    ],
-					'mode' => [
-						'default' => 'preview',
-						'show' => false
-					]
-				],
-				'widget' => [
-					'delete' => false,
-					'edit' => false
+					/*
+					 * enable dynamic content and shared passages in items
+					 * allow duplication of items
+					 */
+					'dynamic_content' => true,
+					'duplicate' => true,
+					'shared_passage' => true
 				]
 			]
 		],
@@ -97,8 +98,8 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Set your Item Bank to read-only</h2>
-            <p>Allow browsing of your item bank, including item, question, and feature previews, but disable editing.</p>
+            <h2>Hide tags from the authoring UI</h2>
+            <p>Hide tags from display in the item list, as well as in the Settings > Tags tab, when editing an item, so the hidden tags cannot be added.</p>
         </div>
     </div>
 

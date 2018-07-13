@@ -37,6 +37,7 @@
 
 
 	//TODO: org id, including get rid of it and try it yourself. Rich to create org. Name?
+    //should any content come from demos? Do we need a new org for demos, or should we use Authoring Content?
 
     //simple api request object, with additional common features added and commented
 	$request = [

@@ -32,17 +32,6 @@ $request = [
                 'dynamic_content' => true,
                 'shared_passage' => true
             ]
-        ],
-        'dependencies' => [
-            'question_editor_api' => [
-                'init_options' => [
-                    'ui' => [
-                        'layout' => [
-                            'global_template' => 'edit_preview'
-                        ]
-                    ]
-                ]
-            ]
         ]
     ],
     'user' => [
