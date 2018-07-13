@@ -69,7 +69,6 @@ $signedRequest = $Init->generate();
     <script src="<?php echo $url_authorapi; ?>"></script>
     <script>
         var initializationObject = <?php echo $signedRequest; ?>;
-        var newItemReference = '<?php echo Uuid::generate(); ?>';
 
         //optional callbacks for ready
         var callbacks = {
@@ -112,7 +111,7 @@ $signedRequest = $Init->generate();
             // Navigate to new feature
             $('.btn-navigate-feature-new').click(function () {
                 authorApp.navigate(
-                    'items/' + newItemReference + '/widgets/new/' + encodeURIComponent('{"widgetType":"features"}')
+                    'items/new/widgets/new/' + encodeURIComponent('{"widgetType":"features"}')
                 );
             });
             // Navigate to items list
@@ -130,7 +129,7 @@ $signedRequest = $Init->generate();
             // Navigate to edit MCQ question
             $('.btn-navigate-widget-edit').click(function () {
                 authorApp.navigate(
-                    'items/' + newItemReference + '/widgets/new/' + encodeURIComponent(JSON.stringify({
+                    'items/new/widgets/new/' + encodeURIComponent(JSON.stringify({
                         widgetTemplate: {
                             template_reference: '9e8149bd-e4d8-4dd6-a751-1a113a4b9163'
                         }
