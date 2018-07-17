@@ -227,7 +227,6 @@ use LearnositySdk\Utils\Uuid;
                                 $modal.modal('hide');
                                 $closeButton.off('click', cancelClickHandler);
                                 $embedButton.off('click', buttonClickHandler);
-                                console.log("11111111");
                         };
 
                         cancelClickHandler = function () {
@@ -235,7 +234,6 @@ use LearnositySdk\Utils\Uuid;
                                 $modal.modal('hide');
                                 $closeButton.off('click', cancelClickHandler);
                                 $embedButton.off('click', buttonClickHandler);
-                                console.log("222222222");
                         };
 
                         $embedButton.unbind('click');
@@ -245,7 +243,6 @@ use LearnositySdk\Utils\Uuid;
                         $modal.modal({
                             backdrop: 'static'
                         })
-                        console.log("3333333333");
                 }
             }
         ],
