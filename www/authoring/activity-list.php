@@ -20,6 +20,7 @@ $security = [
 
 //simple api request object for item list view, with optional creation of items
 $request = [
+    'mode' => 'activity_list',
     'user' => [
         'id' => 'demos-site',
         'firstname' => 'Demos',
