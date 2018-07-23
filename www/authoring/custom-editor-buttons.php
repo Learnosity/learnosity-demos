@@ -26,11 +26,6 @@ use LearnositySdk\Utils\Uuid;
             'dependencies' => [
                 'question_editor_api' => [
                     'init_options' => [
-                        'ui' => [
-                            'layout'             => [
-                                'global_template' => 'edit_preview'
-                            ]
-                        ],
                         'rich_text_editor' => [
                             'type' => 'ckeditor',
                             'custom_styles'=> [
@@ -140,8 +135,7 @@ use LearnositySdk\Utils\Uuid;
                             backdrop: 'static'
                         })
                 }
-            }
-        ],
+            }],
             errorListener: function (err) {
                 console.log(err);
             }

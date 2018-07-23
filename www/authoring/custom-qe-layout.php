@@ -83,9 +83,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Browse Activities in your itembank</h2>
-            <p>The activity list mode allows authors to browse and search the Learnosity hosted item bank for existing activities.
-                In this demo, we've enabled creation of new activities, but this functionality can be disabled as needed.</p>
+            <h2>Customizing the Question Editing Layout</h2>
+            <p>Our editor. Your item bank platform. You can customise the Question Editor's layout to suit your design needs. For more information, refer to <a href="https://docs.learnosity.com/authoring/questioneditor/knowledgebase/QE_editlayout" target="blank">the docs page</a>.</p>
         </div>
     </div>
 
