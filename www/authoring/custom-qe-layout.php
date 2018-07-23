@@ -28,9 +28,11 @@ $request = [
                     'ui' => [
                         'layout'=> [
                             'edit_panel'=> [
-                                'mcq'=> [[
-                                    'layout'=> 'custom_mcq_layout'
-                                ]]
+                                'mcq'=> [
+                                    [
+                                        'layout'=> 'custom_mcq_layout'
+                                    ]
+                                ]
                             ]
                         ]
                     ]
