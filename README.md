@@ -14,19 +14,24 @@ There is also a SignatureUtils class which simplifies the generation of the secu
 ### Requirements
 
 * PHP 5.6+
-* the `make` utility (usually available in the development tools of your platform)
 * You must be connected to the internet to use this site
-
 
 ## Getting Started
 
 The following shows you how to get the code in this repository up and running as
-a stand-alone site. First, get the code with
+a stand-alone site.
+
+First, get the code with
 
     git clone --recursive https://github.com/Learnosity/learnosity-demos.git
 
-You can then use the simple `Makefile` included with this project to just start
-one or the other modes, by running either of the following commands from the
+Note: To simplify the next steps, you'll need the `make` utility (usually available
+in the development tools of your platform). If this option is not available to
+you, see the next two sections, which show you how to start the demos site
+manually.
+
+The simple `Makefile` included with this project allows you to start one or the other
+modes, by running either of the following commands from the
 directory that was just created.
 
     make run-php  # See “Using PHP's native server” below to see what this does
