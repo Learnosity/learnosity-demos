@@ -14,7 +14,7 @@ $studentIds = array(Uuid::generate(), Uuid::generate(), Uuid::generate(), Uuid::
  * not the code you were looking for.
  *
  * For ease of demonstration, the root of the live progress demos (this file) only shows 4 iframes containing the
- * report, and 3 assessements. The source for the iframes is whas you are looking for.
+ * report, and 3 assessements. The source for the iframes is what you are looking for.
  *
  * Fear not, you can easily reach them. As you can see below, they are in the `liveprogress` subdirectory, and are named
  * `report.php`, and `assessment_n.php`, respectively. All assessments pages look the same, and actually include a
