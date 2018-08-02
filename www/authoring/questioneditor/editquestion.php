@@ -203,7 +203,7 @@ $signedRequest = json_encode($signedRequest);
                 </a>
             </li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation">
-                <a href="http://docs.learnosity.com/questioneditorapi/" title="Documentation">
+                <a href="https://docs.learnosity.com/authoring/questioneditor" title="Documentation">
                     <span class="glyphicon glyphicon-book"></span>
                 </a>
             </li>

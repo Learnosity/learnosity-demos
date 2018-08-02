@@ -10,7 +10,7 @@ $session_id = Uuid::generate();
 
 $security = [
     'user_id'      => $studentid,
-    'domain'       => $_SERVER['SERVER_NAME'],
+    'domain'       => $domain,
     'consumer_key' => $consumer_key
 ];
 

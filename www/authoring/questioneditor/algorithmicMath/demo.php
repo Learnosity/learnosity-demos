@@ -1,5 +1,6 @@
 <?php
-$host = $_SERVER['HTTP_HOST'];
+include_once '../../../../config.php';
+
 $version = '1.0.0';
 $versionPath = 'dev';
 
@@ -56,7 +57,7 @@ if ($version !== 'dev') {
 
         <!-- EXAMPLE -->
         <script>
-            var domain = '<?php echo $host; ?>';
+            var domain = '<?php echo $domain; ?>';
             var versionPath = '<?php echo $versionPath; ?>';
         </script>
 

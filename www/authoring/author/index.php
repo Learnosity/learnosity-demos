@@ -7,7 +7,7 @@ include_once 'includes/header.php';
 <div class="jumbotron section">
     <div class="pull-right toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/authorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/authoring/author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
     <h1>Author API</h1>

@@ -14,7 +14,15 @@ $consumer_key = 'yis0TYCu7U9V4o7M';
 // Note - Consumer secret should never get displayed on the page - only used for creation of signature server side
 $consumer_secret = '74c5fd430cf1242a527f6223aebd42d30464be22';
 
-// Some products need the domain as part of the security signature. Demos has been tested on "localhost"
+// Some products need the domain (and domain only: no port number) as part of the security signature.
+//
+// Note that using SERVER_NAME may cause issues leading to signature mismatches if SERVER_NAME differs from the name
+// the client is using to access the server, as is the case when using aliases. In this case, using HTTP_HOST may address the issue
+// This comes with the caveat that HTTP_HOST contains the port used by the client, if non-standard, which will also
+// break the signature. If using server aliases on non-standard port, it will be necessary to trim the HTTP_HOST value
+// after the last colon (:), to remove the port number.
+//
+// Demos has been tested on "localhost"
 $domain = $_SERVER['SERVER_NAME'];
 
 // Generate timestamp in format YYYYMMDD-HHMM for use in signature
