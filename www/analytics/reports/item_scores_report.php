@@ -10,14 +10,15 @@ use LearnositySdk\Request\Init;
 // use the standard yis consumer.
 $consumer_key_au = "yau0TYCu7U9V4o7M";
 $consumer_secret_au = "74c5fd430cf1242a527f6223aebd42d30464be22";
-$url_reports_au = '//reports-au.learnosity.com?v1';
+$url_reports_au = '//reports-au.learnosity.com';
 
 $security = [
     'consumer_key' => $consumer_key_au,
-    'domain'       => $domain
+    'domain'       => 'demos.vg.learnosity.com'
 ];
 
-$request = [
+// This set of options will show the report with a single row per student.
+$collapsedRequest = [
     'configuration' => [
         'questionsApiVersion' => 'v2'
     ],
@@ -65,7 +66,6 @@ $request = [
                     "name" => "Martin Prince"
                 ]
             ],
-            "row_tag_type" => "ch_proficiency_strand",
             "column_tag_types" => [
                 "ch_topic",
                 "ch_subtopic",
@@ -84,8 +84,15 @@ $request = [
     ]
 ];
 
-$Init = new Init('reports', $security, $consumer_secret_au, $request);
-$signedRequest = $Init->generate();
+// To show expanded proficiency rows, we just add the row_tag_type param.
+$expandedRequest = $collapsedRequest;
+$expandedRequest['reports'][0]['row_tag_type'] = "ch_proficiency_strand";
+
+// We'll pass both sets of options to browser and decide at render time which one should be used.
+$collapsedSigner = new Init('reports', $security, $consumer_secret_au, $collapsedRequest);
+$expandedSigner = new Init('reports', $security, $consumer_secret_au, $expandedRequest);
+$signedRequest = $collapsedSigner->generate();
+$expandedOptions = $expandedSigner->generate();
 
 ?>
 
@@ -148,7 +155,7 @@ $signedRequest = $Init->generate();
     <div class="overview">
         <h1>Reports API – Item scores by tag by user</h1>
         <p>Real time score reporting by learning outcome or content area.<p>
-        <p>This demo includes some simple highlighting to help visualize the results, but this just one example of the powerful customizations possible with this report.</p
+        <p>This demo includes various highlighting and reporting options to help visualize the results, as an example of some of the powerful customizations possible with this report.</p
     </div>
 </div>
 
@@ -158,20 +165,24 @@ $signedRequest = $Init->generate();
         <table class="table-unbordered">
             <tbody>
                 <tr>
-                    <td style="min-width:200px"><label for="highlight-band-4"><input type="checkbox" id="highlight-band-4" name="highlight-band-4" checked> Highlight high scores</input></label></td>
+                    <td style="min-width:240px"><label for="highlight-band-4"><input type="checkbox" id="highlight-band-4" name="highlight-band-4" checked> Highlight high scores</input></label></td>
                     <td>Custom styling for scores of 80% or more, to identify areas of strength.</td>
                 </tr>
                 <tr>
-                    <td style="min-width:200px"><label for="highlight-band-1"><input type="checkbox" id="highlight-band-1" name="highlight-band-1"> Highlight low scores</input></label></td>
+                    <td style="min-width:240px"><label for="highlight-band-1"><input type="checkbox" id="highlight-band-1" name="highlight-band-1"> Highlight low scores</input></label></td>
                     <td>Custom styling for scores of 60% or less, to identify problem areas.</td>
                 </tr>
                 <tr>
-                    <td style="min-width:200px"><label for="exclude-low-exposure"><input type="checkbox" id="exclude-low-exposure" name="exclude-low-exposure"> Exclude low exposure</input></label></td>
+                    <td style="min-width:240px"><label for="exclude-low-exposure"><input type="checkbox" id="exclude-low-exposure" name="exclude-low-exposure"> Exclude low exposure</input></label></td>
                     <td>Disable highlighting for scores based on fewer than 20 questions.</td>
                 </tr>
                 <tr>
-                    <td style="min-width:200px"><label for="ignore-unattempted"><input type="checkbox" id="ignore-unattempted" name="ignore-unattempted"> Ignore unattempted Items</input></label></td>
+                    <td style="min-width:240px"><label for="ignore-unattempted"><input type="checkbox" id="ignore-unattempted" name="ignore-unattempted"> Ignore unattempted Items</input></label></td>
                     <td>Ignore unattempted Items from score calculations.</td>
+                </tr>
+                <tr>
+                    <td style="min-width:240px"><label for="show-skills"><input type="checkbox" id="show-skills" name="show-skills"> Show skill breakdown</input></label></td>
+                    <td>Show student results by skill area.</td>
                 </tr>
             </tbody>
         </table>
@@ -199,19 +210,22 @@ $signedRequest = $Init->generate();
     applyVisualization();
 
     function initReport() {
-        var initOptions = <?php echo $signedRequest; ?>;
+        var collapsedReportOptions = <?php echo $signedRequest; ?>;
+        var expandedReportOptions = <?php echo $expandedOptions; ?>;
         var eventOpts = {
             scoreMutator: function(scores) {
                 processScores(scores, ignoreUnattempted());
             }
         };
 
-        // reset existing report, if there is one.
+        var initOptions = showExpandedSkills()? expandedReportOptions : collapsedReportOptions;
+
+        // Reset existing report, if there is one.
         if (window.reportsApp) {
             document.getElementById('item-scores-report-container').innerHTML = '<div id="item-scores-report"></div>';
         }
 
-        // initialise the report.
+        // Initialize the report.
         window.reportsApp = LearnosityReports.init(initOptions, eventOpts);
     }
 
@@ -252,6 +266,7 @@ $signedRequest = $Init->generate();
         document.getElementById('highlight-band-4').addEventListener('click', applyVisualization);
         document.getElementById('exclude-low-exposure').addEventListener('click', applyVisualization);
         document.getElementById('ignore-unattempted').addEventListener('click', initReport);
+        document.getElementById('show-skills').addEventListener('click', initReport);
     }
 
     function applyVisualization() {
@@ -279,6 +294,10 @@ $signedRequest = $Init->generate();
 
     function ignoreUnattempted() {
         return document.getElementById('ignore-unattempted').checked;
+    }
+
+    function showExpandedSkills() {
+        return document.getElementById('show-skills').checked;
     }
 </script>
 
