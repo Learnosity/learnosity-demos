@@ -19,7 +19,7 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => $studentid,
     'items' => [
-        '97f49cbf-8f9f-4964-b98a-4a2020ca14c7',
+        'Demo3',
         'Demo4',
         'accessibility_demo_6',
         'Demo6',
@@ -32,8 +32,6 @@ $request = [
     'config' => [
         'title' => 'Demo activity - showcasing question types and assess options',
         'subtitle' => 'Walter White',
-        "questionsApiVersion"=> "v2.124.0",
-        "assessApiVersion"=> "v2.64.0",
         'regions' => [
             'top-left' => [
                 [
@@ -198,7 +196,7 @@ $signedRequest = $Init->generate();
 <div class="section">
     <div id="learnosity_assess"></div>
 </div>
-<script src="https://items-va.learnosity.com?v1.67"></script>
+<script src="<?php echo $url_items; ?>"></script>
 <script>
 
     var itemsApp = {};
