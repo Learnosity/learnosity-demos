@@ -14,7 +14,7 @@ $url_reports_au = '//reports-au.learnosity.com';
 
 $security = [
     'consumer_key' => $consumer_key_au,
-    'domain'       => 'demos.vg.learnosity.com'
+    'domain'       => $domain
 ];
 
 // This set of options will show the report with a single row per student.
