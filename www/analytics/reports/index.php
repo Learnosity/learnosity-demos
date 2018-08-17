@@ -68,7 +68,8 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Learning Outcomes Reporting</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Interactive drill down report of class results by topic area.</p>
+                    <p>Interactive drill down report of class results by topic area or learning outcome. Useful in both Formative and Summative learning scenarios.</p>
+                    <p><strong>Note:</strong> this report is a premium bundle add-on.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./item_scores_report.php">Demo</a>
                     </p>
