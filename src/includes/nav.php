@@ -1,13 +1,10 @@
 <?php
     $pages = array(
         'Authoring' => array(
-            'authoring/author/index.php'         => 'Author API',
-            'authoring/questioneditor/index.php' => 'Question Editor API'
+            'authoring/index.php' => 'Authoring'
         ),
         'Assessment' => array(
-            'assessment/items/index.php'     => 'Items API',
-            'assessment/questions/index.php' => 'Questions API',
-            'assessment/assess/index.php'    => 'Assess API'
+            'assessment/index.php'     => 'Assessment'
         ),
         'Analytics' => array(
             'analytics/reports/index.php' => 'Reports API',
@@ -23,7 +20,6 @@
             'casestudies/spanish/index.php' => 'Spanish Demo'
         )
     );
-
 ?>
 
 <div class="navbar navbar-default" role="navigation">
@@ -40,18 +36,23 @@
         <div class="navbar-collapse collapse" id="nav-main">
             <ul class="nav navbar-nav">
                 <?php
-                    foreach ($pages as $page => $name) {
-                        echo '
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $page . ' <b class="caret"></b></a>
-                            <ul class="dropdown-menu">';
-                            foreach ($name as $subpage => $subname) {
-                                echo '<li><a href="' . $env['www'] . $subpage . '">' . $subname . '</a></li>' . PHP_EOL;
+                        foreach ($pages as $page => $name) {
+                            if (sizeof($name) > 1) {
+                                echo '
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $page . ' <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">';
+                                    foreach ($name as $subpage => $subname) {
+                                        echo '<li><a href="' . $env['www'] . $subpage . '">' . $subname . '</a></li>' . PHP_EOL;
+                                    }
+                                echo '
+                                    </ul>
+                                </li>' . PHP_EOL;
+                            }else{
+                                list($key, $value) = each($name);
+                                echo '<li class="dropdown"><a href="' . $env['www'] . $key . '">' . $value . '</a><li>';
                             }
-                        echo '
-                            </ul>
-                        </li>' . PHP_EOL;
-                    }
+                        }
                 ?>
             </ul>
             <div class="nav-sec-wrapper">
