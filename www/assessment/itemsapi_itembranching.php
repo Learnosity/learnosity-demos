@@ -21,7 +21,7 @@ $security = [
 //simple api request object for item list view, with optional creation of items
 $request = [
     'activity_id' => 'itemsbranchingdemo',
-    'name' => '',
+    'name' => 'Items Branching Demo',
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),

@@ -20,7 +20,7 @@ $security = [
 
 //simple api request object for item list view, with optional creation of items
 $request = [
-    'activity_id' => 'itemsassessdemo',
+    'activity_id' => 'lockingquestionsdemo',
     'name' => 'Items API - Locking Questions',
     'rendering_type' => 'assess',
     'type' => 'submit_practice',

@@ -20,8 +20,8 @@ $security = [
 
 //simple api request object for item list view, with optional creation of items
 $request = [
-    'activity_id' => 'itemsassessdemo',
-    'name' => 'Items API demo - assess activity',
+    'activity_id' => 'questionindexingdemo',
+    'name' => 'Items API demo - question indexing',
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
