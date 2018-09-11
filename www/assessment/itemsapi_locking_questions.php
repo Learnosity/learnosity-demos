@@ -18,7 +18,7 @@ $security = [
 ];
 
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'lockingquestionsdemo',
     'name' => 'Items API - Locking Questions',
@@ -36,7 +36,8 @@ $request = [
     ],
     'config' => [
         'title' => 'Demo activity - locking questions',
-        'subtitle' => 'Walter White'
+        'subtitle' => 'Walter White',
+        'regions' => 'main'
     ]
 ];
 
@@ -106,7 +107,22 @@ $signedRequest = $Init->generate();
         };
 
         var itemsApp = LearnosityItems.init(initializationObject, callbacks);
+
+        // Host page rendering logic
+        function renderMsg (id, content) {
+            var template;
+            if ($("#" + id + "_msg").length) {
+                $("#" + id + "_msg").html(content).fadeIn();
+            } else {
+                template = "<div id=\"" + id + "_msg\" class=\"question-msg alert alert-danger\">" + content + "</div>";
+                $("#" + id).append(template);
+            }
+        }
     </script>
+
+    <style>
+        .question-msg { margin: 6px 0 24px; }
+    </style>
 
 <?php
 include_once 'views/modals/initialisation-preview.php';

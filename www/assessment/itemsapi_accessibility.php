@@ -18,7 +18,7 @@ $security = [
 ];
 
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'itemsaccessibilitydemo',
     'name' => 'Items API demo - Accessibility Demo',
@@ -37,7 +37,8 @@ $request = [
     ],
     'config' => [
         'title' => 'Accessibility Demo',
-        'subtitle' => 'Walter White'
+        'subtitle' => 'Walter White',
+        'regions' => 'main'
     ]
 ];
 

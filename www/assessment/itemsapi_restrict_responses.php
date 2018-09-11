@@ -18,7 +18,7 @@ $security = [
 ];
 
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'restrictresponsesdemo',
     'name' => 'Items API - Restrict Responses',
@@ -36,6 +36,7 @@ $request = [
     'config' => [
         'ignore_question_attributes' => ['validation'],
         'title' => 'Restrict Responses',
+        'regions' => 'main'
     ]
 ];
 

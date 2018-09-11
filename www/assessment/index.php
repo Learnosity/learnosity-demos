@@ -248,6 +248,35 @@ include_once 'includes/header.php';
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Running Your Own Math Rendering</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Loading MathJax from CDN.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./formulamathjaxcdn.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Regions</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Learnosity regions are a part of the Assess API, and allow you to create a personalized, fluid and extensible assessment UI.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_regions.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </div>
 

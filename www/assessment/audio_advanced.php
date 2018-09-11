@@ -17,7 +17,7 @@ $security = [
     'domain'       => $domain
 ];
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'advancedaudiodemo',
     'name' => 'Items API demo - advanced audio',

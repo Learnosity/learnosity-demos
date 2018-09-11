@@ -18,29 +18,19 @@ $security = [
 ];
 
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'itemsactivitiesdemo',
+    'activity_template_id' => 'demo-activity-1',
     'name' => 'Items API demo - activities',
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
     'user_id' => 'demos-site',
-    'items' => [
-        'Demo3',
-        'Demo4',
-        'Demo6',
-        'Demo7',
-        'Demo8',
-        'Demo9',
-        'Demo10'
-    ],
     'config' => [
         'title' => 'Activities Demo',
         'subtitle' => 'Walter White',
-        'administration' => [
-            'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
-        ]
+        'regions' => 'main'
     ]
 ];
 
@@ -61,9 +51,7 @@ $signedRequest = $Init->generate();
             <p>Activities are a wrapper for multiple items authored in the Learnosity Author site. They can also
             include configuration used by the <a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a> to control the assessment user interface.</p>
             <p>Preview the <a href="#" data-toggle="modal" data-target="#initialisation-preview">API Initialisation Object</a> to see how simple it can be using the Items API to load activities
-            authored in the Learnosity item bank.<p>
-            <p><a href="#" data-toggle="modal" data-target="#settings">Customise the activity</a> you want to load.<p>
-            <p>Type ctrl+shift+m to open the Administration Panel. The default password is <em>password</em>.</p>
+            authored in the Learnosity item bank.</p>
         </div>
     </div>
 

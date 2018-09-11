@@ -18,7 +18,7 @@ $security = [
 ];
 
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'questionindexingdemo',
     'name' => 'Items API demo - question indexing',
@@ -35,6 +35,7 @@ $request = [
     'config' => [
         'title' => 'Demo activity - question indexing',
         'subtitle' => 'Walter White',
+        'regions' => 'main',
         'configuration' => [
             'question_indexing' => true,
         ]

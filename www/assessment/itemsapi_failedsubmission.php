@@ -17,7 +17,7 @@ $security = [
     'domain'       => $domain
 ];
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'failedsubmissiondemo',
     'name' => 'Items API - Failed Submission',
@@ -34,7 +34,8 @@ $request = [
             ]
         ],
         'title' => 'Demo activity - failed submission',
-        'subtitle' => 'Walter White'
+        'subtitle' => 'Walter White',
+        'regions' => 'main'
     ]
 ];
 

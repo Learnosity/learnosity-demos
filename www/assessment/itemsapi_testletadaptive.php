@@ -17,13 +17,14 @@ $security = [
     'domain'       => $domain
 ];
 
+$sessionId = Uuid::generate();
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
-    'activity_id' => 'branchingadaptivedemo',
+    'activity_id' => 'testletadaptivedemo',
     'name' => 'Items API - Testlet Adaptive activity',
     'rendering_type' => 'assess',
-    'session_id' => Uuid::generate(),
+    'session_id' => $sessionId,
     'user_id' => 'demos-site',
     'adaptive' => [
         'type' => 'branching',
@@ -63,7 +64,24 @@ $request = [
         ]
     ],
     'config' => [
-        'title'      => 'Testlet Adaptive Assessment'
+        'title' => 'Item Adaptive Assessment',
+        'regions' => 'main',
+        'navigation' => array(
+            'intro_item'             => 'branching-intro',
+            'show_prev'              => false,
+            'show_progress'          => false,
+            'show_fullscreencontrol' => false,
+            'show_acknowledgements'  => true,
+            'toc'                    => false,
+            'auto_save' => [
+               'ui' => false,
+               'saveIntervalDuration' => 60
+            ]
+        ),
+        'configuration'       => array(
+            'onsubmit_redirect_url' => 'itemsapi_adaptive_report.php?session_id=' . $sessionId,
+            'onsave_redirect_url'   => 'itemsapi_itemadaptive.php'
+        )
     ]
 ];
 

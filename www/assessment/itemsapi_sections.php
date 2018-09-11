@@ -18,7 +18,7 @@ $security = [
 ];
 
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'itemssectionsdemo',
     'name' => 'Items API - Sections',
@@ -49,6 +49,10 @@ $request = [
     'assess_inline' => true,
     'config' => [
         'title' => 'Demo activity - showcasing sections',
+        'regions' => 'main',
+        'configuration' => [
+            'question_indexing' => true,
+        ]
     ]
 ];
 

@@ -18,7 +18,7 @@ $security = [
 ];
 
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'itemsbranchingdemo',
     'name' => 'Items Branching Demo',
@@ -68,6 +68,7 @@ $request = [
     ],
     'config' => [
         'title' => 'Item Branching Assessment',
+        'regions' => 'main'
     ]
 ];
 

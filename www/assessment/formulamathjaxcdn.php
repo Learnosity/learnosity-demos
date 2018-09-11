@@ -18,7 +18,7 @@ $security = [
 ];
 
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for Items API
 $request = [
     'activity_id' => 'formulamathjax',
     'name' => 'Items API demo - formaula mathjax',
@@ -44,7 +44,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>MathJax Formula</h2>
+            <h2>Running Your Own Math Rendering</h2>
             <p>Loading MathJax from CDN</p>
         </div>
     </div>
