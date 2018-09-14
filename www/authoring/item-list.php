@@ -42,8 +42,6 @@ $request = [
     ]
 ];
 
-//include_once 'utils/settings-override.php';
-
 $Init = new Init('author', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
