@@ -12,6 +12,11 @@ $security = array(
 );
 
 $sessionId = Uuid::generate();
+$state = 'initial';
+if (isset($_GET['session_id'])) {
+    $state = 'resume';
+    $sessionId = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+}
 
 $request = array(
     'activity_id'    => 'itemadaptivedemo',
