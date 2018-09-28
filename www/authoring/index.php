@@ -12,7 +12,7 @@ include_once 'includes/header.php';
     </div>
     <h1>Author API</h1>
     <div class="section-intro">
-        <p>Learnosity's Author API allows searching and integration of Learnosity powered content into your content management system.<p>
+        <p>Learnosity's Author API allows searching and integration of Learnosity powered content into your content management system.</p>
         <p>Content can be saved back to your Learnosity hosted item bank, or you can choose to save content locally.</p>
     </div>
 

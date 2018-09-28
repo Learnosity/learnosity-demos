@@ -12,7 +12,7 @@ include_once 'includes/header.php';
     </div>
     <h1>Items API</h1>
     <div class="section-intro">
-        <p>Learnosity's Items API provides a simple way to access content from the Learnosity item bank, and to optionally pull in activities (assessments) that can be embedded in your pages. It leverages the <a href="https://demos.learnosity.com/assessment/questions/index.php">Questions API</a> and the <a href="https://demos.learnosity.com/assessment/assess/index.php">Assess API</a> as appropriate.<p>
+        <p>Learnosity's Items API provides a simple way to access content from the Learnosity item bank, and to optionally pull in activities (assessments) that can be embedded in your pages. It leverages the <a href="https://demos.learnosity.com/assessment/questions/index.php">Questions API</a> and the <a href="https://demos.learnosity.com/assessment/assess/index.php">Assess API</a> as appropriate.</p>
         <p>The Items API also supports both items and testlet <a href="https://docs.learnosity.com/assessment/items/knowledgebase/adaptiveassessment">adaptive assessments</a>.</p>
     </div>
 

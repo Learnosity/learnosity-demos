@@ -96,12 +96,12 @@ $request = [
             ]
         ]
     ],
-    'user' => array(
+    'user' => [
         'id'        => 'demos-site',
         'firstname' => 'Demos',
         'lastname'  => 'User',
         'email'     => 'demos@learnosity.com'
-    )
+    ]
 ];
 
 $Init = new Init('author', $security, $consumer_secret, $request);

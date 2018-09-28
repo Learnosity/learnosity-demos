@@ -9,10 +9,10 @@ use \LearnositySdk\Utils\Uuid;
 
 $sessionId = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-$security = array(
+$security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain
-);
+];
 
 $request = [
     'reports' => [

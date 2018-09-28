@@ -66,7 +66,7 @@ $request = [
     'config' => [
         'title' => 'Item Adaptive Assessment',
         'regions' => 'main',
-        'navigation' => array(
+        'navigation' => [
             'intro_item'             => 'branching-intro',
             'show_prev'              => false,
             'show_progress'          => false,
@@ -77,11 +77,11 @@ $request = [
                'ui' => false,
                'saveIntervalDuration' => 60
             ]
-        ),
-        'configuration'       => array(
+        ],
+        'configuration'       => [
             'onsubmit_redirect_url' => 'itemsapi_adaptive_report.php?session_id=' . $sessionId,
             'onsave_redirect_url'   => 'itemsapi_itemadaptive.php'
-        )
+        ]
     ]
 ];
 
