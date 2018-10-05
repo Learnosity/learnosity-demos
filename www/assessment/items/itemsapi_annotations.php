@@ -12,7 +12,7 @@ $security = array(
 );
 
 $request = [
-    'activity_id' => 'itemsassessdemo',
+    'activity_id' => 'itemsannotationsdemo',
     'name' => 'Items API demo - Annotations',
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
@@ -107,7 +107,6 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted" data-toggle="modal" data-target="#settings"><span class="glyphicon glyphicon-list-alt"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#" data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/assessment/annotations/index" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
@@ -123,11 +122,9 @@ $signedRequest = $Init->generate();
     <div id="learnosity_assess"></div>
 </div>
 <script type="text/javascript" src="https://items.learnosity.com/?v2018.2.LTS"></script>
-<!-- <script src="<?php echo $url_items; ?>"></script> -->
 <script>
 
     var itemsApp = {};
-    var currentRegions = <?php echo json_encode($request['config']['regions']);?>;
     var eventOptions = {
         readyListener: init,
         errorListener: function (event) {
@@ -172,8 +169,6 @@ $signedRequest = $Init->generate();
     function toggleModalClass() {
         $('.modal-backdrop').css('display', 'none');
     }
-</script>
-<script type="text/javascript" src="regions_settings.js">
 </script>
 <?php
 include_once 'views/modals/settings-items2.php';
