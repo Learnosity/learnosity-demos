@@ -239,6 +239,19 @@ include_once 'includes/header.php';
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Annotations Demo</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Annotations API offers students the ability to make notes, add multi color highlights to text, place sticky notes onto the page, and use a pen tool to annotate the content.</p>
+                        <p class="text-right">
+                            <a class="btn btn-primary btn-md" href="./itemsapi_annotations.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
         </div>
