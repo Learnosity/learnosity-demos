@@ -13,7 +13,7 @@ $security = array(
 
 $request = [
     'activity_id' => 'itemsassessdemo',
-    'name' => 'Items API demo - assess activity',
+    'name' => 'Items API demo - Annotations',
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
@@ -40,7 +40,7 @@ $request = [
                     "stickynote"=>true
                 ]
             ],
-        'title' => 'Demo activity - showcasing question types and assess options',
+        'title' => 'Demo activity - showcasing Annotations API',
         'subtitle' => 'Walter White',
         'regions' => 'main',
         'navigation' => [
@@ -68,9 +68,9 @@ $request = [
             'shuffle_items' => false,
             'lazyload' => false,
             'fontsize' => 'normal',
-            'onsubmit_redirect_url' => 'itemsapi_assess.php',
-            'onsave_redirect_url' => 'itemsapi_assess.php',
-            'ondiscard_redirect_url' => 'itemsapi_assess.php',
+            'onsubmit_redirect_url' => 'itemsapi_annotations.php',
+            'onsave_redirect_url' => 'itemsapi_annotations.php',
+            'ondiscard_redirect_url' => 'itemsapi_annotations.php',
             'idle_timeout' => [
                 'interval' => 300,
                 'countdown_time' => 60
