@@ -15,108 +15,6 @@ $security = [
     'domain'       => $domain
 ];
 
-$individualReport = [
-    "configuration" => [
-        "questionsApiVersion" => "v2"
-    ],
-    "label_bundle" => [
-        "total" => "Overall result"
-    ],
-    "reports" => [
-        [
-            "id" => "individual-skills-report",
-            "type" => "item-scores-by-tag-by-user",
-            "items_tags_live_dataset_reference" => "content-hierarchy-items-dataset-00001",
-            "session_items_live_dataset_reference" => "content-hierarchy-sessions-dataset-00001",
-            "users" => [
-                [
-                    "id" => "user_20181002a_00001",
-                    "name" => "Bart Simpson"
-                ]
-            ],
-            "column_tag_types" => [
-                "sh_skill"
-            ],
-            // "row_tag_type" => "sh_exercise", // populated by addRowTagType();
-            "item_tags" => [
-                [
-                    "type" => "ch_title",
-                    "name" => "skill_hierarchy_001"
-                ]
-            ]
-        ]
-    ]
-];
-
-// For individual reports, use the base config and add the row tag type for each variant.
-$individualReports = [
-    'sh_exercise'          => $addRowTagType($individualReport, 'sh_exercise'),
-    'sh_subskill'          => $addRowTagType($individualReport, 'sh_subskill'),
-    'sh_question_category' => $addRowTagType($individualReport, 'sh_question_category'),
-    'sh_dok'               => $addRowTagType($individualReport, 'sh_dok')
-];
-
-$classReport = [
-    "configuration" => [
-        "questionsApiVersion" => "v2"
-    ],
-    "label_bundle" => [
-        "total" => "Overall result"
-    ],
-    "reports" => [
-        [
-            "id" => "class-skills-report",
-            "type" => "item-scores-by-tag-by-user",
-            "items_tags_live_dataset_reference" => "content-hierarchy-items-dataset-00001",
-            "session_items_live_dataset_reference" => "content-hierarchy-sessions-dataset-00001",
-            "users" => [
-                [
-                    "id" => "user_20181002a_00001",
-                    "name" => "Bart Simpson"
-                ],
-                [
-                    "id" => "user_20181002a_00002",
-                    "name" => "Milhouse Vanhouten"
-                ],
-                [
-                    "id" => "user_20181002a_00003",
-                    "name" => "Sherri Mackleberry"
-                ],
-                [
-                    "id" => "user_20181002a_00004",
-                    "name" => "Nelson Muntz"
-                ],
-                [
-                    "id" => "user_20181002a_00005",
-                    "name" => "Terri Mackleberry"
-                ]
-            ],
-            "column_tag_types" => [
-                "sh_skill",
-                "sh_dok"
-            ],
-            // "row_tag_type" => "sh_subskill", // populated by addRowTagType();
-            "item_tags" => [
-                [
-                    "type" => "ch_title",
-                    "name" => "skill_hierarchy_001"
-                ],
-                [
-                    "type" => "sh_exercise",
-                    "name" => "Activity 3"
-                ]
-            ]
-        ]
-    ]
-];
-
-// Collapsed class report uses the base $classReport options. Expanded uses the sh_subskill
-// as the row_tag_type.
-$classReports = [
-    'collapsed' => $classReport,
-    'expanded'  => $addRowTagType($classReport, 'sh_subskill')
-];
-
 $advancedReport = [
     "configuration" => [
         "questionsApiVersion" => "v2"
@@ -192,33 +90,18 @@ $advancedReports = [
 
 
 // Now cycle through all the variants of the reports and sign them.
-// We'll json_encode() each signed array once, so we json_decode() the signed
-// string to avoid double encoding.
 // We'll pass signed options for all variants to the browser, and decide at
 // render time which ones should be used based on the UI controls.
-
-$signedIndividualReports = [];
-$signedClassReports = [];
 $signedAdvancedReports = [];
-
-foreach($individualReports as $idx => $opts) {
-    $signer = new Init('reports', $security, $consumer_secret, $opts);
-    $signedIndividualReports[$idx] = json_decode($signer->generate(), JSON_PRETTY_PRINT);
-}
-
-foreach($classReports as $idx => $opts) {
-    $signer = new Init('reports', $security, $consumer_secret, $opts);
-    $signedClassReports[$idx] = json_decode($signer->generate(), JSON_PRETTY_PRINT);
-}
-
 foreach($advancedReports as $idx => $opts) {
     $signer = new Init('reports', $security, $consumer_secret, $opts);
+
+    // We'll json_encode() each signed array once afterwards, so here we have to json_decode() the signed
+    // string to avoid double encoding.
     $signedAdvancedReports[$idx] = json_decode($signer->generate(), JSON_PRETTY_PRINT);
 }
 
-
-
-// These are the init options we show in the Preview panel.
+// These are just the init options we display if you click the "Preview API Initialisation Object" button.
 $signedRequest = json_encode($signedAdvancedReports['collapsed']);
 
 ?>
@@ -238,13 +121,7 @@ $signedRequest = json_encode($signedAdvancedReports['collapsed']);
         padding-right: 2em;
     }
 
-    .report-container_md {
-        margin: auto;
-        height: 400px;
-        width: 100%;
-    }
-
-    .report-container_lg {
+    .report-container {
         margin: auto;
         height: 600px;
         width: 100%;
@@ -264,13 +141,11 @@ $signedRequest = json_encode($signedAdvancedReports['collapsed']);
 </style>
 <style id="band-4-styles">
     .lrn-ibtbu-col:not(.lrn-ibtbu-col_left):not(.lrn-ibtbu-col_expanded):not(.lrn-ibtbu-col_exploded):not(.lrn-ibtbu-col_inmotion):not(.lrn-ibtbu-col_explodeleft) .lrn-ibtbu-col-cell[data-custom_performance-band="4"] .lrn-ibtbu-percentage {
-        /*74BF3C*/
         border-color: #65A00D;
     }
 </style>
 <style id="band-1-styles">
     .lrn-ibtbu-col:not(.lrn-ibtbu-col_left):not(.lrn-ibtbu-col_expanded):not(.lrn-ibtbu-col_exploded):not(.lrn-ibtbu-col_inmotion):not(.lrn-ibtbu-col_explodeleft) .lrn-ibtbu-col-cell[data-custom_performance-band="1"] .lrn-ibtbu-percentage {
-        /*E00826*/
         border-color: #E14747;
     }
 </style>
@@ -289,42 +164,20 @@ $signedRequest = json_encode($signedAdvancedReports['collapsed']);
         </ul>
     </div>
     <div class="overview">
-        <h1>Reports API – Learning outcomes reporting</h1>
-        <p>These demos show different ways to analyse results by learning outcome, standard, topic area and more. They use the <code>item-scores-by-tag-by-user</code> report, which is a flexible, powerful report for understanding the results of individuals and classes.<p>
+        <h1>Reports API – Learning outcomes visualization</h1>
+        <p>This demo shows different ways to analyse and visualize results by learning outcome. It uses the <code>item-scores-by-tag-by-user</code> report, which is a flexible, powerful report for understanding the results of individuals and classes.<p>
         <p><b>Please note:</b> the <code>item-scores-by-tag-by-user</code> report is premium bundle add-on. Contact your support representative to start using this feature.<p>
     </div>
 </div>
 
 <div class="section pad-sml">
-    <h4>Example 1: Individual results</h4>
+    <h4>Visualizing progress and results - advanced usage</h4>
     <p>
-        Show detailed results for an individual. The score breakdown can be based on any of your Item Tags. For&nbsp;example:&nbsp;<select id="individual-report-breakdown">
-            <option value="sh_exercise"         >Report by task</option>
-            <option value="sh_subskill"         >Report by subskill</option>
-            <option value="sh_question_category">Report by question type</option>
-            <option value="sh_dok"              >Report by depth of knowledge</option>
-        </select>
+        This demo is based on chapters of a Math curriculum. We've implemented some custom highlighting and other options, as an example of some of the powerful customizations possible with this report.
     </p>
-    <div id="individual-skills-report-container" class="report-container_md">
-        <div id="individual-skills-report"></div>
-    </div>
-</div>
-
-<div class="section pad-sml">
-    <h4>Example 2: Class results</h4>
     <p>
-        Click on a skill area to drill down into depth of knowledge. Optionally, you can also show a detailed breakdown per student, based on any of your Item Tags.
+        You can also use your own custom logic to process and modify the percentages that are shown in every cell. This enables you to implement special weightings, exclusions or rounding in your report if required. We've used it to implement the "Ignore unattempted Items" customization.
     </p>
-    <label for="show-class-skills"><input type="checkbox" id="show-class-skills" name="show-class-skills">  Show breakdown of subskills per student.</input></label>
-
-    <div id="class-skills-report-container" class="report-container_md">
-        <div id="class-skills-report"></div>
-    </div>
-</div>
-
-<div class="section pad-sml">
-    <h4>Example 3: Visualizing progress and results - advanced usage</h4>
-    <p>This demo is based on chapters of a Math curriculum. We've implemented some custom highlighting and other options, as an example of some of the powerful customizations possible with this report.</p>
     <div class="controls-container">
         <table class="table-unbordered">
             <tbody>
@@ -351,63 +204,19 @@ $signedRequest = json_encode($signedAdvancedReports['collapsed']);
             </tbody>
         </table>
     </div>
-    <div id="item-scores-report-container" class="report-container_lg">
+    <div id="item-scores-report-container" class="report-container">
         <div id="item-scores-report"></div>
-    </div>
-
-    <!-- Demo Report OnClick Modal -->
-    <div class="modal fade" id="lrn-reports-demos-modal" tabindex="-1" role="dialog" aria-labelledby="lrn-reports-demos-modal-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            </div>
-        </div>
-    </div>
 </div>
 
 <script src="<?php echo $url_reports; ?>"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/head.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/reveal/reveal.js"></script>
 <script>
-    window.individualReportsApp = null;
-    window.classReportsApp      = null;
-    window.advancedReportsApp   = null;
+    window.reportsApp = null;
 
-    initIndividualReport();
-    initClassReport();
     initAdvancedReport();
-
     initCustomControls();
     applyVisualization();
-
-    function initIndividualReport() {
-        var individualReportOptions = <?php echo json_encode($signedIndividualReports, JSON_PRETTY_PRINT); ?>;
-
-        var initOptions = individualReportOptions[getSelectedIndividualReport()];
-        var eventOpts = {};
-
-        // Reset existing report, if there is one.
-        if (window.individualReportsApp) {
-            document.getElementById('individual-skills-report-container').innerHTML = '<div id="individual-skills-report"></div>';
-        }
-
-        // Initialize the report.
-        window.individualReportsApp = LearnosityReports.init(initOptions, eventOpts);
-    }
-
-    function initClassReport() {
-        var classReportOptions = <?php echo json_encode($signedClassReports, JSON_PRETTY_PRINT); ?>;
-
-        var initOptions = showClassExpanded()? classReportOptions.expanded : classReportOptions.collapsed;
-        var eventOpts = {};
-
-        // Reset existing report, if there is one.
-        if (window.classReportsApp) {
-            document.getElementById('class-skills-report-container').innerHTML = '<div id="class-skills-report"></div>';
-        }
-
-        // Initialize the report.
-        window.classReportsApp = LearnosityReports.init(initOptions, eventOpts);
-    }
 
     function initAdvancedReport() {
         var advancedReportOptions = <?php echo json_encode($signedAdvancedReports, JSON_PRETTY_PRINT); ?>;
@@ -420,12 +229,12 @@ $signedRequest = json_encode($signedAdvancedReports['collapsed']);
         };
 
         // Reset existing report, if there is one.
-        if (window.advancedReportsApp) {
+        if (window.reportsApp) {
             document.getElementById('item-scores-report-container').innerHTML = '<div id="item-scores-report"></div>';
         }
 
         // Initialize the report.
-        window.advancedReportsApp = LearnosityReports.init(initOptions, eventOpts);
+        window.reportsApp = LearnosityReports.init(initOptions, eventOpts);
     }
 
     function processScores(scores, ignoreUnattempted) {
@@ -461,12 +270,6 @@ $signedRequest = json_encode($signedAdvancedReports['collapsed']);
         window.lowscoreStyles = document.getElementById('band-1-styles');
         window.exposureStyles = document.getElementById('exposure-styles');
 
-        // Individual report handlers
-        document.getElementById('individual-report-breakdown').addEventListener('change', initIndividualReport);
-
-        // Class report handlers
-        document.getElementById('show-class-skills').addEventListener('click', initClassReport);
-
         // Advanced report handlers
         document.getElementById('highlight-band-1').addEventListener('click', applyVisualization);
         document.getElementById('highlight-band-4').addEventListener('click', applyVisualization);
@@ -500,14 +303,6 @@ $signedRequest = json_encode($signedAdvancedReports['collapsed']);
 
     function ignoreUnattempted() {
         return document.getElementById('ignore-unattempted').checked;
-    }
-
-    function getSelectedIndividualReport() {
-        return document.getElementById('individual-report-breakdown').value;
-    }
-
-    function showClassExpanded() {
-        return document.getElementById('show-class-skills').checked;
     }
 
     function showAdvancedExpanded() {
