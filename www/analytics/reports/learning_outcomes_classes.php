@@ -62,7 +62,7 @@ $classReport = [
                 ],
                 [
                     "type" => "sh_exercise",
-                    "name" => "Activity 3"
+                    "name" => "Chapter 3"
                 ]
             ]
         ]
