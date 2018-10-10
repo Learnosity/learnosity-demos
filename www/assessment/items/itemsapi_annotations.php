@@ -121,7 +121,7 @@ $signedRequest = $Init->generate();
 <div class="section">
     <div id="learnosity_assess"></div>
 </div>
-<script type="text/javascript" src="https://items.learnosity.com/?v2018.2.LTS"></script>
+<script src="<?php echo $url_items; ?>"></script>
 <script>
 
     var itemsApp = {};
