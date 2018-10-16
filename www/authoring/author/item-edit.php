@@ -19,6 +19,7 @@ $request = array(
     'config'    => array(
         'item_edit' => array(
             'item' => array(
+                "enable_audio_recording" => true,
                 'duplicate' => [
                     'duplicate_shared_passages' => true
                 ],
