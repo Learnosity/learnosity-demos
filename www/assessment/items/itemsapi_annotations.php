@@ -167,7 +167,7 @@ $signedRequest = $Init->generate();
         }
 
         function toggleModalClass() {
-            $('.modal-backdrop').css('display', 'none');
+           $('.modal-backdrop').css('display', 'none');
         }
     </script>
 <?php
