@@ -32,14 +32,14 @@ $request = [
     'config' => [
         'annotations'=>true,
         "annotations_api_init_options"=> [
-                "modules"=> [
-                    "notepad"=> true,
-                    "texthighlight"=> true,
-                    "drawing"=> true,
-                    "texthighlight"=> true,
-                    "stickynote"=>true
-                ]
-            ],
+            "modules"=> [
+                "notepad"=> true,
+                "texthighlight"=> true,
+                "drawing"=> true,
+                "texthighlight"=> true,
+                "stickynote"=>true
+            ]
+        ],
         'title' => 'Demo activity - showcasing Annotations API',
         'subtitle' => 'Walter White',
         'regions' => 'main',
@@ -104,72 +104,72 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<div class="jumbotron section">
-    <div class="toolbar">
-        <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#" data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/assessment/annotations/index" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
-        </ul>
+    <div class="jumbotron section">
+        <div class="toolbar">
+            <ul class="list-inline">
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#" data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/assessment/annotations/index" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+            </ul>
+        </div>
+        <div class="overview">
+            <h1>Items API – Annotations</h1>
+            <p> Annotations let students add sticky notes, highlighting, and freehand sketches to their responses, giving educators even greater access to learners' thought processes.</p>
+        </div>
     </div>
-    <div class="overview">
-        <h1>Items API – Annotations</h1>
-        <p> Annotations let students add sticky notes, highlighting, and freehand sketches to their responses, giving educators even greater access to learners' thought processes.</p>
+
+    <div class="section">
+        <div id="learnosity_assess"></div>
     </div>
-</div>
+    <script src="<?php echo $url_items; ?>"></script>
+    <script>
 
-<div class="section">
-    <div id="learnosity_assess"></div>
-</div>
-<script type="text/javascript" src="https://items.learnosity.com/?v2018.2.LTS"></script>
-<script>
+        var itemsApp = {};
+        var eventOptions = {
+            readyListener: init,
+            errorListener: function (event) {
+                console.log("error:" + event);
+            }
+        };
 
-    var itemsApp = {};
-    var eventOptions = {
-        readyListener: init,
-        errorListener: function (event) {
-            console.log("error:" + event);
+
+        itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+
+        function init() {
+            var assessApp = itemsApp.assessApp();
+
+            assessApp.on('item:load', function () {
+                console.log('Active item:', getActiveItem(this.getItems()));
+            });
+
+            assessApp.on('test:submit:success', function () {
+                toggleModalClass();
+            });
+
+            // Uncomment if you don't want a warning when leaving the
+            // page with unsaved changes
+            // window.onbeforeunload = function () {
+            //     return;
+            // }
         }
-    };
 
-
-    itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
-
-    function init() {
-        var assessApp = itemsApp.assessApp();
-
-        assessApp.on('item:load', function () {
-            console.log('Active item:', getActiveItem(this.getItems()));
-        });
-
-        assessApp.on('test:submit:success', function () {
-            toggleModalClass();
-        });
-
-        // Uncomment if you don't want a warning when leaving the
-        // page with unsaved changes
-        // window.onbeforeunload = function () {
-        //     return;
-        // }
-    }
-
-    /**
-     * Returns the active item if using the Assess API
-     * @param  {object} items Object of all items currently loaded
-     * @return {object}       Current active item
-     */
-    function getActiveItem(items) {
-        for (var item in items) {
-            if (items.hasOwnProperty(item) && items[item].active === true) {
-                return items[item];
+        /**
+         * Returns the active item if using the Assess API
+         * @param  {object} items Object of all items currently loaded
+         * @return {object}       Current active item
+         */
+        function getActiveItem(items) {
+            for (var item in items) {
+                if (items.hasOwnProperty(item) && items[item].active === true) {
+                    return items[item];
+                }
             }
         }
-    }
 
-    function toggleModalClass() {
-        $('.modal-backdrop').css('display', 'none');
-    }
-</script>
+        function toggleModalClass() {
+            $('.modal-backdrop').css('display', 'none');
+        }
+    </script>
 <?php
 include_once 'views/modals/settings-items2.php';
 include_once 'views/modals/initialisation-preview.php';

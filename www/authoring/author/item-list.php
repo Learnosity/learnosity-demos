@@ -59,6 +59,7 @@ $request = array(
         ),
         'item_edit' => array(
             'item' => array(
+                "enable_audio_recording" => true,
                 'back' => true,
                 'columns' => true,
                 'tabs' => true,
