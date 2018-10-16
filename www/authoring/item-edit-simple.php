@@ -27,6 +27,7 @@
 
     //alias(es) to eliminate the need for fully qualified classname(s) from sdk
 	use LearnositySdk\Request\Init;
+	use LearnositySdk\Utils\Uuid;
 
 
     //security object. timestamp added by SDK
@@ -40,7 +41,8 @@
 
     //simple api request object, with additional common features added and commented
 	$request = [
-		'mode'      => 'item_list',
+		'mode'      => 'item_edit',
+		'reference' => Uuid::generate(),
 		'config'    => [
 		    /*
 		     * dependent API settings: QuestionEditor init options

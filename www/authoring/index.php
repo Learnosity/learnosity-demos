@@ -316,7 +316,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>The simple authoring mode is an opinionated subset of the full authoring templates and layouts available by default.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./item-list-simple.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./item-edit-simple.php">Demo</a>
                     </p>
                 </div>
             </div>
