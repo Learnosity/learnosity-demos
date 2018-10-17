@@ -17,6 +17,7 @@ $security = [
     'domain'       => $domain
 ];
 
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
 //simple api request object for item list view, with optional creation of items
 $request = [
@@ -41,10 +42,10 @@ $request = [
                         [
                             'custom_type'=> 'simplegallery',
                             'name'=> 'Custom Image Gallery',
-                            'js'=> "https://demos.vg.learnosity.com/authoring/customfeature/simplegallery.js",
-                            'css'=> "https://demos.vg.learnosity.com/authoring/customfeature/simplegallery.css",
+                            'js'=> $url.'/authoring/customfeature/simplegallery.js',
+                            'css'=> $url."/authoring/customfeature/simplegallery.css",
                             'version'=> 'v0.0.1',
-                            'editor_layout'=> "https://demos.vg.learnosity.com/authoring/customfeature/simplegallery.html",
+                            'editor_layout'=> $url.'/authoring/customfeature/simplegallery.html',
                             'editor_schema'=> [
                                 'hidden_question'=> false,
                                 'properties'=> [
@@ -82,10 +83,10 @@ $request = [
                                             ]
                                         ],
                                         'default'=> [
-                                            ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/newstandard.png","alt"=>"photo 1", "credit"=>"Learnosity"],
-                                            ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/savetime.png","alt"=>"photo 2", "credit"=>"Learnosity"],
-                                            ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/alwaysmovingfwd.png","alt"=>"photo 3", "credit"=>"Learnosity"],
-                                            ['source'=> "https://demos.vg.learnosity.com/authoring/customfeature/seamlessintegration.png","alt"=>"photo 4", "credit"=>"Learnosity"]
+                                            ['source'=> $url."/authoring/customfeature/newstandard.png","alt"=>"photo 1", "credit"=>"Learnosity"],
+                                            ['source'=> $url."/authoring/customfeature/savetime.png","alt"=>"photo 2", "credit"=>"Learnosity"],
+                                            ['source'=> $url."/authoring/customfeature/alwaysmovingfwd.png","alt"=>"photo 3", "credit"=>"Learnosity"],
+                                            ['source'=> $url."/authoring/customfeature/seamlessintegration.png","alt"=>"photo 4", "credit"=>"Learnosity"]
                                         ]
                                     ]
                                 ]
