@@ -325,8 +325,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Using Custom Editor Buttons</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.
+                        <p>Custom buttons give you the ability to extend the standard Learnosity toolbar, to add new functionality as you need it.
                         <p>
                         <p class="text-right">
                             <a class="btn btn-primary btn-md" href="./custom-editor-buttons.php">Demo</a>
