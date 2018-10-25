@@ -2,13 +2,13 @@
 
 
 //common environment attributes including search paths. not specific to Learnosity
-include_once '../env_config.php';
+include_once '../../env_config.php';
 
 //site scaffolding
 include_once 'includes/header.php';
 
 //common Learnosity config elements including API version control vars
-include_once '../lrn_config.php';
+include_once '../../lrn_config.php';
 
 
 use LearnositySdk\Request\Init;

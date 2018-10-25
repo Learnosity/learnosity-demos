@@ -7,32 +7,38 @@ include_once 'includes/header.php';
 <div class="jumbotron section">
     <div class="pull-right toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/authorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/assessment" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
-    <h1>Items API</h1>
+
+
+    <h1>Assessment</h1>
     <div class="section-intro">
-        <p>Learnosity's Items API provides a simple way to access content from the Learnosity item bank, and to optionally pull in activities (assessments) that can be embedded in your pages. It leverages the <a href="https://demos.learnosity.com/assessment/questions/index.php">Questions API</a> and the <a href="https://demos.learnosity.com/assessment/assess/index.php">Assess API</a> as appropriate.</p>
-        <p>The Items API also supports both items and testlet <a href="https://docs.learnosity.com/assessment/items/knowledgebase/adaptiveassessment">adaptive assessments</a>.</p>
+        <p>Learnosity's Assessment tools allow you to access content from Learnosity's Item bank, and deliver content to your end-users either as a full assessment player or embedded into a page as you need, all while capturing student responses and scoring in a scalable, robust manner.</p>
+        <p>
+        <ul>
+            <li><h4><a href="#delivering">Delivering Assessments</a></h4></li>
+            <li><h4><a href="#customizing">Customizing behavior</a></h4></li>
+        </ul>
+        </ul>
+        </p>
     </div>
 
-    <h4><span class="badge btn-warning">Note</span> Placeholder landing page. Titles most of the way there; blurbs and links in progress</h4>
-    <p>&nbsp;</p> <!--replace with CSS-->
-
-    <h3>Delivering Assessments</h3>
-    <p>&nbsp;</p> <!--replace with CSS-->
+    <h3 id="delivering"><a href="#delivering">Delivering Assessments</a></h3>
+    <p>Deliver your learning content how you like it - whether that's through fixed form assessments, individual items embedded throughout your learning content, or using powerful adaptive and branching test formats.</p>
+    <br>
 
 
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Delivering Just-in-Time Fixed Form Assessments</h2>
+                    <h2 class="panel-title">Pre-Written Fixed Form Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>With the flick of a switch turn items into assessments. Truly write once - use anywhere.<br><br>Uses the power of our Assess API for a full assessment experience.</p>
+                    <p>Build fixed-form activities in Learnosity, and deliver high quality pre-authored assessments to your end-users.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_assess.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_activities.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -43,7 +49,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Mixing Content and Formative Assessment & Learning</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Display items from the Learnosity Item Bank in no time with the Items API. The Items API builds on the Questions API's power and makes it quicker to integrate.</p>
+                    <p>Display items from the Learnosity Item Bank in no time, embedded how you want them.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_inline.php">Demo</a>
                     </p>
@@ -56,23 +62,24 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Delivering Pre-Written Fixed Form Assessments</h2>
+                    <h2 class="panel-title">Just-in-Time Fixed Form Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows examples of loading assessments using activities authored in the Learnosity item bank.</p>
+                    <p>Build your activities on the fly, and deliver content from your item bank without having to pre-author a fixed-form activity.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./itemsapi_activities.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./itemsapi_assess.php">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
+
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Delivering Branching Assessments</h2>
+                    <h2 class="panel-title">Branching Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A simple dynamic assessment that selects the next item or branch based on past performance, according to a pre-defined configuration.</p>
+                    <p>Use the power of Learnosity's branching assessment format to build an activity that seamlesssly adapts to your user.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_itembranching.php">Demo</a>
                     </p>
@@ -85,10 +92,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Delivering Item Adaptive (Rasch Model) Assessments</h2>
+                    <h2 class="panel-title">Item Adaptive (Rasch Model) Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
+                    <p>Using our item adaptive technology, deliver an adaptive test to your student using the power of Learnosity's advanced adaptive engine.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_itemadaptive.php">Demo</a>
                     </p>
@@ -98,10 +105,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Delivering Mixed Adaptive Assessments</h2>
+                    <h2 class="panel-title">Mixed Adaptive Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A dynamic assessment that adapts to the user's ability, choosing which testlet to go through next.</p>
+                    <p>A dynamic assessment that adapts to the user's ability, choosing which fixed-form testlet to go through next.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_testletadaptive.php">Demo</a>
                     </p>
@@ -114,7 +121,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Delivering Fixed Form Assessments with Sections</h2>
+                    <h2 class="panel-title">Fixed Form Assessments with Sections</h2>
                 </div>
                 <div class="panel-body">
                     <p>Sections are a way to split up a single activity into discrete buckets of items, with the ability to have different activity configuration per section.</p>
@@ -129,17 +136,17 @@ include_once 'includes/header.php';
 
 
 
-    <h3>Customising Behaviour</h3>
+    <h3 id="customizing"><a href="#customizing">Customizing behaviour</a></h3>
     <p>&nbsp;</p> <!--replace with CSS-->
 
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Accessibility</h2>
+                    <h2 class="panel-title">Accessibility controls & Assistive tools</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Showcases the Accessibility panel that allows students to configure accessibility options during an assessment.</p>
+                    <p>As well as Learnosity's "behind-the-scenes" functionality to work with screen-readers, braille displays, and keyboard navigation, Learnosity also provides in-built accessibility options which can be configured, extended and set by default.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_accessibility.php">Demo</a>
                     </p>
@@ -149,10 +156,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Worked Solutions (Hints)</h2>
+                    <h2 class="panel-title">Adding Hints & Worked Solutions</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows examples of using inline hints for questions.<p>
+                    <p>Extend on top of our standard assessments to provide powerful hint and worked solution functionality.<p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_workedsolutions.php">Demo</a>
                     </p>
@@ -165,10 +172,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Formative Distractor Rationale</h2>
+                    <h2 class="panel-title">Distractor Rationale & Feedback</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows examples of instant feedback to students, as they attempt questions.</p>
+                    <p>Use Learnosity metadata to power distractor rationale for teachers and instructors, or inline student feedback.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_distractors.php">Demo</a>
                     </p>
@@ -178,10 +185,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Failed Submission</h2>
+                    <h2 class="panel-title">Submission retries & response recovery</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Simulates submitting an activity where the network connection may not be available. Students get 3 attempts to submit a test before being presented with options to manually retrieve their assessment data.<p>
+                    <p>Learnosity provides resilience to network issues and disconnections - This demo simulates submitting an activity where the network connection may not be available.<p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_failedsubmission.php">Demo</a>
                     </p>
@@ -197,7 +204,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Locking Questions</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows how to customize the questions Check Answer button logic.</p>
+                    <p>Learn how to disable questions depending on user behavior (in this case, too many attempts).</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_locking_questions.php">Demo</a>
                     </p>
@@ -207,10 +214,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Restrict Responses</h2>
+                    <h2 class="panel-title">Restricting Responses and Navigation</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows the ability to restrict the assessment navigation and display a message to the student when is missing question responses.<p>
+                    <p>Customize the Learnosity experience, by ensuring students have answered the correct number of responses.<p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_restrict_responses.php">Demo</a>
                     </p>
@@ -223,10 +230,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Assess Question Indexing</h2>
+                    <h2 class="panel-title">Question Indexing in Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Shows the effect of the assess question_indexing option, which indents and numbers all questions.</p>
+                    <p>Turn on automatic question numbering for students.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_question_indexing.php">Demo</a>
                     </p>
@@ -239,7 +246,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Advanced Audio Analysis</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Our Audio questions provide simple ways to check audio quality and alert/prevent submission to ensure you always get a quality response.<p>
+                    <p>Dive deeper into audio quality, and get the information you need to make sure your students audio is as clear as day!<p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./audio_advanced.php">Demo</a>
                     </p>
@@ -255,7 +262,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Running Your Own Math Rendering</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Loading MathJax from CDN.</p>
+                    <p>In cases where you have customized your own MathJax rendering, learn how to disable Learnosity's rendering and use your own.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./formulamathjaxcdn.php">Demo</a>
                     </p>
@@ -265,10 +272,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Regions</h2>
+                    <h2 class="panel-title">Assessment Layouts & Regions</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Learnosity regions are a part of the Assess API, and allow you to create a personalized, fluid and extensible assessment UI.</p>
+                    <p>Regions provide a powerful, flexible way to personalize and extend the Assessment player layout.</p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./itemsapi_regions.php">Demo</a>
                     </p>

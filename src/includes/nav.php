@@ -7,10 +7,9 @@
             'assessment/index.php'     => 'Assessment'
         ),
         'Analytics' => array(
-            'analytics/reports/index.php' => 'Reports API',
-            'analytics/data/index.php'    => 'Data API'
+            'analytics/index.php' => 'Analytics'
         ),
-        'Case Studies' => array(
+        'Solutions' => array(
             'casestudies/feedback/index.php' => 'Teacher Feedback',
             'casestudies/printing/index.php' => 'Printing Items',
             'casestudies/gallery/index.php'  => 'Gallery Style UI',
