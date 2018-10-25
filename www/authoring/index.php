@@ -248,35 +248,6 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">TBD</h2>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./tbd.php">Demo</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Authoring Custom Questions</h2>
-                </div>
-                <div class="panel-body">
-                    <p>Develop your own custom questions that can be added to the Learnosity eco system.<p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./author-custom-questions.php">Demo</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
                     <h2 class="panel-title">Authoring Custom Features</h2>
                 </div>
                 <div class="panel-body">
@@ -288,8 +259,6 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
-
-
 
     <h3>Integrate and Customize Your Authoring Environment</h3>
     <p>&nbsp;</p> <!--replace with CSS-->
@@ -391,19 +360,6 @@ include_once 'includes/header.php';
                     <p>Develop your own custom questions that can be added to the Learnosity eco system.<p>
                     <p class="text-right">
                         <a class="btn btn-primary btn-md" href="./global-qe-layout.php">Demo</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">TBD</h2>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<p>
-                    <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./tbd.php">Demo</a>
                     </p>
                 </div>
             </div>
