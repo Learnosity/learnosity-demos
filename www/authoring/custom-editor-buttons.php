@@ -74,7 +74,7 @@ use LearnositySdk\Utils\Uuid;
         </div>
         <div class="overview">
             <h2>Using Custom Editor Buttons & Style</h2>
-            <p></p>
+            <p>Extend the Learnosity editor toolbar with your own buttons, behavior and styles.</p>
         </div>
     </div>
 

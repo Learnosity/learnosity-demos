@@ -56,7 +56,7 @@ $signedRequest = $Init->generate();
     </div>
     <div class="overview">
         <h2>Using your own Digital Asset Management</h2>
-        <p>The Author API can be extended to tie seamlessly in with your existing Digital Asset Management System.<p>
+        <p>The Author API can be extended to tie seamlessly in with your existing Digital Asset Management System. Create a new question, and click the "add image" button in the editor toolbar to see this in effect.<p>
     </div>
 </div>
 

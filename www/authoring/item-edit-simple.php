@@ -100,8 +100,8 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Hide tags from the authoring UI</h2>
-            <p>Hide tags from display in the item list, as well as in the Settings > Tags tab, when editing an item, so the hidden tags cannot be added.</p>
+            <h2>Simple teacher / instructor authoring</h2>
+            <p>This demo provides a stripped down question editor - with simpler, opinionated templates to make question creation as simple as possible.</p>
         </div>
     </div>
 
