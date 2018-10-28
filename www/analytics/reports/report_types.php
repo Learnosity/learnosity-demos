@@ -864,7 +864,7 @@ $signedRequest = $Init->generate();
                                     <section>
                                         <h3 class="report-title">Item Score Analysis</h3>
                                         <p class="lrn-report-summary">
-                                            Item Scores by Tag by User report offers exploration and drilldown of student scores by topic area, learning outcome, or any other Item tags you use:
+                                           The Item Scores by Tag by User report offers exploration and drilldown of student scores by topic area, learning outcome, or any other Item tags you use:
                                         </p>
                                         <ul>
                                             <li>Analyse, compare and visualize results for a class of students</li>
@@ -873,7 +873,10 @@ $signedRequest = $Init->generate();
                                             <li>Understand student's exposure and progress through your content</li>
                                         </ul>
                                         <div class="alert alert-info">
-                                            See the live demo page: <a href="//<?php echo $domain ?>/analytics/reports/item_scores_report.php"><?php echo $domain ?>/analytics/reports/item_scores_report.php</a>.
+                                            See the separate demos of learning outcomes reporting for
+                                                <a href="/analytics/reports/learning_outcomes_individuals.php">individuals</a>,
+                                                <a href="/analytics/reports/learning_outcomes_classes.php">classes</a> and
+                                                <a href="/analytics/reports/learning_outcomes_visualization.php">visualization</a>.
                                         </div>
                                     </section>
                                 </div>
