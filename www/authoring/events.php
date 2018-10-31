@@ -58,16 +58,14 @@ $signedRequest = $Init->generate();
     </div>
 </div>
 
-<!-- Container for the items api to load into -->
-<div class="section">
-    <div class="row">
-        <div id="notifications" class="col-md-2">
-            <h3>Events</h3>
-            <hr>
-            <div class="author-events"></div>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="author-events">
         </div>
-        <div class="col-md-10">
-            <!--    HTML placeholder that is replaced by API-->
+    </div>
+    <div class="col-sm-9">
+        <div class="section pad-sml">
+            <!-- Container for the author api to load into -->
             <div id="learnosity-author"></div>
         </div>
     </div>
@@ -104,7 +102,7 @@ $signedRequest = $Init->generate();
 
     // build events list DOM elements
     $.each(eventsArray, function(index, eventName) {
-        $el = $('<p><h5><span class="' + eventName + ' author-event-name">' + eventName + '</span></h5></p>');
+        $el = $('<div><span class="' + eventName + ' author-event-name event-label">' + eventName + '</span></div>');
         $('.author-events').append($el);
     });
 
@@ -128,10 +126,10 @@ $signedRequest = $Init->generate();
                 var $el = $('.author-event-name:contains("' + eventName + '")');
 
                 // Toggle class event to indicate in the UI the event triggered
-                $el.addClass('label label-info');
+                $el.addClass('event-called');
                 setTimeout(function () {
-                    $el.removeClass('label label-info');
-                }, 1000);
+                    $el.removeClass('event-called');
+                }, 800);
             });
         });
     };
@@ -139,6 +137,39 @@ $signedRequest = $Init->generate();
     var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
 
 </script>
+
+<style type="text/css">
+    .event-label {
+        -webkit-transition: all 300ms ease-in-out;
+        -moz-transition: all 300ms ease-in-out;
+        -ms-transition: all 300ms ease-in-out;
+        -o-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+        color: black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .event-called {
+        background-color: #878787;
+        color: #ededed;
+    }
+
+    .author-events {
+        padding: 15px;
+        font-size: 14px;
+        background-color: white;
+        position: relative;
+    }
+
+    .author-events > div {
+        margin-bottom: 8px;
+    }
+
+    .author-wrapper {
+        min-height: 510px;
+    }
+</style>
 
 <?php
     include_once 'views/modals/initialisation-preview.php';

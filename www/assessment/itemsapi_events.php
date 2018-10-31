@@ -55,8 +55,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Events</h2>
-            <p></p>
+            <h2>Items API Events</h2>
+            <p>Below is a demo of event binding using the <a href="https://docs.learnosity.com/assessment/items/events#assessmentEvents">Assessment Events</a> to display custom notifications.</p>
         </div>
     </div>
     <div class="row">
@@ -158,12 +158,6 @@ $signedRequest = $Init->generate();
         .event-called {
             background-color: #878787;
             color: #ededed;
-        }
-
-        .assess-events-demo {
-            padding-top: 20px;
-            padding-bottom: 60px;
-            max-width: none;
         }
 
         .assess-events {
