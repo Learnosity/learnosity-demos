@@ -1,6 +1,12 @@
 <?php
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -8,7 +14,7 @@ use LearnositySdk\Utils\Uuid;
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain,
-    'user_id'      => $studentid
+    'user_id'      => 'demo_student'
 );
 
 $sessionId = isset($_GET['sessionid']) ? $_GET['sessionid'] : Uuid::generate();
@@ -24,7 +30,7 @@ $request = '{
     "id": "questionsapi-demo",
     "name": "Questions API Demo",
     "session_id" "' . $sessionId . '",
-    "course_id": "' . $courseid . '",
+    "course_id": "course_id",
     "questions": [],
     "features": [],
     "beta_flags": {
@@ -66,7 +72,7 @@ $jsonId = isset($_GET['id']) ? $_GET['id'] : '';
             id: 'questionsapi-responsive-demo',
             name: 'Questions API Demo',
             session_id: '<?php echo $sessionId ?>',
-            course_id: '<?php echo $courseid ?>'
+            course_id: 'course_id'
         });
         var sessionId = '<?php echo $sessionId; ?>';
 

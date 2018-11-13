@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 // Which activity do you want to load?
 $activityRef = 'gallery_1';
@@ -10,7 +16,7 @@ if (isset($_GET['activity_reference'])) {
     $activityRef = $_GET['activity_reference'];
 }
 
-$studentid = isset($_GET['user']) ? $_GET['user'] : $studentid;
+$studentid = isset($_GET['user']) ? $_GET['user'] : 'demo_student';
 
 include './includes/itemsRequest.php';
 

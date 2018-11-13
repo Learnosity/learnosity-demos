@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -10,7 +16,7 @@ $session_id = $_GET['session_id'];
 $activity_id = $_GET['activity_id'];
 
 $security = [
-    'user_id'      => $studentid,
+    'user_id'      => 'demo_student',
     'domain'       => $domain,
     'consumer_key' => $consumer_key,
 ];
@@ -20,7 +26,7 @@ $request = array(
         array(
             'id'         => 'report-1',
             'type'       => 'session-detail-by-item',
-            'user_id'    => $studentid,
+            'user_id'    => 'demo_student',
             'session_id' => $session_id
         )
     ),
@@ -110,7 +116,7 @@ var init = function () {
         var itemsActivity = {
             'domain': location.hostname,
             'request': {
-                'user_id': '<?php echo $studentid; ?>',
+                'user_id': 'demo_student',
                 'rendering_type': 'inline',
                 'name': 'Items API demo - teacher scoring activity.',
                 'state': 'initial',
@@ -173,15 +179,15 @@ function saveScores () {
         'sessions': [
             {
                 'session_id': '<?php echo $session_id; ?>',
-                'user_id': '<?php echo $studentid; ?>',
+                'user_id': 'demo_student',
                 'responses': responses
             }
         ]
     };
-    endpoint = '<?php echo $url_data; ?>/latest/sessions/responses/scores';
+    endpoint = '<?php echo $url_data; ?>/sessions/responses/scores';
 
     $.ajax({
-        url: '/xhr.php',
+        url: '/analytics/data/xhr.php',
         data: {'request': JSON.stringify(request), 'endpoint': endpoint, 'action': 'update'},
         dataType: 'json',
         type: 'POST'

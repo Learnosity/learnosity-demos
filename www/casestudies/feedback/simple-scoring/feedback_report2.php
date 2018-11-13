@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -10,7 +16,7 @@ $session_id = $_GET['session_id'];
 $activity_id = $_GET['activity_id'];
 
 $security = [
-    'user_id'      => $studentid,
+    'user_id'      => 'demo_student',
     'domain'       => $domain,
     'consumer_key' => $consumer_key,
 ];
@@ -22,7 +28,7 @@ $request = array(
             'type'        => 'lastscore-by-item-by-user',
             'users'       => array(
                 array(
-                    'id' => $studentid,
+                    'id' => 'demo_student',
                     'name' => 'Sample User'
                 )
             ),

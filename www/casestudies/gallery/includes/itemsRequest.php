@@ -17,7 +17,7 @@ $security = array(
  */
 $dataApi = new DataApi();
 $response = $dataApi->request(
-    $url_data . '/latest/itembank/activities',
+    $url_data . '/itembank/activities',
     $security,
     $consumer_secret,
     ['references' => [$activityRef]]
@@ -30,7 +30,7 @@ if (!$response->getError()['code']) {
 
 // Setup your request object as usual
 $request = array(
-    'user_id'              => $studentid,
+    'user_id'              => 'demo_student',
     'name'                 => 'Items API demo - Inline Activity.',
     'state'                => 'initial',
     'activity_id'          => 'itemsinlinedemo',

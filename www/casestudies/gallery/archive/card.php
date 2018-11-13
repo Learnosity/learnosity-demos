@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -15,12 +21,12 @@ $security = array(
 $itemRef = $_GET['ref'];
 
 $request = array(
-    'user_id'        => $studentid,
+    'user_id'        => 'demo_student',
     'name'           => 'Items API demo - Inline Activity.',
     'state'          => 'initial',
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => Uuid::generate(),
-    'course_id'      => $courseid,
+    'course_id'      => 'course_id',
     'type'           => 'local_practice',
     'rendering_type' => 'inline',
     'items'          => [$itemRef]

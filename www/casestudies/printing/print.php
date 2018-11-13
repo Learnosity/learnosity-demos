@@ -1,9 +1,17 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
+include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
+
 
 $security = array(
     'consumer_key' => $consumer_key,
@@ -17,7 +25,7 @@ $sessionid = Uuid::generate();
 // Load the assessment in `local_practice` (you won't want to submit actual responses)
 // and using the `inline` rendering type
 $request = array(
-    'user_id'              => $studentid,
+    'user_id'              => 'demo_student',
     'session_id'           => $sessionid,
     'state'                => 'preview',
     'rendering_type'       => 'inline',

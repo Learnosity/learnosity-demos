@@ -1,10 +1,12 @@
 <?php
 header("Content-type: application/json");
 
-//external config for key/secret etc.
-include_once '../../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../../env_config.php';
 
-//use SDK
+//common Learnosity config elements including API version control vars
+include_once '../../../lrn_config.php';
+
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 

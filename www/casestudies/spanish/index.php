@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -14,7 +20,7 @@ $security = array(
 $session_id = Uuid::generate();
 
 $request = array(
-    'user_id'        => $studentid,
+    'user_id'        => 'demo_student',
     'rendering_type' => 'assess',
     'name'           => 'Learnosity Spanish Demo',
     'state'          => 'initial',

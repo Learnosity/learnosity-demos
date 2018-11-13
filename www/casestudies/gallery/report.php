@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 
@@ -16,12 +22,12 @@ include './includes/itemsRequest.php';
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'user_id'      => $teacherid,
+    'user_id'      => 'demo_teacher',
     'domain'       => $domain
 );
 
 // Use the `users` query string var, otherwise go with the application default student name
-$users = (strlen($_GET['users'])) ? explode(',', $_GET['users']) : [$studentid];
+$users = (strlen($_GET['users'])) ? explode(',', $_GET['users']) : ['demo_student'];
 
 $request = array(
     'reports' => array(

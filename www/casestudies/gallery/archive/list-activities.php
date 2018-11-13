@@ -1,11 +1,18 @@
 <?php
 
-include_once '../../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
 
+//common Learnosity config elements including API version control vars
+include_once '../../../lrn_config.php';
+
 use LearnositySdk\Request\Init;
-use LearnositySdk\Request\DataApi;
 use LearnositySdk\Utils\Uuid;
+use LearnositySdk\Request\DataApi;
+
 
 $security = array(
     'consumer_key' => $consumer_key,
@@ -27,7 +34,7 @@ $activityRefs = ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5'
  */
 $DataApi = new DataApi();
 $response = $DataApi->request(
-    $url_data . '/latest/itembank/activities',
+    $url_data . '/itembank/activities',
     $security,
     $consumer_secret,
     ['references' => $activityRefs]
@@ -54,7 +61,7 @@ if (!$response->getError()['code']) {
  * item, which represents the first item of a set.
  */
 $request = array(
-    'user_id'        => $studentid,
+    'user_id'        => 'demo_student',
     'name'           => 'Items API demo - Inline Activity.',
     'state'          => 'initial',
     'activity_id'    => 'itemsinlinedemo',

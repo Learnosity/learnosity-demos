@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -17,9 +23,9 @@ $request = array(
     'rendering_type' => 'assess',
     'state'          => 'initial',
     'type'           => 'submit_practice',
-    'course_id'      => $courseid,
+    'course_id'      => 'course_id',
     'session_id'     => Uuid::generate(),
-    'user_id'        => $studentid,
+    'user_id'        => 'demo_student',
     'items'          => array("Demo3", "Demo4", "Demo5", "Demo6", "Demo7", "Demo8", "Demo9", "Demo10"),
     'assess_inline'  => true,
     'config'         => array(
@@ -99,7 +105,7 @@ $request = array(
 
 $eventSpec = json_encode([[
     'kind' => 'assess_logging',
-    'user_id' => $studentid,
+    'user_id' => 'demo_student',
 ]]);
 
 include_once 'utils/settings-override.php';
