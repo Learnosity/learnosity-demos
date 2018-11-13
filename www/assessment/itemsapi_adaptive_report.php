@@ -1,11 +1,17 @@
 <?php
 
-include_once '../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
 
-use \LearnositySdk\Request\Init;
+//common Learnosity config elements including API version control vars
+include_once '../lrn_config.php';
+
+use LearnositySdk\Request\Init;
+use LearnositySdk\Utils\Uuid;
 use \LearnositySdk\Request\DataApi;
-use \LearnositySdk\Utils\Uuid;
 
 $sessionId = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
@@ -40,7 +46,7 @@ $dataRequest =  [
 $dataAction = 'get';
 
 $dataApi = new DataApi();
-$adaptiveReportUrl = "{$url_data}/{$version_dataapi}/sessions/reports/adaptive";
+$adaptiveReportUrl = "{$url_data}/sessions/reports/adaptive";
 $dataOutput = $dataApi->request(
     $adaptiveReportUrl,
     $security,

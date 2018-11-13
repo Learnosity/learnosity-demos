@@ -1,7 +1,16 @@
 <?php
 
-    include_once '../../config.php';
-    include_once 'includes/header.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
+include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
+
+use LearnositySdk\Request\Init;
+use LearnositySdk\Utils\Uuid;
 
 ?>
 
@@ -27,7 +36,7 @@
 -->
 <div class="section">
     <!-- Container for the question editor api to load into -->
-    <script src="<?php echo $url_questioneditor_v3; ?>"></script>
+    <script src="<?php echo $url_questioneditor; ?>"></script>
     <div class="learnosity-question-editor"></div>
 </div>
 <script>
