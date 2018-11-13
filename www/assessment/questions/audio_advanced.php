@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -9,7 +15,7 @@ use LearnositySdk\Utils\Uuid;
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain,
-    'user_id'      => $studentid
+    'user_id'      => 'demos-site'
 );
 
 $uniqueResponseIdSuffix = Uuid::generate();
@@ -20,7 +26,7 @@ $request = '{
     "state": "initial",
     "id": "questionsapi-demo",
     "name": "Questions API Demo",
-    "course_id": "' . $courseid . '",
+    "course_id": "course_id",
     "beta_flags": {
         "reactive_views": true
     },
