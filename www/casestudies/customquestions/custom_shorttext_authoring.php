@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -9,7 +15,7 @@ use LearnositySdk\Utils\Uuid;
 $session_id = Uuid::generate();
 
 $security = [
-    'user_id'      => $studentid,
+    'user_id'      => 'demos-site',
     'domain'       => $_SERVER['SERVER_NAME'],
     'consumer_key' => $consumer_key
 ];
@@ -49,7 +55,7 @@ $signedRequest = $init->generate();
     </div>
 </div>
 
-<script src="<?php echo $url_questioneditor_v3; ?>"></script>
+<script src="<?php echo $url_questioneditor; ?>"></script>
 <script src="<?php echo $url_questions; ?>"></script>
 <script>
     // Learnosity - An example on how to create inline custom element when author custom question type

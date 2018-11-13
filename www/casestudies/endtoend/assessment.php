@@ -1,11 +1,18 @@
 
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
+
 
 
 $item_ref = Uuid::generate();
@@ -32,7 +39,7 @@ $request = array(
     'state'          => $session_state,
     'type'           => 'submit_practice',
     'session_id'     => $session_id,
-    'user_id'        => $studentid,
+    'user_id'        => 'demos-site',
     'items'          => getItemsArray(),
     'assess_inline'  => true,
     'config'         => [
