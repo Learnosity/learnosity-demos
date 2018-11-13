@@ -32,7 +32,8 @@ $request = [
         'act3',
         'act4',
         'act5',
-        'act6'
+        'act6',
+        'act8'
     ]
 ];
 
@@ -49,11 +50,13 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Formative Distractor Rationale</h2>
+            <h2>Rendering Distractor Rationale upon Validation</h2>
             <p>
-                Distractor rationale are hints shown to a student when they select an incorrect answer.<br>Try choosing
-                an incorrect answer for the questions below to see distractor rationale in action.<br>You can specify distractor rationale
-                in the author API and then write code to display them.<br> For an example of how to implement distractor rationale, refer to <a href="https://docs.learnosity.com/tutorials/tutorial_202">this tutorial.</a>
+                Distractor rationale are hints shown to a student when they select an incorrect answer.
+                <br>Try choosing an incorrect answer for the questions below to see distractor rationale in action.
+                <br>You can specify distractor rationale in the author API and then write code to display them.
+                <br>You can use the <a href="https://docs.learnosity.com/assessment/questions/methods#learnosityApp-RenderMath">renderMath()</a> method to render any Latex or MathML elements in the distractor rationale.
+                <br>For an example of how to implement distractor rationale, refer to <a href="https://docs.learnosity.com/tutorials/tutorial_202">this tutorial.</a>
             <p>
         </div>
     </div>
@@ -66,6 +69,7 @@ $signedRequest = $Init->generate();
             <span class="learnosity-item" data-reference="act4"></span>
             <span class="learnosity-item" data-reference="act5"></span>
             <span class="learnosity-item" data-reference="act6"></span>
+            <span class="learnosity-item" data-reference="act8"></span>
         </p>
     </div>
 
@@ -105,7 +109,6 @@ $signedRequest = $Init->generate();
                         }
                         qid = question.getQuestion().response_id;
                         renderDistractor(qid, outputHTML);
-                        MathJax.Hub.Queue(['Typeset', MathJax.Hub, qid]);
                     });
                 });
 
@@ -132,6 +135,9 @@ $signedRequest = $Init->generate();
                 template = "<div id=\"" + id + "_distractor\" class=\"distractor-rationale alert alert-danger\">" + content + "</div>";
                 $("#" + id).append(template);
             }
+
+            // renderMath() Renders all Latex or MathML elements on the page with MathJax.
+            itemsApp.questionsApp().renderMath();
         }
         function removeDistractor (id) {
             $("#" + id + '_distractor').fadeOut();
