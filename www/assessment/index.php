@@ -312,7 +312,23 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
-    
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Texthelp Demo</h2>
+                </div>
+                <div class="panel-body">
+                    <p>This demo demonstrates integrating Learnosity with Texthelp. Texthelp's SpeechStream is a cloud based JavaScript software solution that allows publishers to embed text-to-speech read aloud within their assessment items.</p>
+                    <p class="text-right">
+                        <a class="btn btn-primary btn-md" href="./itemsapi_texthelp.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <?php include_once 'includes/footer.php';
