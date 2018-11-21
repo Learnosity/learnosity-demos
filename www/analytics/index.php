@@ -32,7 +32,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Learn more about individual students in an easy, in-depth fashion!</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./reportsapi_no_ui.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./student-centric-reporting.php">Demo</a>
                     </p>
                 </div>
             </div>
