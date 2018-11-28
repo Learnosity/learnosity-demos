@@ -88,9 +88,9 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Filter items in your Item Bank</h2>
-            <p>The item list mode allows authors to search the Learnosity hosted item bank for existing items.
-                In this case, we've also passed configuration to only show items that match certain criteria, using tagging.</p>
+            <h2>Select Multiple Items from Item Browsing</h2>
+            <p>This item list mode allows users to choose and select multiple items - this is particularly useful when building an item picker as part of a larger solution.<br>
+                Your end application can then get the array of selected items using the <a href="https://docs.learnosity.com/authoring/author/methods#getSelectedItems">getSelectedItems()</a> method.</p>
         </div>
     </div>
 

@@ -14,7 +14,7 @@ include_once 'includes/header.php';
 
     <h1>Assessment</h1>
     <div class="section-intro">
-        <p>Learnosity's Assessment tools allow you to access content from Learnosity's Item bank, and deliver content to your end-users either as a full assessment player or embedded into a page as you need, all while capturing student responses and scoring in a scalable, robust manner.</p>
+        <p>Learnosity Assessments allow you to access content from Learnosity's Item bank, and deliver content to your end-users either as a full assessment player or embedded into a page as you need, all while capturing student responses and scoring in a scalable, robust manner.</p>
         <p>
         <ul>
             <li><h4><a href="#delivering">Delivering Assessments</a></h4></li>
@@ -137,7 +137,7 @@ include_once 'includes/header.php';
 
 
     <h3 id="customizing"><a href="#customizing">Customizing behaviour</a></h3>
-    <p>&nbsp;</p> <!--replace with CSS-->
+    <p>Learnosity's Assessment delivery APIs are designed to be flexible, customizable, and easy to trigger behavior and react to user behavior inside your own platform.</p>
 
     <div class="row">
         <div class="col-md-6">

@@ -14,7 +14,7 @@ include_once 'includes/header.php';
         </div>
         <h1>Authoring</h1>
         <div class="section-intro">
-            <p>Learnosity's Authoring tools allow you to easily integrate content creation, searching and filtering into
+            <p>Learnosity Author allows you to easily integrate content creation, searching and filtering into
                 your own content management system.</p>
             <p>
             <ul>

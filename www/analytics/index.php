@@ -12,14 +12,20 @@ include_once 'includes/header.php';
     </div>
     <h1>Analytics</h1>
     <div class="section-intro">
-        <p>Learnosity's Reports API provides a cross domain embeddable service that allows content providers to easily render rich reports.</p>
-        <p>The Data API is a back office service that allows authenticated users to retrieve and store information from within the Learnosity Assessment platform.</p>
+        <p>Learnosity Analytics provides a suite of powerful tools, covering both embeddable, user friendly reporting, perfectly suited for quickly building out your product, as well as granular back end data-centric functionality to power your own bespoke reporting needs.</p>
+        <ul>
+            <li><h4><a href="#dashboard-reporting">Embedded dashboard-style Reporting</a></h4></li>
+            <li><h4><a href="#customizing-reporting">Customizing your reporting experience</a></h4></li>
+            <li><h4><a href="#data-reporting">Granular, back-end data reporting</a></h4></li>
+        </ul>
+        </ul>
+        </p>
     </div>
 
-    <h4><span class="badge btn-warning">Note</span> Placeholder landing page. Titles most of the way there; blurbs and links in progress</h4>
-    <p>&nbsp;</p> <!--replace with CSS-->
+    <p>
 
-    <h3>Embedded dashboard-style Reporting</h3>
+
+    <h3 id="dashboard-reporting"><a href="#dashboard-reporting">Embedded dashboard-style Reporting</a></h3>
     <p>Easily use Learnosity's Reports API to embed visual reports, ranging from student & classroom reporting to large scale district reports!</p>
     <br>
 
@@ -107,7 +113,7 @@ include_once 'includes/header.php';
         </div>
     </div>
 
-    <h3>Customizing your reporting experience</h3>
+    <h3 id="customizing-reporting"><a href="#customizing-reporting">Customizing your reporting experience</a></h3>
     <p></p>
     <br>
 
@@ -140,8 +146,8 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
+    <h3 id="data-reporting"><a href="#data-reporting">Granular, back-end data reporting</a></h3>
 
-    <h3>Granular, back-end data reporting</h3>
     <p></p>
     <br>
 
