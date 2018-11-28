@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -33,7 +39,6 @@ $request = [
     ]
 ];
 
-include_once 'utils/settings-override.php';
 
 $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
@@ -43,7 +48,6 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted" data-toggle="modal" data-target="#settings"><span class="glyphicon glyphicon-list-alt"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/itemsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
@@ -125,6 +129,5 @@ $signedRequest = $Init->generate();
 </script>
 
 <?php
-    include_once 'views/modals/settings-items.php';
     include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';

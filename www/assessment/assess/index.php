@@ -1,14 +1,20 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'user_id'      => $studentid,
+    'user_id'      => 'demos-site',
     'domain'       => $domain
 );
 
@@ -75,9 +81,6 @@ $request = array(
         'swipe'                  => false,
         'events'                 => false,
         'stylesheet'             => '',
-        'onsave_redirect_url'    => $env['protocol'] . $env['page'],
-        'onsubmit_redirect_url'  => $env['protocol'] . $env['page'],
-        'ondiscard_redirect_url' => $env['protocol'] . $env['page'],
         'idle_timeout'           => array(
             'interval'       => 300,
             'countdown_time' => 60
@@ -168,7 +171,6 @@ $request = array(
             "state": "initial",
             "id": "assessdemo_' . $uniqueResponseIdSuffix . '",
             "name": "Assess API - Demo",
-            "course_id": "' . $courseid . '",
             "session_id": "' . Uuid::generate() . '",
             "beta_flags": {
                 "reactive_views": true
