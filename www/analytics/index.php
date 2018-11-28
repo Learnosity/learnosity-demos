@@ -14,10 +14,9 @@ include_once 'includes/header.php';
     <div class="section-intro">
         <p>Learnosity Analytics provides a suite of powerful tools, covering both embeddable, user friendly reporting, perfectly suited for quickly building out your product, as well as granular back end data-centric functionality to power your own bespoke reporting needs.</p>
         <ul>
-            <li><h4><a href="#dashboard-reporting">Embedded dashboard-style Reporting</a></h4></li>
+            <li><h4><a href="#dashboard-reporting">Embedding dashboard-style Reporting</a></h4></li>
             <li><h4><a href="#customizing-reporting">Customizing your reporting experience</a></h4></li>
-            <li><h4><a href="#data-reporting">Granular, back-end data reporting</a></h4></li>
-        </ul>
+            <li><h4><a href="#data-reporting">Using granular, back-end data reporting</a></h4></li>
         </ul>
         </p>
     </div>
@@ -25,7 +24,7 @@ include_once 'includes/header.php';
     <p>
 
 
-    <h3 id="dashboard-reporting"><a href="#dashboard-reporting">Embedded dashboard-style Reporting</a></h3>
+    <h3 id="dashboard-reporting"><a href="#dashboard-reporting">Embedding dashboard-style Reporting</a></h3>
     <p>Easily use Learnosity's Reports API to embed visual reports, ranging from student & classroom reporting to large scale district reports!</p>
     <br>
 
@@ -52,7 +51,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Monitor and compare the progress of your students at a glance.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./reportsapi_no_ui.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./teacher-centric-reporting.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -146,7 +145,7 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
-    <h3 id="data-reporting"><a href="#data-reporting">Granular, back-end data reporting</a></h3>
+    <h3 id="data-reporting"><a href="#data-reporting">Using granular, back-end data reporting</a></h3>
 
     <p></p>
     <br>

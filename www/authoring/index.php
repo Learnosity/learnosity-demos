@@ -20,7 +20,7 @@ include_once 'includes/header.php';
             <ul>
                 <li><h4><a href="#browsing">Browsing Items and Activities</a></h4></li>
                 <li><h4><a href="#creating">Creating Content, Questions & Features</a></h4></li>
-                <li><h4><a href="#integrate">Integrate and customize your Authoring environment</a></h4></li>
+                <li><h4><a href="#integrate">Customizing and Integrating into your Authoring environment</a></h4></li>
             </ul>
             </ul>
             </p>
@@ -250,7 +250,7 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-        <h3 id="integrate"><a href="#integrate">Integrate and Customize Your Authoring Environment</a></h3>
+        <h3 id="integrate"><a href="#integrate">Customizing and Integrating into your Authoring environment</a></h3>
         <p>Learnosity's APIs are designed to be easily customized and extended upon, allowing you to build your Content Management System the way you want.</p> <!--replace with CSS-->
 
         <div class="row">
