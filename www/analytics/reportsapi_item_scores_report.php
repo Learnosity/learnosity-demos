@@ -87,7 +87,7 @@ $request = [
     ]
 ];
 
-$Init = new Init('items', $security, $consumer_secret, $request);
+$Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
@@ -180,7 +180,7 @@ $signedRequest = $Init->generate();
     </style>
 
     <script src="<?php echo $url_reports; ?>"></script>
-    
+
     <script>
         var initOptions = <?php echo $signedRequest; ?>;
         var eventOpts = {

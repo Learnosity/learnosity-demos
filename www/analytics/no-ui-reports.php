@@ -42,12 +42,12 @@ $request = [
             'hierarchy'   => 'CCSS',
             'session_ids' => [
                 'd5cde952-1111-49ad-bfc7-c1ba102f3b22'
-            ],
-        ],
+            ]
+        ]
     ]
 ];
 
-$Init = new Init('items', $security, $consumer_secret, $request);
+$Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>

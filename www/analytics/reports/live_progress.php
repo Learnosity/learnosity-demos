@@ -1,3 +1,3 @@
 <?php
  header('HTTP/1.1 301 Moved Permanently');
- header('Location: ../reportsapi_live_progress.php');
+ header('Location: ../live-progress-reporting.php');

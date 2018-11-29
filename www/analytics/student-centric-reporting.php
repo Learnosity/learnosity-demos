@@ -77,7 +77,7 @@ $request = [
     ]
 ];
 
-$Init = new Init('items', $security, $consumer_secret, $request);
+$Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>

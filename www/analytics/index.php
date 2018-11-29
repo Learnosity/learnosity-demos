@@ -159,7 +159,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Sometimes, you just need access to all the raw info you can handle! Using Learnosity's Data API, you can.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./data-api.php">Demo</a>
+                        <a class="btn btn-primary btn-md" href="./data/index.php">Demo</a>
                     </p>
                 </div>
             </div>
