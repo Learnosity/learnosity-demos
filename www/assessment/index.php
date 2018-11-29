@@ -38,7 +38,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Build fixed-form activities in Learnosity, and deliver high quality pre-authored assessments to your end-users.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./activities.php">Demo</a>
+                        <a class="demo_link" href="./activities.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -51,7 +51,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Display items from the Learnosity Item Bank in no time, embedded how you want them.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./inline.php">Demo</a>
+                        <a class="demo_link" href="./inline.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -67,7 +67,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Build your activities on the fly, and deliver content from your item bank without having to pre-author a fixed-form activity.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./assess.php">Demo</a>
+                        <a class="demo_link" href="./assess.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -81,7 +81,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Use the power of Learnosity's branching assessment format to build an activity that seamlesssly adapts to your user.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./branching.php">Demo</a>
+                        <a class="demo_link" href="./branching.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -97,7 +97,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Using our item adaptive technology, deliver an adaptive test to your student using the power of Learnosity's advanced adaptive engine.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./adaptive.php">Demo</a>
+                        <a class="demo_link" href="./adaptive.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -110,7 +110,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>A dynamic assessment that adapts to the user's ability, choosing which fixed-form testlet to go through next.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./testlet-adaptive.php">Demo</a>
+                        <a class="demo_link" href="./testlet-adaptive.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -126,7 +126,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Sections are a way to split up a single activity into discrete buckets of items, with the ability to have different activity configuration per section.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./sections.php">Demo</a>
+                        <a class="demo_link" href="./sections.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -148,7 +148,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>As well as Learnosity's "behind-the-scenes" functionality to work with screen-readers, braille displays, and keyboard navigation, Learnosity also provides in-built accessibility options which can be configured, extended and set by default.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./accessibility.php">Demo</a>
+                        <a class="demo_link" href="./accessibility.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -161,7 +161,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Extend on top of our standard assessments to provide powerful hint and worked solution functionality.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./worked-solutions.php">Demo</a>
+                        <a class="demo_link" href="./worked-solutions.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -177,7 +177,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Use Learnosity metadata to power distractor rationale for teachers and instructors, or inline student feedback.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./distractors.php">Demo</a>
+                        <a class="demo_link" href="./distractors.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -190,7 +190,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Learnosity provides resilience to network issues and disconnections - This demo simulates submitting an activity where the network connection may not be available.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./failed-submission.php">Demo</a>
+                        <a class="demo_link" href="./failed-submission.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -206,7 +206,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Learn how to disable questions depending on user behavior (in this case, too many attempts).</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./locking-questions.php">Demo</a>
+                        <a class="demo_link" href="./locking-questions.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -219,7 +219,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Customize the Learnosity experience, by ensuring students have answered the correct number of responses.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./restrict-responses.php">Demo</a>
+                        <a class="demo_link" href="./restrict-responses.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -235,7 +235,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Turn on automatic question numbering for students.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./question-indexing.php">Demo</a>
+                        <a class="demo_link" href="./question-indexing.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -248,7 +248,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Dive deeper into audio quality, and get the information you need to make sure your students audio is as clear as day!<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./audio-advanced.php">Demo</a>
+                        <a class="demo_link" href="./audio-advanced.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -264,7 +264,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>In cases where you have customized your own MathJax rendering, learn how to disable Learnosity's rendering and use your own.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./formulamathjaxcdn.php">Demo</a>
+                        <a class="demo_link" href="./formulamathjaxcdn.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -277,7 +277,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Regions provide a powerful, flexible way to personalize and extend the Assessment player layout.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./regions.php">Demo</a>
+                        <a class="demo_link" href="./regions.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -293,7 +293,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>A demonstration of event binding with the Items API 'on' public method to display custom notifications.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./events.php">Demo</a>
+                        <a class="demo_link" href="./events.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -306,7 +306,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Annotations API offers students the ability to make notes, add multi color highlights to text, place sticky notes onto the page, and use a pen tool to annotate the content.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./annotations.php">Demo</a>
+                        <a class="demo_link" href="./annotations.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -322,7 +322,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>This demo demonstrates integrating Learnosity with Texthelp. Texthelp's SpeechStream is a cloud based JavaScript software solution that allows publishers to embed text-to-speech read aloud within their assessment items.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./texthelp.php">Demo</a>
+                        <a class="demo_link" href="./texthelp.php">Demo</a>
                     </p>
                 </div>
             </div>

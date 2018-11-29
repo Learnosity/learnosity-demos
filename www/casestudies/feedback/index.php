@@ -36,7 +36,7 @@ include_once '../../lrn_config.php';
                     <p>In this example, no scoring is applied to the student responses. Only
                     feedback from the teacher for the student to review.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./rich-feedback/">Demo</a>
+                        <a class="demo_link"  href="./rich-feedback/">Demo</a>
                     </p>
                 </div>
             </div>
@@ -52,7 +52,7 @@ include_once '../../lrn_config.php';
                     <p>In this example, scoring is applied to student responses via
                     the Data API.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./simple-scoring/">Demo</a>
+                        <a class="demo_link"  href="./simple-scoring/">Demo</a>
                     </p>
                 </div>
             </div>

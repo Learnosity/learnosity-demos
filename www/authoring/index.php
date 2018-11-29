@@ -42,7 +42,7 @@ include_once 'includes/header.php';
                         <p>The item list mode allows authors to browse and search the Learnosity hosted item bank for
                             existing items.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./item-list.php">Demo</a>
+                            <a class="demo_link"  href="./item-list.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ include_once 'includes/header.php';
                         <p>The activity list mode allows authors to search the Learnosity hosted activities. From there
                             it can be configured to allows users to edit activities.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./activity-list.php">Demo</a>
+                            <a class="demo_link"  href="./activity-list.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ include_once 'includes/header.php';
                     <div class="panel-body">
                         <p>Use tags to control which items in your Item Bank are visible to different users.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./item-list-filtered.php">Demo</a>
+                            <a class="demo_link"  href="./item-list-filtered.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -85,7 +85,7 @@ include_once 'includes/header.php';
                     <div class="panel-body">
                         <p>Use tags to control which activities in your item bank are visible.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./activity-list-filtered.php">Demo</a>
+                            <a class="demo_link"  href="./activity-list-filtered.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ include_once 'includes/header.php';
                         <p>By disabling certain configuration flags, you can easily setup read only access to your item
                             bank.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="item-list-read-only.php">Demo</a>
+                            <a class="demo_link"  href="item-list-read-only.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -115,7 +115,7 @@ include_once 'includes/header.php';
                     <div class="panel-body">
                         <p>Easily build your own item picker UI with our multiple selection mode.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./item-list-enable-selection.php">Demo</a>
+                            <a class="demo_link"  href="./item-list-enable-selection.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -131,7 +131,7 @@ include_once 'includes/header.php';
                     <div class="panel-body">
                         <p>Easily discover items by using pre-defined tag hierarchies.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./item-list-browse-tag-hierarchy.php">Demo</a>
+                            <a class="demo_link"  href="./item-list-browse-tag-hierarchy.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -144,7 +144,7 @@ include_once 'includes/header.php';
                     <div class="panel-body">
                         <p>Hide specific tags from the item and activity tagging UI.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./hide-tags.php">Demo</a>
+                            <a class="demo_link"  href="./hide-tags.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -161,7 +161,7 @@ include_once 'includes/header.php';
                         <p>Programmatically search, navigate to existing content, and create new content in your item
                             bank.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./routing.php">Demo</a>
+                            <a class="demo_link"  href="./routing.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ include_once 'includes/header.php';
                         <p>A demonstration of event binding with the Author API 'on' public method to display custom
                             notifications.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./events.php">Demo</a>
+                            <a class="demo_link"  href="./events.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -197,7 +197,7 @@ include_once 'includes/header.php';
                         <p>The item edit mode allows authors to create and edit Items. Questions and features can be
                             created or edited and are persisted to your Learnosity item bank.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./item-create.php">Demo</a>
+                            <a class="demo_link"  href="./item-create.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -212,7 +212,7 @@ include_once 'includes/header.php';
                             labore et dolore magna aliqua.
                         <p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./activity-create.php">Demo</a>
+                            <a class="demo_link"  href="./activity-create.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -228,7 +228,7 @@ include_once 'includes/header.php';
                     <div class="panel-body">
                         <p>Want to bring your authors straight to the question editing screen? Use javascript methods to bring them stright there.</p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./question-edit.php">Demo</a>
+                            <a class="demo_link"  href="./question-edit.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -243,7 +243,7 @@ include_once 'includes/header.php';
                         <p>Develop your own custom features that can be added to the Learnosity eco system.
                         <p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./author-custom-features.php">Demo</a>
+                            <a class="demo_link"  href="./author-custom-features.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -263,7 +263,7 @@ include_once 'includes/header.php';
                         <p>Need to create your own templates, with hidden, defaulted or explicitly shown fields?
                         <p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./question_templates.php">Demo</a>
+                            <a class="demo_link"  href="./question_templates.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -278,7 +278,7 @@ include_once 'includes/header.php';
                             layouts available by default, ideal for use in LMSes for teacher or instructor use.
                         <p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./item-edit-simple.php">Demo</a>
+                            <a class="demo_link"  href="./item-edit-simple.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -295,7 +295,7 @@ include_once 'includes/header.php';
                         <p>Custom Question layouts allows you to move, re-order and customize the question editor layout screens to your liking.
                         <p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./custom-qe-layout.php">Demo</a>
+                            <a class="demo_link"  href="./custom-qe-layout.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -309,7 +309,7 @@ include_once 'includes/header.php';
                         <p>Integrating Learnosity into your CMS, and want to use your own asset management? No problem!
                         <p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./dam-asset-request.php">Demo</a>
+                            <a class="demo_link"  href="./dam-asset-request.php">Demo</a>
                         </p>
                     </div>
                 </div>
@@ -326,7 +326,7 @@ include_once 'includes/header.php';
                         <p>Custom buttons give you the ability to extend the standard Learnosity toolbar, to add new functionality as you need it.
                         <p>
                         <p class="text-right">
-                            <a class="btn btn-primary btn-md" href="./custom-editor-buttons.php">Demo</a>
+                            <a class="demo_link"  href="./custom-editor-buttons.php">Demo</a>
                         </p>
                     </div>
                 </div>

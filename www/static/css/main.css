@@ -10,24 +10,14 @@ html, body {
 
 body {
     min-height: 500px;
-    padding-top: 70px;
     font-family: Gilroy,sans-serif;
-    font-family: var(--font);
-    font-size: 1rem;
-    font-size: var(--font-size);
     line-height: 1.6;
-    line-height: var(--line-height);
     letter-spacing: .01em;
-    letter-spacing: var(--letter-spacing);
     color: #143746;
-    color: var(--colour-teal);
     background-color: #fff;
-    background-color: #ffffff;
-    background-color: var(--colour-white);
     position: relative;
     text-align: left;
     margin: 0;
-    padding: 0;
     -webkit-font-smoothing: antialiased
 }
 
@@ -101,7 +91,89 @@ h1, h2, h3, h4, h5, h6, .navbar {
     --shadow: 0 0 1.875rem 0 var(--colour-teal-opaque)
 }
 
+.panel.panel-default {
+    min-height:260px;
+    position: relative;
+    padding: 2.1875rem 1.875rem;
+    border-radius: 10px;
+    margin: 1.25rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 1.875rem 0 rgba(20,55,70,.2);
+    box-shadow: 0 0 1.875rem 0 rgba(20,55,70,.2);
+}
 
+.panel .panel-heading {
+    background-color: #fff;
+    border-color:  #fff;
+}
+.panel .panel-heading h2 {
+    font-size: 18px;
+    font-weight:700;
+}
+
+.panel .panel-body {
+    padding-top:0px;
+}
+
+.panel .panel-body a {
+    font-weight:700;
+}
+
+.panel .panel-body a.demo_link {
+    position: absolute;
+    bottom:20px;
+    right:20px;
+    display: inline-block;
+    height:34px;
+    width:80px;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.25em;
+    font-weight: 700;
+    padding-top:8px;
+    text-align: center;
+    color: #fff;
+    background-color: #ef3232;
+    border-radius: .5em;
+
+}
+
+.panel .panel-body a.demo_link:hover {
+    background-color: #d70000;
+}
+
+.icon-bar {
+    background-color: #000000;
+}
+
+.container .row [class^=col-] {
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.section.pad-sml {
+    min-height:260px;
+    position: relative;
+    padding: 2.1875rem 1.875rem;
+    border-radius: 10px;
+    margin: 1.25rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 1.875rem 0 rgba(20,55,70,.2);
+    box-shadow: 0 0 1.875rem 0 rgba(20,55,70,.2);
+}
+
+.panel.panel-default.main-page-panel {
+    min-height:320px;
+}
+
+.panel.panel-default.main-page-panel .panel-heading h2{
+    font-size: 18px;
+    font-weight:700;
+}
+
+.panel.panel-default.main-page-panel.panel-short {
+    min-height:180px;
+}
 /********************************************************************
 *
 * Reports API section
@@ -561,6 +633,10 @@ a:focus,
     margin-right: 10px;
 }
 
+.product-logo-small {
+    width:60px;
+}
+
 .navbar {
     min-height:95px;
     background-color: #fff;
@@ -712,7 +788,7 @@ img.product-logo {
 }
 
 .section {
-    padding-top: 24px;
+    /*padding-top: 24px;*/
     padding-bottom: 30px;
     /*padding-left: 60px;*/
     /*padding-right: 60px;*/
@@ -782,6 +858,8 @@ img.product-logo {
 
 .jumbotron.section {
     min-height: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .landing .jumbotron .glyphicon {
@@ -898,7 +976,7 @@ img.product-logo {
     display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
     .navbar-nav > li > a {
         padding-left: 10px;
         padding-right: 10px;

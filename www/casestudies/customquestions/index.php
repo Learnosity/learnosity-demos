@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 ?>
 
 <div class="jumbotron section">
@@ -24,7 +30,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Demonstrates a simple and easy implementation of a custom question.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./custom_shorttext.php">Demo</a>
+                        <a class="demo_link" href="./custom_shorttext.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -35,7 +41,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Demonstrates how to implement a Math Custom question using Learnosity Mathcore.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./custom_mathcore.php">Demo</a>
+                        <a class="demo_link" href="./custom_mathcore.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -46,7 +52,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Demostrates a custom implementation of the Short Text question type where you can rewrite the question JSON to define your own custom questions.</p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./custom.php">Demo</a>
+                        <a class="demo_link" href="./custom.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -60,7 +66,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./custom_percentage_bar.php">Demo</a>
+                        <a class="demo_link" href="./custom_percentage_bar.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -71,7 +77,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./custom_box_whisker.php">Demo</a>
+                        <a class="demo_link" href="./custom_box_whisker.php">Demo</a>
                     </p>
                 </div>
             </div>

@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 ?>
 
 <div class="jumbotron section">
@@ -19,7 +25,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Demonstrates use of Author API to create content (new items), Items API to assess and Reports API to show the result and feedback.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./authoring.php">Demo</a>
+                        <a class="demo_link" href="./authoring.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -32,7 +38,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Demonstrates use of Author API to create content (new items <i>or</i> select existing items), Items API to assess and Reports API to show the result and feedback.<p>
                     <p class="text-right">
-                        <a class="btn btn-primary btn-md" href="./select_items.php">Demo</a>
+                        <a class="demo_link" href="./select_items.php">Demo</a>
                     </p>
                 </div>
             </div>
