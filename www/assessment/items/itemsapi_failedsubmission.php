@@ -1,3 +1,3 @@
 <?php
  header('HTTP/1.1 301 Moved Permanently');
- header('Location: ../itemsapi_failedsubmission.php');
+ header('Location: ../failed-submission.php');
