@@ -140,6 +140,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 .panel .panel-body a.demo_link:hover {
     background-color: #d70000;
+    text-decoration: none;
 }
 
 .icon-bar {

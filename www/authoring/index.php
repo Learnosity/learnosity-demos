@@ -5,13 +5,6 @@ include_once 'includes/header.php';
 ?>
 
     <div class="jumbotron section">
-        <div class="pull-right toolbar">
-            <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a
-                            href="http://docs.learnosity.com/authoring/author" title="Documentation"><span
-                                class="glyphicon glyphicon-book"></span></a></li>
-            </ul>
-        </div>
         <h1><img class="product-logo" src="/static/images/product-author.png">Learnosity Author</h1>
         <div class="section-intro">
             <p>Learnosity Author allows you to easily integrate content creation, searching and filtering into
