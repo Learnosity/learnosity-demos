@@ -12,15 +12,15 @@ include_once 'includes/header.php';
                                 class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
-        <h1>Authoring</h1>
+        <h1><img class="product-logo" src="/static/images/product-author.png">Learnosity Author</h1>
         <div class="section-intro">
             <p>Learnosity Author allows you to easily integrate content creation, searching and filtering into
                 your own content management system.</p>
             <p>
             <ul>
-                <li><h4><a href="#browsing">Browsing Items and Activities</a></h4></li>
-                <li><h4><a href="#creating">Creating Content, Questions & Features</a></h4></li>
-                <li><h4><a href="#integrate">Customizing and Integrating into your Authoring environment</a></h4></li>
+                <li><h4><a class="blue-chevron" href="#browsing">Browsing Items and Activities</a></h4></li>
+                <li><h4><a class="blue-chevron" href="#creating">Creating Content, Questions & Features</a></h4></li>
+                <li><h4><a class="blue-chevron" href="#integrate">Customizing and Integrating into your Authoring environment</a></h4></li>
             </ul>
             </ul>
             </p>

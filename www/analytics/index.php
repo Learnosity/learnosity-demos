@@ -10,13 +10,13 @@ include_once 'includes/header.php';
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/authorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
-    <h1>Analytics</h1>
+    <h1><img class="product-logo" src="/static/images/product-analytics.png">Learnosity Analytics</h1>
     <div class="section-intro">
         <p>Learnosity Analytics provides a suite of powerful tools, covering both embeddable, user friendly reporting, perfectly suited for quickly building out your product, as well as granular back end data-centric functionality to power your own bespoke reporting needs.</p>
         <ul>
-            <li><h4><a href="#dashboard-reporting">Embedding dashboard-style Reporting</a></h4></li>
-            <li><h4><a href="#customizing-reporting">Customizing your reporting experience</a></h4></li>
-            <li><h4><a href="#data-reporting">Using granular, back-end data reporting</a></h4></li>
+            <li><h4><a class="blue-chevron" href="#dashboard-reporting">Embedding dashboard-style Reporting</a></h4></li>
+            <li><h4><a class="blue-chevron" href="#customizing-reporting">Customizing your reporting experience</a></h4></li>
+            <li><h4><a class="blue-chevron" href="#data-reporting">Using granular, back-end data reporting</a></h4></li>
         </ul>
         </p>
     </div>

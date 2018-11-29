@@ -5,12 +5,8 @@ include_once 'includes/header.php';
 
 <div class="landing section">
     <div class="jumbotron">
-        <h1 class="landing-heading">Learnosity Demos</h1>
         <div class="landing-intro">
             <div class="media">
-                <div class="pull-left">
-                    <span class="glyphicon glyphicon-question-sign"></span>
-                </div>
                 <div class="media-body">
                     <p>This site contains demonstrations for all Learnosity APIs. Most of them are interactive, allowing you to get
                 the feel of our products with real content.</p>
@@ -18,9 +14,6 @@ include_once 'includes/header.php';
             </div>
 
             <div class="media">
-                <div class="pull-left">
-                    <span class="glyphicon glyphicon-cloud-download"></span>
-                </div>
                 <div class="media-body">
                     <p>You may also download the entire site to see how you can easily integrate our services into your own technology stack,
                     or you can <a href="https://github.com/Learnosity/learnosity-demos/tree/master">browse the code directly</a> on github.</p>
@@ -28,9 +21,6 @@ include_once 'includes/header.php';
             </div>
 
              <div class="media">
-                <div class="pull-left">
-                    <span class="glyphicon glyphicon-info-sign"></span>
-                </div>
                 <div class="media-body">
                     <p>Although the site has been written in PHP, the format is simple enough to follow no matter what your preferred language might be.</p>
                 </div>

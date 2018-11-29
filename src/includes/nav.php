@@ -1,15 +1,15 @@
 <?php
     $pages = array(
         'Authoring' => array(
-            'authoring/index.php' => 'Authoring'
+            'authoring/index.php' => 'Author'
         ),
         'Assessment' => array(
-            'assessment/index.php'     => 'Assessment'
+            'assessment/index.php'     => 'Assessments'
         ),
         'Analytics' => array(
             'analytics/index.php' => 'Analytics'
         ),
-        'Solutions' => array(
+        'Use Cases' => array(
             'casestudies/feedback/index.php' => 'Teacher Feedback',
             'casestudies/printing/index.php' => 'Printing Items',
             'casestudies/gallery/index.php'  => 'Gallery Style UI',
@@ -21,7 +21,7 @@
     );
 ?>
 
-<div class="navbar navbar-default" role="navigation">
+<div class="navbar" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
@@ -30,7 +30,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo $env['www'] ?>"><span class="logo">Learnosity Demos</span></a>
+            <a href="<?php echo $baseWebPath; ?>" class="logo">
+                <img src="/static/images/lrn-demos-logo-2x.png" alt="Learnosity Demos" class="logo">
+            </a>
         </div>
         <div class="navbar-collapse collapse" id="nav-main">
             <ul class="nav navbar-nav">
@@ -39,17 +41,17 @@
                             if (sizeof($name) > 1) {
                                 echo '
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $page . ' <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle bottom-chevron" data-toggle="dropdown">' . $page . '</a>
                                     <ul class="dropdown-menu">';
                                     foreach ($name as $subpage => $subname) {
-                                        echo '<li><a href="' . $env['www'] . $subpage . '">' . $subname . '</a></li>' . PHP_EOL;
+                                        echo '<li><a href="' . $env['www'] . $subpage . '" class="right-chevron">' . $subname . '</a></li>' . PHP_EOL;
                                     }
                                 echo '
                                     </ul>
                                 </li>' . PHP_EOL;
                             }else{
                                 list($key, $value) = each($name);
-                                echo '<li class="dropdown"><a href="' . $env['www'] . $key . '">' . $value . '</a><li>';
+                                echo '<li class="dropdown"><a href="' . $env['www'] . $key . '" class="right-chevron">' . $value . '</a><li>';
                             }
                         }
                 ?>
@@ -57,8 +59,8 @@
             <div class="nav-sec-wrapper">
                 <ul class="nav navbar-nav nav-sec">
                     <li>
-                        <a href="https://github.com/Learnosity/learnosity-demos/blob/master/www<?php echo $_SERVER['REQUEST_URI']?>" class="text-muted">
-                            <span class="glyphicon glyphicon-file"></span> <span class="nav-source-text">View source</span>
+                        <a href="https://github.com/Learnosity/learnosity-demos/blob/master/www<?php echo $_SERVER['REQUEST_URI']?>" class="view_source">
+                            </span>View source</span>
                         </a>
                     </li>
                 </ul>
