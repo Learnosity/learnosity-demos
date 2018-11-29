@@ -1,21 +1,5 @@
 <?php
 
-	/*
-	 *** demo revamp questions: we need to: ***
-	 * TODO: composer update to 5.4 or later to support PHPStorm
-	 * TODO: check with Sydney about PHP 7 guidelines and linting
-	 * TODO: default reactive views?
-	 * TODO: address settings overrides
-	 * Style Guide: align consistently; consistent quotes; variable names
-	 *** end demo revamp questions ***
-	 *
-	 *** unique to this demo ***
-	 * TODO: Create custom tag set for filtering
-	 *** end unique to this demo ***
-	 */
-
-
-
     //common environment attributes including search paths. not specific to Learnosity
 	include_once '../env_config.php';
 
@@ -36,8 +20,6 @@
 		'domain'       => $domain
 	];
 
-
-	//TODO: org id, including get rid of it and try it yourself. Rich to create org. Name?
 
     //simple api request object, with additional common features added and commented
 	$request = [

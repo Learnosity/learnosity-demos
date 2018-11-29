@@ -31,7 +31,7 @@ use LearnositySdk\Utils\Uuid;
                             'custom_styles'=> [
                                 [
                                     'label'=> 'Custom Font',
-                                    'element'=> 'span', //<span> for inlie styles. <p> for block styles.
+                                    'element'=> 'span', //<span> for inline styles. <p> for block styles.
                                     'element_class'=> 'custom-font'
                                 ]
                             ],

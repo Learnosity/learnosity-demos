@@ -1,11 +1,5 @@
 <?php
 
-	/*
-	 * TODO: Create custom tag set for filtering
-	 */
-
-
-
 	//common environment attributes including search paths. not specific to Learnosity
 	include_once '../env_config.php';
 
@@ -36,14 +30,6 @@
 						//display only items created by the current user (defined at top-level)
 						'current_user' => false,
 						//display only items created by specific users (array of strings from user.id)
-						//TODO: not working. confirm created_by filter syntax. user.id isn't included:
-						//{first_name: "Demos", surname: "User", email: "demos@learnosity.com"}
-						/*
-						 * additionally filter by tag:
-						 * show items with all tags listed (all), any tags listed (either)
-						 * hide items with any tags listed (none)
-						 * multiple tags can be included (see either > subject
-						 */
 						"tags" => [
 							"all" => [
 								[
