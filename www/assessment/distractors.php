@@ -61,7 +61,7 @@ $signedRequest = $Init->generate();
         </div>
     </div>
 
-    <div class="section">
+    <div class="section pad-sml">
         <p>
             <span class="learnosity-item" data-reference="act1"></span>
             <span class="learnosity-item" data-reference="act2"></span>

@@ -53,7 +53,7 @@ $signedRequest = $Init->generate();
         </div>
     </div>
 
-    <div class="section">
+    <div class="section pad-sml">
         <p>
             <!-- HTML element to load item(s) into -->
             <h2>Question 1</h2>

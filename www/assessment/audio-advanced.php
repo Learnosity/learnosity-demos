@@ -48,7 +48,7 @@ $signedRequest = $Init->generate();
         </div>
     </div>
 
-    <div class="section pad-sml">
+    <div class="section">
 
         <div class="row">
             <div class="col-md-6">
