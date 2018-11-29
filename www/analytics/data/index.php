@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 // Full base URL of the Data API
 $URL = $url_data;
@@ -11,7 +17,7 @@ if (isset($_REQUEST['data-url'])) {
 }
 
 // Which version of the Data API to use
-$version = $version_dataapi;
+$version = $lts_version;
 
 ?>
 
@@ -262,7 +268,7 @@ $version = $version_dataapi;
             security: {
                 consumer_key: '<?php echo $consumer_key; ?>',
                 domain: '<?php echo $domain; ?>',
-                timestamp: '<?php echo $timestamp; ?>',
+                timestamp: '<?php echo gmdate('Ymd-Hi'); ?>',
                 signature: '[add request signature here]'
             }
         }

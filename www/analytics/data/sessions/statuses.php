@@ -1,6 +1,6 @@
 <?php
 
-$endpoint = "$URL/$version/sessions/statuses";
+$endpoint = "$URL/sessions/statuses";
 $resource = 'sessionstatuses';
 
 ?>

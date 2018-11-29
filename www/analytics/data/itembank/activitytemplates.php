@@ -1,6 +1,6 @@
 <?php
 
-$endpoint = "$URL/$version/itembank/activities/templates";
+$endpoint = "$URL/itembank/activities/templates";
 $resource = 'activitytemplates';
 
 ?>
