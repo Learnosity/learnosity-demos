@@ -64,7 +64,7 @@ Vagrant by default supports VirtualBox as it's VM host, but it does support
 others like VMWare, Parallels, and even AWS EC2.
 
 The included `Vagrantfile` will download a VM image and install all the needed
-PHP dependancies. Once the VM is running the demos can be used (and modified)
+PHP dependencies. Once the VM is running the demos can be used (and modified)
 without you needing to install anything else.
 
 In order to use Vagrant you need to have installed:
