@@ -820,8 +820,8 @@ img.product-logo {
 }
 
 .section.pad-sml {
-    /*padding-left: 24px;*/
-    /*padding-right: 24px;*/
+    margin-left: 0px;
+    margin-right: 0px;
     padding-bottom: 24px;
     margin-bottom:48px;
 }
