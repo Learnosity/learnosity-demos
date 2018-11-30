@@ -65,8 +65,9 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Delivering just-in-time fixed form assessments</h2>
-            <p></p>
+            <h2>Annotations API</h2>
+            <p>Annotations let students add sticky notes, highlighting, and freehand sketches to their responses, giving educators even greater access to learners' thought processes.</p>
+            <p>For more information about Annotations, please see our <a href="https://docs.learnosity.com/assessment/annotations/index" target="_blank">documentation</a>.</p>
         </div>
     </div>
 

@@ -67,7 +67,8 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Delivering fixed form assessments with sections</h2>
-            <p></p>
+            <p>Sections are a way to split up a single activity into discrete buckets of items, with the ability to have different activity configuration per section.</p>
+            <p>Once students progress to a new section, they cannot navigate back.</p>
         </div>
     </div>
 

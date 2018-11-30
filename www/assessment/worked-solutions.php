@@ -48,8 +48,10 @@ $signedRequest = $Init->generate();
         <div class="overview">
             <h2>Worked Solutions</h2>
             <p>
-                Store basic HTML in the Questions API metadata property to be rendered by the host environment for displaying rich hints to users.
-            <p>
+                The metadata property can be used to provide powerful hint and worked solution functionality.
+                <br>You can store hints as metadata and write code to display them to the user.
+                <br>For an example of how to implement hints, refer to <a href="https://docs.learnosity.com/developers/developerguide/tutorials/tutorial_203">this tutorial.</a>
+            </p>
         </div>
     </div>
 

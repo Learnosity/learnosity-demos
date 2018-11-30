@@ -86,7 +86,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Delivering Item Adaptive (Rasch Model) assessments</h2>
-            <p></p>
+            <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
         </div>
     </div>
 

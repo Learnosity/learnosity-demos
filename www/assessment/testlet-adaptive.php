@@ -99,7 +99,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Delivering mixed adaptive assessments</h2>
-            <p></p>
+            <p>A dynamic assessment that presents different testlets depending on performance in the first testlet.</p>
         </div>
     </div>
 

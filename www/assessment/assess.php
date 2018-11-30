@@ -56,7 +56,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Delivering just-in-time fixed form assessments</h2>
-            <p></p>
+            <p>With the flick of a switch turn items into assessments. Truly write once - use anywhere.</p>
         </div>
     </div>
 

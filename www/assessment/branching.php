@@ -86,7 +86,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Delivering branching assessments</h2>
-            <p></p>
+            <p>A simple dynamic assessment that selects the next item or branch based on past performance, according to a pre-defined configuration.</p>
         </div>
     </div>
 

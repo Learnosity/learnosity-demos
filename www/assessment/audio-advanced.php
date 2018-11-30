@@ -106,7 +106,6 @@ $signedRequest = $Init->generate();
         //optional callbacks for ready
         var callbacks = {
             readyListener: function () {
-                // audioQuestion = itemsApp.question('ec2289c8-ede4-47fb-a10c-35222f305377');
                 audioQuestions = itemsApp.questions();
                 audioQuestion = audioQuestions[Object.keys(audioQuestions)[0]];
                 audioQuestion.on('recording:stopped', function () {
