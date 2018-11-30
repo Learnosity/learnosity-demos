@@ -164,12 +164,17 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .panel.panel-default.main-page-panel {
-    min-height:320px;
+    min-height:380px;
+    text-align:center;
 }
 
 .panel.panel-default.main-page-panel .panel-heading h2{
-    font-size: 18px;
+    font-size: 28px;
     font-weight:700;
+}
+
+.panel.panel-default.main-page-panel .panel-body {
+    font-size: 18px;
 }
 
 .panel.panel-default.main-page-panel.panel-short {
@@ -178,6 +183,43 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 .panel.panel-default.panel-data {
     min-height:60px;
+}
+
+
+.footer .section {
+    background-color: #143746;
+    text-align: left;
+    padding-top:50px;
+    margin-bottom:0px;
+    line-height:25px;
+    font-size:16px;
+    font-weight:400;
+    color: #e5e5e5;
+}
+
+.footer .section .row {
+    /*padding-left:190px;*/
+    padding-right:0px;
+}
+
+.footer .section .row [class^=col-]{
+    padding-left:10%;
+    padding-right:0px;
+    margin-right:-50px;
+}
+
+.footer .section h4 {
+    color: #fff;
+    font-weight:700;
+    font-size:16px;
+}
+
+.footer .section a {
+    color: #e5e5e5;
+}
+
+.footer .section a:hover {
+    color: #e5e5e5;
 }
 /********************************************************************
 *
@@ -648,6 +690,7 @@ a:focus,
     font-size: 16px;
     letter-spacing: 0.04em;
     border:none;
+    margin-bottom:0px;
 }
 
 .navbar a {
@@ -753,27 +796,6 @@ img.product-logo {
     margin-top:-14px;
 }
 
-
-/*.navbar-nav {*/
-    /*margin-left: 15px;*/
-/*}*/
-
-/*.navbar-nav .text-muted {*/
-    /*font-size: 14px;*/
-    /*letter-spacing: 0.01em;*/
-/*}*/
-
-/*.navbar-brand {*/
-    /*height: auto;*/
-/*}*/
-
-/*.navbar-default {*/
-    /*border-bottom: 1px solid #efefef;*/
-    /*border-radius: 0;*/
-    /*box-shadow: none;*/
-    /*webkit-box-shadow: none;*/
-/*}*/
-
 .nav-sec .navbar-nav {
     margin-left: 0;
 }
@@ -783,12 +805,9 @@ img.product-logo {
     position: relative;
 }
 
-.jumbotron .section {
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ebf0f0;
-}
 
-.jumbotron {
+.container .jumbotron.section {
+    padding-top:0px;
     padding-bottom: 24px;
 }
 
@@ -804,6 +823,7 @@ img.product-logo {
     /*padding-left: 24px;*/
     /*padding-right: 24px;*/
     padding-bottom: 24px;
+    margin-bottom:48px;
 }
 
 .container .jumbotron {

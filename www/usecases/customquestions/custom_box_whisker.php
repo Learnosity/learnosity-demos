@@ -30,8 +30,8 @@ $request = '{
     {
       "response_id": "custom-box-whisker-response-1",
       "type": "custom",
-      "js": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_box_whisker_js.php",
-      "css": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_box_whisker.css",
+      "js": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_js.php",
+      "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker.css",
       "stimulus": "Draw a <b>box &amp; whisker</b> chart for the following: <b>6, 2, 5, 3, 6, 10, 11, 6</b>",
       "params_line_min": 0,
       "params_line_max": 17,

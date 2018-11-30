@@ -120,8 +120,8 @@ $signedRequest = $init->generate();
                         "image": "//assets.learnosity.com/questiontypes/templates/mcqmulti.png",
                         "defaults": {
                             "type": "custom",
-                            "js": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.js",
-                            "css": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.css"
+                            "js": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.js",
+                            "css": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.css"
                         }
                     }
                 ],
@@ -133,8 +133,8 @@ $signedRequest = $init->generate();
                         "image": "//assets.learnosity.com/questiontypes/templates/mcqmulti.png",
                         "defaults": {
                             "type": "custom",
-                            "js": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.js",
-                            "css": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.css"
+                            "js": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.js",
+                            "css": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.css"
                         }
                     }
                 ]
@@ -143,18 +143,18 @@ $signedRequest = $init->generate();
                 "custom_type": "custom_short_text_inline_questions_api",
                 "type": "custom",
                 "name": "Custom Shorttext (DRAFT)",
-                "editor_layout": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.html",
-                "js": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.js",
-                "css": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.css",
+                "editor_layout": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.html",
+                "js": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.js",
+                "css": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.css",
                 "version": "v0.1.0",
                 "editor_schema": editorSchemas
             }, {
                 "custom_type": "custom_short_text_custom_renderer",
                 "type": "custom",
                 "name": "Custom Shorttext (DRAFT)",
-                "editor_layout": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.html",
-                "js": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.js",
-                "css": "//demos.staging.learnosity.com/casestudies/customquestions/custom_shorttext.css",
+                "editor_layout": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.html",
+                "js": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.js",
+                "css": "//demos.staging.learnosity.com/usecases/customquestions/custom_shorttext.css",
                 "version": "v0.1.0",
                 "editor_schema": editorSchemas
             }]

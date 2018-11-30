@@ -16,7 +16,7 @@ use LearnositySdk\Utils\Uuid;
 $session_id = Uuid::generate();
 
 $security = [
-    'user_id'      => $studentid,
+    'user_id'      => 'demo_student_123',
     'domain'       => $_SERVER['SERVER_NAME'],
     'consumer_key' => $consumer_key
 ];
@@ -32,8 +32,8 @@ $init = new Init('questions', $security, $consumer_secret, [
 $request = '{
   "response_id": "custom-shorttext-response-' . $session_id .'",
   "type": "custom",
-  "js": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_shorttext.js",
-  "css": "//' . $_SERVER['HTTP_HOST'] . '/casestudies/customquestions/custom_shorttext.css",
+  "js": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_shorttext.js",
+  "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_shorttext.css",
   "stimulus": "What is the capital of Australia?",
   "valid_response": "Canberra",
   "score": 1

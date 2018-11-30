@@ -21,29 +21,29 @@ $security = [
 ];
 
 $request = '{
-  "id": "custom-mathcore",
-  "name": "Custom Mathcore",
+  "id": "custom-percentage-bar",
+  "name": "Custom Percentage Bar",
   "type": "local_practice",
   "state": "initial",
   "session_id": "' . $session_id . '",
   "questions": [
     {
-      "response_id": "custom-mathcore-response-1",
+      "response_id": "custom-percentage-bar-response-1",
       "type": "custom",
-      "js": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_mathcore.js",
-      "css": "//'. $_SERVER['HTTP_HOST'] .'/casestudies/customquestions/custom_mathcore.css",
-      "stimulus": "Simplify following expression: <b>\\\\(2x^2 + 3x - 5 + 5x - 4x^2 + 20\\\\)</b>",
-      "is_math": true,
-      "score": 1,
-      "specs": [
-        {
-          "method": "isSimplified"
-        },
-        {
-          "method": "equivSymbolic",
-          "value": "2x^2 + 3x - 5 + 5x - 4x^2 + 20"
-        }
-      ]
+      "js": "//'. $_SERVER['HTTP_HOST'] .'/usecases/customquestions/custom_percentage_bar.js",
+      "css": "//'. $_SERVER['HTTP_HOST'] .'/usecases/customquestions/custom_percentage_bar.css",
+      "stimulus": "If Luke has $150 and he spends $30 on beer, how much money has he got left?",
+      "prepend_unit": "$",
+      "append_unit": "",
+      "min_value": "0",
+      "max_value": "150",
+      "step": "10",
+      "min_percentage": 0,
+      "max_percentage": 100,
+      "init_value": "20",
+      "bar_color": "#9ae5c9",
+      "valid_response": "120",
+      "score": 1
     }
   ],
     "beta_flags": {
@@ -66,7 +66,7 @@ $signedRequest = $init->generate();
 </style>
 
 <div class="jumbotron section">
-    <div class="toolbar">
+     <div class="toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/assessment/questions/knowledgebase/customquestions" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
@@ -74,15 +74,15 @@ $signedRequest = $init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h1>Custom Question - Mathcore</h1>
-        <p>Math Custom question using Learnosity Mathcore</p>
+        <h1>Custom Question - Percentage Bar</h1>
+        <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.</p>
     </div>
 </div>
 
 <div class="section">
     <div class="row">
         <div class="question-container">
-            <span class="learnosity-response question-custom-mathcore-response-1"></span>
+            <span class="learnosity-response question-custom-percentage-bar-response-1"></span>
             <div class="custom-score"><strong>Score: </strong> <span id="question_score">0</span> / <span id="question_max_score">0</span></div>
             <button class="btn btn-primary pull-right" id="validate_question">Check Answer</button>
         </div>
@@ -95,7 +95,7 @@ $signedRequest = $init->generate();
     var questionsApp = window.questionsApp = LearnosityApp.init(<?php echo $signedRequest; ?>,  {
         errorListener: window.widgetApiErrorListener,
         readyListener: function () {
-            var question = questionsApp.question('custom-mathcore-response-1');
+            var question = questionsApp.question('custom-percentage-bar-response-1');
 
             updateScores(question);
 

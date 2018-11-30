@@ -5,7 +5,7 @@ LearnosityAmd.define([
     'jquery-v1.10.2',
     'require-v2.1.9',
     'underscore-v1.5.2',
-    '//<?php echo $_SERVER['HTTP_HOST']; ?>/casestudies/customquestions/custom_box_whisker_d3.js'
+    '//<?php echo $_SERVER['HTTP_HOST']; ?>/usecases/customquestions/custom_box_whisker_d3.js'
 ], function ($, require, _, theD3) {
     'use strict';
 

@@ -10,13 +10,7 @@
             'analytics/index.php' => 'Analytics'
         ),
         'Use Cases' => array(
-            'casestudies/feedback/index.php' => 'Teacher Feedback',
-            'casestudies/printing/index.php' => 'Printing Items',
-            'casestudies/gallery/index.php'  => 'Gallery Style UI',
-            'casestudies/xapi/index.php'     => 'xAPI Events',
-            'casestudies/endtoend/index.php' => 'End to End Demo',
-            'casestudies/customquestions/index.php' => 'Custom Questions',
-            'casestudies/spanish/index.php' => 'Spanish Demo'
+            'usecases/index.php' => 'Use Cases'
         )
     );
 ?>
