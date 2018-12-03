@@ -8,8 +8,6 @@ include_once '../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 
-// NOTE: For now, demo requests only output 1 x user_id, 1 x activity_id and/or 1 x session_id
-// If future implementation allows for arrays (e.g. column onClick, row onClick), all of this must change
 $reportVariables = [
     'session_id',
     'user_id',

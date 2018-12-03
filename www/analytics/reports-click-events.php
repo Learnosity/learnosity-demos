@@ -86,41 +86,27 @@ $signedRequest = $Init->generate();
 
 
         function onReportsReady() {
-            var onClickFunction = function(data, target, modal) {
-                if (modal) {
-                    $('#lrn-reports-demos-modal').modal({
-                        'remote': 'demo-request.php'
-                        + '?session_id=' + data.session_id
-                        + '&user_id=' + data.user_id
-                        + '&activity_id=' + data.activity_id
-                        + '&report=sessions-summary'
-                        + '&context=modal'
-                    });
+            var onClickFunction = function(data, target) {
+                $('#lrn-reports-demos-modal').modal({
+                    'remote': 'demo-request.php'
+                    + '?session_id=' + data.session_id
+                    + '&user_id=' + data.user_id
+                    + '&activity_id=' + data.activity_id
+                    + '&report=sessions-summary'
+                    + '&context=modal'
+                });
 
-                    $('body').on('hidden.bs.modal', '.modal', function () {
-                        $(this).removeData('bs.modal');
-                        $('.modal-content').html("");
-                    });
-                } else {
-                    var html = '<div class="alert alert-info alert-dismissable">';
-                        html += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><p>';
-                        html += data.user_id ? '<p><strong>User ID:</strong> ' + data.user_id + '</p>' : '';
-                        html += data.activity_id ? '<p><strong>Activity ID:</strong> ' + data.activity_id + '</p>' : '';
-                        html += data.session_id ? '<p><strong>Session ID:</strong> ' + data.session_id + '</p>' : '';
-                        html += '</p></div>';
-                        $('#' + target).empty().append(html);
-                }
+                $('body').on('hidden.bs.modal', '.modal', function () {
+                    $(this).removeData('bs.modal');
+                    $('.modal-content').html("");
+                });
             };
 
-            /* group-lastscore-by-activity onclick events */
+            /* onclick events */
             var groupLastScoreByActivityByUser = reportsApp.getReport('report');
 
             groupLastScoreByActivityByUser.on('click:score', function (data) {
-                onClickFunction(data, 'click-event-report', true);
-            });
-
-            groupLastScoreByActivityByUser.on('click:activity', function (data) {
-                onClickFunction(data, 'click-event-report', false);
+                onClickFunction(data, 'click-event-report');
             });
 
 
