@@ -58,20 +58,20 @@ $signedRequest = $Init->generate();
     </div>
 </div>
 
-    <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12 author-events0"></div>
-        <div class="col-md-3 col-sm-6 col-xs-12 author-events1"></div>
-        <div class="col-md-3 col-sm-6 col-xs-12 author-events2"></div>
-        <div class="col-md-3 col-sm-6 col-xs-12 author-events3"></div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="section pad-sml">
-                <!-- Container for the author api to load into -->
-                <div id="learnosity-author"></div>
-            </div>
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12 author-events0"></div>
+    <div class="col-md-3 col-sm-6 col-xs-12 author-events1"></div>
+    <div class="col-md-3 col-sm-6 col-xs-12 author-events2"></div>
+    <div class="col-md-3 col-sm-6 col-xs-12 author-events3"></div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="section pad-sml">
+            <!-- Container for the author api to load into -->
+            <div id="learnosity-author"></div>
         </div>
     </div>
+</div>
 
 <!-- version of api maintained in lrn_config.php file -->
 <script src="<?php echo $url_authorapi; ?>"></script>
@@ -103,7 +103,7 @@ $signedRequest = $Init->generate();
     ];
 
     // build events list DOM elements
-    var colMax = eventsArray.length/4;
+    var colMax = Math.ceil(eventsArray.length/4);
     var colNum = 0;
     $.each(eventsArray, function(index, eventName) {
         $el = $('<div><span class="' + eventName + ' author-event-name event-label">' + eventName + '</span></div>');

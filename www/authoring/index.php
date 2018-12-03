@@ -165,8 +165,8 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Bind to Author API Events</h2>
                 </div>
                     <div class="panel-body">
-                        <p>A demonstration of event binding with the Author API 'on' public method to display custom
-                            notifications.</p>
+                        <p>Use the 'on' public method to bind to authoring events, supporting custom
+                            notifications and actions.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./events.php">Demo</a>
                         </p>
@@ -240,17 +240,17 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-        <h3 id="integrate"><a href="#integrate">Customize and Integrate into your Authoring environment</a></h3>
+        <h3 id="integrate"><a href="#integrate">Customizing and Integrating into your Authoring environment</a></h3>
         <p>Learnosity's APIs are designed to be easily customized and extended, allowing you to build your content management system the way you want.</p> <!--replace with CSS-->
 
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Use Custom Question Templates for Authoring</h2>
+                        <h2 class="panel-title">Build Custom Question Templates</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Create your own question templates with default values, and simplify the editing interface by hiding unwanted fields?
+                        <p>Create your own question templates with default values, and simplify the editing interface by hiding unwanted fields.
                         <p>
                         <p class="text-right">
                             <a class="demo_link"  href="./question_templates.php">Demo</a>

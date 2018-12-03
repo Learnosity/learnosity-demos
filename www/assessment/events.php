@@ -38,7 +38,11 @@ $request = [
     'config' => [
         'title' => 'Demo activity - showcasing question types and assess options',
         'subtitle' => 'Walter White',
-        'regions' => 'main'
+        'regions' => 'main',
+        'navigation' => [
+                'scroll_to_test' => false,
+                'scroll_to_top' => false
+        ]
     ]
 ];
 
@@ -59,12 +63,15 @@ $signedRequest = $Init->generate();
             <p>Below is a demo of event binding using the <a href="https://docs.learnosity.com/assessment/items/events#assessmentEvents">Assessment Events</a> to display custom notifications.</p>
         </div>
     </div>
+
     <div class="row">
-        <div class="col-sm-3">
-            <div class="assess-events">
-            </div>
-        </div>
-        <div class="col-sm-9">
+        <div class="col-md-3 col-sm-6 col-xs-12 assess-events0"></div>
+        <div class="col-md-3 col-sm-6 col-xs-12 assess-events1"></div>
+        <div class="col-md-3 col-sm-6 col-xs-12 assess-events2"></div>
+        <div class="col-md-3 col-sm-6 col-xs-12 assess-events3"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
             <div class="section pad-sml">
                 <!-- Container for the assess api to load into -->
                 <div id="learnosity_assess"></div>
@@ -106,9 +113,12 @@ $signedRequest = $Init->generate();
         ];
 
         // build events list DOM elements
+        var colMax = Math.ceil(eventsArray.length/4);
+        var colNum = 0;
         $.each(eventsArray, function(index, eventName) {
             $el = $('<div><span class="' + eventName + ' assess-event-name event-label">' + eventName + '</span></div>');
-            $('.assess-events').append($el);
+            if (index != 0 && index % colMax == 0) { colNum++ };
+            $('.assess-events'+ colNum).append($el);
         });
 
         //optional callbacks for ready

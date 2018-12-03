@@ -27,7 +27,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Student-Centric reporting</h2>
+                    <h2 class="panel-title">Display Student-Centric reports</h2>
                 </div>
                 <div class="panel-body">
                     <p>Learn more about individual students in an easy, in-depth fashion!</p>
@@ -41,7 +41,7 @@ include_once 'includes/header.php';
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Classroom & Teacher-Centric reporting</h2>
+                    <h2 class="panel-title">Present Classroom & Teacher-Centric reports</h2>
                 </div>
                 <div class="panel-body">
                     <p>Monitor and compare your students at a glance.</p>
@@ -58,7 +58,7 @@ include_once 'includes/header.php';
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Coursework Progress reporting</h2>
+                    <h2 class="panel-title">Show Coursework Progress</h2>
                 </div>
                 <div class="panel-body">
                     <p>Particularly suited for publishers or online book companion products, track student progress through all Item bank content.</p>
@@ -72,7 +72,7 @@ include_once 'includes/header.php';
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Large-Scale group / district reporting</h2>
+                    <h2 class="panel-title">Diplay Large-Scale Group/District Reports</h2>
                 </div>
                 <div class="panel-body">
                     <p>Discover large scale group reporting and let Learnosity take care of the heavy lifting.</p>
@@ -88,7 +88,7 @@ include_once 'includes/header.php';
     <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Live Progress Tracking & Control</h2>
+                    <h2 class="panel-title">Provide Live Progress Tracking & Control</h2>
                 </div>
                 <div class="panel-body">
                     <p>Allow your instructors to see student progress through tests in real-time, along with instructor and teacher control.</p>
@@ -101,7 +101,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Learning Outcomes & Mastery</h2>
+                    <h2 class="panel-title">Analyze Learning Outcomes & Mastery</h2>
                 </div>
                 <div class="panel-body">
                     <p>Drill down deeper into student and class results broken down by topic areas or learning outcomes.</p>
@@ -121,7 +121,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Disabling Reporting UI</h2>
+                    <h2 class="panel-title">Disable Reporting UI to Work Directly with Data</h2>
                 </div>
                 <div class="panel-body">
                     <p>In some cases, you may want to use our in-browser reporting widget info, but your own skin and styling on top. Find out more about getting just the report info, and how you can use it!</p>
@@ -135,7 +135,7 @@ include_once 'includes/header.php';
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Using click events</h2>
+                    <h2 class="panel-title">Use click events</h2>
                 </div>
                 <div class="panel-body">
                     <p>Bring our reports to life, by integrating click behavior and adding an extra depth to your reporting.</p>
@@ -155,7 +155,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Data API Examples</h2>
+                    <h2 class="panel-title">View Data API Examples</h2>
                 </div>
                 <div class="panel-body">
                     <p>Sometimes, you just need access to all the raw info you can handle! Using Learnosity's Data API, you can.</p>

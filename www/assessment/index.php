@@ -8,7 +8,7 @@ include_once 'includes/header.php';
 
     <h1><img class="product-logo" src="/static/images/product-assessments.png">Learnosity Assessments</h1>
     <div class="section-intro">
-        <p>Learnosity Assessments allow you to access content from Learnosity's Item bank, and deliver content to your end-users either as a full assessment player or embedded into a page as you need, all while capturing student responses and scoring in a scalable, robust manner.</p>
+        <p>Learnosity Assessments allow you to access content from your Learnosity-hosted item bank, and deliver that content to your end-users. You can present assessments using a full assessment player or embed each question into a page exactly where you want it to be, all while capturing student responses and scoring in a scalable, robust manner.</p>
         <p>
         <ul>
             <li><h4><a class="blue-chevron" href="#delivering">Delivering Assessments</a></h4></li>
@@ -19,7 +19,7 @@ include_once 'includes/header.php';
     </div>
 
     <h3 id="delivering"><a href="#delivering">Delivering Assessments</a></h3>
-    <p>Deliver your learning content how you like it - whether that's through fixed form assessments, individual items embedded throughout your learning content, or using powerful adaptive and branching test formats.</p>
+    <p>Deliver your learning content how you like it—via fixed form assessments, individual items embedded throughout your editorial, or powerful adaptive and branching test formats.</p>
     <br>
 
 
@@ -27,7 +27,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Pre-Written Fixed Form Assessments</h2>
+                    <h2 class="panel-title">Build Pre-Written Fixed Form Assessments</h2>
                 </div>
                 <div class="panel-body">
                     <p>Build fixed-form activities in Learnosity, and deliver high quality pre-authored assessments to your end-users.</p>
@@ -40,10 +40,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Mixing Content and Formative Assessment & Learning</h2>
+                    <h2 class="panel-title">Embed Formative Assessment Questions into Editorial Content</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Display items from the Learnosity Item Bank in no time, embedded how you want them.</p>
+                    <p>Place questions <i>in context</i> throughout your editorial without the design restrictions of an assessment player.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./inline.php">Demo</a>
                     </p>
@@ -56,7 +56,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Just-in-Time Fixed Form Assessments</h2>
+                    <h2 class="panel-title">Generate Just-in-Time Fixed Form Assessments</h2>
                 </div>
                 <div class="panel-body">
                     <p>Build your activities on the fly, and deliver content from your item bank without having to pre-author a fixed-form activity.</p>
@@ -70,7 +70,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Branching Assessments</h2>
+                    <h2 class="panel-title">Create Branching Assessments</h2>
                 </div>
                 <div class="panel-body">
                     <p>Use the power of Learnosity's branching assessment format to build an activity that seamlesssly adapts to your user.</p>
@@ -86,10 +86,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Item Adaptive (Rasch Model) Assessments</h2>
+                    <h2 class="panel-title">Generate Item Adaptive (Rasch Model) Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Using our item adaptive technology, deliver an adaptive test to your student using the power of Learnosity's advanced adaptive engine.</p>
+                    <p>Use our item adaptive technology to deliver an adaptive test to your student based on item difficulty level and user ability.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./adaptive.php">Demo</a>
                     </p>
@@ -99,10 +99,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Mixed Adaptive Assessments</h2>
+                    <h2 class="panel-title">Build Testlet Adaptive Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A dynamic assessment that adapts to the user's ability, choosing which fixed-form testlet to go through next.</p>
+                    <p>Create adaptive experiences that choose which fixed-form testlet to load at each branch point.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./testlet-adaptive.php">Demo</a>
                     </p>
@@ -118,7 +118,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Fixed Form Assessments with Sections</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Sections are a way to split up a single activity into discrete buckets of items, with the ability to have different activity configuration per section.</p>
+                    <p>Divide single assessments into discrete buckets of items, restricting navigation and optionally using different activity configurations for each section.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./sections.php">Demo</a>
                     </p>
@@ -130,17 +130,17 @@ include_once 'includes/header.php';
 
 
 
-    <h3 id="customizing"><a href="#customizing">Customizing behaviour</a></h3>
-    <p>Learnosity's Assessment delivery APIs are designed to be flexible, customizable, and easy to trigger behavior and react to user behavior inside your own platform.</p>
+    <h3 id="customizing"><a href="#customizing">Customizing Behaviour</a></h3>
+    <p>Learnosity's Assessment delivery APIs are designed to be flexible and customizable, making it easy to trigger behavior, and react to user choices, inside your own platform.</p>
 
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Accessibility controls & Assistive tools</h2>
+                    <h2 class="panel-title">Offer Accessibility Controls and Assistive Tools</h2>
                 </div>
                 <div class="panel-body">
-                    <p>As well as Learnosity's "behind-the-scenes" functionality to work with screen-readers, braille displays, and keyboard navigation, Learnosity also provides in-built accessibility options which can be configured, extended and set by default.</p>
+                    <p>Beyond our ability to work with system-level screen-readers, braille displays, and keyboard helpers behind the scenes, Learnosity provides in-built accessibility options which can be configured, extended and set as defaults.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./accessibility.php">Demo</a>
                     </p>
@@ -150,10 +150,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Adding Hints & Worked Solutions</h2>
+                    <h2 class="panel-title">Add Question Hints & Worked Solutions</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Extend on top of our standard assessments to provide powerful hint and worked solution functionality.<p>
+                    <p>Extend our standard assessments to provide powerful hint and worked-solution functionality.<p>
                     <p class="text-right">
                         <a class="demo_link" href="./worked-solutions.php">Demo</a>
                     </p>
@@ -166,10 +166,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Distractor Rationale & Feedback</h2>
+                    <h2 class="panel-title">Display Distractor Rationale & Feedback</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Use Learnosity metadata to power distractor rationale for teachers and instructors, or inline student feedback.</p>
+                    <p>Use Learnosity metadata to power distractor rationale for inline student feedback.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./distractors.php">Demo</a>
                     </p>
@@ -179,10 +179,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Submission retries & response recovery</h2>
+                    <h2 class="panel-title">Increase Resilience to Network Issues</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Learnosity provides resilience to network issues and disconnections - This demo simulates submitting an activity where the network connection may not be available.<p>
+                    <p>Give your students options for reattempting submissions, or saving responses, when a network connection is suddenly unavailable.<p>
                     <p class="text-right">
                         <a class="demo_link" href="./failed-submission.php">Demo</a>
                     </p>
@@ -195,10 +195,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Locking Questions</h2>
+                    <h2 class="panel-title">Lock Questions to Prevent Further Edits</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Learn how to disable questions depending on user behavior (in this case, too many attempts).</p>
+                    <p>Learn how to disable questions based on user behavior, such as when limiting question attempts.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./locking-questions.php">Demo</a>
                     </p>
@@ -208,10 +208,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Restricting Responses and Navigation</h2>
+                    <h2 class="panel-title">Restrict Responses and Navigation</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Customize the Learnosity experience, by ensuring students have answered the correct number of responses.<p>
+                    <p>Customize the Learnosity experience by ensuring students have attempted a definable minimum threshold of questions.<p>
                     <p class="text-right">
                         <a class="demo_link" href="./restrict-responses.php">Demo</a>
                     </p>
@@ -224,7 +224,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Question Indexing in Assessments</h2>
+                    <h2 class="panel-title">Index Assessment Questions</h2>
                 </div>
                 <div class="panel-body">
                     <p>Turn on automatic question numbering for students.</p>
@@ -237,10 +237,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Advanced Audio Analysis</h2>
+                    <h2 class="panel-title">Provide Advanced Audio Features</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Dive deeper into audio quality, and get the information you need to make sure your students audio is as clear as day!<p>
+                    <p>Dive deeper into audio quality, and get the information you need to make sure your students' audio is clear and easy to use.<p>
                     <p class="text-right">
                         <a class="demo_link" href="./audio-advanced.php">Demo</a>
                     </p>
@@ -253,10 +253,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Running Your Own Math Rendering</h2>
+                    <h2 class="panel-title">Use Your Existing MathJax Instance for Math Rendering</h2>
                 </div>
                 <div class="panel-body">
-                    <p>In cases where you have customized your own MathJax rendering, learn how to disable Learnosity's rendering and use your own.</p>
+                    <p>In cases where you have customized your own MathJax rendering, learn how to disable Learnosity's rendering and use your configuration.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./formulamathjaxcdn.php">Demo</a>
                     </p>
@@ -266,10 +266,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Assessment Layouts & Regions</h2>
+                    <h2 class="panel-title">Customize the Assessment Player UI</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Regions provide a powerful, flexible way to personalize and extend the Assessment player layout.</p>
+                    <p>Use Learnosity's regions to personalize and extend the Assessment player layout.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./regions.php">Demo</a>
                     </p>
@@ -282,10 +282,11 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Binding to Items API Events</h2>
+                    <h2 class="panel-title">Bind to Items API Events</h2>
                 </div>
                 <div class="panel-body">
-                    <p>A demonstration of event binding with the Items API 'on' public method to display custom notifications.</p>
+                    <p>Use the 'on' public method to bind to authoring events, supporting custom
+                        notifications and actions.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./events.php">Demo</a>
                     </p>
@@ -295,10 +296,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Annotations Demo</h2>
+                    <h2 class="panel-title">Enable Annotations for Student Use</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Annotations API offers students the ability to make notes, add multi color highlights to text, place sticky notes onto the page, and use a pen tool to annotate the content.</p>
+                    <p>Annotations API offers students the ability to type notes, add multi color highlights to text, place sticky notes onto the page, and use a pen tool to annotate the content.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./annotations.php">Demo</a>
                     </p>
@@ -311,10 +312,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Texthelp Demo</h2>
+                    <h2 class="panel-title">Using Third-Party Assistive Tools: TextHelp</h2>
                 </div>
                 <div class="panel-body">
-                    <p>This demo demonstrates integrating Learnosity with Texthelp. Texthelp's SpeechStream is a cloud based JavaScript software solution that allows publishers to embed text-to-speech read aloud within their assessment items.</p>
+                    <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based JavaScript software solution that allows publishers to embed text-to-speech into their assessment items.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./texthelp.php">Demo</a>
                     </p>
