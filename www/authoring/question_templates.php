@@ -17,8 +17,6 @@ $security = [
     'domain'       => $domain
 ];
 
-$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]" ."/authoring/customfeature/";
-
 //simple api request object for item list view, with optional creation of items
 $request = [
     'mode'      => 'item_edit',

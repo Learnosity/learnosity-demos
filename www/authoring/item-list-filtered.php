@@ -1,21 +1,5 @@
 <?php
 
-	/*
-	 *** demo revamp questions: we need to: ***
-	 * TODO: composer update to 5.4 or later to support PHPStorm
-	 * TODO: check with Sydney about PHP 7 guidelines and linting
-	 * TODO: default reactive views?
-	 * TODO: address settings overrides
-	 * Style Guide: align consistently; consistent quotes; variable names
-	 *** end demo revamp questions ***
-	 *
-	 *** unique to this demo ***
-	 * TODO: Create custom tag set for filtering
-	 *** end unique to this demo ***
-	 */
-
-
-
     //common environment attributes including search paths. not specific to Learnosity
 	include_once '../env_config.php';
 
@@ -35,10 +19,6 @@
 		'domain'       => $domain
 	];
 
-
-	//TODO: org id, including get rid of it and try it yourself. Rich to create org. Name?
-    //should any content come from demos? Do we need a new org for demos, or should we use Authoring Content?
-
     //simple api request object, with additional common features added and commented
 	$request = [
 		'mode'      => 'item_list',
@@ -49,10 +29,6 @@
 					'restricted' => [
 						//display only items created by the current user (user.id, defined at top-level)
 						'current_user' => false,
-						//display only items created by specific users (array of strings from user.id)
-                        //TODO: not working. confirm created_by filter syntax. user.id isn't included:
-                        //{first_name: "Demos", surname: "User", email: "demos@learnosity.com"}
-						//'created_by' => ['Manual User/Data GUI'],
 						//display only items with a specific status
 						'status' => ['published'],
 						/*

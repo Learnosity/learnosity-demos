@@ -80,7 +80,6 @@ $signedRequest = $Init->generate();
         <p>White light, on the other hand, contains all colors. We can even see this with our own eyes when it passes through certain things. For example, we can shoot white light through a prism to see it split into multiple colors, and we even see this in nature, when light passes through moisture droplets in the air. When the sun shines brightly through a mist or light rainfall, what do we see?</p>
 
 
-
         <h1 style="clear:both;">A Rainbow of Colors</h1>
 
         <span class="pull-right"  style="margin-left:10px;">
@@ -88,11 +87,7 @@ $signedRequest = $Init->generate();
             <p style="font-size:12px;text-align:right;">image: Frans Van Heerden</p>
         </span>
 
-        <p>You probably know there are seven colors in a rainbow: red, orange, yellow, green, blue, indigo, and violet. Our good friend, Roy G. Biv. But what you may not know is that only three of those colors can’t be created by mixing other colors together. These colors--red, yellow, and blue, are called <i>primary colors</i>.</p>
-
-
-
-
+        <p>You probably know there are seven colors in a rainbow: red, orange, yellow, green, blue, indigo, and violet. Our good friend, Roy G. Biv. But what you may not know is that only three of those colors can’t be created by mixing other colors together. These colors—red, yellow, and blue—are called <i>primary colors</i>.</p>
 
         <div class="pull-left" style="margin-right:20px;width:300px;" >
             <table class="table">
@@ -105,25 +100,22 @@ $signedRequest = $Init->generate();
             </table>
         </div>
 
-        <p>When these colors are mixed, new colors are created. For example, if you mix red and yellow, you get orange. Mixing yellow and blue makes green, and blue and red make violet. These new, mixed colors are called <i>secondary colors</i>.</p>
+        <p>When these colors are mixed new colors are created. For example, if you mix red and yellow you get orange. Mixing yellow and blue makes green, and mixing blue and red make violet. These mixed colors are called <i>secondary colors</i>.</p>
 
-        <p>Another way to represent these colors is to show them on a color wheel. Primary colors appear equidistant from each other on the wheel. Secondary colors appear between the primary colors mixed to create them. The color wheel shown at here includes primary and secondary colors.</p>
-
+        <p>Another way to represent these colors is to show them on a color wheel. Primary colors appear equidistant from each other on the wheel. Secondary colors appear between the primary colors mixed to create them. The color wheel shown here includes primary and secondary colors.</p>
 
         <span class="pull-right"  style="margin-left:10px;">
             <img src="//s3-us-west-1.amazonaws.com/assets.staging.learnosity.com/organisations/1/primary_secondary_wheel.png">
             <p style="font-size:12px;text-align:center;">a color wheel</p>
         </span>
 
-        <p>You can find more colors between positions on the wheel. For example, <i>tertiary colors</i>--or a third level of color--appear between primary and secondary colors. The rainbow’s indigo, for instance, appears between blue and violet.</p>
-
+        <p>You can find more colors between positions on the wheel. For example, <i>tertiary colors</i>—or a third level of color—appear between primary and secondary colors. The rainbow’s indigo, for instance, appears between blue and violet.</p>
 
 
         <h1 style="clear:both;">Let’s Review</h1>
 
-
         <div>
-        ✓ We see color because some light is absorbed, and other light is reflected, off of surfaces.<br>
+        ✓ We see color because some light is absorbed, and other light is reflected, by surfaces.<br>
         ✓ White light contains all color.<br>
         ✓ Black is the absence of color.<br>
         ✓ Primary colors are red, yellow, and blue.<br>
@@ -131,7 +123,6 @@ $signedRequest = $Init->generate();
         ✓ Tertiary colors are created by mixing primary and secondary colors.<br>
         ✓ There are millions of colors in the world for you to discover!<br><br>
         </div>
-
 
         <h4>Think of what you've learned and answer the bonus question below.</h4>
 
@@ -145,8 +136,6 @@ $signedRequest = $Init->generate();
                 </tr>
             </table>
         </div>
-
-
 
     </div>
 
