@@ -92,7 +92,7 @@ var init = function () {
 
         // Build the 2 columns, left is Reports API (student in review) and the right is Items API
         // for the teacher to add custom scores. On save() we send the scores to the Data API.
-        $('.lrn_widget').wrap('<div class="row"></div>').wrap('<div class="col-md-6"></div>');
+        $('.lrn_widget').wrap('<div class="row"></div>').wrap('<div class="col-md-6" style="padding: 0 20px;"></div>');
 
         itemsApp.getQuestions(function(questions) {
             $.each(questions, function(index, element) {
@@ -102,7 +102,7 @@ var init = function () {
 
                     $('<span class="learnosity-item" data-reference="' + feedbackItemId + '">')
                         .appendTo($('#' + element.response_id).closest('.row'))
-                        .wrap('<div class="col-md-6"></div>');
+                        .wrap('<div class="col-md-6" style="padding: 0 20px;"></div>');
 
                     $('<div class="pull-right"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#rubricViewer">View Rubric</button></div>')
                         .appendTo($('#' + element.response_id).closest('.row'))
@@ -212,17 +212,6 @@ $(function() {
     $('.btn_save_simple_scores').on('click', saveScores);
 });
 </script>
-
-<style type="text/css">
-    .lrn .row {
-        border-bottom: 1px solid #eee;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-    .learnosity-report h3 {
-        font-weight: 400;
-    }
-</style>
 
 <script src="<?php echo $env['www'] ?>static/vendor/ladda/spin.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.js"></script>

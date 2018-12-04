@@ -152,16 +152,5 @@ reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, eventOptions)
 
 </script>
 
-<style type="text/css">
-    .lrn .row {
-        border-bottom: 1px solid #eee;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-    .learnosity-report h3 {
-        font-weight: 400;
-    }
-</style>
-
 <?php
     include_once 'includes/footer.php';
