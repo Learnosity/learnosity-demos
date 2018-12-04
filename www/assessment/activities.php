@@ -47,11 +47,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Activities</h2>
-            <p>Activities are a wrapper for multiple items authored in the Learnosity Author site. They can also
-            include configuration used by the <a href="<?php echo $env['www'] ?>assessment/assess/index.php">Assess API</a> to control the assessment user interface.</p>
-            <p>Preview the <a href="#" data-toggle="modal" data-target="#initialisation-preview">API Initialisation Object</a> to see how simple it can be using the Items API to load activities
-            authored in the Learnosity item bank.</p>
+            <h2>Build Pre-Written Fixed Form Assessments</h2>
+            <p>Build fixed-form activities in Learnosity, and deliver high quality pre-authored assessments to your end-users using Activities. Activities are a pre-authored fixed form test for multiple items, along with test configuration, authored in the Learnosity Author site, or via the Author API.</p>
         </div>
     </div>
 

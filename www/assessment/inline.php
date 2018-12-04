@@ -46,8 +46,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Mixing Formative Assessment with Editorial Content</h2>
-            <p>Place questions exactly where you want them with Item API's inline rendering—including throughout editorial content for in-context practice and quick formative assessments.</p>
+            <h2>Embed Formative Assessment Questions into Editorial Content</h2>
+            <p>Place questions <i>in context</i> throughout your editorial without the design restrictions of an assessment player.</p>
         </div>
     </div>
 

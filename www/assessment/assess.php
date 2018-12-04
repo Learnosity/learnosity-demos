@@ -55,8 +55,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Delivering just-in-time fixed form assessments</h2>
-            <p>With the flick of a switch turn items into assessments. Truly write once - use anywhere.</p>
+            <h2>Generate Just-in-Time Fixed Form Assessments</h2>
+            <p>Build your activities on the fly, and deliver content from your item bank without having to pre-author a fixed-form activity.</p>
         </div>
     </div>
 

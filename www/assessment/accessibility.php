@@ -55,10 +55,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Accessibility</h2>
-            <p>
-                The Assess API has a built in accessibility options panel that allows students to adjust settings during their assessment. Options include changing the colour scheme, font size and instructions on how to zoom.
-            </p>
+            <h2>Offer Accessibility Controls and Assistive Tools</h2>
+            <p>Beyond our ability to work with system-level screen-readers, braille displays, and keyboard helpers behind the scenes, Learnosity provides in-built accessibility options which can be configured, extended and set as defaults.</p>
         </div>
     </div>
 

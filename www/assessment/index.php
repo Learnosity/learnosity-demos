@@ -102,7 +102,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Build Testlet Adaptive Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Create adaptive experiences that choose which fixed-form testlet to load at each branch point.</p>
+                    <p>Create adaptive experiences that choose which fixed-form testlet to load at each decision point.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./testlet-adaptive.php">Demo</a>
                     </p>

@@ -98,8 +98,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Delivering mixed adaptive assessments</h2>
-            <p>A dynamic assessment that presents different testlets depending on performance in the first testlet.</p>
+            <h2>Build Testlet Adaptive Assessments</h2>
+            <p>Create adaptive experiences that choose which fixed-form testlet to load at each decision point.</p>
         </div>
     </div>
 

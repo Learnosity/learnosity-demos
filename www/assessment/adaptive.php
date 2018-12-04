@@ -85,9 +85,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Delivering Item Adaptive (Rasch Model) assessments</h2>
-            <p>A dynamic assessment that adapts to the user's ability in real time, on a per item basis.</p>
-        </div>
+            <h2>Generate Item Adaptive (Rasch Model) Assessments</h2>
+            <p>Use our item adaptive technology to deliver an adaptive test to your student based on item difficulty level and user ability.</p>        </div>
     </div>
 
     <div class="section pad-sml">

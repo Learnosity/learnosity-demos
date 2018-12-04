@@ -46,9 +46,9 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Worked Solutions</h2>
+            <h2>Add Question Hints & Worked Solutions</h2>
             <p>
-                The metadata property can be used to provide powerful hint and worked solution functionality.
+            <p>Extend our standard assessments to provide powerful hint and worked-solution functionality.
                 <br>You can store hints as metadata and write code to display them to the user.
                 <br>For an example of how to implement hints, refer to <a href="https://docs.learnosity.com/developers/developerguide/tutorials/tutorial_203">this tutorial.</a>
             </p>
