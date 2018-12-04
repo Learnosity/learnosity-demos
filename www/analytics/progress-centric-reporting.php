@@ -20,50 +20,34 @@ $security = [
 //simple api request object for Reports API
 $request = [
     'reports' => [
-
+		[
+			'id'        => 'progress-by-tag',
+			'type'      => 'progress-by-tag',
+			'user_id'   => 'mce_student_1',
+			'hierarchy' => 'CCSS'
+		],
         [
-            'id' => 'lastscore-tag',
-            'type' => 'lastscore-by-tag-by-user',
-            "display_time_spent" => true,
-            "hierarchy" => 'DepthofKnowledge',
-            "activity_id" => 'Weekly_Math_Quiz',
-            'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Skylar White'],
-                ['id' => 'mce_student_2', 'name' => 'Walter White'],
-                ['id' => 'mce_student_3', 'name' => 'Saul Goodman']
-            ]
-        ],
-        [
-            'id' => 'lastscore-list-item',
-            'type' => 'lastscore-by-item-by-user',
-            'scoring_type' => 'partial',
-            "display_time_spent" => true,
-            "display_item_numbers" => true,
-            "activity_id" => 'Weekly_Math_Quiz',
-            'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Skylar White'],
-                ['id' => 'mce_student_2', 'name' => 'Walter White'],
-                ['id' => 'mce_student_3', 'name' => 'Saul Goodman']
-            ]
-        ],
-        [
-            'id' => 'lastscore-activity-by-user',
-            'type' => 'lastscore-by-activity-by-user',
-            'scoring_type' => 'partial',
-            'user_id' => 'mce_student',
-            'display_time_spent' => true,
-            'activities' => [
-                ['id' => 'Weekly_Math_Quiz', 'name' => 'Weekly Math Quiz'],
-                ['id' => 'Summer_Test_1', 'name' => 'Summer Test']
+			"id"        => "progress-by-tag-by-user",
+            "type"      => "progress-by-tag-by-user",
+            "users"     => [
+                ["id" => "mce_student_1","name" => "Brian Moser"],
+                ["id" => "mce_student_2","name" => "John Carter"]
             ],
-            'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Walter White'],
-                ['id' => 'mce_student_2', 'name' => 'Saul Goodman']
-            ]
-        ]
+            "hierarchy_reference" => "CCSS"
+        ],
+		[
+		    'id'          => 'progress-single',
+		    'type'        => 'progress-single',
+            'ui'          => 'pie',
+		    'user_id'     => 'demo_student',
+		    'hierarchy'   => 'questiontype',
+		    'tag_hierarchy_path' => [
+		        [
+		            'type'  => 'questiontype',
+		            'name'  => 'mcq'
+		        ]
+		    ]
+		]
     ]
 ];
 
@@ -80,35 +64,35 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Teacher-Centric Reporting</h2>
-            <p>Easily learn more about your whole classroom at a glance. Our Reports API provides embededdable, group and classroom focused reports to provide a teacher or instructor with information about their classroom ability and progress.</p>
+            <h2>Coursework Progress Reporting</h2>
+            <p>Track the progress of a student, or group of students, against learning objectives, standards, or other tag-based alignments. Or build your own dashboard with our Progress Single report.</p>
             <ul>
-                <li><h4><a href="#lastscore-tag-report">Most recent score by user - with tag breakdown</a></h4></li>
-                <li><h4><a href="#lastscore-list-item-report">Most recent score by user - with item breakdown</a></h4></li>
-                <li><h4><a href="#lastscore-activity-by-user-report">Most recent score by user - with multiple activity breakdown</a></h4></li>
+                <li><h4><a href="#progress-by-tag-report">Progress by Tag</a></h4></li>
+                <li><h4><a href="#progress-by-tag-by-user-report">Progress by Tag by User</a></h4></li>
+                <li><h4><a href="#progress-single-report">Progress Single</a></h4></li>
             </ul>
         </div>
     </div>
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-tag-report"><a href="#lastscore-tag-report">Most recent score by user - with tag breakdown</a></h3>
-        <p>See your class or group's scores, all broken down according to tag. This report allows you to easily identify strengths and weaknesses based on the skills or subject areas associated with the content in the activity.</p>
-        <div id="lastscore-tag"></div>
+        <h3 id="progress-by-tag-report"><a href="#progress-by-tag-report">Progress by Tag</a></h3>
+        <p>See at a glance how a student performed against two levels of tagging. Note overall performance in Expressions and Equations, for example, but also drill down to see progress in individual Common Core standards.</p>
+        <div id="progress-by-tag"></div>
     </div>
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-list-item-report"><a href="#lastscore-list-item-report">Most recent score by user - with item breakdown</a></h3>
-        <p>Drill down and see exactly how each student did, per item. Helpful for identifying specific knowledge or understanding gaps in your group.</p>
-        <div id="lastscore-list-item"></div>
+        <h3 id="progress-by-tag-by-user-report"><a href="#progress-by-tag-by-user-report">Progress by tag by user</a></h3>
+        <p>Look at overall progress across multiple tags, but for multiple students in a single report.</p>
+        <div id="progress-by-tag-by-user"></div>
     </div>
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-activity-by-user-report"><a href="#lastscore-activity-by-user-report">Most recent score by user - with multiple activity breakdown</a></h3>
-        <p>This report provides an easy to use, at-a-glance view for multiple students, across multiple tests.</p>
-        <div id="lastscore-activity-by-user"></div>
+        <h3 id="progress-single-report"><a href="#progress-single-report">Progress single</a></h3>
+        <p>Use the Progress Single report when you want to build your own analytics views or dashboards out of several different progress metrics,</p>
+        <div style="width:100px;"><div id="progress-single"></div></div>
     </div>
 
     <script src="<?php echo $url_reports; ?>"></script>

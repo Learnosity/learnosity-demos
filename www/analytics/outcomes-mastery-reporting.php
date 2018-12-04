@@ -17,60 +17,140 @@ $security = [
     'domain'       => $domain
 ];
 
-//simple api request object for Reports API
 $request = [
-    'reports' => [
-
+    "reports" => [
         [
-            'id' => 'lastscore-tag',
-            'type' => 'lastscore-by-tag-by-user',
-            "display_time_spent" => true,
-            "hierarchy" => 'DepthofKnowledge',
-            "activity_id" => 'Weekly_Math_Quiz',
-            'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Skylar White'],
-                ['id' => 'mce_student_2', 'name' => 'Walter White'],
-                ['id' => 'mce_student_3', 'name' => 'Saul Goodman']
-            ]
-        ],
-        [
-            'id' => 'lastscore-list-item',
-            'type' => 'lastscore-by-item-by-user',
-            'scoring_type' => 'partial',
-            "display_time_spent" => true,
-            "display_item_numbers" => true,
-            "activity_id" => 'Weekly_Math_Quiz',
-            'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Skylar White'],
-                ['id' => 'mce_student_2', 'name' => 'Walter White'],
-                ['id' => 'mce_student_3', 'name' => 'Saul Goodman']
-            ]
-        ],
-        [
-            'id' => 'lastscore-activity-by-user',
-            'type' => 'lastscore-by-activity-by-user',
-            'scoring_type' => 'partial',
-            'user_id' => 'mce_student',
-            'display_time_spent' => true,
-            'activities' => [
-                ['id' => 'Weekly_Math_Quiz', 'name' => 'Weekly Math Quiz'],
-                ['id' => 'Summer_Test_1', 'name' => 'Summer Test']
+            "id" => "individual-item-skills-report",
+            "type" => "item-scores-by-tag-by-user",
+            "items_tags_live_dataset_reference" => "content-hierarchy-items-dataset-00001",
+            "session_items_live_dataset_reference" => "content-hierarchy-sessions-dataset-00001",
+            "users" => [
+                [
+                    "id" => "user_20181002a_00001",
+                    "name" => "Bart Simpson"
+                ]
             ],
-            'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Walter White'],
-                ['id' => 'mce_student_2', 'name' => 'Saul Goodman']
+            "column_tag_types" => [
+                "sh_skill"
+            ],
+            "row_tag_type" => "sh_dok",
+            "item_tags" => [
+                [
+                    "type" => "ch_title",
+                    "name" => "skill_hierarchy_001"
+                ]
             ]
-        ]
+        ],
+		[
+			"id" => "class-item-scores-report",
+			"type" => "item-scores-by-tag-by-user",
+			"items_tags_live_dataset_reference" => "content-hierarchy-items-dataset-00001",
+			"session_items_live_dataset_reference" => "content-hierarchy-sessions-dataset-00001",
+			"users" => [
+				[
+					"id" => "user_20180417a_00001",
+					"name" => "Milhouse Vanhouten"
+				],
+				[
+					"id" => "user_20180417a_00002",
+					"name" => "Bart Simpson"
+				],
+				[
+					"id" => "user_20180417a_00003",
+					"name" => "Sherri Mackleberry"
+				],
+				[
+					"id" => "user_20180417a_00004",
+					"name" => "Nelson Muntz"
+				],
+				[
+					"id" => "user_20180417a_00005",
+					"name" => "Terri Mackleberry"
+				],
+				[
+					"id" => "user_20180417a_00006",
+					"name" => "Lewis Clark"
+				],
+				[
+					"id" => "user_20180417a_00007",
+					"name" => "Adrian Belew"
+				],
+				[
+					"id" => "user_20180417a_00008",
+					"name" => "Terri Mackleberry"
+				],
+				[
+					"id" => "user_20180417a_00009",
+					"name" => "Martin Prince"
+				]
+			],
+			"row_tag_type" => 'ch_proficiency_strand',
+			"column_tag_types" => [
+				"ch_topic",
+				"ch_subtopic",
+				"ch_curriculum_code"
+			],
+			"item_tags" => [
+				[
+					"type" => "ch_title",
+					"name" => "content_hierarchy_001"
+				]
+			]
+		]
     ]
 ];
 
 $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
+
+
 ?>
+    <style id="base-styles">
+        .controls-container {
+            padding: 2em 0;
+            border: none;
+        }
+
+        .controls-container td {
+            border: inherit;
+            padding: 0 0 10px 0;
+        }
+
+        .controls-container label {
+            padding-right: 2em;
+        }
+
+        .report-container {
+            margin: auto;
+            height: 600px;
+            width: 100%;
+        }
+
+        .lrn-ibtbu-col .lrn-ibtbu-col-cell {
+            padding: 0;
+        }
+
+        .lrn-ibtbu-col .lrn-ibtbu-col-cell .lrn-ibtbu-percentage {
+            border: 3px solid transparent;
+            border-radius: 4px;
+            transition: border 0.6s;
+            padding: 1px;
+            overflow: hidden;
+        }
+    </style>
+    <style id="band-4-styles">
+        .lrn-ibtbu-col:not(.lrn-ibtbu-col_left):not(.lrn-ibtbu-col_expanded):not(.lrn-ibtbu-col_exploded):not(.lrn-ibtbu-col_inmotion):not(.lrn-ibtbu-col_explodeleft) .lrn-ibtbu-col-cell[data-custom_performance-band="4"] .lrn-ibtbu-percentage {
+            border-color: #65A00D;
+        }
+    </style>
+    <style id="band-1-styles">
+        .lrn-ibtbu-col:not(.lrn-ibtbu-col_left):not(.lrn-ibtbu-col_expanded):not(.lrn-ibtbu-col_exploded):not(.lrn-ibtbu-col_inmotion):not(.lrn-ibtbu-col_explodeleft) .lrn-ibtbu-col-cell[data-custom_performance-band="1"] .lrn-ibtbu-percentage {
+            border-color: #E14747;
+        }
+    </style>
+
+
 
     <div class="jumbotron section">
         <div class="toolbar">
@@ -83,39 +163,128 @@ $signedRequest = $Init->generate();
             <h2>Teacher-Centric Reporting</h2>
             <p>Easily learn more about your whole classroom at a glance. Our Reports API provides embededdable, group and classroom focused reports to provide a teacher or instructor with information about their classroom ability and progress.</p>
             <ul>
-                <li><h4><a href="#lastscore-tag-report">Most recent score by user - with tag breakdown</a></h4></li>
-                <li><h4><a href="#lastscore-list-item-report">Most recent score by user - with item breakdown</a></h4></li>
-                <li><h4><a href="#lastscore-activity-by-user-report">Most recent score by user - with multiple activity breakdown</a></h4></li>
+                <li><h4><a href="#item-scores-by-tag-by-user-report">Learning Outcomes - Individual</a></h4></li>
+                <li><h4><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes - Class (with visualization)</a></h4></li>
             </ul>
         </div>
     </div>
 
+
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-tag-report"><a href="#lastscore-tag-report">Most recent score by user - with tag breakdown</a></h3>
+        <h3 id="item-scores-by-tag-by-user-report"><a href="#item-scores-by-tag-by-user-report">Learning Outcomes - Individual</a></h3>
         <p>See your class or group's scores, all broken down according to tag. This report allows you to easily identify strengths and weaknesses based on the skills or subject areas associated with the content in the activity.</p>
-        <div id="lastscore-tag"></div>
+        <div id="individual-item-skills-report-container" class="report-container2">
+            <div id="individual-item-skills-report"></div>
+        </div>
     </div>
 
     <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-list-item-report"><a href="#lastscore-list-item-report">Most recent score by user - with item breakdown</a></h3>
-        <p>Drill down and see exactly how each student did, per item. Helpful for identifying specific knowledge or understanding gaps in your group.</p>
-        <div id="lastscore-list-item"></div>
+    <h3 id="item-scores-by-tag-by-user-class-report"><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes - Class (with visualization)</a></h3>
+    <p>
+        This demo is based on chapters of a Math curriculum. We've implemented some custom highlighting as an example of some of the powerful customizations possible with this report. You can also use your own custom logic to process and modify the percentages that are shown in every cell. This enables you to implement special weightings, exclusions or rounding in your report if required.
+    </p>
+
+    <div class="controls-container">
+        <table class="table-unbordered">
+            <tbody>
+            <tr>
+                <td style="min-width:240px">
+                    <label for="highlight-band-4">
+                        <input type="checkbox" id="highlight-band-4" name="highlight-band-4" checked> Highlight high scores</input>
+                    </label>
+                </td>
+                <td>Custom styling for scores of 80% or more, to identify areas of strength.</td>
+            </tr>
+            <tr>
+                <td style="min-width:240px">
+                    <label for="highlight-band-1">
+                        <input type="checkbox" id="highlight-band-1" name="highlight-band-1"> Highlight low scores</input>
+                    </label>
+                </td>
+                <td>Custom styling for scores of 60% or less, to identify problem areas.</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-activity-by-user-report"><a href="#lastscore-activity-by-user-report">Most recent score by user - with multiple activity breakdown</a></h3>
-        <p>This report provides an easy to use, at-a-glance view for multiple students, across multiple tests.</p>
-        <div id="lastscore-activity-by-user"></div>
+    <!-- Container for the reports api to load into -->
+    <div id="class-item-scores-report-container" class="report-container">
+        <div id="class-item-scores-report"></div>
     </div>
 
     <script src="<?php echo $url_reports; ?>"></script>
+
+
     <script>
+        var initializationObject = <?php echo $signedRequest; ?>;
 
-        var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>);
+        //optional callbacks for ready and/or error event(s)
+        var callbacks = {
+            readyListener: function () {
+                console.log("Reports API has successfully initialized.");
+            },
+            errorListener: function (err) {
+                console.log(err);
+            },
+            scoreMutator: function(scores) {
+                processScores(scores);
+            }
+        };
 
+        var reportsApp = LearnosityReports.init(initializationObject, callbacks);
+
+
+
+        initCustomControls();
+        applyVisualization();
+
+        function processScores(scores) {
+            scores.forEach(function(score) {
+
+                var maxScore = score.correct() + score.incorrect() + score.unmarked() + score.unattempted();
+                var performanceBand = 'none';
+
+                if (maxScore > 0) {
+                    var percent = Math.round(score.correct() / maxScore * 100);
+                    if      (percent >= 80) { performanceBand = '4';}
+                    else if (percent >= 70) { performanceBand = '3';}
+                    else if (percent >= 60) { performanceBand = '2';}
+                    else if (percent >=  0) { performanceBand = '1';}
+                }
+                score.domData({
+                    'performance-band': performanceBand
+                });
+            });
+        }
+
+
+        //add button handler for visualization checkboxes
+        function initCustomControls() {
+            window.highscoreStyles = document.getElementById('band-4-styles');
+            window.lowscoreStyles = document.getElementById('band-1-styles');
+
+            document.getElementById('highlight-band-1').addEventListener('click', applyVisualization);
+            document.getElementById('highlight-band-4').addEventListener('click', applyVisualization);
+        }
+
+        //show/hide borders to high and/or low scores
+        function applyVisualization() {
+
+            if (document.getElementById('highlight-band-4').checked) {
+                document.body.appendChild(window.highscoreStyles);
+            }
+            else {
+                window.highscoreStyles.remove();
+            }
+
+            if (document.getElementById('highlight-band-1').checked) {
+                document.body.appendChild(window.lowscoreStyles);
+            }
+            else {
+                window.lowscoreStyles.remove();
+            }
+        }
     </script>
 
 <?php
