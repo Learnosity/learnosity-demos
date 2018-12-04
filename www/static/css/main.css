@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
     background-color: #000000;
 }
 
-.container .row [class^=col-] {
+.section.index .row [class^=col-] {
     padding-left:0px;
     padding-right:0px;
 }

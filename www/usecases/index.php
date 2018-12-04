@@ -4,7 +4,7 @@ include_once '../env_config.php';
 include_once 'includes/header.php';
 ?>
 
-    <div class="jumbotron section">
+    <div class="jumbotron section index">
         <h1>Use Cases</h1>
         <div class="section-intro">
             <p>Combine multiple Learnosity products and APIs to build seamless use cases, from authoring all the way

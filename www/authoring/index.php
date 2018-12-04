@@ -4,7 +4,7 @@ include_once '../env_config.php';
 include_once 'includes/header.php';
 ?>
 
-    <div class="jumbotron section">
+    <div class="jumbotron section index">
         <h1><img class="product-logo" src="/static/images/product-author.png">Learnosity Author</h1>
         <div class="section-intro">
             <p><a href="http://www.learnosity.com/products/author/" target="_blank">Learnosity Author</a> allows you to easily integrate content creation, searching and filtering into

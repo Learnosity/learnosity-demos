@@ -3,7 +3,7 @@ include_once 'env_config.php';
 include_once 'includes/header.php';
 ?>
 
-<div class="landing section">
+<div class="landing section index">
     <div class="jumbotron">
         <div class="landing-intro">
             <div class="media">

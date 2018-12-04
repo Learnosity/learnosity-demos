@@ -10,7 +10,7 @@ include_once 'includes/header.php';
 include_once '../../lrn_config.php';
 ?>
 
-<div class="jumbotron section">
+<div class="jumbotron section index">
     <h1>End to End Demo</h1>
     <div class="section-intro">
         <p>This is an End to End demo covering the main areas of Learnosity APIs.<p>

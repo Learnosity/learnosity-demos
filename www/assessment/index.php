@@ -4,7 +4,7 @@ include_once '../env_config.php';
 include_once 'includes/header.php';
 ?>
 
-<div class="jumbotron section">
+<div class="jumbotron section index">
 
     <h1><img class="product-logo" src="/static/images/product-assessments.png">Learnosity Assessments</h1>
     <div class="section-intro">
