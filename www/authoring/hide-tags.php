@@ -73,8 +73,8 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Hide tags from the authoring UI</h2>
-            <p>Hide tags from display in the item list, as well as in the Settings > Tags tab, when editing an item, so the hidden tags cannot be added.</p>
+            <h2>Control Which Tags Appear in the Authoring Interface</h2>
+            <p>Hide tags from display in the item list, as well as in the Settings > Tags tab, when editing an item</p>
         </div>
     </div>
 

@@ -70,8 +70,8 @@
         </div>
         <div class="overview">
             <h2>Select Multiple Items from Item Browsing</h2>
-            <p>This item list mode allows users to choose and select multiple items - this is particularly useful when building an item picker as part of a larger solution.<br>
-                Your end application can then get the array of selected items using the <a href="https://docs.learnosity.com/authoring/author/methods#getSelectedItems">getSelectedItems()</a> method.</p>
+            <p>The item list mode allows users to choose and select multiple items. This is particularly useful when building an item picker as part of a larger solution.<br>
+                Your application can then get the array of selected items using the <a href="https://docs.learnosity.com/authoring/author/methods#getSelectedItems">getSelectedItems()</a> method.</p>
         </div>
     </div>
 

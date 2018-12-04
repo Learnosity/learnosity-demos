@@ -100,7 +100,7 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Browse your Item Bank using tag hierarchies</h2>
+            <h2>Browse Items Using Tag Hierarchies</h2>
             <p>Add a search control to the item list toolbar that filters by tag hierarchy and/or specific tags.</p>
         </div>
     </div>

@@ -118,9 +118,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Authoring Custom Feature</h2>
-            <p>
-                Set up the editor layout using the Author API to author Custom Features. In this demo, we've added a Custom Image Gallery Feature where you can add/remove and navigate through images.
+            <h2>Author Custom Features</h2>
+            <p>Create custom features that can appear in the authoring environment and assessments. In this demo, we've added a Custom Image Gallery feature that allows you to add/remove images and navigate through them.
             </p>
         </div>
     </div>

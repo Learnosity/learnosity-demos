@@ -82,8 +82,8 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Simple teacher / instructor authoring</h2>
-            <p>This demo provides a stripped down question editor - with simpler, opinionated templates to make question creation as simple as possible.</p>
+            <h2>Simplify Authoring for Teachers and Instructors</h2>
+            <p>This demo provides a stripped down question editor - with simpler, opinionated templates to make question creation as easy as possible.</p>
         </div>
     </div>
 

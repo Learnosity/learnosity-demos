@@ -84,7 +84,9 @@ $request = [
 					"name" => "Martin Prince"
 				]
 			],
-			"row_tag_type" => 'ch_proficiency_strand',
+            //add drill-down for each student
+            //  example used is proficiency data from this demo dataset
+			//"row_tag_type" => 'ch_proficiency_strand',
 			"column_tag_types" => [
 				"ch_topic",
 				"ch_subtopic",
@@ -106,6 +108,7 @@ $signedRequest = $Init->generate();
 
 
 ?>
+    <!--styles for both reports-->
     <style id="base-styles">
         .controls-container {
             padding: 2em 0;
@@ -139,17 +142,18 @@ $signedRequest = $Init->generate();
             overflow: hidden;
         }
     </style>
+
+    <!--visualization borders for class report-->
     <style id="band-4-styles">
-        .lrn-ibtbu-col:not(.lrn-ibtbu-col_left):not(.lrn-ibtbu-col_expanded):not(.lrn-ibtbu-col_exploded):not(.lrn-ibtbu-col_inmotion):not(.lrn-ibtbu-col_explodeleft) .lrn-ibtbu-col-cell[data-custom_performance-band="4"] .lrn-ibtbu-percentage {
+        #class-item-scores-report-container .lrn-ibtbu-col:not(.lrn-ibtbu-col_left):not(.lrn-ibtbu-col_expanded):not(.lrn-ibtbu-col_exploded):not(.lrn-ibtbu-col_inmotion):not(.lrn-ibtbu-col_explodeleft) .lrn-ibtbu-col-cell[data-custom_performance-band="4"] .lrn-ibtbu-percentage {
             border-color: #65A00D;
         }
     </style>
     <style id="band-1-styles">
-        .lrn-ibtbu-col:not(.lrn-ibtbu-col_left):not(.lrn-ibtbu-col_expanded):not(.lrn-ibtbu-col_exploded):not(.lrn-ibtbu-col_inmotion):not(.lrn-ibtbu-col_explodeleft) .lrn-ibtbu-col-cell[data-custom_performance-band="1"] .lrn-ibtbu-percentage {
+        #class-item-scores-report-container .lrn-ibtbu-col:not(.lrn-ibtbu-col_left):not(.lrn-ibtbu-col_expanded):not(.lrn-ibtbu-col_exploded):not(.lrn-ibtbu-col_inmotion):not(.lrn-ibtbu-col_explodeleft) .lrn-ibtbu-col-cell[data-custom_performance-band="1"] .lrn-ibtbu-percentage {
             border-color: #E14747;
         }
     </style>
-
 
 
     <div class="jumbotron section">
@@ -169,48 +173,53 @@ $signedRequest = $Init->generate();
         </div>
     </div>
 
-
+    <!--individual report-->
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
         <h3 id="item-scores-by-tag-by-user-report"><a href="#item-scores-by-tag-by-user-report">Learning Outcomes - Individual</a></h3>
         <p>See your class or group's scores, all broken down according to tag. This report allows you to easily identify strengths and weaknesses based on the skills or subject areas associated with the content in the activity.</p>
-        <div id="individual-item-skills-report-container" class="report-container2">
+
+        <div id="individual-item-skills-report-container" class="report-container">
+            <!-- Container for the reports api to load into -->
             <div id="individual-item-skills-report"></div>
         </div>
     </div>
 
+    <!--class report-->
     <div class="section pad-sml">
-    <h3 id="item-scores-by-tag-by-user-class-report"><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes - Class (with visualization)</a></h3>
-    <p>
-        This demo is based on chapters of a Math curriculum. We've implemented some custom highlighting as an example of some of the powerful customizations possible with this report. You can also use your own custom logic to process and modify the percentages that are shown in every cell. This enables you to implement special weightings, exclusions or rounding in your report if required.
-    </p>
+        <h3 id="item-scores-by-tag-by-user-class-report"><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes - Class (with visualization)</a></h3>
+        <p>
+            This demo is based on chapters of a Math curriculum. We've implemented some custom highlighting as an example of some of the powerful customizations possible with this report. You can also use your own custom logic to process and modify the percentages that are shown in every cell. This enables you to implement special weightings, exclusions or rounding in your report if required.
+        </p>
 
-    <div class="controls-container">
-        <table class="table-unbordered">
-            <tbody>
-            <tr>
-                <td style="min-width:240px">
-                    <label for="highlight-band-4">
-                        <input type="checkbox" id="highlight-band-4" name="highlight-band-4" checked> Highlight high scores</input>
-                    </label>
-                </td>
-                <td>Custom styling for scores of 80% or more, to identify areas of strength.</td>
-            </tr>
-            <tr>
-                <td style="min-width:240px">
-                    <label for="highlight-band-1">
-                        <input type="checkbox" id="highlight-band-1" name="highlight-band-1"> Highlight low scores</input>
-                    </label>
-                </td>
-                <td>Custom styling for scores of 60% or less, to identify problem areas.</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+        <!--visualization checkboxes-->
+        <div class="controls-container">
+            <table class="table-unbordered">
+                <tbody>
+                <tr>
+                    <td style="min-width:240px">
+                        <label for="highlight-band-4">
+                            <input type="checkbox" id="highlight-band-4" name="highlight-band-4" checked> Highlight high scores</input>
+                        </label>
+                    </td>
+                    <td>Custom styling for scores of 80% or more, to identify areas of strength.</td>
+                </tr>
+                <tr>
+                    <td style="min-width:240px">
+                        <label for="highlight-band-1">
+                            <input type="checkbox" id="highlight-band-1" name="highlight-band-1"> Highlight low scores</input>
+                        </label>
+                    </td>
+                    <td>Custom styling for scores of 60% or less, to identify problem areas.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <!-- Container for the reports api to load into -->
-    <div id="class-item-scores-report-container" class="report-container">
-        <div id="class-item-scores-report"></div>
+        <div id="class-item-scores-report-container" class="report-container">
+            <!-- Container for the reports api to load into -->
+            <div id="class-item-scores-report"></div>
+        </div>
     </div>
 
     <script src="<?php echo $url_reports; ?>"></script>

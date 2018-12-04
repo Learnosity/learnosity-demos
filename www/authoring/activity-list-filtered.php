@@ -84,7 +84,7 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Filter activities in your Item Bank</h2>
+            <h2>Filter Activities in Your Item Bank</h2>
             <p>The activity list mode allows authors to search the Learnosity hosted item bank for existing activities.
                 In this case, we've also passed configuration to only show activities that match certain criteria, using tagging.</p>
         </div>

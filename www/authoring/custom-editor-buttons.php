@@ -73,8 +73,8 @@ use LearnositySdk\Utils\Uuid;
             </ul>
         </div>
         <div class="overview">
-            <h2>Using Custom Editor Buttons & Style</h2>
-            <p>Extend the Learnosity editor toolbar with your own buttons, behavior and styles.</p>
+            <h2>Customize Editor Toolbars</h2>
+            <p>Extend the Learnosity rich text editor toolbar with your own buttons, behavior and styles.</p>
         </div>
     </div>
 

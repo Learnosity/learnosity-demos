@@ -104,7 +104,7 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Filter items in your Item Bank</h2>
+            <h2>Filter Items in Your Item Bank</h2>
             <p>The item list mode allows authors to search the Learnosity hosted item bank for existing items.
                 In this case, we've also passed configuration to only show items that match certain criteria, using tagging.</p>
         </div>

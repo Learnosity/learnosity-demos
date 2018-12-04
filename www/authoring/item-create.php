@@ -55,8 +55,8 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h2>Creating a new Item</h2>
-        <p>Below is a demo of the Author API editing a new item each time. Questions and features can be created or edited and are persisted to your Learnosity item bank.</p>
+        <h2>Create New Items</h2>
+        <p>Below is a demo of the Author API creating a new item each time. Questions and features can be added or edited and all are automatically saved in your Learnosity item bank.</p>
     </div>
 </div>
 

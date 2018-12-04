@@ -57,8 +57,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Open a new Item with an MCQ Question to edit</h2>
-            <p>Initialise the Author API to directly load a question. For more information refer to the init options docs and the <a href="https://docs.learnosity.com/authoring/author/methods#setWidget">setWidget</a> public method.</p>
+            <h2>Edit Questions Directly</h2>
+            <p>Initialise the Author API to directly load a question for quick editing. For more information refer to the init options docs and the <a href="https://docs.learnosity.com/authoring/author/methods#setWidget">setWidget()</a> public method.</p>
         </div>
     </div>
 

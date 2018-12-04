@@ -55,8 +55,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Browse items in your itembank</h2>
-            <p>The item list mode allows authors to browse and search the Learnosity hosted item bank for existing items.
+            <h2>Browse Items in Your Item Bank</h2>
+            <p>The item list mode allows authors to browse and search the Learnosity-hosted item bank for existing items.
                 In this demo, we've enabled creation of new items, but this functionality can be disabled as needed.</p>
         </div>
     </div>

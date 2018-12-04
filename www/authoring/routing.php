@@ -43,8 +43,8 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Navigate your Item Bank</h2>
-            <p>Learnosity&apos;s Author API allows the enabling of linkable, bookmarkable, shareable URLs to navigate directly to locations within the app.</p>
-            <p>Our <a href="http://docs.learnosity.com/authoring/author/knowledgebase/author-api-routing">knowledgebase article</a> demonstrates how easy it is to set up routing with the Author API by using the <a href="http://docs.learnosity.com/authoring/author/publicmethods#on-events">&lsquo;navigate&rsquo; event</a> and the <a href="http://docs.learnosity.com/authoring/author/publicmethods#navigate">&lsquo;navigate&rsquo; public method</a>.</p>
+            <p>Programmatically search and navigate to existing content, as well as create new content, with linkable, bookmarkable, shareable URLs.</p>
+            <p>Our <a href="http://docs.learnosity.com/authoring/author/knowledgebase/author-api-routing">knowledgebase article</a> demonstrates how easy it is to set up routing with the Author API by using the <a href="http://docs.learnosity.com/authoring/author/publicmethods#on-events">&lsquo;navigate&rsquo; event</a> and the <a href="http://docs.learnosity.com/authoring/author/publicmethods#navigate">&lsquo;navigate()’ public method</a>.</p>
         </div>
     </div>
 

@@ -42,7 +42,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Browse Activities in your itembank</h2>
+            <h2>Browse Activities in Your Item Bank</h2>
             <p>The activity list mode allows authors to browse and search the Learnosity hosted item bank for existing activities.
                 In this demo, we've enabled creation of new activities, but this functionality can be disabled as needed.</p>
         </div>

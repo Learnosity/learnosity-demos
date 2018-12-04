@@ -42,9 +42,9 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Creating a new Activity / Test (using Author API)</h2>
+            <h2>Create New Activities</h2>
             <p>
-                The activity edit mode allows authors to create and edit actvities.
+                The activity edit mode allows authors to create and edit activities that are automatically saved to your Learnosity-hosted item bank.
             </p>
         </div>
     </div>

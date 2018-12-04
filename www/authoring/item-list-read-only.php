@@ -78,7 +78,7 @@
             </ul>
         </div>
         <div class="overview">
-            <h2>Set your Item Bank to read-only</h2>
+            <h2>Preview Your Item Bank in Read-Only Mode</h2>
             <p>Allow browsing of your item bank, including item, question, and feature previews, but disable editing.</p>
         </div>
     </div>

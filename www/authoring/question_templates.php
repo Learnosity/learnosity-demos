@@ -157,8 +157,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Using Custom Question Templates for Authoring</h2>
-            <p>Create your own question templates that customize portions of the question editor layout and prepopulate the new question data with default values.</p>
+            <h2>Build Custom Question Templates</h2>
+            <p>Create your own question templates that customize portions of the question editor layout and pre-populate the new question data with default values.</p>
         </div>
     </div>
 
