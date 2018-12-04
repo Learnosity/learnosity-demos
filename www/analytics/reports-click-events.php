@@ -40,7 +40,7 @@ $request = [
     ]
 ];
 
-$Init = new Init('items', $security, $consumer_secret, $request);
+$Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
@@ -62,7 +62,6 @@ $signedRequest = $Init->generate();
         <!-- Container for the reports api to load into -->
         <h4>Report</h4>
         <div id="report"></div>
-        <div id="click-event-report"></div>
     </div>
 
     <!-- Demo Report OnClick Modal -->
@@ -76,24 +75,28 @@ $signedRequest = $Init->generate();
     <script src="<?php echo $url_reports; ?>"></script>
     <script>
 
-        var initOptions = <?php echo $signedRequest; ?>;
+        var initializationObject = <?php echo $signedRequest; ?>;
 
-        var reportsApp = LearnosityReports.init(initOptions, {
-                readyListener: onReportsReady
+        //optional callbacks for ready
+        var callbacks = {
+            readyListener: function () {
+                onReportsReady();
+            },
+            errorListener: function (err) {
+                console.log(err);
             }
-        );
+        };
 
-
+        var reportsApp = LearnosityReports.init(initializationObject, callbacks);
 
         function onReportsReady() {
-            var onClickFunction = function(data, target) {
+            // load modal from a remote location that initialize an instance of the reports api
+            var onClickFunction = function(data) {
                 $('#lrn-reports-demos-modal').modal({
-                    'remote': 'demo-request.php'
+                    'remote': 'reports-click-events-modal.php'
                     + '?session_id=' + data.session_id
                     + '&user_id=' + data.user_id
                     + '&activity_id=' + data.activity_id
-                    + '&report=sessions-summary'
-                    + '&context=modal'
                 });
 
                 $('body').on('hidden.bs.modal', '.modal', function () {
@@ -102,31 +105,13 @@ $signedRequest = $Init->generate();
                 });
             };
 
-            /* onclick events */
             var groupLastScoreByActivityByUser = reportsApp.getReport('report');
 
+            // onclick events
             groupLastScoreByActivityByUser.on('click:score', function (data) {
-                onClickFunction(data, 'click-event-report');
+                onClickFunction(data);
             });
-
-
-            function displayReport() {
-                var report = window.location.hash.substring(1);
-                if (report) {
-                    var parts = report.split('-');
-                    if (parts.length >= 3) {
-                        if (parts[1] !== 'session') {
-                            $('#accordion-' + parts[0] + '-' + parts[1]).click();
-                        }
-                        $('#' + report).click();
-                        $(window).scrollTop($('#' + report).offset().top);
-                    }
-                }
-                return false;
-            }
-            displayReport();
         }
-
 
     </script>
 

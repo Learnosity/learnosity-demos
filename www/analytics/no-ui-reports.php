@@ -55,25 +55,23 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"
-                                                                                                     data-toggle="modal"
-                                                                                                     data-target="#initialisation-preview"><span
-                                class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a
-                            href="https://docs.learnosity.com/assessment" title="Documentation"><span
-                                class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object">
+                    <a href="#" data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a>
+                </li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation">
+                    <a href="https://docs.learnosity.com/assessment" title="Documentation"><span class="glyphicon glyphicon-book"></span></a>
+                </li>
             </ul>
         </div>
         <div class="overview">
             <h2>No UI</h2>
             <p>Turn off the default rendering and access the raw data to present reports any way you choose. Preview the
-                <a href="#" data-toggle="modal" data-target="#initialisation-preview">initialisation object</a> to see
-                how to turn off rendering.</p>
+                <a href="#" data-toggle="modal" data-target="#initialisation-preview">initialisation object</a> to see how to turn off rendering.</p>
             <p>View the page source to see how to use event listeners to access the raw data.</p>
             <span>Render visual reports</span>
-            <div style="display=inline-block;" class="lrn-switch"><input id="render_toggle" type="checkbox"
-                                                                         class="input" <?php if ($render) echo "checked"; ?>><span
-                        class="lrn-switch-trigger"></span></div>
+            <div style="display=inline-block;" class="lrn-switch">
+                <input id="render_toggle" type="checkbox" class="input" <?php if ($render) echo "checked"; ?>><span class="lrn-switch-trigger"></span>
+            </div>
         </div>
     </div>
 
@@ -100,13 +98,19 @@ $signedRequest = $Init->generate();
             window.location.href = "?render=" + !$('#render_toggle').prop('checked');
         });
 
+        var initializationObject = <?php echo $signedRequest; ?>;
+
+        //optional callbacks for ready
         var callbacks = {
-            readyListener: function() {
+            readyListener: function () {
                 getReportData();
+            },
+            errorListener: function (err) {
+                console.log(err);
             }
         };
 
-        var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, callbacks);
+        var reportsApp = LearnosityReports.init(initializationObject, callbacks);
 
         function getReportData(reportId) {
             // Retrieve the report from the Reports API instance
