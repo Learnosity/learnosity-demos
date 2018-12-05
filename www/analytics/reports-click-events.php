@@ -60,7 +60,7 @@ $signedRequest = $Init->generate();
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h4>Report</h4>
+        <h4>Report: Last Score by Activity by User</h4>
         <div id="report"></div>
     </div>
 
@@ -75,18 +75,8 @@ $signedRequest = $Init->generate();
     <script src="<?php echo $url_reports; ?>"></script>
     <script>
 
-<<<<<<< Updated upstream
         var initializationObject = <?php echo $signedRequest; ?>;
-||||||| merged common ancestors
-        var initOptions = <?php echo $signedRequest; ?>;
-=======
-        var initOptions = <?php echo $signedRequest; ?>;
-        var callbacks = {
-            readyListener: onReportsReady
-        }
->>>>>>> Stashed changes
 
-<<<<<<< Updated upstream
         //optional callbacks for ready
         var callbacks = {
             readyListener: function () {
@@ -96,15 +86,6 @@ $signedRequest = $Init->generate();
                 console.log(err);
             }
         };
-||||||| merged common ancestors
-        var reportsApp = LearnosityReports.init(initOptions, {
-                readyListener: onReportsReady
-            }
-        );
-
-=======
-        var reportsApp = LearnosityReports.init(initOptions, callbacks);
->>>>>>> Stashed changes
 
         var reportsApp = LearnosityReports.init(initializationObject, callbacks);
 
@@ -124,63 +105,13 @@ $signedRequest = $Init->generate();
                 });
             };
 
-<<<<<<< Updated upstream
-||||||| merged common ancestors
-            /* onclick events */
-=======
-            // onclick events
->>>>>>> Stashed changes
             var groupLastScoreByActivityByUser = reportsApp.getReport('report');
 
             // onclick events
             groupLastScoreByActivityByUser.on('click:score', function (data) {
                 onClickFunction(data);
             });
-<<<<<<< Updated upstream
-||||||| merged common ancestors
-
-
-            function displayReport() {
-                var report = window.location.hash.substring(1);
-                if (report) {
-                    var parts = report.split('-');
-                    if (parts.length >= 3) {
-                        if (parts[1] !== 'session') {
-                            $('#accordion-' + parts[0] + '-' + parts[1]).click();
-                        }
-                        $('#' + report).click();
-                        $(window).scrollTop($('#' + report).offset().top);
-                    }
-                }
-                return false;
-            }
-            displayReport();
-=======
-
-            function displayReport() {
-                var report = window.location.hash.substring(1);
-                if (report) {
-                    var parts = report.split('-');
-                    if (parts.length >= 3) {
-                        if (parts[1] !== 'session') {
-                            $('#accordion-' + parts[0] + '-' + parts[1]).click();
-                        }
-                        $('#' + report).click();
-                        $(window).scrollTop($('#' + report).offset().top);
-                    }
-                }
-                return false;
-            }
-            displayReport();
->>>>>>> Stashed changes
         }
-<<<<<<< Updated upstream
-
-||||||| merged common ancestors
-
-
-=======
->>>>>>> Stashed changes
     </script>
 
 <?php

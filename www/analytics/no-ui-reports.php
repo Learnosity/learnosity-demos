@@ -56,33 +56,12 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-<<<<<<< Updated upstream
                 <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object">
                     <a href="#" data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a>
                 </li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation">
                     <a href="https://docs.learnosity.com/assessment" title="Documentation"><span class="glyphicon glyphicon-book"></span></a>
                 </li>
-||||||| merged common ancestors
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"
-                                                                                                     data-toggle="modal"
-                                                                                                     data-target="#initialisation-preview"><span
-                                class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a
-                            href="https://docs.learnosity.com/assessment" title="Documentation"><span
-                                class="glyphicon glyphicon-book"></span></a></li>
-=======
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object">
-                    <a href="#" data-toggle="modal" data-target="#initialisation-preview">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </a>
-                </li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation">
-                    <a href="https://docs.learnosity.com/assessment" title="Documentation">
-                        <span class="glyphicon glyphicon-book"></span>
-                    </a>
-                </li>
->>>>>>> Stashed changes
             </ul>
         </div>
         <div class="overview">
@@ -91,19 +70,9 @@ $signedRequest = $Init->generate();
                 <a href="#" data-toggle="modal" data-target="#initialisation-preview">initialisation object</a> to see how to turn off rendering.</p>
             <p>View the page source to see how to use event listeners to access the raw data.</p>
             <span>Render visual reports</span>
-<<<<<<< Updated upstream
             <div style="display=inline-block;" class="lrn-switch">
                 <input id="render_toggle" type="checkbox" class="input" <?php if ($render) echo "checked"; ?>><span class="lrn-switch-trigger"></span>
             </div>
-||||||| merged common ancestors
-            <div style="display=inline-block;" class="lrn-switch"><input id="render_toggle" type="checkbox"
-                                                                         class="input" <?php if ($render) echo "checked"; ?>><span
-                        class="lrn-switch-trigger"></span></div>
-=======
-            <div style="display=inline-block;" class="lrn-switch">
-                <input id="render_toggle" type="checkbox" class="input" <?php if ($render) echo "checked"; ?>>
-                <span class="lrn-switch-trigger"></span></div>
->>>>>>> Stashed changes
         </div>
     </div>
 
@@ -130,40 +99,19 @@ $signedRequest = $Init->generate();
             window.location.href = "?render=" + !$('#render_toggle').prop('checked');
         });
 
-<<<<<<< Updated upstream
         var initializationObject = <?php echo $signedRequest; ?>;
 
         //optional callbacks for ready
-||||||| merged common ancestors
-=======
-        var initializationObject = <?php echo $signedRequest; ?>;
-
->>>>>>> Stashed changes
         var callbacks = {
-<<<<<<< Updated upstream
             readyListener: function () {
                 getReportData();
             },
             errorListener: function (err) {
                 console.log(err);
             }
-||||||| merged common ancestors
-            readyListener: function() {
-                getReportData();
-            }
-=======
-            readyListener: getReportData
->>>>>>> Stashed changes
         };
 
-<<<<<<< Updated upstream
         var reportsApp = LearnosityReports.init(initializationObject, callbacks);
-||||||| merged common ancestors
-        var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, callbacks);
-=======
-        var reportsApp = LearnosityReports.init(initializationObject, callbacks);
-
->>>>>>> Stashed changes
 
         function getReportData(reportId) {
             // Retrieve the report from the Reports API instance
