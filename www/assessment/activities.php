@@ -48,7 +48,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Build Pre-Written Fixed Form Assessments</h2>
-            <p>Build fixed-form activities in Learnosity, and deliver high quality pre-authored assessments to your end-users using Activities. Activities are a pre-authored fixed form test for multiple items, along with test configuration, authored in the Learnosity Author site, or via the Author API.</p>
+            <p>Build fixed-form activities in Learnosity, and deliver high-quality pre-authored assessments to your end-users using Activities. Activities are a pre-authored fixed form test for multiple items, along with test configuration, authored in the Learnosity Author site, or via the Author API.</p>
         </div>
     </div>
 

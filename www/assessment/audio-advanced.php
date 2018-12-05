@@ -43,7 +43,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Advanced Audio Analysis</h2>
+            <h2>Provide Advanced Audio Features</h2>
             <p>Using Learnosity's Questions API public methods, we can provide a level of analysis of recorded audio, to ensure the recorded sample is of the required quality before submitting.</p>
         </div>
     </div>

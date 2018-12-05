@@ -42,7 +42,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Navigate your Item Bank</h2>
+            <h2>Navigate Your Item Bank</h2>
             <p>Programmatically search and navigate to existing content, as well as create new content, with linkable, bookmarkable, shareable URLs.</p>
             <p>Our <a href="http://docs.learnosity.com/authoring/author/knowledgebase/author-api-routing">knowledgebase article</a> demonstrates how easy it is to set up routing with the Author API by using the <a href="http://docs.learnosity.com/authoring/author/publicmethods#on-events">&lsquo;navigate&rsquo; event</a> and the <a href="http://docs.learnosity.com/authoring/author/publicmethods#navigate">&lsquo;navigate()’ public method</a>.</p>
         </div>

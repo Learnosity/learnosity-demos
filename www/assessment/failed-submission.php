@@ -52,7 +52,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Failed Submission</h2>
+            <h2>Handling Submission Failures and Preserving Responses</h2>
             <p>This demo simulates submitting an activity where the network connection isn't available.</p>
             <p>Students get 3 attempts to submit a test before being presented with options to manually
             retrieve their encoded assessment data.</p>

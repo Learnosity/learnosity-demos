@@ -7,7 +7,7 @@ include_once 'includes/header.php';
 <div class="jumbotron section index">
     <h1><img class="product-logo" src="/static/images/product-analytics.png">Learnosity Analytics</h1>
     <div class="section-intro">
-        <p>Learnosity Analytics provides a suite of powerful tools, covering both embeddable, user friendly reporting, perfectly suited for quickly building out your product, as well as granular back end data-centric functionality to power your own bespoke reporting needs.</p>
+        <p>Learnosity Analytics provides a suite of powerful tools, covering both embeddable, user-friendly reporting, perfectly suited for quickly building out your product, as well as granular back end data-centric functionality to power your own bespoke reporting needs.</p>
         <ul>
             <li><h4><a class="blue-chevron" href="#dashboard-reporting">Embedding dashboard-style Reporting</a></h4></li>
             <li><h4><a class="blue-chevron" href="#customizing-reporting">Customizing your reporting experience</a></h4></li>
@@ -20,14 +20,14 @@ include_once 'includes/header.php';
 
 
     <h3 id="dashboard-reporting"><a href="#dashboard-reporting">Embedding dashboard-style Reporting</a></h3>
-    <p>Easily use Learnosity's Reports API to embed visual reports, ranging from student & classroom reporting to large scale district reports!</p>
+    <p>Easily use Learnosity's Reports API to embed visual reports, ranging from student & classroom reporting to large-scale district reports!</p>
     <br>
 
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Display Student-Centric reports</h2>
+                    <h2 class="panel-title">Display Student-Centric Reports</h2>
                 </div>
                 <div class="panel-body">
                     <p>Learn more about individual students in an easy, in-depth fashion!</p>
@@ -41,7 +41,7 @@ include_once 'includes/header.php';
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Present Classroom & Teacher-Centric reports</h2>
+                    <h2 class="panel-title">Present Classroom & Teacher-Centric Reports</h2>
                 </div>
                 <div class="panel-body">
                     <p>Monitor and compare your students at a glance.</p>
@@ -75,7 +75,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Display Large-Scale Group/District Reports</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Discover large scale group reporting and let Learnosity take care of the heavy lifting.</p>
+                    <p>Discover large-scale group reporting and let Learnosity take care of the heavy lifting.</p>
                     <p class="text-right">
                         <a class="demo_link"  href="./group-reporting.php">Demo</a>
                     </p>

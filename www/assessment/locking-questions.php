@@ -56,7 +56,7 @@ $signedRequest = $Init->generate();
         <div class="overview">
             <h2>Locking Questions</h2>
             <p>
-                In this demo we customize the <em>Check Answer</em> button logic to display a message on every question attempt. When the question max <em>feedback_attempts</em> is reached the question is locked and the correct answers displayed.
+                In this demo, we customize the <em>Check Answer</em> button logic to display a message on every question attempt. When the question max <em>feedback_attempts</em> is reached the question is locked and the correct answers displayed.
                 <br>Try choosing an incorrect answer for the questions below to see this in action.
             <p>
         </div>

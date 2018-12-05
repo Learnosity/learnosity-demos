@@ -8,7 +8,7 @@ include_once 'includes/header.php';
 
     <h1><img class="product-logo" src="/static/images/product-assessments.png">Learnosity Assessments</h1>
     <div class="section-intro">
-        <p>Learnosity Assessments allow you to access content from your Learnosity-hosted item bank, and deliver that content to your end-users. You can present assessments using a full assessment player or embed each question into a page exactly where you want it to be, all while capturing student responses and scoring in a scalable, robust manner.</p>
+        <p>Learnosity Assessments allow you to access content from your Learnosity-hosted item bank and deliver that content to your end-users. You can present assessments using a full assessment player or embed each question into a page exactly where you want it to be, all while capturing student responses and scoring in a scalable, robust manner.</p>
         <p>
         <ul>
             <li><h4><a class="blue-chevron" href="#delivering">Delivering Assessments</a></h4></li>
@@ -30,7 +30,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Build Pre-Written Fixed Form Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Build fixed-form activities in Learnosity, and deliver high quality pre-authored assessments to your end-users.</p>
+                    <p>Build fixed-form activities in Learnosity, and deliver high-quality pre-authored assessments to your end-users.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./activities.php">Demo</a>
                     </p>
@@ -73,7 +73,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Create Branching Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Use the power of Learnosity's branching assessment format to build an activity that seamlesssly adapts to your user.</p>
+                    <p>Use the power of Learnosity's branching assessment format to build an activity that seamlessly adapts to your user.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./branching.php">Demo</a>
                     </p>
@@ -166,7 +166,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Display Distractor Rationale & Feedback</h2>
+                    <h2 class="panel-title">Display Distractor Rationale and Feedback</h2>
                 </div>
                 <div class="panel-body">
                     <p>Use Learnosity metadata to power distractor rationale for inline student feedback.</p>
@@ -179,7 +179,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Increase Resilience to Network Issues</h2>
+                    <h2 class="panel-title">Handling Submission Failures and Preserving Responses</h2>
                 </div>
                 <div class="panel-body">
                     <p>Give your students options for reattempting submissions, or saving responses, when a network connection is suddenly unavailable.<p>
@@ -299,7 +299,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Enable Annotations for Student Use</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Annotations API offers students the ability to type notes, add multi color highlights to text, place sticky notes onto the page, and use a pen tool to annotate the content.</p>
+                    <p>Annotations API offers students the ability to type notes, add multi-color highlights to text, place sticky notes onto the page, and use a pen tool to annotate the content.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./annotations.php">Demo</a>
                     </p>

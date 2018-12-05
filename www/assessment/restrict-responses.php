@@ -53,7 +53,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Items API - Restrict Responses</h2>
+            <h2>Restrict Responses and Navigation</h2>
             <p>This demos uses Items API (assess) to set a callback function on <em>item:beforeunload</em> and display a message when student haven't answered all the possible responses.<p>
         </div>
     </div>

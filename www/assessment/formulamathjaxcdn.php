@@ -44,7 +44,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Running Your Own Math Rendering</h2>
+            <h2>Use Your Existing MathJax Instance for Math Rendering</h2>
             <p>This demo demonstrates how to disable Learnosity's rendering and load your own MathJax CDN.</p>
         </div>
     </div>

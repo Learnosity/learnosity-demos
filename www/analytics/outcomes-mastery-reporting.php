@@ -164,8 +164,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Teacher-Centric Reporting</h2>
-            <p>Easily learn more about your whole classroom at a glance. Our Reports API provides embededdable, group and classroom focused reports to provide a teacher or instructor with information about their classroom ability and progress.</p>
+            <h2>Analyze Learning Outcomes and Mastery</h2>
+            <p>Drill down in individual and class-based reports to see percent success in learning outcomes and mastery. Optionally visualize data with score analysis and more.</p>
             <ul>
                 <li><h4><a href="#item-scores-by-tag-by-user-report">Learning Outcomes - Individual</a></h4></li>
                 <li><h4><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes - Class (with visualization)</a></h4></li>

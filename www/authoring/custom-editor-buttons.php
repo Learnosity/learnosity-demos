@@ -74,7 +74,7 @@ use LearnositySdk\Utils\Uuid;
         </div>
         <div class="overview">
             <h2>Customize Editor Toolbars</h2>
-            <p>Extend the Learnosity rich text editor toolbar with your own buttons, behavior and styles.</p>
+            <p>Extend the Learnosity rich text editor toolbar with your own buttons, behavior, and styles.</p>
             <p>This demo demonstrates how you can include a custom button in the toolbar to help embed YouTube videos into your stimulus and answers.</p>
         </div>
     </div>

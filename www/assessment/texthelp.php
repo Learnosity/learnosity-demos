@@ -52,11 +52,11 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h2>Partner: Texthelp Integration</h2>
+        <h2>Using Third-Party Assistive Tools: TextHelp</h2>
         <p>This demo shows how Texthelp's SpeechStream product can be integrated into a Learnosity assessment with ease.</p>
         <p><a href="https://www.texthelp.com/en-us/products/speechstream">SpeechStream</a> is a cloud based JavaScript software solution that allows publishers to embed text-to-speech read aloud within their products. This feature is used by students with learning disabilities, such as dyslexia, struggling readers, English language learners, auditory learners, and students with mild vision impairments.</p>
         <a href='https://www.texthelp.com' target='_blank' title='Learn about solutions from our partner Texthelp'><img src='https://www.texthelp.com/CMSTemplates/Texthelp/Includes/build/assets/images/logo.png' alt='Texthelp Logo' class='pull-right' /></a>
-        <p>If you have a Texthelp licence - it integrates effortlessly with Learnosity.</p>
+        <p>If you have a Texthelp license - it integrates effortlessly with Learnosity.</p>
         <p>The SpeechStream Toolbar will appear when the assessment is started and each Item will be read as soon as it loads.</p>
     </div>
 </div>

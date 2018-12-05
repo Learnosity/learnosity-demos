@@ -90,8 +90,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Student-Centric Reporting</h2>
-            <p>Learn more about individual students in an easy, in-depth fashion! Our Reports API provides embededdable, student focused reports to provide a student with additional information and feedback, or provide a teacher with a drilled down view of their student progress.
+            <h2>Display Student-Centric reports</h2>
+            <p>Learn more about individual students in an easy, in-depth fashion! Our Reports API provides embeddable, student-focused reports to provide a student with additional information and feedback or provide a teacher with a drilled down view of their student progress.
             <ul>
                 <li><h4><a href="#sessions-summary-report">Sessions Summary</a></h4></li>
                 <li><h4><a href="#sessions-summary-tag-report">Sessions Summary - with Tag breakdown</a></h4></li>

@@ -84,7 +84,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Customize the Question Editing Layout</h2>
-            <p>Our editor. Your item bank. You can customise the Question Editor's layout to suit your authoring and design needs. For more information, refer to <a href="https://docs.learnosity.com/authoring/questioneditor/knowledgebase/QE_editlayout" target="blank">the docs page</a>.</p>
+            <p>Our editor. Your item bank. You can customize the Question Editor's layout to suit your authoring and design needs. For more information, refer to <a href="https://docs.learnosity.com/authoring/questioneditor/knowledgebase/QE_editlayout" target="blank">the docs page</a>.</p>
         </div>
     </div>
 

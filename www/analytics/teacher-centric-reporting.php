@@ -80,8 +80,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Teacher-Centric Reporting</h2>
-            <p>Easily learn more about your whole classroom at a glance. Our Reports API provides embededdable, group and classroom focused reports to provide a teacher or instructor with information about their classroom ability and progress.</p>
+            <h2>Present Classroom and Teacher-Centric Reports</h2>
+            <p>Easily learn more about your whole classroom at a glance. Our Reports API provides embeddable, group and classroom-focused reports to provide a teacher or instructor with information about their classroom ability and progress.</p>
             <ul>
                 <li><h4><a href="#lastscore-tag-report">Most recent score by user - with tag breakdown</a></h4></li>
                 <li><h4><a href="#lastscore-list-item-report">Most recent score by user - with item breakdown</a></h4></li>

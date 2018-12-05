@@ -29,7 +29,7 @@ $version = $lts_version;
         </ul>
     </div>
     <div class="overview">
-        <h1>Data API</h1>
+        <h2>View Data API Examples</h2>
         <p>A back office service that allows authenticated users to retrieve and store information from
         within the Learnosity Assessment platform. Only authenticated users can access their information, over SSL.<p>
         <p>The examples below are a (readonly) subset of what you can do with the Data API. Integration is recommended using our

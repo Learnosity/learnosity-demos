@@ -65,9 +65,9 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>No UI</h2>
+            <h2>Disable Reporting UI to Work Directly with Data</h2>
             <p>Turn off the default rendering and access the raw data to present reports any way you choose. Preview the
-                <a href="#" data-toggle="modal" data-target="#initialisation-preview">initialisation object</a> to see how to turn off rendering.</p>
+                <a href="#" data-toggle="modal" data-target="#initialisation-preview">initialization object</a> to see how to turn off rendering.</p>
             <p>View the page source to see how to use event listeners to access the raw data.</p>
             <span>Render visual reports</span>
             <div style="display=inline-block;" class="lrn-switch">

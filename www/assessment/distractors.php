@@ -50,7 +50,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Rendering Distractor Rationale upon Validation</h2>
+            <h2>Display Distractor Rationale and Feedback</h2>
             <p>
                 Distractor rationale are hints shown to a student when they select an incorrect answer.
                 <br>Try choosing an incorrect answer for the questions below to see distractor rationale in action.

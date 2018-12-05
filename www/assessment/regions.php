@@ -63,7 +63,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Regions</h2>
+            <h2>Customize the Assessment Player UI</h2>
             <p>Learnosity regions are a part of the Assess API, and allow you to create a personalized, fluid and extensible assessment UI.</p>
             <p>All visual elements such as buttons, timer, pager, etc. are modularized in such a way that they can be placed
             in different <em>regions</em> of the assessment container.</p>

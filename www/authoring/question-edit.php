@@ -58,7 +58,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Edit Questions Directly</h2>
-            <p>Initialise the Author API to directly load a question for quick editing. For more information refer to the init options docs and the <a href="https://docs.learnosity.com/authoring/author/methods#setWidget">setWidget()</a> public method.</p>
+            <p>Initialize the Author API to directly load a question for quick editing. For more information refer to the init options docs and the <a href="https://docs.learnosity.com/authoring/author/methods#setWidget">setWidget()</a> public method.</p>
         </div>
     </div>
 
