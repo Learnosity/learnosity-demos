@@ -17,12 +17,12 @@ include_once 'includes/header.php';
             </ul>
             </p>
         </div>
-
+    </div>
+    <div class="section index">
         <h3 id="browsing">Browsing Items and Activities</h3>
         <p>Use our Author API to provide a list of items or activities created in Learnosity, filter these lists for
             access control, or limit to read-only mode for review.</p> <!--replace with CSS-->
         <br>
-
 
         <div class="row">
             <div class="col-md-6">
@@ -173,7 +173,8 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="section index">
 
         <h3 id="creating">Creating Content, Questions, and Features</h3>
         <p>Discover how to create powerful and complex assessment and learning content quickly and easily!</p>
@@ -238,6 +239,9 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
+
+    </div>
+    <div class="section index">
 
         <h3 id="integrate">Customizing and Integrating into your Authoring environment</h3>
         <p>Learnosity's APIs are designed to be easily customized and extended, allowing you to build your content management system the way you want.</p> <!--replace with CSS-->
