@@ -50,15 +50,20 @@
                         }
                 ?>
             </ul>
-            <div class="nav-sec-wrapper">
-                <ul class="nav navbar-nav nav-sec">
-                    <li>
-                        <a href="https://github.com/Learnosity/learnosity-demos/blob/master/www<?php echo $_SERVER['REQUEST_URI']?>" class="view_source">
-                            </span>View source</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <?php
+                if ( strpos($_SERVER['PHP_SELF'], "index.php") == false
+                     or strpos($_SERVER['PHP_SELF'], "data/") != false) {
+					echo '<div class="nav-sec-wrapper">
+                        <ul class="nav navbar-nav nav-sec">
+                            <li>
+                                <a href="https://github.com/Learnosity/learnosity-demos/blob/master/www<?php echo $_SERVER[\'REQUEST_URI\']?>" class="view_source">
+                                    </span>View source</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>';
+			    };
+            ?>
         </div>
     </div>
 </div>

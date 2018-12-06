@@ -70,8 +70,14 @@ $signedRequest = $Init->generate();
     // example function to be called by assetRequest
     var assetRequestFunction = function (mediaRequested, returnType, callback) {
         if (mediaRequested === 'image') {
-            var $modal = $('.modal.img-upload'),
-            $images = $('.asset-img-gallery img'),
+            var $modal = $('.modal.img-upload');
+            //when invoking assetRequestFunction, callback is expected
+            //if modal is cancelled, issue empty callback to allow ongoing use
+            $modal.on('hidden.bs.modal', function(){
+                callback();
+            });
+
+            var $images = $('.asset-img-gallery img');
             imgClickHandler = function () {
                 if (returnType === 'HTML') {
                     callback('<img src="' + $(this).data('img') + '"/>');
@@ -83,8 +89,8 @@ $signedRequest = $Init->generate();
             };
             $images.on('click', imgClickHandler);
             $modal.modal({
-                backdrop: 'static'
-            })
+                backdrop:'static'
+            });
         }
     };
 
@@ -92,6 +98,7 @@ $signedRequest = $Init->generate();
 
     //optional callbacks for ready
     var callbacks = {
+        assetRequest: assetRequestFunction,
         readyListener: function () {
             console.log("Author API has successfully initialized.");
             // navigate to new ImageAssociationV2 question to demonstrate the asset request
@@ -103,7 +110,6 @@ $signedRequest = $Init->generate();
                 }))
             );
         },
-        assetRequest: assetRequestFunction,
         errorListener: function (err) {
             console.log(err);
         }
@@ -113,6 +119,6 @@ $signedRequest = $Init->generate();
 </script>
 
 <?php
-    include_once 'views/modals/initialisation-preview.php';
-    include_once 'views/modals/asset-upload.php';
-    include_once 'includes/footer.php';
+	include_once 'views/modals/initialisation-preview.php';
+	include_once 'views/modals/asset-upload.php';
+	include_once 'includes/footer.php';
