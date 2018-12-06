@@ -178,7 +178,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .panel.panel-default.main-page-panel {
-    min-height:380px;
+    min-height:400px;
     text-align:center;
 }
 
@@ -658,6 +658,7 @@ a:focus,
 
 .row {
     margin:inherit;
+    margin-bottom:0px;
     /*margin-left: 5%;*/
     /*margin-right: 5%;*/
 }
