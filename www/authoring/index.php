@@ -5,7 +5,7 @@ include_once 'includes/header.php';
 ?>
 
     <div class="jumbotron section index">
-        <h1><img class="product-logo" src="/static/images/product-author.png">Learnosity Author</h1>
+        <p><img class="product-logo" src="/static/images/product-author-full.png"></p>
         <div class="section-intro">
             <p><a href="http://www.learnosity.com/products/author/" target="_blank">Learnosity Author</a> allows you to easily integrate content creation, searching and filtering into your own content management system.</p>
             <p>
@@ -18,7 +18,7 @@ include_once 'includes/header.php';
             </p>
         </div>
 
-        <h3 id="browsing"><a href="#browsing">Browsing Items and Activities</a></h3>
+        <h3 id="browsing">Browsing Items and Activities</h3>
         <p>Use our Author API to provide a list of items or activities created in Learnosity, filter these lists for
             access control, or limit to read-only mode for review.</p> <!--replace with CSS-->
         <br>
@@ -62,7 +62,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Filter Items in Your Item Bank</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Use tags to control which items in your item bank are visible to each user.</p>
+                        <p>Use tags to control which items in your item bank are visible to different users.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./item-list-filtered.php">Demo</a>
                         </p>
@@ -88,7 +88,7 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Preview Your Item Bank in Read-Only Mode</h2>
+                        <h2 class="panel-title">Preview your Item Bank in Read-Only Mode</h2>
                     </div>
                     <div class="panel-body">
                         <p>By disabling specific configuration flags, you can easily setup read-only access to your item
@@ -131,7 +131,7 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Control Which Tags Appear in the Authoring Interface</h2>
+                        <h2 class="panel-title">Control which Tags Appear in the Authoring Interface</h2>
                     </div>
                     <div class="panel-body">
                         <p>Hide specific tags from the item and activity tagging UI.</p>
@@ -147,7 +147,7 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Navigate Your Item Bank</h2>
+                        <h2 class="panel-title">Navigate your Item Bank</h2>
                     </div>
                     <div class="panel-body">
                         <p>Programmatically search, navigate to existing content, and create new content in your item
@@ -161,7 +161,7 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Bind to Authoring Events</h2>
+                        <h2 class="panel-title">Bind to Author API Events</h2>
                 </div>
                     <div class="panel-body">
                         <p>Use the 'on' public method to bind to authoring events, supporting custom
@@ -175,7 +175,7 @@ include_once 'includes/header.php';
         </div>
 
 
-        <h3 id="creating"><a href="#creating">Creating Content, Questions, and Features</a></h3>
+        <h3 id="creating">Creating Content, Questions, and Features</h3>
         <p>Discover how to create powerful and complex assessment and learning content quickly and easily!</p>
         <br>
 
@@ -186,7 +186,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Create New Items</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Create and edit items that are automatically saved to your Learnosity-hosted item bank.</p>
+                        <p>Create and edit items that persist in your Learnosity-hosted item bank.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./item-create.php">Demo</a>
                         </p>
@@ -199,7 +199,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Create New Activities</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Create and edit activities that are automatically saved to your Learnosity-hosted item bank.</p>
+                        <p>Create and edit activites that persist in your Learnosity-hosted item bank.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./activity-create.php">Demo</a>
                         </p>
@@ -229,7 +229,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Author Custom Features</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Develop custom features for inclusion in your Learnosity authoring and assessment environments.
+                        <p>Develop your own custom features for inclusion in your Learnosity eco system.
                         <p>
                         <p class="text-right">
                             <a class="demo_link"  href="./author-custom-features.php">Demo</a>
@@ -239,7 +239,7 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-        <h3 id="integrate"><a href="#integrate">Customizing and Integrating into your Authoring environment</a></h3>
+        <h3 id="integrate">Customizing and Integrating into your Authoring environment</h3>
         <p>Learnosity's APIs are designed to be easily customized and extended, allowing you to build your content management system the way you want.</p> <!--replace with CSS-->
 
         <div class="row">
@@ -249,7 +249,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Build Custom Question Templates</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Create your own question templates with default values, and simplify the question editing interface by hiding unwanted fields.
+                        <p>Create your own question templates with default values, and simplify the editing interface by hiding unwanted fields.
                         <p>
                         <p class="text-right">
                             <a class="demo_link"  href="./question_templates.php">Demo</a>
@@ -292,7 +292,7 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Use Your Own Digital Asset Management System</h2>
+                        <h2 class="panel-title">Use your Own Digital Asset Management System</h2>
                     </div>
                     <div class="panel-body">
                         <p>Use your own asset management tool when integrating Learnosity into your CMS.
@@ -309,10 +309,10 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Customize Editor Toolbars</h2>
+                        <h2 class="panel-title">Use Custom Editor Buttons</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Custom buttons give you the ability to extend the standard Learnosity rich text editor toolbars to add new functionality as you need it.
+                        <p>Custom buttons give you the ability to extend the standard Learnosity toolbar to add new functionality as you need it.
                         <p>
                         <p class="text-right">
                             <a class="demo_link"  href="./custom-editor-buttons.php">Demo</a>

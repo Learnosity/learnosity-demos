@@ -5,7 +5,9 @@ include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron section index">
-    <h1><img class="product-logo" src="/static/images/product-analytics.png">Learnosity Analytics</h1>
+    <p>
+    <img class="product-logo" src="/static/images/product-analytics-full.png">
+    </p>
     <div class="section-intro">
         <p>Learnosity Analytics provides a suite of powerful tools, covering both embeddable, user-friendly reporting, perfectly suited for quickly building out your product, as well as granular back end data-centric functionality to power your own bespoke reporting needs.</p>
         <ul>
@@ -19,7 +21,7 @@ include_once 'includes/header.php';
     <p>
 
 
-    <h3 id="dashboard-reporting"><a href="#dashboard-reporting">Embedding dashboard-style Reporting</a></h3>
+    <h3 id="dashboard-reporting">Embedding dashboard-style Reporting</h3>
     <p>Easily use Learnosity's Reports API to embed visual reports, ranging from student & classroom reporting to large-scale district reports!</p>
     <br>
 
@@ -72,7 +74,7 @@ include_once 'includes/header.php';
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Display Large-Scale Group/District Reports</h2>
+                    <h2 class="panel-title">Diplay Large-Scale Group/District Reports</h2>
                 </div>
                 <div class="panel-body">
                     <p>Discover large-scale group reporting and let Learnosity take care of the heavy lifting.</p>
@@ -113,8 +115,8 @@ include_once 'includes/header.php';
         </div>
     </div>
 
-    <h3 id="customizing-reporting"><a href="#customizing-reporting">Customizing your reporting experience</a></h3>
-    <p>Launch additional reports by clicking supported elements, or suppress the display entirely and work with the data instead.</p>
+    <h3 id="customizing-reporting">Customizing your reporting experience</h3>
+    <p></p>
     <br>
 
     <div class="row">
@@ -135,10 +137,10 @@ include_once 'includes/header.php';
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Use Click Events to Display Additional Information and Reports</h2>
+                    <h2 class="panel-title">Use click events</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Bring our reports to life by integrating click behavior and adding an extra depth to your reporting.</p>
+                    <p>Bring our reports to life, by integrating click behavior and adding an extra depth to your reporting.</p>
                     <p class="text-right">
                         <a class="demo_link"  href="./reports-click-events.php">Demo</a>
                     </p>
@@ -146,9 +148,9 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
+    <h3 id="data-reporting">Using granular, back-end data reporting</h3>
 
-    <h3 id="data-reporting"><a href="#data-reporting">Using granular, back-end data reporting</a></h3>
-    <p>Retrieve more detailed data about item bank content, student responses, and more.</p>
+    <p></p>
     <br>
 
     <div class="row">

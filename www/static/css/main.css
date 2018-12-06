@@ -5,6 +5,7 @@
 ********************************************************************/
 html, body {
     overflow: visible !important;
+    overflow-x: hidden !important;
 }
 
 
@@ -152,6 +153,10 @@ h1, h2, h3, h4, h5, h6, .navbar {
     padding-right:0px;
 }
 
+.lightweight {
+    font-weight:400;
+}
+
 .section.pad-sml {
     min-height:260px;
     position: relative;
@@ -195,11 +200,13 @@ h1, h2, h3, h4, h5, h6, .navbar {
     font-size:16px;
     font-weight:400;
     color: #e5e5e5;
+    min-height: 150px;
 }
 
-.footer .section .row {
+.footer .section > .row {
     /*padding-left:190px;*/
-    padding-right:0px;
+    padding-right:10%;
+    padding-left: 10%;
 }
 
 .footer .section .row [class^=col-]{
@@ -208,18 +215,15 @@ h1, h2, h3, h4, h5, h6, .navbar {
     margin-right:-50px;
 }
 
-.footer .section h4 {
+.footer .section h4 a{
     color: #fff;
     font-weight:700;
-    font-size:16px;
+    font-size:18px;
 }
 
-.footer .section a {
-    color: #e5e5e5;
-}
 
-.footer .section a:hover {
-    color: #e5e5e5;
+.footer .section h4 a:hover {
+    text-decoration: underline;
 }
 /********************************************************************
 *
@@ -711,7 +715,7 @@ a:focus,
     font-size: 16px;
     line-height: 1.25em;
     font-weight: 700;
-    padding-top:18px;
+    padding-top:15px;
     text-align: center;
     color: #fff;
     background-color: #ef3232;
@@ -753,6 +757,8 @@ a:focus,
 
 .navbar li a:hover {
     background-color: #fff;
+    color: #ef3232;
+    text-decoration:underline;
 }
 
 a {
@@ -792,8 +798,7 @@ a:hover {
 }
 
 img.product-logo {
-    width: 100px;
-    margin-top:-14px;
+    height: 60px;
 }
 
 .nav-sec .navbar-nav {

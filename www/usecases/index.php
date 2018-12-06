@@ -22,7 +22,7 @@ include_once 'includes/header.php';
 
         <p>
 
-        <h3 id="end-to-end-examples"><a href="#end-to-end-examples">End-to-end Examples</a></h3>
+        <h3 id="end-to-end-examples">End-to-end Examples</h3>
 
 
         <p>Learn how to tie together our Authoring, Assessment and Analytics APIs for a seamless Learnosity-powered
@@ -60,7 +60,7 @@ include_once 'includes/header.php';
         </div>
 
 
-        <h3 id="printing-examples"><a href="#printing-examples">Printing Learnosity items</a></h3>
+        <h3 id="printing-examples">Printing Learnosity items</h3>
         <p>You'll get the best assessment experience from Learnosity online, but we also know that sometimes, you just need to print things! By using custom CSS on top of Learnosity, you can style content for the page as you need.</p>
         <br>
 
@@ -94,7 +94,7 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-        <h3 id="scoring-and-feedback-examples"><a href="#scoring-and-feedback-examples">Scoring & Feedback</a></h3>
+        <h3 id="scoring-and-feedback-examples">Scoring & Feedback</h3>
         <p>Combining Learnosity Analytics and Learnosity Assessments, you can deliver rich feedback or simple score based teacher grading.</p>
         <br>
 
@@ -129,7 +129,7 @@ include_once 'includes/header.php';
         </div>
 
 
-        <h3 id="custom-question-examples"><a href="#custom-question-examples">Using Custom Questions</a></h3>
+        <h3 id="custom-question-examples">Using Custom Questions</h3>
 
         <p></p>
         <br>
@@ -181,7 +181,7 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-        <h3 id="localization-examples"><a href="#localization-examples">Localizing APIs to another language</a></h3>
+        <h3 id="localization-examples">Localizing APIs to another language</h3>
 
         <p></p>
         <br>
@@ -202,7 +202,7 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-        <h3 id="miscellaneous-examples"><a href="#miscellaneous-examples">Miscellaneous Examples</a></h3>
+        <h3 id="miscellaneous-examples">Miscellaneous Examples</h3>
 
         <p></p>
         <br>

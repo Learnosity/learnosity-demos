@@ -27,7 +27,7 @@ $security = array(
 );
 
 // Use the `users` query string var, otherwise go with the application default student name
-$users = (strlen($_GET['users'])) ? explode(',', $_GET['users']) : ['demo_student'];
+$users = (array_key_exists('users',$_GET)) ? explode(',', $_GET['users']) : ['demo_student'];
 
 $request = array(
     'reports' => array(
@@ -56,7 +56,7 @@ $reportsRequest = $init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+
         </ul>
     </div>
     <div class="overview">

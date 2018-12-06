@@ -13,7 +13,7 @@ include_once '../../lrn_config.php';
 <div class="jumbotron section">
     <div class="pull-right toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+
         </ul>
     </div>
     <h1>Case Study – Teacher Feedback</h1>

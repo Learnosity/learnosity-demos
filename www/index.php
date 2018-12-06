@@ -23,8 +23,8 @@ include_once 'includes/header.php';
         <div class="col-sm-6 col-md-4">
             <div class="panel panel-default main-page-panel">
                 <div class="panel-heading">
-                    <img class="product-logo-small" src="/static/images/product-author.png">
-                    <h2>Learnosity Author</h2>
+                    <img class="product-logo-small" src="/static/images/product-author-logo.png">
+                    <h2>Learnosity <span class="lightweight">Author</span></h2>
                 </div>
                 <div class="panel-body">
                     <p>Easily integrate content creation, searching and filtering into your own content management system.<p>
@@ -37,8 +37,8 @@ include_once 'includes/header.php';
         <div class="col-sm-6 col-md-4">
             <div class="panel panel-default main-page-panel">
                 <div class="panel-heading">
-                    <img class="product-logo-small" src="/static/images/product-assessments.png">
-                    <h2>Learnosity Assessments</h2>
+                    <img class="product-logo-small" src="/static/images/product-assessments-logo.png">
+                    <h2>Learnosity <span class="lightweight">Assessments</span></h2>
                 </div>
                 <div class="panel-body">
                     <p>Deliver your content and assessments where, when and how you want!<p>
@@ -51,9 +51,9 @@ include_once 'includes/header.php';
         <div class="col-sm-6 col-md-4">
             <div class="panel panel-default main-page-panel">
                 <div class="panel-heading">
-                    <img class="product-logo-small" src="/static/images/product-analytics.png">
+                    <img class="product-logo-small" src="/static/images/product-analytics-logo.png">
                     <h2>
-                        Learnosity Analytics</h2>
+                        Learnosity <span class="lightweight">Analytics</span></h2>
                 </div>
                 <div class="panel-body">
                     <p>Delve into your data in whatever way you need - whether it be at-a-glance reports, in-depth large scale reporting, or access to raw granular data.<p>

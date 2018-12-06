@@ -5,8 +5,9 @@ include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron section index">
-
-    <h1><img class="product-logo" src="/static/images/product-assessments.png" style="margin:-2px 0;">Learnosity Assessments</h1>
+    <p>
+    <img class="product-logo" src="/static/images/product-assessments-full.png">
+    </p>
     <div class="section-intro">
         <p>Learnosity Assessments allow you to access content from your Learnosity-hosted item bank and deliver that content to your end-users. You can present assessments using a full assessment player or embed each question into a page exactly where you want it to be, all while capturing student responses and scoring in a scalable, robust manner.</p>
         <p>
@@ -18,7 +19,7 @@ include_once 'includes/header.php';
         </p>
     </div>
 
-    <h3 id="delivering"><a href="#delivering">Delivering Assessments</a></h3>
+    <h3 id="delivering">Delivering Assessments</h3>
     <p>Deliver your learning content how you like it—via fixed form assessments, individual items embedded throughout your editorial, or powerful adaptive and branching test formats.</p>
     <br>
 
@@ -130,7 +131,7 @@ include_once 'includes/header.php';
 
 
 
-    <h3 id="customizing"><a href="#customizing">Customizing Behaviour</a></h3>
+    <h3 id="customizing">Customizing Behaviour</h3>
     <p>Learnosity's Assessment delivery APIs are designed to be flexible and customizable, making it easy to trigger behavior, and react to user choices, inside your own platform.</p>
 
     <div class="row">

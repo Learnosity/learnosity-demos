@@ -18,7 +18,7 @@ use LearnositySdk\Utils\Uuid;
     <div class="toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+
         </ul>
     </div>
     <div class="overview">
