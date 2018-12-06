@@ -28,9 +28,7 @@ $request = [
             'item' => [
                 'reference' => [
                     'edit' => true
-                ],
-                'dynamic_content' => true,
-                'shared_passage' => true
+                ]
             ]
         ]
     ],
@@ -56,7 +54,7 @@ $signedRequest = $Init->generate();
     </div>
     <div class="overview">
         <h2>Use Your Own Digital Asset Management System</h2>
-        <p>The Author API can be extended to tie in seamlessly with your existing Digital Asset Management system. Create a new question, and click the "add image" button in the editor toolbar to see this in action.<p>
+        <p>The Author API can be extended to tie in seamlessly with your existing Digital Asset Management system. Click on the 'Edit' button in the image preview, or on the "add image" button in the editor toolbar, to see this in action.<p>
     </div>
 </div>
 
@@ -94,10 +92,18 @@ $signedRequest = $Init->generate();
 
     //optional callbacks for ready
     var callbacks = {
-        assetRequest: assetRequestFunction,
         readyListener: function () {
             console.log("Author API has successfully initialized.");
+            // navigate to new ImageAssociationV2 question to demonstrate the asset request
+            authorApp.navigate(
+                'items/new/widgets/new/' + encodeURIComponent(JSON.stringify({
+                    widgetTemplate: {
+                        template_reference: '6e77b403-8f0c-43af-b464-9450e1ac70dc'
+                    }
+                }))
+            );
         },
+        assetRequest: assetRequestFunction,
         errorListener: function (err) {
             console.log(err);
         }
