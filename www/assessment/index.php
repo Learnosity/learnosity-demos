@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 
 <div class="jumbotron section index">
 
-    <h1><img class="product-logo" src="/static/images/product-assessments.png">Learnosity Assessments</h1>
+    <h1><img class="product-logo" src="/static/images/product-assessments.png" style="margin:-2px 0;">Learnosity Assessments</h1>
     <div class="section-intro">
         <p>Learnosity Assessments allow you to access content from your Learnosity-hosted item bank and deliver that content to your end-users. You can present assessments using a full assessment player or embed each question into a page exactly where you want it to be, all while capturing student responses and scoring in a scalable, robust manner.</p>
         <p>
@@ -179,12 +179,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Handling Submission Failures and Preserving Responses</h2>
+                    <h2 class="panel-title">Allow Students to Preview Assessment Content</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Give your students options for reattempting submissions, or saving responses, when a network connection is suddenly unavailable.<p>
+                    <p>Provide a short period of reading time before a timed assessment clock starts ticking.<p>
                     <p class="text-right">
-                        <a class="demo_link" href="./failed-submission.php">Demo</a>
+                        <a class="demo_link" href="./reading_time.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -318,6 +318,19 @@ include_once 'includes/header.php';
                     <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based JavaScript software solution that allows publishers to embed text-to-speech into their assessment items.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./texthelp.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Handling Submission Failures and Preserving Responses</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Give your students options for reattempting submissions, or saving responses, when a network connection is suddenly unavailable.<p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./failed-submission.php">Demo</a>
                     </p>
                 </div>
             </div>

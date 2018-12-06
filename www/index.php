@@ -43,7 +43,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Deliver your content and assessments where, when and how you want!<p>
                     <p>
-                        <a class="blue-chevron" href="./assessment/index.php">Learn more</a>
+                        <a class="blue-chevron" href="./assessment/index.php" style="margin:3px;">Learn more</a>
                     </p>
                 </div>
             </div>
