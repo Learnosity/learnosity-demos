@@ -11,7 +11,7 @@
 */
 
 // Asset version - for cachebusting JS & CSS
-$assetVersion = '20181126';
+$assetVersion = '20181206';
 
 
 $rootPath    = $_SERVER['DOCUMENT_ROOT'];
