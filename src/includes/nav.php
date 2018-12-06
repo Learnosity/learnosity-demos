@@ -1,69 +1,65 @@
 <?php
-    $pages = array(
-        'Authoring' => array(
-            'authoring/index.php' => 'Author'
-        ),
-        'Assessment' => array(
-            'assessment/index.php'     => 'Assessments'
-        ),
-        'Analytics' => array(
-            'analytics/index.php' => 'Analytics'
-        ),
-        'Use Cases' => array(
-            'usecases/index.php' => 'Use Cases'
-        )
-    );
+$pages = array(
+    'Authoring' => array(
+        'authoring/index.php' => 'Author'
+    ),
+    'Assessment' => array(
+        'assessment/index.php' => 'Assessments'
+    ),
+    'Analytics' => array(
+        'analytics/index.php' => 'Analytics'
+    ),
+    'Use Cases' => array(
+        'usecases/index.php' => 'Use Cases'
+    )
+);
 ?>
 
-<div class="navbar" role="navigation">
+    <div class="navbar" role="navigation">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="<?php echo $baseWebPath; ?>" class="logo">
-                <img src="/static/images/lrn-demos-logo-2x.png" alt="Learnosity Demos" class="logo">
-            </a>
-        </div>
-        <div class="navbar-collapse collapse" id="nav-main">
-            <ul class="nav navbar-nav">
-                <?php
-                        foreach ($pages as $page => $name) {
-                            if (sizeof($name) > 1) {
-                                echo '
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="<?php echo $baseWebPath; ?>" class="logo">
+            <img src="/static/images/lrn-demos-logo-2x.png" alt="Learnosity Demos" class="logo">
+        </a>
+    </div>
+    <div class="navbar-collapse collapse" id="nav-main">
+    <ul class="nav navbar-nav">
+        <?php
+        foreach ($pages as $page => $name) {
+            if (sizeof($name) > 1) {
+                echo '
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle bottom-chevron" data-toggle="dropdown">' . $page . '</a>
                                     <ul class="dropdown-menu">';
-                                    foreach ($name as $subpage => $subname) {
-                                        echo '<li><a href="' . $env['www'] . $subpage . '" class="right-chevron">' . $subname . '</a></li>' . PHP_EOL;
-                                    }
-                                echo '
+                foreach ($name as $subpage => $subname) {
+                    echo '<li><a href="' . $env['www'] . $subpage . '" class="right-chevron">' . $subname . '</a></li>' . PHP_EOL;
+                }
+                echo '
                                     </ul>
                                 </li>' . PHP_EOL;
-                            }else{
-                                list($key, $value) = each($name);
-                                echo '<li class="dropdown"><a href="' . $env['www'] . $key . '" class="right-chevron">' . $value . '</a><li>';
-                            }
-                        }
-                ?>
-            </ul>
-            <?php
-                if ( strpos($_SERVER['PHP_SELF'], "index.php") == false
-                     or strpos($_SERVER['PHP_SELF'], "data/") != false) {
-					echo '<div class="nav-sec-wrapper">
-                        <ul class="nav navbar-nav nav-sec">
-                            <li>
-                                <a href="https://github.com/Learnosity/learnosity-demos/blob/master/www<?php echo $_SERVER[\'REQUEST_URI\']?>" class="view_source">
+            } else {
+                list($key, $value) = each($name);
+                echo '<li class="dropdown"><a href="' . $env['www'] . $key . '" class="right-chevron">' . $value . '</a><li>';
+            }
+        }
+        ?>
+    </ul>
+    <div class="nav-sec-wrapper">
+        <ul class="nav navbar-nav nav-sec">
+            <li>
+                <a href="https://github.com/Learnosity/learnosity-demos/blob/master/www<?php echo $_SERVER['REQUEST_URI']?>" class="view_source">
                                     </span>View source</span>
                                 </a>
                             </li>
                         </ul>
-                    </div>';
-			    };
-            ?>
-        </div>
-    </div>
-</div>
+                    </div>
+
+        </div >
+    </div >
+</div >
