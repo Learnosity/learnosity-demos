@@ -60,6 +60,9 @@ $signedRequest = $Init->generate();
         .panel-group {
             margin-top: 20px;
         }
+        .panel.panel-default {
+            min-height: 0px;
+        }
         #accordion .panel {
             border-radius: 0;
         }
