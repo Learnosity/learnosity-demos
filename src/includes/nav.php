@@ -38,14 +38,14 @@ $pages = array(
                                     <a href="#" class="dropdown-toggle bottom-chevron" data-toggle="dropdown">' . $page . '</a>
                                     <ul class="dropdown-menu">';
                 foreach ($name as $subpage => $subname) {
-                    echo '<li><a href="' . $env['www'] . $subpage . '" class="right-chevron">' . $subname . '</a></li>' . PHP_EOL;
+                    echo '<li><a href="' . $env['www'] . $subpage . '" class="">' . $subname . '</a></li>' . PHP_EOL;
                 }
                 echo '
                                     </ul>
                                 </li>' . PHP_EOL;
             } else {
                 list($key, $value) = each($name);
-                echo '<li class="dropdown"><a href="' . $env['www'] . $key . '" class="right-chevron">' . $value . '</a><li>';
+                echo '<li class="dropdown"><a href="' . $env['www'] . $key . '" class="">' . $value . '</a><li>';
             }
         }
         ?>
