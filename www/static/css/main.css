@@ -199,41 +199,95 @@ h1, h2, h3, h4, h5, h6, .navbar {
     min-height:60px;
 }
 
-
 .footer .section {
     background-color: #143746;
     text-align: left;
-    padding-top:50px;
+    padding:40px 0;
     margin-bottom:0px;
     line-height:25px;
-    font-size:16px;
-    font-weight:400;
-    color: #e5e5e5;
     min-height: 150px;
 }
 
-.footer .section > .row {
-    /*padding-left:190px;*/
-    padding-right:10%;
-    padding-left: 10%;
+.footer .section .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin: 0;
 }
 
-.footer .section .row [class^=col-]{
-    padding-left:10%;
-    padding-right:0px;
-    margin-right:-50px;
+.footer .section .row [class^='col-'] {
+    padding: 0;
+    margin: 0;
 }
 
-.footer .section h4 a{
-    color: #fff;
-    font-weight:700;
-    font-size:18px;
+.footer .section a {
+    font-size: 17px;
+    color: white;
+    font-weight: 700;
+    display: inline-block;
+    padding: 12px;
+    margin: 0;
+}
+
+.footer-links {
+    text-align: right;
+}
+
+@media (min-width: 95em) {
+    .footer .section a {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 85em) {
+    .footer .section .row {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .footer .section .row {
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+    }
+
+    .footer-links {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .footer .section a {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer .section {
+        text-align: center;
+    }
+    .footer .logo {
+        padding-bottom: 30px;
+    }
+    .footer .section a {
+        display: block;
+        padding: 5px;
+    }
+    .footer .section .row {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
 }
 
 
-.footer .section h4 a:hover {
-    text-decoration: underline;
-}
 /********************************************************************
 *
 * Reports API section
