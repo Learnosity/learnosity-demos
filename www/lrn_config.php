@@ -16,8 +16,10 @@ $consumer_secret = '74c5fd430cf1242a527f6223aebd42d30464be22';
 
 /* Some products need the domain as part of the security signature.
 ** Learnosity whitelists "localhost" - any requests from other domains will be rejected.
+ * Function below strips any port from the hostname - learnosity requires only the hostname for signature signing.
 */
-$domain = $_SERVER['SERVER_NAME'];
+
+$domain = explode(':', $_SERVER['HTTP_HOST'])[0];
 
 /*
 |--------------------------------------------------------------------------
