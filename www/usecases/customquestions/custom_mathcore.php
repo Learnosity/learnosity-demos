@@ -16,7 +16,7 @@ $session_id = Uuid::generate();
 
 $security = [
     'user_id'      => 'demos-site',
-    'domain'       => $_SERVER['SERVER_NAME'],
+    'domain'       => $domain,
     'consumer_key' => $consumer_key
 ];
 
