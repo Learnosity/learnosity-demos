@@ -30,7 +30,7 @@ include_once 'includes/header.php';
 </div>
 
 
-<script src="<?php echo $url_questioneditor_v3; ?>"></script>
+<script src="<?php echo $url_questioneditor; ?>"></script>
 <script>
 var initOptions = {
   "configuration": {},

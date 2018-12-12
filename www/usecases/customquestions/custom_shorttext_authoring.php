@@ -73,30 +73,17 @@ $signedRequest = $init->generate();
                     "name": "Height",
                     "required": false
                 },
-                "validation": {
-                    "type": "object",
-                    "name": "Valid response",
-                    "required": false,
-                    "attributes": {
-                        "score": {
-                            "type": "number",
-                            "name": "Score",
-                            "group": "validation",
-                            "description": "Score for a correct answer.",
-                            "required": false
-                        },
-                        "valid_response": {
-                            "type": "object",
-                            "required": false,
-                            "attributes": {
-                                "value": {
-                                    "type": "string",
-                                    "name": "Correct Answer",
-                                    "required": false
-                                }
-                            }
-                        }
-                    }
+                "score": {
+                    "type": "number",
+                    "name": "Score",
+                    "description": "Score for a correct answer.",
+                    "required": false
+                },
+                "valid_response": {
+                    "type": "string",
+                    "name": "Valid Response",
+                    "description": "Correct answer to the question.",
+                    "required": false
                 }
             }
         };
@@ -222,7 +209,7 @@ $signedRequest = $init->generate();
             var widgetJson = this.qeApp.getWidget();
             var width = widgetJson.width;
             var height = widgetJson.height;
-            var value = getNested(widgetJson, 'validation.valid_response.value');
+            var value = getNested(widgetJson, 'valid_response');
 
             this.$editPanel
                 .find('[data-custom-shorttext-element]')
@@ -234,7 +221,7 @@ $signedRequest = $init->generate();
                 .height(height)
                 .val(value)
                 .on('change', function (event) {
-                    var validationValueAttr = this.qeApp.attribute('validation.valid_response.value');
+                    var validationValueAttr = this.qeApp.attribute('valid_response');
 
                     validationValueAttr.setValue(event.currentTarget.value);
                 }.bind(this));
@@ -271,7 +258,7 @@ $signedRequest = $init->generate();
 
         ShorttextInlineQuestionsApiRenderer.prototype.render = function () {
             var widgetJson = this.qeApp.getWidget();
-            var value = getNested(widgetJson, 'validation.valid_response.value');
+            var value = getNested(widgetJson, 'valid_response');
             var responseId = 'inline-' + _count;
             var responses = {};
 
@@ -305,7 +292,7 @@ $signedRequest = $init->generate();
             if (_instance) {
                 _instance.on('change', function () {
                     var newValue = _instance.getResponse().value;
-                    var validationValueAttr = this.qeApp.attribute('validation.valid_response.value');
+                    var validationValueAttr = this.qeApp.attribute('valid_response');
 
                     validationValueAttr.setValue(newValue);
                 }.bind(this));

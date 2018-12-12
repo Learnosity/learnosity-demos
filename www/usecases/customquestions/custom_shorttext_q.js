@@ -1,19 +1,12 @@
 /*global LearnosityAmd*/
 LearnosityAmd.define([
-    'underscore',
+    'underscore-v1.5.2',
     'jquery-v1.10.2'
 ], function (
     _,
     $
 ) {
     'use strict';
-
-    function getValidResponse(question) {
-        return (
-            _.isObject(question) &&
-            question.valid_response
-        ) || '';
-    }
 
     function CustomShorttext(init, lrnUtils) {
         this.init = init;
@@ -31,10 +24,6 @@ LearnosityAmd.define([
             this.$el
                 .html('<div><div class="input-wrapper"><input type="text" /></div></div>')
                 .append('<div data-lrn-component="suggestedAnswersList"/>')
-                // Add correct answer list UI
-                // .append('<div class="lrn_correctAnswers lrn_hide"><span>' + this.init.getI18nLabel('correctAnswers') + '</span><ul class="lrn_correctAnswerList"></ul></div>')
-                // Add LRN Check Answer button. If you plan to have different html structure (no lrn_validate class) for this Check Anwser, you will need to write your own validation function
-                // like myCustomButton.addEventListener('click', function () { this.init.getFacade().validate(); })
                 .append('<div data-lrn-component="checkAnswer"/>');
 
             this.$el
@@ -117,7 +106,7 @@ LearnosityAmd.define([
 
         showCorrectAnswers: function () {
             var self = this;
-            var correctAnswerText = getValidResponse(this.question);
+            var correctAnswerText = _.getNested(this.question, 'valid_response') || '';
             var setAnswersToSuggestedList = function () {
                 // Pass in string to display correct answer list without the index
                 // this.suggestedAnswersList.setAnswers(correctAnswerText);
@@ -175,32 +164,8 @@ LearnosityAmd.define([
         }
     });
 
-    function CustomShorttextScorer(question, response) {
-        this.question = question;
-        this.response = response;
-        this.validResponse = getValidResponse(question);
-    }
-
-    _.extend(CustomShorttextScorer.prototype, {
-        isValid: function () {
-            return this.response === this.validResponse;
-        },
-
-        score: function () {
-            return this.isValid() ? this.maxScore() : 0;
-        },
-
-        maxScore: function () {
-            return this.validResponse.score || 1;
-        },
-
-        canValidateResponse: function () {
-            return !!this.question.valid_response;
-        }
-    });
 
     return {
-        Question: CustomShorttext,
-        Scorer:   CustomShorttextScorer
+        Question: CustomShorttext
     };
 });
