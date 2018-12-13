@@ -1,8 +1,15 @@
 <?php
 
 // This page generates two simple reports based on the resukts of the Tecthelp assessment demo
-include_once '../../config.php';
+
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -19,7 +26,7 @@ $request = array(
     'reports' => array(
         array(
             'id'          => 'session-summary',
-            'type'        => 'session-summary',
+            'type'        => 'sessions-summary',
             'user_id'     => 'demo_student',
             'session_ids' => array(
                 $session_id
@@ -44,7 +51,7 @@ $signedRequest = $Init->generate();
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/reportsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+
         </ul>
     </div>
     <div class="overview">
@@ -63,7 +70,7 @@ $signedRequest = $Init->generate();
 
     <h4>Session Detail By Question</h4>
     <div id="session-detail-by-item"></div>
-    
+
     <div class="text-center" style="padding:40px;">
         <a class="btn btn-primary" href=itemsapi_texthelp.php>Start Again</a>
     </div>
@@ -81,7 +88,7 @@ $signedRequest = $Init->generate();
             readyListener: init
     },
     reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>, eventOptions);
-    function init () {        
+    function init () {
         console.log('Starting Texthelp now');
         TexthelpSpeechStream.addToolbar('1','1');
     }
@@ -89,7 +96,7 @@ $signedRequest = $Init->generate();
     // This is called by the toolbar when it has loaded and finished processing.
     function $rw_toolbarLoadedCallback() {
 
-        // Set the start point for the TextHelp reader 
+        // Set the start point for the TextHelp reader
         $rw_setStartPoint("start");
 
         // Change the Session Summary report HTML to make it more readable
@@ -107,8 +114,8 @@ $signedRequest = $Init->generate();
         // No need to read the header or column options in Choice Matrix tables
         $(".lrn-choicematrix-column-title").attr('ignore', '1');
         $(".lrn_choicematrix_cell").attr('ignore', '1');
-        
-    }    
+
+    }
 
 </script>
 

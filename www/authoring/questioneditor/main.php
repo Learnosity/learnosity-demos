@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 ?>
 
@@ -9,7 +15,7 @@ include_once 'includes/header.php';
     <div class="toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/authoring/questioneditor" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+
         </ul>
     </div>
     <div class="overview">
@@ -44,6 +50,10 @@ include_once 'includes/header.php';
         },
         rich_text_editor: {
             type: 'ckeditor'
+        },
+        label_bundle: {
+            // debug: true
+            'heading.moreOptions': 'test'
         },
         widget_type: 'response',
         dependencies: {
