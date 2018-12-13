@@ -60,7 +60,7 @@ $signedRequest = $Init->generate();
                     <a href="#" data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a>
                 </li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation">
-                    <a href="https://docs.learnosity.com/assessment" title="Documentation"><span class="glyphicon glyphicon-book"></span></a>
+                    <a href="https://docs.learnosity.com/analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a>
                 </li>
             </ul>
         </div>
