@@ -52,13 +52,13 @@ $signedRequest = $Init->generate();
     <!-- Container for the author api to load into -->
     <div class="section pad-sml">
         <div class="text-center">
-            <button class="btn btn-info btn-navigate-item-new">New Item</button>
-            <button class="btn btn-info btn-navigate-activity-new">New Activity</button>
-            <button class="btn btn-info btn-navigate-widgets-new">New Question</button>
-            <button class="btn btn-info btn-navigate-feature-new">New Feature</button>
-            <button class="btn btn-info btn-navigate-items">List Items</button>
-            <button class="btn btn-info btn-navigate-activities">List Activities</button>
-            <button class="btn btn-info btn-navigate-widget-edit">Edit MCQ Question</button>
+            <button class="btn btn-primary btn-navigate-item-new">New Item</button>
+            <button class="btn btn-primary btn-navigate-activity-new">New Activity</button>
+            <button class="btn btn-primary btn-navigate-widgets-new">New Question</button>
+            <button class="btn btn-primary btn-navigate-feature-new">New Feature</button>
+            <button class="btn btn-primary btn-navigate-items">List Items</button>
+            <button class="btn btn-primary btn-navigate-activities">List Activities</button>
+            <button class="btn btn-primary btn-navigate-widget-edit">Edit MCQ Question</button>
         </div><br>
         <!--    HTML placeholder that is replaced by API-->
         <div id="learnosity-author"></div>
