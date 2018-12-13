@@ -31,6 +31,8 @@
 						'current_user' => false,
 						//display only items created by specific users (array of strings from user.id)
 						"tags" => [
+							//if set to true, then a user can save activities which do not have the tags required by the tag filters below
+							"allow_filtered_tags_overwrite" => true,
 							"all" => [
 								[
 									"type" => "course",

@@ -38,6 +38,8 @@
 						 * multiple tags can be included (see either > subject)
 						 */
 						"tags" => [
+							//if set to true, then a user can save Items which do not have the tags required by the tag filters below
+							"allow_filtered_tags_overwrite" => true,
 							"all" => [
 								[
 									"type" => "course",
