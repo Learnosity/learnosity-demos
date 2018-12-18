@@ -13,7 +13,6 @@
                 <a href="https://authorguide.learnosity.com">Author Guide</a>
                 <a href="https://reference.learnosity.com">API Reference</a>
                 <a href="https://status.learnosity.com">API Status</a>
-                <a href="https://demos.learnosity.com">Demos</a>
                 <a href="https://learnosity.com">Visit Learnosity</a>
             </div>
         </div>
