@@ -7,7 +7,7 @@ include_once 'includes/header.php';
     <div class="jumbotron section index">
         <p><img class="product-logo" src="/static/images/product-author-full.png"></p>
         <div class="section-intro">
-            <p><a href="http://www.learnosity.com/products/author/" target="_blank">Learnosity Author</a> allows you to easily integrate content creation, searching and filtering into your own content management system.</p>
+            <p>Learnosity Author allows you to easily integrate content creation, searching and filtering into your own content management system.</p>
             <p>
             <ul>
                 <li><h4><a class="blue-chevron" href="#browsing">Browsing Items and Activities</a></h4></li>
