@@ -1,15 +1,24 @@
 <?php
 
-    include_once '../../config.php';
-    include_once 'includes/header.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
+include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
+
+use LearnositySdk\Request\Init;
+use LearnositySdk\Utils\Uuid;
 
 ?>
 
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/authoring/questioneditor" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/questioneditorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+
         </ul>
     </div>
     <div class="overview">

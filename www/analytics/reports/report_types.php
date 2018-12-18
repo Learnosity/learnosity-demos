@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 
@@ -370,8 +376,8 @@ $signedRequest = $Init->generate();
     <div class="toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/analytics/reports/reporttypes" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/reportsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+
         </ul>
     </div>
     <div class="overview">
@@ -864,7 +870,7 @@ $signedRequest = $Init->generate();
                                     <section>
                                         <h3 class="report-title">Item Score Analysis</h3>
                                         <p class="lrn-report-summary">
-                                           The Item Scores by Tag by User report offers exploration and drilldown of student scores by topic area, learning outcome, or any other Item tags you use:
+                                            Item Scores by Tag by User report offers exploration and drilldown of student scores by topic area, learning outcome, or any other Item tags you use:
                                         </p>
                                         <ul>
                                             <li>Analyse, compare and visualize results for a class of students</li>
@@ -873,10 +879,7 @@ $signedRequest = $Init->generate();
                                             <li>Understand student's exposure and progress through your content</li>
                                         </ul>
                                         <div class="alert alert-info">
-                                            See the separate demos of learning outcomes reporting for
-                                                <a href="/analytics/reports/learning_outcomes_individuals.php">individuals</a>,
-                                                <a href="/analytics/reports/learning_outcomes_classes.php">classes</a> and
-                                                <a href="/analytics/reports/learning_outcomes_visualization.php">visualization</a>.
+                                            See the live demo page: <a href="//<?php echo $domain ?>/analytics/reports/item_scores_report.php"><?php echo $domain ?>/analytics/reports/item_scores_report.php</a>.
                                         </div>
                                     </section>
                                 </div>

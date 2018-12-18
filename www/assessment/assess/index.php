@@ -1,14 +1,20 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
 $security = array(
     'consumer_key' => $consumer_key,
-    'user_id'      => $studentid,
+    'user_id'      => 'demos-site',
     'domain'       => $domain
 );
 
@@ -75,9 +81,6 @@ $request = array(
         'swipe'                  => false,
         'events'                 => false,
         'stylesheet'             => '',
-        'onsave_redirect_url'    => $env['protocol'] . $env['page'],
-        'onsubmit_redirect_url'  => $env['protocol'] . $env['page'],
-        'ondiscard_redirect_url' => $env['protocol'] . $env['page'],
         'idle_timeout'           => array(
             'interval'       => 300,
             'countdown_time' => 60
@@ -168,7 +171,6 @@ $request = array(
             "state": "initial",
             "id": "assessdemo_' . $uniqueResponseIdSuffix . '",
             "name": "Assess API - Demo",
-            "course_id": "' . $courseid . '",
             "session_id": "' . Uuid::generate() . '",
             "beta_flags": {
                 "reactive_views": true
@@ -530,10 +532,9 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted" data-toggle="modal" data-target="#settings"><span class="glyphicon glyphicon-list-alt"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/assessment/assess" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/assessapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+
         </ul>
     </div>
     <div class="overview">
@@ -555,6 +556,5 @@ $signedRequest = $Init->generate();
 </script>
 
 <?php
-    include_once 'views/modals/settings-assess.php';
     include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';
