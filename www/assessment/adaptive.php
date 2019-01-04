@@ -66,8 +66,7 @@ $request = [
             ]
         ],
         'configuration'       => [
-            'onsubmit_redirect_url' => 'adaptive-report.php?session_id=' . $sessionId,
-            'onsave_redirect_url'   => 'adaptive.php'
+            'onsubmit_redirect_url' => 'adaptive-report.php?session_id=' . $sessionId
         ]
     ]
 ];
