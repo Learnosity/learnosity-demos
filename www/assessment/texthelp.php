@@ -21,7 +21,10 @@ $security = [
 
 $request = [
     'activity_id' => 'Activity_Test',
-    'activity_template_id'=> 'TEXTHELP_ACTIVITY',
+    //'activity_template_id'=> 'TEXTHELP_ACTIVITY',
+    //9 Jan 19 call with Peter (Texthelp) - requested to change old activity (TEXTHELP_ACTIVITY) to new one
+    'activity_template_id'=> 'TexttoSpeech_Testing_Activity',
+
     'rendering_type' => "assess",
     'user_id' => "demos-site",
     'session_id' => $session_id,

@@ -76,8 +76,7 @@ $signedRequest = $Init->generate();
         <div id="learnosity_assess"></div>
     </div>
 
-    <script src="https://items-va.learnosity.com"></script>
-
+    <script src="<?php echo $url_items; ?>"></script>
     <script>
         var initializationObject = <?php echo $signedRequest; ?>;
 
