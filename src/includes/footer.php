@@ -9,8 +9,8 @@
                 </a>
             </div>
             <div class="col-lg-9 col-md-12 footer-links">
-                <a href="https://help.learnosity.com">Developer Help</a>
-                <a href="https://authorguide.learnosity.com">Author Guide</a>
+                <a href="https://support.learnosity.com/hc/en-us">Developer Help</a>
+                <a href="https://authorguide.learnosity.com/hc/en-us">Author Guide</a>
                 <a href="https://reference.learnosity.com">API Reference</a>
                 <a href="https://status.learnosity.com">API Status</a>
                 <a href="https://learnosity.com">Visit Learnosity</a>
