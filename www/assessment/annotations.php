@@ -67,7 +67,7 @@ $signedRequest = $Init->generate();
         <div class="overview">
             <h2>Enable Annotations for Student Use</h2>
             <p>Annotations let students add sticky notes, highlighting, and freehand sketches to their responses, giving educators even greater access to learners' thought processes.</p>
-            <p>For more information about Annotations, please see our <a href="https://reference.learnosity.com/assessment/annotations-api/" target="_blank">documentation</a>.</p>
+            <p>For more information about Annotations, please see our <a href="https://reference.learnosity.com/annotations-api/" target="_blank">documentation</a>.</p>
         </div>
     </div>
 
