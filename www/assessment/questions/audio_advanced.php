@@ -20,7 +20,6 @@ $security = array(
 
 $uniqueResponseIdSuffix = Uuid::generate();
 
-// Activity JSON:  http://docs.learnosity.com/questionsapi/activity.php
 $request = '{
     "type": "submit_practice",
     "state": "initial",
@@ -58,7 +57,7 @@ $signedRequest = $Init->generate();
     <div class="pull-right toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/assessment/questions/methods#question-Response_audioQualityCheck" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://reference.learnosity.com/items-api/methods#question-Response_audioQualityCheck" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
     <h1>Questions API – Advanced Audio Analysis</h1>

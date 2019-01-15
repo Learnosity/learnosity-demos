@@ -48,12 +48,12 @@ $signedRequest = $Init->generate();
     <div class="toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/authorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
     <div class="overview">
         <h2>Bind to Authoring Events</h2>
-        <p>Better integrate Learnosity's authoring environment with your content management system. This demo shows how to bind to authoring events using the <a href="https://docs.learnosity.com/authoring/author/events#on">'on' public method</a> for custom notifications and other helpful reactions that you may require.</p>
+        <p>Better integrate Learnosity's authoring environment with your content management system. This demo shows how to bind to authoring events using the <a href="https://reference.learnosity.com/author-api/events#on">'on' public method</a> for custom notifications and other helpful reactions that you may require.</p>
         <p>As you work with the Author API below, actions will trigger a visual change to the corresponding event name in the list above the UI.</p>
     </div>
 </div>

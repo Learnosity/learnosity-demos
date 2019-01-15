@@ -75,7 +75,7 @@ switch ($request['question_type']) {
                 "type": "horizontal"
             }
         }';
-        // https://docs.learnosity.com/authoring/questioneditor/knowledgebase/author-api-template-references
+        // https://support.learnosity.com/hc/en-us/articles/360000755038-Widget-Template-References-for-Question-Editor-Customization-Navigation
         // Template Name is case sensitive
         $widget_template = 'Multiple choice – standard';
         break;
@@ -115,7 +115,7 @@ switch ($request['question_type']) {
                 "choice_label": "upper-alpha"
             }
         }';
-        // https://docs.learnosity.com/authoring/questioneditor/knowledgebase/author-api-template-references
+        // https://support.learnosity.com/hc/en-us/articles/360000755038-Widget-Template-References-for-Question-Editor-Customization-Navigation
         // Template Name is case sensitive
         $widget_template = 'Multiple choice – block layout';
         break;
@@ -151,7 +151,7 @@ switch ($request['question_type']) {
                 }
             }
         }';
-        // https://docs.learnosity.com/authoring/questioneditor/knowledgebase/author-api-template-references
+        // https://support.learnosity.com/hc/en-us/articles/360000755038-Widget-Template-References-for-Question-Editor-Customization-Navigation
         // Template Name is case sensitive
         $widget_template = 'Choice matrix – labels';
         break;
@@ -181,7 +181,7 @@ switch ($request['question_type']) {
                 }
             }
         }';
-        // https://docs.learnosity.com/authoring/questioneditor/knowledgebase/author-api-template-references
+        // https://support.learnosity.com/hc/en-us/articles/360000755038-Widget-Template-References-for-Question-Editor-Customization-Navigation
         // Template Name is case sensitive
         $widget_template = 'Match list';
         break;
@@ -212,7 +212,7 @@ $signedRequest = json_encode($signedRequest);
                 </a>
             </li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation">
-                <a href="https://docs.learnosity.com/authoring/questioneditor" title="Documentation">
+                <a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation">
                     <span class="glyphicon glyphicon-book"></span>
                 </a>
             </li>
@@ -225,7 +225,7 @@ $signedRequest = json_encode($signedRequest);
     </div>
     <div class="overview">
         <h1>Question Editor API – Edit Question</h1>
-        <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen. For more information refer to <a href="http://docs.learnosity.com/authoring/questioneditor/initialisation#widget_json">the init options docs</a> and <a href="http://docs.learnosity.com/authoring/questioneditor/publicmethods#setWidget">the setWidget</a> public method.</p>
+        <p>Setup the Question Editor to directly load a question, bypassing the question tiles screen. For more information refer to <a href="https://reference.learnosity.com/author-api/initialization#config_dependencies_question_editor_api">the init options docs</a> and <a href="https://reference.learnosity.com/author-api/methods#setWidget">the setWidget</a> public method.</p>
     </div>
 </div>
 

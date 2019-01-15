@@ -65,13 +65,13 @@
         <div class="toolbar">
             <ul class="list-inline">
                 <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/authorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
         <div class="overview">
             <h2>Select Multiple Items from Item Browsing</h2>
             <p>The item list mode allows users to choose and select multiple items. This is particularly useful when building an item picker as part of a larger solution.<br>
-                Your application can then get the array of selected items using the <a href="https://docs.learnosity.com/authoring/author/methods#getSelectedItems">getSelectedItems()</a> method.</p>
+                Your application can then get the array of selected items using the <a href="https://reference.learnosity.com/author-api/methods#getSelectedItems">getSelectedItems()</a> method.</p>
         </div>
     </div>
 

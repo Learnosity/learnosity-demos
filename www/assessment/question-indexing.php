@@ -52,14 +52,14 @@ $signedRequest = $Init->generate();
         <div class="toolbar">
             <ul class="list-inline">
                 <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/assessment" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
         <div class="overview">
             <h2>Question Indexing</h2>
             <p>
                 The Assess configuration option question_indexing adds sequential numbers to all questions in the activity.
-                <br>Where <a href="https://docs.learnosity.com/assessment/items/knowledgebase/sections" title="Documentation for Assess sections">sections</a> are used, the numbers reset to 1 at the start of each section.
+                <br>Where <a href="https://support.learnosity.com/hc/en-us/articles/360000758297-Breaking-Assessments-Into-Sections" title="Documentation for Assess sections">sections</a> are used, the numbers reset to 1 at the start of each section.
             </p>
         </div>
     </div>

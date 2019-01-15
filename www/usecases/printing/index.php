@@ -17,7 +17,7 @@ include_once '../../lrn_config.php';
         <p>Sometimes you have a need to print Learnosity items. This could be to to assist in content sign off,
         or you might have students that don't have access to digital devices, so you want to print items
         to be taken offline.</p>
-        <p>To render items for printing, a simple way is to use the <a href="http://docs.learnosity.com/assessment/items/quickstart_inline">Items API Inline</a>. Content administrators can then use native browser behaviour to print as a PDF for more flexibility.</p>
+        <p>To render items for printing, a simple way is to use the <a href="https://support.learnosity.com/hc/en-us/articles/360000755498-Getting-Started-With-the-Items-API">Items API Inline</a>. Content administrators can then use native browser behaviour to print as a PDF for more flexibility.</p>
         <p>Added to this basic demonstration, are some very basic CSS rules to add page breaks after each question when printing, and to increase the font size to translate items better in print form.</p>
         <p>We also render questions in a <em>preview</em> state (read only) to avoid polluting the final printout.</p>
     </div>

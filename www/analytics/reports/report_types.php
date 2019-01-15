@@ -376,7 +376,7 @@ $signedRequest = $Init->generate();
     <div class="toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/reportsapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
 
         </ul>
     </div>
@@ -927,7 +927,7 @@ $signedRequest = $Init->generate();
                                             </ul>
                                         </p>
                                         <div class="alert alert-info">
-                                            <strong>Note:</strong> Aggregate reports are prepared asynchronously in advance using Data API. See the <a href="//docs.learnosity.com/analytics/reports/aggregatereports/implementationguide">implementation guide</a> for details.
+                                            <strong>Note:</strong> Aggregate reports are prepared asynchronously in advance using Data API. See the <a href="https://support.learnosity.com/hc/en-us/articles/360000755698-Large-Group-Reporting-Implementation-Guides">implementation guide</a> for details.
                                         </div>
                                         <span class="learnosity-report" id="activity-summary-by-group-report"></span>
                                         <div>Access <a onclick="showGroupReportData();">raw data</a> for the rendered report too.</div>
@@ -979,7 +979,7 @@ $signedRequest = $Init->generate();
                                             <li>Exit &amp; Discard</li>
                                         </ul>
                                         <p>Visit our <a href="./live_progress.php">interactive demo</a> to see this in action.</p>
-                                        <p>Review the <a href="https://docs.learnosity.com/analytics/reports/reporttypes#liveActivityStatusByUser">documentation here</a>.</p>
+                                        <p>Review the <a href="https://reference.learnosity.com/reports-api/reporttypes#liveActivityStatusByUser">documentation here</a>.</p>
                                     </section>
                                 </div>
                             </div>

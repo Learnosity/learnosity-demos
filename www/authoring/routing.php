@@ -38,13 +38,13 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/authorapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
         <div class="overview">
             <h2>Navigate Your Item Bank</h2>
             <p>Programmatically search and navigate to existing content, as well as create new content, with linkable, bookmarkable, shareable URLs.</p>
-            <p>Our <a href="http://docs.learnosity.com/authoring/author/knowledgebase/author-api-routing">knowledgebase article</a> demonstrates how easy it is to set up routing with the Author API by using the <a href="https://docs.learnosity.com/authoring/author/events#on.navigate">&lsquo;navigate&rsquo; event</a> and the <a href="http://docs.learnosity.com/authoring/author/publicmethods#navigate">&lsquo;navigate()’ public method</a>.</p>
+            <p>Our <a href="https://support.learnosity.com/hc/en-us/articles/360000755198-Building-Your-Own-Author-API-User-Journey-Using-navigate-">knowledgebase article</a> demonstrates how easy it is to set up routing with the Author API by using the <a href="https://reference.learnosity.com/author-api/events#on.navigate">&lsquo;navigate&rsquo; event</a> and the <a href="http://reference.learnosity.com/author-api/methods#navigate">&lsquo;navigate()’ public method</a>.</p>
         </div>
     </div>
 

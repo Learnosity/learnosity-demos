@@ -55,12 +55,12 @@ $signedRequest = $Init->generate();
         <div class="toolbar">
             <ul class="list-inline">
                 <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://docs.learnosity.com/assessment" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
         <div class="overview">
             <h2>Bind to Items API Events</h2>
-            <p>Below is a demo of event binding using the <a href="https://docs.learnosity.com/assessment/items/events#assessmentEvents">Assessment Events</a> to display custom notifications.</p>
+            <p>Below is a demo of event binding using the <a href="https://reference.learnosity.com/items-api/events#assessmentEvents">Assessment Events</a> to display custom notifications.</p>
         </div>
     </div>
 
