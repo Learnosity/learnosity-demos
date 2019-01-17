@@ -38,15 +38,61 @@ $request = [
     'config' => [
         'title' => 'Demo activity - showcasing question types and assess options',
         'subtitle' => 'Walter White',
-        'regions' => 'main',
-        "annotations" => true,
-        "annotations_api_init_options" => [
-            "modules" => [
-                "notepad"=> true,
-                "texthighlight"=> true,
-                "drawing"=> true,
-                "texthighlight"=> true,
-                "stickynote"=>true
+        'regions' => [
+            'top-left' => [
+                [
+                    'type' => 'title_element'
+                ]
+            ],
+            'top-right' => [
+                [
+                    'type' => 'itemcount_element'
+                ]
+            ],
+            'right' => [
+                [
+                    'type' => 'verticaltoc_element'
+                ],
+                // *** Annotations API buttons *** //
+                [
+                    'type' => 'notepad_button'
+                ],
+                [
+                    'type' => 'stickynote_add_button'
+                ],
+                [
+                    'type' => 'stickynote_visibility_button'
+                ],
+                [
+                    'type' => 'drawing_mode_button'
+                ],
+                [
+                    'type' => 'drawing_visibility_button'
+                ],
+                // -------------------------- //
+                [
+                    'type' => 'accessibility_button'
+                ],
+                [
+                    'type' => 'calculator_button'
+                ]
+            ],
+            'bottom-right' => [
+                [
+                    'type' => 'next_button'
+                ],
+                [
+                    'type' => 'previous_button'
+                ]
+            ]
+        ],
+        'annotations' => true,
+        'annotations_api_init_options' => [
+            'modules' => [
+                'notepad'=> true,
+                'texthighlight'=> true,
+                'drawing'=> true,
+                'stickynote'=>true
             ]
         ]
     ]
