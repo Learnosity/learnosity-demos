@@ -86,8 +86,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Customize the Question Editing Layout</h2>
-            <p>Our editor. Your item bank platform. You can customise the rich text editor's simple feature modal layout to suit your design needs. For more information, refer to <a href="https://docs.learnosity.com/authoring/questioneditor/knowledgebase/QE_simpleFeatureModalLayout">knowledge base article</a>.</p>
+            <h2>Customize the Simple Feature Modal</h2>
+            <p>Our editor. Your item bank platform. You can customise the rich text editor's simple feature modal layout to suit your design needs. In this demo, we have reduced the number of, and simplified, the simple features available. For more information, refer to <a href="https://support.learnosity.com/hc/en-us/articles/360000780157-Customizing-the-simple-feature-modal">knowledge base article</a>.</p>
         </div>
     </div>
 

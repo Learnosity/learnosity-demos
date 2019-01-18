@@ -324,6 +324,20 @@ include_once 'includes/header.php';
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Customize the Simple Feature Modal Layout</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Custom simple feature modal layouts allow you to move, re-order and customize the simple features to your liking.
+                        <p>
+                        <p class="text-right">
+                            <a class="demo_link"  href="./simple-feature-layout.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
