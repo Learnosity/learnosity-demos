@@ -28,8 +28,8 @@ use LearnositySdk\Utils\Uuid;
  * Assuming you are viewing this file in Github, you can easily access those files by hitting the `t` key now, which
  * will bring up a file-search form. You can then just start typing the name of the file you're after, and hit `Enter`
  * when it is shown. As mentioned before, the most interesting files are
- * - www/analytics/reports/liveprogress/report.php (e.g., type `livproreport` in the search form),
- * - www/analytics/reports/liveprogress/assessment.inc.php (e.g., type `liveproassessinc` in the search form).
+ * - www/analytics/liveprogress/report.php (e.g., type `livproreport` in the search form),
+ * - www/analytics/liveprogress/assessment.inc.php (e.g., type `liveproassessinc` in the search form).
  */
 
  $studentIds = [
