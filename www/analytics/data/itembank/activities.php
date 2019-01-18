@@ -69,7 +69,7 @@ $resource = 'activities';
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button type="submit" class="ladda-button" data-style="expand-right"><span class="ladda-label">Submit</span></button>
+                    <button type="submit" class="ladda-button btn btn-primary btn-md" data-style="expand-right"><span class="ladda-label">Submit</span></button>
                 </div>
             </div>
             <input type="hidden" name="input-request" id="input-request" value="">

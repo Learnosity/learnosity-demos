@@ -1,7 +1,13 @@
 <?php
 
-include_once '../../config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../../env_config.php';
+
+//site scaffolding
 include_once 'includes/header.php';
+
+//common Learnosity config elements including API version control vars
+include_once '../../lrn_config.php';
 
 // Full base URL of the Data API
 $URL = $url_data;
@@ -18,8 +24,7 @@ $version = $lts_version;
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/dataapi/" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Toggle product overview box"><a href="#"><span class="glyphicon glyphicon-chevron-up jumbotron-toggle"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -45,7 +50,7 @@ $version = $lts_version;
         <div class="panel-group" id="accordion">
             <!-- Interactives demos for the 'itembank' section -->
             <h2>Item Bank</h2>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#activities">
@@ -61,7 +66,7 @@ $version = $lts_version;
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#activitytemplates">
@@ -77,7 +82,7 @@ $version = $lts_version;
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#items">
@@ -93,7 +98,7 @@ $version = $lts_version;
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#itembankquestions">
@@ -109,7 +114,7 @@ $version = $lts_version;
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#itembankfeatures">
@@ -125,7 +130,7 @@ $version = $lts_version;
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#itembanktags">
@@ -144,7 +149,7 @@ $version = $lts_version;
 
             <!-- Interactives demos for the 'Item Pools' section -->
             <h2>Item Pools</h2>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#itempools">
@@ -163,7 +168,7 @@ $version = $lts_version;
 
             <!-- Interactives demos for the 'sessions' section -->
             <h2>Sessions</h2>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#sessionsresponses">
@@ -179,7 +184,7 @@ $version = $lts_version;
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#responsescores">
@@ -195,7 +200,7 @@ $version = $lts_version;
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#sessionsscores">
@@ -211,7 +216,7 @@ $version = $lts_version;
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#sessionsstatuses">
@@ -230,7 +235,7 @@ $version = $lts_version;
 
             <!-- Interactives demos for the 'scoring' section -->
             <h2>Scoring</h2>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#scoring">
@@ -256,10 +261,23 @@ $version = $lts_version;
             container: 'body'
         })
     });
+
+    var config = {
+        apiRequest: {
+            security: {
+                consumer_key: '<?php echo $consumer_key; ?>',
+                domain: '<?php echo $domain; ?>',
+                timestamp: '<?php echo gmdate('Ymd-Hi'); ?>',
+                signature: '[add request signature here]'
+            }
+        }
+    };
+
 </script>
 <script src="<?php echo $env['www'] ?>static/vendor/ladda/spin.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.js"></script>
 <script src="<?php echo $env['www'] ?>static/js/dataapi/formToObject.js?20150622"></script>
 <script src="<?php echo $env['www'] ?>static/js/dataapi/dataApiRequest.js"></script>
 
-<?php include_once 'includes/footer.php'; ?>
+<?php
+include_once 'includes/footer.php';

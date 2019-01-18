@@ -22,7 +22,8 @@
                 <div class="ck-wrapper">
                     <iframe id="ck-custom-content" width="520" height="293" src="https://www.youtube.com/embed/8ejKWAP5vCU" frameborder="0"></iframe>
                 </div>
-                <button id="embed">Confirm</button>
+                <button id="embed" type="button" class="btn btn-primary">Confirm</button>
+                <button id="cancelembed" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

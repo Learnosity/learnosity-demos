@@ -187,26 +187,27 @@ if (isset($filter_post['api_type'])) {
             break;
     }
 
-    if (!$requestKey['configuration']['idle_timeout']['use_idle_timeout']) {
+    if (!isset($requestKey['configuration']['idle_timeout']['use_idle_timeout'])) {
         unset($requestKey['configuration']['idle_timeout']);
     }
     unset($requestKey['configuration']['idle_timeout']['use_idle_timeout']);
 
-    if (!$requestKey['navigation']['show_calculator']['use_calculator']) {
+    if (!isset($requestKey['navigation']['show_calculator']['use_calculator'])) {
         unset($requestKey['navigation']['show_calculator']);
     }
     unset($requestKey['navigation']['show_calculator']['use_calculator']);
 
-    if (!$requestKey['configuration']['submit_criteria']['use_submit_criteria']) {
+    if (!isset($requestKey['configuration']['submit_criteria']['use_submit_criteria'])) {
         unset($requestKey['configuration']['submit_criteria']);
     }
     unset($requestKey['configuration']['submit_criteria']['use_submit_criteria']);
 
-    if (!$requestKey['navigation']['auto_save']['use_auto_save']) {
+    if (!isset($requestKey['navigation']['auto_save']['use_auto_save'])) {
         unset($requestKey['navigation']['auto_save']);
     }
     unset($requestKey['navigation']['auto_save']['use_auto_save']);
-    if (!$requestKey['configuration']['api_type']) {
+    
+    if (!isset($requestKey['configuration']['api_type'])) {
         unset($requestKey['api_type']);
     }
 

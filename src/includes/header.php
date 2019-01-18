@@ -2,25 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Learnosity API Demos</title>
+    <title>Learnosity Demos</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="<?php echo $env['www'] ?>static/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo $env['www'] ?>static/images/favicon.ico?<?php echo $assetVersion ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo $env['www'] ?>static/dist/all.min.css?<?php echo $assetVersion ?>">
     <script src="<?php echo $env['www'] ?>static/dist/all.min.js?<?php echo $assetVersion ?>"></script>
-    <script>
-        var config = {
-            www: '<?php echo $env["www"]; ?>',
-            apiRequest: {
-                security: {
-                    consumer_key: '<?php echo $consumer_key; ?>',
-                    domain: '<?php echo $domain; ?>',
-                    timestamp: '<?php echo $timestamp; ?>',
-                    signature: '[add request signature here]'
-                }
-            }
-        }
-    </script>
 </head>
 <body>
 <!-- Google Tag Manager -->

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="6px" viewBox="0 0 9 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>chevron-icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="DESIGN" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="HOMEPAGE" transform="translate(-349.000000, -106.000000)" fill="#2559EE">
+            <g id="NAVIGATION" transform="translate(0.000000, 60.000000)">
+                <g id="Stacked-Group" transform="translate(280.000000, 41.000000)">
+                    <g id="Group">
+                        <path d="M75.56612,8.56620886 L72.3657555,11.7665733 C72.2094711,11.9228578 72.0048255,12.001 71.8000911,12.001 C71.5952678,12.001 71.3907112,11.9228578 71.2344267,11.7665733 C70.9218578,11.4541822 70.9218578,10.9474578 71.2344267,10.6350667 L73.8690378,8.00054445 L71.2344267,5.36584442 C70.9218578,5.05354219 70.9218578,4.54672893 71.2344267,4.2344267 C71.5469956,3.92185777 72.0532755,3.92185777 72.3657555,4.2344267 L75.5662089,7.43479114 C75.8786889,7.74709337 75.8786889,8.25390663 75.56612,8.56620886" id="Fill-1" transform="translate(73.400279, 8.000500) rotate(-270.000000) translate(-73.400279, -8.000500) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="Page"></g>
+    </g>
+</svg>

@@ -33,7 +33,6 @@ gulp.task('scripts', function () {
 gulp.task('styles', function () {
     gulp.src([
         './www/static/vendor/bootstrap/css/bootstrap.min.css',
-        './www/static/vendor/ladda/ladda.min.css',
         './www/static/css/main.css'
     ])
     .pipe(concat('all.min.css'))
@@ -43,6 +42,9 @@ gulp.task('styles', function () {
 });
 
 gulp.task('copy-fonts', function () {
-    return gulp.src('./www/static/vendor/bootstrap/fonts/*')
+    return gulp.src([
+        './www/static/vendor/bootstrap/fonts/*',
+        './www/static/fonts/*'
+    ])
       .pipe(gulpCopy('./www/static/dist/fonts/', {prefix: 5}));
 });

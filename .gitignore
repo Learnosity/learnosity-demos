@@ -8,3 +8,4 @@
 .vagrant
 www/config_override*
 node_modules
+._*
