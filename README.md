@@ -52,33 +52,10 @@ to *localhost*.
 You can use the local server to quickly get up and running, no Apache/IIS is
 required.
 
-*Additional requirement*: You will need [composer] to fetch dependencies such as
-the Learnosity SDK. Please refer to the next section about installing composer.
-Note that the `make`-based instructions in the “Getting Started” section take
-care of this for you.
-
-    git clone https://github.com/Learnosity/learnosity-demos.git
+    git clone https://github.com/LearnosiVty/learnosity-demos.git
     cd learnosity-demos
-    composer install
     cd www
     php -S localhost:8080
-
-#### Installing composer
-
-See [composer-getting-started] for instructions on setting it up on your
-platform.
-
-Note that the `make`-based instructions in the “Getting Started” section take
-care of the following for you.
-
-For simplicity, the `get-composer.sh` script can be used to fetch a
-local version of composer. It will be named `composer.phar`, and will have to be
-called as `./composer.phar` instead of just `composer`.
-
-If using Mac OS X, you can set up [Homebrew] to use a specific tap.
-
-    brew tap homebrew/php
-    brew install composer
 
 ### Using Vagrant
 
@@ -109,7 +86,6 @@ To control the VM you can do one of the following :
 * Start the VM: `vagrant up`
 * Destroy the VM: `vagrant destroy`
 
-
 ## Consumer
 
 
@@ -121,6 +97,36 @@ This package comes with demo security (consumer) credentials. If you have your o
 More API documentation is available at the [Learnosity Docs site](http://docs.learnosity.com)
 
 
+## PHP dependency management using Composer
+
+While this demonstration project ships with dependency libraries (such as the
+[Learnosity SDK]) for ease of use, it is not recommended practice to do so on
+production projects. The [composer] tool can be used for the purpose of
+installing and upgrading third-party libraries.
+
+See [composer-getting-started] for instructions on setting it up on your
+platform. You can then try it out on this project, by running the following in
+the `learnosity-demos` directory you cloned using `git` as detailed in the
+previous sections.
+
+    composer install # Reinstall dependencies as specified in the shipped composer.lock
+
+    composer update # Upgarde dependencies according to constraints in composer.json
+
+Note that the `make`-based instructions in the “Getting Started” section take
+care of the following for you.
+
+For simplicity, the `get-composer.sh` script can be used to fetch a
+local version of composer. It will be named `composer.phar`, and will have to be
+called as `./composer.phar` instead of just `composer`.
+
+If using Mac OS X, you can set up [Homebrew] to use a specific tap.
+
+    brew tap homebrew/php
+    brew install composer
+
+
+[Learnosity SDK]: https://github.com/Learnosity/learnosity-sdk-php
+[homebrew]: https://brew.sh/
 [composer]: https://getcomposer.org
 [composer-getting-started]: https://getcomposer.org/doc/00-intro.md
-[homebrew]: https://brew.sh/

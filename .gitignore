@@ -8,6 +8,5 @@
 .vagrant
 www/config_override*
 node_modules
-vendor/
 composer.phar
 ._*
