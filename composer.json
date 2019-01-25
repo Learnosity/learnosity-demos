@@ -1,12 +1,12 @@
 {
     "name": "learnosity/learnosity-demos",
-    "type": "library",
+    "type": "project",
     "description": "Jumpstart your integration of the Learnosity APIs into your learning platform.",
     "keywords": ["learnosity","demos"],
     "homepage": "https://github.com/Learnosity/learnosity-demos",
     "license": "MIT",
     "require": {
-        "php": ">=7.0.0",
-        "learnosity/learnosity-sdk-php": "dev-master"
+        "php": ">=5.6.0",
+        "learnosity/learnosity-sdk-php": ">=0.10"
     }
 }
