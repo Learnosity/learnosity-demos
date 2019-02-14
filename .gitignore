@@ -4,9 +4,9 @@
 *.esproj
 *.sublime-workspace
 *.sublime-project
-.idea/*
-.vagrant/*
+.idea
+.vagrant
 www/config_override*
-node_modules/*
 node_modules
+composer.phar
 ._*
