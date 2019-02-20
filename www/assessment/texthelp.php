@@ -85,18 +85,17 @@ $signedRequest = $Init->generate();
             console.log("Listener fired");
             var assessApp = itemsApp.assessApp();
             assessApp.on('test:start', function() {
-                // When the assessment starts we find the elements within the assessment wrapper
-                // that we want the Texthelp reader to ignore and add the 'ignore' attribute to them.
-                // Initiate Texthelp only when the Learnoisty assessment starts
+                //When the assessment starts we find the elements within the assessment wrapper
+                //that we want the Texthelp reader to ignore and add the 'ignore' attribute to them.
+                //Initiate Texthelp only when the Learnoisty assessment starts
                 TexthelpSpeechStream.addToolbar('1','1');
             });
         }
     });
 
-    // This is called by the toolbar when it has loaded and finished processing.
+    //This is called by the toolbar when it has loaded and finished processing.
     function $rw_toolbarLoadedCallback() {
-
-        // Set the start point for the TextHelp reader
+        //Set the start point for the TextHelp reader
         $rw_setStartPoint("start");
     }
 
