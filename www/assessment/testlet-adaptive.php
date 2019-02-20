@@ -57,7 +57,7 @@ $request = [
             [
                 'required_tags' => [
                     'Testlet' => [
-                        'decision-1A'
+                        'decision-1B'
                     ]
                 ]
             ]
