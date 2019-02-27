@@ -86,7 +86,8 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Create Branching Assessments</h2>
-            <p>Use the power of Learnosity's branching assessment format to build an activity that seamlessly adapts to your user.</p>        </div>
+            <p>Use the power of Learnosity's branching assessment format to build an adaptive activity that seamlessly adapts to your user.</p>
+        </div>
     </div>
 
     <div class="section pad-sml">

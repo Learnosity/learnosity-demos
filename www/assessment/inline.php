@@ -27,7 +27,7 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => 'demos-site',
     'items' => [
-		'inline_demo_q1',
+        'inline_demo_q1',
         'inline_demo_q2',
         'Tut002_Item2'
     ]
@@ -47,7 +47,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Embed Formative Assessment Questions into Editorial Content</h2>
-            <p>Place questions <i>in context</i> throughout your editorial without the design restrictions of an assessment player.</p>
+            <p>Place questions <i>in context</i> throughout your editorial without the design restrictions of an assessment player. This demo makes use of the <a href="https://help.learnosity.com/hc/en-us/articles/360000758317-Embedding-the-Items-API-Into-Formative-Content-With-Inline-Rendering">inline</a> rendering type.</p>
         </div>
     </div>
 
