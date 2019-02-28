@@ -116,7 +116,7 @@ previous sections.
 Note that the `make`-based instructions in the “Getting Started” section take
 care of the following for you.
 
-For simplicity, the `get-composer.sh` script can be used to fetch a
+For simplicity, the `get-composer.php` script can be used to fetch a
 local version of composer. It will be named `composer.phar`, and will have to be
 called as `./composer.phar` instead of just `composer`.
 
