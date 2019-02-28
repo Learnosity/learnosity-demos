@@ -20,55 +20,34 @@ $security = [
 
 //simple api request object for Items API
 $request = [
-    'activity_id' => 'itemsbranchingdemo',
-    'name' => 'Items Branching Demo',
-    'rendering_type' => 'assess',
-    'type' => 'submit_practice',
-    'session_id' => Uuid::generate(),
-    'user_id' => 'demos-site',
-    'adaptive' => [
-        'type' => 'itembranching',
-        'steps' => [
-            [
-                'id' => 'item-1',
-                'reference' => 'French_Demo1',
-                'next' => [
-                    'correct' => 'item-3',
-                    'incorrect' => 'item-2'
-                ]
-            ],
-            [
-                'id' => 'item-2',
-                'reference' => 'French_Demo2',
-                'next' => 'item-3'
-            ],
-            [
-                'id' => 'item-3',
-                'reference' => 'French_demo4',
-                'next' => 'decision-1',
-            ],
-            [
-                'id' => 'decision-1',
-                'type' => 'global-score',
-                'percentage' => 50,
-                '>=' => 'item-5',
-                '<' => 'item-4',
-            ],
-            [
-                'id' => 'item-4',
-                'reference' => 'French_Demo3',
-                'next' => 'item-5'
-            ],
-            [
-                'id' => 'item-5',
-                'reference' => 'French_Demo5',
-                'next' => null
-            ],
+    "state"=> "initial",
+    "activity_id"=> "tryagaindemo",
+    "items"=> [
+        "Space Demo Item 4 - New",
+        "Try_Again_math_test"
+    ],
+    "name"=> "TEST",
+    "type"=> "submit_practice",
+    "rendering_type"=> "assess",
+    "course_id"=> "commoncore",
+    "session_id"=> Uuid::generate(),
+    "user_id"=> "demos-site",
+    "dynamic_items"=> [
+        "try_again"=> [
+            "max_attempts"=> 5,
+            "random"=> true
         ]
     ],
-    'config' => [
-        'title' => 'Item Branching Assessment',
-        'regions' => 'main'
+    "config"=> [
+        "navigation"=> [
+            "show_intro"=> false
+        ],
+        "regions"=> "main",
+        "region_overrides"=> [
+            "bottom"=> [[
+                "type"=> "try_again_button"
+            ]]
+        ]
     ]
 ];
 
@@ -85,8 +64,8 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Create Branching Assessments</h2>
-            <p>Use the power of Learnosity's branching assessment format to build an adaptive activity that seamlessly adapts to your user.</p>
+            <h2>Using Dynamic Content And "Try Again" in Assessments</h2>
+            <p>This demo showcases the <a href="https://help.learnosity.com/hc/en-us/articles/360000755358-Using-Dynamic-Content-and-Try-Again-in-your-Assessments">Try Again</a> functionality. Try Again allows students to ask for another set of data for the Question they are attempting..</p>
         </div>
     </div>
 

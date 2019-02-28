@@ -44,7 +44,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Embed Formative Assessment Questions into Editorial Content</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Place questions <i>in context</i> throughout your editorial without the design restrictions of an assessment player.</p>
+                    <p>Place questions <i>in context</i> throughout your editorial without the design restrictions of an assessment player. This demo makes use of the <i>inline</i> rendering type.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./inline.php">Demo</a>
                     </p>
@@ -74,7 +74,7 @@ include_once 'includes/header.php';
                     <h2 class="panel-title">Create Branching Assessments</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Use the power of Learnosity's branching assessment format to build an activity that seamlessly adapts to your user.</p>
+                    <p>Use the power of Learnosity's branching assessment format to build an adaptive activity that seamlessly adapts to your user.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./branching.php">Demo</a>
                     </p>
@@ -332,6 +332,22 @@ include_once 'includes/header.php';
                     <p>Give your students options for reattempting submissions, or saving responses, when a network connection is suddenly unavailable.<p>
                     <p class="text-right">
                         <a class="demo_link" href="./failed-submission.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Using Dynamic Content And "Try Again" in Assessments</h2>
+                </div>
+                <div class="panel-body">
+                    <p>This demo showcases the Try Again functionality. Try Again allows students to ask for another set of data for the Question they are attempting.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./try-again.php">Demo</a>
                     </p>
                 </div>
             </div>
