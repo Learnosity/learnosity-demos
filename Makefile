@@ -1,3 +1,5 @@
+PHP=php
+
 all: run-php
 
 lint:
@@ -10,7 +12,7 @@ all: run-composer
 
 get-composer: composer.phar
 composer.phar:
-	./get-composer.sh
+	$(PHP) get-composer.php
 
 run-composer: composer.phar
 	./composer.phar --no-interaction install

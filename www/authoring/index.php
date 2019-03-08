@@ -230,8 +230,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Author Custom Features</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Develop your own custom features for inclusion in your Learnosity eco system.
-                        <p>
+                        <p>Develop your own custom features for inclusion in your Learnosity eco system.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./author-custom-features.php">Demo</a>
                         </p>
@@ -253,8 +252,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Build Custom Question Templates</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Create your own question templates with default values, and simplify the editing interface by hiding unwanted fields.
-                        <p>
+                        <p>Create your own question templates with default values, and simplify the editing interface by hiding unwanted fields.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./question_templates.php">Demo</a>
                         </p>
@@ -268,8 +266,7 @@ include_once 'includes/header.php';
                     </div>
                     <div class="panel-body">
                         <p>The simple authoring mode is an opinionated subset of the full authoring templates and
-                            layouts available by default—ideal for use in an LMS for teacher or instructor use.
-                        <p>
+                            layouts available by default—ideal for use in an LMS for teacher or instructor use.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./item-edit-simple.php">Demo</a>
                         </p>
@@ -285,8 +282,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Customize the Question Editing Layout</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Custom editor panel layouts allow you to move, re-order and customize the question editor UI to your liking.
-                        <p>
+                        <p>Custom editor panel layouts allow you to move, re-order and customize the question editor UI to your liking.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./custom-qe-layout.php">Demo</a>
                         </p>
@@ -299,8 +295,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Use your Own Digital Asset Management System</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Use your own asset management tool when integrating Learnosity into your CMS.
-                        <p>
+                        <p>Use your own asset management tool when integrating Learnosity into your CMS.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./dam-asset-request.php">Demo</a>
                         </p>
@@ -316,8 +311,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Use Custom Editor Buttons</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Custom buttons give you the ability to extend the standard Learnosity toolbar to add new functionality as you need it.
-                        <p>
+                        <p>Custom buttons give you the ability to extend the standard Learnosity toolbar to add new functionality as you need it.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./custom-editor-buttons.php">Demo</a>
                         </p>
@@ -330,10 +324,25 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Customize the Simple Feature Modal Layout</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Custom simple feature modal layouts allow you to move, re-order and customize the simple features to your liking.
-                        <p>
+                        <p>Custom simple feature modal layouts allow you to move, re-order and customize the simple features to your liking.</p>
                         <p class="text-right">
                             <a class="demo_link"  href="./simple-feature-layout.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Enabling Item Titles</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Item Titles allow authors to better organize and identify their content. Unlike references, titles can contain special characters and do not have to be unique.</p>
+                        <p class="text-right">
+                            <a class="demo_link"  href="./item-titles.php">Demo</a>
                         </p>
                     </div>
                 </div>
