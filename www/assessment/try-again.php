@@ -20,32 +20,32 @@ $security = [
 
 //simple api request object for Items API
 $request = [
-    "state"=> "initial",
-    "activity_id"=> "tryagaindemo",
-    "items"=> [
-        "Space Demo Item 4 - New",
-        "Try_Again_math_test"
+    'state'=> 'initial',
+    'activity_id'=> 'tryagaindemo',
+    'items'=> [
+        'Space Demo Item 4 - New',
+        'Try_Again_math_test'
     ],
-    "name"=> "TEST",
-    "type"=> "submit_practice",
-    "rendering_type"=> "assess",
-    "course_id"=> "commoncore",
-    "session_id"=> Uuid::generate(),
-    "user_id"=> "demos-site",
-    "dynamic_items"=> [
-        "try_again"=> [
-            "max_attempts"=> 5,
-            "random"=> true
+    'name'=> 'TEST',
+    'type'=> 'submit_practice',
+    'rendering_type'=> 'assess',
+    'course_id'=> 'commoncore',
+    'session_id'=> Uuid::generate(),
+    'user_id'=> 'demos-site',
+    'dynamic_items'=> [
+        'try_again'=> [
+            'max_attempts'=> 5,
+            'random'=> true
         ]
     ],
-    "config"=> [
-        "navigation"=> [
-            "show_intro"=> false
+    'config'=> [
+        'navigation'=> [
+            'show_intro'=> false
         ],
-        "regions"=> "main",
-        "region_overrides"=> [
-            "bottom"=> [[
-                "type"=> "try_again_button"
+        'regions'=> 'main',
+        'region_overrides'=> [
+            'bottom'=> [[
+                'type'=> 'try_again_button'
             ]]
         ]
     ]

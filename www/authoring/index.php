@@ -333,7 +333,7 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -347,7 +347,7 @@ include_once 'includes/header.php';
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
