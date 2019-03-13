@@ -29,10 +29,6 @@ $request = array(
             'user_id'    => 'demo_student',
             'session_id' => $session_id
         )
-    ),
-    'configuration' => array(
-        'questionsApiVersion' => 'v2',
-        'itemsApiVersion' => 'v1'
     )
 );
 
