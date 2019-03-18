@@ -35,10 +35,6 @@ $request = array(
             'activity_id' => $activity_id,
             'render'      => false
         )
-    ),
-    'configuration' => array(
-        'questionsApiVersion' => 'v2',
-        'itemsApiVersion' => 'v1'
     )
 );
 

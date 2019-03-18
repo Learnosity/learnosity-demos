@@ -74,7 +74,7 @@ include_once 'includes/header.php';
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Diplay Large-Scale Group/District Reports</h2>
+                    <h2 class="panel-title">Display Large-Scale Group/District Reports</h2>
                 </div>
                 <div class="panel-body">
                     <p>Discover large-scale group reporting and let Learnosity take care of the heavy lifting.</p>

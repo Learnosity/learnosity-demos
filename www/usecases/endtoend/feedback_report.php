@@ -31,10 +31,6 @@ $request = array(
             'user_id' => 'demos-site',
             'session_id' => $session_id
         )
-    ),
-    'configuration' => array(
-        'questionsApiVersion' => 'v2',
-        'itemsApiVersion' => 'v1'
     )
 );
 
