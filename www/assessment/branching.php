@@ -30,38 +30,38 @@ $request = [
         'type' => 'itembranching',
         'steps' => [
             [
-                'id' => 'item-1',
-                'reference' => 'French_Demo1',
+                'id' => 'question-1',
+                'reference' => 'item_branching_demo_q1',
                 'next' => [
-                    'correct' => 'item-3',
-                    'incorrect' => 'item-2'
+                    'correct' => 'question-3',
+                    'incorrect' => 'question-2'
                 ]
             ],
             [
-                'id' => 'item-2',
-                'reference' => 'French_Demo2',
-                'next' => 'item-3'
+                'id' => 'question-2',
+                'reference' => 'item_branching_demo_q2',
+                'next' => 'question-3'
             ],
             [
-                'id' => 'item-3',
-                'reference' => 'French_demo4',
+                'id' => 'question-3',
+                'reference' => 'item_branching_demo_q3',
                 'next' => 'decision-1',
             ],
             [
                 'id' => 'decision-1',
                 'type' => 'global-score',
                 'percentage' => 50,
-                '>=' => 'item-5',
-                '<' => 'item-4',
+                '>=' => 'question-5',
+                '<' => 'question-4',
             ],
             [
-                'id' => 'item-4',
-                'reference' => 'French_Demo3',
-                'next' => 'item-5'
+                'id' => 'question-4',
+                'reference' => 'item_branching_demo_q4',
+                'next' => 'question-5'
             ],
             [
-                'id' => 'item-5',
-                'reference' => 'French_Demo5',
+                'id' => 'question-5',
+                'reference' => 'item_branching_demo_q5',
                 'next' => null
             ],
         ]
