@@ -44,8 +44,9 @@ $pages = array(
                                     </ul>
                                 </li>' . PHP_EOL;
             } else {
-                list($key, $value) = each($name);
-                echo '<li class="dropdown"><a href="' . $env['www'] . $key . '" class="">' . $value . '</a><li>';
+                foreach ($name as $key => $value) {
+                    echo '<li class="dropdown"><a href="' . $env['www'] . $key . '" class="">' . $value . '</a><li>';
+                }
             }
         }
         ?>
