@@ -42,8 +42,8 @@ $request = [
                     "elements" => [
                         [
                             "type" => "shading_plot",
-                            "source" => "parent",
-                            "min" => "lowest_percent",
+                            "source" => "ancestor_1",
+                            "min" => "p25_percent",
                             "max" => "p75_percent"
                         ],
                         [
@@ -84,7 +84,7 @@ $request = [
                     "elements" => [
                         [
                             "type" => "shading_plot",
-                            "source" => "parent",
+                            "source" => "ancestor_1",
                             "min" => "p25_percent",
                             "max" => "p75_percent"
                         ],
