@@ -54,16 +54,7 @@ $request = [
         'title' => 'Item Adaptive Assessment',
         'regions' => 'main',
         'navigation' => [
-            'intro_item'             => 'adaptive-intro',
-            'show_prev'              => false,
-            'show_progress'          => false,
-            'show_fullscreencontrol' => false,
-            'show_acknowledgements'  => true,
-            'toc'                    => false,
-            'auto_save' => [
-               'ui' => false,
-               'saveIntervalDuration' => 60
-            ]
+            'intro_item' => 'adaptive-intro'
         ],
         'configuration'       => [
             'onsubmit_redirect_url' => 'adaptive-report.php?session_id=' . $sessionId
