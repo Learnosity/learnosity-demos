@@ -12,7 +12,17 @@ include_once 'includes/header.php';
                     <h1>Uh oh!</h1>
                     <h2>404 Not Found</h2>
                     </p><p>
-                        Unfortunately, we can't find the page you're looking for. We'd suggest starting over from the <a href="/">home page.</a></p>
+                        Unfortunately, we can't find the page you're looking for.
+                        We'd suggest starting over from the <a href="/">home page.</a>
+                        However, perhaps the following search results can help.
+                    </p>
+                    <iframe width="100%" height="1024" src="https://learnosity.com/?s=<?=
+                    urlencode(
+                        str_replace('/', ' ', $_SERVER['REQUEST_URI'])
+                        /* . ' site:demos.learnosity.com' */
+                    )
+?>">
+                    </iframe>
                 </div>
             </div>
         </div>
