@@ -10,8 +10,10 @@ $mapping = [
 foreach ($mapping as $oldURL => $newURL) {
     if (strpos($_SERVER['REQUEST_URI'], $oldURL) !== false) {
         $fullNewURL = str_replace($oldURL, $newURL, $_SERVER['REQUEST_URI']);
-        /* XXX: We cannot use Location as we could have been called from a 404 handler,
-         * and I didn't find a way to rewrite the status code to a 30x*/
+        http_response_code(302);
+        header('Location: ' . $fullNewURL);
+        /* In case we cannot use Location, e.g., been called from a 404 handler
+         * which doesn't allow us to override the status ) */
         print(
             "<!doctype html>" . PHP_EOL
             . "<html>" . PHP_EOL
