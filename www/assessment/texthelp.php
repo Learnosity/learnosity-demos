@@ -21,8 +21,6 @@ $security = [
 
 $request = [
     'activity_id' => 'Activity_Test',
-    //'activity_template_id'=> 'TEXTHELP_ACTIVITY',
-    //9 Jan 19 call with Peter (Texthelp) - requested to change old activity (TEXTHELP_ACTIVITY) to new one
     'activity_template_id'=> 'TexttoSpeech_Testing_Activity',
 
     'rendering_type' => "assess",
@@ -32,7 +30,7 @@ $request = [
     'name' => "Test Assessment",
     'config'         => [
         'configuration' => [
-            'onsubmit_redirect_url' => 'summary_report.php?session_id='. $session_id
+            'onsubmit_redirect_url' => 'texthelp.php'
         ],
         'questions_api_init_options' => [
             'beta_flags' => [
@@ -58,7 +56,7 @@ $signedRequest = $Init->generate();
         <h2>Using Third-Party Assistive Tools: TextHelp</h2>
         <p>This demo shows how Texthelp's SpeechStream product can be integrated into a Learnosity assessment with ease.</p>
         <p><a href="https://www.texthelp.com/en-us/products/speechstream">SpeechStream</a> is a cloud based JavaScript software solution that allows publishers to embed text-to-speech read aloud within their products. This feature is used by students with learning disabilities, such as dyslexia, struggling readers, English language learners, auditory learners, and students with mild vision impairments.</p>
-        <a href='https://www.texthelp.com' target='_blank' title='Learn about solutions from our partner Texthelp'><img src='https://www.texthelp.com/CMSTemplates/Texthelp/Includes/build/assets/images/logo.png' alt='Texthelp Logo' class='pull-right' /></a>
+        <a href='https://www.texthelp.com' target='_blank' title='Learn about solutions from our partner Texthelp'><img src='../static/images/texthelp-logo.png' alt='Texthelp Logo' class='pull-right' /></a>
         <p>If you have a Texthelp license - it integrates effortlessly with Learnosity.</p>
         <p>The SpeechStream Toolbar will appear in the upper right corner of the screen, when the assessment is started.</p>
     </div>
