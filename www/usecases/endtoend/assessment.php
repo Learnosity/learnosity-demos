@@ -25,10 +25,8 @@ $security = array(
 
 if (isset($_GET['session_id'])) {
     $session_id = $_GET['session_id'];
-    $session_state = 'resume';
 } else {
     $session_id = Uuid::generate();
-    $session_state = 'initial';
 }
 
 
@@ -36,7 +34,6 @@ $request = array(
     'activity_id'    => $activity_id,
     'name'           => 'End to End Demo - Assessment',
     'rendering_type' => 'assess',
-    'state'          => $session_state,
     'type'           => 'submit_practice',
     'session_id'     => $session_id,
     'user_id'        => 'demos-site',
