@@ -74,45 +74,46 @@ $signedRequest = $Init->generate();
         //optional callbacks for ready
         var callbacks = {
             readyListener: function () {
-                // setTimeout - Temporary work around for readylistener race condition issue. Currently working on a fix
-                setTimeout(function(){authorApp.setWidget(
-                    {
-                        "options": [
-                            {
-                                "label": "[Option A]",
-                                "value": "0"
+                authorApp.on('render:item', function(){
+                    authorApp.setWidget(
+                        {
+                            "options": [
+                                {
+                                    "label": "[Option A]",
+                                    "value": "0"
+                                },
+                                {
+                                    "label": "[Option B]",
+                                    "value": "1"
+                                },
+                                {
+                                    "label": "[Option C]",
+                                    "value": "2"
+                                },
+                                {
+                                    "label": "[Option D]",
+                                    "value": "3"
+                                }
+                            ],
+                            "stimulus": "<p>This is the question the student will answer</p>",
+                            "type": "mcq",
+                            "validation": {
+                                "scoring_type": "exactMatch",
+                                "valid_response": {
+                                    "score": 1,
+                                    "value": [
+                                        "2"
+                                    ]
+                                }
                             },
-                            {
-                                "label": "[Option B]",
-                                "value": "1"
-                            },
-                            {
-                                "label": "[Option C]",
-                                "value": "2"
-                            },
-                            {
-                                "label": "[Option D]",
-                                "value": "3"
-                            }
-                        ],
-                        "stimulus": "<p>This is the question the student will answer</p>",
-                        "type": "mcq",
-                        "validation": {
-                            "scoring_type": "exactMatch",
-                            "valid_response": {
-                                "score": 1,
-                                "value": [
-                                    "2"
-                                ]
+                            "ui_style": {
+                                "type": "horizontal"
                             }
                         },
-                        "ui_style": {
-                            "type": "horizontal"
-                        }
-                    },
-                    'Multiple choice – standard'
-                );
-            },1000)},
+                        'Multiple choice – standard'
+                    );
+                });
+            },
             errorListener: function (err) {
                 console.log(err);
             }
