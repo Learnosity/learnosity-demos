@@ -40,7 +40,7 @@ $request = [
                 ],
                 [
                     'type' => 'pause_button'
-                ]
+                ],
             ],
             'right' => [
                [
@@ -51,6 +51,9 @@ $request = [
                ],
                [
                   'type' => 'separator_element'
+               ],
+               [
+                   'type' => 'save_button'
                ],
                [
                   'type' => 'flagitem_button'
