@@ -79,9 +79,6 @@ $signedRequest = $Init->generate();
         reportsApp.getReport('report-1').on('resumed', function (events) {
             console.log('Received events: resumed', events);
         });
-        reportsApp.getReport('report-1').on('saved', function (events) {
-            console.log('Received events: saved', events);
-        });
         reportsApp.getReport('report-1').on('submit', function (events) {
             console.log('Received events: submit', events);
         });
@@ -93,6 +90,9 @@ $signedRequest = $Init->generate();
         });
         reportsApp.getReport('report-1').on('terminate', function (events) {
             console.log('Received events: terminate', events);
+        });
+        reportsApp.getReport('report-1').on('suspended', function (events) {
+            console.log('Received events: suspended', events);
         });
     }
 </script>
