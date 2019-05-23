@@ -7,14 +7,14 @@ Jumpstart your integration of the Learnosity APIs into your learning platform.
 
 This repository has been designed to allow users to quickly view and interact with some of the core Learnosity APIs.
 
-Each page shows a basic integration to a specific Learnosity API which you can utilise and learn from.
+Each page shows a basic integration to a specific Learnosity API which you can utilize and learn from.
 
 There is also a SignatureUtils class which simplifies the generation of the security signatures for each of the types.
 
 ### Requirements
 
 * PHP 5.6+
-* You must be connected to the internet to use this site
+* You must be connected to the Internet to use this site
 
 ## Getting Started
 
@@ -111,7 +111,7 @@ previous sections.
 
     composer install # Reinstall dependencies as specified in the shipped composer.lock
 
-    composer update # Upgarde dependencies according to constraints in composer.json
+    composer update # Upgrade dependencies according to constraints in composer.json
 
 Note that the `make`-based instructions in the “Getting Started” section take
 care of the following for you.
