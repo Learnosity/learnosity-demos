@@ -11,7 +11,7 @@ services:
             - developer_net
         labels:
             - "learnosity.app_name=site-demos"
-            - "learnosity.app_root=${PWD}"
+            - "learnosity.app_root=${COMPOSE_ROOT}"
             - "traefik.frontend.rule=Host:demos.dev.learnosity.com"
             - "traefik.port=80"
             - "traefik.docker.network=developer_net"
