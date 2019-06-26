@@ -32,7 +32,7 @@ $domain = explode(':', $_SERVER['HTTP_HOST'])[0];
 |
 */
 
-$lts_version = "v2019.1.LTS";
+$lts_version = "v2019.2.LTS";
 
 $url_assess                = 'https://assess-va.learnosity.com/?' . $lts_version;
 $url_authorapi             = 'https://authorapi.learnosity.com/?' . $lts_version;
