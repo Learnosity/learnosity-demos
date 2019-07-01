@@ -119,16 +119,17 @@ $signedRequest = $Init->generate();
         readyListener: function () {
 
             authorApp.on('open:item', function (event) {
-
-                // Do not proceed if the array is undefined (as would be the case when adding a new item)
-                if(typeof(event.data.questions) != 'undefined'){
+                // Only proceed if item object is defined (which is not the case for new items)
+                if(event.data.item){
 
                     // Prevent the default action (open) when an item in the list is clicked
                     event.preventDefault();
 
-                    // Check if the Item contains questions set a flag accordingly
-                    //   Need to add the test for "learnosity-response" because data.questions does not contain questions data due to recent reworking of Author API.
-                    if(event.data.questions.length > 0 || event.data.item.content.indexOf("learnosity-response") >= 0) {
+                    // Check if the Item content string contains any questions, and if so, set a flag
+                    // accordingly
+                    // Note that we must check the content string rather than item.questions array,
+                    // as that data is not available until the item is opened and fetched
+                    if(event.data.item.content.indexOf("learnosity-response") >= 0) {
                         itemHasQuestions = true;
                     }
 
@@ -209,8 +210,9 @@ $signedRequest = $Init->generate();
     }
 
     function saveItemID(itemID) {
-        if(jQuery.inArray(itemID, itemIDs) == -1){
+        if (itemIDs.indexOf(itemID) === -1){
             itemIDs.push(itemID);
+            itemWithQuestionsAdded = true;
             showNotification(itemID);
         }
     }
