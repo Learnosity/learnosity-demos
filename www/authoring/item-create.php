@@ -30,7 +30,24 @@ $request = [
                     'edit' => true
                 ],
                 'dynamic_content' => true,
-                'shared_passage' => true
+                'shared_passage' => true,
+                'actions' => [
+                    'show' => true
+                ],
+                'details' => [
+                    'description' => [
+                        'show' => true,
+                        'edit' => true
+                    ],
+                    'source' => [
+                        'show' => true,
+                        'edit' => true
+                    ],
+                    'note' => [
+                        'show' => true,
+                        'edit' => true
+                    ]
+                ]
             ]
         ]
     ],
