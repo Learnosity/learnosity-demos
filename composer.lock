@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "learnosity/learnosity-sdk-php",
-            "version": "v0.10.0",
+            "version": "v0.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Learnosity/learnosity-sdk-php.git",
-                "reference": "7d021eac849888b7ad246e7f792ba1f050536cd5"
+                "reference": "ff2d4232f3e0cdb80f58a7aa89c772a843c47214"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Learnosity/learnosity-sdk-php/zipball/7d021eac849888b7ad246e7f792ba1f050536cd5",
-                "reference": "7d021eac849888b7ad246e7f792ba1f050536cd5",
+                "url": "https://api.github.com/repos/Learnosity/learnosity-sdk-php/zipball/ff2d4232f3e0cdb80f58a7aa89c772a843c47214",
+                "reference": "ff2d4232f3e0cdb80f58a7aa89c772a843c47214",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 "php5",
                 "sdk"
             ],
-            "time": "2018-09-17T04:24:06+00:00"
+            "time": "2019-05-06T23:31:11+00:00"
         },
         {
             "name": "paragonie/random_compat",
