@@ -191,7 +191,7 @@ LearnosityAmd.define([
         },
 
         maxScore: function () {
-            return this.validResponse.score || 1;
+            return this.question.score != null? this.question.score : null;
         },
 
         canValidateResponse: function () {
