@@ -24,6 +24,7 @@ $request = [
     'activity_id' => 'testletadaptivedemo',
     'name' => 'Items API - Testlet Adaptive activity',
     'rendering_type' => 'assess',
+    'organisation_id' => 505,
     'session_id' => $sessionId,
     'user_id' => 'demos-site',
     'adaptive' => [
