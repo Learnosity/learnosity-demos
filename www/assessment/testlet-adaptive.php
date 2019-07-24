@@ -43,14 +43,14 @@ $request = [
             [
                 'required_tags' => [
                     'Testlet' => [
-                        'sequence-1A'
+                        'sequence-2A'
                     ]
                 ]
             ],
             [
                 'required_tags' => [
                     'Testlet' => [
-                        'sequence-2A'
+                        'sequence-2B'
                     ]
                 ]
             ]
