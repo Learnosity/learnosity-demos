@@ -1,71 +1,71 @@
 <?php
 
-    //common environment attributes including search paths. not specific to Learnosity
-	include_once '../env_config.php';
+//common environment attributes including search paths. not specific to Learnosity
+include_once '../env_config.php';
 
-	//site scaffolding
-	include_once 'includes/header.php';
+//site scaffolding
+include_once 'includes/header.php';
 
-    //common Learnosity config elements including API version control vars
-	include_once '../lrn_config.php';
+//common Learnosity config elements including API version control vars
+include_once '../lrn_config.php';
 
-    //alias(es) to eliminate the need for fully qualified classname(s) from sdk
-	use LearnositySdk\Request\Init;
+//alias(es) to eliminate the need for fully qualified classname(s) from sdk
+use LearnositySdk\Request\Init;
 
+//security object. timestamp added by SDK
+$security = [
+    'consumer_key' => $consumer_key,
+    'domain'       => $domain
+];
 
-    //security object. timestamp added by SDK
-	$security = [
-		'consumer_key' => $consumer_key,
-		'domain'       => $domain
-	];
+//simple api request object, with additional common features added and commented
+$request = [
+    'mode'      => 'item_list',
+    'config'    => [
+        //hide ability to add new item
+        'item_list' => [
+            'toolbar' => [
+                'add' => false
+            ]
+        ],
+        /*
+            * show item reference but disallow editing
+            * disallow duplication
+            * show preview only
+            * disallow editing or deleting widgets within items
+            */
+        'item_edit' => [
+            'item' => [
+                'reference' => [
+                    'show' => true,
+                    'edit' => false
+                ],
+                'duplicate' => [
+                    'show' => false
+                ],
+                'mode' => [
+                    'default' => 'preview',
+                    'show' => false
+                ],
+                'save' => false
+            ],
+            'widget' => [
+                'delete' => false,
+                'edit' => false
+            ]
+        ]
+    ],
+    //user for whom this API is initialized. recorded when editing item content.
+    'user' => [
+        'id'        => 'demos-site',
+        'firstname' => 'Demos',
+        'lastname'  => 'User',
+        'email'     => 'demos@learnosity.com'
+    ]
+];
 
-    //simple api request object, with additional common features added and commented
-	$request = [
-		'mode'      => 'item_list',
-		'config'    => [
-		    //hide ability to add new item
-		    'item_list' => [
-				'toolbar' => [
-					'add' => false
-				]
-		    ],
-			/*
-			 * show item reference but disallow editing
-			 * disallow duplication
-			 * show preview only
-			 * disallow editing or deleting widgets within items
-			 */
-			'item_edit' => [
-				'item' => [
-					'reference' => [
-					    'show' => true,
-						'edit' => false
-					],
-                    'duplicate' => [
-	                    'show' => false
-                    ],
-					'mode' => [
-						'default' => 'preview',
-						'show' => false
-					]
-				],
-				'widget' => [
-					'delete' => false,
-					'edit' => false
-				]
-			]
-		],
-		//user for whom this API is initialized. recorded when editing item content.
-		'user' => [
-			'id'        => 'demos-site',
-			'firstname' => 'Demos',
-			'lastname'  => 'User',
-			'email'     => 'demos@learnosity.com'
-		]
-	];
-
-	$Init = new Init('author', $security, $consumer_secret, $request);
-	$signedRequest = $Init->generate();
+$Init = new Init('author', $security, $consumer_secret, $request);
+$signedRequest = $Init->generate();
 
 ?>
 
@@ -110,5 +110,5 @@
 
 
 <?php
-	include_once 'views/modals/initialisation-preview.php';
-	include_once 'includes/footer.php';
+    include_once 'views/modals/initialisation-preview.php';
+    include_once 'includes/footer.php';
