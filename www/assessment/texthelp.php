@@ -72,7 +72,7 @@ $signedRequest = $Init->generate();
 <!-- Load Learnosity -->
 <script src="<?php echo $url_items; ?>"></script>
 <!-- Load the TextHelp library -->
-<script type="text/javascript" src="//learnositytoolbar.speechstream.net/learnosity/standardconfig.js"></script>
+<script type="text/javascript" src="https://configuration.speechstream.net/learnosity/v216/config.js"></script>
 
 <script>
 
