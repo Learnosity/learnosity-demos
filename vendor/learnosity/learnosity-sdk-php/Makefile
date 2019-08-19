@@ -21,10 +21,10 @@ release:
 
 test: test-unit test-integration-env
 
-test-unit:
+test-unit: install-vendor-dev
 	$(PHPUNIT) --testsuite unit
 
-test-integration-env:
+test-integration-env: install-vendor-dev
 	$(PHPUNIT) --testsuite integration
 
 test-dist: dist-test

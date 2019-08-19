@@ -171,21 +171,29 @@ class Init
      *
      * @return array
      */
-    private function addMeta(array $requestPacket) {
-        $requestPacket['meta'] = [
-            'sdk' => [
-                'version' => $this->getSDKVersion(),
-                'lang' => 'php',
-                'lang_version' => phpversion(),
-                'platform' => php_uname('s'),
-                'platform_version' => php_uname('r')
-            ]
+    private function addMeta(array $requestPacket)
+    {
+        $sdkMetricsMeta = [
+            'version' => $this->getSDKVersion(),
+            'lang' => 'php',
+            'lang_version' => phpversion(),
+            'platform' => php_uname('s'),
+            'platform_version' => php_uname('r')
         ];
+
+        if (isset($requestPacket['meta'])){
+            $requestPacket['meta']['sdk'] = $sdkMetricsMeta;
+        } else {
+            $requestPacket['meta'] = [
+                'sdk' => $sdkMetricsMeta
+            ];
+        }
 
         return $requestPacket;
     }
 
-    private function getSDKVersion() {
+    private function getSDKVersion()
+    {
         if (!file_exists(self::VERSION_FILE_PATH)) {
             return 'unknown';
         }
@@ -397,8 +405,11 @@ class Init
                 if (!$this->isAssocArray($users)) {
                     /* Backward compatibility: if we get a non-associative array,
                      * we assume that it's already an array of user IDs */
-                    error_log('Warning: Passing an array of user IDs to ' . __CLASS__ . '::' . __FUNCTION__ .
-                        '("events", ...) is deprecated; it should be an associative array with user IDs as keys');
+                    Init::warnDeprecated(
+                        __CLASS__ . '::' . __FUNCTION__ . ' ("events", ...):'
+                        . ' Passing an array of user IDs is deprecated;'
+                        . ' it should be an associative array with user IDs as keys.'
+                    );
                 } else {
                     $users = array_keys($users);
                 }
@@ -470,7 +481,7 @@ class Init
         }
     }
 
-    private function isAssocArray(array $array)
+    private static function isAssocArray(array $array)
     {
         $array = array_keys($array);
         return ($array !== array_keys($array));
@@ -496,5 +507,15 @@ class Init
     public static function enableTelemetry()
     {
         self::$telemetryEnabled = true;
+    }
+
+    /**
+     * Warn of deprecated uses in the PHP error log
+     * @param string $message
+     */
+    public static function warnDeprecated(/* FIXME: string */ $message)
+    {
+        error_log('Warning: ' . $message
+            . ' This will become an error in the next major version of the Learnosity SDK.');
     }
 }
