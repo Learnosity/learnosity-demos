@@ -61,6 +61,7 @@ $signedRequest = $Init->generate();
         <div class="overview">
             <h2>Build Pre-Written Fixed Form Assessments (with Language Selection)</h2>
             <p>Build fixed-form activities in Learnosity, and deliver high-quality pre-authored assessments to your end-users using Activities. Activities are a pre-authored fixed form test for multiple items, along with test configuration, authored in the Learnosity Author site, or via the Author API.</p>
+            <p>This demo uses <a href="https://github.com/Learnosity/learnosity-i18n">learnosity-i18n</a> which is a public repository of Learnosity internationalization language bundles.</p>
         </div>
         <form class="form-horizontal" action="/assessment/activities-i18n.php" method="get">
             <div class="form-group">
@@ -68,7 +69,7 @@ $signedRequest = $Init->generate();
                 <div class="col-md-2">
                     <select class="form-control" name="language">
                         <option <?php if ($language === 'english') { echo 'selected=true'; } ?> value="english">English</option>
-                        <option <?php if ($language === 'arabic') { echo 'selected=true'; } ?> value="arabic">Arabic</option>
+                        <option <?php if ($language === 'arabic') { echo 'selected=true'; } ?> value="arabic">Arabic (with RTL)</option>
                         <option <?php if ($language === 'spanish') { echo 'selected=true'; } ?> value="spanish">Spanish</option>
                     </select>
                 </div>
@@ -88,7 +89,7 @@ $signedRequest = $Init->generate();
         <div id="learnosity_assess"></div>
     </div>
 
-    <script src="<?php echo $url_items; ?>"></script>
+    <script <?php if ($language === 'arabic') { echo 'data-lrn-dir="rtl"'; } ?> src="<?php echo $url_items; ?>"></script>
     <script>
         var initializationObject = <?php echo $signedRequest; ?>;
 
