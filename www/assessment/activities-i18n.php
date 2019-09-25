@@ -23,16 +23,33 @@ if (isset($_GET['language'])) {
     }
 }
 
+// TODO: Remove this when we have the multi lingual items in all environments.
+if (isset($_GET['env']) === false) {
+    $url_items = '//items.learnosity.com';
+}
+
 $security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain
 ];
 
+switch ($language) {
+    case 'arabic':
+        $activityTemplateId = 'i18n-acty1-arb';
+        break;
+    case 'spanish':
+        $activityTemplateId = 'i18n-acty1-spa';
+        break;
+    default:
+        $activityTemplateId = 'i18n-acty1-eng';
+        break;
+}
+
 
 //simple api request object for Items API
 $request = [
     'activity_id' => 'itemsactivitiesdemo',
-    'activity_template_id' => 'demo-activity-1',
+    'activity_template_id' => $activityTemplateId,
     'name' => 'Items API demo - activities',
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
@@ -40,7 +57,7 @@ $request = [
     'user_id' => 'demos-site',
     'config' => [
         'title' => 'Activities Demo',
-        'subtitle' => 'Walter White',
+        'subtitle' => 'Demo',
         'regions' => 'main',
         'labelBundle' => json_decode($labels, true)
     ]
