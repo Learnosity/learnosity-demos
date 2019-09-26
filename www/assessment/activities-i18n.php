@@ -56,8 +56,6 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => 'demos-site',
     'config' => [
-        'title' => 'Activities Demo',
-        'subtitle' => 'Demo',
         'regions' => 'main',
         'labelBundle' => json_decode($labels, true)
     ]
