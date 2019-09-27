@@ -13,13 +13,15 @@ use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
 
-$labels = '[]';
+$assessLabels = '[]';
+$questionsLabels = '[]';
 $language = 'english';
 
 if (isset($_GET['language'])) {
     $language = $_GET['language'];
     if ($language !== 'english') {
-        $labels = file_get_contents("https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/" . $language . "/assess-api.json");
+        $assessLabels = file_get_contents("https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/" . $language . "/assess-api.json");
+        $questionsLabels = file_get_contents("https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/" . $language . "/questions-api.json");
     }
 }
 
@@ -57,7 +59,10 @@ $request = [
     'user_id' => 'demos-site',
     'config' => [
         'regions' => 'main',
-        'labelBundle' => json_decode($labels, true)
+        'labelBundle' => json_decode($assessLabels, true),
+        'questions_api_init_options' => [
+            'labelBundle' => json_decode($questionsLabels, true),
+        ]
     ]
 ];
 
