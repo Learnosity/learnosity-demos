@@ -11,6 +11,9 @@ $pages = array(
     ),
     'Use Cases' => array(
         'usecases/index.php' => 'Use Cases'
+    ),
+    'Partners' => array(
+        'partners/index.php' => 'Partners'
     )
 );
 ?>
