@@ -19,9 +19,14 @@ $language = 'english';
 
 if (isset($_GET['language'])) {
     $language = $_GET['language'];
-    if ($language !== 'english') {
-        $assessLabels = file_get_contents("https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/" . $language . "/assess-api.json");
-        $questionsLabels = file_get_contents("https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/" . $language . "/questions-api.json");
+    $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
+    if ($language === 'arabic') {
+        $assessLabels = file_get_contents($url . '/assess-api_ar-EG.json');
+        $questionsLabels = file_get_contents($url . "/questions-api_ar-EG.json");
+    }
+    if ($language === 'spanish') {
+        $assessLabels = file_get_contents($url . '/assess-api_es.json');
+        $questionsLabels = file_get_contents($url . "/questions-api_es.json");
     }
 }
 
