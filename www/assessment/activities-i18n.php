@@ -174,13 +174,11 @@ $signedRequest = $Init->generate();
             <p><b>Add your own:</b> Documentation | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
         </div>
-
-        <div class="section pad-sml">
-            <!-- Container for the assess api to load into -->
-            <div id="learnosity_assess"></div>
-        </div>
     </div>
-
+    <div class="section pad-sml">
+        <!-- Container for the assess api to load into -->
+        <div id="learnosity_assess"></div>
+    </div>
     <script <?php if ($language === 'arabic') { echo 'data-lrn-dir="rtl"'; } ?> src="<?php echo $url_items; ?>"></script>
     <script>
         var initializationObject = <?php echo $signedRequest; ?>;
