@@ -25,12 +25,19 @@ $request = [
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
-    'user_id' => 'demos-site',
-    'activity_template_id' => 'reading_time',
+    'user_id' => '$ANONYMIZED_USER_ID',
+    'items'=> ['ccore_parcc_grade10_prose', 'ccore_parcc_grade10_ebsr1', 'ccore_parcc_grade10_ebsr2'],
     'config' => [
-        'title' => 'Demo activity - showcasing question types and assess options',
-        'subtitle' => 'Walter White',
-        'regions' => 'main'
+        'regions' => 'main',
+        'time'=> [
+			'max_time'=> 180,
+			'warning_time'=> 60
+		],
+        'configuration'=> [
+			'reading_mode'=> [
+				'reading_time'=> 60
+			]
+		]
     ]
 ];
 
