@@ -25,7 +25,7 @@ $request = [
     'rendering_type' => 'inline',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
-    'user_id' => 'demos-site',
+    'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
         'act1',
         'act2',
