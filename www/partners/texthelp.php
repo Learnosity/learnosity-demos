@@ -30,9 +30,25 @@ $request = [
         'configuration' => [
             'onsubmit_redirect_url' => 'texthelp.php'
         ],
-        'questions_api_init_options' => [
-            'beta_flags' => [
-                'reactive_views' => true
+        'region_overrides' => [
+            'right' => [
+                [
+                    'type' => 'save_button'
+                ],
+                [
+                    'type' => 'fullscreen_button'
+                ],
+                [
+                    'type' => 'accessibility_button'
+                ],
+                [
+                    'type' => 'custom_button',
+                    'options' => [
+                        'name' => 'SpeechStream',
+                        'label' => 'SpeechStream',
+                        'icon_class' => 'lrn_btn SpeechStream_btn'
+                    ]
+                ]
             ]
         ]
     ]
@@ -81,10 +97,13 @@ $signedRequest = $Init->generate();
             console.log("Listener fired");
             var assessApp = itemsApp.assessApp();
             assessApp.on('test:start', function() {
-                // When the assessment starts we find the elements within the assessment wrapper
-                // that we want the Texthelp reader to ignore and add the 'ignore' attribute to them.
-                // Initiate Texthelp only when the Learnoisty assessment starts
-                TexthelpSpeechStream.addToolbar('1','1');
+                // When the assessment starts, Texthelp’s SpeechStream will parse through the DOM 
+                // and dynamically ignore certain specified ‘classes’ that are listed in SpeechStream’s configuration file, 
+                // which were previously identified as not to be read aloud.
+                TexthelpSpeechStream.addToolbar();
+            });
+            assessApp.on('button:SpeechStream:clicked', function(){
+                showSpeechStreamBar();
             });
         }
     });
@@ -95,7 +114,36 @@ $signedRequest = $Init->generate();
         $rw_setStartPoint("start");
     }
 
+    var showSpeechStream = true;
+
+    function showSpeechStreamBar(){
+        showSpeechStream = !showSpeechStream;
+        window.texthelp.SpeechStream.ui.toolbar.toolbar.setVisibility(showSpeechStream);
+        $rw_stopSpeech();  
+        $rw_enableClickToSpeak(false);  
+    }
+
 </script>
+
+<style>
+    .lrn.lrn-assess .lrn-region:not(.lrn-items-region) .lrn_btn.SpeechStream_btn{
+        padding: 0.4em 0.9em 0.4em 0.7em;
+    }
+    @media all and (max-width: 991px) {
+        .lrn.lrn-assess .lrn-region:not(.lrn-items-region) .lrn_btn.SpeechStream_btn{
+            padding: 0.75em 0.25em; 
+        }
+    }
+    button.lrn_btn.SpeechStream_btn:before{
+        content: '';
+        background-image: url('../static/images/speechstream-logo.png');
+        background-size: contain;
+        float: left;
+        padding: 6px;
+        height: 26px;
+        width: 23px;
+    }
+</style>
 
 <?php
     include_once 'views/modals/initialisation-preview.php';
