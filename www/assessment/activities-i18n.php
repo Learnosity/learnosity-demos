@@ -67,6 +67,10 @@ $request = [
         'labelBundle' => json_decode($assessLabels, true),
         'questions_api_init_options' => [
             'labelBundle' => json_decode($questionsLabels, true),
+        ],
+        'navigation' => [
+            'scroll_to_top' => false,
+            'scroll_to_test' => false
         ]
     ]
 ];
@@ -75,7 +79,56 @@ $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
+    <style>
+        .language-button-container {
+            display: inline-block;
+        }
 
+        .language-button {
+            height: 46px;
+            display: flex;
+            background-color: #F7F7F7;
+            color: black;
+
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 2px;
+            position: relative;
+            margin-right: 25px;
+            padding-right: 25px;
+            transition-property: transform;
+            transition-duration: 0.2s;
+            align-items: center;
+        }
+
+        .language-button:focus {
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 1px black;
+            outline: none;
+        }
+
+
+        .language-button:focus,
+        .language-button-container:hover .language-button {
+            text-decoration: none;
+            color: black;
+            background-color: #EAEAEA;
+        }
+
+        .language-button-container:hover .language-button {
+            transform: translate(0px, -5px);
+        }
+
+        .selected {
+            background-color: #EAEAEA;
+            border: 2px solid #355BD5;
+        }
+
+        .language-flag {
+            height: 20px;
+            width: 28px;
+            margin-right: 5px;
+            margin-left: 13px;
+        }
+    </style>
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
@@ -84,34 +137,46 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Build Pre-Written Fixed Form Assessments (with Language Selection)</h2>
-            <p>Build fixed-form activities in Learnosity, and deliver high-quality pre-authored assessments to your end-users using Activities. Activities are a pre-authored fixed form test for multiple items, along with test configuration, authored in the Learnosity Author site, or via the Author API.</p>
-            <p>This demo uses <a href="https://github.com/Learnosity/learnosity-i18n">learnosity-i18n</a> which is a public repository of Learnosity internationalization language bundles.</p>
+            <h2>I18n and l10n support made easy</h2>
+            <p>Learnosity is built from the ground up with i18n (Internationalization) and l10n (Localization) support with support for configuration and language bundles.</p>
+            <p>This demo uses learnosity-i18n which is a public repository of Learnosity internationalization language bundles.</p>
+            <p style="margin-bottom:25px;">Selected examples:</p>
+            <div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'english') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=english">
+                        <img class="language-flag" src="/static/images/i18n/flag-US.png" />
+                        English (US)
+                    </a>
+                </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'spanish') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=spanish">
+                        <img class="language-flag" src="/static/images/i18n/flag-ES.png" />
+                        Español / Spanish
+                    </a>
+                </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'french') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=french">
+                        <img class="language-flag" src="/static/images/i18n/flag-FR.png" />
+                        Français / French
+                    </a>
+                </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'arabic') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=arabic">
+                        <img class="language-flag" src="/static/images/i18n/flag-EG.png" />
+                        Arabic / العَرَبِيَّة
+                    </a>
+                </div>
+            </div>
+            <br/>
+            <p><b>More languages:</b> English / UK | Deustch / German | Filipino </p>
+            <p><b>Add your own:</b> Documentation | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
+
         </div>
-        <form class="form-horizontal" action="/assessment/activities-i18n.php" method="get">
-            <div class="form-group">
-                <label class="col-md-1 control-label">Language</label>
-                <div class="col-md-2">
-                    <select class="form-control" name="language">
-                        <option <?php if ($language === 'english') { echo 'selected=true'; } ?> value="english">English</option>
-                        <option <?php if ($language === 'arabic') { echo 'selected=true'; } ?> value="arabic">Arabic (with RTL)</option>
-                        <option <?php if ($language === 'spanish') { echo 'selected=true'; } ?> value="spanish">Spanish</option>
-                    </select>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <div class="col-md-10">
-                    <input class="btn btn-primary" value="Change language" type="submit">
-                </div>
-            </div>
-
-        </form>
-    </div>
-
-    <div class="section pad-sml">
-        <!-- Container for the assess api to load into -->
-        <div id="learnosity_assess"></div>
+        <div class="section pad-sml">
+            <!-- Container for the assess api to load into -->
+            <div id="learnosity_assess"></div>
+        </div>
     </div>
 
     <script <?php if ($language === 'arabic') { echo 'data-lrn-dir="rtl"'; } ?> src="<?php echo $url_items; ?>"></script>
