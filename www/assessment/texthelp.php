@@ -12,8 +12,6 @@ include_once '../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$session_id = Uuid::generate();
-
 $security = [
     "consumer_key"    => $consumer_key ,
     "domain"          => $domain
@@ -23,11 +21,11 @@ $request = [
     'activity_id' => 'Activity_Test',
     'activity_template_id'=> 'TexttoSpeech_Testing_Activity',
 
-    'rendering_type' => "assess",
-    'user_id' => "demos-site",
-    'session_id' => $session_id,
-    'type' => "submit_practice",
-    'name' => "Test Assessment",
+    'rendering_type' => 'assess',
+    'user_id' => '$ANONYMIZED_USER_ID',
+    'session_id' => Uuid::generate(),
+    'type' => 'submit_practice',
+    'name' => 'Test Assessment',
     'config'         => [
         'configuration' => [
             'onsubmit_redirect_url' => 'texthelp.php'
