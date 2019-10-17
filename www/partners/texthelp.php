@@ -136,7 +136,7 @@ $signedRequest = $Init->generate();
     .lrn.lrn-assess .lrn-region:not(.lrn-items-region) .lrn_btn.SpeechStream_btn{
         padding: 0.4em 0.9em 0.4em 0.7em;
     }
-    @media all and (max-width: 1024px) and (min-width: 768px) {
+    @media all and (max-width: 991px) {
         .lrn.lrn-assess .lrn-region:not(.lrn-items-region) .lrn_btn.SpeechStream_btn{
             padding: 0.75em 0.25em; 
         }
