@@ -88,9 +88,6 @@ $signedRequest = $Init->generate();
                         } else {
                             if(typeof thisQuestion.feedback_attempts != "undefined") {
                                 if(counter === thisQuestion.feedback_attempts) {
-                                    this.validate({
-                                        "showCorrectAnswers" : true
-                                    });
                                     this.disable();
                                     renderMsg(idx, 'Question Locked');
                                 }else{
