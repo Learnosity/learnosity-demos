@@ -82,6 +82,7 @@ $signedRequest = $Init->generate();
     <style>
         .language-button-container {
             display: inline-block;
+            margin-right: 25px;
         }
 
         .language-button {
@@ -89,12 +90,11 @@ $signedRequest = $Init->generate();
             display: flex;
             background-color: #F7F7F7;
             color: black;
+            padding-right: 25px;
 
             box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
             border-radius: 2px;
             position: relative;
-            margin-right: 25px;
-            padding-right: 25px;
             transition-property: transform;
             transition-duration: 0.2s;
             align-items: center;
@@ -154,16 +154,18 @@ $signedRequest = $Init->generate();
                         Español / Spanish
                     </a>
                 </div>
+                <!--
                 <div class="language-button-container">
                     <a class="language-button <?php if ($language === 'french') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=french">
                         <img class="language-flag" src="/static/images/i18n/flag-FR.png" />
                         Français / French
                     </a>
                 </div>
+                -->
                 <div class="language-button-container">
                     <a class="language-button <?php if ($language === 'arabic') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=arabic">
                         <img class="language-flag" src="/static/images/i18n/flag-EG.png" />
-                        Arabic / العَرَبِيَّة
+                        العَرَبِيَّة / Arabic
                     </a>
                 </div>
             </div>
