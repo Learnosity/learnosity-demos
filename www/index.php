@@ -80,6 +80,22 @@ include_once 'includes/header.php';
         </div>
 
     </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="panel panel-default main-page-panel panel-short">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Partners</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Learn more about integrating Learnosity with selected Partners, and unleashing a world of potential.</p>
+                    <p>
+                        <a class="blue-chevron" href="./partners/index.php">Learn more</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
 </div>
