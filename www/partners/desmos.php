@@ -20,7 +20,7 @@ $security = [
 ];
 
 // to get a commercial license to the Desmos tools, email partnerships@desmos.com 
-$desmosconfig = file_get_contents('https://www.desmos.com/api/learnosity/get-config?questionGroups=all');
+$desmosconfig = file_get_contents('https://www.desmos.com/api/learnosity/get-config?questionGroups=all&features=all');
 $desmosconfig = json_decode($desmosconfig, true);
 
 //simple api request object for item edit view
