@@ -170,7 +170,7 @@ $signedRequest = $Init->generate();
                 </div>
             </div>
             <br/>
-            <p><b>More languages:</b> English / UK | Deustch / German | Filipino </p>
+            <p><b>More languages:</b> English / UK | Deutsch / German | Filipino </p>
             <p><b>Add your own:</b> Documentation | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
         </div>
