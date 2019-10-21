@@ -15,15 +15,13 @@ use LearnositySdk\Utils\Uuid;
 
 $assessLabels = '[]';
 $questionsLabels = '[]';
-$language = 'default';
+$language = 'en-US';
 
 if (isset($_GET['language'])) {
     $language = $_GET['language'];
-    if ($language !== 'default') {
-        $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
-        $assessLabels = file_get_contents($url . '/assess-api.json');
-        $questionsLabels = file_get_contents($url . "/questions-api.json");
-    }
+    $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
+    $assessLabels = file_get_contents($url . '/assess-api.json');
+    $questionsLabels = file_get_contents($url . "/questions-api.json");
 }
 
 // TODO: Remove this when we have the multi lingual items in all environments.
@@ -146,7 +144,7 @@ $signedRequest = $Init->generate();
             <p style="margin-bottom:25px;">Selected examples:</p>
             <div>
                 <div class="language-button-container">
-                    <a class="language-button <?php if ($language === 'default') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=default">
+                    <a class="language-button <?php if ($language === 'en-US') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-US">
                         <img class="language-flag" src="/static/images/i18n/flag-US.png" />
                         English (US)
                     </a>
