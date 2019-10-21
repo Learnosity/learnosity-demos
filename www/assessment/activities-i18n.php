@@ -121,6 +121,10 @@ $signedRequest = $Init->generate();
             border: 2px solid #355BD5;
         }
 
+        .other-language.selected {
+            padding: 3px;
+        }
+
         .language-flag {
             height: 20px;
             width: 28px;
@@ -167,7 +171,11 @@ $signedRequest = $Init->generate();
                 </div>
             </div>
             <br/>
-            <p><b>More languages:</b> English / UK | Deutsch / German | Filipino </p>
+            <p>
+                <b>More languages:</b>
+                <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English / UK</a>
+                 | Deutsch / German | Filipino
+            </p>
             <p><b>Add your own:</b> Documentation | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
         </div>
