@@ -15,13 +15,15 @@ use LearnositySdk\Utils\Uuid;
 
 $assessLabels = '[]';
 $questionsLabels = '[]';
-$language = 'en-US';
+$language = 'default';
 
 if (isset($_GET['language'])) {
     $language = $_GET['language'];
-    $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
-    $assessLabels = file_get_contents($url . '/assess-api.json');
-    $questionsLabels = file_get_contents($url . "/questions-api.json");
+    if ($language !== 'default') {
+        $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
+        $assessLabels = file_get_contents($url . '/assess-api.json');
+        $questionsLabels = file_get_contents($url . "/questions-api.json");
+    }
 }
 
 // TODO: Remove this when we have the multi lingual items in all environments.
@@ -40,6 +42,9 @@ switch ($language) {
         break;
     case 'es':
         $activityTemplateId = 'i18n-acty1-spa';
+        break;
+    case 'de-DE':
+        $activityTemplateId = 'i18n-acty1-ger';
         break;
     case 'fr':
         $activityTemplateId = 'i18n-acty1-fr';
@@ -150,6 +155,12 @@ $signedRequest = $Init->generate();
                     </a>
                 </div>
                 <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'de-DE') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=de-DE">
+                        <img class="language-flag" src="/static/images/i18n/flag-DE.png" />
+                        Deutsch / German
+                    </a>
+                </div>
+                <div class="language-button-container">
                     <a class="language-button <?php if ($language === 'es') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=es">
                         <img class="language-flag" src="/static/images/i18n/flag-ES.png" />
                         Español / Spanish
@@ -172,7 +183,7 @@ $signedRequest = $Init->generate();
             <p>
                 <b>More languages:</b>
                 <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English / UK</a>
-                 | Deutsch / German | Filipino
+                 | Filipino
             </p>
             <p><b>Add your own:</b> Documentation | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
