@@ -15,11 +15,11 @@ use LearnositySdk\Utils\Uuid;
 
 $assessLabels = '[]';
 $questionsLabels = '[]';
-$language = 'default';
+$language = 'en-US';
 
 if (isset($_GET['language'])) {
     $language = $_GET['language'];
-    if ($language !== 'default') {
+    if ($language !== 'en-US') {
         $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
         $assessLabels = file_get_contents($url . '/assess-api.json');
         $questionsLabels = file_get_contents($url . "/questions-api.json");
