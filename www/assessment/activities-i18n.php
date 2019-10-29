@@ -15,18 +15,14 @@ use LearnositySdk\Utils\Uuid;
 
 $assessLabels = '[]';
 $questionsLabels = '[]';
-$language = 'english';
+$language = 'en-US';
 
 if (isset($_GET['language'])) {
     $language = $_GET['language'];
-    $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
-    if ($language === 'arabic') {
-        $assessLabels = file_get_contents($url . '/assess-api_ar-EG.json');
-        $questionsLabels = file_get_contents($url . "/questions-api_ar-EG.json");
-    }
-    if ($language === 'spanish') {
-        $assessLabels = file_get_contents($url . '/assess-api_es.json');
-        $questionsLabels = file_get_contents($url . "/questions-api_es.json");
+    if ($language !== 'en-US') {
+        $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
+        $assessLabels = file_get_contents($url . '/assess-api.json');
+        $questionsLabels = file_get_contents($url . "/questions-api.json");
     }
 }
 
@@ -41,11 +37,20 @@ $security = [
 ];
 
 switch ($language) {
-    case 'arabic':
+    case 'ar-EG':
         $activityTemplateId = 'i18n-acty1-arb';
         break;
-    case 'spanish':
+    case 'es':
         $activityTemplateId = 'i18n-acty1-spa';
+        break;
+    case 'de-DE':
+        $activityTemplateId = 'i18n-acty1-ger';
+        break;
+    case 'fr':
+        $activityTemplateId = 'i18n-acty1-fr';
+        break;
+    case 'tl':
+        $activityTemplateId = 'i18n-acty1-tgl';
         break;
     default:
         $activityTemplateId = 'i18n-acty1-eng';
@@ -122,6 +127,10 @@ $signedRequest = $Init->generate();
             border: 2px solid #355BD5;
         }
 
+        .other-language.selected {
+            padding: 3px;
+        }
+
         .language-flag {
             height: 20px;
             width: 28px;
@@ -143,34 +152,42 @@ $signedRequest = $Init->generate();
             <p style="margin-bottom:25px;">Selected examples:</p>
             <div>
                 <div class="language-button-container">
-                    <a class="language-button <?php if ($language === 'english') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=english">
+                    <a class="language-button <?php if ($language === 'en-US') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-US">
                         <img class="language-flag" src="/static/images/i18n/flag-US.png" />
                         English (US)
                     </a>
                 </div>
                 <div class="language-button-container">
-                    <a class="language-button <?php if ($language === 'spanish') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=spanish">
+                    <a class="language-button <?php if ($language === 'de-DE') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=de-DE">
+                        <img class="language-flag" src="/static/images/i18n/flag-DE.png" />
+                        Deutsch / German
+                    </a>
+                </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'es') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=es">
                         <img class="language-flag" src="/static/images/i18n/flag-ES.png" />
                         Español / Spanish
                     </a>
                 </div>
-                <!--
                 <div class="language-button-container">
-                    <a class="language-button <?php if ($language === 'french') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=french">
+                    <a class="language-button <?php if ($language === 'fr') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=fr">
                         <img class="language-flag" src="/static/images/i18n/flag-FR.png" />
                         Français / French
                     </a>
                 </div>
-                -->
                 <div class="language-button-container">
-                    <a class="language-button <?php if ($language === 'arabic') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=arabic">
+                    <a class="language-button <?php if ($language === 'ar-EG') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=ar-EG">
                         <img class="language-flag" src="/static/images/i18n/flag-EG.png" />
                         العَرَبِيَّة / Arabic
                     </a>
                 </div>
             </div>
             <br/>
-            <p><b>More languages:</b> English / UK | Deutsch / German | Filipino </p>
+            <p>
+                <b>More languages:</b>
+                <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English / UK</a>
+                 | <a class="other-language <?php if ($language === 'tl') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl">Filipino</a>
+            </p>
             <p><b>Add your own:</b> Documentation | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
         </div>
@@ -179,7 +196,7 @@ $signedRequest = $Init->generate();
         <!-- Container for the assess api to load into -->
         <div id="learnosity_assess"></div>
     </div>
-    <script <?php if ($language === 'arabic') { echo 'data-lrn-dir="rtl"'; } ?> src="<?php echo $url_items; ?>"></script>
+    <script <?php if ($language === 'ar-EG') { echo 'data-lrn-dir="rtl"'; } ?> src="<?php echo $url_items; ?>"></script>
     <script>
         var initializationObject = <?php echo $signedRequest; ?>;
 

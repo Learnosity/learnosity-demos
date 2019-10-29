@@ -20,8 +20,9 @@ $security = [
 ];
 
 // to get a commercial license to the Desmos tools, email partnerships@desmos.com 
-$desmosconfig = file_get_contents('https://www.desmos.com/api/learnosity/get-config?questionGroups=all');
+$desmosconfig = file_get_contents('https://www.desmos.com/api/learnosity/get-config?questionGroups=all&features=all');
 $desmosconfig = json_decode($desmosconfig, true);
+
 
 //simple api request object for item edit view
 $request = [
@@ -55,14 +56,12 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h2>Desmos Graphing & Scientific Calculators</h2>
+        <h2>Desmos Calculators - Graphing, Scientific, and Four Function</h2>
         <p>
-            Below is a demo of the Learnosity Author API with Desmos Question Types. You can create Desmos custom question types effortlessly.
+        The Learnosity Author API allows you to incorporate Desmos for math in two exciting ways. 
         </p>
         <p style="text-align:justify;">
-        Through the Desmos and Learnosity partnership, clients can leverage the Graphing and 
-        Scientific Calculators in two ways. First, these Calculators can be included as a feature on any Learnosity item. 
-        Second, authors can create custom open-ended, graded math items within seconds.
+        Through the Desmos and Learnosity partnership, clients can leverage the Graphing, Scientific and Four Function Calculators in two ways. First, these Calculators can be included as a feature on any Learnosity item. Second, authors can create custom open-ended, graded math items within seconds. Learnosity provides a number of templates across math and economics, plus the ability to create custom math item types.
         </p>
     </div>
 </div>
