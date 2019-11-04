@@ -192,7 +192,7 @@ $signedRequest = $Init->generate();
                  | <a class="other-language <?php if ($language === 'tl') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl">Filipino/Tagalog</a>
                  | <a class="other-language <?php if ($language === 'it') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=it">Italiano/Italian</a>
             </p>
-            <p><b>Add your own:</b> Documentation | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
+            <p><b>Add your own:</b> <a href="https://help.learnosity.com/hc/en-us/articles/360002918818/">Documentation</a> | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
         </div>
     </div>
