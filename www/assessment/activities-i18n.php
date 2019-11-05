@@ -190,7 +190,7 @@ $signedRequest = $Init->generate();
                 <div class="language-button-container">
                     <a class="language-button <?php if ($language === 'ru') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=ru">
                         <img class="language-flag" src="/static/images/i18n/flag-RU.png" />
-                        Russian / Русский
+                        Русский / Russian
                     </a>
                 </div>
             </div>
