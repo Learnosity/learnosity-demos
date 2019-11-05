@@ -71,6 +71,9 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => 'demos-site',
     'config' => [
+        'configuration' => [
+          'onsubmit_redirect_url' => './activities-i18n.php?language=' . $language
+        ],
         'regions' => 'main',
         'labelBundle' => json_decode($assessLabels, true),
         'questions_api_init_options' => [
