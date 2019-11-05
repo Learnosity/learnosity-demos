@@ -49,11 +49,11 @@ switch ($language) {
     case 'fr':
         $activityTemplateId = 'i18n-acty1-fr';
         break;
-    case 'it':
-        $activityTemplateId = 'i18n-acty1-it';
-        break;
     case 'tl':
         $activityTemplateId = 'i18n-acty1-tgl';
+        break;
+    case 'ru':
+        $activityTemplateId = 'i18n-acty1-ru';
         break;
     default:
         $activityTemplateId = 'i18n-acty1-eng';
@@ -184,15 +184,20 @@ $signedRequest = $Init->generate();
                         العَرَبِيَّة / Arabic
                     </a>
                 </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'ru') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=ru">
+                        <img class="language-flag" src="/static/images/i18n/flag-RU.png" />
+                        Russian / Русский
+                    </a>
+                </div>
             </div>
             <br/>
             <p>
                 <b>More languages:</b>
-                <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English (UK)</a>
-                 | <a class="other-language <?php if ($language === 'tl') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl">Filipino/Tagalog</a>
-                 | <a class="other-language <?php if ($language === 'it') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=it">Italiano/Italian</a>
+                <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English / UK</a>
+                 | <a class="other-language <?php if ($language === 'tl') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl">Filipino</a>
             </p>
-            <p><b>Add your own:</b> <a href="https://help.learnosity.com/hc/en-us/articles/360002918818/">Documentation</a> | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
+            <p><b>Add your own:</b> Documentation | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
         </div>
     </div>
