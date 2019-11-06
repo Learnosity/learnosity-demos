@@ -48,6 +48,9 @@ $request = [
                         'label' => 'SpeechStream',
                         'icon_class' => 'lrn_btn SpeechStream_btn'
                     ]
+                ],
+                [
+                    'type' => 'verticaltoc_element'
                 ]
             ]
         ]

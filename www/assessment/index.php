@@ -349,6 +349,21 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Multi Language Support (i18n and i10n)</h2>
+                </div>
+                <div class="panel-body">
+                    <p>This demo demonstrates how Learnosity provides language bundles for different languages.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./activities-i18n.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php include_once 'includes/footer.php';
