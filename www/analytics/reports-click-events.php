@@ -32,9 +32,9 @@ $request = [
                 ['id' => 'Summer_Test_1', 'name' => 'Summer Test']
             ],
             'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Walter White'],
-                ['id' => 'mce_student_2', 'name' => 'Saul Goodman']
+                ['id' => '$ANONYMIZED_USER_ID_1', 'name' => 'Jesse Pinkman'],
+                ['id' => '$ANONYMIZED_USER_ID_2', 'name' => 'Walter White'],
+                ['id' => '$ANONYMIZED_USER_ID_3', 'name' => 'Saul Goodman']
             ]
         ]
     ]
