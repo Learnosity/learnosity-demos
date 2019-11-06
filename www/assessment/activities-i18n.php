@@ -52,6 +52,9 @@ switch ($language) {
     case 'tl':
         $activityTemplateId = 'i18n-acty1-tgl';
         break;
+    case 'it':
+        $activityTemplateId = 'i18n-acty1-it';
+        break;
     case 'ru':
         $activityTemplateId = 'i18n-acty1-ru';
         break;
@@ -197,10 +200,11 @@ $signedRequest = $Init->generate();
             <br/>
             <p>
                 <b>More languages:</b>
-                <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English / UK</a>
-                 | <a class="other-language <?php if ($language === 'tl') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl">Filipino</a>
+                    <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English (UK)</a>
+                    | <a class="other-language <?php if ($language === 'tl') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl">Filipino/Tagalog</a>
+                    | <a class="other-language <?php if ($language === 'it') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=it">Italiano/Italian</a>
             </p>
-            <p><b>Add your own:</b> Documentation | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
+            <p><b>Add your own:</b> <a href="https://help.learnosity.com/hc/en-us/articles/360002918818/">Documentation</a> | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
         </div>
     </div>
