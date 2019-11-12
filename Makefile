@@ -26,9 +26,14 @@ run-vagrant:
 stop-vagrant:
 	vagrant halt
 
+update-assets:
+	npm install
+	./node_modules/.bin/gulp
+
 clean:
 	rm -rf vendor/
 	rm -f composer.phar
+	rm -rf node_modules
 
 devbuild: run-composer
 prodbuild: run-composer

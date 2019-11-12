@@ -25,7 +25,7 @@ $request = [
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
-    'user_id' => 'demos-site',
+    'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
         'Demo3',
         'Demo4',
@@ -126,8 +126,6 @@ $signedRequest = $Init->generate();
             }
         };
 
-        var itemsApp = LearnosityItems.init(initializationObject, callbacks);
-
         // function to iterate through events and bind listeners
         function bindEventListeners () {
             $.each(eventsArray, function(index, eventName) {
@@ -144,6 +142,8 @@ $signedRequest = $Init->generate();
                 });
             });
         };
+
+        var itemsApp = LearnosityItems.init(initializationObject, callbacks);
 
     </script>
 

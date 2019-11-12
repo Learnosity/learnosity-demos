@@ -19,35 +19,19 @@ $security = [
     'domain' => $domain
 ];
 
+// to get a commercial license to the Desmos tools, email partnerships@desmos.com 
+$desmosconfig = file_get_contents('https://www.desmos.com/api/learnosity/get-config?questionGroups=all&features=all');
+$desmosconfig = json_decode($desmosconfig, true);
+
+
 //simple api request object for item edit view
 $request = [
     'mode' => 'item_edit',
     'reference' => Uuid::generate(),
     'config' => [
-        'item_edit' => [
-            'item' => [
-                'reference' => [
-                    'edit' => true
-                ],
-                'dynamic_content' => true,
-                'shared_passage' => true,
-                'actions' => [
-                    'show' => true
-                ],
-                'details' => [
-                    'description' => [
-                        'show' => true,
-                        'edit' => true
-                    ],
-                    'source' => [
-                        'show' => true,
-                        'edit' => true
-                    ],
-                    'note' => [
-                        'show' => true,
-                        'edit' => true
-                    ]
-                ]
+        'dependencies' => [
+            'question_editor_api' => [
+                'init_options' => $desmosconfig
             ]
         ]
     ],
@@ -59,6 +43,7 @@ $request = [
     ]
 ];
 
+
 $Init = new Init('author', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
@@ -68,12 +53,16 @@ $signedRequest = $Init->generate();
     <div class="toolbar">
         <ul class="list-inline">
             <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
     <div class="overview">
-        <h2>Create New Items</h2>
-        <p>Below is a demo of the Author API creating a new item each time. Questions and features can be added or edited and all are automatically saved in your Learnosity item bank.</p>
+        <h2>Desmos Calculators - Graphing, Scientific, and Four Function</h2>
+        <p>
+        The Learnosity Author API allows you to incorporate Desmos for math in two exciting ways. 
+        </p>
+        <p style="text-align:justify;">
+        Through the Desmos and Learnosity partnership, clients can leverage the Graphing, Scientific and Four Function Calculators in two ways. First, these Calculators can be included as a feature on any Learnosity item. Second, authors can create custom open-ended, graded math items within seconds. Learnosity provides a number of templates across math and economics, plus the ability to create custom math item types.
+        </p>
     </div>
 </div>
 
@@ -99,6 +88,7 @@ $signedRequest = $Init->generate();
     };
 
     var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
+
 </script>
 
 <?php

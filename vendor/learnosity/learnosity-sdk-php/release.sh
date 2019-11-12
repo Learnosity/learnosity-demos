@@ -5,7 +5,8 @@ CHANGELOG="ChangeLog.md"
 
 check_git_clean () {
 	if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
-            echo "Working directory not clean; please add/commit, \`make clean\` and/or \`git clean -fdx\`"
+            echo -e "Working directory not clean; please add/commit, \`make clean\` and/or \`git clean -fdx\`\n"
+            git status
             exit 1
 	fi
 }
@@ -70,7 +71,7 @@ print_release_notes () {
 	# Print release notes
 	echo -e "\\nRelease notes: "
 
-	changelog=$(sed -n '/Unreleased/,/^## /{/^##/d;p}' "${CHANGELOG}")
+	changelog=$(sed -n '/Unreleased/,/^## /{/^## /d;p}' "${CHANGELOG}")
 	echo -e "${changelog}"
 }
 

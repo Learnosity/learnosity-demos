@@ -24,18 +24,18 @@ $request = [
         [
             'id' => 'sessions-summary',
             'type' => 'sessions-summary',
-            'user_id' => 'demo_student',
+            'user_id' => '$ANONYMIZED_USER_ID',
             'session_ids' => [
-                '8524a7f7-169f-4b0b-b2ef-23df7c3ad51f'
+                '02be514f-bb82-4b5e-af71-7538f07e90fa'
             ]
         ],
         [
             'id' => 'sessions-summary-tag',
             'type' => 'sessions-summary-by-tag',
-            'user_id' => 'demo_student',
-            'hierarchy_reference' => 'author',
+            'user_id' => '$ANONYMIZED_USER_ID',
+            'hierarchy_reference' => 'CCSS',
             'session_ids' => [
-                '8524a7f7-169f-4b0b-b2ef-23df7c3ad51f'
+                '8f8490d9-5ef7-4c59-bcdc-44df24202a12'
             ]
         ],
         [
@@ -51,17 +51,17 @@ $request = [
             'id' => 'sessions-list-item',
             'type' => 'sessions-list-by-item',
             'limit' => 5,
-            'activity_id'  => 'MCE_5.MD.5b',
+            'activity_id'  => 'Weekly_Math_Quiz',
             'display_user' => false,
             'users' => [
-                ['id' => 'mce_student', 'name' => 'Brian Moser']
+                ['id' => '$ANONYMIZED_USER_ID', 'name' => 'Walter White']
             ]
         ],
         [
             'id' => 'lastscore-activity',
             'type' => 'lastscore-by-activity',
             'scoring_type' => 'partial',
-            'user_id' => 'mce_student',
+            'user_id' => '$ANONYMIZED_USER_ID',
             'display_time_spent' => true,
             'activities' => [
                 ['id' => 'Weekly_Math_Quiz', 'name' => 'Weekly Math Quiz'],
@@ -71,8 +71,8 @@ $request = [
         [
             'id' => 'session-detail',
             'type' => 'session-detail-by-item',
-            'user_id' => 'brianmoser',
-            'session_id' => '8151DD9E-9029-4D13-AC773EC9C05E7FF2'
+            'user_id' => '$ANONYMIZED_USER_ID',
+            'session_id' => '8c393c87-77b6-4c14-8da7-75d39243e642'
         ]
     ]
 ];

@@ -325,12 +325,12 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Using Third-Party Assistive Tools: TextHelp</h2>
+                    <h2 class="panel-title">Right-to-Left Language Support</h2>
                 </div>
                 <div class="panel-body">
-                    <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based JavaScript software solution that allows publishers to embed text-to-speech into their assessment items.</p>
+                    <p>This demo demonstrates the Learnosity approach to handling right-to-left languages.</p>
                     <p class="text-right">
-                        <a class="demo_link" href="./texthelp.php">Demo</a>
+                        <a class="demo_link" href="./rtl.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -349,7 +349,21 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Multi Language Support (i18n and i10n)</h2>
+                </div>
+                <div class="panel-body">
+                    <p>This demo demonstrates how Learnosity provides language bundles for different languages.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./activities-i18n.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php include_once 'includes/footer.php';

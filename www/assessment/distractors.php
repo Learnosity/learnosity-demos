@@ -25,7 +25,7 @@ $request = [
     'rendering_type' => 'inline',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
-    'user_id' => 'demos-site',
+    'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
         'act1',
         'act2',
@@ -80,6 +80,7 @@ $signedRequest = $Init->generate();
         //optional callbacks for ready
         var callbacks = {
             readyListener: function () {
+                
                 $.each(itemsApp.questions(), function (index, question) {
                     question.on('validated', function () {
                         var outputHTML = '';
@@ -87,7 +88,9 @@ $signedRequest = $Init->generate();
                         if (question.isValid()) {
                             return;
                         }
-                        if (question.getResponse().type === 'array') {
+
+                        
+                        if(question.mapValidationMetadata('distractor_rationale_response_level') != false){
                             map = question.mapValidationMetadata('distractor_rationale_response_level');
                             $.each(map.incorrect, function (i, data) {
                                 /*  Each item in the `map.incorrect` array is an object that contains a `value` property that
@@ -101,9 +104,10 @@ $signedRequest = $Init->generate();
                             if (outputHTML) {
                                 outputHTML = '<ul>' + outputHTML + '</ul>';
                             }
-                        } else {
+                        }else if(question.getMetadata().distractor_rationale){
                             outputHTML = question.getMetadata().distractor_rationale;
                         }
+                        
                         if (!outputHTML) {
                             outputHTML = 'Have you answered all possible responses?';
                         }

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitac57a48cbac5452c617d0d9bcf1329d9
+class ComposerStaticInitab19d04ac42e6df2196f98f38bd86a0f
 {
     public static $files = array (
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
@@ -24,7 +24,7 @@ class ComposerStaticInitac57a48cbac5452c617d0d9bcf1329d9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixesPsr0 = ComposerStaticInitac57a48cbac5452c617d0d9bcf1329d9::$prefixesPsr0;
+            $loader->prefixesPsr0 = ComposerStaticInitab19d04ac42e6df2196f98f38bd86a0f::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

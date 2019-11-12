@@ -42,8 +42,15 @@ class DataApi
      * @return Remote                  Instance of the Remote class,
      *                                 the response can be obtained with the getBody() method
      */
-    public function request($endpoint, $securityPacket, $secret, $requestPacket = null, $action = null)
+    public function request($endpoint, $securityPacket, $secret, /* FIXME: array */ $requestPacket = [], $action = null)
     {
+        if (!is_array($requestPacket)) {
+            Init::warnDeprecated(
+                __CLASS__ . '::' . __FUNCTION__ . ':'
+                . ' $requestPacket should be a PHP array.'
+            );
+        }
+
         $init = new Init('data', $securityPacket, $secret, $requestPacket, $action);
         $params = $init->generate();
         return $this->remote->post($endpoint, $params, $this->remoteOptions);
@@ -61,9 +68,16 @@ class DataApi
      * @param  mixed   $callback       Optional callback to execute instead of returning data
      * @return array                   Array of all data requests or [] or using a callback
      */
-    public function requestRecursive($endpoint, $securityPacket, $secret, $requestPacket = null, $action = null, $callback = null)
+    public function requestRecursive($endpoint, $securityPacket, $secret, /* FIXME: array */ $requestPacket = [], $action = null, $callback = null)
     {
         $response = array();
+
+        if (!is_array($requestPacket)) {
+            Init::warnDeprecated(
+                __CLASS__ . '::' . __FUNCTION__ . ':'
+                . ' $requestPacket should be a PHP array.'
+            );
+        }
 
         do {
             $request = $this->request($endpoint, $securityPacket, $secret, $requestPacket, $action);

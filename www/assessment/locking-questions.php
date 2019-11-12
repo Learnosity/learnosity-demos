@@ -25,7 +25,7 @@ $request = [
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
-    'user_id' => 'demos-site',
+    'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
         'act1',
         'act2',
@@ -88,9 +88,6 @@ $signedRequest = $Init->generate();
                         } else {
                             if(typeof thisQuestion.feedback_attempts != "undefined") {
                                 if(counter === thisQuestion.feedback_attempts) {
-                                    this.validate({
-                                        "showCorrectAnswers" : true
-                                    });
                                     this.disable();
                                     renderMsg(idx, 'Question Locked');
                                 }else{

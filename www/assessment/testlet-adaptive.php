@@ -24,8 +24,9 @@ $request = [
     'activity_id' => 'testletadaptivedemo',
     'name' => 'Items API - Testlet Adaptive activity',
     'rendering_type' => 'assess',
+    'organisation_id' => 505, //we use organisation_id in this demo because the Items are coming from a read-only org
     'session_id' => $sessionId,
-    'user_id' => 'demos-site',
+    'user_id' => '$ANONYMIZED_USER_ID',
     'adaptive' => [
         'type' => 'branching',
         'item_difficulty_tolerance' => 1,
@@ -43,14 +44,14 @@ $request = [
             [
                 'required_tags' => [
                     'Testlet' => [
-                        'sequence-1B'
+                        'sequence-2A'
                     ]
                 ]
             ],
             [
                 'required_tags' => [
                     'Testlet' => [
-                        'decision-1B'
+                        'sequence-2B'
                     ]
                 ]
             ]

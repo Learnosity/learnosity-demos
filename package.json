@@ -6,11 +6,12 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^4.0.0",
+    "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
-    "gulp-copy": "0.0.2",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-replace": "^0.5.4",
-    "gulp-uglify": "^1.5.4"
+    "gulp-copy": "^4.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

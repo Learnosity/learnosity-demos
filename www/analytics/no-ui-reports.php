@@ -30,19 +30,19 @@ $request = [
             'id' => 'session-summary',
             'render' => $render,
             'type' => 'sessions-summary',
-            'user_id' => 'demo_student',
+            'user_id' => '$ANONYMIZED_USER_ID',
             'session_ids' => [
-                '8524a7f7-169f-4b0b-b2ef-23df7c3ad51f'
+                '02be514f-bb82-4b5e-af71-7538f07e90fa'
             ]
         ],
         [
             'id' => 'progress-by-tag',
             'render' => $render,
             'type' => 'sessions-summary-by-tag',
-            'user_id' => 'mce_student_3',
+            'user_id' => '$ANONYMIZED_USER_ID',
             'hierarchy' => 'CCSS',
             'session_ids' => [
-                'd5cde952-1111-49ad-bfc7-c1ba102f3b22'
+                '8f8490d9-5ef7-4c59-bcdc-44df24202a12'
             ]
         ]
     ]
