@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+    web:
+        image: nginx:latest
+        volumes:
+            - .:/srv/site/demos:z
+            - ./lde_config/nginx_site.conf:/etc/nginx/conf.d/default.conf:z
+        networks:
+            - net
+            - lde_net
+        labels:
+            - "learnosity.app_name=site-demos"
+            - "learnosity.app_root=${COMPOSE_ROOT}"
+            - "traefik.frontend.rule=Host:demos.dev.learnosity.com"
+            - "traefik.port=80"
+            - "traefik.enable=true"
+        depends_on:
+            - php-fpm
+
+    php-fpm:
+        image: php:7.2-fpm
+        volumes:
+            - .:/srv/site/demos:z
+        networks:
+            - net
+            - lde_internal
+        dns:
+            - 192.168.199.3
+
+networks:
+    net:
+    lde_net:
+        external: true
+    lde_internal:
+        external: true
