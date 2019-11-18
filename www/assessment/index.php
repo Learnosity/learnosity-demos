@@ -353,7 +353,7 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Multi Language Support (i18n and i10n)</h2>
+                    <h2 class="panel-title">Multi Language Support (i18n and l10n)</h2>
                 </div>
                 <div class="panel-body">
                     <p>This demo demonstrates how Learnosity provides language bundles for different languages.</p>
