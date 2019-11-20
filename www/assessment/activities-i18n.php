@@ -97,6 +97,7 @@ $signedRequest = $Init->generate();
         .language-button-container {
             display: inline-block;
             margin-right: 25px;
+            margin-bottom: 25px;
         }
 
         .language-button {
