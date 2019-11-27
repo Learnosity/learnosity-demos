@@ -40,7 +40,7 @@ switch ($language) {
     case 'ar-EG':
         $activityTemplateId = 'i18n-acty1-arb';
         break;
-    case 'es':
+    case 'es-ES':
         $activityTemplateId = 'i18n-acty1-spa';
         break;
     case 'de-DE':
@@ -49,13 +49,13 @@ switch ($language) {
     case 'fr':
         $activityTemplateId = 'i18n-acty1-fr';
         break;
-    case 'tl':
+    case 'tl-PH':
         $activityTemplateId = 'i18n-acty1-tgl';
         break;
-    case 'it':
+    case 'it-IT':
         $activityTemplateId = 'i18n-acty1-it';
         break;
-    case 'ru':
+    case 'ru-RU':
         $activityTemplateId = 'i18n-acty1-ru';
         break;
     default:
@@ -120,7 +120,6 @@ $signedRequest = $Init->generate();
             outline: none;
         }
 
-
         .language-button:focus,
         .language-button-container:hover .language-button {
             text-decoration: none;
@@ -174,7 +173,7 @@ $signedRequest = $Init->generate();
                     </a>
                 </div>
                 <div class="language-button-container">
-                    <a class="language-button <?php if ($language === 'es') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=es">
+                    <a class="language-button <?php if ($language === 'es-ES') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=es-ES">
                         <img class="language-flag" src="/static/images/i18n/flag-ES.png" />
                         Español / Spanish
                     </a>
@@ -192,7 +191,7 @@ $signedRequest = $Init->generate();
                     </a>
                 </div>
                 <div class="language-button-container">
-                    <a class="language-button <?php if ($language === 'ru') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=ru">
+                    <a class="language-button <?php if ($language === 'ru-RU') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=ru-RU">
                         <img class="language-flag" src="/static/images/i18n/flag-RU.png" />
                         Русский / Russian
                     </a>
@@ -202,8 +201,8 @@ $signedRequest = $Init->generate();
             <p>
                 <b>More languages:</b>
                     <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English (UK)</a>
-                    | <a class="other-language <?php if ($language === 'tl') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl">Filipino/Tagalog</a>
-                    | <a class="other-language <?php if ($language === 'it') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=it">Italiano/Italian</a>
+                    | <a class="other-language <?php if ($language === 'tl-PH') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl-PH">Filipino/Tagalog</a>
+                    | <a class="other-language <?php if ($language === 'it-IT') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=it-IT">Italiano/Italian</a>
             </p>
             <p><b>Add your own:</b> <a href="https://help.learnosity.com/hc/en-us/articles/360002918818/">Documentation</a> | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
