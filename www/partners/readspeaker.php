@@ -19,10 +19,10 @@ $security = [
 
 $request = [
     'activity_id' => 'Activity_Test',
-    'activity_template_id'=> 'TexttoSpeech_Testing_Activity',
+    'activity_template_id'=> 'TexttoSpeech_Testing_Activity_2',
     'rendering_type' => 'assess',
     'user_id' => '$ANONYMIZED_USER_ID',
-    'session_id' => '9e6209f0-50be-40b3-b4b4-65a3535c0079',
+    'session_id' => Uuid::generate(),
     'type' => 'submit_practice',
     'name' => 'Test Assessment',
     'config'         => [
