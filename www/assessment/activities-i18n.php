@@ -58,6 +58,9 @@ switch ($language) {
     case 'ru-RU':
         $activityTemplateId = 'i18n-acty1-ru';
         break;
+    case 'zh-CN':
+        $activityTemplateId = 'i18n-acty1-cn';
+        break;
     default:
         $activityTemplateId = 'i18n-acty1-eng';
         break;
@@ -203,6 +206,7 @@ $signedRequest = $Init->generate();
                     <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English (UK)</a>
                     | <a class="other-language <?php if ($language === 'tl-PH') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl-PH">Filipino/Tagalog</a>
                     | <a class="other-language <?php if ($language === 'it-IT') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=it-IT">Italiano/Italian</a>
+                    | <a class="other-language <?php if ($language === 'zh-CN') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=zh-CN">Chinese/简体中文</a>
             </p>
             <p><b>Add your own:</b> <a href="https://help.learnosity.com/hc/en-us/articles/360002918818/">Documentation</a> | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
