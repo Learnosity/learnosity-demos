@@ -44,7 +44,7 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h2>Using Third-Party Assistive Tools: ReadSpeaker</h2>
+        <h2>Text to Speech solution: ReadSpeaker</h2>
         <p>ReadSpeaker’s text-to-speech solutions provide Learnosity clients with the ability for their learners to listen to multiple formats of 
         educational content in over 50 languages and 200+ voices. Their end-to-end technology allows control for real-time adjustments to 
         provide a better user experience with constantly improving voices.</p>
