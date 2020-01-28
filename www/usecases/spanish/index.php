@@ -167,7 +167,9 @@ $request = array(
                 'editorItalicsTitle'  => 'Cursiva',
                 'editorUnderlineIcon' => 'S',
                 'editorUnderlineTitle' => 'Subrayado',
-                'graphingTools.parabola' => 'Parábola',
+                'graphingTools'=>[
+                    'parabola' => 'Parábola'
+                ],
                 'reset' => 'Reiniciar',
                 'undo' => 'Deshacer',
                 'redo' => 'Rehacer'
