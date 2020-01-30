@@ -58,10 +58,18 @@ $signedRequest = $Init->generate();
     <div class="overview">
         <h2>Desmos Calculators - Graphing, Scientific, and Four Function</h2>
         <p>
-        The Learnosity Author API allows you to incorporate Desmos for math in two exciting ways. 
+            Through the Desmos and Learnosity partnership, clients can leverage the Graphing, Scientific and Four Function Calculators in two ways. 
         </p>
-        <p style="text-align:justify;">
-        Through the Desmos and Learnosity partnership, clients can leverage the Graphing, Scientific and Four Function Calculators in two ways. First, these Calculators can be included as a feature on any Learnosity item. Second, authors can create custom open-ended, graded math items within seconds. Learnosity provides a number of templates across math and economics, plus the ability to create custom math item types.
+        <p>
+            First, these Calculators can be included as a feature on any Learnosity item.<br/>
+            In this demo, click "Add new", and navigate to "Features". You can choose amongst the 3 Desmos custom features: Desmos Four Function Calculator, Desmos Graphing Calculator, and Desmos Scientific Calculator.
+        </p>
+        <p>
+            Second, authors can create custom open-ended, graded math items within seconds. Learnosity provides a number of templates across math and economics, plus the ability to create custom math item types.<br/>
+            In this demo, click "Add new". You can choose a Question Type amongst the categories: Algebra I & II, Geometry, Statistics, Economics, Calculus, Miscellaneous.
+        </p>
+        <p>
+            Once you have created a Question or a Feature, click "Preview" to preview the result as it would be shown in an Assessment.
         </p>
     </div>
 </div>
