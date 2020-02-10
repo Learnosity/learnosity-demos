@@ -28,8 +28,7 @@
                 // All tags of type "course", name "commoncore" are hidden in the UI
                 "hide_tags" => [
                     [
-					    "type" => "course",
-					    "name" => "commoncore"
+					    "type" => "course"
                     ]
                 ]
             ],
