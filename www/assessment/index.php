@@ -349,6 +349,7 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
@@ -359,6 +360,19 @@ include_once 'includes/header.php';
                     <p>This demo demonstrates how Learnosity provides language bundles for different languages.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./activities-i18n.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Single Page App Example</h2>
+                </div>
+                <div class="panel-body">
+                    <p>This demo demonstrates ...</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./single-page-app.php">Demo</a>
                     </p>
                 </div>
             </div>
