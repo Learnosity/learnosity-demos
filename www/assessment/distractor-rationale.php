@@ -21,21 +21,29 @@ if(isset($_POST['updateStateType'])) {
 
 $request1 = [
     'name' => 'Items API demo - assess activity',
-    'rendering_type' => 'inline',
+    'rendering_type' => 'assess',
     'type' => 'local_practice',
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
-    //'organisation_id'=>505, //prod
+    'organisation_id'=> 505,
     'items' => [
-        'dr1_no_changes_unless_you_know_the_impact'
-
+        'Sci-Demo-1',
+        'Sci-Demo-2',
+        'Sci-Demo-3',
     ],
     'config' => [
+        'configuration' => [
+            "onsave_redirect_url" => $_SERVER['REQUEST_URI'],
+            "onsubmit_redirect_url" => $_SERVER['REQUEST_URI'],
+        ],
         'questions_api_init_options' => [
             'show_distractor_rationale' => [
                 'per_question' => $per_question,
                 'per_response' => $per_response
             ]
+        ],
+        'navigation' => [
+            'scroll_to_test' => false,
         ]
     ]
 ];
@@ -46,6 +54,7 @@ $request2 = [
     'type' => 'local_practice',
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
+    'organisation_id'=> 505,
     'items' => [
         'dr4_no_changes_unless_you_know_the_impact'
     ]
@@ -82,21 +91,30 @@ $signedRequest3 = $Init3->generate();
     <div class="overview">
         <h2>Display Distractor Rationale</h2>
         <p>
-            Distractor Rationale provides feedback to educators and students on their response. Try choosing an incorrect answer for the questions below and choosing different options to see distractor rationale in action.
-            <br>Learnosity provides two out-of-the-box ways for displaying Distractor Rationale in MCQ questions: configuring activity initialisation options or using the public method. For other MCQ questions or if you would like to implement further hints and feedback, you can write code to display Distractor Rationale and other metadata.
-            <ul>
-                <li><h4><a href="#demo1">Demo 1: Display Distractor Rationale (using initialisation options)</a></h4></li>
-                <li><h4><a href="#demo2">Demo 2: Display Distractor Rationale with additional custom logic using public methods</a></h4></li>
-                <li><h4><a href="#demo3">Demo 3: Build your own Distractor Rationale display</a></h4></li>
-
-            </ul>
+            Distractor Rationale provides feedback to educators and students on their response. Learnosity provides two ways for Authors to associate distractor rationale: per question or per response. Distractor rationale per question is intended as feedback for an entire question, whereas distractor rationale per response allows Authors to write unique feedback against each possible response. 
         </p>
+        <p>
+        In Assessments and Reports, Learnosity provides two out-of-the-box methods for displaying distractor rationale for MCQ questions: 
+        </p>
+        <ol>
+            <li><h4>configuring activity initialization options, or</h4></li>
+            <li><h4>using the public method.</h4></li>
+        </ol>
+        <p>
+        For questions other than MCQ or if you would like to implement further hints and feedback, you can write code to display Distractor Rationale and other metadata.
+        </p>
+        <ul>
+            <li><h4><a href="#demo1">Demo 1: Display Distractor Rationale (using initialization options)</a></h4></li>
+            <li><h4><a href="#demo2">Demo 2: Display Distractor Rationale with additional custom logic using public methods</a></h4></li>
+            <li><h4><a href="#demo3">Demo 3: Build your own Distractor Rationale display</a></h4></li>
+
+        </ul>
     </div>
 </div>
 
     <div class="section pad-sml">
-        <h3 id="demo1">Demo 1: Display Distractor Rationale using initialisation options</h3>
-        This is the simplest way to display Distractor Rationale, by configuring activity initialisation options. Learnosity offers a number of options for when Distractor Rationale displays. You can see how these different options will behave with the dropdown options below.
+        <h3 id="demo1">Demo 1: Display Distractor Rationale using initialization options</h3>
+        This is the simplest way to display Distractor Rationale, by configuring activity initialization options. Learnosity offers a number of options for when Distractor Rationale displays. You can see how these different options will behave with the dropdown options below.
         <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
 
             <label for="per_question">per_question:</label>
@@ -124,9 +142,7 @@ $signedRequest3 = $Init3->generate();
             <input type="submit" name="updateStateType" value="Update" class="updateButton"/>
         </form>
         <hr/>
-        <p>
-            <span class="learnosity-item" data-reference="dr1_no_changes_unless_you_know_the_impact"></span>
-        </p>
+        <div id="learnosity_assess"></div>
     </div>
 
     <div class="section pad-sml">
@@ -259,7 +275,7 @@ $signedRequest3 = $Init3->generate();
     label {
         font-size: 16px;
     }
-    button {
+    .checkAnswerButton {
         background-color: #eaeaea;
         border: none;
         line-height: 1.5em;
