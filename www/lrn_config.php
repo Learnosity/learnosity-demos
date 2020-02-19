@@ -32,16 +32,16 @@ $domain = explode(':', $_SERVER['HTTP_HOST'])[0];
 |
 */
 
-$lts_version = "v2019.3.LTS";
+$lts_version = "v2020.1.LTS";
 
-$url_assess                = 'https://assess-va.learnosity.com/?' . $lts_version;
+$url_assess                = 'https://assess.learnosity.com/?' . $lts_version;
 $url_authorapi             = 'https://authorapi.learnosity.com/?' . $lts_version;
-$url_data                  = 'https://data-va.learnosity.com/' . $lts_version;
-$url_events                = 'https://events-va.learnosity.com/?' . $lts_version;
-$url_items                 = 'https://items-va.learnosity.com/?' . $lts_version;
-$url_questioneditor        = 'https://questioneditor-va.learnosity.com/?' . $lts_version;
-$url_questions             = 'https://questions-va.learnosity.com/?' . $lts_version;
-$url_reports               = 'https://reports-va.learnosity.com/?' . $lts_version;
+$url_data                  = 'https://data.learnosity.com/' . $lts_version;
+$url_events                = 'https://events.learnosity.com/?' . $lts_version;
+$url_items                 = 'https://items.learnosity.com/?' . $lts_version;
+$url_questioneditor        = 'https://questioneditor.learnosity.com/?' . $lts_version;
+$url_questions             = 'https://questions.learnosity.com/?' . $lts_version;
+$url_reports               = 'https://reports.learnosity.com/?' . $lts_version;
 
 /**
  * Allow override file to replace config options
