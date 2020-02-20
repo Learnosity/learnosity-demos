@@ -184,7 +184,7 @@ include_once 'includes/header.php';
                 <div class="panel-body">
                     <p>Use Learnosity metadata to power distractor rationale for inline student feedback.</p>
                     <p class="text-right">
-                        <a class="demo_link" href="./distractors.php">Demo</a>
+                        <a class="demo_link" href="./distractor-rationale.php">Demo</a>
                     </p>
                 </div>
             </div>
