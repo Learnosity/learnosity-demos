@@ -17,7 +17,7 @@ $security = [
     'domain'       => $domain
 ];
 
-$request = [
+$request1 = [
     'activity_id' => 'activity-1',
     'name' => 'Science Stage 1',
     'type' => 'submit_practice',
@@ -30,7 +30,6 @@ $request = [
         'Sci-Demo-2',
         'Sci-Demo-3',
     ],
-    'state' => 'resume',
     'config' => [
         'title' => 'Activity 1',
         'subtitle' => 'Science Stage 1',
@@ -49,10 +48,10 @@ $request = [
     ]
 ];
 
-$init = new Init('items', $security, $consumer_secret, $request);
-$signedRequest = $init->generate();
+$init1 = new Init('items', $security, $consumer_secret, $request1);
+$signedRequest = $init1->generate();
 
-$request = [
+$request2 = [
     'activity_id' => 'activity-2',
     'name' => 'English Stage 1',
     'type' => 'submit_practice',
@@ -65,7 +64,6 @@ $request = [
         'Gram-2',
         'Gram-3',
     ],
-    'state' => 'resume',
     'config' => [
         'title' => 'Activity 2',
         'subtitle' => 'English Stage 1',
@@ -84,10 +82,10 @@ $request = [
     ]
 ];
 
-$init = new Init('items', $security, $consumer_secret, $request);
-$signedRequest2 = $init->generate();
+$init2 = new Init('items', $security, $consumer_secret, $request2);
+$signedRequest2 = $init2->generate();
 
-$request = [
+$request3 = [
     'activity_id' => 'activity-3',
     'name' => 'Geography Stage 1',
     'type' => 'submit_practice',
@@ -100,7 +98,6 @@ $request = [
         'Au-Demo-2',
         'Au-Demo-3'
     ],
-    'state' => 'resume',
     'config' => [
         'title' => 'Activity 3',
         'subtitle' => 'Geography Stage 1',
@@ -119,8 +116,8 @@ $request = [
     ]
 ];
 
-$init = new Init('items', $security, $consumer_secret, $request);
-$signedRequest3 = $init->generate();
+$init3 = new Init('items', $security, $consumer_secret, $request3);
+$signedRequest3 = $init3->generate();
 
 ?>
 
@@ -133,8 +130,8 @@ $signedRequest3 = $init->generate();
         </div>
         <div class="overview">
             <h2>Manage Multiple Items API Instances in a Single Page App</h2>
-            <p>This demo illustrates best practices for managing the lifecycle of Items API instances in a single page app.</p>
-            <p>In a single page app, we’ll often want to create and destroy views. When these views contain Items API assessments, that means we’ll also want to create or destroy the corresponding <code>itemsApp</code> instances. To achieve this, we can use the <a href="https://reference.learnosity.com/items-api/methods#init"><code>LearnosityItems.init()</code></a> and <a href="https://reference.learnosity.com/items-api/methods#itemsApp-Reset"><code>itemsApp.reset()</code></a> methods, and integrate <a href="https://reference.learnosity.com/items-api/events#assessmentEvents">Items API events</a> with our single page app.</p>
+            <p>This example illustrates best practices for managing the lifecycle of Items API instances in a single page app. See <a href="https://help.learnosity.com/hc/en-us/articles/360006013058">Guidelines for Using Items API with a Single Page App Architecture</a> for details about this approach.</p>
+            <p>In a typical single page app, views are created and destroyed frequently. If such a view contains an Items API assessments, we’ll also want to create or destroy its corresponding <code>itemsApp</code> instance. To achieve this, we can use the <a href="https://reference.learnosity.com/items-api/methods#init"><code>LearnosityItems.init()</code></a> and <a href="https://reference.learnosity.com/items-api/methods#itemsApp-Reset"><code>itemsApp.reset()</code></a> methods, and integrate <a href="https://reference.learnosity.com/items-api/events#assessmentEvents">Items API events</a> with our single page app.</p>
             <p>Note that the activity list and navigation aren’t provided by Items API – they’re a basic example of how a single page app might function.</p>
         </div>
     </div>
@@ -225,37 +222,57 @@ $signedRequest3 = $init->generate();
         // interaction with Items API.
         //
         // Important notes:
-        //
         // * Items API does not provide the ability to display and manage
         //   this list itself -- these features are left up to the host app.
-        //
         // * The session_id used for each activity should be unique, not
         //   shared across multiple activities.
-        //
         var allActivities = [
             <?php echo $signedRequest; ?>,
             <?php echo $signedRequest2; ?>,
             <?php echo $signedRequest3; ?>
         ];
 
-        var callbacks = {
-            readyListener: function() {
-                itemsAppStatus.isReady = true;
-                console.log('Items API initialization completed for activity "%s"', itemsAppStatus.appId);
-            },
-            errorListener: function(error) {
-                console.log('Items API initialization failed for activity "%s"', itemsAppStatus.appId, error);
-            }
-        };
+        var itemsAppStatus = null;
+        var itemsApp = null;
 
         var activityListElement = document.getElementById('activities');
         var activityDetailElement = document.getElementById('activity-detail');
         var showActivityButtons = document.querySelectorAll('.navigation-item');
         var showActivityListButton = document.querySelector('.navigation-restore');
 
-        var itemsAppStatus = null;
-        var itemsApp = null;
+        // Attach event listeners for navigation actions:
+        for (var i = 0; i < showActivityButtons.length; i++) {
+            showActivityButtons[i].addEventListener('click', onClickShowActivityButton);
+        }
 
+        showActivityListButton.addEventListener('click', onClickShowActivityListButton);
+
+        /**
+         * Create an object to track the state of an associated itemsApp
+         * instance, with the following properties:
+         *
+         * appId:
+         * - A string used for the id attribute of the DOM hook element. 
+         *
+         * isActive:
+         * - An instance is active after LearnosityItems.init() is called
+         *   and before itemsApp.reset() is first called.
+         * - This indicates whether the itemsApp.reset() method can be
+         *   called.
+         *
+         * isReady:
+         * - Whether the readyListener callback been called.
+         * - This indicates that itemsApp methods such as save() are
+         *   available to be called.
+         *
+         * testStartEventObserved:
+         * - Whether the 'test:start' assessment event has fired on the
+         *   associated itemsApp instance.
+         *
+         * This object is passed to both the createItemsApp() and
+         * destroyItemsApp() functions, which will update this state
+         * as needed.
+         */
         function createItemsAppStatus(appId) {
             return {
                 appId: appId,
@@ -280,6 +297,9 @@ $signedRequest3 = $init->generate();
             var itemsApp = LearnosityItems.init(initializationObject, itemsAppStatus.appId, {
                 readyListener: function() {
                     itemsAppStatus.isReady = true;
+                },
+                errorListener: function() {
+                    console.log('Items API initialization failed for activity "%s"', itemsAppStatus.appId);
                 }
             });
 
@@ -297,7 +317,7 @@ $signedRequest3 = $init->generate();
          * from the document. This will discard any unsaved changes.
          *
          * This method is useful when saving changes to the session is not
-         * desired, such as when using Items API with type: "local_practice".
+         * desired, such as when using Items API with type: 'local_practice'.
          */
         function destroyItemsApp(itemsApp, itemsAppStatus) {
             if (itemsAppStatus.isActive) {
@@ -321,20 +341,24 @@ $signedRequest3 = $init->generate();
                 // We must wait to receive either a 'test:save:success' or a
                 // 'test:save:error' event before calling itemsApp.reset(),
                 // since resetting the itemsApp instance will stop all events
-                // firing. (Saving will not be interrupted, but we will never
-                // know whether it succeeded without these events.)
-                itemsApp.once('test:save:success', function() {
+                // firing.
+                //
+                // Note that calling reset() won't interrupt a save or submit
+                // in progress, but it will stop events firing, so we would
+                // otherwise never know whether it succeeded without these
+                // events.
+                itemsApp.on('test:save:success', function() {
                     itemsApp.reset();
                 });
 
-                itemsApp.once('test:save:error', function(error) {
+                itemsApp.on('test:save:error', function(error) {
                     // An error has occurred. This might be an opportunity to
                     // retry itemsApp.save() after a suitable
                     // back-off delay, or to display an error message to the
                     // student.
                     var activityId = itemsAppStatus.appId;
-                    console.log('Unable to save changes to activity "%s"', activityId, error);
                     itemsApp.reset();
+                    console.log('Items API activity "%s" could not be saved', activityId, error);
                 });
             } else if (itemsAppStatus.isActive) {
                 // There are no changes to save because the itemsApp instance
@@ -364,7 +388,6 @@ $signedRequest3 = $init->generate();
             //     itemsApp.save() (and itemsApp.submit()) will not trigger the
             //     subsequent 'test:save:success' or 'test:save:error' events,
             //     which we rely upon to know when saving has completed.
-            //
             if (!itemsAppStatus.isActive || !itemsAppStatus.isReady || !itemsAppStatus.testStartEventObserved) {
                 return false;
             }
@@ -422,41 +445,52 @@ $signedRequest3 = $init->generate();
             activityListElement.classList.remove('view-hidden');
         }
 
-        // Attach event listeners for navigation actions:
-        for (var i = 0; i < showActivityButtons.length; i++) {
-            showActivityButtons[i].addEventListener('click', onClickShowActivityButton);
-        }
-
-        showActivityListButton.addEventListener('click', onClickShowActivityListButton);
-
+        // Event handlers:
         function onClickShowActivityButton(event) {
-            event.preventDefault();
-
             var activityId = event.currentTarget.hash.replace('#', '');
             var initializationObject = getInitializationObject(activityId);
 
             if (initializationObject) {
+                console.log('Initializing Items API for activity "%s"', activityId);
+
                 itemsAppStatus = createItemsAppStatus(activityId);
                 itemsApp = createItemsApp(initializationObject, itemsAppStatus);
 
                 showActivityDetailView();
 
-                // Add event listeners to handle when the student finishes the test:
+                // Listen for Items API events:
+                itemsApp.on('app:ready', onItemsAppReady);
                 itemsApp.on('test:finished:discard test:finished:save test:finished:submit', onFinishTest);
+                itemsApp.on('test:reset', onItemsAppReset);
             } else {
                 console.log('Activity "%s" not found', activityId);
+            }
+
+            event.preventDefault();
+
+            function onItemsAppReady() {
+                console.log('Items API activity "%s" is ready for use', activityId);
+            }
+
+            function onFinishTest() {
+                console.log('Items API activity "%s" was completed by the student', activityId);
+
+                saveAndDestroyItemsApp(itemsApp, itemsAppStatus);
+                showActivityListView();
+            }
+
+            function onItemsAppReset() {
+                console.log('Items API activity "%s" was reset', activityId);
             }
         }
 
         function onClickShowActivityListButton(event) {
-            event.preventDefault();
-            saveAndDestroyItemsApp(itemsApp, itemsAppStatus);
-            showActivityListView();
-        }
+            console.log('The student has finished activity "%s"', itemsAppStatus.appId);
 
-        function onFinishTest() {
             saveAndDestroyItemsApp(itemsApp, itemsAppStatus);
             showActivityListView();
+
+            event.preventDefault();
         }
     </script>
 

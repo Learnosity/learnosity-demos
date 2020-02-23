@@ -225,7 +225,7 @@ include_once 'includes/header.php';
                         <h2 class="panel-title">Manage Multiple Items API Instances in a Single Page App</h2>
                     </div>
                     <div class="panel-body">
-                        <p>This demo illustrates best practices for creating and destroying Items API instances in a single page app.</p>
+                        <p>Learn best practices for creating and destroying Items API instances within a single page app.</p>
                         <p class="text-right">
                             <a class="demo_link" href="./single-page-app.php">Demo</a>
                         </p>
