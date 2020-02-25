@@ -18,9 +18,6 @@ include_once 'includes/header.php';
         </p>
     </div>
 
-    <p>
-
-
     <h3 id="dashboard-reporting">Embedding dashboard-style Reporting</h3>
     <p>Easily use Learnosity's Reports API to embed visual reports, ranging from student & classroom reporting to large-scale district reports!</p>
     <br>
@@ -39,8 +36,7 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
-            <div class="col-md-6">
-
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title">Present Classroom & Teacher-Centric Reports</h2>
@@ -52,12 +48,11 @@ include_once 'includes/header.php';
                     </p>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
+
     <div class="row">
-
-    <div class="col-md-6">
-
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title">Show Coursework Progress</h2>
@@ -69,8 +64,8 @@ include_once 'includes/header.php';
                     </p>
                 </div>
             </div>
-            </div>
-            <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
 
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -85,17 +80,17 @@ include_once 'includes/header.php';
             </div>
         </div>
     </div>
-    <div class="row">
 
-    <div class="col-md-6">
+    <div class="row">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Provide Live Progress Tracking & Control</h2>
+                    <h2 class="panel-title">Response Analysis Reporting</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Allow your instructors to see student progress through tests in real-time, along with instructor and teacher control.</p>
+                    <p>Summarize class responses at a glance. Group students based on their strengths and needs.</p>
                     <p class="text-right">
-                        <a class="demo_link"  href="./live-progress-reporting.php">Demo</a>
+                        <a class="demo_link"  href="./response-analysis-reporting.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -109,6 +104,23 @@ include_once 'includes/header.php';
                     <p>Drill down deeper into student and class results broken down by topic areas or learning outcomes.</p>
                     <p class="text-right">
                         <a class="demo_link"  href="./outcomes-mastery-reporting.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Provide Live Progress Tracking & Control</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Allow your instructors to see student progress through tests in real-time, along with instructor and teacher control.</p>
+                    <p class="text-right">
+                        <a class="demo_link"  href="./live-progress-reporting.php">Demo</a>
                     </p>
                 </div>
             </div>
