@@ -20,7 +20,6 @@ $security = [
 //simple api request object for Reports API
 $request = [
     'reports' => [
-
         [
             'id' => 'lastscore-tag',
             'type' => 'lastscore-by-tag-by-user',
@@ -63,6 +62,48 @@ $request = [
                 ['id' => 'mce_student_1', 'name' => 'Walter White'],
                 ['id' => 'mce_student_2', 'name' => 'Saul Goodman']
             ]
+        ],
+        [
+            "id" => "response-analysis",
+            "type" => "response-analysis-by-item",
+            "session_ids" => [
+                "c8df0f45-2bfd-4d6c-9de1-20200224c001",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c002",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c003",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c004",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c005",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c006",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c007",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c008",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c009",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c010",
+                "c8df0f45-2bfd-4d6c-9de1-20200224c011",
+            ],
+            "users" => [
+                ["id" => "user_20200224a_00001", "name" => "Milhouse Vanhouten"],
+                ["id" => "user_20200224c_00002", "name" => "Bart Simpson"],
+                ["id" => "user_20200224c_00003", "name" => "Sherri Mackleberry"],
+                ["id" => "user_20200224c_00004", "name" => "Nelson Muntz"],
+                ["id" => "user_20200224c_00005", "name" => "Terri Mackleberry"],
+                ["id" => "user_20200224c_00006", "name" => "Lewis Clark"],
+                ["id" => "user_20200224c_00007", "name" => "Adrian Belew"],
+                ["id" => "user_20200224c_00008", "name" => "Martin Prince"],
+                ["id" => "user_20200224c_00009", "name" => "Wendell Borton"],
+                ["id" => "user_20200224c_00010", "name" => "Nina Skalka"],
+                ["id" => "user_20200224c_00011", "name" => "Sophie Jensen"],
+            ],
+            "item_reference_map" => [
+                ["id" => "20200224_responseAnalysis_i01", "name" => "Item 1" ],
+                ["id" => "20200224_responseAnalysis_i02", "name" => "Item 2" ],
+                ["id" => "20200224_responseAnalysis_i03", "name" => "Item 3" ],
+                ["id" => "20200224_responseAnalysis_i04", "name" => "Item 4" ],
+                ["id" => "20200224_responseAnalysis_i05", "name" => "Item 5" ],
+                ["id" => "20200224_responseAnalysis_i06", "name" => "Item 6" ],
+                ["id" => "20200224_responseAnalysis_i07", "name" => "Item 7" ],
+                ["id" => "20200224_responseAnalysis_i08", "name" => "Item 8" ],
+                ["id" => "20200224_responseAnalysis_i09", "name" => "Item 9" ],
+                ["id" => "20200224_responseAnalysis_i10", "name" => "Item 10"]
+            ]
         ]
     ]
 ];
@@ -86,9 +127,11 @@ $signedRequest = $Init->generate();
                 <li><h4><a href="#lastscore-tag-report">Most recent score by user - with tag breakdown</a></h4></li>
                 <li><h4><a href="#lastscore-list-item-report">Most recent score by user - with item breakdown</a></h4></li>
                 <li><h4><a href="#lastscore-activity-by-user-report">Most recent score by user - with multiple activity breakdown</a></h4></li>
+                <li><h4><a href="#response-analysis-report">Response analysis report - class responses at a glance</a></h4></li>
             </ul>
         </div>
     </div>
+
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
@@ -110,6 +153,20 @@ $signedRequest = $Init->generate();
         <p>This report provides an easy to use, at-a-glance view for multiple students, across multiple tests.</p>
         <div id="lastscore-activity-by-user"></div>
     </div>
+
+    <div class="section pad-sml">
+        <!-- Container for the reports api to load into -->
+        <h3 id="response-analysis-report"><a href="#response-analysis-report">Response analysis report - class responses at a glance</a></h3>
+        <p>See a summary of class responses at a glance. Click on an Item header to drill into individual responses, and explore groupings of students who responded the same way.</p>
+        <div id="response-analysis"></div>
+    </div>
+
+    <style>
+        /* Temporary fix for missing min-height. */
+        #response-analysis > div {
+            height: 600px;
+        }
+    </style>
 
     <script src="<?php echo $url_reports; ?>"></script>
     <script>
