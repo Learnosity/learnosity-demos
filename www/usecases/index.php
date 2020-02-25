@@ -20,14 +20,10 @@ include_once 'includes/header.php';
             </p>
         </div>
 
-        <p>
-
         <h3 id="end-to-end-examples">End-to-end Examples</h3>
-
 
         <p>Learn how to tie together our Authoring, Assessment and Analytics APIs for a seamless Learnosity-powered
             experience.</p>
-        <br>
 
         <div class="row">
             <div class="col-md-6">
@@ -59,10 +55,8 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-
         <h3 id="printing-examples">Printing Learnosity items</h3>
         <p>You'll get the best assessment experience from Learnosity online, but we also know that sometimes, you just need to print things! By using custom CSS on top of Learnosity, you can style content for the page as you need.</p>
-        <br>
 
         <div class="row">
             <div class="col-md-6">
@@ -96,7 +90,6 @@ include_once 'includes/header.php';
 
         <h3 id="scoring-and-feedback-examples">Scoring & Feedback</h3>
         <p>Combining Learnosity Analytics and Learnosity Assessments, you can deliver rich feedback or simple score based teacher grading.</p>
-        <br>
 
         <div class="row">
             <div class="col-md-6">
@@ -128,11 +121,7 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-
         <h3 id="custom-question-examples">Using Custom Questions</h3>
-
-        <p></p>
-        <br>
 
         <div class="row">
             <div class="col-md-6">
@@ -183,9 +172,6 @@ include_once 'includes/header.php';
 
         <h3 id="localization-examples">Localizing APIs to another language</h3>
 
-        <p></p>
-        <br>
-
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
@@ -203,9 +189,6 @@ include_once 'includes/header.php';
         </div>
 
         <h3 id="miscellaneous-examples">Miscellaneous Examples</h3>
-
-        <p></p>
-        <br>
 
         <div class="row">
             <div class="col-md-6">
@@ -234,9 +217,22 @@ include_once 'includes/header.php';
                     </div>
                 </div>
             </div>
-
         </div>
-
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Manage Multiple Items API Instances in a Single Page App</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Learn best practices for creating and destroying Items API instances within a single page app.</p>
+                        <p class="text-right">
+                            <a class="demo_link" href="./single-page-app.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <?php include_once 'includes/footer.php';

@@ -9,7 +9,7 @@
 
     <div class="section-intro">
         <p>
-            Learnosity’s partners are some of the world’s most innovative edtech companies. 
+            Learnosity’s partners are some of the world’s most innovative edtech companies.
             Collaborating in developing, scaling, and delivering exceptional learning products.
         </p>
         <p>
@@ -22,6 +22,7 @@
             <li><h4><a class="blue-chevron" href="#TextHelp">SpeechStream, read aloud solution  by TextHelp</a></h4></li>
             <li><h4><a class="blue-chevron" href="#ReadSpeaker">Text to Speech solution: ReadSpeaker</a></h4></li>
             <li><h4><a class="blue-chevron" href="#Desmos">Helping every student love learning math: Desmos</a></h4></li>
+            <li><h4><a class="blue-chevron" href="#AB">Browse and Tag Learning Standards: Academic Benchmarks</a></h4></li>
         </ul>
     </div>
 
@@ -32,7 +33,7 @@
                     <h2 class="panel-title" id="TextHelp">SpeechStream, read aloud solution  by TextHelp</h2>
                 </div>
                 <div class="panel-body">
-                    <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based 
+                    <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based
                     JavaScript software solution that allows publishers to embed text-to-speech into their assessment items.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./texthelp.php">Demo</a>
@@ -43,10 +44,10 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title" id="RedSpeaker">Text to Speech solution: ReadSpeaker</h2>
+                    <h2 class="panel-title" id="ReadSpeaker">Text to Speech solution: ReadSpeaker</h2>
                 </div>
                 <div class="panel-body">
-                    <p>ReadSpeaker’s text-to-speech solutions provide Learnosity clients with the ability for their learners to listen 
+                    <p>ReadSpeaker’s text-to-speech solutions provide Learnosity clients with the ability for their learners to listen
                     to multiple formats of educational content in over 50 languages and 200+ voices.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./readspeaker.php">Demo</a>
@@ -60,10 +61,10 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title" id="desmos">Helping every student love learning math: Desmos</h2>
+                    <h2 class="panel-title" id="Desmos">Helping every student love learning math: Desmos</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Desmos create best-in-class digital math tools. Through the Desmos and Learnosity partnership, 
+                    <p>Desmos create best-in-class digital math tools. Through the Desmos and Learnosity partnership,
                     Learnosity clients can leverage graphing and scientific calculators.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./desmos.php">Demo</a>
@@ -71,7 +72,22 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title" id="AB">Browse and Tag Learning Standards: Academic Benchmarks</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Certica’s partnership with Learnosity allows Certica’s Academic Benchmarks customers to leverage the
+                     Academic Benchmarks digitized learning standards and unique identifiers (GUIDs) in an integrated manner within the Learnosity toolset.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./academic-benchmarks.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
 
 <?php include_once 'includes/footer.php';
