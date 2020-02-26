@@ -157,7 +157,11 @@ $signedRequest = $Init->generate();
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
         <h3 id="response-analysis-report"><a href="#response-analysis-report">Response analysis report - class responses at a glance</a></h3>
-        <p>See a summary of class responses at a glance. Click on an Item header to drill into individual responses, and explore groupings of students who responded the same way.</p>
+        <p>See a summary of class responses at a glance:</p>
+        <ul>
+            <li>Click on an Item header to drill into the detail view and see full responses.</li>
+            <li>Within the detail view, click on student names to highlight groupings of students who responded the same way.</li>
+        </ul>
         <div id="response-analysis"></div>
     </div>
 

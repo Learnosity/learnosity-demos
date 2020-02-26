@@ -77,12 +77,17 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Response Analysis Reporting</h2>
+            <p>Our out-of-the-box response analysis report lets educators view a summary of students’ responses at a glance so they can quickly identify common misconceptions and take targeted actions to address individual or group needs.</p>
         </div>
     </div>
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
         <h3 id="response-analysis-by-item">Response Analysis by Item</a></h3>
-        <p>See a summary of class responses at a glance. Click on an Item header to drill into individual responses, and explore groupings of students who responded the same way.</p>
+        <p>See a summary of class responses at a glance:</p>
+        <ul>
+            <li>Click on an Item header to drill into the detail view and see full responses.</li>
+            <li>Within the detail view, click on student names to highlight groupings of students who responded the same way.</li>
+        </ul>
         <div id="response-analysis-report"></div>
     </div>
 
