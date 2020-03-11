@@ -1,5 +1,6 @@
 <?php
-
+header("Location: /assessment/distractor-rationale.php", true, 301);
+exit();
 //common environment attributes including search paths. not specific to Learnosity
 include_once '../env_config.php';
 
@@ -80,7 +81,7 @@ $signedRequest = $Init->generate();
         //optional callbacks for ready
         var callbacks = {
             readyListener: function () {
-                
+
                 $.each(itemsApp.questions(), function (index, question) {
                     question.on('validated', function () {
                         var outputHTML = '';
@@ -89,7 +90,7 @@ $signedRequest = $Init->generate();
                             return;
                         }
 
-                        
+
                         if(question.mapValidationMetadata('distractor_rationale_response_level') != false){
                             map = question.mapValidationMetadata('distractor_rationale_response_level');
                             $.each(map.incorrect, function (i, data) {
@@ -107,7 +108,7 @@ $signedRequest = $Init->generate();
                         }else if(question.getMetadata().distractor_rationale){
                             outputHTML = question.getMetadata().distractor_rationale;
                         }
-                        
+
                         if (!outputHTML) {
                             outputHTML = 'Have you answered all possible responses?';
                         }
