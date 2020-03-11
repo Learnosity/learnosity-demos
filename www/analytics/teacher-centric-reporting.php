@@ -165,13 +165,6 @@ $signedRequest = $Init->generate();
         <div id="response-analysis"></div>
     </div>
 
-    <style>
-        /* Temporary fix for missing min-height. */
-        #response-analysis > div {
-            height: 600px;
-        }
-    </style>
-
     <script src="<?php echo $url_reports; ?>"></script>
     <script>
 
