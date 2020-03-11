@@ -49,16 +49,16 @@ $request = [
                 ["id" => "user_20200224c_00011", "name" => "Sophie Jensen"],
             ],
             "item_reference_map" => [
-                ["id" => "20200224_responseAnalysis_i01", "name" => "Item 1" ],
-                ["id" => "20200224_responseAnalysis_i02", "name" => "Item 2" ],
-                ["id" => "20200224_responseAnalysis_i03", "name" => "Item 3" ],
-                ["id" => "20200224_responseAnalysis_i04", "name" => "Item 4" ],
-                ["id" => "20200224_responseAnalysis_i05", "name" => "Item 5" ],
-                ["id" => "20200224_responseAnalysis_i06", "name" => "Item 6" ],
-                ["id" => "20200224_responseAnalysis_i07", "name" => "Item 7" ],
-                ["id" => "20200224_responseAnalysis_i08", "name" => "Item 8" ],
-                ["id" => "20200224_responseAnalysis_i09", "name" => "Item 9" ],
-                ["id" => "20200224_responseAnalysis_i10", "name" => "Item 10"]
+                ["reference" => "20200224_responseAnalysis_i01", "name" => "Item 1" ],
+                ["reference" => "20200224_responseAnalysis_i02", "name" => "Item 2" ],
+                ["reference" => "20200224_responseAnalysis_i03", "name" => "Item 3" ],
+                ["reference" => "20200224_responseAnalysis_i04", "name" => "Item 4" ],
+                ["reference" => "20200224_responseAnalysis_i05", "name" => "Item 5" ],
+                ["reference" => "20200224_responseAnalysis_i06", "name" => "Item 6" ],
+                ["reference" => "20200224_responseAnalysis_i07", "name" => "Item 7" ],
+                ["reference" => "20200224_responseAnalysis_i08", "name" => "Item 8" ],
+                ["reference" => "20200224_responseAnalysis_i09", "name" => "Item 9" ],
+                ["reference" => "20200224_responseAnalysis_i10", "name" => "Item 10"]
             ]
         ]
     ]
