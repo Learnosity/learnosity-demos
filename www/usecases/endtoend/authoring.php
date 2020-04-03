@@ -109,7 +109,10 @@ $signedRequest = $Init->generate();
     var authorApp = LearnosityAuthor.init(initOptions, {
 
         readyListener: function () {
+            $(".btn-goToAssessment").attr("disabled", true);
+
             authorApp.on('save:success', function (event) {
+                $(".btn-goToAssessment").attr("disabled", false);
                 saveItemID(activeItemID);
             });
         }
