@@ -116,7 +116,6 @@ $signedRequest = $Init->generate();
                     window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
                 } else {
                     $(".btn-goToAssessment").attr("disabled", true);
-                    console.log("%c----Disable----", 'color: red;');
                     alert("Please save item first.");
                 }
             })
