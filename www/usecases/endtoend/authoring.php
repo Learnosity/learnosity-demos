@@ -111,6 +111,20 @@ $signedRequest = $Init->generate();
         readyListener: function () {
             $(".btn-goToAssessment").attr("disabled", true);
 
+            $(".btn-goToAssessment").on("click", function() {
+                if (authorApp.safeToUnload()) {
+                    window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
+                } else {
+                    $(".btn-goToAssessment").attr("disabled", true);
+                    console.log("%c----Disable----", 'color: red;');
+                    alert("Please save item first.");
+                }
+            })
+
+            authorApp.on('save', function (event) {
+                $(".btn-goToAssessment").attr("disabled", true);
+            });
+
             authorApp.on('save:success', function (event) {
                 $(".btn-goToAssessment").attr("disabled", false);
                 saveItemID(activeItemID);
@@ -126,9 +140,9 @@ $signedRequest = $Init->generate();
             authorApp.setItem(activeItemID);
         });
         //go to assessment handler
-        $(".btn-goToAssessment").click(function(){
-            window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
-        });
+        // $(".btn-goToAssessment").click(function(){
+        //     window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
+        // });
     });
 
     function showNotification (itemID) {
