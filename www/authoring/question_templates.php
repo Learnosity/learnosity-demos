@@ -62,20 +62,20 @@ $request = [
                                 "defaults" => [
                                     "options" => [
                                         [
-                                            "label" => "",
+                                            "label" => "[Option A]",
                                             "value" => "0"
                                         ], [
-                                            "label" => "",
+                                            "label" => "[Option B]",
                                             "value" => "1"
                                         ], [
-                                            "label" => "",
+                                            "label" => "[Option C]",
                                             "value" => "2"
                                         ], [
-                                            "label" => "",
+                                            "label" => "[Option D]",
                                             "value" => "3"
                                         ]
                                     ],
-                                    "stimulus" => "",
+                                    "stimulus" => "What is the capital of _____?",
                                     "type" => "mcq",
                                     "validation" => [
                                         "scoring_type" => "exactMatch",
@@ -116,7 +116,7 @@ $request = [
 											"value" => "3"
 										]
 									],
-									"stimulus" => "[This is the stem.",
+									"stimulus" => "What is the capital of _____?",
 									"type" => "mcq",
 									"multiple_responses" => true,
 									"validation" => [
