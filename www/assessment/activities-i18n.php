@@ -46,7 +46,7 @@ switch ($language) {
     case 'de-DE':
         $activityTemplateId = 'i18n-acty1-ger';
         break;
-    case 'fr':
+    case 'fr-FR':
         $activityTemplateId = 'i18n-acty1-fr';
         break;
     case 'tl-PH':
@@ -182,7 +182,7 @@ $signedRequest = $Init->generate();
                     </a>
                 </div>
                 <div class="language-button-container">
-                    <a class="language-button <?php if ($language === 'fr') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=fr">
+                    <a class="language-button <?php if ($language === 'fr-FR') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=fr-FR">
                         <img class="language-flag" src="/static/images/i18n/flag-FR.png" />
                         Français / French
                     </a>
