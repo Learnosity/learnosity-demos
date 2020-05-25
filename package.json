@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^4.0.0",
-    "gulp-cli": "^2.2.0",
+    "gulp-cli": "^2.2.1",
     "gulp-concat": "^2.6.1",
     "gulp-copy": "^4.0.1",
     "gulp-clean-css": "^4.3.0",
