@@ -1,0 +1,20 @@
+name: 'site-demos'
+alb:
+    host_paths:
+        - 'demos.*'
+task:
+    cpu: 256
+    memory: 512
+    containers:
+        'nginx':
+            image: 'ldc/site-demos-nginx:v0.0.1'
+            from_ecr: true
+            alb_target: true
+            ports:
+                - 80/tcp
+
+        'fpm':
+            image: 'ldc/site-demos-fpm:v0.0.1'
+            from_ecr: true
+            ports:
+                 - 9000/tcp

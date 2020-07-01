@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+    php-fpm:
+        environment:
+            - PHP_INI_SCAN_DIR=/usr/local/etc/php/conf.d:/etc/php-addons/xdebug/
+            - PHP_XDEBUG_REMOTE_HOST=${LDE_DEBUG_REMOTE_HOST}

@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+    node:
+        build:
+            context: lde_config/lde/node-cli
+        environment:
+            - NPM_TOKEN=$NPM_TOKEN
+        user: node
+        working_dir: /srv/site/demos
+        volumes:
+            - .:/srv/site/demos:z,delegated
+        networks:
+            - net
+
+    php:
+        build:
+            context: lde_config/lde/php-cli
+        user: php
+        working_dir: /srv/site/demos
+        volumes:
+            - .:/srv/site/demos:z,delegated
+        networks:
+            - lde_internal
+            - net
+        dns: 192.168.199.3
+
+networks:
+    net:
+    lde_internal:
+        external: true
