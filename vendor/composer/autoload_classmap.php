@@ -6,4 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'LearnositySdk\\Exceptions\\ValidationException' => $vendorDir . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Exceptions/ValidationException.php',
+    'LearnositySdk\\Request\\DataApi' => $vendorDir . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Request/DataApi.php',
+    'LearnositySdk\\Request\\Init' => $vendorDir . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Request/Init.php',
+    'LearnositySdk\\Request\\Remote' => $vendorDir . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Request/Remote.php',
+    'LearnositySdk\\Utils\\Conversion' => $vendorDir . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Utils/Conversion.php',
+    'LearnositySdk\\Utils\\Json' => $vendorDir . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Utils/Json.php',
+    'LearnositySdk\\Utils\\Uuid' => $vendorDir . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Utils/Uuid.php',
 );

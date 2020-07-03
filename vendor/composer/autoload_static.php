@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitab19d04ac42e6df2196f98f38bd86a0f
+class ComposerStaticInit6aa6b4e0c833e18b4abc4e372ac8fb6c
 {
     public static $files = array (
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
@@ -21,10 +21,21 @@ class ComposerStaticInitab19d04ac42e6df2196f98f38bd86a0f
         ),
     );
 
+    public static $classMap = array (
+        'LearnositySdk\\Exceptions\\ValidationException' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Exceptions/ValidationException.php',
+        'LearnositySdk\\Request\\DataApi' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Request/DataApi.php',
+        'LearnositySdk\\Request\\Init' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Request/Init.php',
+        'LearnositySdk\\Request\\Remote' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Request/Remote.php',
+        'LearnositySdk\\Utils\\Conversion' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Utils/Conversion.php',
+        'LearnositySdk\\Utils\\Json' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Utils/Json.php',
+        'LearnositySdk\\Utils\\Uuid' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/LearnositySdk/Utils/Uuid.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixesPsr0 = ComposerStaticInitab19d04ac42e6df2196f98f38bd86a0f::$prefixesPsr0;
+            $loader->prefixesPsr0 = ComposerStaticInit6aa6b4e0c833e18b4abc4e372ac8fb6c::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit6aa6b4e0c833e18b4abc4e372ac8fb6c::$classMap;
 
         }, null, ClassLoader::class);
     }
