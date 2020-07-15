@@ -108,16 +108,15 @@ $signedRequest3 = $Init3->generate();
             response</em> allows Authors to write unique feedback against each possible response.
         </p>
         <p>
-            In Assessments and Reports, Learnosity provides two approaches to display distractor rationale
-            for multiple choice questions:
+            Learnosity provides two approaches to display distractor rationale:
         </p>
         <ol>
             <li><p>Initialization options</p></li>
             <li><p>JavaScript method</p></li>
         </ol>
         <p>
-            For questions other than <abbr title="Multiple Choice Question">MCQ</abbr>, or if you would like to implement further hints and feedback, you can write
-            custom code to display Distractor Rationale and other metadata.
+            Currently, we provide out of the box support for Multiple choice, Cloze with drop down, Cloze with drag & drop, Cloze with text.
+            If you would like to implement further hints and feedback, you can write custom code to display Distractor Rationale and other metadata.
         </p>
         <ul>
             <li><p><a href="#demo1">Demo 1: Display Distractor Rationale (using initialization options)</a></p></li>
