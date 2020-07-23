@@ -239,6 +239,22 @@ include_once 'includes/header.php';
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Workflow States and Comments</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Move your item through a series of workflow states, from a first draft to the
+                            finished product.</p>
+                        <p class="text-right">
+                            <a class="demo_link"  href="./workflow.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="section index">
 
