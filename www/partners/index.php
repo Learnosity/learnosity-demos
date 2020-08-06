@@ -23,6 +23,7 @@
             <li><h4><a class="blue-chevron" href="#ReadSpeaker">Text to Speech solution: ReadSpeaker</a></h4></li>
             <li><h4><a class="blue-chevron" href="#Desmos">Helping every student love learning math: Desmos</a></h4></li>
             <li><h4><a class="blue-chevron" href="#AB">Browse and Tag Learning Standards: Academic Benchmarks</a></h4></li>
+            <li><h4><a class="blue-chevron" href="#GeoGebra">Powerful math tools: GeoGebra</a></h4></li>
         </ul>
     </div>
 
@@ -82,6 +83,22 @@
                      Academic Benchmarks digitized learning standards and unique identifiers (GUIDs) in an integrated manner within the Learnosity toolset.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./academic-benchmarks.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title" id="GeoGebra">Powerful math tools: GeoGebra</h2>
+                </div>
+                <div class="panel-body">
+                    <p>GeoGebra provides several powerful math tools including a graphing calculator, geometry tool, spreadsheet, probability calculator, algebra calculator and 3D graphing.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./geogebra.php">Demo</a>
                     </p>
                 </div>
             </div>
