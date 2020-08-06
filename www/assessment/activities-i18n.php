@@ -28,7 +28,7 @@ if (isset($_GET['language'])) {
 
 // TODO: Remove this when we have the multi lingual items in all environments.
 if (isset($_GET['env']) === false) {
-    $url_items = '//items.learnosity.com';
+    $url_items = '//items.learnosity.com/?' . $lts_version;
 }
 
 $security = [
