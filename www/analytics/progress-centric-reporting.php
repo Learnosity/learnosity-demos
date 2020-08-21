@@ -24,7 +24,7 @@ $request = [
 			'id'        => 'progress-by-tag',
 			'type'      => 'progress-by-tag',
 			'user_id'   => 'mce_student_1',
-			'hierarchy' => 'CCSS'
+			'hierarchy_reference' => 'CCSS'
 		],
         [
 			"id"        => "progress-by-tag-by-user",
@@ -40,7 +40,7 @@ $request = [
 		    'type'        => 'progress-single',
             'ui'          => 'pie',
 		    'user_id'     => 'demo_student',
-		    'hierarchy'   => 'questiontype',
+		    'hierarchy_reference'   => 'questiontype',
 		    'tag_hierarchy_path' => [
 		        [
 		            'type'  => 'questiontype',
