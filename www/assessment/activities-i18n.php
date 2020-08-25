@@ -17,8 +17,8 @@ $assessLabels = '[]';
 $questionsLabels = '[]';
 $language = 'en-US';
 
-if (isset($_GET['language'])) {
-    $language = filter_input(INPUT_GET, 'language', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+if (isset($_GET['language']) && preg_match('/^[A-Za-z\-]+$/', $_GET['language'])) {
+    $language = $_GET['language'];
     if ($language !== 'en-US') {
         $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
         $assessLabels = file_get_contents($url . '/assess-api.json');
