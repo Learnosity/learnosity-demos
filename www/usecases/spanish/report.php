@@ -13,7 +13,7 @@ use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
 //assessment session id
-$session_id = $_GET['session_id'];
+$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 $security = [
     'user_id'      => 'demo_student',

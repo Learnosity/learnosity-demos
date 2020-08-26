@@ -9,14 +9,8 @@ include_once 'includes/header.php';
 //common Learnosity config elements including API version control vars
 include_once '../../lrn_config.php';
 
-// Which activity do you want to load?
-$activityRef = 'gallery_1';
-
-if (isset($_GET['activity_reference'])) {
-    $activityRef = $_GET['activity_reference'];
-}
-
-$studentid = isset($_GET['user']) ? $_GET['user'] : 'demo_student';
+$activityRef = filter_input(INPUT_GET, 'activity_reference', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'gallery_1']]);
+$studentid = filter_input(INPUT_GET, 'user', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'demo_student']]);
 
 include './includes/itemsRequest.php';
 
@@ -29,7 +23,7 @@ include './includes/itemsRequest.php';
         </ul>
     </div>
     <div class="overview">
-        <h1>Items API – Inline Gallery Style</h1>
+        <h1>Items API – Inline Gallery Style <?=$pageParams['activity_reference']?></h1>
         <p>Demonstrates how simply you can style each <em>item</em> in an activity.</p>
         <ul>
             <li>Student View</li>
