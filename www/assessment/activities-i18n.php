@@ -17,7 +17,7 @@ $assessLabels = '[]';
 $questionsLabels = '[]';
 $language = 'en-US';
 
-if (isset($_GET['language'])) {
+if (isset($_GET['language']) && preg_match('/^[A-Za-z\-]+$/', $_GET['language'])) {
     $language = $_GET['language'];
     if ($language !== 'en-US') {
         $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
