@@ -14,7 +14,7 @@ $security = array(
     'domain'       => $domain
 );
 
-$userIds = explode(',', htmlspecialchars($_GET['user_ids'], ENT_QUOTES));
+$userIds = explode(',', htmlspecialchars(filter_input(INPUT_POST, 'user_ids', FILTER_SANITIZE_FULL_SPECIAL_CHARS), ENT_QUOTES));
 
 $request  = array(
     'reports' => array(

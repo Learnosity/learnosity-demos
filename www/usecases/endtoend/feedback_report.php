@@ -14,8 +14,9 @@ use LearnositySdk\Utils\Uuid;
 
 
 //session ids for student and teacher sessions
-$session_id = $_GET['session_id'];
-$feedback_session_id = $_GET['feedback_session_id'];
+
+$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$feedback_session_id = filter_input(INPUT_GET, 'feedback_session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 $security = [
     'user_id'      => 'demos-site',

@@ -10,13 +10,9 @@ include_once 'includes/header.php';
 include_once '../lrn_config.php';
 
 use LearnositySdk\Request\Init;
-use LearnositySdk\Utils\Uuid;
 
 //display report or JSON data
-$render = true;
-if (isset($_GET['render']) && $_GET['render'] === 'false') {
-    $render = false;
-}
+$render = filter_input(INPUT_GET, 'render', FILTER_VALIDATE_BOOLEAN, ['options'=>['default'=>true], 'flags' => FILTER_NULL_ON_FAILURE]);
 
 $security = [
     'consumer_key' => $consumer_key,
@@ -52,7 +48,6 @@ $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
