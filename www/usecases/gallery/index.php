@@ -23,7 +23,7 @@ include './includes/itemsRequest.php';
         </ul>
     </div>
     <div class="overview">
-        <h1>Items API – Inline Gallery Style <?=$pageParams['activity_reference']?></h1>
+        <h1>Items API – Inline Gallery Style</h1>
         <p>Demonstrates how simply you can style each <em>item</em> in an activity.</p>
         <ul>
             <li>Student View</li>

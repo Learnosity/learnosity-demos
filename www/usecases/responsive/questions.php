@@ -67,7 +67,6 @@ $jsonId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['op
     </div>
     <div class="widgets-container"></div>
 </div>
-<h1><?=$request?></h1>
 
 <script>
     $(function () {
