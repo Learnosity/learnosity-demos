@@ -8,29 +8,41 @@ include_once '../../env_config.php';
 include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
-use LearnositySdk\Utils\Uuid;
+
+$filters = [
+	"domain"=>[
+		'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS
+	],
+	"request"=>[
+		"filter"=> FILTER_UNSAFE_RAW,
+		"flags" => FILTER_REQUIRE_ARRAY | FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_BACKTICK | FILTER_FLAG_ENCODE_AMP
+	]
+
+];
+$post_data = filter_input_array(INPUT_POST, $filters);
+
 
 //domain must be whitelisted
-$domain = $_POST['domain'];
+$domain = $post_data['domain'];
 
 //security object, with domain taking from requester
 $security = [
-    'user_id'      => $_POST['request']['user_id'],
+    'user_id'      => $post_data['request']['user_id'],
     'domain'       => $domain,
     'consumer_key' => $consumer_key
 ];
 
 if (
-    isset($_POST['request']['config']) &&
-    isset($_POST['request']['config']['questions_api_init_options']) &&
-    isset($_POST['request']['config']['questions_api_init_options']['beta_flags']) &&
-    isset($_POST['request']['config']['questions_api_init_options']['beta_flags']['reactive_views']) &&
-    $_POST['request']['config']['questions_api_init_options']['beta_flags']['reactive_views'] === 'true'
+    isset($post_data['request']['config']) &&
+    isset($post_data['request']['config']['questions_api_init_options']) &&
+    isset($post_data['request']['config']['questions_api_init_options']['beta_flags']) &&
+    isset($post_data['request']['config']['questions_api_init_options']['beta_flags']['reactive_views']) &&
+    $post_data['request']['config']['questions_api_init_options']['beta_flags']['reactive_views'] === 'true'
 ) {
-    $_POST['request']['config']['questions_api_init_options']['beta_flags']['reactive_views'] = true;
+    $post_data['request']['config']['questions_api_init_options']['beta_flags']['reactive_views'] = true;
 }
 //initialize Items API with provided request object
-$init = new Init('items', $security, $consumer_secret, $_POST['request']);
+$init = new Init('items', $security, $consumer_secret, $post_data['request']);
 echo $init->generate();
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 $student = [
-    'id'   => htmlspecialchars($_GET['user_id'], ENT_QUOTES),
+    'id'   => htmlspecialchars(filter_input(INPUT_GET, 'user_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS), ENT_QUOTES),
     'name' => 'Jesse Pinkman'
 ];
 

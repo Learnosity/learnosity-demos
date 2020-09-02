@@ -12,7 +12,7 @@ include_once '../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$session_id = $_GET['session_id'];
+$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $activity_id = 'Demo_Activity';
 
 $security = [
@@ -122,7 +122,7 @@ $signedRequest = $Init->generate();
                     readyListener: function() {
                         $('.lrn_save_button').click(function() {
                             window.setTimeout(function() {
-                                window.location = 'feedback_report.php?session_id=<?php echo $_GET['session_id']; ?>&feedback_session_id=' + itemsActivity.request.session_id;
+                                window.location = 'feedback_report.php?session_id=<?php echo $session_id; ?>&feedback_session_id=' + itemsActivity.request.session_id;
                             }, 1000);
                         });
                     }

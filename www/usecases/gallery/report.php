@@ -11,12 +11,8 @@ include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 
-// Which activity do you want to load?
-$activityRef = 'gallery_1';
-
-if (isset($_GET['activity_reference'])) {
-    $activityRef = $_GET['activity_reference'];
-}
+$activityRef = filter_input(INPUT_GET, 'activity_reference', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'gallery_1']]);
+$users = filter_input(INPUT_GET, 'users', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'demo_student']]);
 
 include './includes/itemsRequest.php';
 
@@ -26,8 +22,7 @@ $security = array(
     'domain'       => $domain
 );
 
-// Use the `users` query string var, otherwise go with the application default student name
-$users = (array_key_exists('users',$_GET)) ? explode(',', $_GET['users']) : ['demo_student'];
+$users = explode(',', $users);
 
 $request = array(
     'reports' => array(

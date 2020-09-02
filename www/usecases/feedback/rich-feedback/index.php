@@ -17,9 +17,10 @@ $security = array(
     'domain'       => $domain
 );
 
+$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
 //show in initial state to start and, when reloaded with session id, show in review mode
-if (isset($_GET['session_id'])) {
-    $session_id = $_GET['session_id'];
+if ($session_id) {
     $session_state = 'resume';
 } else {
     $session_id = Uuid::generate();

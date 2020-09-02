@@ -12,22 +12,20 @@ include_once '../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
+$language=filter_input(INPUT_GET, 'language', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'en-US']]);
+$env=filter_input(INPUT_GET, 'env', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'prod']]);
 
 $assessLabels = '[]';
 $questionsLabels = '[]';
-$language = 'en-US';
 
-if (isset($_GET['language']) && preg_match('/^[A-Za-z\-]+$/', $_GET['language'])) {
-    $language = $_GET['language'];
-    if ($language !== 'en-US') {
+if ($language !== 'en-US' && preg_match('/^[A-Za-z\-]+$/', $language)) {
         $url = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/' . $language;
         $assessLabels = file_get_contents($url . '/assess-api.json');
         $questionsLabels = file_get_contents($url . "/questions-api.json");
-    }
 }
 
 // TODO: Remove this when we have the multi lingual items in all environments.
-if (isset($_GET['env']) === false) {
+if ($env==='prod') {
     $url_items = '//items.learnosity.com/?' . $lts_version;
 }
 

@@ -12,8 +12,8 @@ include_once '../../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$session_id = $_GET['session_id'];
-$activity_id = $_GET['activity_id'];
+$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$activity_id = filter_input(INPUT_GET, 'activity_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 $security = [
     'user_id'      => 'demo_student',
