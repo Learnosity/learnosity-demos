@@ -18,7 +18,7 @@ $security = array(
     'timestamp'    => $timestamp
 );
 
-$itemRef = $_GET['ref'];
+$itemRef = filter_input(INPUT_GET, 'ref', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 $request = array(
     'user_id'        => 'demo_student',

@@ -20,15 +20,16 @@ $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain
 );
-$endpoint = (isset($_POST['endpoint'])) ? $_POST['endpoint'] : null;
-$data     = (isset($_POST['request'])) ? json_decode($_POST['request'], true) : null;
-$action   = (isset($_POST['action'])) ? $_POST['action'] : 'get';
+$endpoint = filter_input(INPUT_POST, 'endpoint', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>null]]);
+$data = json_decode(html_entity_decode(filter_input(INPUT_POST, 'request', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>null]])), true);
+
+$action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'get']]);
 
 $dataapi = new DataApi(['ssl_verify' => $curl_ssl_verify]);
 $response = $dataapi->request($endpoint, $security, $consumer_secret, $data, $action);
 
 if (strlen($response->getBody())) {
-    echo $response->getBody();
+	echo $response->getBody();
 } else {
     $err = $response->getError();
     echo $err['message'];

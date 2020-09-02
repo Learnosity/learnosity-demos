@@ -17,31 +17,35 @@ $security = array(
     'user_id'      => 'demo_student'
 );
 
-$sessionId = isset($_GET['sessionid']) ? $_GET['sessionid'] : Uuid::generate();
+
+$sessionId = filter_input(INPUT_GET, 'sessionid', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $state = 'initial';
 
-if (isset($_GET['sessionid'])) {
-    $state = isset($_GET['state']) ? $_GET['state'] : 'resume';
+if ($sessionId) {
+    $state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'resume']]);
+}
+else{
+    $sessionId = Uuid::generate();
 }
 
-$request = '{
-    "type": "submit_practice",
-    "state": "' . $state . '",
-    "id": "questionsapi-demo",
-    "name": "Questions API Demo",
-    "session_id" "' . $sessionId . '",
-    "course_id": "course_id",
-    "questions": [],
-    "features": [],
-    "beta_flags": {
-        "reactive_views": true
-    }'
-;
+$request = json_encode([
+    "type"=> "submit_practice",
+    "state"=>$state,
+    "id"=> "questionsapi-demo",
+    "name"=> "Questions API Demo",
+    "session_id"=> $sessionId,
+    "course_id"=> "course_id",
+    "questions"=> [],
+    "features"=> [],
+    "beta_flags"=> [
+        "reactive_views"=> true
+    ]
+]);
 
 $Init = new Init('questions', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
-$jsonId = isset($_GET['id']) ? $_GET['id'] : '';
+$jsonId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'']]);
 
 ?>
 <link rel="stylesheet" href="assets/style.css">

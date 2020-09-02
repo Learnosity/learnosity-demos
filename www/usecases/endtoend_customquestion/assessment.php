@@ -22,12 +22,7 @@ $security = array(
     'domain'       => $domain
 );
 
-if (isset($_GET['session_id'])) {
-    $session_id = $_GET['session_id'];
-} else {
-    $session_id = Uuid::generate();
-}
-
+$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>Uuid::generate()]]);
 
 $request = array(
     'activity_id'    => $activity_id,
@@ -101,7 +96,8 @@ $request = array(
 
 
 function getItemsArray() {
-    return explode(",", $_GET['itemIDs']);
+
+    return explode(",", filter_input(INPUT_GET, 'itemIDs', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
 }
 
 
