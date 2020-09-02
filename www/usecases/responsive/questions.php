@@ -17,23 +17,30 @@ $security = array(
     'user_id'      => 'demo_student'
 );
 
-$sessionId = filter_input(INPUT_GET, 'sessionid', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>Uuid::generate()]]);
 
-$sessionId = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'resume']]);
+$sessionId = filter_input(INPUT_GET, 'sessionid', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$state = 'initial';
 
-$request = '{
-    "type": "submit_practice",
-    "state": "' . $state . '",
-    "id": "questionsapi-demo",
-    "name": "Questions API Demo",
-    "session_id" "' . $sessionId . '",
-    "course_id": "course_id",
-    "questions": [],
-    "features": [],
-    "beta_flags": {
-        "reactive_views": true
-    }'
-;
+if ($sessionId) {
+    $state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'resume']]);
+}
+else{
+    $sessionId = Uuid::generate();
+}
+
+$request = json_encode([
+    "type"=> "submit_practice",
+    "state"=>$state,
+    "id"=> "questionsapi-demo",
+    "name"=> "Questions API Demo",
+    "session_id"=> $sessionId,
+    "course_id"=> "course_id",
+    "questions"=> [],
+    "features"=> [],
+    "beta_flags"=> [
+        "reactive_views"=> true
+    ]
+]);
 
 $Init = new Init('questions', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
@@ -60,6 +67,7 @@ $jsonId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['op
     </div>
     <div class="widgets-container"></div>
 </div>
+<h1><?=$request?></h1>
 
 <script>
     $(function () {
