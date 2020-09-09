@@ -207,21 +207,6 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Accessing xAPI events</h2>
-                    </div>
-                    <div class="panel-body">
-                        <p>Under the hood, Learnosity's Events API fires xAPI events, that you can pass onto your LRS (Learning Record Store).</p>
-                        <p class="text-right">
-                            <a class="demo_link" href="./xapi/index.php">Demo</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
                         <h2 class="panel-title">Manage Multiple Items API Instances in a Single Page App</h2>
                     </div>
                     <div class="panel-body">
