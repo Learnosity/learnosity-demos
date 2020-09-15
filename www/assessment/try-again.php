@@ -29,7 +29,6 @@ $request = [
     'name'=> 'TEST',
     'type'=> 'submit_practice',
     'rendering_type'=> 'assess',
-    'course_id'=> 'commoncore',
     'session_id'=> Uuid::generate(),
     'user_id'=> '$ANONYMIZED_USER_ID',
     'dynamic_items'=> [

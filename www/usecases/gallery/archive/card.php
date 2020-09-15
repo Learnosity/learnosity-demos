@@ -26,7 +26,6 @@ $request = array(
     'state'          => 'initial',
     'activity_id'    => 'itemsinlinedemo',
     'session_id'     => Uuid::generate(),
-    'course_id'      => 'course_id',
     'type'           => 'local_practice',
     'rendering_type' => 'inline',
     'items'          => [$itemRef]

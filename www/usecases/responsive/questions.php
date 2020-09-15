@@ -34,7 +34,6 @@ $request = json_encode([
     "id"=> "questionsapi-demo",
     "name"=> "Questions API Demo",
     "session_id"=> $sessionId,
-    "course_id"=> "course_id",
     "questions"=> [],
     "features"=> [],
     "beta_flags"=> [
@@ -76,7 +75,6 @@ $jsonId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['op
             id: 'questionsapi-responsive-demo',
             name: 'Questions API Demo',
             session_id: '<?php echo $sessionId ?>',
-            course_id: 'course_id'
         });
         var sessionId = '<?php echo $sessionId; ?>';
 

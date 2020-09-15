@@ -20,7 +20,6 @@ $request = [
     'rendering_type' => 'assess',
     'state'          => 'initial',
     'type'           => 'submit_practice',
-    'course_id'      => 'demo_course',
     'session_id'     => Uuid::generate(),
     'user_id'        => $student['id'],
     'items'          => ['Demo4', 'Demo3', 'Demo6', 'Demo7', 'Demo8', 'Demo9'],
