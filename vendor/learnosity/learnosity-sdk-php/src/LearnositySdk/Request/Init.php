@@ -111,6 +111,12 @@ class Init
     private $algorithm = 'sha256';
 
     /**
+     * Tracking if the request was passed as a string
+     * @var bool
+     */
+    private $requestPassedAsString = false;
+
+    /**
      * Instantiate this class with all security and request data. It
      * will be used to create a signature.
      *
@@ -122,10 +128,13 @@ class Init
      */
     public function __construct($service, $securityPacket, $secret, $requestPacket = null, $action = null)
     {
-        $this->requestPassedAsString = false;
         if (is_string($requestPacket)) {
             $requestPacket = json_decode($requestPacket, true);
             $this->requestPassedAsString = true;
+        }
+
+        if (is_null($requestPacket)) {
+            $requestPacket = [];
         }
 
         // First validate the arguments passed
