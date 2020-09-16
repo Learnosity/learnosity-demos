@@ -1,0 +1,30 @@
+[
+    {
+        "name": "قياسي",
+        "reference": "c569ccd8-e8d9-430e-8b99-4858b2f697cf",
+        "template_references": [
+            "9e8149bd-e4d8-4dd6-a751-1a113a4b9163",
+            "1e6039f8-0676-495d-aca9-108710a51ce5",
+            "184de6ce-4638-4cc5-91c7-e4f37a487f0c"
+        ]
+    },
+    {
+        "name": "إملأ الفراغات",
+        "reference": "7a6429b9-0c23-492a-ae07-98ede023d474",
+        "template_references": [
+            "51a8c1e7-f34f-4faf-b211-da458e891fcb",
+            "2fbba51b-e35e-441f-83c7-2662e2e81fa6",
+            "457fe101-0667-4a35-b193-b849653acb52",
+            "6e77b403-8f0c-43af-b464-9450e1ac70dc",
+            "f8364191-ada5-4806-83d4-8a36b8fad4b0",
+            "35a850a7-9d3f-4e1c-880a-a340767942b6"
+        ]
+    },
+    {
+        "name": "Passage",
+        "reference": "custom-feature",
+        "template_references": [
+            "d5d43bd6-d02a-4969-a79a-e10b344549a8"
+        ]
+    }
+]
