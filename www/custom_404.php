@@ -1,4 +1,6 @@
 <?php
+$pageTitle = '404 Page Not Found';
+
 include_once 'env_config.php';
 include_once 'includes/mapping.php';
 include_once 'includes/header.php';

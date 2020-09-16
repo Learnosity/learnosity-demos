@@ -4,6 +4,7 @@
 include_once '../env_config.php';
 
 //site scaffolding
+$pageTitle = 'Learnosity Author - Right-to-Left Language Support';
 include_once 'includes/header.php';
 
 //common Learnosity config elements including API version control vars
