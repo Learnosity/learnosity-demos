@@ -41,7 +41,9 @@ $questionTypeGroups = file_get_contents('./i18n/rtl/qe_custom_types/question_typ
 
 /*
 Note - passages aren't enabled in this demo because other features
-are not yet supported in RTL (like line-reader, media player etc)
+are not yet supported in RTL (like line-reader, media player etc).
+Note - Today we need to pass Questions API labelBundles twice (see
+below in `dependencies`), this will be addressed in a future release.
 */
 $request = json_decode('{
     "mode": "item_list",
@@ -103,7 +105,14 @@ $request = json_decode('{
                             "mode": "advanced"
                         }
                     },
-                    "label_bundle": ' . $bundleQuestionEditorAPI . '
+                    "label_bundle": ' . $bundleQuestionEditorAPI . ',
+                    "dependencies": {
+                        "questions_api": {
+                            "init_options": {
+                                "labelBundle": ' . $bundleQuestionsAPI . '
+                            }
+                        }
+                    }
                 }
             },
             "questions_api": {
