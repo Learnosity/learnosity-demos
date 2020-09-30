@@ -32,10 +32,8 @@ if (!$response->getError()['code']) {
 $request = array(
     'user_id'              => 'demo_student',
     'name'                 => 'Items API demo - Inline Activity.',
-    'state'                => 'initial',
     'activity_id'          => 'itemsinlinedemo',
     'session_id'           => Uuid::generate(),
-    'course_id'            => 'demo',
     'type'                 => 'submit_practice',
     'rendering_type'       => 'inline',
     'activity_template_id' => $activityRef,

@@ -35,7 +35,6 @@ $request = [
     'state'          => $session_state,
     'activity_id'    => 'DemoTest_DemoSiteExample',
     'session_id'     => $session_id,
-    'course_id'      => 'commoncore',
     'activity_template_id' => 'FEEDBACK_DEMO_TEST',
     'type'           => 'submit_practice',
     'config'         => array(

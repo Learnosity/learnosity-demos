@@ -34,6 +34,14 @@ $request = [
                     ]
                 ]
             ]
+        ],
+        'label_bundle' => [
+            'workflowStateDraft' => 'Draft',
+            'workflowStateApproved' => 'Approved',
+            'workflowStateReview' => 'Review',
+            'workflowStateRework' => 'Rework',
+            'workflowStateBlocked' => 'Blocked',
+            'workflowStateUnassigned' => 'Unassigned',
         ]
     ],
     'user' => [
