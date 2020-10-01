@@ -16,6 +16,14 @@ $pages = array(
         'partners/index.php' => 'Partners'
     )
 );
+
+$url = 'https://github.com/Learnosity/learnosity-demos/blob/master/www'.$_SERVER['REQUEST_URI'];
+
+if (filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED)){
+    $url = explode('?', $url)[0];
+}
+$santized_url = filter_var($url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
 ?>
 
     <div class="navbar" role="navigation">
@@ -57,7 +65,7 @@ $pages = array(
     <div class="nav-sec-wrapper">
         <ul class="nav navbar-nav nav-sec">
             <li>
-                <a href="https://github.com/Learnosity/learnosity-demos/blob/master/www<?php echo $_SERVER['REQUEST_URI']?>" class="view_source">
+                <a href="<?=$santized_url?>" class="view_source">
                                     </span>View source</span>
                                 </a>
                             </li>

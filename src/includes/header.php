@@ -26,11 +26,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <?php
+    $server_name = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     // Show alert if not being used form localhost
-    if (strpos($_SERVER['SERVER_NAME'], '.learnosity.com') === false && $_SERVER['SERVER_NAME'] !== 'localhost') {
+    if (strpos($server_name, '.learnosity.com') === false && $server_name !== 'localhost') {
         echo '<div class="container alert alert-warning"><p><b>Warning</b> – ' .
-            'Note: Most demos will only work from <em>localhost</em>. Please ' .
-            'contact support@learnosity.com to get an additional domain added.</p></div>';
+            'Note: Most demos will only work from <em>localhost</em>. Signed customers can whitelist additional domains using Console.</p></div>';
     }
 
     include_once 'nav.php';
