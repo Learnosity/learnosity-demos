@@ -59,6 +59,12 @@ switch ($language) {
     case 'zh-CN':
         $activityTemplateId = 'i18n-acty1-cn';
         break;
+    case 'pt-PT':
+        $activityTemplateId = 'i18n-acty1-pt';
+        break;
+    case 'jp-JP':
+        $activityTemplateId = 'i18n-acty1-jp';
+        break;
     default:
         $activityTemplateId = 'i18n-acty1-eng';
         break;
@@ -157,20 +163,14 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>I18n and l10n support made easy</h2>
-            <p>Learnosity is built from the ground up with i18n (Internationalization) and l10n (Localization) support with support for configuration and language bundles.</p>
-            <p>This demo uses learnosity-i18n which is a public repository of Learnosity internationalization language bundles.</p>
-            <p style="margin-bottom:25px;">Selected examples:</p>
+            <p>Learnosity has i18n (internationalization) and l10n (localization) support for configuration and language bundles.</p>
+            <p>This demo uses learnosity-i18n which is a public repository, containing Learnosity internationalization language bundles.</p>
+            <p style="margin-bottom:25px;">Click a language icon to see a translation of the assessment below:</p>
             <div>
                 <div class="language-button-container">
                     <a class="language-button <?php if ($language === 'en-US') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-US">
                         <img class="language-flag" src="/static/images/i18n/flag-US.png" />
                         English (US)
-                    </a>
-                </div>
-                <div class="language-button-container">
-                    <a class="language-button <?php if ($language === 'de-DE') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=de-DE">
-                        <img class="language-flag" src="/static/images/i18n/flag-DE.png" />
-                        Deutsch / German
                     </a>
                 </div>
                 <div class="language-button-container">
@@ -183,6 +183,36 @@ $signedRequest = $Init->generate();
                     <a class="language-button <?php if ($language === 'fr-FR') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=fr-FR">
                         <img class="language-flag" src="/static/images/i18n/flag-FR.png" />
                         Français / French
+                    </a>
+                </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'de-DE') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=de-DE">
+                        <img class="language-flag" src="/static/images/i18n/flag-DE.png" />
+                        Deutsch / German
+                    </a>
+                </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'pt-PT') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=pt-PT">
+                        <img class="language-flag" src="/static/images/i18n/flag-PT.png" />
+                        Português / Portuguese
+                    </a>
+                </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'it-IT') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=it-IT">
+                        <img class="language-flag" src="/static/images/i18n/flag-IT.png" />
+                        Italiano / Italian
+                    </a>
+                </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'ja-JP') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=jp-JP">
+                        <img class="language-flag" src="/static/images/i18n/flag-JP.png" />
+                        日本語 / Japanese
+                    </a>
+                </div>
+                <div class="language-button-container">
+                    <a class="language-button <?php if ($language === 'zh-CN') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=zh-CN">
+                        <img class="language-flag" src="/static/images/i18n/flag-CN.png" />
+                        简体中文 / Chinese
                     </a>
                 </div>
                 <div class="language-button-container">
@@ -202,9 +232,7 @@ $signedRequest = $Init->generate();
             <p>
                 <b>More languages:</b>
                     <a class="other-language <?php if ($language === 'en-GB') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=en-GB">English (UK)</a>
-                    | <a class="other-language <?php if ($language === 'tl-PH') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl-PH">Filipino/Tagalog</a>
-                    | <a class="other-language <?php if ($language === 'it-IT') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=it-IT">Italiano/Italian</a>
-                    | <a class="other-language <?php if ($language === 'zh-CN') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=zh-CN">Chinese/简体中文</a>
+                    | <a class="other-language <?php if ($language === 'tl-PH') { echo 'selected'; } ?>" href="/assessment/activities-i18n.php?language=tl-PH">Pilipino/Tagalog</a>
             </p>
             <p><b>Add your own:</b> <a href="https://help.learnosity.com/hc/en-us/articles/360002918818/">Documentation</a> | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
