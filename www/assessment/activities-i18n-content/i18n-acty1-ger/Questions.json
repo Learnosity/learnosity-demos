@@ -1,0 +1,92 @@
+[
+    {
+        "type": "mcq",
+        "widget_type": "response",
+        "reference": "i18n-item1-ger-q1",
+        "data": {
+            "options": [
+                {
+                    "label": "€1900",
+                    "value": "0"
+                },
+                {
+                    "label": "€1100",
+                    "value": "3"
+                },
+                {
+                    "label": "€600",
+                    "value": "2"
+                },
+                {
+                    "label": "€100",
+                    "value": "1"
+                }
+            ],
+            "stimulus": "Eine Unternehmerin kauft neue Möbeln für ihr Büro ein. Sie startet mit einem Budget von €2000. Wenn sie €500 für einen Bürostuhl und €400 für einem Schreibtisch ausgibt, wieviel bleibt ihr dann noch für einen Tisch im Konferenzraum übrig?",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "3"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            }
+        },
+        "metadata": {
+            "name": "Multiple choice – standard",
+            "template_reference": "9e8149bd-e4d8-4dd6-a751-1a113a4b9163"
+        }
+    },
+    {
+        "type": "longtextV2",
+        "widget_type": "response",
+        "reference": "i18n-item2-ger-q1",
+        "data": {
+            "stimulus": "<p>Lesen Sie den folgenden Text</p>\n\n<p>\"Der Angestellte führte uns entlang einer schummerigen passage&nbsp;zu einer großen Bibliothek, gesäumt von hohen Buchregalen die von imposanten Büsten gekrönt sind, wo der Gutsherr und Dr. Livesay saßen, Pfeife in der Hand, auf beiden Seiten des glühenden Feuers.</p>\n\n<p>Niemals zuvor hatte ich den Gutsherrn von so nahe erblickt. Er is ein groß, über einsachtzig, von breiter Statur and er hatte ein schroffes, gerötetes, von seinen Reisen wettergegerbtes Gesicht. Seine Augenbrauen waren tief schwarz und bewegten sich zielstrebig, dass gab ihm ein Antlitz von Temparement, nicht böswillig, würde man sagen, aber schnell und entschlossen.\"</p>\n\n<p>Welche adjektive wurden im obigen Text verwendet um den Gutsherren zu beschreiben?</p>\n",
+            "type": "longtextV2"
+        },
+        "metadata": {
+            "name": "Essay with rich text",
+            "template_reference": "1e6039f8-0676-495d-aca9-108710a51ce5"
+        }
+    },
+    {
+        "type": "clozeassociation",
+        "widget_type": "response",
+        "reference": "i18n-item3-ger-q1",
+        "data": {
+            "possible_responses": [
+                "Helium",
+                "Wasserstoff",
+                "Osmium",
+                "Sauerstoff"
+            ],
+            "response_container": {
+                "pointer": "left"
+            },
+            "stimulus": "Füllen Sie die lücken um den Satz zu vervollständigen.",
+            "template": "Wasser&nbsp;(H<sub>2</sub>O) ist aus den chemischen Elementen&nbsp; {{response}}&nbsp;und&nbsp;&nbsp;{{response}}&nbsp; zusammengesetzt.",
+            "type": "clozeassociation",
+            "case_sensitive": true,
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "Hydrogen",
+                        "Oxygen"
+                    ]
+                }
+            }
+        },
+        "metadata": {
+            "name": "Cloze with drag & drop",
+            "template_reference": "51a8c1e7-f34f-4faf-b211-da458e891fcb"
+        }
+    }
+]

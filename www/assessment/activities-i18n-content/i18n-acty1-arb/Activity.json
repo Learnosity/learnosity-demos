@@ -1,0 +1,92 @@
+{
+    "reference": "i18n-acty1-arb",
+    "title": null,
+    "description": "Learnosity Internationalization Demo - Arabic",
+    "data": {
+        "config": {
+            "ui_style": "main",
+            "annotations": false,
+            "time": {
+                "max_time": 1500,
+                "limit_type": "soft",
+                "show_pause": true,
+                "show_time": false,
+                "countdown": 10
+            },
+            "navigation": {
+                "auto_save": false,
+                "toc": {
+                    "show_itemcount": true
+                },
+                "show_save": false,
+                "show_submit": true,
+                "skip_submit_confirmation": false,
+                "show_title": true,
+                "show_progress": true,
+                "show_fullscreencontrol": true,
+                "show_intro": false,
+                "show_outro": false,
+                "show_prev": true,
+                "show_next": true,
+                "show_itemcount": true,
+                "warning_on_change": false,
+                "scrolling_indicator": false,
+                "scroll_to_top": true,
+                "scroll_to_test": false,
+                "show_calculator": false,
+                "show_accessibility": {
+                    "show_colourscheme": false,
+                    "show_fontsize": false,
+                    "show_zoom": false
+                },
+                "show_answermasking": false,
+                "exit_securebrowser": true,
+                "show_acknowledgements": false,
+                "force_submit": false,
+                "intro_item": false,
+                "outro_item": false,
+                "show_submit_attempted_questions": true,
+                "show_reviewscreen": false,
+                "show_configuration": false,
+                "show_test_options": true,
+                "show_flag_items": false
+            },
+            "configuration": {
+                "fontsize": "normal",
+                "dynamic": false,
+                "lazyload": false,
+                "shuffle_items": false,
+                "idle_timeout": false,
+                "events": false,
+                "preload_audio_player": false,
+                "submit_criteria": false,
+                "reading_mode": {
+                    "reading_time": 0,
+                    "warning_time": 0,
+                    "goto_first_item_on_reading_time_completion": true
+                }
+            },
+            "administration": false,
+            "labelSettings": {
+                "screenReaderOnly": [
+                    "remainingReadingTimeWarning"
+                ]
+            },
+            "title": "Learnosity عرض التدويل",
+            "subtitle": "العربية / Arabic"
+        },
+        "items": [
+            "i18n-item1-arb",
+            "i18n-item2-arb",
+            "i18n-item3-arb"
+        ],
+        "rendering_type": "assess"
+    },
+    "status": "published",
+    "tags": [],
+    "adaptive": {
+        "difficulty": null,
+        "operational_exposure": null,
+        "seeding_exposure": null
+    }
+}

@@ -1,0 +1,91 @@
+[
+    {
+        "type": "clozeassociation",
+        "widget_type": "response",
+        "reference": "9cc78b5f-6189-42c5-aeb7-c90fbd74864b",
+        "data": {
+            "possible_responses": [
+                "الهيليوم",
+                "الهيدروجين",
+                "الأوزميوم",
+                "الأآسجين"
+            ],
+            "response_container": {
+                "pointer": "left"
+            },
+            "template": "العناصر الكيميائية التي تشكل الماء (H<sub>2</sub>O) هي: {{response}} و {{response}}.",
+            "type": "clozeassociation",
+            "case_sensitive": true,
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "الهيدروجين",
+                        "الأآسجين"
+                    ]
+                }
+            }
+        },
+        "metadata": {
+            "name": "Cloze with drag & drop",
+            "template_reference": "51a8c1e7-f34f-4faf-b211-da458e891fcb"
+        }
+    },
+    {
+        "type": "longtextV2",
+        "widget_type": "response",
+        "reference": "18bc2820-c1f9-4529-b3e2-61245ca4a52c",
+        "data": {
+            "stimulus": "<p>إقرأ النص التالي.</p>\n\n<p>\"قادنا الخادم أسفل ممر متعرج وأظهر لنا في النهاية مكتبة كبيرة ، تصطف جميعها مع خزائن الكتب وتماثيل نصفية على الجزء العلوي منها ، حيث جلس المربّع والدكتورة ليفيسي ، في متناول اليد ، على جانبي حريق مشرق.</p>\n\n<p>لم أشاهد مطلقًا المربّع في متناول يديك. لقد كان رجلاً طويل القامة ، ارتفاعه أكثر من ستة أقدام ، وكان واسعًا ، وكان له وجه خشن وجاهز ، وكله خشن ومحموم ومبطّن في رحلاته الطويلة. كانت حواجبه سوداء للغاية ، وانتقلت بسهولة ، وهذا أعطاه نظرة من بعض المزاج ، ليس سيئًا ، كما تقول ، لكن سريعًا وعاليًا \".</p>\n\n<p>في النص أعلاه ، ما هي الصفات الرئيسية المستخدمة لوصف سكوير؟</p>\n",
+            "type": "longtextV2"
+        },
+        "metadata": {
+            "name": "Essay with rich text",
+            "template_reference": "1e6039f8-0676-495d-aca9-108710a51ce5"
+        }
+    },
+    {
+        "type": "mcq",
+        "widget_type": "response",
+        "reference": "ae8dddd4-4129-4c95-bb28-3da57be21c17",
+        "data": {
+            "options": [
+                {
+                    "label": "1,900 $",
+                    "value": "0"
+                },
+                {
+                    "label": "1,100 $",
+                    "value": "1"
+                },
+                {
+                    "label": "600 $",
+                    "value": "2"
+                },
+                {
+                    "label": "100 $",
+                    "value": "3"
+                }
+            ],
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "1"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            },
+            "stimulus": "صاحبة شركة تتسوق للأثاث. لديها 2000 $. إذا أنفقت 500 $ على كرسي مكتب ثم أنفقت 400 $ على مكتب: ما مقدار المبلغ المتبقي لشراء طاولة لقاعة الاجتماعات؟<br> &nbsp;"
+        },
+        "metadata": {
+            "name": "Multiple choice – standard",
+            "template_reference": "9e8149bd-e4d8-4dd6-a751-1a113a4b9163"
+        }
+    }
+]

@@ -1,0 +1,92 @@
+[
+    {
+        "type": "clozeassociation",
+        "widget_type": "response",
+        "reference": "f1bd9213-c87f-4f62-b025-69377fe95791",
+        "data": {
+            "possible_responses": [
+                "Hélio",
+                "Hidrogênio",
+                "Ósmio",
+                "Oxigênio"
+            ],
+            "response_container": {
+                "pointer": "left"
+            },
+            "stimulus": "<p>Preencha os espaços em branco para completar a frase.</p>\n\n<p>Os elementos químicos que compõem a água (H<sub>2</sub>O) são:</p>\n",
+            "template": "{{response}}&nbsp; e&nbsp;&nbsp;{{response}} .",
+            "type": "clozeassociation",
+            "case_sensitive": true,
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        null,
+                        null
+                    ]
+                }
+            }
+        },
+        "metadata": {
+            "name": "Cloze with drag & drop",
+            "template_reference": "51a8c1e7-f34f-4faf-b211-da458e891fcb"
+        }
+    },
+    {
+        "type": "longtextV2",
+        "widget_type": "response",
+        "reference": "c55548d6-aa1c-4477-912a-6267e2ecfa8d",
+        "data": {
+            "stimulus": "<p>Leia o texto a seguir.</p>\n\n<p>\"O servo nos conduziu por uma passagem emaranhada e nos mostrou no final em uma grande biblioteca, todos alinhados com estantes de livros e bustos em cima deles, onde o escudeiro e Dr. Livesey sentaram, tubo na mão, em ambos os lados de um fogo brilhante.</p>\n\n<p>Eu nunca tinha visto o escudeiro tão perto. Ele era um homem alto, mais de seis pés de altura, e amplo em proporção, e ele tinha um rosto franco e áspero, todo áspero e avermelhado e alinhado em suas longas viagens. As sobrancelhas dele eram muito pretas, e mudou-se prontamente,&nbsp;e isso deu a ele um olhar de mau humor, não é ruim, você diria, mas rápido e alto.\"</p>\n\n<p>No texto acima, quais são os principais adjetivos usados para descrever o escudeiro?</p>\n",
+            "type": "longtextV2"
+        },
+        "metadata": {
+            "name": "Essay with rich text",
+            "template_reference": "1e6039f8-0676-495d-aca9-108710a51ce5"
+        }
+    },
+    {
+        "type": "mcq",
+        "widget_type": "response",
+        "reference": "809eada8-ba10-4d20-875e-ee55a5857df3",
+        "data": {
+            "options": [
+                {
+                    "label": "$1,900",
+                    "value": "0"
+                },
+                {
+                    "label": "$1,100",
+                    "value": "1"
+                },
+                {
+                    "label": "$600",
+                    "value": "2"
+                },
+                {
+                    "label": "$100",
+                    "value": "3"
+                }
+            ],
+            "stimulus": "O proprietário de uma empresa está comprando móveis. Ela começa com $2,000.&nbsp;Se ela gasta $500 em uma cadeira de escritório e depois $400 em uma mesa, quanto resta para gastar em uma mesa de sala de reunião?",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "1"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            }
+        },
+        "metadata": {
+            "name": "Multiple choice – standard",
+            "template_reference": "9e8149bd-e4d8-4dd6-a751-1a113a4b9163"
+        }
+    }
+]

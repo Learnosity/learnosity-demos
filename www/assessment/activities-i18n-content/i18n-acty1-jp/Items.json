@@ -1,0 +1,97 @@
+[
+    {
+        "reference": "i18n-item1-jp",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "152a2979-a1f7-4163-833e-6affb7f4fd41"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "152a2979-a1f7-4163-833e-6affb7f4fd41",
+                "type": "mcq"
+            }
+        ],
+        "features": [],
+        "tags": []
+    },
+    {
+        "reference": "i18n-item2-jp",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "6233b76e-dc34-4709-9abb-7d441d695d74"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "6233b76e-dc34-4709-9abb-7d441d695d74",
+                "type": "longtextV2"
+            }
+        ],
+        "features": [],
+        "tags": {
+            "mps-empty-test": [
+                "tag-name-1"
+            ]
+        }
+    },
+    {
+        "reference": "i18n-item3-jp",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "c3ea1296-242f-4a25-be91-b48c333fdd93"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "c3ea1296-242f-4a25-be91-b48c333fdd93",
+                "type": "clozeassociation"
+            }
+        ],
+        "features": [],
+        "tags": {
+            "mps-empty-test": [
+                "tag-name-1"
+            ]
+        }
+    }
+]
