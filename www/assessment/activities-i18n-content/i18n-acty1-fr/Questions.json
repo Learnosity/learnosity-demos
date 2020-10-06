@@ -1,0 +1,101 @@
+[
+    {
+        "type": "clozeassociation",
+        "widget_type": "response",
+        "reference": "4217fb7a-a93e-4f0f-a5b3-81c4b51736e4",
+        "data": {
+            "possible_responses": [
+                "Hélium",
+                "Hydrogène",
+                "Osmium",
+                "Oxygène"
+            ],
+            "response_container": {
+                "pointer": "left"
+            },
+            "stimulus": "Complétez la phrase en remplissant les trous.",
+            "template": "Les éléments chimiques qui composent l'eau (H<sub>2</sub>O) sont {{response}}&nbsp;et {{response}}.",
+            "type": "clozeassociation",
+            "case_sensitive": true,
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "Hydrogène",
+                        "Oxygène"
+                    ]
+                },
+                "alt_responses": [
+                    {
+                        "score": 1,
+                        "value": [
+                            "Oxygène",
+                            "Hydrogène"
+                        ]
+                    }
+                ]
+            }
+        },
+        "metadata": {
+            "name": "Cloze with drag & drop",
+            "template_reference": "51a8c1e7-f34f-4faf-b211-da458e891fcb"
+        }
+    },
+    {
+        "type": "longtextV2",
+        "widget_type": "response",
+        "reference": "43107029-2d6c-4932-a3cf-85014fee3a85",
+        "data": {
+            "stimulus": "<p>Lisez l'extrait&nbsp;suivant :&nbsp;</p>\n\n<p>\"Nous suivîmes le valet au long d’un corridor tapissé de nattes, et pénétrâmes enfin dans une bibliothèque spacieuse aux multiples rayons chargés de livres et surmontés de bustes, où le chevalier et le docteur Livesey fumaient leur pipe, assis aux deux côtés d’un feu ronflant.</p>\n\n<p>Je n’avais jamais vu le chevalier d’aussi près. C’était un homme de haute taille, dépassant six pieds, et de carrure proportionnée, à la mine fière et brusque, au visage tanné, couperosé et ridé par ses longues pérégrinations. Ses sourcils très noirs et très mobiles lui donnaient un air non pas méchant à vrai dire, mais plutôt vif et hautain.\"</p>\n\n<p>Dans l'extrait ci-dessus, quels sont les principaux adjectifs utilisés pour décrire le chevalier ?</p>\n",
+            "type": "longtextV2"
+        },
+        "metadata": {
+            "name": "Essay with rich text",
+            "template_reference": "1e6039f8-0676-495d-aca9-108710a51ce5"
+        }
+    },
+    {
+        "type": "mcq",
+        "widget_type": "response",
+        "reference": "9a915b54-ba14-47f0-b66b-2ab2f63d4c2a",
+        "data": {
+            "options": [
+                {
+                    "label": "1.900 €",
+                    "value": "0"
+                },
+                {
+                    "label": "1.100 €",
+                    "value": "1"
+                },
+                {
+                    "label": "600 €",
+                    "value": "2"
+                },
+                {
+                    "label": "100 €",
+                    "value": "3"
+                }
+            ],
+            "stimulus": "<p>Une cheffe d'entreprise doit acheter des meubles pour ses bureaux. Elle a un budget de 2.000 €. Si elle dépense 500 € pour un fauteuil&nbsp;et 400 € pour un bureau, quelle somme lui reste-t-il pour une table de réunion ?</p>\n\n<p>&nbsp;</p>\n",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "1"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            }
+        },
+        "metadata": {
+            "name": "Multiple choice – standard",
+            "template_reference": "9e8149bd-e4d8-4dd6-a751-1a113a4b9163"
+        }
+    }
+]

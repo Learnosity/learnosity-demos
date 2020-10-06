@@ -1,0 +1,91 @@
+[
+    {
+        "type": "clozeassociation",
+        "widget_type": "response",
+        "reference": "b9243324-5bf8-448f-8fcb-29b7eb685a34",
+        "data": {
+            "possible_responses": [
+                "氦",
+                "氢",
+                "锇",
+                "氧"
+            ],
+            "response_container": {
+                "pointer": "left"
+            },
+            "stimulus": "完形填空",
+            "template": "水(H<sub>2</sub>O)包含的化学元素是&nbsp;: {{response}}&nbsp; 和&nbsp;&nbsp;{{response}}",
+            "type": "clozeassociation",
+            "case_sensitive": true,
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": []
+                }
+            }
+        },
+        "metadata": {
+            "name": "Cloze with drag & drop",
+            "template_reference": "51a8c1e7-f34f-4faf-b211-da458e891fcb"
+        }
+    },
+    {
+        "type": "longtextV2",
+        "widget_type": "response",
+        "reference": "0bc74ac3-4a36-4136-a8ad-4ac5dee83578",
+        "data": {
+            "stimulus": "<p>阅读下面的文字：</p>\n\n<p>“仆人带领我们穿过一个乱蓬蓬的通道，在通道尽头是一个巨大的图书馆，书架整整齐齐排列，半身人像放在书架的上方，乡绅和利弗西博士坐在明亮的火炉的两边，手持烟斗。</p>\n\n<p>我从未如此靠近乡绅。他身材魁梧，超六英尺高，面如重枣，照应他多次长途跋涉。他眉毛黑浓，转动欢快，这让人感觉性情不错。”</p>\n\n<p>在上文中，形容乡绅的主要形容词是?</p>\n",
+            "type": "longtextV2",
+            "show_word_limit": "off",
+            "show_word_count": false
+        },
+        "metadata": {
+            "name": "Essay with rich text",
+            "template_reference": "1e6039f8-0676-495d-aca9-108710a51ce5"
+        }
+    },
+    {
+        "type": "mcq",
+        "widget_type": "response",
+        "reference": "f3349f0e-4041-4b65-b883-23aed650fd52",
+        "data": {
+            "options": [
+                {
+                    "label": "1,900 元",
+                    "value": "0"
+                },
+                {
+                    "label": "1,100 元",
+                    "value": "1"
+                },
+                {
+                    "label": "600 元",
+                    "value": "2"
+                },
+                {
+                    "label": "100 元",
+                    "value": "3"
+                }
+            ],
+            "stimulus": "某商人正在购置办公设备。她有2000元，如果她在办公椅上花费500元，然后在办公桌上花费400元，那么她还剩下多少钱可以花在会议桌上？",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "1"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            }
+        },
+        "metadata": {
+            "name": "Multiple choice – standard",
+            "template_reference": "9e8149bd-e4d8-4dd6-a751-1a113a4b9163"
+        }
+    }
+]

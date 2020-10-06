@@ -1,0 +1,92 @@
+[
+    {
+        "reference": "i18n-item3-it",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "2f8c2648-129a-42b5-9853-48a406df3cc8",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "2f8c2648-129a-42b5-9853-48a406df3cc8",
+                "type": "clozeassociation"
+            }
+        ],
+        "features": [],
+        "tags": []
+    },
+    {
+        "reference": "i18n-item1-it",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "cef8aa20-be4c-4fba-9531-88de8313888e",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "cef8aa20-be4c-4fba-9531-88de8313888e",
+                "type": "mcq"
+            }
+        ],
+        "features": [],
+        "tags": []
+    },
+    {
+        "reference": "i18n-item2-it",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "80d24010-d8a9-40ae-ab6a-4afe9ab10989",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "80d24010-d8a9-40ae-ab6a-4afe9ab10989",
+                "type": "longtextV2"
+            }
+        ],
+        "features": [],
+        "tags": []
+    }
+]

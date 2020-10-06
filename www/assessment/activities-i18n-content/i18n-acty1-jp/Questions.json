@@ -1,0 +1,108 @@
+[
+    {
+        "type": "mcq",
+        "widget_type": "response",
+        "reference": "152a2979-a1f7-4163-833e-6affb7f4fd41",
+        "data": {
+            "options": [
+                {
+                    "label": "1,900,000円",
+                    "value": "0"
+                },
+                {
+                    "label": "1,100,000円",
+                    "value": "3"
+                },
+                {
+                    "label": "600,000円",
+                    "value": "2"
+                },
+                {
+                    "label": "100,000円",
+                    "value": "1"
+                }
+            ],
+            "stimulus": "事業主が家具を購入しています. 彼女の予算は2,000,000円です.彼女が椅子に50,000円、机に40,000円を費やした場合、彼女は会議室のテーブルにいくら費やすことができますか?",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "3"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            }
+        },
+        "metadata": {
+            "name": "Multiple choice – standard",
+            "template_reference": "9e8149bd-e4d8-4dd6-a751-1a113a4b9163"
+        }
+    },
+    {
+        "type": "longtextV2",
+        "widget_type": "response",
+        "reference": "6233b76e-dc34-4709-9abb-7d441d695d74",
+        "data": {
+            "stimulus": "<p>以下のテキストをお読みください.</p>\n\n<p>\"文学の歴史をみわたすと、本当に新しい意味で婦人が文学の活動に誘い出されて来たのは、いつも、人民の権利がいくらか多くなって、すべての人が自分の考えや感じを表現してよいのだ、という確信を得た時代であった。</p>\n\n<p>明治はじめの自由民権が叫ばれて、婦人がどしどし男子と等しい教育をうけ、政治演説もし、男女平等をあたり前のことと考えた頃、日本では、木村曙「婦女の鑑」、若松賤子「忘れ形見」などの作品が現れた。若い婦人としてよりよい社会を希望するこころもちとぐるりの生活とのいきさつとを描いた作品である。それ以来樋口一葉をはじめ、明治大正を通じて今日までには幾人か、相当の文学的業績をもつ婦人作家がある。が、日本の民主的な文学の流れは、昭和のはじめ世界の民主主義の前進につれて歴史的に高まり、プロレタリア文学の誕生を見た。その当時、その流れの中からこそ、これまでとちがった勤労婦人の中からの婦人作家が出て来た。佐多稲子、松田解子、平林たい子、藤島まき、壺井栄などがそうである。これらの婦人作家は、みな少女時代から辛苦の多い勤労の生活をして来て、やがて妻となり母となり、本当に女として生きてゆく希望、よろこび、その涙と忍耐とを文学作品に表現しようとして来た人々なのである。.\"</p>\n\n<p>本文に従って文学の発展を説明する?</p>\n",
+            "type": "longtextV2",
+            "formatting_options": [
+                "太宇",
+                "斜体",
+                "下線",
+                "|",
+                "箇条書きリスト ",
+                "番号付きリスト",
+                "|",
+                "左揃え",
+                "中央揃え",
+                "右揃え",
+                "揃える",
+                "|",
+                "表",
+                "画像"
+            ]
+        },
+        "metadata": {
+            "name": "Essay with rich text",
+            "template_reference": "1e6039f8-0676-495d-aca9-108710a51ce5"
+        }
+    },
+    {
+        "type": "clozeassociation",
+        "widget_type": "response",
+        "reference": "c3ea1296-242f-4a25-be91-b48c333fdd93",
+        "data": {
+            "possible_responses": [
+                "ヘリウム",
+                "水素",
+                "オスミウム",
+                "酸素"
+            ],
+            "response_container": {
+                "pointer": "left"
+            },
+            "stimulus": "空欄に記入して文章を完成させてください.",
+            "template": "水&nbsp;(H<sub>2</sub>O) を構成する化学元素は次のとおりです&nbsp; {{response}}&nbsp;と&nbsp;&nbsp;{{response}}&nbsp;.",
+            "type": "clozeassociation",
+            "case_sensitive": true,
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "水素",
+                        "酸素"
+                    ]
+                }
+            }
+        },
+        "metadata": {
+            "name": "Cloze with drag & drop",
+            "template_reference": "51a8c1e7-f34f-4faf-b211-da458e891fcb"
+        }
+    }
+]

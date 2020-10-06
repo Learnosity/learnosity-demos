@@ -1,0 +1,101 @@
+[
+    {
+        "type": "clozeassociation",
+        "widget_type": "response",
+        "reference": "2f8c2648-129a-42b5-9853-48a406df3cc8",
+        "data": {
+            "possible_responses": [
+                "Elio",
+                "Idrogeno",
+                "Osmio",
+                "Ossigeno"
+            ],
+            "response_container": {
+                "pointer": "left"
+            },
+            "stimulus": "Riempi gli spazi vuoti per completare la frase.",
+            "template": "Gli elementi chimici che costituiscono l'acqua (H2O) sono:&nbsp;{{response}}&nbsp;e&nbsp;{{response}}.",
+            "type": "clozeassociation",
+            "case_sensitive": true,
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "Idrogeno",
+                        "Ossigeno"
+                    ]
+                },
+                "alt_responses": [
+                    {
+                        "score": 1,
+                        "value": [
+                            "Ossigeno",
+                            "Idrogeno"
+                        ]
+                    }
+                ]
+            }
+        },
+        "metadata": {
+            "name": "Cloze with drag & drop",
+            "template_reference": "51a8c1e7-f34f-4faf-b211-da458e891fcb"
+        }
+    },
+    {
+        "type": "mcq",
+        "widget_type": "response",
+        "reference": "cef8aa20-be4c-4fba-9531-88de8313888e",
+        "data": {
+            "options": [
+                {
+                    "label": "€ 1.900",
+                    "value": "0"
+                },
+                {
+                    "label": "€ 1.100",
+                    "value": "1"
+                },
+                {
+                    "label": "€ 600",
+                    "value": "2"
+                },
+                {
+                    "label": "€ 100",
+                    "value": "3"
+                }
+            ],
+            "stimulus": "Il proprietario di un'azienda sta acquistando dei mobili per i suoi uffici, e ha un budget di € 2000. Se spende € 500 su una sedia da ufficio e poi spende € 400 su una scrivania, quanti soldi gli rimangono per un tavolo per la sala riunioni?",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "1"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            }
+        },
+        "metadata": {
+            "name": "Multiple choice – standard",
+            "template_reference": "9e8149bd-e4d8-4dd6-a751-1a113a4b9163"
+        }
+    },
+    {
+        "type": "longtextV2",
+        "widget_type": "response",
+        "reference": "80d24010-d8a9-40ae-ab6a-4afe9ab10989",
+        "data": {
+            "stimulus": "<p>Leggi il testo seguente:</p>\n\n<p>\"Il servo ci condusse lungo un corridoio tappezzato di stuoie, facendoci infine entrare in una spaziosa biblioteca tutta foderata di scaffali sormontati da busti, dove il cavaliere e il dottor Livesey con la pipa in mano stavano seduti ai lati di un allegro fuoco.</p>\n\n<p>Io non avevo mai visto il cavaliere così da vicino. Era un pezzo d'uomo alto più di un metro e ottanta, quadrato, dall'espressione decisa e fiera, che i lunghi viaggi di mare avevano reso aspra e rugosa; le sue sopracciglia nerissime si muovevano di frequente, e ciò gli dava un'aria non cattiva, direi, ma piuttosto vivace e altera.\"</p>\n\n<p>Quali aggettivi sono stati usati nel testo sopra per descrivere il cavaliere?</p>\n",
+            "type": "longtextV2"
+        },
+        "metadata": {
+            "name": "Essay with rich text",
+            "template_reference": "1e6039f8-0676-495d-aca9-108710a51ce5"
+        }
+    }
+]

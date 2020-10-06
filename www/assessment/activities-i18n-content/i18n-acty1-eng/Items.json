@@ -1,0 +1,100 @@
+[
+    {
+        "reference": "i18n-item3-eng",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "2e8b9431-93b4-4fb2-8ba0-7de542a65c28",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "2e8b9431-93b4-4fb2-8ba0-7de542a65c28",
+                "type": "clozeassociation"
+            }
+        ],
+        "features": [],
+        "tags": {
+            "mps-empty-test": [
+                "tag-name-1"
+            ]
+        }
+    },
+    {
+        "reference": "i18n-item2-eng",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "cb0b5a90-a2de-4847-ab46-0ddb15176a1a",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "cb0b5a90-a2de-4847-ab46-0ddb15176a1a",
+                "type": "longtextV2"
+            }
+        ],
+        "features": [],
+        "tags": {
+            "mps-empty-test": [
+                "tag-name-1"
+            ]
+        }
+    },
+    {
+        "reference": "i18n-item1-eng",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "1b142477-d21b-4c73-8dd5-c7bba0d98187",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "1b142477-d21b-4c73-8dd5-c7bba0d98187",
+                "type": "mcq"
+            }
+        ],
+        "features": [],
+        "tags": []
+    }
+]

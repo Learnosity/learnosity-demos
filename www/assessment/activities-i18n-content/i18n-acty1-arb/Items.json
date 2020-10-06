@@ -1,0 +1,92 @@
+[
+    {
+        "reference": "i18n-item3-arb",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "9cc78b5f-6189-42c5-aeb7-c90fbd74864b",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "9cc78b5f-6189-42c5-aeb7-c90fbd74864b",
+                "type": "clozeassociation"
+            }
+        ],
+        "features": [],
+        "tags": []
+    },
+    {
+        "reference": "i18n-item2-arb",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "18bc2820-c1f9-4529-b3e2-61245ca4a52c",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "18bc2820-c1f9-4529-b3e2-61245ca4a52c",
+                "type": "longtextV2"
+            }
+        ],
+        "features": [],
+        "tags": []
+    },
+    {
+        "reference": "i18n-item1-arb",
+        "title": null,
+        "workflow": null,
+        "metadata": {
+            "acknowledgements": null,
+            "scoring_type": "per-question"
+        },
+        "note": null,
+        "source": null,
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "ae8dddd4-4129-4c95-bb28-3da57be21c17",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "ae8dddd4-4129-4c95-bb28-3da57be21c17",
+                "type": "mcq"
+            }
+        ],
+        "features": [],
+        "tags": []
+    }
+]

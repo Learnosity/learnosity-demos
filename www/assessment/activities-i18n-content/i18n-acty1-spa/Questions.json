@@ -1,0 +1,91 @@
+[
+    {
+        "type": "clozeassociation",
+        "widget_type": "response",
+        "reference": "e0b60222-6b4b-4cd5-b2dd-0a99117cd11f",
+        "data": {
+            "possible_responses": [
+                "Helio",
+                "Hidrógeno",
+                "Osmio",
+                "Oxígeno"
+            ],
+            "response_container": {
+                "pointer": "left"
+            },
+            "template": "<p>Completa los espacios en blanco de la oración.</p>\n\n<p>Los elementos químicos que conforman el agua&nbsp;(H<sub>2</sub>O) son:&nbsp;{{response}}&nbsp;y&nbsp;{{response}}&nbsp;.</p>\n",
+            "type": "clozeassociation",
+            "case_sensitive": true,
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "Hidrógeno",
+                        "Oxígeno"
+                    ]
+                }
+            }
+        },
+        "metadata": {
+            "name": "Cloze with drag & drop",
+            "template_reference": "51a8c1e7-f34f-4faf-b211-da458e891fcb"
+        }
+    },
+    {
+        "type": "longtextV2",
+        "widget_type": "response",
+        "reference": "af6a3480-8a9e-471e-965c-1f2c9f5c4adc",
+        "data": {
+            "stimulus": "<p>Lee el siguiente texto.</p>\n\n<p>\"El sirviente nos condujo hacia un&nbsp;enmarañado pasaje que nos llevó a una gran librería, cubierta de estanterías con bustos sobre ellas, donde el terrateniente y el Dr. Livesey&nbsp;estaban sentados&nbsp;a ambos lados de un fuego brillante.</p>\n\n<p>Nunca había visto al terrateniente tan de cerca. Era un hombre alto, de más de seis pies y ancho en proporciones. Tenía un rostro fanfarrón, duro y siempre listo. Se lo veía áspero y rojizo como consecuencia de sus largos viajes. Sus cejas eran muy oscuras, y se movían con firmeza, lo que le daba una apariencia temperamental, no de mala manera se diría, pero rápida y altanera.\"</p>\n\n<p>En el texto de arriba, cuales son los principales adjetivos usados para describir al terrateniente?</p>\n",
+            "type": "longtextV2"
+        },
+        "metadata": {
+            "name": "Essay with rich text",
+            "template_reference": "1e6039f8-0676-495d-aca9-108710a51ce5"
+        }
+    },
+    {
+        "type": "mcq",
+        "widget_type": "response",
+        "reference": "39f93e1a-c830-4a9d-8539-ad7762420e35",
+        "data": {
+            "options": [
+                {
+                    "label": "$1,900",
+                    "value": "0"
+                },
+                {
+                    "label": "$1,100",
+                    "value": "1"
+                },
+                {
+                    "label": "$600",
+                    "value": "2"
+                },
+                {
+                    "label": "$100",
+                    "value": "3"
+                }
+            ],
+            "stimulus": "La dueña&nbsp;de un centro comercial está en busca de mobiliario. Ella cuenta con $2,000. Si gasta $500 en una silla de oficina y luego gasta $400 en un escritorio:&nbsp;¿Cuánto dinero le sobra para comprar una mesa para la sala de reuniones?",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "1"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            }
+        },
+        "metadata": {
+            "name": "Multiple choice – standard",
+            "template_reference": "9e8149bd-e4d8-4dd6-a751-1a113a4b9163"
+        }
+    }
+]

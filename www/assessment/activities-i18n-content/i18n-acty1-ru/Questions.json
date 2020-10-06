@@ -1,0 +1,92 @@
+[
+    {
+        "type": "mcq",
+        "widget_type": "response",
+        "reference": "a193cc54-a26b-462e-8dd9-97cad1957abb",
+        "data": {
+            "options": [
+                {
+                    "label": "1 900 рублей",
+                    "value": "0"
+                },
+                {
+                    "label": "1 100 рублей",
+                    "value": "3"
+                },
+                {
+                    "label": "600 рублей",
+                    "value": "2"
+                },
+                {
+                    "label": "100 рублей",
+                    "value": "1"
+                }
+            ],
+            "stimulus": "Директор фирмы хочет купить новую мебель для офиса на 2 000 рублей. Сколько денег у него останется на покупку стола&nbsp;для переговорной, если он уже потратил 500 рублей на офисный стул и 400 рублей на рабочий стол?",
+            "type": "mcq",
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "3"
+                    ]
+                }
+            },
+            "ui_style": {
+                "type": "horizontal"
+            }
+        },
+        "metadata": {
+            "name": "Multiple choice – standard",
+            "template_reference": "9e8149bd-e4d8-4dd6-a751-1a113a4b9163"
+        }
+    },
+    {
+        "type": "longtextV2",
+        "widget_type": "response",
+        "reference": "6100ab75-13ad-4991-895e-87a9b033289e",
+        "data": {
+            "stimulus": "<p>Пожалуйста, прочтите текст&nbsp;ниже.</p>\n\n<p>\"Дворецкий провел нас по коридору с коврами на полу и мы попали в роскошную библиотеку с множеством книжных стеллажей&nbsp;и бюстов, где по обе стороны от камина сидели помещик и&nbsp;Доктор Ливси с курительной трубкой в руке.</p>\n\n<p>Я никогда еще не видел помещика так близко. Это был широкоплечий и высокий мужчина&nbsp;около 1.8 метра ростом. У него было серьезное, убедительное выражение лица, загар и морщины которого говорили о его длительных путешествиях. Его подвижные брови были черные как смола, что создавало впечатление о его темпераментном, но добродушном характере.\"</p>\n\n<p>Перечислите&nbsp;прилагательные из отрывка выше, которые описывают помещика.</p>\n",
+            "type": "longtextV2"
+        },
+        "metadata": {
+            "name": "Essay with rich text",
+            "template_reference": "1e6039f8-0676-495d-aca9-108710a51ce5"
+        }
+    },
+    {
+        "type": "clozeassociation",
+        "widget_type": "response",
+        "reference": "fb9fb852-56b8-4f93-bf80-538d8c1e7168",
+        "data": {
+            "possible_responses": [
+                "Гелий",
+                "Водород",
+                "Осмий",
+                "Кислород"
+            ],
+            "response_container": {
+                "pointer": "left"
+            },
+            "stimulus": "Закончите предложение ниже, вставляя пропущенные слова.",
+            "template": "Вода (H<sub>2</sub>O) состоит из следующих химических элементов:&nbsp;{{response}}&nbsp;и&nbsp;&nbsp;{{response}}&nbsp;.",
+            "type": "clozeassociation",
+            "case_sensitive": true,
+            "validation": {
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [
+                        "Водород",
+                        "Кислород"
+                    ]
+                }
+            }
+        },
+        "metadata": {
+            "name": "Cloze with drag & drop",
+            "template_reference": "51a8c1e7-f34f-4faf-b211-da458e891fcb"
+        }
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "reference": "i18n-item3-pt",
+        "title": null,
+        "workflow": null,
+        "metadata": null,
+        "note": "",
+        "source": "",
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "f1bd9213-c87f-4f62-b025-69377fe95791",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "f1bd9213-c87f-4f62-b025-69377fe95791",
+                "type": "clozeassociation"
+            }
+        ],
+        "features": [],
+        "tags": {
+            "i18n": [
+                "portuguese"
+            ]
+        }
+    },
+    {
+        "reference": "i18n-item2-pt",
+        "title": null,
+        "workflow": null,
+        "metadata": null,
+        "note": "",
+        "source": "",
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "c55548d6-aa1c-4477-912a-6267e2ecfa8d",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "c55548d6-aa1c-4477-912a-6267e2ecfa8d",
+                "type": "longtextV2"
+            }
+        ],
+        "features": [],
+        "tags": {
+            "i18n": [
+                "portuguese"
+            ]
+        }
+    },
+    {
+        "reference": "i18n-item1-pt",
+        "title": null,
+        "workflow": null,
+        "metadata": null,
+        "note": "",
+        "source": "",
+        "definition": {
+            "widgets": [
+                {
+                    "reference": "809eada8-ba10-4d20-875e-ee55a5857df3",
+                    "widget_type": "response"
+                }
+            ],
+            "template": "dynamic"
+        },
+        "description": "",
+        "status": "published",
+        "questions": [
+            {
+                "reference": "809eada8-ba10-4d20-875e-ee55a5857df3",
+                "type": "mcq"
+            }
+        ],
+        "features": [],
+        "tags": {
+            "i18n": [
+                "portuguese"
+            ]
+        }
+    }
+]
