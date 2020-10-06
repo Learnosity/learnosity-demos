@@ -43,12 +43,11 @@ $request = [
 ];
 
 // For more information: https://reference.learnosity.com/items-api/initialization#requestObject
-// activity_id: Used in data retrieval and reporting to compare results with other users submitting the same assessment.
+// activity_id: Arbitrary string used for reporting only to compare a subset of users submitting the same assessment.
 // items: Sets the content to be shown in the session. Can be an array of unique string Item references,
 // or an array of Item objects for advanced usage.
-// session_id: Uniquely identifies this specific assessment attempt for save/resume,
-// data retrieval and reporting purposes.
-// user_id: Unique student identifier.
+// session_id: V4 UUID that uniquely identifies a specific assessment save or submission
+// user_id: Anonymized unique student identifier.
 
 $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
