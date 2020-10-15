@@ -19,31 +19,40 @@ $security = [
 ];
 
 /*
-Retrieve the label bundles, per API, that contain the Arabic
-translations. We need one for Author API and the embedded
-Question Editor API (loaded by Author API internally).
-We store them in separate files for easier maintenance and a cleaner
-initialization object for this demo file.
+    We pull in all i18n files from an open source Github repo:
+     - label bundles per API
+     - question template groups
+     - question templates
+     - question template thumbnails
 */
-$bundleAuthorAPI = file_get_contents(__DIR__ . '/i18n/ar-EG/label_bundles/author-api.json');
-$bundleQuestionEditorAPI = file_get_contents('./i18n/ar-EG/label_bundles/questioneditor-api.json');
-$bundleQuestionsAPI = file_get_contents('./i18n/ar-EG/label_bundles/questions-api.json');
+$baseRepoUrl = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/master/languages/';
 
 /*
-Retrieve the Question Editor custom question templates and groups
-needed for RTL content (like placeholder response options and
-question stimulus etc).
-We store them in separate files for easier maintenance and a
-cleaner initialization object for this demo file.
+    Retrieve the label bundles, per API, that contain the Arabic
+    translations. We need one for Author API and the embedded
+    Question Editor API (loaded by Author API internally).
+    We store them in separate files for easier maintenance and a cleaner
+    initialization object for this demo file.
 */
-$questionTypeTemplates = file_get_contents('./i18n/ar-EG/qe_custom_types/question_type_templates.json');
-$questionTypeGroups = file_get_contents('./i18n/ar-EG/qe_custom_types/question_type_groups.json');
+$bundleAuthorAPI = file_get_contents($baseRepoUrl . '/ar-EG/label_bundles/author-api.json');
+$bundleQuestionEditorAPI = file_get_contents($baseRepoUrl . '/ar-EG/label_bundles/questioneditor-api.json');
+$bundleQuestionsAPI = file_get_contents($baseRepoUrl . '/ar-EG/label_bundles/questions-api.json');
 
 /*
-Note - passages aren't enabled in this demo because other features
-are not yet supported in RTL (like line-reader, media player etc).
-Note - Today we need to pass Questions API labelBundles twice (see
-below in `dependencies`), this will be addressed in a future release.
+    Retrieve the Question Editor custom question templates and groups
+    needed for RTL content (like placeholder response options and
+    question stimulus etc).
+    We store them in separate files for easier maintenance and a
+    cleaner initialization object for this demo file.
+*/
+$questionTypeTemplates = file_get_contents($baseRepoUrl . '/ar-EG/qe_custom_types/question_type_templates.json');
+$questionTypeGroups = file_get_contents($baseRepoUrl . '/ar-EG/qe_custom_types/question_type_groups.json');
+
+/*
+    Note - passages aren't enabled in this demo because other features
+    are not yet supported in RTL (like line-reader, media player etc).
+    Note - Today we need to pass Questions API labelBundles twice (see
+    below in `dependencies`), this will be addressed in a future release.
 */
 $request = json_decode('{
     "mode": "item_list",
