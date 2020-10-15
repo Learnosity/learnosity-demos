@@ -69,6 +69,10 @@ $request = json_decode('{
                 {
                     "type": "context",
                     "name": "publicly-created"
+                },
+                {
+                    "type": "i18n",
+                    "name": "ar-EG"
                 }
             ]
         },
@@ -77,23 +81,18 @@ $request = json_decode('{
                 "restricted": {
                    "current_user": false,
                    "tags": {
-                    "either": [
-                        {
-                            "type": "i18n",
-                            "name": [
-                                "arabic"
-                            ]
-                        },
-                        {
-                            "type": "context",
-                            "name": [
-                                "publicly-created"
-                            ]
-                        }
-                      ]
-                   }
+                        "either": [
+                            {
+                                "type": "i18n",
+                                "name": [
+                                    "arabic",
+                                    "ar-EG"
+                                ]
+                            }
+                        ]
+                    }
                 }
-             }
+            }
         },
         "widget_templates": {
             "widget_types": {
