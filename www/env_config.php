@@ -11,7 +11,7 @@
 */
 
 // Asset version - for cachebusting JS & CSS
-$assetVersion = '20190226';
+$assetVersion = '20201015';
 
 $rootPath    = $_SERVER['DOCUMENT_ROOT'];
 $subDir      = strpos($_SERVER['REQUEST_URI'], '/www');
