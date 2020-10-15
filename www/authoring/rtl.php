@@ -25,9 +25,9 @@ Question Editor API (loaded by Author API internally).
 We store them in separate files for easier maintenance and a cleaner
 initialization object for this demo file.
 */
-$bundleAuthorAPI = file_get_contents(__DIR__ . '/i18n/rtl/label_bundles/author-api.json');
-$bundleQuestionEditorAPI = file_get_contents('./i18n/rtl/label_bundles/questioneditor-api.json');
-$bundleQuestionsAPI = file_get_contents('./i18n/rtl/label_bundles/questions-api.json');
+$bundleAuthorAPI = file_get_contents(__DIR__ . '/i18n/ar-EG/label_bundles/author-api.json');
+$bundleQuestionEditorAPI = file_get_contents('./i18n/ar-EG/label_bundles/questioneditor-api.json');
+$bundleQuestionsAPI = file_get_contents('./i18n/ar-EG/label_bundles/questions-api.json');
 
 /*
 Retrieve the Question Editor custom question templates and groups
@@ -36,8 +36,8 @@ question stimulus etc).
 We store them in separate files for easier maintenance and a
 cleaner initialization object for this demo file.
 */
-$questionTypeTemplates = file_get_contents('./i18n/rtl/qe_custom_types/question_type_templates.json');
-$questionTypeGroups = file_get_contents('./i18n/rtl/qe_custom_types/question_type_groups.json');
+$questionTypeTemplates = file_get_contents('./i18n/ar-EG/qe_custom_types/question_type_templates.json');
+$questionTypeGroups = file_get_contents('./i18n/ar-EG/qe_custom_types/question_type_groups.json');
 
 /*
 Note - passages aren't enabled in this demo because other features
@@ -161,7 +161,7 @@ $signedRequest = $Init->generate();
         //optional callbacks for ready
         var callbacks = {
             readyListener: function () {
-                console.log("Author API has successfully initialized.");
+                console.log('Author API has successfully initialized.');
                 removeFormulaEditor();
             },
             errorListener: function (err) {
