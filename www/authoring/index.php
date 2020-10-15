@@ -173,6 +173,22 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Create an Activity With Items From Multiple Item Banks</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>The activity edit mode allows authors to browse and search multiple Learnosity hosted item banks for existing items to add to an activity.</p>
+                        <p class="text-right">
+                            <a class="demo_link"  href="./activity-edit-multi-ibk.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="section index">
 
