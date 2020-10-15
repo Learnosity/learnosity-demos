@@ -80,6 +80,10 @@ $request = json_decode('{
                 {
                     "type": "context",
                     "name": "publicly-created"
+                },
+                {
+                    "type": "i18n",
+                    "name": "' . $language . '"
                 }
             ]
         },
@@ -88,20 +92,22 @@ $request = json_decode('{
                 "restricted": {
                    "current_user": false,
                    "tags": {
-                    "either": [
-                        {
-                            "type": "i18n",
-                            "name": [
-                                "' . $language . '"
-                            ]
-                        },
-                        {
-                            "type": "context",
-                            "name": [
-                                "publicly-created"
-                            ]
-                        }
-                      ]
+                        "all": [
+                            {
+                                "type": "i18n",
+                                "name": [
+                                    "' . $language . '"
+                                ]
+                            }
+                        ],
+                        "either": [
+                            {
+                                "type": "context",
+                                "name": [
+                                    "publicly-created"
+                                ]
+                            }
+                        ]
                    }
                 }
              }
