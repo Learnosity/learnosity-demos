@@ -40,6 +40,11 @@ $request = [
                         'item_bank_name'=>'Demos Read-Only'
                     ]
                 ]
+            ],
+            'item' => [
+                'add' => [
+                    'show' => false //hide the 'Create Item' button
+                ]
             ]
         ]
     ]
@@ -58,7 +63,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Browse Activities in Multiple Item Banks</h2>
+            <h2>Create an Activity With Items From Multiple Item Banks</h2>
             <p>The activity edit mode allows authors to browse and search multiple Learnosity hosted item banks for existing items to add to an activity.</p>
         </div>
     </div>
@@ -76,7 +81,6 @@ $signedRequest = $Init->generate();
         var callbacks = {
             readyListener: function () {
                 console.log("Author API has successfully initialized.");
-                authorApp.navigate('activities/new/searchItems');
             },
             errorListener: function (err) {
                 console.log(err);
