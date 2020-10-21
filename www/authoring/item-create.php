@@ -47,7 +47,8 @@ $request = [
                         'show' => true,
                         'edit' => true
                     ]
-                ]
+                ],
+                'enable_audio_recording'=>true
             ]
         ]
     ],
