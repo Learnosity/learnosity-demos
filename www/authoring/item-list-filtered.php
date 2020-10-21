@@ -79,7 +79,8 @@
 					 */
 					'dynamic_content' => true,
 					'duplicate' => true,
-					'shared_passage' => true
+					'shared_passage' => true,
+ 	                'enable_audio_recording'=>true
 				]
 			]
 		],
