@@ -28,7 +28,8 @@ $request = [
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
         'ARABIC_Demo9',
-        'salim-arabic-mcq-2'
+        'salim-arabic-mcq-2',
+        'ar-drawing-rtl'
     ],
     'config' => [
         'regions' => 'main',
@@ -245,6 +246,21 @@ $request = [
             'warningOnSectionChangeCancelButton'=> 'الغاء',
             'warningOnSectionChangeContinueButton'=> 'استمرار',
             'warningOnSectionChangeHeadingMsg'=> 'تغييرقسم '
+        ],
+        'questions_api_init_options' => [
+            'labelBundle' => [
+                'drawing' => [
+                    'toolbar' => [
+                        'clear' => 'مسح',
+                        'compass' => 'بوصلة',
+                        'eraser' => 'ممحاة',
+                        'redo' => 'إعادة',
+                        'scribble' => 'خربشة',
+                        'straightedge' => 'خط',
+                        'undo' => 'تراجع'
+                     ]
+                ]
+            ]
         ]
     ]
 ];
