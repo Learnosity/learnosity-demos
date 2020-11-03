@@ -394,6 +394,22 @@ include_once 'includes/header.php';
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Customizing the RTE toolbar</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Customize the RTE toolbar to rearrange or hide options.</p>
+                        <p class="text-right">
+                            <a class="demo_link" href="./custom-ckeditor-toolbar.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
