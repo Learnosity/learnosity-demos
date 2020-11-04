@@ -76,10 +76,13 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Customizing the RTE toolbar</h2>
-            <p>Customize the RTE toolbar to rearrange or hide specific options.</p>
-            <p>This demo demonstrates how you can customize the RTE toolbar to hide specific options which should not be made available during authoring.</p>
-            <p>See an article on how to <a href="https://help.learnosity.com/hc/en-us/articles/360014562597-Customizing-the-RTE-toolbar-in-Question-Editor-API">customize the RTE toolbar in Question Editor API</a>.</p>
+            <h2>Customizing the Rich Text Editor toolbar</h2>
+            <p>You can customize the Rich Text Editor(RTE) toolbar to rearrange or hide specific options for authors. For example, showing fewer buttons for a cleaner interface.</p>
+            <p>By default, the toolbar shows 28 buttons, like this:  
+            <img src="../static/images/ckeditor-default-toolbar.png" height=60% width=60%></p>
+            <p>In this demo, we have customized the toolbar to only show seven buttons, like so: <img src="../static/images/ckeditor-customized-toolbar.png"  height=15% width=15%></p>
+            <p>To see the customized toolbar, click into the "Compose question" field below.</p>
+            <p>For instructions on how to customize the toolbar, see <a href="https://help.learnosity.com/hc/en-us/articles/360014562597-Customizing-the-RTE-toolbar-in-Question-Editor-API">this article</a>.</p>
         </div>
     </div>
 
