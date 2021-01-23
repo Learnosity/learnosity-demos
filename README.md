@@ -84,7 +84,7 @@ To control the VM you can do one of the following :
 ## Consumer
 
 
-This package comes with demo security (consumer) credentials. If you have your own consumer details (as provided by Learnosity) you may use them by editing ```config.php```
+This package comes with demo security (consumer) credentials. If you have your own consumer details (as provided by Learnosity) you may use them by editing ```lrn_config.php```
 
 
 ## Documentation
