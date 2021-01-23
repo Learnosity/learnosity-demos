@@ -42,7 +42,7 @@ use LearnositySdk\Utils\Uuid;
 ?>
 
 <!-- Basic styles to remove padding from the main layout -->
-<link rel="stylesheet" href="<?php echo $env['www']; ?>static/css/quad.css">
+<link rel="stylesheet" href="/static/css/quad.css">
 
 <div class="container quad quad-100">
     <div class="row">

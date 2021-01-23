@@ -4,7 +4,7 @@
     <div class="section">
         <div class="row">
             <div class="col-lg-3 col-md-12">
-                <a href="<?php echo $baseWebPath; ?>">
+                <a href="/">
                     <img src="/static/images/lrn-demos-logo-white-2x.png" alt="Learnosity Demos" class="logo">
                 </a>
             </div>

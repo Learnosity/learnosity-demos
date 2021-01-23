@@ -35,7 +35,7 @@ $santized_url = filter_var($url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="<?php echo $baseWebPath; ?>" class="logo">
+        <a href="/" class="logo">
             <img src="/static/images/lrn-demos-logo-2x.png" alt="Learnosity Demos" class="logo">
         </a>
     </div>
@@ -49,14 +49,14 @@ $santized_url = filter_var($url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                                     <a href="#" class="dropdown-toggle bottom-chevron" data-toggle="dropdown">' . $page . '</a>
                                     <ul class="dropdown-menu">';
                 foreach ($name as $subpage => $subname) {
-                    echo '<li><a href="' . $env['www'] . $subpage . '" class="">' . $subname . '</a></li>' . PHP_EOL;
+                    echo '<li><a href="/' . $subpage . '" class="">' . $subname . '</a></li>' . PHP_EOL;
                 }
                 echo '
                                     </ul>
                                 </li>' . PHP_EOL;
             } else {
                 foreach ($name as $key => $value) {
-                    echo '<li class="dropdown"><a href="' . $env['www'] . $key . '" class="">' . $value . '</a><li>';
+                    echo '<li class="dropdown"><a href="/' . $key . '" class="">' . $value . '</a><li>';
                 }
             }
         }

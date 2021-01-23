@@ -3,10 +3,10 @@
 
 ?>
 
-<script src="<?php echo $env['www'] ?>static/vendor/pdf.js/pdf.js"></script>
+<script src="/static/vendor/pdf.js/pdf.js"></script>
 <script>
 var url_pdf = '../samples/rubric_sample_1.pdf';
-PDFJS.workerSrc = '<?php echo $env['www'] ?>static/vendor/pdf.js/pdf.worker.js';
+PDFJS.workerSrc = '/static/vendor/pdf.js/pdf.worker.js';
 PDFJS.getDocument(url_pdf).then(function getPdfHelloWorld(pdf) {
     pdf.getPage(1).then(function getPageHelloWorld(page) {
         var scale = 1.5;
