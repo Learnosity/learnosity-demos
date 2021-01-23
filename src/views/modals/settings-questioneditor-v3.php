@@ -73,7 +73,7 @@
     </div>
 </div>
 
-<script src="<?php echo $env['www']; ?>static/vendor/html5sortable/jquery.sortable.min.js"></script>
+<script src="/static/vendor/html5sortable/jquery.sortable.min.js"></script>
 <script>
     $(function () {
         $('#widget_type').change(function () {

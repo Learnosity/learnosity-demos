@@ -274,10 +274,10 @@ $version = $lts_version;
     };
 
 </script>
-<script src="<?php echo $env['www'] ?>static/vendor/ladda/spin.min.js"></script>
-<script src="<?php echo $env['www'] ?>static/vendor/ladda/ladda.min.js"></script>
-<script src="<?php echo $env['www'] ?>static/js/dataapi/formToObject.js?20150622"></script>
-<script src="<?php echo $env['www'] ?>static/js/dataapi/dataApiRequest.js"></script>
+<script src="/static/vendor/ladda/spin.min.js"></script>
+<script src="/static/vendor/ladda/ladda.min.js"></script>
+<script src="/static/js/dataapi/formToObject.js?20150622"></script>
+<script src="/static/js/dataapi/dataApiRequest.js"></script>
 
 <?php
 include_once 'includes/footer.php';
