@@ -76,12 +76,12 @@ include_once 'includes/header.php';
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Printing an answer key</h2>
+                        <h2 class="panel-title">Printing correct answers</h2>
                     </div>
                     <div class="panel-body">
-                        <p>Use print-friendly CSS to print an instructor answer key.</p>
+                        <p>Use print-friendly CSS to show correct answers.</p>
                         <p class="text-right">
-                            <a class="demo_link" href="printing/print-answer-key.php">Demo</a>
+                            <a class="demo_link" href="printing/print-correct-answers.php">Demo</a>
                         </p>
                     </div>
                 </div>
