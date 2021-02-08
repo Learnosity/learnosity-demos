@@ -2,7 +2,6 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     cleanCSS = require('gulp-clean-css'),
-    gulpCopy = require('gulp-copy'),
     replace = require('gulp-replace');
 
 function scripts() {
@@ -33,7 +32,7 @@ function copyFonts() {
         './www/static/vendor/bootstrap/fonts/*',
         './www/static/fonts/*'
     ])
-    .pipe(gulpCopy('./www/static/dist/fonts/', {prefix: 5}));
+    .pipe(gulp.dest('./www/static/dist/fonts/'));
 }
 
 // default gulp task

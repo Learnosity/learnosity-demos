@@ -9,8 +9,6 @@ This repository has been designed to allow users to quickly view and interact wi
 
 Each page shows a basic integration to a specific Learnosity API which you can utilize and learn from.
 
-There is also a SignatureUtils class which simplifies the generation of the security signatures for each of the types.
-
 ### Requirements
 
 * PHP 5.6+
@@ -31,8 +29,7 @@ you, see the next two sections, which show you how to start the demos site
 manually.
 
 The simple `Makefile` included with this project allows you to start one or the other
-modes, by running either of the following commands from the
-directory that was just created.
+modes, by running either of the following commands from the `learnosity-demos` directory that was just created.
 
     make run-php  # See “Using PHP's native server” below to see what this does
 
@@ -49,13 +46,11 @@ to *localhost*.
 
 ### Using PHP's native server
 
-You can use the local server to quickly get up and running, no Apache/IIS is
-required.
+You can use PHP's built-in server to quickly get up and running.
 
     git clone https://github.com/LearnosiVty/learnosity-demos.git
     cd learnosity-demos
-    cd www
-    php -S localhost:8080
+    php -S localhost:8080 --docroot www
 
 ### Using Vagrant
 
@@ -89,12 +84,12 @@ To control the VM you can do one of the following :
 ## Consumer
 
 
-This package comes with demo security (consumer) credentials. If you have your own consumer details (as provided by Learnosity) you may use them by editing ```config.php```
+This package comes with demo security (consumer) credentials. If you have your own consumer details (as provided by Learnosity) you may use them by editing ```lrn_config.php```
 
 
 ## Documentation
 
-More API documentation is available at the [Learnosity Docs site](http://docs.learnosity.com)
+More API documentation is available at the [Learnosity Reference site](http://reference.learnosity.com)
 
 
 ## PHP dependency management using Composer

@@ -91,7 +91,7 @@ $request = '{
 </div>
 
 <script src="<?php echo $url_questions; ?>"></script>
-<script src="<?php echo $env['www'] ?>static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
+<script src="/static/vendor/ace/ace-builds/src-min-noconflict/ace.js"></script>
 
 <script>
     var activity = <?php echo $init->generate(); ?>;

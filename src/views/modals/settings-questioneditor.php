@@ -481,7 +481,7 @@
     </div>
 </div>
 
-<script src="<?php echo $env['www']; ?>static/vendor/html5sortable/jquery.sortable.min.js"></script>
+<script src="/static/vendor/html5sortable/jquery.sortable.min.js"></script>
 <script>
     var $order = $('#accordion-order'),
         $sortable = $('ul.sortable'),

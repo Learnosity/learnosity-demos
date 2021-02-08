@@ -49,7 +49,7 @@ include './includes/itemsRequest.php';
                             <div class="alert alert-info alert-saved collapse" role="alert">
                                 <p>Question saved</p>
                             </div>
-                            <div class="spinner collapse"><img src="<?php echo $env['www'] ?>static/images/spinner.gif"></div>
+                            <div class="spinner collapse"><img src="/static/images/spinner.gif"></div>
                             <button type="button" class="btn btn-primary save pull-right">Save</button>
                         </div>
                     </div>

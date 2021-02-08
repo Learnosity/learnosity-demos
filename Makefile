@@ -18,7 +18,7 @@ run-composer: composer.phar
 	./composer.phar --no-interaction install
 
 run-php: run-composer
-	cd www; php -S localhost:8080
+	php -S localhost:8080 --docroot www
 
 run-vagrant:
 	vagrant up
