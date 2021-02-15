@@ -9,8 +9,8 @@ include_once 'includes/header.php';
 //common Learnosity config elements including API version control vars
 include_once '../../lrn_config.php';
 
-$activityRef = filter_input(INPUT_GET, 'activity_reference', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'gallery_1']]);
-$studentid = filter_input(INPUT_GET, 'user', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'demo_student']]);
+$activityRef = filter_input(INPUT_GET, 'activity_reference', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'gallery_1']]);
+$studentid = filter_input(INPUT_GET, 'user', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'demo_student']]);
 
 include './includes/itemsRequest.php';
 
@@ -60,7 +60,7 @@ include './includes/itemsRequest.php';
         <ul class="gallery-pagination">
             <?php foreach ($items as $i => $reference) { ?>
                 <li>
-                    <button type="button" title="Question #<?= $i+1; ?>"><span class="sr-only">Question #<?= $i+1; ?></span></button>
+                    <button type="button" title="Question #<?= $i + 1; ?>"><span class="sr-only">Question #<?= $i + 1; ?></span></button>
                 </li>
             <?php } ?>
         </ul>

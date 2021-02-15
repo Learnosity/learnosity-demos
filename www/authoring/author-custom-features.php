@@ -17,7 +17,7 @@ $security = [
     'domain'       => $domain
 ];
 
-$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]" ."/authoring/customfeature/";
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . "/authoring/customfeature/";
 
 //simple api request object for item list view, with optional creation of items
 $request = [
@@ -33,60 +33,60 @@ $request = [
         'dependencies' => [
             'question_editor_api' => [
                 'init_options' => [
-                    'ui'=> [
-                        'layout'=> [
-                             'global_template'=> 'edit_preview'
+                    'ui' => [
+                        'layout' => [
+                             'global_template' => 'edit_preview'
                         ]
                     ],
-                    'custom_feature_types'=> [
+                    'custom_feature_types' => [
                         [
-                            'custom_type'=> 'simplegallery',
-                            'name'=> 'Custom Image Gallery',
-                            'js'=> $url.'simplegallery.js',
-                            'css'=> $url.'simplegallery.css',
-                            'version'=> 'v0.0.1',
-                            'editor_layout'=> $url.'simplegallery.html',
-                            'editor_schema'=> [
-                                'hidden_question'=> false,
-                                'properties'=> [
-                                    'photos'=>[
-                                        'name'=> 'Photos',
-                                        'description'=> 'Photos',
-                                        'type'=> 'array',
-                                        'required'=> true,
-                                        'items'=> [
-                                            'name'=> 'Photo',
-                                            'type'=> 'imageObject',
-                                            'attributes'=> [
-                                                'source'=> [
-                                                    'name'=> 'Add image',
-                                                    'description'=> 'The image that should be displayed.',
-                                                    'type'=> 'string',
-                                                    'required'=> true,
-                                                    'asset'=> [
-                                                        'mediaType'=> 'image',
-                                                        'returnType'=> 'URL'
+                            'custom_type' => 'simplegallery',
+                            'name' => 'Custom Image Gallery',
+                            'js' => $url . 'simplegallery.js',
+                            'css' => $url . 'simplegallery.css',
+                            'version' => 'v0.0.1',
+                            'editor_layout' => $url . 'simplegallery.html',
+                            'editor_schema' => [
+                                'hidden_question' => false,
+                                'properties' => [
+                                    'photos' => [
+                                        'name' => 'Photos',
+                                        'description' => 'Photos',
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'name' => 'Photo',
+                                            'type' => 'imageObject',
+                                            'attributes' => [
+                                                'source' => [
+                                                    'name' => 'Add image',
+                                                    'description' => 'The image that should be displayed.',
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                    'asset' => [
+                                                        'mediaType' => 'image',
+                                                        'returnType' => 'URL'
                                                     ]
                                                 ],
-                                                'alt'=> [
-                                                    'name'=> 'Image alternative text',
-                                                    'description'=> 'The alternative text of the image.',
-                                                    'type'=> 'string',
-                                                    'required'=> false
+                                                'alt' => [
+                                                    'name' => 'Image alternative text',
+                                                    'description' => 'The alternative text of the image.',
+                                                    'type' => 'string',
+                                                    'required' => false
                                                 ],
-                                                'credit'=> [
-                                                    'name'=> 'Image Credit',
-                                                    'description'=> 'The Credit text of the image.',
-                                                    'type'=> 'string',
-                                                    'required'=> false
+                                                'credit' => [
+                                                    'name' => 'Image Credit',
+                                                    'description' => 'The Credit text of the image.',
+                                                    'type' => 'string',
+                                                    'required' => false
                                                 ]
                                             ]
                                         ],
-                                        'default'=> [
-                                            ['source'=> $url.'newstandard.png','alt'=>'photo 1', 'credit'=>'Learnosity'],
-                                            ['source'=> $url.'savetime.png','alt'=>'photo 2', 'credit'=>'Learnosity'],
-                                            ['source'=> $url.'alwaysmovingfwd.png','alt'=>'photo 3', 'credit'=>'Learnosity'],
-                                            ['source'=> $url.'seamlessintegration.png','alt'=>'photo 4', 'credit'=>'Learnosity']
+                                        'default' => [
+                                            ['source' => $url . 'newstandard.png','alt' => 'photo 1', 'credit' => 'Learnosity'],
+                                            ['source' => $url . 'savetime.png','alt' => 'photo 2', 'credit' => 'Learnosity'],
+                                            ['source' => $url . 'alwaysmovingfwd.png','alt' => 'photo 3', 'credit' => 'Learnosity'],
+                                            ['source' => $url . 'seamlessintegration.png','alt' => 'photo 4', 'credit' => 'Learnosity']
                                         ]
                                     ]
                                 ]

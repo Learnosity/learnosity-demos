@@ -53,7 +53,7 @@ $request = array(
         'ui_style'            => 'main',
         'configuration' => array(
             'lazyload'               => false,
-            'onsubmit_redirect_url' => 'report.php?session_id='. $session_id
+            'onsubmit_redirect_url' => 'report.php?session_id=' . $session_id
         ),
         'time' => array(
             'show_time'  => true,
@@ -118,7 +118,7 @@ $request = array(
             'answerMasking' => 'Enmascarar respuestas',
             'accessibility' => 'Accesibilidad',
              // ACCESSIBILITY PANEL
-            'accessibilityPanel'=> 'Opciones de Accesibilidad',
+            'accessibilityPanel' => 'Opciones de Accesibilidad',
             'colorScheme' => 'Esquema de color',
             'fontSize' => 'Tamaño de fuente',
             'zoom' => 'Zoom',
@@ -167,7 +167,7 @@ $request = array(
                 'editorItalicsTitle'  => 'Cursiva',
                 'editorUnderlineIcon' => 'S',
                 'editorUnderlineTitle' => 'Subrayado',
-                'graphingTools'=>[
+                'graphingTools' => [
                     'parabola' => 'Parábola'
                 ],
                 'reset' => 'Reiniciar',

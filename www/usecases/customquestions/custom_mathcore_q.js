@@ -8,7 +8,7 @@ LearnosityAmd.define([
     var padding = 10,
         template = _.template('<div class="response_wrapper"><input type="text" /></div>');
 
-    var Question = function(options) {
+    var Question = function (options) {
 
         var $response, $input,
             self = this,

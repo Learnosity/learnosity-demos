@@ -7,11 +7,11 @@
 }
 
 .lrn.lrn_widget.lrn_custom .input-wrapper {
-	display: inline-block;
+    display: inline-block;
 }
 
 .lrn.lrn_widget.lrn_custom .input-wrapper.lrn_correct input,
 .lrn.lrn_widget.lrn_custom .input-wrapper.lrn_incorrect input {
-	border: none;
-	background: none;
+    border: none;
+    background: none;
 }

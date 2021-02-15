@@ -39,9 +39,9 @@ $request = [
         'title' => 'Accessibility Demo',
         'subtitle' => 'Walter White',
         'regions' => 'main',
-        'region_overrides'=>[
-            'right.masking_button'=> true,
-            'right.linereader_button'=>true
+        'region_overrides' => [
+            'right.masking_button' => true,
+            'right.linereader_button' => true
         ]
     ]
 ];

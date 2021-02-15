@@ -119,6 +119,6 @@ $signedRequest = $Init->generate();
 </script>
 
 <?php
-	include_once 'views/modals/initialisation-preview.php';
-	include_once 'views/modals/asset-upload.php';
-	include_once 'includes/footer.php';
+    include_once 'views/modals/initialisation-preview.php';
+    include_once 'views/modals/asset-upload.php';
+    include_once 'includes/footer.php';

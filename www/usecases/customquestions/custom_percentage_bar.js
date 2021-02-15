@@ -62,7 +62,7 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
         $currentValue.text(prepend_unit + $bar.val() + append_unit);
 
         // IE10 doesn't support oninput hence we need onchange as well
-        $bar.on('input change', function() {
+        $bar.on('input change', function () {
             $currentValue.text(prepend_unit + $bar.val() + append_unit);
             options.events.trigger('changed', $bar.val());
             $percentageBarWrapper.removeClass('percentage-bar-valid').removeClass('percentage-bar-invalid');
@@ -71,7 +71,8 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
         // Create scorer
         this.scorer = new PercentageBarScorer(options.question, $bar.val());
 
-        function validate() {
+        function validate()
+        {
             if (self.scorer.updateResponse($bar.val()).isValid()) {
                 $percentageBarWrapper.addClass('percentage-bar-valid');
             } else {
@@ -79,7 +80,7 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
             }
         }
 
-        options.events.on('validate', function() {
+        options.events.on('validate', function () {
             validate();
         });
 
@@ -90,21 +91,22 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
         options.events.trigger('ready');
     };
 
-    function PercentageBarScorer(question, response) {
+    function PercentageBarScorer(question, response)
+    {
         this.question = question;
         this.response = response;
     }
 
-    PercentageBarScorer.prototype.updateResponse = function(response) {
+    PercentageBarScorer.prototype.updateResponse = function (response) {
         this.response = response;
         return this;
     };
 
-    PercentageBarScorer.prototype.isValid = function() {
+    PercentageBarScorer.prototype.isValid = function () {
         return this.response === this.question.valid_response;
     };
 
-    PercentageBarScorer.prototype.score = function() {
+    PercentageBarScorer.prototype.score = function () {
         return this.isValid() ? this.maxScore() : 0;
     };
 
@@ -112,7 +114,7 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
         return this.question.score || 1;
     };
 
-    PercentageBarScorer.prototype.canValidateResponse = function() {
+    PercentageBarScorer.prototype.canValidateResponse = function () {
         return !!this.question.valid_response;
     };
 

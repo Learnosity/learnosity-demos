@@ -24,13 +24,13 @@ $request = [
         'dependencies' => [
             'question_editor_api' => [
                 'init_options' => [
-                    'widgetType'=> 'response',
+                    'widgetType' => 'response',
                     'ui' => [
-                        'layout'=> [
-                            'edit_panel'=> [
-                                'mcq'=> [
+                        'layout' => [
+                            'edit_panel' => [
+                                'mcq' => [
                                     [
-                                        'layout'=> 'custom_mcq_layout'
+                                        'layout' => 'custom_mcq_layout'
                                     ]
                                 ]
                             ]

@@ -12,7 +12,7 @@ include_once '../lrn_config.php';
 use LearnositySdk\Request\Init;
 
 //display report or JSON data
-$render = filter_input(INPUT_GET, 'render', FILTER_VALIDATE_BOOLEAN, ['options'=>['default'=>true], 'flags' => FILTER_NULL_ON_FAILURE]);
+$render = filter_input(INPUT_GET, 'render', FILTER_VALIDATE_BOOLEAN, ['options' => ['default' => true], 'flags' => FILTER_NULL_ON_FAILURE]);
 
 $security = [
     'consumer_key' => $consumer_key,
@@ -66,7 +66,9 @@ $signedRequest = $Init->generate();
             <p>View the page source to see how to use event listeners to access the raw data.</p>
             <span>Render visual reports</span>
             <div style="display=inline-block;" class="lrn-switch">
-                <input id="render_toggle" type="checkbox" class="input" <?php if ($render) echo "checked"; ?>><span class="lrn-switch-trigger"></span>
+                <input id="render_toggle" type="checkbox" class="input" <?php if ($render) {
+                    echo "checked";
+                                                                        } ?>><span class="lrn-switch-trigger"></span>
             </div>
         </div>
     </div>

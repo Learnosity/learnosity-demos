@@ -31,15 +31,23 @@
                                 <div class="form-group">
                                     <label for="mailto" class="col-sm-6 control-label">Mailto</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="configuration[submit_failed_options][mailto]" value="true"<?php if (isset($submit_failed_options['mailto']) && $submit_failed_options['mailto'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="configuration[submit_failed_options][mailto]" value="false"<?php if (isset($submit_failed_options['mailto']) && $submit_failed_options['mailto'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="configuration[submit_failed_options][mailto]" value="true"<?php if (isset($submit_failed_options['mailto']) && $submit_failed_options['mailto'] === true) {
+                                            echo ' checked';
+                                                                                                                            }; ?>> Enable &nbsp;
+                                        <input type="radio" name="configuration[submit_failed_options][mailto]" value="false"<?php if (isset($submit_failed_options['mailto']) && $submit_failed_options['mailto'] === false) {
+                                            echo ' checked';
+                                                                                                                             }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="download" class="col-sm-6 control-label">Download</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="configuration[submit_failed_options][download]" value="true"<?php if (isset($submit_failed_options['download']) && $submit_failed_options['download'] === true) { echo ' checked'; }; ?>> Enable &nbsp;
-                                        <input type="radio" name="configuration[submit_failed_options][download]" value="false"<?php if (isset($submit_failed_options['download']) && $submit_failed_options['download'] === false) { echo ' checked'; }; ?>> Disable
+                                        <input type="radio" name="configuration[submit_failed_options][download]" value="true"<?php if (isset($submit_failed_options['download']) && $submit_failed_options['download'] === true) {
+                                            echo ' checked';
+                                                                                                                              }; ?>> Enable &nbsp;
+                                        <input type="radio" name="configuration[submit_failed_options][download]" value="false"<?php if (isset($submit_failed_options['download']) && $submit_failed_options['download'] === false) {
+                                            echo ' checked';
+                                                                                                                               }; ?>> Disable
                                     </div>
                                 </div>
                                 <div class="form-group">

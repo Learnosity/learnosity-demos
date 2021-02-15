@@ -19,7 +19,7 @@ $security = [
     'domain' => $domain
 ];
 
-//here we use our GeoGebra config file to define Geogebra's Custom Features and Question Types. 
+//here we use our GeoGebra config file to define Geogebra's Custom Features and Question Types.
 //Contact GeoGebra to get a commercial licence.
 $GeogebraConfig = file_get_contents('https://dev.geogebra.org/partners/learnosity/self-host.php');
 $GeogebraConfig = json_decode($GeogebraConfig, true);

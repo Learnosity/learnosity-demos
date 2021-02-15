@@ -1,6 +1,5 @@
 <?php
 
-
 ?>
 
 <script src="/static/vendor/pdf.js/pdf.js"></script>

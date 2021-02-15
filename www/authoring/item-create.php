@@ -48,7 +48,7 @@ $request = [
                         'edit' => true
                     ]
                 ],
-                'enable_audio_recording'=>true
+                'enable_audio_recording' => true
             ]
         ]
     ],

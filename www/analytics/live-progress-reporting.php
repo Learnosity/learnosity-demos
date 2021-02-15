@@ -32,12 +32,12 @@ use LearnositySdk\Utils\Uuid;
  * - www/analytics/liveprogress/assessment.inc.php (e.g., type `liveproassessinc` in the search form).
  */
 
- $studentIds = [
-     Uuid::generate(),
-     Uuid::generate(),
-     Uuid::generate(),
-     Uuid::generate()
- ];
+$studentIds = [
+    Uuid::generate(),
+    Uuid::generate(),
+    Uuid::generate(),
+    Uuid::generate()
+];
 
 ?>
 

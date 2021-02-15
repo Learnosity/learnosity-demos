@@ -60,7 +60,7 @@ $request = [
                [
                   'type' => 'masking_button'
                ]
-           ]
+            ]
         ],
         'time' => [
             'max_time'     => 1500,

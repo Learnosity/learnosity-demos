@@ -10,9 +10,9 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
      * Released under the MIT license:
      *   http://mit.fernandomoreiraweb.com/
      */
-    ;(function($, window, document, undefined) {
+    ;(function ($, window, document, undefined) {
 
-        $.fn.simplegallery = function(options) {
+        $.fn.simplegallery = function (options) {
 
             var defaults = {
                 'galltime': 300,
@@ -23,9 +23,9 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
 
             var settings = $.extend({}, defaults, options);
 
-            return this.each(function() {
+            return this.each(function () {
 
-                $(settings.gallthumb).click(function() {
+                $(settings.gallthumb).click(function () {
 
                     $(settings.gallcontent).find('img').stop(true,true).fadeOut(settings.galltime).hide();
 
@@ -44,13 +44,14 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
     })($, window, document);
 
 
-    function SimpleGallery(init) {
+    function SimpleGallery(init)
+    {
         var $photosArray,
             $template;
 
         if (typeof init.feature.photos !== 'undefined') {
             $photosArray = init.feature.photos;
-        }else{
+        } else {
             console.log("Error: Photos array undefined");
         }
 
@@ -63,34 +64,35 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
             gallcontent: '.simplegallery-content'
         });
 
-        init.events.trigger('ready');     
+        init.events.trigger('ready');
     }
 
-    function buildHtml(photosArray) {
-        
+    function buildHtml(photosArray)
+    {
+
         var $section = $('<section>', {id:'gallery', class: 'simplegallery'});
-        var $divContent = $('<div>', {class: 'simplegallery-content'});        
+        var $divContent = $('<div>', {class: 'simplegallery-content'});
         var $divThumb = $('<div>', {class: 'thumbnail'});
 
         // Loop through photosArray to build the html
-        $.each(photosArray, function( index, value ) {
-            
-            var $img = $('<img>',{src: value.source, class:'image_'+index, alt: value.alt});
+        $.each(photosArray, function ( index, value ) {
 
-            if(index > 0){
+            var $img = $('<img>',{src: value.source, class:'image_' + index, alt: value.alt});
+
+            if (index > 0) {
                 $img.css('display','none');
             }
 
             $divContent.append($img);
-            
+
             var $div = $('<div>', {class: 'thumb'});
-            var $href = $('<a>', {href: '#', rel: index}).append($('<img>',{src: value.source, id:'thumb_'+index, alt: value.alt}));
-            
+            var $href = $('<a>', {href: '#', rel: index}).append($('<img>',{src: value.source, id:'thumb_' + index, alt: value.alt}));
+
             $div.append($href);
             $divThumb.append($div);
 
         });
-        
+
         $section.append($divContent);
         $section.append($('<div>', {class: 'clear'}));
         $section.append($divThumb);

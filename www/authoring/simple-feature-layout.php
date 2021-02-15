@@ -24,41 +24,41 @@ $request = [
         'dependencies' => [
             'question_editor_api' => [
                 'init_options' => [
-                    'widget_type'=> 'response',
+                    'widget_type' => 'response',
                     'ui' => [
-                        'layout'=> [
-                            'simple_features'=> [
-                                'calculator'=> [
+                        'layout' => [
+                            'simple_features' => [
+                                'calculator' => [
                                     [
-                                        'layout'=> 'calculator-layout'
+                                        'layout' => 'calculator-layout'
                                     ]
                                 ],
-                                'videoplayer'=> [
+                                'videoplayer' => [
                                     [
-                                        'layout'=> 'video-player-layout'
+                                        'layout' => 'video-player-layout'
                                     ]
                                 ]
                             ]
                         ]
                     ],
-                    'simple_feature_templates'=> [
+                    'simple_feature_templates' => [
                         [
-                            'name'=> 'Custom ruler',
-                            'reference'=> '4d918ac6-2ac5-48f5-8707-c1957c157new',
-                            'defaults'=> [
-                                'type'=> 'imagetool',
-                                'button'=> true,
-                                'buttonicon'=> 'ruler',
-                                'image'=> 'ruler-15-cm',
-                                'label'=> 'Custom ruler label',
-                                'alt'=> 'Customised alt text.'
+                            'name' => 'Custom ruler',
+                            'reference' => '4d918ac6-2ac5-48f5-8707-c1957c157new',
+                            'defaults' => [
+                                'type' => 'imagetool',
+                                'button' => true,
+                                'buttonicon' => 'ruler',
+                                'image' => 'ruler-15-cm',
+                                'label' => 'Custom ruler label',
+                                'alt' => 'Customised alt text.'
                             ]
                         ],
                         [
-                            'reference'=> '116e3f78-a564-4862-877c-91cdad8a2c2b'
+                            'reference' => '116e3f78-a564-4862-877c-91cdad8a2c2b'
                         ],
                         [
-                            'reference'=> 'd3e05438-8321-457c-a541-3cb18020eae8'
+                            'reference' => 'd3e05438-8321-457c-a541-3cb18020eae8'
                         ]
                     ]
                 ]

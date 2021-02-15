@@ -76,7 +76,7 @@ $scores = $report['data'][0];
                         <th>Student</th>
                         <?php
                         foreach ($scores['responses'] as $i => $val) {
-                            echo '<th>Question ' . ($i+1) . '</th>';
+                            echo '<th>Question ' . ($i + 1) . '</th>';
                         }
                         ?>
                     </tr>

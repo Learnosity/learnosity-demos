@@ -25,15 +25,15 @@ $request = [
         'dependencies' => [
             'question_editor_api' => [
                 'init_options' => [
-                    'ui'=> [
-                        'layout'=> [
+                    'ui' => [
+                        'layout' => [
                             //set to "debug" to see attribute paths
-                            'global_template'=> 'edit_preview'
+                            'global_template' => 'edit_preview'
                         ]
                     ],
 
                     //hide Learnosity default groups
-					"template_defaults" => false,
+                    "template_defaults" => false,
 
                     //add one custom croup
                     "question_type_groups" => [[
@@ -44,8 +44,8 @@ $request = [
                     "question_type_templates" => [
                         "mcq" => [
                             [
-								//always-visible name in add question tile view
-								"name" => "MCQ - No student-facing defaults",
+                                //always-visible name in add question tile view
+                                "name" => "MCQ - No student-facing defaults",
                                 //rollover description in add question tile view
                                 "description" => "MCQ without default distractor/stimulus values",
                                 //custom question_type_group reference
@@ -87,46 +87,46 @@ $request = [
                                 ]
                             ], [
                                 //see MCQ - "No student-facing defaults" template above for all comments
-								"name" => "MCQ Multi - Simple UI",
-								"description" => "MCQ Multi - No shuffle, multi-response, scoring extras, or layout options",
-								"group_reference" => "custommcq",
-								"hidden" => [
-								        "description", "multiple_responses", "shuffle_options",
+                                "name" => "MCQ Multi - Simple UI",
+                                "description" => "MCQ Multi - No shuffle, multi-response, scoring extras, or layout options",
+                                "group_reference" => "custommcq",
+                                "hidden" => [
+                                        "description", "multiple_responses", "shuffle_options",
                                         "validation.automarkable","validation.min_score_if_attempted"
                                 ],
                                 //hidden sections. note that not all elements appear in sections, to support layout versatility.
                                 //e.g. validation-related elements appear in More Options so they needn't clutter the answer area
                                 "hidden_sections" => ["scoring","validation.automarkable_fields","layout"],
-								"image" => "//dw6y82u65ww8h.cloudfront.net/questiontypes/templates/qev3/mcqmulti.png",
-								"hidden_search_terms" => ["mcq", "mc", "multi"],
-								"reference" => "f3764936-aab4-4e74-980d-58f7b0b2933b",
-								"defaults" => [
-									"options" => [
-										[
-											"label" => "[Choice A]",
-											"value" => "0"
-										], [
-											"label" => "[Choice B]",
-											"value" => "1"
-										], [
-											"label" => "[Choice C]",
-											"value" => "2"
-										], [
-											"label" => "[Choice D]",
-											"value" => "3"
-										]
-									],
-									"stimulus" => "What is the capital of _____?",
-									"type" => "mcq",
-									"multiple_responses" => true,
-									"validation" => [
-										"scoring_type" => "exactMatch",
-										"valid_response" => [
-											"score" => 1,
-											"value" => [""]
-										]
-									]
-								]
+                                "image" => "//dw6y82u65ww8h.cloudfront.net/questiontypes/templates/qev3/mcqmulti.png",
+                                "hidden_search_terms" => ["mcq", "mc", "multi"],
+                                "reference" => "f3764936-aab4-4e74-980d-58f7b0b2933b",
+                                "defaults" => [
+                                    "options" => [
+                                        [
+                                            "label" => "[Choice A]",
+                                            "value" => "0"
+                                        ], [
+                                            "label" => "[Choice B]",
+                                            "value" => "1"
+                                        ], [
+                                            "label" => "[Choice C]",
+                                            "value" => "2"
+                                        ], [
+                                            "label" => "[Choice D]",
+                                            "value" => "3"
+                                        ]
+                                    ],
+                                    "stimulus" => "What is the capital of _____?",
+                                    "type" => "mcq",
+                                    "multiple_responses" => true,
+                                    "validation" => [
+                                        "scoring_type" => "exactMatch",
+                                        "valid_response" => [
+                                            "score" => 1,
+                                            "value" => [""]
+                                        ]
+                                    ]
+                                ]
                             ]
                         ]
                     ]

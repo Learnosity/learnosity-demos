@@ -26,18 +26,18 @@ $request = [
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
-    'items'=> ['ccore_parcc_grade10_prose', 'ccore_parcc_grade10_ebsr1', 'ccore_parcc_grade10_ebsr2'],
+    'items' => ['ccore_parcc_grade10_prose', 'ccore_parcc_grade10_ebsr1', 'ccore_parcc_grade10_ebsr2'],
     'config' => [
         'regions' => 'main',
-        'time'=> [
-			'max_time'=> 180,
-			'warning_time'=> 60
-		],
-        'configuration'=> [
-			'reading_mode'=> [
-				'reading_time'=> 60
-			]
-		]
+        'time' => [
+            'max_time' => 180,
+            'warning_time' => 60
+        ],
+        'configuration' => [
+            'reading_mode' => [
+                'reading_time' => 60
+            ]
+        ]
     ]
 ];
 

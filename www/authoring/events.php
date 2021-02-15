@@ -29,7 +29,7 @@ $request = [
                 ],
                 'dynamic_content' => true,
                 'shared_passage' => true,
-                'enable_audio_recording'=>true
+                'enable_audio_recording' => true
             ]
         ]
     ],
