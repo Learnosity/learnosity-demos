@@ -6,10 +6,6 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitab19d04ac42e6df2196f98f38bd86a0f
 {
-    public static $files = array (
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
-    );
-
     public static $prefixesPsr0 = array (
         'L' => 
         array (
@@ -21,10 +17,15 @@ class ComposerStaticInitab19d04ac42e6df2196f98f38bd86a0f
         ),
     );
 
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixesPsr0 = ComposerStaticInitab19d04ac42e6df2196f98f38bd86a0f::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitab19d04ac42e6df2196f98f38bd86a0f::$classMap;
 
         }, null, ClassLoader::class);
     }

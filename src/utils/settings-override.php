@@ -204,7 +204,7 @@ if (isset($filter_post['api_type'])) {
         unset($requestKey['navigation']['auto_save']);
     }
     unset($requestKey['navigation']['auto_save']['use_auto_save']);
-    
+
     if (!isset($requestKey['configuration']['api_type'])) {
         unset($requestKey['api_type']);
     }
