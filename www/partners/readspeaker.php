@@ -19,7 +19,7 @@ $security = [
 
 $request = [
     'activity_id' => 'Activity_Test',
-    'activity_template_id'=> 'TexttoSpeech_Testing_Activity_2',
+    'activity_template_id' => 'TexttoSpeech_Testing_Activity_2',
     'rendering_type' => 'assess',
     'user_id' => '$ANONYMIZED_USER_ID',
     'session_id' => Uuid::generate(),

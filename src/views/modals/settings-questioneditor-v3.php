@@ -34,8 +34,12 @@
                                     <label for="widget_type" class="col-sm-6 control-label">Editor Type</label>
                                     <div class="col-sm-6">
                                         <select id="widget_type" name="widget_type">
-                                            <option value="response"<?php if (isset($request['widget_type']) && $request['widget_type'] === 'response') { echo ' selected'; }; ?>>Questions</option>
-                                            <option value="feature"<?php if (isset($request['widget_type']) && $request['widget_type'] === 'feature') { echo ' selected'; }; ?>>Features</option>
+                                            <option value="response"<?php if (isset($request['widget_type']) && $request['widget_type'] === 'response') {
+                                                echo ' selected';
+                                                                    }; ?>>Questions</option>
+                                            <option value="feature"<?php if (isset($request['widget_type']) && $request['widget_type'] === 'feature') {
+                                                echo ' selected';
+                                                                   }; ?>>Features</option>
                                         </select>
                                     </div>
                                 </div> -->
@@ -43,10 +47,18 @@
                                     <label for="widget_type" class="col-sm-6 control-label">Question Type </label>
                                     <div class="col-sm-6">
                                         <select id="question_type" name="question_type">
-                                            <option value="mcq"<?php if (isset($request['question_type']) && $request['question_type'] === 'mcq') { echo ' selected'; }; ?>>MCQ Standard</option>
-                                            <option value="mcq-block"<?php if (isset($request['question_type']) && $request['question_type'] === 'mcq-block') { echo ' selected'; }; ?>>MCQ Block UI</option>
-                                            <option value="choicematrix"<?php if (isset($request['question_type']) && $request['question_type'] === 'choicematrix') { echo ' selected'; }; ?>>Choice Matrix</option>
-                                            <option value="association"<?php if (isset($request['question_type']) && $request['question_type'] === 'association') { echo ' selected'; }; ?>>Association</option>
+                                            <option value="mcq"<?php if (isset($request['question_type']) && $request['question_type'] === 'mcq') {
+                                                echo ' selected';
+                                                               }; ?>>MCQ Standard</option>
+                                            <option value="mcq-block"<?php if (isset($request['question_type']) && $request['question_type'] === 'mcq-block') {
+                                                echo ' selected';
+                                                                     }; ?>>MCQ Block UI</option>
+                                            <option value="choicematrix"<?php if (isset($request['question_type']) && $request['question_type'] === 'choicematrix') {
+                                                echo ' selected';
+                                                                        }; ?>>Choice Matrix</option>
+                                            <option value="association"<?php if (isset($request['question_type']) && $request['question_type'] === 'association') {
+                                                echo ' selected';
+                                                                       }; ?>>Association</option>
                                         </select>
                                     </div>
                                 </div>
@@ -54,8 +66,12 @@
                                     <label for="layout" class="col-sm-6 control-label">Layout</label>
                                     <div class="col-sm-6">
                                         <select id="layout" name="ui[layout]">
-                                            <option value="edit"<?php if (isset($layout['global_template']) && $layout['global_template'] === 'edit') { echo ' selected'; }; ?>>Edit</option>
-                                            <option value="edit_preview"<?php if (isset($layout['global_template']) && $layout['global_template'] === 'edit_preview') { echo ' selected'; }; ?>>Edit with Preview</option>
+                                            <option value="edit"<?php if (isset($layout['global_template']) && $layout['global_template'] === 'edit') {
+                                                echo ' selected';
+                                                                }; ?>>Edit</option>
+                                            <option value="edit_preview"<?php if (isset($layout['global_template']) && $layout['global_template'] === 'edit_preview') {
+                                                echo ' selected';
+                                                                        }; ?>>Edit with Preview</option>
                                         </select>
                                     </div>
                                 </div>

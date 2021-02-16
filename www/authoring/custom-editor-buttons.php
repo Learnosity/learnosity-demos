@@ -28,16 +28,16 @@ use LearnositySdk\Utils\Uuid;
                     'init_options' => [
                         'rich_text_editor' => [
                             'type' => 'ckeditor',
-                            'custom_styles'=> [
+                            'custom_styles' => [
                                 [
-                                    'label'=> 'Custom Font',
-                                    'element'=> 'span', //<span> for inline styles. <p> for block styles.
-                                    'element_class'=> 'custom-font'
+                                    'label' => 'Custom Font',
+                                    'element' => 'span', //<span> for inline styles. <p> for block styles.
+                                    'element_class' => 'custom-font'
                                 ]
                             ],
-                            'font_settings'=> [
-                                'colors'=>['2C91AC,e00202,1dc600,efeb04,dc00e0'],
-                                'overwrite_defaults'=> true
+                            'font_settings' => [
+                                'colors' => ['2C91AC,e00202,1dc600,efeb04,dc00e0'],
+                                'overwrite_defaults' => true
                             ]
                         ]
                     ]
@@ -55,7 +55,7 @@ use LearnositySdk\Utils\Uuid;
     $Init = new Init('author', $security, $consumer_secret, $request);
     $signedRequest = $Init->generate();
 
-?>
+    ?>
 
     <!-- Custom Font style. Used to demonstrate the custom font option that we added to the rich text editor -->
     <style>

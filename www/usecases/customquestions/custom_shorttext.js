@@ -8,14 +8,16 @@ LearnosityAmd.define([
 ) {
     'use strict';
 
-    function getValidResponse(question) {
+    function getValidResponse(question)
+    {
         return (
             _.isObject(question) &&
             question.valid_response
         ) || '';
     }
 
-    function CustomShorttext(init, lrnUtils) {
+    function CustomShorttext(init, lrnUtils)
+    {
         this.init = init;
         this.lrnUtils = lrnUtils;
         this.question = init.question;
@@ -175,7 +177,8 @@ LearnosityAmd.define([
         }
     });
 
-    function CustomShorttextScorer(question, response) {
+    function CustomShorttextScorer(question, response)
+    {
         this.question = question;
         this.response = response;
         this.validResponse = getValidResponse(question);
@@ -191,7 +194,7 @@ LearnosityAmd.define([
         },
 
         maxScore: function () {
-            return this.question.score != null? this.question.score : null;
+            return this.question.score != null ? this.question.score : null;
         },
 
         canValidateResponse: function () {

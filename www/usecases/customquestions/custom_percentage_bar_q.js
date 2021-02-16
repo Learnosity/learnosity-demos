@@ -62,13 +62,14 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
         $currentValue.text(prepend_unit + $bar.val() + append_unit);
 
         // IE10 doesn't support oninput hence we need onchange as well
-        $bar.on('input change', function() {
+        $bar.on('input change', function () {
             $currentValue.text(prepend_unit + $bar.val() + append_unit);
             options.events.trigger('changed', $bar.val());
             $percentageBarWrapper.removeClass('percentage-bar-valid').removeClass('percentage-bar-invalid');
         });
 
-        function validate() {
+        function validate()
+        {
             if (options.getFacade().isValid()) {
                 $percentageBarWrapper.addClass('percentage-bar-valid');
             } else {
@@ -76,7 +77,7 @@ LearnosityAmd.define(['jquery-v1.10.2'], function ($) {
             }
         }
 
-        options.events.on('validate', function() {
+        options.events.on('validate', function () {
             validate();
         });
 

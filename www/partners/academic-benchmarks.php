@@ -27,7 +27,7 @@ $request = [
         'item_edit' => [
             'item' => [
                 'reference' => [
-					'show' => true,
+                    'show' => true,
                     'edit' => true
                 ],
                 'dynamic_content' => true,

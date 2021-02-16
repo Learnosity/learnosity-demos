@@ -11,8 +11,8 @@ include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 
-$activityRef = filter_input(INPUT_GET, 'activity_reference', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'gallery_1']]);
-$users = filter_input(INPUT_GET, 'users', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'demo_student']]);
+$activityRef = filter_input(INPUT_GET, 'activity_reference', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'gallery_1']]);
+$users = filter_input(INPUT_GET, 'users', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'demo_student']]);
 
 include './includes/itemsRequest.php';
 

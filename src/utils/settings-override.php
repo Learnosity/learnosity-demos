@@ -158,7 +158,6 @@ if (isset($filter_post['api_type'])) {
                         case 'mcq':
                             $request['widget_json'] = $questionJsonMcq;
                             break;
-
                     }
                 }
             }
@@ -167,7 +166,6 @@ if (isset($filter_post['api_type'])) {
             $request = $filter_post['init'];
             break;
         case 'regions':
-
             // unfudge the quoting in the filter_input_array because you can't use FILTER_FLAG_NO_ENCODE_QUOTES
             $json = str_replace(
                 array("&#34;", "&#39;"),
@@ -206,9 +204,8 @@ if (isset($filter_post['api_type'])) {
         unset($requestKey['navigation']['auto_save']);
     }
     unset($requestKey['navigation']['auto_save']['use_auto_save']);
-    
+
     if (!isset($requestKey['configuration']['api_type'])) {
         unset($requestKey['api_type']);
     }
-
 }

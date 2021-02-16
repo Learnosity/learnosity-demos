@@ -19,7 +19,7 @@ $security = [
 
 $request = [
     'activity_id' => 'Activity_Test',
-    'activity_template_id'=> 'TexttoSpeech_Testing_Activity',
+    'activity_template_id' => 'TexttoSpeech_Testing_Activity',
 
     'rendering_type' => 'assess',
     'user_id' => '$ANONYMIZED_USER_ID',

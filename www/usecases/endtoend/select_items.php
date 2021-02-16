@@ -21,7 +21,7 @@ $security = array(
 
 // This file is reused in the Demo Tour (misc/tour/end-to-end01.php) via an include, in that instance some restriction filters are applied.
 // To make this work in both cases we need to add a setting for the default http://demos.learnosity.com/usecases/endtoend/select_items.php case.
-if (!strpos($_SERVER['PHP_SELF'], 'tour') > 0){
+if (!strpos($_SERVER['PHP_SELF'], 'tour') > 0) {
     // Create the restrictions array to include the filter
     $restricted = array(
                    'current_user' => false,
@@ -33,7 +33,7 @@ $request = array(
     'config'    => array(
         'item_list' => array(
             'item' => array(
-                'status' =>true
+                'status' => true
             ),
             'toolbar' => array(
                 'add' => false

@@ -27,17 +27,17 @@ $request = [
         'lastname' => 'User',
         'email' => 'demos@learnosity.com'
     ],
-    'config'=>[
-        'activity_edit'=>[
-            'item_search'=>[
-                'item_banks'=>[
+    'config' => [
+        'activity_edit' => [
+            'item_search' => [
+                'item_banks' => [
                     [
-                        'organisation_id'=>6,
-                        'item_bank_name'=>'Demos'
+                        'organisation_id' => 6,
+                        'item_bank_name' => 'Demos'
                     ],
                     [
-                        'organisation_id'=>505,
-                        'item_bank_name'=>'Demos Read-Only'
+                        'organisation_id' => 505,
+                        'item_bank_name' => 'Demos Read-Only'
                     ]
                 ]
             ],

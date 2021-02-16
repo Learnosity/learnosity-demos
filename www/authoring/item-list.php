@@ -27,12 +27,12 @@ $request = [
         'item_edit' => [
             'item' => [
                 'reference' => [
-					'show' => true,
+                    'show' => true,
                     'edit' => true
                 ],
                 'dynamic_content' => true,
                 'shared_passage' => true,
-                'enable_audio_recording'=>true
+                'enable_audio_recording' => true
             ]
         ]
     ],

@@ -89,10 +89,10 @@ $request = [
         'annotations' => true,
         'annotations_api_init_options' => [
             'modules' => [
-                'notepad'=> true,
-                'texthighlight'=> true,
-                'drawing'=> true,
-                'stickynote'=>true
+                'notepad' => true,
+                'texthighlight' => true,
+                'drawing' => true,
+                'stickynote' => true
             ]
         ]
     ]

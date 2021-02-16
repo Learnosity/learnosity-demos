@@ -2,7 +2,8 @@
 LearnosityAmd.define(['underscore-v1.5.2'], function (_) {
     'use strict';
 
-    function CustomShorttextScorer(question, response) {
+    function CustomShorttextScorer(question, response)
+    {
         this.question = question;
         this.response = response;
         this.validResponse = question.valid_response || {};
@@ -18,7 +19,7 @@ LearnosityAmd.define(['underscore-v1.5.2'], function (_) {
         },
 
         maxScore: function () {
-            return this.question.score != null? this.question.score : null;
+            return this.question.score != null ? this.question.score : null;
         },
 
         canValidateResponse: function () {

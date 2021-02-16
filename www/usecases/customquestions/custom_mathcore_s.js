@@ -9,25 +9,25 @@ LearnosityAmd.define([
         this.response = response;
     };
 
-    Scorer.prototype.isValid = function() {
+    Scorer.prototype.isValid = function () {
         var i, temp,
             isValid = true;
-        for(i = 0; i < this.question.specs.length; i ++) {
+        for (i = 0; i < this.question.specs.length; i++) {
             temp = mathcore.validate(this.question.specs[i], this.response);
             isValid = isValid && temp.result;
         }
         return isValid;
     };
 
-    Scorer.prototype.score = function() {
+    Scorer.prototype.score = function () {
         return this.isValid() ? this.maxScore() : 0;
     };
 
-    Scorer.prototype.maxScore = function() {
+    Scorer.prototype.maxScore = function () {
         return this.question.score || 1;
     };
 
-    Scorer.prototype.canValidateResponse = function() {
+    Scorer.prototype.canValidateResponse = function () {
         return true;
     };
 

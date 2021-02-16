@@ -20,14 +20,14 @@ $security = [
 //simple api request object for Reports API
 $request = [
     'reports' => [
-		[
-			'id'        => 'progress-by-tag',
-			'type'      => 'progress-by-tag',
-			'user_id'   => 'mce_student_1',
-			'hierarchy_reference' => 'CCSS'
-		],
         [
-			"id"        => "progress-by-tag-by-user",
+            'id'        => 'progress-by-tag',
+            'type'      => 'progress-by-tag',
+            'user_id'   => 'mce_student_1',
+            'hierarchy_reference' => 'CCSS'
+        ],
+        [
+            "id"        => "progress-by-tag-by-user",
             "type"      => "progress-by-tag-by-user",
             "users"     => [
                 ["id" => "mce_student_1","name" => "Brian Moser"],
@@ -35,19 +35,19 @@ $request = [
             ],
             "hierarchy_reference" => "CCSS"
         ],
-		[
-		    'id'          => 'progress-single',
-		    'type'        => 'progress-single',
+        [
+            'id'          => 'progress-single',
+            'type'        => 'progress-single',
             'ui'          => 'pie',
-		    'user_id'     => 'demo_student',
-		    'hierarchy_reference'   => 'questiontype',
-		    'tag_hierarchy_path' => [
-		        [
-		            'type'  => 'questiontype',
-		            'name'  => 'mcq'
-		        ]
-		    ]
-		]
+            'user_id'     => 'demo_student',
+            'hierarchy_reference'   => 'questiontype',
+            'tag_hierarchy_path' => [
+                [
+                    'type'  => 'questiontype',
+                    'name'  => 'mcq'
+                ]
+            ]
+        ]
     ]
 ];
 

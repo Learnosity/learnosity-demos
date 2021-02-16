@@ -1,7 +1,9 @@
 <?php
+
 /**
  * Text Mappings to convert the element name to a human readable description.
  */
+
 $regionElements = array(
     // Buttons
     'accessibility_button' => 'Accessibility',
@@ -33,7 +35,8 @@ $regionElements = array(
  * Create a readable title from the region key (ex. 'top-right' => 'Top Right')
  * @param $region - the region string to be titilised
  */
-function regionTitle($region) {
+function regionTitle($region)
+{
     return ucwords(str_replace('-', ' ', $region));
 }
 
@@ -85,7 +88,7 @@ foreach ($regionElementMapping as $region => $elements) { ?>
 
             <?php if (count($elements['elements']) > 0) { ?>
                 <optgroup label="Elements">
-                    <?php foreach($elements['elements'] as $element) { ?>
+                    <?php foreach ($elements['elements'] as $element) { ?>
                         <option value="<?= $element; ?>"><?= $regionElements[$element] ?></option>
                     <?php } ?>
                 </optgroup>
@@ -93,7 +96,7 @@ foreach ($regionElementMapping as $region => $elements) { ?>
 
             if (count($elements['buttons']) > 0) { ?>
                 <optgroup label="Buttons">
-                    <?php foreach($elements['buttons'] as $button) { ?>
+                    <?php foreach ($elements['buttons'] as $button) { ?>
                         <option value="<?= $button; ?>"><?= $regionElements[$button] ?></option>
                     <?php } ?>
                 </optgroup>

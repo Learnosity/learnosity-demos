@@ -8,7 +8,8 @@ LearnosityAmd.define([
 ) {
     'use strict';
 
-    function CustomShorttext(init, lrnUtils) {
+    function CustomShorttext(init, lrnUtils)
+    {
         this.init = init;
         this.lrnUtils = lrnUtils;
         this.question = init.question;
