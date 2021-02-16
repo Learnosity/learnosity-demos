@@ -33,10 +33,6 @@ modes, by running either of the following commands from the `learnosity-demos` d
 
     make run-php  # See “Using PHP's native server” below to see what this does
 
-or
-
-    make run-vagrant  # See “Using Vagrant” below for additional information
-
 You can then visit http://localhost:8080 in a browser.
 
 Note that you must use *localhost* as the domain (not 127.0.0.1). Any port is
@@ -52,37 +48,7 @@ You can use PHP's built-in server to quickly get up and running.
     cd learnosity-demos
     php -S localhost:8080 --docroot www
 
-### Using Vagrant
-
-Vagrant is a wrapper for controlling Virtual Machines in a controlled and
-isolated manner. Vagrant supports all the major platforms and is simple to use
-and very handy for other development tasks (if you're not already using it!).
-Vagrant by default supports VirtualBox as it's VM host, but it does support
-others like VMWare, Parallels, and even AWS EC2.
-
-The included `Vagrantfile` will download a VM image and install all the needed
-PHP dependencies. Once the VM is running the demos can be used (and modified)
-without you needing to install anything else.
-
-*Additional requirements*: In order to use this method, you need to have installed:
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [Vagrant](https://www.vagrantup.com/downloads.html)
-
-Once these are installed using this demo is as easy as :
-
-    git clone https://github.com/Learnosity/learnosity-demos.git
-    cd learnosity-demos
-    vagrant up
-
-You can modify files and have the results served by the VM instantly.
-
-To control the VM you can do one of the following :
-* Stop the VM: `vagrant halt`
-* Start the VM: `vagrant up`
-* Destroy the VM: `vagrant destroy`
-
 ## Consumer
-
 
 This package comes with demo security (consumer) credentials. If you have your own consumer details (as provided by Learnosity) you may use them by editing ```lrn_config.php```
 
