@@ -44,7 +44,7 @@ to *localhost*.
 
 You can use PHP's built-in server to quickly get up and running.
 
-    git clone https://github.com/LearnosiVty/learnosity-demos.git
+    git clone https://github.com/Learnosity/learnosity-demos.git
     cd learnosity-demos
     php -S localhost:8080 --docroot www
 
