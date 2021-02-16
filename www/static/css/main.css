@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
     padding-top:8px;
     text-align: center;
     color: #fff;
-    background-color: #ef3232;
+    background-color: #CE0E2D;
     border-radius: .5em;
 
 }
@@ -546,8 +546,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
 *
 ********************************************************************/
 .panel-title .block {
-    background-color: #0686c4;
-    color: #eee;
+    background-color: #0071CE;
+    color: #FFFFFF;
     position: relative;
     left: -15px;
     border: 1px solid transparent;
@@ -790,7 +790,7 @@ a:focus,
     padding-top:15px;
     text-align: center;
     color: #fff;
-    background-color: #ef3232;
+    background-color: #CE0E2D;
     border-radius: .5em;
 
 }
@@ -1055,6 +1055,7 @@ img.product-logo {
 
 .btn-primary {
     background-image: none;
+    background-color: #0071CE;
 }
 
 .dropdown-menu > li > a {

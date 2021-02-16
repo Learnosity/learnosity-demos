@@ -65,7 +65,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -99,8 +99,8 @@ $signedRequest = $Init->generate();
             console.log("Listener fired");
             var assessApp = itemsApp.assessApp();
             assessApp.on('test:start', function() {
-                // When the assessment starts, Texthelp’s SpeechStream will parse through the DOM 
-                // and dynamically ignore certain specified ‘classes’ that are listed in SpeechStream’s configuration file, 
+                // When the assessment starts, Texthelp’s SpeechStream will parse through the DOM
+                // and dynamically ignore certain specified ‘classes’ that are listed in SpeechStream’s configuration file,
                 // which were previously identified as not to be read aloud.
                 TexthelpSpeechStream.addToolbar();
             });
@@ -121,8 +121,8 @@ $signedRequest = $Init->generate();
     function showSpeechStreamBar(){
         showSpeechStream = !showSpeechStream;
         window.texthelp.SpeechStream.ui.toolbar.toolbar.setVisibility(showSpeechStream);
-        $rw_stopSpeech();  
-        $rw_enableClickToSpeak(false);  
+        $rw_stopSpeech();
+        $rw_enableClickToSpeak(false);
     }
 
 </script>
@@ -133,7 +133,7 @@ $signedRequest = $Init->generate();
     }
     @media all and (max-width: 991px) {
         .lrn.lrn-assess .lrn-region:not(.lrn-items-region) .lrn_btn.SpeechStream_btn{
-            padding: 0.75em 0.25em; 
+            padding: 0.75em 0.25em;
         }
     }
     button.lrn_btn.SpeechStream_btn:before{

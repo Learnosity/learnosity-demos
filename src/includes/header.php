@@ -36,5 +36,5 @@ if (strpos($server_name, '.learnosity.com') === false && $server_name !== 'local
     include_once 'nav.php';
 ?>
 
-<div class="container container-content">
+<div class="container container-content" role="main">
     <div class="row">

@@ -124,7 +124,7 @@ $signedRequest3 = $init3->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#" data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#" data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
@@ -252,7 +252,7 @@ $signedRequest3 = $init3->generate();
          * instance, with the following properties:
          *
          * appId:
-         * - A string used for the id attribute of the DOM hook element. 
+         * - A string used for the id attribute of the DOM hook element.
          *
          * isActive:
          * - An instance is active after LearnosityItems.init() is called

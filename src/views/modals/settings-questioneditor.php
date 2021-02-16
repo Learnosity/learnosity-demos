@@ -22,7 +22,7 @@
                 <h4 class="modal-title"><?php echo $service ?> – Custom Settings</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" role="form" id="frmSettings" method="post">
+                <form class="form-horizontal" id="frmSettings" method="post">
                     <input type="hidden" name="api_type" value="<?php echo $serviceShortcut ?>">
 
                     <div class="panel panel-info">

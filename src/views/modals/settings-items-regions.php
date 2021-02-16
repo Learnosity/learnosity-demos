@@ -16,7 +16,7 @@
                 <p>Learnosity Assess API regions allow you to create a personalized, fluid and extensible assessment UI. All UI
                 elements such as buttons, time, pager, etc. are modularized in such a way that they can be placed in different
                 regions of the Assess API container.</p>
-                <form class="form-horizontal" role="form" id="frmSettings" method="post">
+                <form class="form-horizontal" id="frmSettings" method="post">
                     <input type="hidden" name="api_type" value="regions">
                     <input type="hidden" name="itemsConfig" id="itemsConfig" value="">
 

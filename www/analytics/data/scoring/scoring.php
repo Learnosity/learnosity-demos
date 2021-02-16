@@ -12,7 +12,7 @@ $resource = 'scoring';
 </ul>
 <div class="tab-content">
     <div class="tab-pane active" id="tab-request-form-<?php echo $resource; ?>">
-        <form class="form-horizontal" role="form" method="post" id="frm-data-api-<?php echo $resource; ?>" data-resource="<?php echo $resource; ?>">
+        <form class="form-horizontal" method="post" id="frm-data-api-<?php echo $resource; ?>" data-resource="<?php echo $resource; ?>">
             <div class="form-group">
                 <label class="col-md-2 control-label">URL</label>
                 <div class="col-md-10">
