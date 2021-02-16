@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
     background-color: #fff;
     border-color:  #fff;
 }
-.panel .panel-heading h2 {
+.panel .panel-heading h3 {
     font-size: 18px;
     font-weight:700;
 }
