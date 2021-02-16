@@ -5,9 +5,7 @@ include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron section index">
-    <p>
-    <img class="product-logo" src="/static/images/product-assessments-full.png">
-    </p>
+    <h1><img class="product-logo" src="/static/images/product-assessments-full.png" alt="Learnosity Assessment logo"></h1>
     <div class="section-intro">
         <p>Learnosity Assessments allow you to access content from your Learnosity-hosted item bank and deliver that content to your end-users. You can present assessments using a full assessment player or embed each question into a page exactly where you want it to be, all while capturing student responses and scoring in a scalable, robust manner.</p>
         <p>

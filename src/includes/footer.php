@@ -1,6 +1,6 @@
     </div>
 </div>
-<div class="footer">
+<div class="footer" role="contentinfo">
     <div class="section">
         <div class="row">
             <div class="col-lg-3 col-md-12">

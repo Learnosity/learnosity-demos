@@ -5,9 +5,7 @@ include_once 'includes/header.php';
 ?>
 
 <div class="jumbotron section index">
-    <p>
-    <img class="product-logo" src="/static/images/product-analytics-full.png">
-    </p>
+    <h1><img class="product-logo" src="/static/images/product-analytics-full.png" alt="Learnosity Analytics logo"></h1>
     <div class="section-intro">
         <p>Learnosity Analytics provides a suite of powerful tools, covering both embeddable, user-friendly reporting, perfectly suited for quickly building out your product, as well as granular back end data-centric functionality to power your own bespoke reporting needs.</p>
         <ul>

@@ -10,7 +10,7 @@
 */
 
 // Asset version - for cachebusting JS & CSS
-$assetVersion = '20201015';
+$assetVersion = '20210216';
 
 // Add 'www' and 'src' to the include path
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
