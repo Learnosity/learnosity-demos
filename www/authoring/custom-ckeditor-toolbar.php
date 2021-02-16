@@ -71,14 +71,14 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
         <div class="overview">
             <h2>Customizing the Rich Text Editor toolbar</h2>
             <p>You can customize the Rich Text Editor (RTE) toolbar to rearrange or hide specific options for authors. For example, showing fewer buttons for a cleaner interface.</p>
-            <p>By default, the toolbar shows 28 buttons, like this:<br>  
+            <p>By default, the toolbar shows 28 buttons, like this:<br>
             <img src="../static/images/ckeditor-default-toolbar.png" height=87% width=87%></p>
             <p>In this demo, we have customized the toolbar to only show seven buttons, like so:<br> <img src="../static/images/ckeditor-customized-toolbar.png"  height=21% width=21%></p>
             <p>To see the customized toolbar, click into the "Compose question" field below. For instructions on how to customize the toolbar, see <a href="https://help.learnosity.com/hc/en-us/articles/360014562597-Customizing-the-RTE-toolbar-in-Question-Editor-API">this article</a>.</p>

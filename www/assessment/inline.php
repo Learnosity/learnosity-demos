@@ -41,7 +41,7 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
@@ -105,7 +105,7 @@ $signedRequest = $Init->generate();
         <p>Another way to represent these colors is to show them on a color wheel. Primary colors appear equidistant from each other on the wheel. Secondary colors appear between the primary colors mixed to create them. The color wheel shown here includes primary and secondary colors.</p>
 
         <span class="pull-right"  style="margin-left:10px;">
-            <img src="//s3-us-west-1.amazonaws.com/assets.staging.learnosity.com/organisations/1/primary_secondary_wheel.png">
+            <img src="//s3-us-west-1.amazonaws.com/assets.staging.learnosity.com/organisations/1/primary_secondary_wheel.png" alt="A color wheel.">
             <p style="font-size:12px;text-align:center;">a color wheel</p>
         </span>
 
