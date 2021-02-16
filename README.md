@@ -11,7 +11,7 @@ Each page shows a basic integration to a specific Learnosity API which you can u
 
 ### Requirements
 
-* PHP 5.6+
+* PHP 7.4+
 * You must be connected to the Internet to use this site
 
 ## Getting Started
