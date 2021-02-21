@@ -11,7 +11,7 @@ include_once '../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
-use \LearnositySdk\Request\DataApi;
+use LearnositySdk\Request\DataApi;
 
 $sessionId = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 

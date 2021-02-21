@@ -31,10 +31,10 @@ $request = '{
       "response_id": "custom-mathcore-response-1",
       "type": "custom",
       "js": {
-        "question":"//'. $_SERVER['HTTP_HOST'] .'/usecases/customquestions/custom_mathcore_q.js",
-        "scorer":"//'. $_SERVER['HTTP_HOST'] .'/usecases/customquestions/custom_mathcore_s.js"
+        "question":"//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_mathcore_q.js",
+        "scorer":"//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_mathcore_s.js"
       },
-      "css": "//'. $_SERVER['HTTP_HOST'] .'/usecases/customquestions/custom_mathcore.css",
+      "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_mathcore.css",
       "stimulus": "Simplify following expression: <b>\\\\(2x^2 + 3x - 5 + 5x - 4x^2 + 20\\\\)</b>",
       "is_math": true,
       "score": 1,
@@ -71,7 +71,7 @@ $signedRequest = $init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/articles/360000758817-Creating-Custom-Questions" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
 
         </ul>

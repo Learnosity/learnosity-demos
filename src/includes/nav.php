@@ -17,9 +17,9 @@ $pages = array(
     )
 );
 
-$url = 'https://github.com/Learnosity/learnosity-demos/blob/master/www'.$_SERVER['REQUEST_URI'];
+$url = 'https://github.com/Learnosity/learnosity-demos/blob/master/www' . $_SERVER['REQUEST_URI'];
 
-if (filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED)){
+if (filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED)) {
     $url = explode('?', $url)[0];
 }
 $santized_url = filter_var($url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);

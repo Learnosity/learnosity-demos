@@ -30,7 +30,7 @@ $init = new Init('questions', $security, $consumer_secret, [
 ]);
 
 $request = '{
-  "response_id": "custom-shorttext-response-' . $session_id .'",
+  "response_id": "custom-shorttext-response-' . $session_id . '",
   "type": "custom",
   "js": {
     "question":"//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_shorttext_q.js",

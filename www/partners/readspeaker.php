@@ -19,7 +19,7 @@ $security = [
 
 $request = [
     'activity_id' => 'Activity_Test',
-    'activity_template_id'=> 'TexttoSpeech_Testing_Activity_2',
+    'activity_template_id' => 'TexttoSpeech_Testing_Activity_2',
     'rendering_type' => 'assess',
     'user_id' => '$ANONYMIZED_USER_ID',
     'session_id' => Uuid::generate(),
@@ -40,13 +40,13 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
     </div>
     <div class="overview">
         <h2>Text to Speech solution: ReadSpeaker</h2>
-        <p>ReadSpeaker’s text-to-speech solutions provide Learnosity clients with the ability for their learners to listen to multiple formats of 
-        educational content in over 50 languages and 200+ voices. Their end-to-end technology allows control for real-time adjustments to 
+        <p>ReadSpeaker’s text-to-speech solutions provide Learnosity clients with the ability for their learners to listen to multiple formats of
+        educational content in over 50 languages and 200+ voices. Their end-to-end technology allows control for real-time adjustments to
         provide a better user experience with constantly improving voices.</p>
     </div>
 </div>

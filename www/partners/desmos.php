@@ -19,7 +19,7 @@ $security = [
     'domain' => $domain
 ];
 
-// to get a commercial license to the Desmos tools, email partnerships@desmos.com 
+// to get a commercial license to the Desmos tools, email partnerships@desmos.com
 $desmosconfig = file_get_contents('https://www.desmos.com/api/learnosity/get-config?questionGroups=all&features=all');
 $desmosconfig = json_decode($desmosconfig, true);
 
@@ -52,13 +52,13 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
     </div>
     <div class="overview">
         <h2>Desmos Calculators - Graphing, Scientific, and Four Function</h2>
         <p>
-            Through the Desmos and Learnosity partnership, clients can leverage the Graphing, Scientific and Four Function Calculators in two ways. 
+            Through the Desmos and Learnosity partnership, clients can leverage the Graphing, Scientific and Four Function Calculators in two ways.
         </p>
         <p>
             First, these Calculators can be included as a feature on any Learnosity item.<br/>

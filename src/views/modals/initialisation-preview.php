@@ -23,6 +23,7 @@
 </div>
 
 <?php
+
 use LearnositySdk\Utils\Json;
 
 if (!isset($signedRequest)) {

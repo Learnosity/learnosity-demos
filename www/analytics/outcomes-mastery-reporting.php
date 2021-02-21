@@ -41,64 +41,64 @@ $request = [
                 ]
             ]
         ],
-		[
-			"id" => "class-item-scores-report",
-			"type" => "item-scores-by-tag-by-user",
-			"items_tags_live_dataset_reference" => "content-hierarchy-items-dataset-00001",
-			"session_items_live_dataset_reference" => "content-hierarchy-sessions-dataset-00001",
-			"users" => [
-				[
-					"id" => "user_20180417a_00001",
-					"name" => "Milhouse Vanhouten"
-				],
-				[
-					"id" => "user_20180417a_00002",
-					"name" => "Bart Simpson"
-				],
-				[
-					"id" => "user_20180417a_00003",
-					"name" => "Sherri Mackleberry"
-				],
-				[
-					"id" => "user_20180417a_00004",
-					"name" => "Nelson Muntz"
-				],
-				[
-					"id" => "user_20180417a_00005",
-					"name" => "Terri Mackleberry"
-				],
-				[
-					"id" => "user_20180417a_00006",
-					"name" => "Lewis Clark"
-				],
-				[
-					"id" => "user_20180417a_00007",
-					"name" => "Adrian Belew"
-				],
-				[
-					"id" => "user_20180417a_00008",
-					"name" => "Terri Mackleberry"
-				],
-				[
-					"id" => "user_20180417a_00009",
-					"name" => "Martin Prince"
-				]
-			],
+        [
+            "id" => "class-item-scores-report",
+            "type" => "item-scores-by-tag-by-user",
+            "items_tags_live_dataset_reference" => "content-hierarchy-items-dataset-00001",
+            "session_items_live_dataset_reference" => "content-hierarchy-sessions-dataset-00001",
+            "users" => [
+                [
+                    "id" => "user_20180417a_00001",
+                    "name" => "Milhouse Vanhouten"
+                ],
+                [
+                    "id" => "user_20180417a_00002",
+                    "name" => "Bart Simpson"
+                ],
+                [
+                    "id" => "user_20180417a_00003",
+                    "name" => "Sherri Mackleberry"
+                ],
+                [
+                    "id" => "user_20180417a_00004",
+                    "name" => "Nelson Muntz"
+                ],
+                [
+                    "id" => "user_20180417a_00005",
+                    "name" => "Terri Mackleberry"
+                ],
+                [
+                    "id" => "user_20180417a_00006",
+                    "name" => "Lewis Clark"
+                ],
+                [
+                    "id" => "user_20180417a_00007",
+                    "name" => "Adrian Belew"
+                ],
+                [
+                    "id" => "user_20180417a_00008",
+                    "name" => "Terri Mackleberry"
+                ],
+                [
+                    "id" => "user_20180417a_00009",
+                    "name" => "Martin Prince"
+                ]
+            ],
             //add drill-down for each student
             //  example used is proficiency data from this demo dataset
-			//"row_tag_type" => 'ch_proficiency_strand',
-			"column_tag_types" => [
-				"ch_topic",
-				"ch_subtopic",
-				"ch_curriculum_code"
-			],
-			"item_tags" => [
-				[
-					"type" => "ch_title",
-					"name" => "content_hierarchy_001"
-				]
-			]
-		]
+            //"row_tag_type" => 'ch_proficiency_strand',
+            "column_tag_types" => [
+                "ch_topic",
+                "ch_subtopic",
+                "ch_curriculum_code"
+            ],
+            "item_tags" => [
+                [
+                    "type" => "ch_title",
+                    "name" => "content_hierarchy_001"
+                ]
+            ]
+        ]
     ]
 ];
 
@@ -159,7 +159,7 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>

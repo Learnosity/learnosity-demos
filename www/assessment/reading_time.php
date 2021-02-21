@@ -26,18 +26,18 @@ $request = [
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
-    'items'=> ['ccore_parcc_grade10_prose', 'ccore_parcc_grade10_ebsr1', 'ccore_parcc_grade10_ebsr2'],
+    'items' => ['ccore_parcc_grade10_prose', 'ccore_parcc_grade10_ebsr1', 'ccore_parcc_grade10_ebsr2'],
     'config' => [
         'regions' => 'main',
-        'time'=> [
-			'max_time'=> 180,
-			'warning_time'=> 60
-		],
-        'configuration'=> [
-			'reading_mode'=> [
-				'reading_time'=> 60
-			]
-		]
+        'time' => [
+            'max_time' => 180,
+            'warning_time' => 60
+        ],
+        'configuration' => [
+            'reading_mode' => [
+                'reading_time' => 60
+            ]
+        ]
     ]
 ];
 
@@ -49,7 +49,7 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>

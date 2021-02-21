@@ -2,21 +2,22 @@
 LearnosityAmd.define([], function () {
     'use strict';
 
-    function PercentageBarScorer(question, response) {
+    function PercentageBarScorer(question, response)
+    {
         this.question = question;
         this.response = response;
     }
 
-    PercentageBarScorer.prototype.updateResponse = function(response) {
+    PercentageBarScorer.prototype.updateResponse = function (response) {
         this.response = response;
         return this;
     };
 
-    PercentageBarScorer.prototype.isValid = function() {
+    PercentageBarScorer.prototype.isValid = function () {
         return this.response === this.question.valid_response;
     };
 
-    PercentageBarScorer.prototype.score = function() {
+    PercentageBarScorer.prototype.score = function () {
         return this.isValid() ? this.maxScore() : 0;
     };
 
@@ -24,7 +25,7 @@ LearnosityAmd.define([], function () {
         return this.question.score || 1;
     };
 
-    PercentageBarScorer.prototype.canValidateResponse = function() {
+    PercentageBarScorer.prototype.canValidateResponse = function () {
         return !!this.question.valid_response;
     };
 

@@ -87,7 +87,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -155,7 +155,7 @@ $signedRequest = $Init->generate();
         };
 
         var itemsApp = LearnosityItems.init(initializationObject, callbacks);
-       
+
 
 </script>
 

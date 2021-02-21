@@ -31,10 +31,10 @@ $request = '{
       "response_id": "custom-shorttext-response-1",
       "type": "custom",
       "js": {
-        "question":"//'. $_SERVER['HTTP_HOST'] .'/usecases/customquestions/custom_shorttext_q.js",
-        "scorer":"//'. $_SERVER['HTTP_HOST'] .'/usecases/customquestions/custom_shorttext_s.js"
+        "question":"//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_shorttext_q.js",
+        "scorer":"//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_shorttext_s.js"
       },
-      "css": "//'. $_SERVER['HTTP_HOST'] .'/usecases/customquestions/custom_shorttext.css",
+      "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_shorttext.css",
       "stimulus": "What is the capital of Australia?",
       "valid_response": "Canberra",
       "score": 1
@@ -62,7 +62,7 @@ $signedRequest = $init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/articles/360000758817-Creating-Custom-Questions" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
 
         </ul>

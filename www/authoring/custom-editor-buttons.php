@@ -28,16 +28,16 @@ use LearnositySdk\Utils\Uuid;
                     'init_options' => [
                         'rich_text_editor' => [
                             'type' => 'ckeditor',
-                            'custom_styles'=> [
+                            'custom_styles' => [
                                 [
-                                    'label'=> 'Custom Font',
-                                    'element'=> 'span', //<span> for inline styles. <p> for block styles.
-                                    'element_class'=> 'custom-font'
+                                    'label' => 'Custom Font',
+                                    'element' => 'span', //<span> for inline styles. <p> for block styles.
+                                    'element_class' => 'custom-font'
                                 ]
                             ],
-                            'font_settings'=> [
-                                'colors'=>['2C91AC,e00202,1dc600,efeb04,dc00e0'],
-                                'overwrite_defaults'=> true
+                            'font_settings' => [
+                                'colors' => ['2C91AC,e00202,1dc600,efeb04,dc00e0'],
+                                'overwrite_defaults' => true
                             ]
                         ]
                     ]
@@ -55,7 +55,7 @@ use LearnositySdk\Utils\Uuid;
     $Init = new Init('author', $security, $consumer_secret, $request);
     $signedRequest = $Init->generate();
 
-?>
+    ?>
 
     <!-- Custom Font style. Used to demonstrate the custom font option that we added to the rich text editor -->
     <style>
@@ -68,7 +68,7 @@ use LearnositySdk\Utils\Uuid;
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>

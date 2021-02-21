@@ -12,8 +12,8 @@ include_once '../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$language = filter_input(INPUT_GET, 'language', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'pt-PT']]);
-$env = filter_input(INPUT_GET, 'env', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>'prod']]);
+$language = filter_input(INPUT_GET, 'language', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'pt-PT']]);
+$env = filter_input(INPUT_GET, 'env', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'prod']]);
 
 /*
     We pull in all i18n files from an open source Github repo:
@@ -157,7 +157,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
@@ -168,13 +168,17 @@ $signedRequest = $Init->generate();
         <p style="margin-bottom:25px;">Click a language icon to see a translation of the assessment below:</p>
         <div>
             <div class="language-button-container">
-                <a class="language-button <?php if ($language === 'pt-PT') { echo 'selected'; } ?>" href="/authoring/item-list-i18n.php?language=pt-PT">
+                <a class="language-button <?php if ($language === 'pt-PT') {
+                    echo 'selected';
+                                          } ?>" href="/authoring/item-list-i18n.php?language=pt-PT">
                     <img class="language-flag" src="/static/images/i18n/flag-PT.png" />
                     Português / Portuguese
                 </a>
             </div>
             <div class="language-button-container">
-                <a class="language-button <?php if ($language === 'ar-EG') { echo 'selected'; } ?>" href="/authoring/item-list-i18n.php?language=ar-EG">
+                <a class="language-button <?php if ($language === 'ar-EG') {
+                    echo 'selected';
+                                          } ?>" href="/authoring/item-list-i18n.php?language=ar-EG">
                     <img class="language-flag" src="/static/images/i18n/flag-EG.png" />
                     العَرَبِيَّة / Arabic
                 </a>
@@ -189,7 +193,9 @@ $signedRequest = $Init->generate();
     <div id="learnosity-author"></div>
 </div>
 
-<script <?php if ($language === 'ar-EG') { echo 'data-lrn-dir="rtl"'; } ?> src="<?php echo $url_authorapi; ?>"></script>
+<script <?php if ($language === 'ar-EG') {
+    echo 'data-lrn-dir="rtl"';
+        } ?> src="<?php echo $url_authorapi; ?>"></script>
 <script>
     var initializationObject = <?php echo $signedRequest; ?>;
 

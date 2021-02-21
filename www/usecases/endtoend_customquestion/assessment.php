@@ -22,7 +22,7 @@ $security = array(
     'domain'       => $domain
 );
 
-$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options'=>['default'=>Uuid::generate()]]);
+$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => Uuid::generate()]]);
 
 $request = array(
     'activity_id'    => $activity_id,
@@ -36,7 +36,7 @@ $request = array(
     'config'         => [
         'title' => 'Demo Activity',
         'configuration' => [
-            'onsubmit_redirect_url' => 'feedback.php?session_id='. $session_id
+            'onsubmit_redirect_url' => 'feedback.php?session_id=' . $session_id
         ],
         'regions' => [
             'top-right' => [
@@ -95,7 +95,8 @@ $request = array(
 );
 
 
-function getItemsArray() {
+function getItemsArray()
+{
 
     return explode(",", filter_input(INPUT_GET, 'itemIDs', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
 }

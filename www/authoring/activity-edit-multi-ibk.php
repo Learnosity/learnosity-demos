@@ -27,17 +27,17 @@ $request = [
         'lastname' => 'User',
         'email' => 'demos@learnosity.com'
     ],
-    'config'=>[
-        'activity_edit'=>[
-            'item_search'=>[
-                'item_banks'=>[
+    'config' => [
+        'activity_edit' => [
+            'item_search' => [
+                'item_banks' => [
                     [
-                        'organisation_id'=>6,
-                        'item_bank_name'=>'Demos'
+                        'organisation_id' => 6,
+                        'item_bank_name' => 'Demos'
                     ],
                     [
-                        'organisation_id'=>505,
-                        'item_bank_name'=>'Demos Read-Only'
+                        'organisation_id' => 505,
+                        'item_bank_name' => 'Demos Read-Only'
                     ]
                 ]
             ],
@@ -58,7 +58,7 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>

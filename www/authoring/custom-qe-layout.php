@@ -24,13 +24,13 @@ $request = [
         'dependencies' => [
             'question_editor_api' => [
                 'init_options' => [
-                    'widgetType'=> 'response',
+                    'widgetType' => 'response',
                     'ui' => [
-                        'layout'=> [
-                            'edit_panel'=> [
-                                'mcq'=> [
+                        'layout' => [
+                            'edit_panel' => [
+                                'mcq' => [
                                     [
-                                        'layout'=> 'custom_mcq_layout'
+                                        'layout' => 'custom_mcq_layout'
                                     ]
                                 ]
                             ]
@@ -81,7 +81,7 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>

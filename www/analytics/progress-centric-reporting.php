@@ -20,14 +20,14 @@ $security = [
 //simple api request object for Reports API
 $request = [
     'reports' => [
-		[
-			'id'        => 'progress-by-tag',
-			'type'      => 'progress-by-tag',
-			'user_id'   => 'mce_student_1',
-			'hierarchy_reference' => 'CCSS'
-		],
         [
-			"id"        => "progress-by-tag-by-user",
+            'id'        => 'progress-by-tag',
+            'type'      => 'progress-by-tag',
+            'user_id'   => 'mce_student_1',
+            'hierarchy_reference' => 'CCSS'
+        ],
+        [
+            "id"        => "progress-by-tag-by-user",
             "type"      => "progress-by-tag-by-user",
             "users"     => [
                 ["id" => "mce_student_1","name" => "Brian Moser"],
@@ -35,19 +35,19 @@ $request = [
             ],
             "hierarchy_reference" => "CCSS"
         ],
-		[
-		    'id'          => 'progress-single',
-		    'type'        => 'progress-single',
+        [
+            'id'          => 'progress-single',
+            'type'        => 'progress-single',
             'ui'          => 'pie',
-		    'user_id'     => 'demo_student',
-		    'hierarchy_reference'   => 'questiontype',
-		    'tag_hierarchy_path' => [
-		        [
-		            'type'  => 'questiontype',
-		            'name'  => 'mcq'
-		        ]
-		    ]
-		]
+            'user_id'     => 'demo_student',
+            'hierarchy_reference'   => 'questiontype',
+            'tag_hierarchy_path' => [
+                [
+                    'type'  => 'questiontype',
+                    'name'  => 'mcq'
+                ]
+            ]
+        ]
     ]
 ];
 
@@ -59,7 +59,7 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>

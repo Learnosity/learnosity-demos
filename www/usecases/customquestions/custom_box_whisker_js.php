@@ -1,5 +1,5 @@
 <?php
-    header('Content-Type: application/javascript; charset=utf-8' );
+    header('Content-Type: application/javascript; charset=utf-8');
 ?>
 LearnosityAmd.define([
     'jquery-v1.10.2',

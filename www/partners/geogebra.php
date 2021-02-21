@@ -19,7 +19,7 @@ $security = [
     'domain' => $domain
 ];
 
-//here we use our GeoGebra config file to define Geogebra's Custom Features and Question Types. 
+//here we use our GeoGebra config file to define Geogebra's Custom Features and Question Types.
 //Contact GeoGebra to get a commercial licence.
 $GeogebraConfig = file_get_contents('https://dev.geogebra.org/partners/learnosity/self-host.php');
 $GeogebraConfig = json_decode($GeogebraConfig, true);
@@ -52,17 +52,17 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
     </div>
     <div class="overview">
         <h2>GeoGebra</h2>
         <p style="text-align:justify;">
-        GeoGebra provides several powerful math tools including a graphing calculator, geometry tool, spreadsheet, 
+        GeoGebra provides several powerful math tools including a graphing calculator, geometry tool, spreadsheet,
         probability calculator, algebra calculator and 3D graphing.
         </p>
         <p style="text-align:justify;">
-        With the Learnosity and GeoGebra partnership, Learnosity clients have access to thousands of ready-made STEM 
+        With the Learnosity and GeoGebra partnership, Learnosity clients have access to thousands of ready-made STEM
         education materials to create interactive, engaging learning and assessment opportunities for students.
         </p>
         <p>
