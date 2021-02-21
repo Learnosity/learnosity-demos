@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'b34fce779ca53e44795ee03435c98e100992a2f6',
+    'reference' => '9fe471cb064e3f5f32be782c2144ae7e4951949d',
     'name' => 'learnosity/learnosity-demos',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'b34fce779ca53e44795ee03435c98e100992a2f6',
+      'reference' => '9fe471cb064e3f5f32be782c2144ae7e4951949d',
     ),
     'learnosity/learnosity-sdk-php' => 
     array (
