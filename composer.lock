@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "feb0768e7dbd808ef32b3340d40cd133",
+    "content-hash": "89e0390a6d1fdb732d99d78b1acb6650",
     "packages": [
         {
             "name": "learnosity/learnosity-sdk-php",
@@ -112,7 +112,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4"
+        "php": ">=7.2"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
