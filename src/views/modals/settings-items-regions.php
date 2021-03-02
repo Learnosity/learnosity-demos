@@ -127,6 +127,30 @@
                 }
             }
         },
+        "vertical-element": {
+            "form": {
+                "label": "Vertical Element",
+                "value": "vertical-element",
+                "optgroup": "customRegions"
+            },
+            "data": {
+                "config": {
+                  "regions": {
+                      "items": [
+                          {
+                             "type": "vertical_element"
+                          }
+                      ],
+                      "bottom": [
+                          {
+                              "type": "submit_button",
+                              "position": "right"
+                          }
+                      ]
+                  }
+                }
+            }
+        },
         "main": {
             "form": {
                 "label": "Main",
