@@ -67,7 +67,7 @@ switch ($language) {
     case 'pt-PT':
         $activityTemplateId = 'i18n-acty1-pt';
         break;
-    case 'jp-JP':
+    case 'ja-JP':
         $activityTemplateId = 'i18n-acty1-jp';
         break;
     default:
@@ -168,7 +168,7 @@ $signedRequest = $Init->generate();
             <div class="language-button-container">
                 <a class="language-button <?php if ($language === 'ja-JP') {
                     echo 'selected';
-                                          } ?>" href="/assessment/activities-i18n.php?language=jp-JP">
+                                          } ?>" href="/assessment/activities-i18n.php?language=ja-JP">
                     <img class="language-flag" src="/static/images/i18n/flag-JP.png" />
                     日本語 / Japanese
                 </a>
