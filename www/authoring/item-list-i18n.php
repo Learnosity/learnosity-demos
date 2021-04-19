@@ -125,14 +125,7 @@ $request = json_decode('{
                     "group_defaults": ' . $hasGroupDefaults . ',
                     "question_type_groups": ' . $questionTypeGroups . ',
                     "question_type_templates": ' . $questionTypeTemplates . ',
-                    "label_bundle": ' . $questioneditorLabels . ',
-                    "dependencies": {
-                        "questions_api": {
-                            "init_options": {
-                                "labelBundle": ' . $questionsLabels . '
-                            }
-                        }
-                    }
+                    "label_bundle": ' . $questioneditorLabels . '
                 }
             },
             "questions_api": {
