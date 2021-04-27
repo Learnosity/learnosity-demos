@@ -186,6 +186,19 @@ include_once 'includes/header.php';
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Japanese Language example</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>Localize Learnosity as you need to - in this case, we've localized our UI to Japanese.</p>
+                        <p class="text-right">
+                            <a class="demo_link" href="./japanese/index.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <h3 id="miscellaneous-examples">Miscellaneous Examples</h3>
