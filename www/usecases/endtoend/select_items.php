@@ -10,71 +10,29 @@ include_once 'includes/header.php';
 include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
-use LearnositySdk\Utils\Uuid;
 
-$item_ref = Uuid::generate();
-
-$security = array(
+$security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain
-);
+];
 
-// This file is reused in the Demo Tour (misc/tour/end-to-end01.php) via an include, in that instance some restriction filters are applied.
-// To make this work in both cases we need to add a setting for the default http://demos.learnosity.com/usecases/endtoend/select_items.php case.
-if (!strpos($_SERVER['PHP_SELF'], 'tour') > 0) {
-    // Create the restrictions array to include the filter
-    $restricted = array(
-                   'current_user' => false,
-    );
-}
-
-$request = array(
+$request = [
     'mode'      => 'item_list',
-    'config'    => array(
-        'item_list' => array(
-            'item' => array(
+    'config'    => [
+        'item_list' => [
+            'item' => [
+                'enable_selection' => true,
                 'status' => true
-            ),
-            'toolbar' => array(
-                'add' => false
-            ),
-            'filter' => array(
-                'restricted' => $restricted
-            )
-        ),
-        'item_edit' => array(
-            'item' => array(
-                "back" => true
-            )
-        ),
-        'dependencies' => [
-            'question_editor_api' => [
-                'dependencies' => [
-                    'questions_api' => [
-                        'init_options' => [
-                            'beta_flags' => [
-                                'reactive_views' => true
-                            ]
-                        ]
-                    ]
-                ]
-            ],
-            'questions_api' => [
-                'init_options' => [
-                    'beta_flags' => [
-                        'reactive_views' => true
-                    ]
-                ]
             ]
         ]
-    ),
-    'user' => array(
+    ],
+    'user' => [
         'id'        => 'demos-site',
         'firstname' => 'Demos',
         'lastname'  => 'User',
         'email'     => 'demos@learnosity.com'
-    )
-);
+    ]
+];
 
 $Init = new Init('author', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
@@ -92,143 +50,49 @@ $signedRequest = $Init->generate();
 
 <div class="section">
     <div class="row">
-        <div id="notifications" class="col-md-2"></div>
-        <div class="col-md-10">
             <div id="learnosity-author"></div>
-        </div>
     </div>
     <p class="text-right">
         <br>
-        <a class="btn btn-primary btn-md btn-addMore">Create New Item</a>
         <a class="btn btn-primary btn-md btn-goToAssessment">Go to Assessment</a>
     </p>
 </div>
 
-<script src="<?php echo $url_authorapi; ?>"></script>
+<script src="<?=$url_authorapi?>"></script>
 <script>
-    var initOptions = <?php echo $signedRequest; ?>;
-    var itemIDs = new Array();
-    var activeItemID = '<?php echo $item_ref; ?>';
-
-    // These are used to ensure that the list contains at least one item which has a question.
-    var itemHasQuestions = false;
-    var itemWithQuestionsAdded = false;
-
-    var authorApp = LearnosityAuthor.init(initOptions, {
+    let initOptions = <?=$signedRequest?>;
+    let authorApp = LearnosityAuthor.init(initOptions, {
 
         readyListener: function () {
-
-            authorApp.on('open:item', function (event) {
-                // Only proceed if item object is defined (which is not the case for new items)
-                if(event.data.item){
-
-                    // Prevent the default action (open) when an item in the list is clicked
-                    event.preventDefault();
-
-                    // Check if the Item content string contains any questions, and if so, set a flag
-                    // accordingly
-                    // Note that we must check the content string rather than item.questions array,
-                    // as that data is not available until the item is opened and fetched
-                    if(event.data.item.content.indexOf("learnosity-response") >= 0) {
-                        itemHasQuestions = true;
-                    }
-
-                    // For unpublished Items we do not provide the Modal as these can not be added to assessments
-                    if(event.data.item.status == 'published') {
-
-                        // Find the items ID and add it to the list.
-                        // Add the Item ID to a custom paramater on the Modal DIV
-                        $('#endtoend-item-preview').data().parameter_1 = event.data.item.reference;
-                        // Open a Modal to preview the Item and provide 'Add' and 'Cancel' options
-                        $('#endtoend-item-preview').modal('show');
-
-                    } else {
-                        alert('This item is unpublished and therefore can not be added to the assessment.');
-                    }
-                }
-
-            });
-
-            // When a newly created item is saved save it to our array and redirect back to list view
-            authorApp.on('save:success', function (event) {
-                saveItemID(activeItemID);
-                authorApp.navigate('items');
-            });
-
+            console.log("Author API loaded.")
+        },
+        errorListener: function(e){
+            console.log(e);
         }
     });
 
     $(document).ready(function(){
-        //add more question handler
-        $(".btn-addMore").click(function(){
-            activeItemID = guid();
-            authorApp.setItem(activeItemID);
-            // Redirect to  new item view
-            //authorApp.navigate('items/new/widgets/new');
-            authorApp.navigate('items/new');
-        });
-        //go to assessment handler
+        //Go to assessment handler
         $(".btn-goToAssessment").click(function(){
-
-            // Do not proceed to assessment if the list does not conatin at least one question
-            if(itemWithQuestionsAdded == true){
-                window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
-            } else {
-                alert('None of the Items in the list contain Questions. An assessment requires a minimum of one Question.');
-            }
-
+            let itemPromise = authorApp.getSelectedItems();
+            if (itemPromise === false) {
+                console.log("No items selected.");
+                return;
+            };
+            itemPromise
+                .then(function (result) {
+                    let itemIDs = [];
+                    $.each(result.data.items, function (index, value) {
+                        itemIDs.push(value.item.reference);
+                    });
+                    window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
+                })
+                .then(null, function (error) {
+                    console.log(error)
+                });
         });
     });
-
-    function showNotification (itemID) {
-         var $message = $('<a/>').text('Item ' + itemIDs.length)
-                                 .attr('onclick','editItem("' + itemID + '")')
-                                 .attr('style','cursor:pointer')
-        var $closeBtn = $('<button/>').attr('type', 'button')
-                                      .attr('data-dismiss', 'alert')
-                                      .attr('aria-hidden', 'true')
-                                      .attr('title', 'Delete question')
-                                      .attr('onclick', 'removeItem("' + itemID + '")')
-                                      .addClass('close')
-                                      .text('×');
-        var $notification = $('<div/>').addClass('alert alert-info alert-dismissable')
-                                       .attr('id', 'ItemNotification' + itemID)
-                                       .attr('title', 'Item: ' + itemID)
-                                       .append($closeBtn)
-                                       .append($message);
-        $('#notifications').append($notification);
-    }
-
-    function guid() {
-      function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000)
-          .toString(16)
-          .substring(1);
-      }
-      return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-        s4() + '-' + s4() + s4() + s4();
-    }
-
-    function saveItemID(itemID) {
-        if (itemIDs.indexOf(itemID) === -1){
-            itemIDs.push(itemID);
-            itemWithQuestionsAdded = true;
-            showNotification(itemID);
-        }
-    }
-
-    function removeItem(itemID) {
-        itemIDs.splice(itemIDs.indexOf(itemID), 1);
-        $("#ItemNotification" + itemID).remove();
-    }
-
-    function editItem(itemID) {
-        activeItemID = itemID;
-        authorApp.setItem(itemID);
-    }
-
 </script>
 
 <?php
-    include_once 'views/modals/endtoend-item-preview.php';
     include_once 'includes/footer.php';
