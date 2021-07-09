@@ -182,12 +182,6 @@ $signedRequest = $Init->generate();
                     العَرَبِيَّة / Arabic
                 </a>
             </div>
-            <div class="language-button-container">
-                <a class="language-button <?php if ($language === 'nl-NL') { echo 'selected'; } ?>" href="/authoring/item-list-i18n.php?language=nl-NL">
-                    <img class="language-flag" src="/static/images/i18n/flag-NL.png" />
-                    Dutch
-                </a>
-            </div>
         </div>
         <br/>
         <p><b>Add your own:</b> <a href="https://help.learnosity.com/hc/en-us/articles/360002918818/">Documentation</a> | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a></p>
