@@ -70,6 +70,9 @@ switch ($language) {
     case 'ja-JP':
         $activityTemplateId = 'i18n-acty1-jp';
         break;
+    case 'nl-NL':
+        $activityTemplateId = 'i18n-acty1-nl';
+        break;
     default:
         $activityTemplateId = 'i18n-acty1-eng';
         break;
@@ -207,6 +210,9 @@ $signedRequest = $Init->generate();
                 | <a class="other-language <?php if ($language === 'tl-PH') {
                     echo 'selected';
                                            } ?>" href="/assessment/activities-i18n.php?language=tl-PH">Pilipino/Tagalog</a>
+                | <a class="other-language <?php if ($language === 'nl-NL') {
+                    echo 'selected';
+                  } ?>" href="/assessment/activities-i18n.php?language=nl-NL">Dutch</a>
         </p>
         <p><b>Add your own:</b> <a href="https://help.learnosity.com/hc/en-us/articles/360002918818/">Documentation</a> | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 
