@@ -15,7 +15,6 @@ use LearnositySdk\Utils\Uuid;
 
 
 
-$item_ref = Uuid::generate();
 $activity_id = 'Demo_Activity';
 
 $security = array(
