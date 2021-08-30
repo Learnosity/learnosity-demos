@@ -10,7 +10,6 @@ include_once 'includes/header.php';
 include_once '../lrn_config.php';
 
 use LearnositySdk\Request\Init;
-use LearnositySdk\Utils\Uuid;
 
 $security = [
     'consumer_key' => $consumer_key,
@@ -77,7 +76,7 @@ $request = [
                 ],
                 [
                     "id" => "user_20180417a_00008",
-                    "name" => "Terri Mackleberry"
+                    "name" => "Ralph Wiggum"
                 ],
                 [
                     "id" => "user_20180417a_00009",
