@@ -12,7 +12,6 @@ include_once '../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain
@@ -110,6 +109,9 @@ $signedRequest = $Init->generate();
         .page-break {
             display: block;
             page-break-before: always;
+        }
+        .lrn.lrn-assess .lrn-region-group {
+           display: block;
         }
         /* Uncomment if you want to hide the question type headings */
         /*.item-container h2 {
