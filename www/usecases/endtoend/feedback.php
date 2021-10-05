@@ -100,18 +100,12 @@ $signedRequest = $Init->generate();
                     'user_id': 'demos-site',
                     'rendering_type': 'inline',
                     'name': 'Items API demo - feedback activity.',
-                    'state': 'initial',
                     'activity_id': '<?php echo $activity_id; ?>',
                     'session_id': '<?php echo Uuid::generate(); ?>',
                     'items': itemReferences,
                     'type': 'feedback',
                     'config': {
-                        'renderSaveButton' : true,
-                        'questions_api_init_options': {
-                            'beta_flags': {
-                                'reactive_views': true
-                            }
-                        }
+                        'renderSaveButton' : true
                     }
                 }
             };
