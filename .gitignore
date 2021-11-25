@@ -11,3 +11,5 @@ node_modules
 composer-setup.php
 composer.phar
 ._*
+yarn-error.log
+webpack-report.html
