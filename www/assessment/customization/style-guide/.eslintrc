@@ -1,0 +1,71 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended"
+  ],
+  "ignorePatterns": [],
+  "plugins": [
+    "react-hooks"
+  ],
+  "globals": {
+    "__webpack_require__": true,
+    "localStorage": true,
+    "afterAll": true,
+    "afterEach": true,
+    "beforeAll": true,
+    "beforeEach": true,
+    "clearInterval": true,
+    "clearTimeout": true,
+    "console": true,
+    "define": true,
+    "describe": true,
+    "document": true,
+    "Element": true,
+    "expect": true,
+    "fdescribe": true,
+    "fit": true,
+    "it": true,
+    "module": true,
+    "navigator": true,
+    "require": true,
+    "setInterval": true,
+    "setTimeout": true,
+    "window": true,
+    "fetch": true,
+    "xdescribe": true,
+    "xit": true,
+    "cy": true
+  },
+  "rules": {
+    "no-shadow": "off",
+    "no-use-before-define": 0,
+    "linebreak-style":0,
+    "no-unused-vars": 0,
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "no-param-reassign": 0,
+    "arrow-body-style": 0,
+    "import/no-named-as-default": 0,
+    "import/prefer-default-export": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": [
+      "error", "never", { "svg": "always", "png": "always" }
+    ],
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/no-danger": 0,
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "required": {
+        "some": [ "nesting", "id" ]
+      }
+    }],
+    "class-methods-use-this": 0,
+    "react/no-unused-prop-types": 0,
+    "react/destructuring-assignment": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": 0,
+    "react/function-component-definition": 0
+  }
+}
