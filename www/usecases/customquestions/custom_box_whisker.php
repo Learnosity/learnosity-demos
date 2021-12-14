@@ -30,29 +30,32 @@ $request = '{
     {
       "response_id": "custom-box-whisker-response-1",
       "type": "custom",
-      "js": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_js.php",
-      "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker.css",
       "stimulus": "Draw a <b>box &amp; whisker</b> chart for the following: <b>6, 2, 5, 3, 6, 10, 11, 6</b>",
-      "params_line_min": 0,
-      "params_line_max": 17,
-      "params_step": 0.5,
-      "params_mark_small": 0,
-      "params_mark_big": 1,
-      "params_width": 600,
-      "params_height": 150,
-      "params_range_1": 2,
-      "params_range_2": 14,
-      "params_quartile_1": 4,
-      "params_median": 6,
-      "params_quartile_3": 10,
-      "params_box1_color": "#bbbbbb",
-      "params_box2_color": "#999999",
-      "valid_range_1": 2,
-      "valid_range_2": 11,
-      "valid_quartile_1": 4,
-      "valid_median": 6,
-      "valid_quartile_3": 8.5,
-      "score": 1
+      "js": {
+        "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_q.js",
+        "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_s.js"
+      },
+      "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker.css",
+      "line_min": 1,
+      "line_max": 19,
+      "step": 1,
+      "min": 2,
+      "max": 14,
+      "quartile_1": 4,
+      "median": 6,
+      "quartile_3": 10,
+      "score": 1,
+      "valid_response": {
+        "type": "object",
+        "value": {
+            "min": 2,
+            "max": 11,
+            "quartile_1": 4,
+            "median": 6,
+            "quartile_3": 8
+        }
+      },
+      "instant_feedback": true
     }
   ],
     "beta_flags": {
@@ -68,7 +71,6 @@ $signedRequest = $init->generate();
 
 <style>
     .custom-score {
-        position: absolute;
         font-size: 17px;
         margin-top: 5px;
     }
@@ -92,8 +94,12 @@ $signedRequest = $init->generate();
     <div class="row">
         <div class="question-container">
             <span class="learnosity-response question-custom-box-whisker-response-1"></span>
-            <div class="custom-score"><strong>Score: </strong> <span id="question_score">0</span> / <span id="question_max_score">0</span></div>
-            <button class="btn btn-primary pull-right" id="validate_question">Check Answer</button>
+            <div class="client-save-wrapper">
+                <span class="learnosity-save-button"></span>
+            </div>
+            <div class="custom-score">
+                <strong>Score: </strong><span id="question_score">0</span> / <span id="question_max_score">0</span>
+            </div>
         </div>
     </div>
 </div>

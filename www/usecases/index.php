@@ -143,8 +143,7 @@ include_once 'includes/header.php';
                         <h3 class="panel-title">Custom Box and Whisker Plot</h3>
                     </div>
                     <div class="panel-body">
-                        <p>Sometimes, you just need access to all the raw info you can handle! Using Learnosity's Data
-                            API, you can.</p>
+                        <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.<p>
                         <p class="text-right">
                             <a class="demo_link" href="./customquestions/custom_box_whisker.php">Demo</a>
                         </p>
@@ -160,8 +159,7 @@ include_once 'includes/header.php';
                         <h3 class="panel-title">Using Learnosity Math in a custom question type</h3>
                     </div>
                     <div class="panel-body">
-                        <p>Sometimes, you just need access to all the raw info you can handle! Using Learnosity's Data
-                            API, you can.</p>
+                        <p>Math Custom question using Learnosity Mathcore.</p>
                         <p class="text-right">
                             <a class="demo_link" href="./customquestions/custom_mathcore.php">Demo</a>
                         </p>
