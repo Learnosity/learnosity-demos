@@ -166,6 +166,19 @@ include_once 'includes/header.php';
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Authoring Custom Box and Whisker Plot</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.<p>
+                        <p class="text-right">
+                            <a class="demo_link" href="./customquestions/custom_box_whisker_authoring.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <h3 id="localization-examples">Localizing APIs to another language</h3>
