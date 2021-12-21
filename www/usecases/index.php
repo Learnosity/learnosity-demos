@@ -169,13 +169,29 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Authoring Custom Box and Whisker Plot</h3>
+                        <h3 class="panel-title">Author Custom Box and Whisker Plot</h3>
                     </div>
                     <div class="panel-body">
                         <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.<p>
                         <p class="text-right">
                             <a class="demo_link" href="./customquestions/custom_box_whisker_authoring.php">Demo</a>
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Author Custom Features</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Develop your own custom features for inclusion in your Learnosity ecosystem.</p>
+                            <p class="text-right">
+                                <a class="demo_link" href="./customquestions/author-custom-features.php" aria-label="Custom features demo">Demo</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

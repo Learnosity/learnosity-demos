@@ -1,13 +1,13 @@
 <?php
 
 //common environment attributes including search paths. not specific to Learnosity
-include_once '../env_config.php';
+include_once '../../env_config.php';
 
 //site scaffolding
 include_once 'includes/header.php';
 
 //common Learnosity config elements including API version control vars
-include_once '../lrn_config.php';
+include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -17,7 +17,8 @@ $security = [
     'domain'       => $domain
 ];
 
-$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . "/authoring/customfeature/";
+$url = '//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/customfeature/';
+
 
 //simple api request object for item list view, with optional creation of items
 $request = [
