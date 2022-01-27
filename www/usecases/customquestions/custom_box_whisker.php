@@ -57,10 +57,7 @@ $request = '{
       },
       "instant_feedback": true
     }
-  ],
-    "beta_flags": {
-        "reactive_views": true
-    }
+  ]
 }';
 
 
