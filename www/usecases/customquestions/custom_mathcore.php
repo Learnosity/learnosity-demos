@@ -48,10 +48,7 @@ $request = '{
         }
       ]
     }
-  ],
-    "beta_flags": {
-        "reactive_views": true
-    }
+  ]
 }';
 
 
