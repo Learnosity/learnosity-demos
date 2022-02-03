@@ -1,194 +1,380 @@
 {
   "questionTypes": [
     {
-      "type": "mcq",
-      "classnames": [
-        {
-          "source": ".lrn .lrn_widget .lrn_options",
-          "target": "...",
-          "description": "the mcq options"
-        }
-      ],
+      "type": "mcq-block",
+      "label": "Multiple choice - block",
+      "question": {
+        "stimulus": "MCQ - block",
+        "response_id": "mcq-block-response-id",
+        "type": "mcq",
+        "options": [
+          {
+            "label": "Dublin",
+            "value": "1"
+          },
+          {
+            "label": "Bristol",
+            "value": "2"
+          },
+          {
+            "label": "Liverpool",
+            "value": "3"
+          },
+          {
+            "label": "London",
+            "value": "4"
+          }
+        ],
+        "ui_style": {
+          "type": "block",
+          "columns": 1,
+          "choice_label": "upper-alpha"
+        },
+        "valid_responses": [
+          {
+            "value": "4"
+          }
+        ],
+        "is_math": true,
+        "instant_feedback": true
+      },
       "widgets": [
         {
           "state": "initial",
-          "question": {
-            "stimulus": "MCQ Block",
-            "response_id": "mcq-randomize-12123",
-            "type": "mcq",
-            "options": [
-              {"label": "Dublin", "value": "1"},
-              {"label": "Bristol", "value": "2"},
-              {"label": "Liverpool", "value": "3"},
-              {"label": "London", "value": "4"}
-            ],
-            "ui_style": {
-              "type": "block",
-              "columns": 1,
-              "choice_label": "upper-alpha"
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
             },
-            "valid_responses": [
-              { "value":"4"}
-            ],
-            "is_math": true,
-            "instant_feedback": true
-          }
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
+        },
+        {
+          "state": "resume",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
+        },
+        {
+          "state": "preview",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
         },
         {
           "state": "review",
-          "description": "Incorrect response with suggested answer",
-          "question": {
-            "type": "mcq",
-            "options": [
-              {
-                "label": "Choice A",
-                "value": "0"
-              }
-            ]
-          },
-          "response": {
-            "value": [
-              "1",
-              "2"
-            ]
-          }
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
         }
       ]
     },
     {
-      "type": "mcq",
-      "classnames": [
-        {
-          "source": ".lrn .lrn_widget .lrn_options",
-          "target": "...",
-          "description": "the mcq options"
-        }
-      ],
-      "widgets": [
-        {
-          "state": "initial",
-          "question": {
-            "type": "mcq",
-            "options": [
-              {
-                "label": "Choice A",
-                "value": "0"
-              }
+      "type": "mcq-standard",
+      "label": "Multiple choice - standard",
+      "question": {
+        "options": [
+          {
+            "label": "Sydney",
+            "value": "0"
+          },
+          {
+            "label": "Melbourne",
+            "value": "1"
+          },
+          {
+            "label": "Victoria",
+            "value": "2"
+          },
+          {
+            "label": "Brisbane",
+            "value": "3"
+          }
+        ],
+        "stimulus": "MCQ Standard",
+        "response_id": "mcq-standard-response-id",
+        "type": "mcq",
+        "validation": {
+          "scoring_type": "exactMatch",
+          "valid_response": {
+            "score": 1,
+            "value": [
+              "0"
             ]
           }
         },
+        "ui_style": {
+          "type": "horizontal"
+        }
+      },
+      "widgets": [
+        {
+          "state": "initial",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
+        },
+        {
+          "state": "resume",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
+        },
+        {
+          "state": "preview",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
+        },
         {
           "state": "review",
-          "description": "Incorrect response with suggested answer",
-          "question": {
-            "type": "mcq",
-            "options": [
-              {
-                "label": "Choice A",
-                "value": "0"
-              }
-            ]
-          },
-          "response": {
-            "value": [
-              "1",
-              "2"
-            ]
-          }
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
         }
       ]
     },
     {
-      "type": "mcq",
-      "classnames": [
-        {
-          "source": ".lrn .lrn_widget .lrn_options",
-          "target": "...",
-          "description": "the mcq options"
-        }
-      ],
-      "widgets": [
-        {
-          "state": "initial",
-          "question": {
-            "type": "mcq",
-            "options": [
-              {
-                "label": "Choice A",
-                "value": "0"
-              }
-            ]
-          }
-        },
-        {
-          "state": "review",
-          "description": "Incorrect response with suggested answer",
-          "question": {
-            "type": "mcq",
-            "options": [
-              {
-                "label": "Choice A",
-                "value": "0"
-              }
-            ]
+      "type": "mcq-multiple-response",
+      "label": "Multiple choice - multiple response",
+      "question": {
+        "response_id": "mcq-multiple-response-response-id",
+        "multiple_responses": true,
+        "options": [
+          {
+            "label": "Mercury",
+            "value": "0"
           },
-          "response": {
+          {
+            "label": "Venus",
+            "value": "1"
+          },
+          {
+            "label": "Earth",
+            "value": "2"
+          },
+          {
+            "label": "Mars",
+            "value": "3"
+          }
+        ],
+        "stimulus": "Multiple choice - multiple response",
+        "type": "mcq",
+        "validation": {
+          "scoring_type": "exactMatch",
+          "valid_response": {
+            "score": 1,
             "value": [
-              "1",
               "2"
             ]
           }
+        },
+        "ui_style": {
+          "type": "horizontal"
         }
-      ]
-    },
-    {
-      "type": "mcq",
-      "classnames": [
-        {
-          "source": ".lrn .lrn_widget .lrn_options",
-          "target": "...",
-          "description": "the mcq options"
-        }
-      ],
+      },
       "widgets": [
         {
           "state": "initial",
-          "question": {
-            "type": "mcq",
-            "options": [
-              {
-                "label": "Choice A",
-                "value": "0"
-              }
-            ]
-          }
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
+        },
+        {
+          "state": "resume",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
+        },
+        {
+          "state": "preview",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
         },
         {
           "state": "review",
-          "description": "Incorrect response with suggested answer",
-          "question": {
-            "type": "mcq",
-            "options": [
-              {
-                "label": "Choice A",
-                "value": "0"
-              }
-            ]
-          },
-          "response": {
-            "value": [
-              "1",
-              "2"
-            ]
-          }
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            }
+          ]
         }
       ]
-    }
-  ],
-  "globalClassnames": [
-    {
-      "source": ".lrn .lrn_widget .lrn_btn.lrn_validate",
-      "target": ".lrn_widget > .background "
     }
   ]
 }
