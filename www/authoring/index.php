@@ -243,22 +243,6 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Author Custom Features</h3>
-                    </div>
-                    <div class="panel-body">
-                        <p>Develop your own custom features for inclusion in your Learnosity eco system.</p>
-                        <p class="text-right">
-                            <a class="demo_link" href="./author-custom-features.php" aria-label="Custom features demo">Demo</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
                         <h3 class="panel-title">Workflow States and Comments</h3>
                     </div>
                     <div class="panel-body">
