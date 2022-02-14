@@ -2,11 +2,13 @@ import { configureStore,  } from '@reduxjs/toolkit';
 import questionApiReducer from 'ducks/questionApi';
 import appReducer from 'ducks/app';
 import questionApiService from "./services/questionApiService";
+import appServices from "./services/appServices";
 
 const getMiddleware = () => {
     const services = {};
 
     services.questionApiService = new questionApiService();
+    services.appServices = appServices;
 
     return services;
 };

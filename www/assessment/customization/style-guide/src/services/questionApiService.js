@@ -1,6 +1,6 @@
 import { waitElementToExist, delay } from '../utils';
 import _ from 'lodash';
-import {GCA_QUESTiON_WRAPPER, GCA_RESPONSE_CONTAINER} from "../contants";
+import { GCA_QUESTiON_WRAPPER, GCA_RESPONSE_CONTAINER } from "../contants";
 
 export default class QuestionApiService {
     app = null;

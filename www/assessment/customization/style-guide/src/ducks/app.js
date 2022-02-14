@@ -1,4 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { API_STATES } from "../contants";
+
+export const getJson = createAsyncThunk(
+    'gca/app/getJson',
+    ( url, thunkAPI) => {
+        return thunkAPI.extra.appServices.getJson(url);
+    }
+);
 
 const slice = createSlice({
     name: 'app',
@@ -31,34 +39,34 @@ const slice = createSlice({
         },
         setQuestionType: (state,  { payload }) => {
             state.selectedQuestionType = payload;
+            state.activeSelectors = [];
         },
         setQuestionState: (state,  { payload }) => {
             state.selectedQuestionState = payload;
             state.activeSelectors = [];
-            // remove the classNames old styles
-            const classNames =  getClassnames(state);
-            if( classNames.length ) {
-                classNames.forEach( i => {
-                    delete i.oldStyle
-                });
-            }
         },
-        setActiveSelectors: (state,  { payload: { selector, oldStyle }}) => {
-            // override the className with oldStyle
-            const className =  getClassnames(state).find( i => i.source === selector);
-            if( oldStyle && className ) {
-                className.oldStyle = oldStyle;
-            }
-
+        setActiveSelectors: (state,  { payload }) => {
+            const { selector } = payload;
             // toggle the selectors
             const selectors = state.activeSelectors;
-            if (selectors.indexOf(selector) < 0) {
-                state.activeSelectors.push(selector);
+            if (!selectors.some( item => item.selector === selector )) {
+                state.activeSelectors.push(payload);
             } else {
-                state.activeSelectors = selectors.filter(i => i!== selector);
+                state.activeSelectors = selectors.filter(item => item.selector !== selector);
             }
         }
-    }
+    },
+    extraReducers: {
+        [getJson.pending]: (state) => {
+            state.questionTypesConfig = null;
+        },
+        [getJson.rejected]: (state) => {
+            state.questionTypesConfig = null;
+        },
+        [getJson.fulfilled]: (state, { payload } ) => {
+            state.questionTypesConfig = { ...payload };
+        }
+    },
 });
 
 // actions
@@ -81,7 +89,7 @@ export const getWidget = state => {
 
     return questionType;
 }
-export const getQuestionState = state => state.app.selectedQuestionState;
+export const getQuestionState = state => state.app.selectedQuestionState  || API_STATES.INITIAL;
 export const getQuestionType = state => state.app.selectedQuestionType;
 export const getActiveSelectors = state => state.app.activeSelectors;
 export const getWidgetQuestion = (state) => {
@@ -93,7 +101,7 @@ export const getWidgetClassnames = (state) => {
     const widget = getWidget(state);
     const { selectedQuestionState } = state.app;
 
-    if(!selectedQuestionState || !widget) return [];
+    if(!widget) return [];
 
     const widgets = widget.widgets || [];
     const widgetByState = widgets.find(({ state }) => state === selectedQuestionState);
@@ -108,15 +116,5 @@ export const getCategories = (state) => {
 }
 export const getSnackbar = state =>  state.app.snackbar;
 export const getDialogProps = state => state.app.dialog;
-
-// helpers
-const getClassnames = state => {
-    const { questionTypes } = state.questionTypesConfig;
-    const questionType =  questionTypes.find(({ type }) => type === state.selectedQuestionType);
-    const widgetByState = (questionType.widgets || []).find((i ) => i.state === state.selectedQuestionState);
-    return widgetByState && widgetByState.classnames || [];
-}
-
-
 
 export default slice.reducer;

@@ -11,8 +11,57 @@ import Tooltip from "@mui/material/Tooltip";
 import Grid from "@mui/material/Grid";
 import { colors, presets } from "../mui-theme";
 import { useDispatch, useSelector } from "react-redux";
-import { getActiveSelectors, getWidgetClassnames, setActiveSelectors, setSnackbar}  from "../ducks/app";
+import { getActiveSelectors, getWidgetClassnames, setActiveSelectors, setSnackbar } from "../ducks/app";
 import { isRendered } from "../ducks/questionApi";
+import Skeleton from "@mui/material/Skeleton";
+import { getRandomColourIndex } from "../utils";
+import constants from "../contants";
+
+const highlightSelector = ({ selector, colorSelector }) => {
+    const targetElements = document.querySelectorAll(selector);
+
+    if (!targetElements.length) return null;
+
+    Array.prototype.slice.call(targetElements).forEach(function(element) {
+        element.classList.add('highlight');
+        element.classList.add('on');
+        element.classList.add(colorSelector);
+    });
+}
+
+const removeColorSelectors = element => {
+    const list = element.classList.entries();
+    for (let value of list) {
+        if( Array.isArray(value) ) {
+            value.forEach( i => {
+                if (`${i}`.indexOf('color-')>-1) {
+                    element.classList.remove(i);
+                }
+            });
+        } else {
+            if (value.indexOf('color-')>-1) {
+                element.classList.remove(value);
+            }
+        }
+    }
+};
+
+const removeSelectorsByElements = targetElements => {
+    Array.prototype.slice.call(targetElements).forEach(function(element) {
+        element.classList.remove('highlight');
+        element.classList.remove('on');
+        removeColorSelectors(element);
+    });
+}
+
+const getColorFromColorSelectors = selector => {
+    const defaultColor = colors.primaryHighlight;
+    if (!selector) {
+        return defaultColor;
+    }
+    const index = selector.match(/\d+$/)[0];
+    return constants.highlightColors[index-1] || defaultColor;
+}
 
 const RegionHeader = ({ children, sx }) => <Box sx={{
     display: 'flex',
@@ -26,52 +75,85 @@ const RegionHeader = ({ children, sx }) => <Box sx={{
 }}>
     {children}
 </Box>;
+
+
+const ListPreloader = () => <Box sx={{ width: '90%', minWidth: 400, mt: 1, ml: 4, mr: 4 }}>
+    <Skeleton height={60} width="100%" variant="text" />
+    <Skeleton height={60} width="100%" variant="text" />
+    <Skeleton height={60} width="100%" animation={false} variant="text" />
+    <Skeleton height={60} width="100%" animation={false} variant="text" />
+</Box>;
+
 export default () => {
 
     const dispatch = useDispatch();
+    const [listSelectors, setListSelectors] = React.useState([]);
     const widgetClassNames = useSelector(state => getWidgetClassnames(state));
     const activeSelectors = useSelector(state => getActiveSelectors(state));
     const isQuestionRendered = useSelector(state => isRendered(state));
 
     React.useEffect(() => {
         if (isQuestionRendered) {
-            if (widgetClassNames.length) {
-                widgetClassNames.map(item => highlightSelector(item.source));
+            updateListSelectors();
+        }
+    }, [widgetClassNames, isQuestionRendered]);
+
+    React.useEffect(() => {
+        if (isQuestionRendered) {
+            if (activeSelectors.length) {
+                resetAllSelectors();
+                updateListSelectors();
             }
             activeSelectors.map(selector => highlightSelector(selector));
         }
-    }, [activeSelectors, isQuestionRendered])
+    }, [activeSelectors, isQuestionRendered]);
+
+    const updateListSelectors = () => {
+        // #TODO : filter from the current view the available selectors
+        //  const newList = widgetClassNames.filter( ({ source })=> {
+        //     return document.querySelector(source);
+        // });
+
+         const newList = [...widgetClassNames].map( (item)=> {
+             const { source } = item;
+             const selector =  activeSelectors.find(item => item.selector === source) || {};
+
+            return {...item, colorSelector: getColorFromColorSelectors(selector.colorSelector) };
+        });
+
+         setListSelectors(newList);
+    }
 
     const highlightHandler = (selector) => {
-        const el = document.querySelector(selector);
-        const payload = {
-            selector,
-            oldStyle: el && activeSelectors.indexOf(selector) < 0 ? {
-                backgroundColor: window.getComputedStyle(el).backgroundColor,
-                border: window.getComputedStyle(el).border,
-            } : null
+        const targetElements = document.querySelectorAll(selector);
+
+        if (!targetElements.length) {
+            const snackbarProps = {
+                open: true,
+                text: 'The selector is not available in the current view.',
+                severity: 'warning',
+            };
+            dispatch(setSnackbar(snackbarProps));
+
+            return null;
         }
+
+        removeSelectorsByElements(targetElements);
+
+        const colorSelector = `color-${getRandomColourIndex()}`;
+        const payload = { selector, colorSelector }
+
         dispatch(setActiveSelectors(payload));
     }
 
-    const highlightSelector = (selector) => {
-        const el = document.querySelector(selector);
 
-        if (!el) return null;
-        if (activeSelectors.indexOf(selector) > -1) {
-            el.style.border = presets.border1pxSolidHighlight;
-            el.style.backgroundColor = colors.primaryHighlight;
-        } else {
-            // apply the old style if selector got reset
-            const className = widgetClassNames.find(i => i.source === selector);
-            if (className) {
-                el.style.border = className.oldStyle ? className.oldStyle.border : 'unset';
-                if (className.oldStyle && className.oldStyle.backgroundColor) {
-                    el.style.backgroundColor = className.oldStyle.backgroundColor;
-                }
-            }
-        }
-    }
+    const resetAllSelectors = () => {
+        widgetClassNames.forEach( ({ source })=> {
+            const targetElements = document.querySelectorAll(source);
+            removeSelectorsByElements(targetElements);
+        });
+    };
+
     const copySelector = (selector) => {
         const textArea = document.createElement("textarea");
         textArea.value = selector;
@@ -84,7 +166,7 @@ export default () => {
         document.execCommand("Copy");
         textArea.remove();
         // set snackbar
-        const snackbarProps = {open: true, text: 'CSS selectors successfully copied!'};
+        const snackbarProps = { open: true, text: 'CSS selectors successfully copied!', severity: 'success' };
 
         dispatch(setSnackbar(snackbarProps));
     }
@@ -97,7 +179,6 @@ export default () => {
             mr: { xs: 2, sm: 16 },
             mb: 3
         }}>
-
             <Box sx={{
                 border: presets.border1pxSolid,
                 display: 'flex'
@@ -127,11 +208,12 @@ export default () => {
                                 whiteSpace: 'nowrap',
                                 height: 'auto',
                                 width: '100%',
-                                overflowX: 'auto'
+                                overflowX: 'auto',
+                                maxHeight: '100%', overflowY: 'scroll',
                             }}>
-                                <List disablePadding sx={{ height: 420, minHeight: 400, minWidth: 520}}>
+                                <List disablePadding sx={{ height: 425, minHeight: 400, minWidth: 520 }}>
                                     {
-                                        widgetClassNames.map((item, index) => <ListItem disablePadding key={index}>
+                                        isQuestionRendered ? listSelectors.map((item, index) => <ListItem disablePadding key={index}>
                                             <Tooltip title={item.source} arrow>
                                                 <ListItemText
                                                     primary={item.source}
@@ -167,13 +249,13 @@ export default () => {
                                             <Tooltip title="highlight" arrow>
                                                 <IconButton
                                                     sx={
-                                                        activeSelectors.indexOf(item.source) > -1 ?
+                                                        activeSelectors.some(i => i.selector === item.source) ?
                                                             {
-                                                                backgroundColor: colors.primaryHighlight,
-                                                                border: `1px solid ${colors.secondaryHighlight}`
+                                                                backgroundColor: item.colorSelector,
+                                                                border: `1px solid ${item.colorSelector}`
                                                             } : {
                                                                 backgroundColor: 'transparent',
-                                                                border: 'unset'
+                                                                border: '1px solid transparent'
                                                             }
                                                     }
                                                     onClick={() => {
@@ -184,6 +266,7 @@ export default () => {
                                             </Tooltip>
 
                                         </ListItem>)
+                                        : <ListPreloader />
                                     }
                                 </List>
                             </Box>

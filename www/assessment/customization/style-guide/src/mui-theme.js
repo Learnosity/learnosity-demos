@@ -14,8 +14,9 @@ export const colors = {
 };
 
 export const presets = {
+    border1pxTransparent: '1px transparent solid',
     border1pxSolid: `1px solid ${colors.primaryBorder}`,
-    border1pxSolidHighlight: `1px solid ${colors.secondaryHighlight}`,
+    border1pxSolidHighlight: `1px solid ${colors.primaryHighlight}`,
 };
 
 const theme = createTheme({
@@ -39,18 +40,15 @@ const theme = createTheme({
         h1: {
             color: 'white',
             fontSize: 32,
-            lineHeight: '24px',
             fontWeight: 700
         },
         h4: {
             color: 'white',
             fontSize: 18,
-            lineHeight: '12px',
             fontWeight: 400
         },
         subtitle1: {
             fontSize: 16,
-            lineHeight: '24px'
         }
     },
     palette: {
@@ -72,7 +70,8 @@ const theme = createTheme({
         MuiIconButton: {
             styleOverrides: {
                 root: {
-                    color: 'black'
+                    color: 'black',
+                    borderRadius: 0
                 }
             }
         },
@@ -81,7 +80,9 @@ const theme = createTheme({
                 root: {
                     backgroundColor: "white",
                     marginBottom: 2,
-                    padding: 8
+                    padding: 8,
+                    minHeight: 60,
+                    paddingRight: 12
                 }
             }
         },
