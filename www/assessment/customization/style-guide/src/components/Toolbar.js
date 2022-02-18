@@ -18,9 +18,10 @@ import { API_STATES } from "../contants";
 import IconButton from "@mui/material/IconButton";
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import Tooltip from "@mui/material/Tooltip";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import { colors } from "../mui-theme";
 import Grid from "@mui/material/Grid";
+import { getUrlParams } from "../utils";
 
 const FormLabel = ({ children, icon }) => <Box sx={{
     fontSize: 16,
@@ -44,16 +45,21 @@ export default () => {
 
     React.useEffect(() => {
         let newQuestionType = selectedQuestionType;
+        const paramQuestionState = getUrlParams('state');
+        let newQuestionState = selectedQuestionState || questionState;
 
         if (categories.length && !questionType && !selectedQuestionType) {
             newQuestionType = categories[0].value;
             setQuestionTypeCategory(newQuestionType);
             dispatch(setQuestionType(newQuestionType));
-            dispatch(setQuestionType(newQuestionType));
+        }
+        if (questionState && paramQuestionState && questionState !== paramQuestionState) {
+            newQuestionState = paramQuestionState;
+            dispatch(setQuestionState(newQuestionState));
         }
 
+        toggleQuestionState(newQuestionState);
         setQuestionTypeCategory(newQuestionType);
-        toggleQuestionState(selectedQuestionState);
     }, [categories, selectedQuestionType, selectedQuestionState])
 
     const categoryChangeHandler = ({target: {value}}) => {
@@ -69,15 +75,15 @@ export default () => {
     };
 
     const showInfoHandler = () => {
-        const content = <Typography>State controls the startup modes of the API,
+        const content = <Typography>The API State controls the startup modes of the API,
             to allow for different behaviors during an assessment.
-            In this example it directly influences the classes that are available to use.
-            <a href="#"> Learn more about the API states.</a>
+            <a href="https://help.learnosity.com/hc/en-us/articles/360000755438-Switching-Between-Testing-and-Reviewing-With-States" target="_blank">
+             Learn more about the API states.</a>
         </Typography>
 
         dispatch(setDialog({
             children: content,
-            title: 'API state',
+            title: 'API State',
             open: true
         }));
     }
@@ -93,7 +99,7 @@ export default () => {
         <Grid container spacing={1}>
             <Grid item xs={12} sm={12}  md={4} >
                 <FormControl sx={{ width: '100%'}}>
-                    <FormLabel>Category</FormLabel>
+                    <FormLabel>Question type</FormLabel>
                     <Select size="small"
                             value={questionType}
                             onChange={categoryChangeHandler} >
@@ -113,7 +119,7 @@ export default () => {
                 }}>
                     <FormLabel icon={
                         <Tooltip title="info" arrow>
-                            <IconButton onClick={showInfoHandler} size="small" sx={{color: colors.gray}}>
+                            <IconButton onClick={showInfoHandler} size="small" sx={{ color: colors.gray , ml: 1}}>
                                 <HelpOutlineOutlinedIcon/>
                             </IconButton>
                         </Tooltip>}>

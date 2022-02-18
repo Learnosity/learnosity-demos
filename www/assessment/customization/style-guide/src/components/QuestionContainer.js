@@ -7,14 +7,12 @@ import { isApiReady, isRendered, renderQuestionType } from '../ducks/questionApi
 import { getQuestionState, getWidgetQuestion } from '../ducks/app';
 
 
-const SkletonPreloader = () => <Box sx={{ width: '100%', minWidth: 400 }}>
-    <Skeleton height={40} width="80%" />
-    <Skeleton  width="100%" />
-    <Skeleton animation={false} height={200} width="100%" />
-    <Box sx={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
-        <Skeleton height={40} width="70%" />
-        <Box sx={{ width: 20 }} />
-        <Skeleton height={40} width="30%" />
+const Preloader = () => <Box sx={{ width: '100%', minWidth: 400 }}>
+    <Skeleton height={40} width="90%" animation={false} variant="text"  />
+    <Skeleton height={200} width="100%" variant="rectangular" />
+    <Box sx={{ width: '100%', display: 'flex', flexDirection: 'row', mt: 2 }}>
+        <Box sx={{ width: "70%" }} />
+        <Skeleton height={40} width="30%" animation={false}  />
     </Box>
 </Box>;
 
@@ -42,7 +40,7 @@ export default () => {
 
     return <Box sx={{ p: 2 }}>
         {
-            !isQuestionUIReady && <SkletonPreloader />
+           !isQuestionUIReady && <Preloader />
         }
         <div className={GCA_QUESTiON_WRAPPER} style={{ display: isQuestionUIReady ?  'block' : 'none' }}/>
     </Box>;

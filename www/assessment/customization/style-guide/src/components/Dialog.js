@@ -8,13 +8,13 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch, useSelector } from "react-redux";
 import { getDialogProps, setDialog } from "../ducks/app";
-import { Divider } from "@mui/material";
+import Divider from "@mui/material/Divider";
 
 const EnhanceDialogTitle = (props) => {
     const { children, onClose, ...other } = props;
 
     return (
-        <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+        <DialogTitle sx={{ m: 0, p: 2, pl: 3 }} {...other}>
             {children}
             {onClose ? (
                 <IconButton

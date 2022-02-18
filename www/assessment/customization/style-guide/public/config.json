@@ -1,0 +1,466 @@
+{
+  "questionTypes": [
+    {
+      "type": "mcq-block",
+      "label": "Multiple choice - block",
+      "question": {
+        "stimulus": "In what city can you find the Samuel Beckett Bridge?",
+        "response_id": "mcq-block-response-id",
+        "type": "mcq",
+        "options": [
+          {
+            "label": "Dublin",
+            "value": "1"
+          },
+          {
+            "label": "Bristol",
+            "value": "2"
+          },
+          {
+            "label": "Liverpool",
+            "value": "3"
+          },
+          {
+            "label": "London",
+            "value": "4"
+          }
+        ],
+        "ui_style": {
+          "type": "block",
+          "columns": 1,
+          "choice_label": "upper-alpha"
+        },
+        "valid_responses": [
+          {
+            "value": "4"
+          }
+        ],
+        "is_math": true,
+        "instant_feedback": true
+      },
+      "widgets": [
+        {
+          "state": "initial",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected",
+              "description": "The mcq options with selected response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_incorrect",
+              "description": "The mcq options with incorrect response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_correct",
+              "description": "The mcq options with correct response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn_btn.lrn_validate",
+              "description": "The question response check answer button"
+            }
+          ]
+        },
+        {
+          "state": "resume",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected",
+              "description": "The mcq options with selected response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_incorrect",
+              "description": "The mcq options with incorrect response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_correct",
+              "description": "The mcq options with correct response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn_btn.lrn_validate",
+              "description": "The question response check answer button"
+            }
+          ]
+        },
+        {
+          "state": "preview",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn_btn.lrn_validate",
+              "description": "The question response check answer button"
+            }
+          ]
+        },
+        {
+          "state": "review",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_choiceLabel",
+              "description": "The mcq options choice label"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn-mcq-option.lrn_valid",
+              "description": "The question valid response "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "mcq-standard",
+      "label": "Multiple choice - standard",
+      "question": {
+        "options": [
+          {
+            "label": "Sydney",
+            "value": "0"
+          },
+          {
+            "label": "Melbourne",
+            "value": "1"
+          },
+          {
+            "label": "Victoria",
+            "value": "2"
+          },
+          {
+            "label": "Brisbane",
+            "value": "3"
+          }
+        ],
+        "stimulus": "In what city can you find the West Gate Bridge?",
+        "response_id": "mcq-standard-response-id",
+        "type": "mcq",
+        "validation": {
+          "scoring_type": "exactMatch",
+          "valid_response": {
+            "score": 1,
+            "value": [
+              "2"
+            ]
+          }
+        },
+        "ui_style": {
+          "type": "horizontal"
+        },
+        "instant_feedback": true
+      },
+      "widgets": [
+        {
+          "state": "initial",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected",
+              "description": "The mcq options with selected response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_incorrect",
+              "description": "The mcq options with incorrect response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_correct",
+              "description": "The mcq options with correct response"
+            }
+          ]
+        },
+        {
+          "state": "resume",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected",
+              "description": "The mcq options with selected response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_incorrect",
+              "description": "The mcq options with incorrect response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_correct",
+              "description": "The mcq options with correct response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn_btn.lrn_validate",
+              "description": "The question response check answer button"
+            }
+          ]
+        },
+        {
+          "state": "preview",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn_btn.lrn_validate",
+              "description": "The question response check answer button"
+            }
+          ]
+        },
+        {
+          "state": "review",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn-mcq-option.lrn_valid",
+              "description": "The question valid response "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "mcq-multiple-response",
+      "label": "Multiple choice - multiple response",
+      "question": {
+        "response_id": "mcq-multiple-response-response-id",
+        "multiple_responses": true,
+        "options": [
+          {
+            "label": "Rome",
+            "value": "0"
+          },
+          {
+            "label": "Florence",
+            "value": "1"
+          },
+          {
+            "label": "Genoa",
+            "value": "2"
+          },
+          {
+            "label": "Venice",
+            "value": "3"
+          }
+        ],
+        "stimulus": "In what city can you find the Bridge of Sighs?",
+        "type": "mcq",
+        "validation": {
+          "scoring_type": "exactMatch",
+          "valid_response": {
+            "score": 1,
+            "value": [
+              "3"
+            ]
+          }
+        },
+        "ui_style": {
+          "type": "horizontal"
+        },
+        "instant_feedback": true
+      },
+      "widgets": [
+        {
+          "state": "initial",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected",
+              "description": "The mcq options with selected response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_incorrect",
+              "description": "The mcq options with incorrect response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_correct",
+              "description": "The mcq options with correct response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn_btn.lrn_validate",
+              "description": "The question response check answer button"
+            }
+          ]
+        },
+        {
+          "state": "resume",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected",
+              "description": "The mcq options with selected response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_incorrect",
+              "description": "The mcq options with incorrect response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option.lrn_selected.lrn_correct",
+              "description": "The mcq options with correct response"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn_btn.lrn_validate",
+              "description": "The question response check answer button"
+            }
+          ]
+        },
+        {
+          "state": "preview",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn_btn.lrn_validate",
+              "description": "The question response check answer button"
+            }
+          ]
+        },
+        {
+          "state": "review",
+          "classnames": [
+            {
+              "source": ".lrn .lrn_question .lrn_stimulus",
+              "description": "The mcq description"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-mcq-option",
+              "description": "The mcq options"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_mcqgroup .lrn-possible-answer .lrn_contentWrapper",
+              "description": "The mcq options choice content"
+            },
+            {
+              "source": ".lrn .lrn_response_wrapper .lrn_response .lrn-mcq-option.lrn_valid",
+              "description": "The question valid response "
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

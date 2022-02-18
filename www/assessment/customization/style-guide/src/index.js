@@ -7,8 +7,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './mui-theme';
 
-
-
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>

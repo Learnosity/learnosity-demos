@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import { colors } from "../mui-theme";
 import { useDispatch } from "react-redux";
 import { setDialog } from "../ducks/app";
