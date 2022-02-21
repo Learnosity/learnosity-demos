@@ -39,7 +39,8 @@ $signedRequest = $Init->generate();
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Style guide</title>
+    <title>BETA selector identifier</title>
+    <link type="text/css" rel="stylesheet" href="public/preloader.css">
 </head>
 <body>
 <!-- Load Learnosity -->
@@ -49,7 +50,24 @@ $signedRequest = $Init->generate();
     window.lrn_gca_signed_request = <?php echo $signedRequest; ?>;
 </script>
 <div id="app"></div>
-
 <script type="text/javascript" src="dist/app.js" ></script>
+<script type="text/javascript" src="dist/vendor.js" ></script>
+
+<div class="page-preloader">
+    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+
+<div id="widgetContainer"></div>
+<script>
+    const globalApiKey = '3063c8a5-7a9b-4e55-95e4-26070136bec9';
+    window.onUsersnapCXLoad = function(api) {
+        api.init();
+        window.Usersnap = api;
+    }
+    let script = document.createElement('script');
+    script.defer = 1;
+    script.src = `https://widget.usersnap.com/global/load/${globalApiKey}?onload=onUsersnapCXLoad`;
+    document.getElementsByTagName('head')[0].appendChild(script);
+</script>
 </body>
 </html>

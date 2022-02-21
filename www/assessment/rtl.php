@@ -29,7 +29,9 @@ $request = [
     'items' => [
         'ARABIC_Demo9',
         'salim-arabic-mcq-2',
-        'ar-drawing-rtl'
+        'ar-drawing-rtl',
+        'choice-matrix-tpl-i18n-item4-arb',
+        'token-i18n-item5-arb'
     ],
     'config' => [
         'regions' => 'main',

@@ -2,7 +2,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-
 const appDir = path.resolve(__dirname, 'src/');
 const distDir = path.resolve(__dirname, 'dist/');
 
@@ -21,6 +20,7 @@ module.exports = {
     output: {
         path: distDir,
         filename: '[name].js',
+        chunkFilename: '[name].bundle.js',
         chunkLoadingGlobal: 'GACStyleGuide',
         devtoolModuleFilenameTemplate: 'gac://[resource-path]',
         devtoolFallbackModuleFilenameTemplate: 'gac://[resource-path]?[contenthash]',
@@ -37,17 +37,15 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            // include all types of chunks
-            chunks: 'all',
-            minChunks: 3,
-            automaticNameDelimiter: '~',
+            name: false,
             cacheGroups: {
-                vendors: {
-                    test: /[\\/]node_modules[\\/]/,
-                    priority: -10,
-                },
-            },
-        },
+                commons: {
+                    name: "vendor",
+                    chunks: "all",
+                    reuseExistingChunk: true
+                }
+            }
+        }
     },
     module: {
         rules: [
@@ -65,6 +63,11 @@ module.exports = {
                             '@babel/plugin-transform-react-jsx',
                             '@babel/plugin-proposal-class-properties',
                             '@babel/plugin-proposal-object-rest-spread',
+                            ["@babel/plugin-transform-runtime",
+                                {
+                                    "regenerator": true
+                                }
+                            ]
                         ],
                     }
                 }   ],

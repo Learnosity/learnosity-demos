@@ -1,5 +1,6 @@
+import { waitElementToExist, delay } from '../utils';
 import _ from 'lodash';
-import {GCA_QUESTiON_WRAPPER, GCA_RESPONSE_CONTAINER} from "../contants";
+import { GCA_QUESTiON_WRAPPER, GCA_RESPONSE_CONTAINER } from "../contants";
 
 export default class QuestionApiService {
     app = null;
@@ -33,29 +34,40 @@ export default class QuestionApiService {
         return Promise.reject();
     }
 
-    append(data) {
-        if( !this.app || !data) {
-            return
+    async append( { question, state } ) {
+        if(!(this.app && this.app.append)) {
+            return Promise.reject();
         }
-        const wrapper = document.querySelector(`.${GCA_QUESTiON_WRAPPER}`);
-        const div = document.createElement('DIV');
 
-        div.className = `${GCA_RESPONSE_CONTAINER} question-${data.response_id}`;
+        const tempData = { ...question, state };
+        const wrapper = document.querySelector(`.${GCA_QUESTiON_WRAPPER}`);
+        if (wrapper.firstChild) {
+            wrapper.removeChild(wrapper.firstChild);
+        }
+        const div = document.createElement('DIV');
+        const randomizedString = Math.random().toString(36).substr(2, 6);
+        tempData.response_id = `${tempData.type}-${randomizedString}`;
+
+        div.className = `${GCA_RESPONSE_CONTAINER} question-${tempData.response_id}`;
+
         wrapper.appendChild(div);
 
-
-        // #TODO: Fix the structure of this config to json
         const toAppend = {
                questions: [
-                   data
+                   tempData
                ],
                responses: {
-                   [data.response_id]: {
+                   [tempData.response_id]: {
                        value: ""
                    }
                }
-            }
+            };
 
         this.app.append(toAppend);
+
+        await waitElementToExist(`#${tempData.response_id}`, wrapper);
+        await delay(500);
+
+        return Promise.resolve();
     }
 }

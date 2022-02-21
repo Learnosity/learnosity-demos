@@ -16,7 +16,15 @@ Yarn start
 Yarn run watch
 ```
 
-- Run the PHP server
+- For dev, run the PHP server 
 ```
 php -S localhost:8080
 ```
+
+or run the PHP server it in the root
+```
+php -S localhost:8088 --docroot www
+```
+then go to 
+
+http://localhost:8088/assessment/customization/style-guide/index.php?state=initial
