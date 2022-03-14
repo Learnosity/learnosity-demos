@@ -88,7 +88,7 @@ $signedRequest = $Init->generate();
 <!-- Load Learnosity -->
 <script src="<?php echo $url_items; ?>"></script>
 <!-- Load the TextHelp library -->
-<script type="text/javascript" src="https://configuration.speechstream.net/learnosity/v217/config.js"></script>
+<script src="https://toolbar.speechstream.net/SpeechStream/latest/speechstream.js" type="text/javascript" data-speechstream-config="Learnosityv350R1"></script>
 
 <script>
 
@@ -98,32 +98,39 @@ $signedRequest = $Init->generate();
         readyListener: function () {
             console.log("Listener fired");
             var assessApp = itemsApp.assessApp();
-            assessApp.on('test:start', function() {
-                // When the assessment starts, Texthelp’s SpeechStream will parse through the DOM
-                // and dynamically ignore certain specified ‘classes’ that are listed in SpeechStream’s configuration file,
-                // which were previously identified as not to be read aloud.
-                TexthelpSpeechStream.addToolbar();
-            });
             assessApp.on('button:SpeechStream:clicked', function(){
                 showSpeechStreamBar();
             });
         }
     });
 
-    // This is called by the toolbar when it has loaded and finished processing.
-    function $rw_toolbarLoadedCallback() {
-        // Set the start point for the TextHelp reader
-        $rw_setStartPoint("start");
-    }
-
+    var speechStreamFirstLoad = true;
     var showSpeechStream = true;
+    var speechstreamApi;
 
     function showSpeechStreamBar(){
-        showSpeechStream = !showSpeechStream;
-        window.texthelp.SpeechStream.ui.toolbar.toolbar.setVisibility(showSpeechStream);
-        $rw_stopSpeech();
-        $rw_enableClickToSpeak(false);
+    if(speechStreamFirstLoad){
+         window.speechstream.Loader.lateLoad().then((api)=>{ sstoolbarLoaded(api) });
     }
+    else{
+        showSpeechStream = !showSpeechStream;
+        speechstreamApi.toggleBar();
+        }
+    }
+
+    function sstoolbarLoaded(api){
+        speechstreamApi = api;
+        const ignoreClasses =".sr-item-description, .mq-math-mode, [class^='lrn-accessibility-'], .sr-only, .test-title-text, .subtitle, .item-count, .timer, .lrn_sort_gripper, .lrn-choicematrix-column-title, .footer";
+        const doc = window.document;
+        const domControl = speechstreamApi.domControlTools.getNewDomControl(doc);
+        domControl.addIgnoreListQuerySelector(ignoreClasses);
+        const elemStart = document.getElementById('start');
+        speechstreamApi.domControlTools.setStartPoint(elemStart);
+        const styleListArray = ["em","strong","b","i","u","tt","font","kbd","dfn","cite","sup","sub","a","embed","span","small","nobr","wbr",
+                                   "acronym","abbr","code","s","chunk","th:pron","img","/th:pron","w","/w","lic/lic","break","silence","thspan","beelinereader", "x-marker", "texthelphighlightspan", "thspan"];
+        speechstreamApi.domControlTools.setStyleList(styleListArray, true);
+        speechStreamFirstLoad = false;
+     }
 
 </script>
 
