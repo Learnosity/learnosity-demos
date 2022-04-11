@@ -83,7 +83,7 @@ $signedRequest = $init->generate();
     </div>
     <div class="overview">
         <h1>Custom Question - Box & Whisker</h1>
-        <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.</p>
+        <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.</p>
     </div>
 </div>
 

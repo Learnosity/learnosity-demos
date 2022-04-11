@@ -143,7 +143,7 @@ include_once 'includes/header.php';
                         <h3 class="panel-title">Custom Box and Whisker Plot</h3>
                     </div>
                     <div class="panel-body">
-                        <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.<p>
+                        <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.<p>
                         <p class="text-right">
                             <a class="demo_link" href="./customquestions/custom_box_whisker.php">Demo</a>
                         </p>
@@ -172,7 +172,7 @@ include_once 'includes/header.php';
                         <h3 class="panel-title">Author Custom Box and Whisker Plot</h3>
                     </div>
                     <div class="panel-body">
-                        <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.<p>
+                        <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.<p>
                         <p class="text-right">
                             <a class="demo_link" href="./customquestions/custom_box_whisker_authoring.php">Demo</a>
                         </p>
