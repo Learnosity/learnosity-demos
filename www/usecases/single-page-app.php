@@ -24,7 +24,7 @@ $request1 = [
     'rendering_type' => 'assess',
     'user_id' => '$ANONYMIZED_USER_ID',
     'session_id' => Uuid::generate(),
-    'organisation_id' => 505,
+    'organisation_id' => $roAdditionalOrgId,
     'items' => [
         'Sci-Demo-1',
         'Sci-Demo-2',
@@ -58,7 +58,7 @@ $request2 = [
     'rendering_type' => 'assess',
     'user_id' => '$ANONYMIZED_USER_ID',
     'session_id' => Uuid::generate(),
-    'organisation_id' => 505,
+    'organisation_id' => $roAdditionalOrgId,
     'items' => [
         'Gram-1',
         'Gram-2',
@@ -92,7 +92,7 @@ $request3 = [
     'rendering_type' => 'assess',
     'user_id' => '$ANONYMIZED_USER_ID',
     'session_id' => Uuid::generate(),
-    'organisation_id' => 505,
+    'organisation_id' => $roAdditionalOrgId,
     'items' => [
         'Au-Demo-1',
         'Au-Demo-2',

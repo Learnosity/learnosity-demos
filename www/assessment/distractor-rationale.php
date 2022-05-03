@@ -30,7 +30,7 @@ $request1 = [
     'type' => 'local_practice',
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
-    'organisation_id' => 505,
+    'organisation_id' => $roAdditionalOrgId,
     'items' => [
         'Sci-Demo-1',
         'Sci-Demo-2',
@@ -64,7 +64,7 @@ $request2 = [
     'type' => 'local_practice',
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
-    'organisation_id' => 505,
+    'organisation_id' => $roAdditionalOrgId,
     'items' => [
         'dr4_no_changes_unless_you_know_the_impact'
     ]
