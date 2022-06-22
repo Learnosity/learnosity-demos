@@ -28,13 +28,34 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        'act1',
-        'act2',
-        'act3',
-        'act4',
-        'act5',
-        'act6',
-        'act8'
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act1'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act2'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act3'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act4'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act5'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act6'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act8'
+        ]
     ]
 ];
 

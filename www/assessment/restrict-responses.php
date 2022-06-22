@@ -27,11 +27,26 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        'act2',
-        'act3',
-        'act17',
-        'act4',
-        'act5'
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act2'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act3'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act17'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act4'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'act5'
+        ]
     ],
     'config' => [
         'ignore_question_attributes' => ['validation'],

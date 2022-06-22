@@ -26,7 +26,20 @@ $request = [
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
-    'items' => ['ccore_parcc_grade10_prose', 'ccore_parcc_grade10_ebsr1', 'ccore_parcc_grade10_ebsr2'],
+    'items' => [
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'ccore_parcc_grade10_prose'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'ccore_parcc_grade10_ebsr1'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'ccore_parcc_grade10_ebsr2'
+        ]
+    ],
     'config' => [
         'regions' => 'main',
         'time' => [

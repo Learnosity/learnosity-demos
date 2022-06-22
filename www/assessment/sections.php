@@ -28,19 +28,54 @@ $request = [
     'user_id' => '$ANONYMIZED_USER_ID',
     'sections' => [
         [
-            'items' => ['Demo3', 'Demo4', 'Demo5'],
+            'items' => [
+                [
+                    'id' => Uuid::generate(),
+                    'reference' =>'Demo3'
+                ],
+                [
+                    'id' => Uuid::generate(),
+                    'reference' => 'Demo4'
+                ],
+                [
+                    'id' => Uuid::generate(),
+                    'reference' => 'Demo5'
+                ]
+            ],
             'config' => [
                 'subtitle' => 'Vocabulary section'
             ]
         ],
         [
-            'items' => ['Demo6', 'Demo7', 'Demo8'],
+            'items' => [
+                [
+                    'id' => Uuid::generate(),
+                    'reference' =>'Demo6'
+                ],
+                [
+                    'id' => Uuid::generate(),
+                    'reference' => 'Demo7'
+                ],
+                [
+                    'id' => Uuid::generate(),
+                    'reference' => 'Demo8'
+                ]
+            ],
             'config' => [
                 'subtitle' => 'Grammar section'
             ]
         ],
         [
-            'items' => ['Demo9', 'Demo10'],
+            'items' => [
+                [
+                    'id' => Uuid::generate(),
+                    'reference' =>'Demo9'
+                ],
+                [
+                    'id' => Uuid::generate(),
+                    'reference' => 'Demo10'
+                ]
+            ],
             'config' => [
                 'subtitle' => 'Spelling section'
             ]
