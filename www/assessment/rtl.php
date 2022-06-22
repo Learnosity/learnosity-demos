@@ -27,11 +27,26 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        'ARABIC_Demo9',
-        'salim-arabic-mcq-2',
-        'ar-drawing-rtl',
-        'choice-matrix-tpl-i18n-item4-arb',
-        'token-i18n-item5-arb'
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'ARABIC_Demo9'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'salim-arabic-mcq-2'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'ar-drawing-rtl'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'choice-matrix-tpl-i18n-item4-arb'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'token-i18n-item5-arb'
+        ]
     ],
     'config' => [
         'regions' => 'main',

@@ -26,9 +26,18 @@ $request1 = [
     'session_id' => Uuid::generate(),
     'organisation_id' => $roAdditionalOrgId,
     'items' => [
-        'Sci-Demo-1',
-        'Sci-Demo-2',
-        'Sci-Demo-3',
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Sci-Demo-1'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Sci-Demo-2'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Sci-Demo-3'
+        ],
     ],
     'config' => [
         'title' => 'Activity 1',
@@ -60,9 +69,19 @@ $request2 = [
     'session_id' => Uuid::generate(),
     'organisation_id' => $roAdditionalOrgId,
     'items' => [
-        'Gram-1',
-        'Gram-2',
-        'Gram-3',
+        
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Gram-1',
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Gram-2',
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Gram-3',
+        ]
     ],
     'config' => [
         'title' => 'Activity 2',
@@ -94,9 +113,18 @@ $request3 = [
     'session_id' => Uuid::generate(),
     'organisation_id' => $roAdditionalOrgId,
     'items' => [
-        'Au-Demo-1',
-        'Au-Demo-2',
-        'Au-Demo-3'
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Au-Demo-1'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Au-Demo-2'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Au-Demo-3'
+        ]
     ],
     'config' => [
         'title' => 'Activity 3',

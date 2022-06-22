@@ -27,9 +27,18 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        'workedsolutions_1',
-        'workedsolutions_2',
-        'workedsolutions_3'
+        [
+            'id' => 'workedsolutions_1',
+            'reference' => 'workedsolutions_1'
+        ],
+        [
+            'id' => 'workedsolutions_2',
+            'reference' => 'workedsolutions_2'
+        ],
+        [
+            'id' => 'workedsolutions_3',
+            'reference' => 'workedsolutions_3'
+        ]
     ]
 ];
 

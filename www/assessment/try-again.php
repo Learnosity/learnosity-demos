@@ -23,8 +23,14 @@ $request = [
     'state' => 'initial',
     'activity_id' => 'tryagaindemo',
     'items' => [
-        'Space Demo Item 4 - New',
-        'Try_Again_math_test'
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Space Demo Item 4 - New'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Try_Again_math_test'
+        ]
     ],
     'name' => 'TEST',
     'type' => 'submit_practice',

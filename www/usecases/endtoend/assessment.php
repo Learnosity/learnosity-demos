@@ -13,8 +13,6 @@ include_once '../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-
-
 $activity_id = 'Demo_Activity';
 
 $security = array(
@@ -47,8 +45,16 @@ $request = [
 
 function getItemsArray()
 {
-    return explode(",", filter_input(INPUT_GET, 'itemIDs', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-    ;
+    $references = explode(",", filter_input(INPUT_GET, 'itemIDs', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    
+    $itemsArray = [];
+    foreach ($references as $key => $reference) {
+        $itemsArray[] = [
+            'id' => Uuid::generate(),
+            'reference' => $reference
+        ];
+    }
+    return $itemsArray;
 }
 
 

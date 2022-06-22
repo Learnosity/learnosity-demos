@@ -32,9 +32,18 @@ $request1 = [
     'user_id' => '$ANONYMIZED_USER_ID',
     'organisation_id' => $roAdditionalOrgId,
     'items' => [
-        'Sci-Demo-1',
-        'Sci-Demo-2',
-        'Sci-Demo-3',
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Sci-Demo-1'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Sci-Demo-2'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Sci-Demo-3'
+        ],
     ],
     'config' => [
         'regions' => 'main',
@@ -66,7 +75,10 @@ $request2 = [
     'user_id' => '$ANONYMIZED_USER_ID',
     'organisation_id' => $roAdditionalOrgId,
     'items' => [
-        'dr4_no_changes_unless_you_know_the_impact'
+        [
+            'id' => 'dr4_no_changes_unless_you_know_the_impact',
+            'reference' => 'dr4_no_changes_unless_you_know_the_impact'
+        ]
     ]
 ];
 
@@ -79,13 +91,34 @@ $request3 = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        'act1',
-        'act2',
-        'act3',
-        'act4',
-        'act5',
-        'act6',
-        'act8'
+        [
+            'id' => 'act1',
+            'reference' => 'act1'
+        ],
+        [
+            'id' => 'act2',
+            'reference' => 'act2'
+        ],
+        [
+            'id' => 'act3',
+            'reference' => 'act3'
+        ],
+        [
+            'id' => 'act4',
+            'reference' => 'act4'
+        ],
+        [
+            'id' => 'act5',
+            'reference' => 'act5'
+        ],
+        [
+            'id' => 'act6',
+            'reference' => 'act6'
+        ],
+        [
+            'id' => 'act8',
+            'reference' => 'act8'
+        ]
     ]
 ];
 

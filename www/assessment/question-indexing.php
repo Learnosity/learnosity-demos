@@ -27,11 +27,26 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        'Demo10',
-        'multiplequestionsdemo',
-        'Demo4',
-        'Demo6',
-        'Demo7'
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo10'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'multiplequestionsdemo'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo4'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo6'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo7'
+        ]
     ],
     'config' => [
         'title' => 'Demo activity - showcasing question types and assess options',
