@@ -18,7 +18,24 @@ $security = array(
 );
 
 // Decide which items your want to print
-$items = array('printing-mcq', 'printing-mcq-multi', 'printing-token', 'printing-fillintheblank');
+$items = [
+    [
+        'id' => 'printing-mcq',
+        'reference' => 'printing-mcq'
+    ],
+    [
+        'id' => 'printing-mcq-multi',
+        'reference' => 'printing-mcq-multi'
+    ],
+    [
+        'id' => 'printing-token',
+        'reference' => 'printing-token'
+    ],
+    [
+        'id' => 'printing-fillintheblank',
+        'reference' => 'printing-fillintheblank'
+    ]
+];
 $sessionid = Uuid::generate();
 
 // Load the assessment in `local_practice` (you won't want to submit actual responses)
