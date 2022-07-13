@@ -12,7 +12,17 @@ include_once '../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$language = filter_input(INPUT_GET, 'language', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'en-US']]);
+function validateLanguageParam(string $language)
+{
+    $pattern = '/^[a-z]{2}-[A-Z]{2}$/';
+    if (preg_match($pattern, $language)) {
+        return $language;
+    } else {
+        return 'en-US';
+    }
+}
+
+$language = filter_var($_GET['language'] ?? "", FILTER_CALLBACK, ['options' => 'validateLanguageParam']);
 $env = filter_input(INPUT_GET, 'env', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'prod']]);
 
 /*
@@ -212,7 +222,7 @@ $signedRequest = $Init->generate();
                                            } ?>" href="/assessment/activities-i18n.php?language=tl-PH">Pilipino/Tagalog</a>
                 | <a class="other-language <?php if ($language === 'nl-NL') {
                     echo 'selected';
-                  } ?>" href="/assessment/activities-i18n.php?language=nl-NL">Dutch</a>
+                                           } ?>" href="/assessment/activities-i18n.php?language=nl-NL">Dutch</a>
         </p>
         <p><b>Add your own:</b> <a href="https://help.learnosity.com/hc/en-us/articles/360002918818/">Documentation</a> | <a href="https://github.com/Learnosity/learnosity-i18n">Github repo</a> </p>
 

@@ -14,7 +14,17 @@ include_once 'utils/file.php';
 
 use LearnositySdk\Request\Init;
 
-$language = filter_input(INPUT_GET, 'language', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'pt-PT']]);
+function validateLanguageParam(string $language)
+{
+    $pattern = '/^[a-z]{2}-[A-Z]{2}$/';
+    if (preg_match($pattern, $language)) {
+        return $language;
+    } else {
+        return 'pt-PT';
+    }
+}
+
+$language = filter_var($_GET['language'] ?? "", FILTER_CALLBACK, ['options' => 'validateLanguageParam']);
 $env = filter_input(INPUT_GET, 'env', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'prod']]);
 
 /*
@@ -165,19 +175,25 @@ $signedRequest = $Init->generate();
         <p style="margin-bottom:25px;">Click a language icon to see a translation of the assessment below:</p>
         <div>
             <div class="language-button-container">
-                <a class="language-button <?php if ($language === 'pt-PT') { echo 'selected'; } ?>" href="/authoring/item-list-i18n.php?language=pt-PT">
+                <a class="language-button <?php if ($language === 'pt-PT') {
+                    echo 'selected';
+                                          } ?>" href="/authoring/item-list-i18n.php?language=pt-PT">
                     <img class="language-flag" src="/static/images/i18n/flag-PT.png" />
                     Português / Portuguese
                 </a>
             </div>
             <div class="language-button-container">
-                <a class="language-button <?php if ($language === 'es-ES') { echo 'selected'; } ?>" href="/authoring/item-list-i18n.php?language=es-ES">
+                <a class="language-button <?php if ($language === 'es-ES') {
+                    echo 'selected';
+                                          } ?>" href="/authoring/item-list-i18n.php?language=es-ES">
                     <img class="language-flag" src="/static/images/i18n/flag-ES.png" />
                     Español / Spanish
                 </a>
             </div>
             <div class="language-button-container">
-                <a class="language-button <?php if ($language === 'ar-EG') { echo 'selected'; } ?>" href="/authoring/item-list-i18n.php?language=ar-EG">
+                <a class="language-button <?php if ($language === 'ar-EG') {
+                    echo 'selected';
+                                          } ?>" href="/authoring/item-list-i18n.php?language=ar-EG">
                     <img class="language-flag" src="/static/images/i18n/flag-EG.png" />
                     العَرَبِيَّة / Arabic
                 </a>
