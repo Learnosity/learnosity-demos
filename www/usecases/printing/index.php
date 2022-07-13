@@ -38,7 +38,7 @@ include_once '../../lrn_config.php';
                         <li>Fill in the blanks</li>
                     </ul>
                     <p class="text-right">
-                        <a class="demo_link"  href="./print.php">Demo</a>
+                        <a class="demo_link"  href="https://demos.learnosity.com/usecases/printing/print.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -58,7 +58,7 @@ include_once '../../lrn_config.php';
                         <li>Fill in the blanks</li>
                     </ul>
                     <p class="text-right">
-                        <a class="demo_link"  href="./print-answer-key.php">Demo</a>
+                        <a class="demo_link"  href="https://demos.learnosity.com/usecases/printing/print-correct-answers.php">Demo</a>
                     </p>
                 </div>
             </div>
