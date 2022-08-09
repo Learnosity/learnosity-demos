@@ -58,7 +58,7 @@ $signedRequest = $Init->generate();
     <div class="overview">
         <h2>Desmos Calculators - Graphing, Scientific, and Four Function</h2>
         <p>
-            Through the Desmos and Learnosity partnership, clients can leverage the Graphing, Scientific and Four Function Calculators in two ways.
+            Through the Desmos Studio and Learnosity partnership, clients can leverage the Desmos Graphing, Scientific and Four Function Calculators in two ways.
         </p>
         <p>
             First, these Calculators can be included as a feature on any Learnosity item.<br/>
