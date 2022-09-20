@@ -1592,3 +1592,71 @@ textarea.form-control {
     margin-right: 5px;
     margin-left: 13px;
 }
+
+/********************************************************************
+*
+* Cookie consent banner styles
+*
+********************************************************************/
+
+#lrn-cookie-banner {
+  position: fixed;
+  padding: 1em;
+  left: 5%;
+  bottom: 5%;
+  background: #f6f9fe;
+  box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 1100;
+  width: 24%;
+}
+
+@media screen and (max-width: 820px) {
+  #lrn-cookie-banner {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 821px) {
+  #lrn-cookie-banner {
+    width: 40%;
+  }
+}
+
+#lrn-cookie-banner .lrn-flex-container {
+  display: flex;
+}
+
+#lrn-cookie-banner .lrn-flex-item {
+  flex-grow: 1;
+}
+
+#lrn-cookie-banner .lrn-flex-item + .lrn-flex-item {
+  margin-left: 1%;
+  right: 1%;
+}
+
+#lrn-cookie-banner p {
+  font-family: 'Lato-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+#lrn-cookie-banner a {
+  color: #0071ce;
+  text-decoration: underline;
+}
+
+#lrn-cookie-banner button {
+  border: 1px #00313d solid;
+  border-radius: 2px;
+  background: #00313d;
+  font-family: 'Lato-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
