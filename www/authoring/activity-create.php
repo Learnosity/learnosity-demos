@@ -1,5 +1,7 @@
 <?php
 
+$pageTitle = "Create New Activities - Learnosity Demos";
+
 //common environment attributes including search paths. not specific to Learnosity
 include_once '../env_config.php';
 
@@ -44,7 +46,7 @@ $signedRequest = $Init->generate();
         <div class="overview">
             <h2>Create New Activities</h2>
             <p>
-                The activity edit mode allows authors to create and edit activities that are automatically saved to your Learnosity-hosted item bank.
+                The activity edit mode allows authors to create and edit activities that are automatically saved to your Learnosity-hosted item bankz.
             </p>
         </div>
     </div>
