@@ -14,6 +14,12 @@
                 <a href="https://reference.learnosity.com">API Reference</a>
                 <a href="https://status.learnosity.com">API Status</a>
                 <a href="https://learnosity.com">Visit Learnosity</a>
+                <?php
+                if ($_SERVER['REQUEST_URI'] == "/")
+                {
+                    echo '<a href="/?resetConsent=true">Reset Cookies</a>';
+                }
+                ?>
             </div>
         </div>
     </div>
