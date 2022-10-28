@@ -24,6 +24,8 @@
             <li><a class="blue-chevron" href="#Desmos">Helping every student love learning math: Desmos</a></li>
             <li><a class="blue-chevron" href="#AB">Browse and Tag Learning Standards: Academic Benchmarks</a></li>
             <li><a class="blue-chevron" href="#GeoGebra">Powerful math tools: GeoGebra</a></li>
+            <li><a class="blue-chevron" href="#Brainingcamp">Digital math manipulatives: Brainingcamp</a></li>
+            <li><a class="blue-chevron" href="#Alchemie">Game-inspired interactives: Alchemie</a></li>
         </ul>
     </div>
 
@@ -81,8 +83,7 @@
                     <h3 class="panel-title" id="AB">Browse and Tag Learning Standards: Academic Benchmarks</h>
                 </div>
                 <div class="panel-body">
-                    <p>Certica’s partnership with Learnosity allows Certica’s Academic Benchmarks customers to leverage the
-                     Academic Benchmarks digitized learning standards and unique identifiers (GUIDs) in an integrated manner within the Learnosity toolset.</p>
+                    <p>Instructure’s partnership with Learnosity allows Elevate Standards Alignment customers to leverage the Academic Benchmarks digitized learning standards and unique identifiers (GUIDs) in an integrated manner within the Learnosity toolset.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./academic-benchmarks.php">Demo</a>
                     </p>
@@ -101,6 +102,35 @@
                     <p>GeoGebra provides several powerful math tools including a graphing calculator, geometry tool, spreadsheet, probability calculator, algebra calculator and 3D graphing.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./geogebra.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" id="Brainingcamp">Digital math manipulatives: Brainingcamp</h>
+                </div>
+                <div class="panel-body">
+                    <p>Easily embed into your product, combining the familiarity of physical manipulatives with the convenience and powerful learning features of our digital tools.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./brainingcamp.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" id="Alchemie">Game-inspired interactives: Alchemie</h>
+                </div>
+                <div class="panel-body">
+                    <p>The Alchemie integration is transforming the options for chemistry question types. Now, prompts can require students to build or use a model to answer a question.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./alchemie.php">Demo</a>
                     </p>
                 </div>
             </div>
