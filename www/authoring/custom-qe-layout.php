@@ -141,7 +141,7 @@ $signedRequest = $Init->generate();
 
                         <span data-lrn-qe-label="options" class=" mts"></span>
                         <div data-lrn-qe-loop="options[*]">
-                            <span data-lrn-qe-input="options[*]"></span>
+                            <span data-lrn-qe-input="options[*].label"></span>
                         </div>
                         <span data-lrn-qe-action-add="options"></span>
                     </div>
