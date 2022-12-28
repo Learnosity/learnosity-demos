@@ -70,6 +70,7 @@ $signedRequest = $init->generate();
     <div class="overview">
         <h1>Custom Question - Clock</h1>
         <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.</p>
+        <a href="https://github.com/Learnosity/custom-questions-skeleton/tree/master/demos/clock">View full question sourcecode here</a>
     </div>
 </div>
 
@@ -99,10 +100,6 @@ $signedRequest = $init->generate();
 
             question.on('changed', function (r) {
                 updateScores(question);
-            });
-
-            $('#validate_question').off().click(function() {
-                questionsApp.validateQuestions();
             });
         }
     });
