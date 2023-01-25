@@ -19,8 +19,8 @@ $per_question = 'incorrect';
 $per_response = 'always';
 
 if (isset($_POST['updateStateType'])) {
-    $per_question = filter_var($_POST['per_question'], FILTER_SANITIZE_STRING);
-    $per_response = filter_var($_POST['per_response'], FILTER_SANITIZE_STRING);
+    $per_question = filter_var($_POST['per_question'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $per_response = filter_var($_POST['per_response'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 }
 
 // Initialization options for Demo 1
