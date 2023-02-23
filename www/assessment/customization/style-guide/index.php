@@ -50,13 +50,11 @@ $signedRequest = $Init->generate();
     window.lrn_gca_signed_request = <?php echo $signedRequest; ?>;
 </script>
 <div id="app"></div>
-<script type="text/javascript" src="dist/app.js" ></script>
-<script type="text/javascript" src="dist/vendor.js" ></script>
-
 <div class="page-preloader">
     <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 </div>
-
+<script type="text/javascript" src="dist/app.js" ></script>
+<script type="text/javascript" src="dist/vendor.js" ></script>
 <div id="widgetContainer"></div>
 <script>
     const globalApiKey = '3063c8a5-7a9b-4e55-95e4-26070136bec9';
