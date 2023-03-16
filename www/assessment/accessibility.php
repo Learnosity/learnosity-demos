@@ -37,10 +37,6 @@ $request = [
         ],
         [
             'id' => Uuid::generate(),
-            'reference' => 'Demo6'
-        ],
-        [
-            'id' => Uuid::generate(),
             'reference' => 'Demo7'
         ],
         [
