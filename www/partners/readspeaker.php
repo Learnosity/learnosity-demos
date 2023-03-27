@@ -70,11 +70,8 @@ $signedRequest = $Init->generate();
     var eventOptions = {
         readyListener: function() {
             console.log("Items API has successfully initialized.");
-            //// Callback used to initialise ReadSpeaker toolbar once Learnosity assessment renders.
-            window.rsCallbacks;
-            ReadSpeaker.q(function(){
-                ReadSpeaker.Learnosity.init();
-            });
+            // Callback used to initialise ReadSpeaker toolbar once Learnosity assessment renders.
+            window.rsCallbacks.readyListener();
         },
         errorListener: function (err) {
             console.log(err);
