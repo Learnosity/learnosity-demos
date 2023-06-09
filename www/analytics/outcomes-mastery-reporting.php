@@ -163,11 +163,11 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Analyze Learning Outcomes and Mastery</h2>
-            <p>Drill down in individual and class-based reports to see percent success in learning outcomes and mastery. Optionally visualize data with score analysis and more.</p>
+            <h2>Analyze Learning Outcomes Report and Mastery</h2>
+            <p>Drill down in individual and class-based reports to see percent success in Learning Outcomes Report and mastery. Optionally visualize data with score analysis and more.</p>
             <ul>
-                <li><h4><a href="#item-scores-by-tag-by-user-report">Learning Outcomes - Individual</a></h4></li>
-                <li><h4><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes - Class (with visualization)</a></h4></li>
+                <li><h4><a href="#item-scores-by-tag-by-user-report">Learning Outcomes Report</a></h4></li>
+                <li><h4><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes Report - Class</a></h4></li>
             </ul>
         </div>
     </div>
@@ -175,7 +175,7 @@ $signedRequest = $Init->generate();
     <!--individual report-->
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="item-scores-by-tag-by-user-report"><a href="#item-scores-by-tag-by-user-report">Learning Outcomes - Individual</a></h3>
+        <h3 id="item-scores-by-tag-by-user-report"><a href="#item-scores-by-tag-by-user-report">Learning Outcomes Report - Individual</a></h3>
         <p>See your class or group's scores, all broken down according to tag. This report allows you to easily identify strengths and weaknesses based on the skills or subject areas associated with the content in the activity.</p>
 
         <div id="individual-item-skills-report-container" class="report-container">
@@ -186,7 +186,7 @@ $signedRequest = $Init->generate();
 
     <!--class report-->
     <div class="section pad-sml">
-        <h3 id="item-scores-by-tag-by-user-class-report"><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes - Class (with visualization)</a></h3>
+        <h3 id="item-scores-by-tag-by-user-class-report"><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes Report - Class</a></h3>
         <p>
             This demo is based on chapters of a Math curriculum. We've implemented some custom highlighting as an example of some of the powerful customizations possible with this report. You can also use your own custom logic to process and modify the percentages that are shown in every cell. This enables you to implement special weightings, exclusions or rounding in your report if required.
         </p>
