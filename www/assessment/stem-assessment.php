@@ -49,7 +49,7 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Delivering STEM assessments</h2>
+            <h2>Delivering STEM Assessments</h2>
             <p>This demo showcases how you can assess advanced STEM topics using our new math scoring engine.</p>
         </div>
     </div>
