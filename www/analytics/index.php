@@ -96,10 +96,10 @@ include_once 'includes/header.php';
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Analyze Learning Outcomes & Mastery</h3>
+                    <h3 class="panel-title">Analyze Learning Outcomes Report & Mastery</h3>
                 </div>
                 <div class="panel-body">
-                    <p>Drill down deeper into student and class results broken down by topic areas or learning outcomes.</p>
+                    <p>Drill down deeper into student and class results broken down by topic areas or Learning Outcomes Report.</p>
                     <p class="text-right">
                         <a class="demo_link"  href="./outcomes-mastery-reporting.php">Demo</a>
                     </p>

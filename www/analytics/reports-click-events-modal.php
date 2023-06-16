@@ -45,7 +45,7 @@ $signedRequest = $Init->generate();
         </div>
     </div>
     <section>
-        <h3 class="report-title">Sessions Summary</h3>
+        <h3 class="report-title">Sessions Summary Report</h3>
         <span class="learnosity-report" id="click-event-report"></span>
     </section>
 </div>
