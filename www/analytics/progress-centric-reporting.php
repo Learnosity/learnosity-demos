@@ -67,16 +67,16 @@ $signedRequest = $Init->generate();
             <h2>Coursework Progress Reporting</h2>
             <p>Track the progress of a student, or group of students, against learning objectives, standards, or other tag-based alignments. Or build your own dashboard with our Progress Single report.</p>
             <ul>
-                <li><h4><a href="#progress-by-tag-report">Progress by Tag Report</a></h4></li>
+                <li><h4><a href="#progress-by-tag-report">Progress by Tag Report (Deprecated)</a></h4></li>
                 <li><h4><a href="#progress-by-tag-by-user-report">Progress by Tag by User Report</a></h4></li>
-                <li><h4><a href="#progress-single-report">Progress Single Report</a></h4></li>
+                <li><h4><a href="#progress-single-report">Progress Single Report (Deprecated)</a></h4></li>
             </ul>
         </div>
     </div>
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="progress-by-tag-report"><a href="#progress-by-tag-report">Progress by Tag Report</a></h3>
+        <h3 id="progress-by-tag-report"><a href="#progress-by-tag-report">Progress by Tag Report (Deprecated)</a></h3>
         <p>See at a glance how a student performed against two levels of tagging. Note overall performance in Expressions and Equations, for example, but also drill down to see progress in individual Common Core standards.</p>
         <div id="progress-by-tag"></div>
     </div>
@@ -90,7 +90,7 @@ $signedRequest = $Init->generate();
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="progress-single-report"><a href="#progress-single-report">Progress Single Report</a></h3>
+        <h3 id="progress-single-report"><a href="#progress-single-report">Progress Single Report (Deprecated)</a></h3>
         <p>Use the Progress Single Report when you want to build your own analytics views or dashboards out of several different progress metrics,</p>
         <div style="width:100px;"><div id="progress-single"></div></div>
     </div>

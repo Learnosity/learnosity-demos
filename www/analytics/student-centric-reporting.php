@@ -135,14 +135,14 @@ $signedRequest = $Init->generate();
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-activity-report"><a href="#lastscore-activity-report">Most recent score per Activity</a></h3>
+        <h3 id="lastscore-activity-report"><a href="#lastscore-activity-report">Last Score by Activity Report</a></h3>
         <p>See a student score for their most recent attempt at one or multiple activities.</p>
         <div id="lastscore-activity"></div>
     </div>
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="session-detail-report"><a href="#session-detail-report">Sessions Detail Report</a></h3>
+        <h3 id="session-detail-report"><a href="#session-detail-report">Sessions Detail by Item Report</a></h3>
 
         <p>Drill down into the student answer, score and correct answer for a session.</p>
         <div id="session-detail"></div>
