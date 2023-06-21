@@ -44,7 +44,7 @@ $signedRequest = $InitDemo->generate();
             <h2>Reset Response</h2>
             <br>
             <p>Use the <a href="https://reference.learnosity.com/questions-api/methods#question-ResetResponse"><code>resetResponse</code></a> public method to allow user to reset the response of a question.</p>
-            <p>Below is a demo of the <a href="https://reference.learnosity.com/questions-api/methods#question-ResetResponse"><code>resetResponse</code></a> public method showing what can be achieved with a button that lets the user reset their response to a question. This can be useful in certain situations where end-users can be penalised for choosing an incorrect response. This public method provides a way for students to "reset" their response and leave a question unattempted if they’re not confident about the correct answer. This functionality is not available by default.</p>
+            <p>Below is a demo of the <a href="https://reference.learnosity.com/questions-api/methods/question/resetResponse"><code>resetResponse</code></a> public method showing what can be achieved with a button that lets the user reset their response to a question. This can be useful in certain situations where end-users can be penalised for choosing an incorrect response. This public method provides a way for students to "reset" their response and leave a question unattempted if they’re not confident about the correct answer. This functionality is not available by default.</p>
         </div>
     </div>
 
@@ -64,7 +64,7 @@ $signedRequest = $InitDemo->generate();
         </div>
         <div class="button-note">
             <br>
-            <p>NOTE: The Reset Response button is a custom button that calls the <a href="https://reference.learnosity.com/questions-api/methods#question-ResetResponse"><code>resetResponse</code></a> public method.</p>
+            <p>NOTE: The Reset Response button is a custom button that calls the <a href="https://reference.learnosity.com/questions-api/methods/question/resetResponse"><code>resetResponse</code></a> public method.</p>
         </div>
     </div>
 
@@ -84,7 +84,7 @@ $signedRequest = $InitDemo->generate();
         </div>
         <div class="button-note">
             <br>
-            <p>NOTE: The Reset Response button is a custom button that calls the <a href="https://reference.learnosity.com/questions-api/methods#question-ResetResponse"><code>resetResponse</code></a> public method.</p>
+            <p>NOTE: The Reset Response button is a custom button that calls the <a href="https://reference.learnosity.com/questions-api/methods/question/resetResponse"><code>resetResponse</code></a> public method.</p>
         </div>
     </div>
 
@@ -104,7 +104,7 @@ $signedRequest = $InitDemo->generate();
         </div>
         <div class="button-note">
             <br>
-            <p>NOTE: The Reset Response button is a custom button that calls the <a href="https://reference.learnosity.com/questions-api/methods#question-ResetResponse"><code>resetResponse</code></a> public method.</p>
+            <p>NOTE: The Reset Response button is a custom button that calls the <a href="https://reference.learnosity.com/questions-api/methods/question/resetResponse"><code>resetResponse</code></a> public method.</p>
         </div>
     </div>
 

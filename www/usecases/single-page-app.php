@@ -159,8 +159,8 @@ $signedRequest3 = $init3->generate();
         <div class="overview">
             <h2>Manage Multiple Items API Instances in a Single Page App</h2>
             <p>This example illustrates best practices for managing the lifecycle of Items API instances in a single page app. See <a href="https://help.learnosity.com/hc/en-us/articles/360006013058">Guidelines for Using Items API with a Single Page App Architecture</a> for details about this approach.</p>
-            <p>In a typical single page app, views are created and destroyed frequently. If such a view contains an Items API assessments, we’ll also want to create or destroy its corresponding <code>itemsApp</code> instance. To achieve this, we can use the <a href="https://reference.learnosity.com/items-api/methods#init"><code>LearnosityItems.init()</code></a> and <a href="https://reference.learnosity.com/items-api/methods#itemsApp-Reset"><code>itemsApp.reset()</code></a> methods, and integrate <a href="https://reference.learnosity.com/items-api/events#assessmentEvents">Items API events</a> with our single page app.</p>
-            <p>Note that the activity list and navigation aren’t provided by Items API – they’re a basic example of how a single page app might function.</p>
+            <p>In a typical single page app, views are created and destroyed frequently. If such a view contains an Items API assessments, we'll also want to create or destroy its corresponding <code>itemsApp</code> instance. To achieve this, we can use the <a href="https://reference.learnosity.com/items-api/methods/LearnosityItems/init"><code>LearnosityItems.init()</code></a> and <a href="https://reference.learnosity.com/items-api/methods/itemsApp/reset"><code>itemsApp.reset()</code></a> methods, and integrate <a href="https://reference.learnosity.com/items-api/events">Items API events</a> with our single page app.</p>
+            <p>Note that the Activity list and navigation aren't provided by Items API. They're a basic example of how a single page app might function.</p>
         </div>
     </div>
 

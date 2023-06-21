@@ -81,7 +81,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Bind to Items API Events</h2>
-            <p>Below is a demo of event binding using the <a href="https://reference.learnosity.com/items-api/events#assessmentEvents">Assessment Events</a> to display custom notifications.</p>
+            <p>Below is a demo of event binding using the <a href="https://reference.learnosity.com/assess-api/events">Assessment Events</a> to display custom notifications.</p>
         </div>
     </div>
 
