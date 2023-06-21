@@ -72,7 +72,7 @@
         <div class="overview">
             <h2>Select Multiple Items from Item Browsing</h2>
             <p>The item list mode allows users to choose and select multiple items. This is particularly useful when building an item picker as part of a larger solution.<br>
-                Your application can then get the array of selected items using the <a href="https://reference.learnosity.com/author-api/methods#getSelectedItems">getSelectedItems()</a> method.</p>
+                Your application can then get the array of selected items using the <a href="https://reference.learnosity.com/author-api/methods/authorApp/getSelectedItems">getSelectedItems()</a> method.</p>
         </div>
     </div>
 

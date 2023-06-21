@@ -197,7 +197,7 @@ $signedRequest3 = $Init3->generate();
     <h3 id="demo2">Demo 2: Display Distractor Rationale with additional custom logic using public methods</h3>
     <p>In this demo, the Distractor Rationale is only shown the second time an answer is checked. Allowing the student
     to correct their response, and show the Distractor Rationale feedback on the second attempt. Rationale is rendered
-    using the <a href="https://reference.learnosity.com/items-api/methods#question-Validate">validate()</a> method.</p>
+    using the <a href="https://reference.learnosity.com/questions-api/methods/question/validate">validate()</a> method.</p>
     <hr>
     <p><span class="learnosity-item" data-reference="dr4_no_changes_unless_you_know_the_impact"></span></p>
     <!-- Display a custom button under the question. On click, we call a JavaScript method to render the distractor rationale -->
@@ -216,11 +216,11 @@ $signedRequest3 = $Init3->generate();
     <h3 id="demo3">Demo 3: Build your own Distractor Rationale display</h3>
     <p>You can also render Distractor Rationale using a custom UI. Authors create distractor rationale as normal in the
     Authoring tools, from there, a developer can render the content according to their design guidelines.</p>
-    <p>This demo uses the <a href="https://reference.learnosity.com/items-api/methods#question-MapValidationMetadata">mapValidationMetadata()</a> method
+    <p>This demo uses the <a href="https://reference.learnosity.com/questions-api/methods/question/mapValidationMetadata">mapValidationMetadata()</a> method
     to map the authored Distractor Rationale to the MCQ response options.</p>
-    <p>You can also use the <a href="https://reference.learnosity.com/questions-api/methods#learnosityApp-RenderMath">renderMath()</a>
+    <p>You can also use the <a href="https://reference.learnosity.com/questions-api/methods/learnosityApp/renderMath">renderMath()</a>
     method to render any LaTeX or MathML elements that have been created in the Distractor Rationale.</p>
-    <p>For a deeper example of how to implement custom distractor rationale, refer to <a href="https://support.learnosity.com/hc/en-us/articles/360000754818-Tutorial-202-Displaying-Distractor-Rationale">
+    <p>For a deeper example of how to implement custom distractor rationale, refer to <a href="https://help.learnosity.com/hc/en-us/articles/360000754818-Tutorial-202-Displaying-Distractor-Rationale">
     this tutorial.</a></p>
     <hr>
     <p>

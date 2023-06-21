@@ -77,7 +77,7 @@ $signedRequest = $Init->generate();
                 Distractor rationale are hints shown to a student when they select an incorrect answer.
                 <br>Try choosing an incorrect answer for the questions below to see distractor rationale in action.
                 <br>You can specify distractor rationale in the author API and then write code to display them.
-                <br>You can use the <a href="https://reference.learnosity.com/questions-api/methods#learnosityApp-RenderMath">renderMath()</a> method to render any Latex or MathML elements in the distractor rationale.
+                <br>You can use the <a href="https://reference.learnosity.com/questions-api/methods/learnosityApp/renderMath">renderMath()</a> method to render any Latex or MathML elements in the distractor rationale.
                 <br>For an example of how to implement distractor rationale, refer to <a href="https://support.learnosity.com/hc/en-us/articles/360000754818-Tutorial-202-Displaying-Distractor-Rationale">this tutorial.</a>
             <p>
         </div>

@@ -72,7 +72,7 @@ $signedRequest = $Init->generate();
                 to add comments to the workflow, so that Authors know what needs to be done in order to move an Item forwards.
                 Items, which are not in any workflow state, are given the 'Unassigned' state by default and can be moved
                 to state 'Draft'. The workflow functionality allows Authors to search for Items by workflow state. For more
-                information refer to the <a href="https://reference.learnosity.com/author-api/initialization#config_global_workflow_item">
+                information refer to the <a href="https://reference.learnosity.com/author-api/initialization/config.global.workflow.item">
                     Item workflow init options.
                 </a></p>
         </div>
