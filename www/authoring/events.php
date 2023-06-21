@@ -54,7 +54,7 @@ $signedRequest = $Init->generate();
     </div>
     <div class="overview">
         <h2>Bind to Authoring Events</h2>
-        <p>Better integrate Learnosity's authoring environment with your content management system. This demo shows how to bind to authoring events using the <a href="https://reference.learnosity.com/author-api/events#on">'on' public method</a> for custom notifications and other helpful reactions that you may require.</p>
+        <p>Better integrate Learnosity's authoring environment with your content management system. This demo shows how to bind to authoring events using the <a href="https://reference.learnosity.com/author-api/methods/authorApp/on">'on' public method</a> for custom notifications and other helpful reactions that you may require.</p>
         <p>As you work with the Author API below, actions will trigger a visual change to the corresponding event name in the list above the UI.</p>
     </div>
 </div>

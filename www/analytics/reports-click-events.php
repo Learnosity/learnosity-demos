@@ -54,7 +54,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Use Click Events to Display Additional Information and Reports</h2>
-            <p>Click events are events that are provided by certain reports, to provide mechanisms to bind to specific click events within the report. For more information about click events, and to see which reports they can be used in, please see our <a href="https://reference.learnosity.com/reports-api/events#clickEvents" target="_blank">documentation</a>.</p>
+            <p>Click events are events that are provided by certain reports, to provide mechanisms to bind to specific click events within the report. For more information about click events, and to see which reports they can be used in, please see our <a href="https://reference.learnosity.com/reports-api/events" target="_blank">documentation</a>.</p>
         </div>
     </div>
 

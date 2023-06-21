@@ -152,7 +152,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Right-to-Left Language Support</h2>
-            <p>This demo demonstrates the Learnosity approach to handling right-to-left languages. In this demo, everything is localised to Arabic using <a href="https://reference.learnosity.com/author-api/initialization#config_label_bundle">label bundles</a>.</p>
+            <p>This demo demonstrates the Learnosity approach to handling right-to-left languages. In this demo, everything is localised to Arabic using <a href="https://reference.learnosity.com/author-api/initialization/config.label_bundle">label bundles</a>.</p>
             <p>See an article on how to <a href="https://help.learnosity.com/hc/en-us/articles/360000858898-Configuring-Author-API-to-Initialize-in-RTL-Right-to-Left-Mode-Arabic-and-Hebrew-Language-Support-">configure Author API for right-to-left support</a>.</p>
         </div>
     </div>
