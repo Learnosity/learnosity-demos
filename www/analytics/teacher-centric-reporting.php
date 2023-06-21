@@ -34,20 +34,6 @@ $request = [
             ]
         ],
         [
-            'id' => 'lastscore-list-item',
-            'type' => 'lastscore-by-item-by-user',
-            'scoring_type' => 'partial',
-            "display_time_spent" => true,
-            "display_item_numbers" => true,
-            "activity_id" => 'Weekly_Math_Quiz',
-            'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Skylar White'],
-                ['id' => 'mce_student_2', 'name' => 'Walter White'],
-                ['id' => 'mce_student_3', 'name' => 'Saul Goodman']
-            ]
-        ],
-        [
             'id' => 'lastscore-activity-by-user',
             'type' => 'lastscore-by-activity-by-user',
             'scoring_type' => 'partial',
@@ -112,7 +98,7 @@ $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
+    <script src="<?php echo $url_reports; ?>"></script>
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
@@ -141,10 +127,7 @@ $signedRequest = $Init->generate();
     </div>
 
     <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-list-item-report"><a href="#lastscore-list-item-report">Last Score by Item by User Report</a></h3>
-        <p>Drill down and see exactly how each student did, per item. Helpful for identifying specific knowledge or understanding gaps in your group.</p>
-        <div id="lastscore-list-item"></div>
+        <?php require 'last-score-by-item-by-user/index.php'; ?>
     </div>
 
     <div class="section pad-sml">
@@ -165,7 +148,7 @@ $signedRequest = $Init->generate();
         <div id="response-analysis"></div>
     </div>
 
-    <script src="<?php echo $url_reports; ?>"></script>
+
     <script>
 
         var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>);
