@@ -1,11 +1,11 @@
 <?php
 use LearnositySdk\Request\Init;
 
-$lastScoreBABUReportConfigCutScore22 = array_merge($lastScoreBABUReportConfig, ['id' => "lastscore-by-activity-by-user-cutscore2"]);
+$lastScoreBABUReportConfigCutScore2 = array_merge($lastScoreBABUReportConfig, ['id' => "lastscore-by-activity-by-user-cutscore2"]);
 
-$InitLastScoreBABUCutScore22 = new Init('reports', $security, $consumer_secret, [
+$InitLastScoreBABUCutScore2 = new Init('reports', $security, $consumer_secret, [
     'reports' => [
-        $lastScoreBABUReportConfigCutScore22
+        $lastScoreBABUReportConfigCutScore2
     ],
 ]);
 ?>
@@ -26,7 +26,7 @@ $InitLastScoreBABUCutScore22 = new Init('reports', $security, $consumer_secret, 
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .learnosity-report .lrn-report-table td[data-custom_performance="1"] .lrn-report-user,
+     /* .learnosity-report .lrn-report-table td[data-custom_performance="1"] .lrn-report-user,
     .learnosity-report .lrn-report-table td[data-custom_performance="2"] .lrn-report-user,
     .learnosity-report .lrn-report-table td[data-custom_performance="3"] .lrn-report-user,
     .learnosity-report .lrn-report-table td[data-custom_performance="4"] .lrn-report-user {
@@ -35,7 +35,7 @@ $InitLastScoreBABUCutScore22 = new Init('reports', $security, $consumer_secret, 
         font-weight: 700;
         font-size: 13px;
         position: relative;
-    }
+    } 
     .learnosity-report .lrn-report-table td[data-custom_performance="1"] .lrn-report-score,
     .learnosity-report .lrn-report-table td[data-custom_performance="2"] .lrn-report-score,
     .learnosity-report .lrn-report-table td[data-custom_performance="3"] .lrn-report-score,
@@ -55,76 +55,80 @@ $InitLastScoreBABUCutScore22 = new Init('reports', $security, $consumer_secret, 
         top: 45%;
         right: 26px;
         transform: translate(50%, -50%);
-    }
+    }  */
 </style>
 <!--visualization background for cut score report-->
 <style id="band-4-styles">
-    .learnosity-report .lrn-report-table td[data-custom_performance="4"] {
+    .learnosity-report .lrn-report-table> tbody > tr > td[data-custom_performance="4"] {
         background: #B0D6A0;
+        font-weight: 700;
     }
-    .learnosity-report .table-bordered td[data-custom_performance="4"] .lrn-report-user::after {
+    /* .learnosity-report22 .table-bordered td[data-custom_performance="4"] .lrn-report-user::after {
         content: url("../../../static/images/A.svg");
-    }
+    } */
 </style>
 <style id="band-3-styles">
-    .learnosity-report .lrn-report-table td[data-custom_performance="3"] {
+    .learnosity-report .lrn-report-table> tbody > tr > td[data-custom_performance="3"] {
         background: #F0F8ED;
+        font-weight: 700;
     }
-    .learnosity-report .table-bordered td[data-custom_performance="3"] .lrn-report-user::after {
+    /* .learnosity-report22 .table-bordered td[data-custom_performance="3"] .lrn-report-user::after {
         content: url("../../../static/images/B.svg");
-    }
+    } */
 </style>
 <style id="band-2-styles">
-    .learnosity-report .lrn-report-table td[data-custom_performance="2"] {
+    .learnosity-report .lrn-report-table> tbody > tr > td[data-custom_performance="2"] {
         background: #FFEDDB;
+        font-weight: 700;
     }
-    .learnosity-report .table-bordered td[data-custom_performance="2"] .lrn-report-user::after {
-        content: url("../../../static/images/D.svg");
-    }
+    /* .learnosity-report22 .table-bordered td[data-custom_performance="2"] .lrn-report-user::after {
+        content: url("../../../static/images/D.svg"); 
+    }*/
 </style>
 <style id="band-1-styles">
-    .learnosity-report .lrn-report-table td[data-custom_performance="1"] {
+    .learnosity-report .lrn-report-table> tbody > tr >td[data-custom_performance="1"] {
         background: #FBE3E3;
+        font-weight: 700;
     }
-    .learnosity-report .table-bordered td[data-custom_performance="1"] .lrn-report-user::after {
-        content: url("../../../static/images/F.svg");
-    }
+    /* .learnosity-report .table-bordered td[data-custom_performance="1"] .lrn-report-user::after {
+        content: url("../../../static/images/F.svg"); 
+    }*/
 </style>
 
-<div class="lsbabu-report"  id="lsbabu-report-cutscore2" style="display: none">
+<div class="lsbabu-report"  id="lsbabu-report-cutscore2" style="display: none" >
     <div class="controls-container">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="highlight-band-4" checked>
-            <label class="form-check-label" for="highlight-band-4">
+            <input class="form-check-input" type="checkbox" value="" id="highlight-band-44" checked>
+            <label class="form-check-label" for="highlight-band-44">
                 A- Pass with distinction (80 - 100%)
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="highlight-band-3">
-            <label class="form-check-label" for="highlight-band-3">
+            <input class="form-check-input" type="checkbox" value="" id="highlight-band-33">
+            <label class="form-check-label" for="highlight-band-33">
                 B - Pass with credit (65 - 79%)
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="highlight-band-2">
-            <label class="form-check-label" for="highlight-band-2">
+            <input class="form-check-input" type="checkbox" value="" id="highlight-band-22">
+            <label class="form-check-label" for="highlight-band-22">
                 D - Pass (50 - 64%)
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="highlight-band-1">
-            <label class="form-check-label" for="highlight-band-1">
+            <input class="form-check-input" type="checkbox" value="" id="highlight-band-11">
+            <label class="form-check-label" for="highlight-band-11">
                 F - Fail (0 - 49%)
             </label>
         </div>
     </div>
-    <div class="learnosity-report" id="last-score-by-activity-by-user-cutscore2"></div>
+    <div class="learnosity-report" id="lastscore-by-activity-by-user-cutscore2"></div>
 </div>
 <script>
     const callbacksCutScore22 = {
         readyListener: function () {
-            const report = reportsAppCutScore22.getReport('lastscore-by-activity-by-user-cutscore2');
-            report.on('load:data', function(data) {
+            const report2 = reportsAppCutScore22.getReport('lastscore-by-activity-by-user-cutscore2');
+            report2.on('load:data', function(data) {
                 console.log("cut score 2 load data: ", data);
             });
         },
@@ -132,11 +136,13 @@ $InitLastScoreBABUCutScore22 = new Init('reports', $security, $consumer_secret, 
             console.log(err);
         },
         scoreMutator: function(data) {
-            processScoresCutScore2(data);
+            processScoresCutScore22(data);
         }
     };
 
-    function processScoresCutScore2(data) {
+    function processScoresCutScore22(data) {
+        console.log("DATA22",data);
+        console.log("PIC22",data.percentageItemsCorrect);
         let performanceBand = 'none';
         let voiceOverMessage = '';
 
@@ -149,9 +155,12 @@ $InitLastScoreBABUCutScore22 = new Init('reports', $security, $consumer_secret, 
         };
         data.domData = customDomData;
         data.voiceOverMessage = voiceOverMessage;
+        console.log( data.domData,"DOM DATA");
+        console.log(performanceBand,"PB");
+        console.log(data.voiceOverMessage,"VOR");
     }
 
-    const reportsAppCutScore22 = LearnosityReports.init(<?= $InitLastScoreBIBUCutScore22->generate(); ?>, callbacksCutScore2);
+    const reportsAppCutScore22 = LearnosityReports.init(<?= $InitLastScoreBABUCutScore2->generate(); ?>, callbacksCutScore22);
 
     initCustomControlsCutScore2();
 
@@ -164,33 +173,33 @@ $InitLastScoreBABUCutScore22 = new Init('reports', $security, $consumer_secret, 
         window.band2scoreStyles = document.getElementById('band-2-styles');
         window.band1scoreStyles = document.getElementById('band-1-styles');
 
-        document.getElementById('highlight-band-1').addEventListener('click', applyVisualizationCutScore2);
-        document.getElementById('highlight-band-2').addEventListener('click', applyVisualizationCutScore2);
-        document.getElementById('highlight-band-3').addEventListener('click', applyVisualizationCutScore2);
-        document.getElementById('highlight-band-4').addEventListener('click', applyVisualizationCutScore2);
+        document.getElementById('highlight-band-11').addEventListener('click', applyVisualizationCutScore2);
+        document.getElementById('highlight-band-22').addEventListener('click', applyVisualizationCutScore2);
+        document.getElementById('highlight-band-33').addEventListener('click', applyVisualizationCutScore2);
+        document.getElementById('highlight-band-44').addEventListener('click', applyVisualizationCutScore2);
     }
 
     //show/hide borders to high and/or low scores
     function applyVisualizationCutScore2() {
-        if (document.getElementById('highlight-band-4').checked) {
+        if (document.getElementById('highlight-band-44').checked) {
             document.body.appendChild(window.band4scoreStyles);
         } else {
             window.band4scoreStyles.remove();
         }
 
-        if (document.getElementById('highlight-band-3').checked) {
+        if (document.getElementById('highlight-band-33').checked) {
             document.body.appendChild(window.band3scoreStyles);
         } else {
             window.band3scoreStyles.remove();
         }
 
-        if (document.getElementById('highlight-band-2').checked) {
+        if (document.getElementById('highlight-band-22').checked) {
             document.body.appendChild(window.band2scoreStyles);
         } else {
             window.band2scoreStyles.remove();
         }
 
-        if (document.getElementById('highlight-band-1').checked) {
+        if (document.getElementById('highlight-band-11').checked) {
             document.body.appendChild(window.band1scoreStyles);
         } else {
             window.band1scoreStyles.remove();

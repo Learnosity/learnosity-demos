@@ -9,7 +9,7 @@ $InitLastScoreBABUDefault = new Init('reports', $security, $consumer_secret, [
 ]);
 ?>
 <div class="lsbabu-report" id="lsbabu-report-default">
-    <div class="learnosity-report1" id="lastscore-by-activity-by-user-default"></div>
+    <div class="learnosity-report" id="lastscore-by-activity-by-user-default"></div>
 </div>
 
 <script>

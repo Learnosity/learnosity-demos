@@ -3,7 +3,7 @@ $lastScoreBABUReportConfig = [
     'id' => 'lastscore-activity-by-user',
     'type' => 'lastscore-by-activity-by-user',
     'scoring_type' => 'partial',
-    'user_id' => 'mce_student',
+   // 'user_id' => 'mce_student',
     'display_time_spent' => true,
     'activities' => [
         ['id' => 'Weekly_Math_Quiz', 'name' => 'Weekly Math Quiz'],
@@ -69,9 +69,10 @@ $lastScoreBABUReportConfig = [
 <p>
     Below shows an example of a Multi cut-score that can be applied on top of the existing report.
 </p>
+
 <?php require 'last-score-by-activity-by-user-default.php' ?>
 <?php require 'last-score-by-activity-by-user-cut-score1.php' ?>
-
+<?php require 'last-score-by-activity-by-user-cut-score2.php' ?>
 <script>
 const buttons1 = [
     {"lsbabu-default": "lsbabu-report-default"},
