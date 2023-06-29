@@ -3,7 +3,7 @@ $lastScoreBABUReportConfig = [
     'id' => 'lastscore-activity-by-user',
     'type' => 'lastscore-by-activity-by-user',
     'scoring_type' => 'partial',
-   // 'user_id' => 'mce_student',
+    //'user_id' => 'mce_student',
     'display_time_spent' => true,
     'activities' => [
         ['id' => 'Weekly_Math_Quiz', 'name' => 'Weekly Math Quiz'],

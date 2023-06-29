@@ -65,9 +65,9 @@ $InitLastScoreBIBUCutScore1 = new Init('reports', $security, $consumer_secret, [
         position: relative;
         vertical-align: middle;
     }
-    .learnosity-report .lrn-report-table > tbody > tr > td.lrn-report-clickable:hover {
+    /* .learnosity-report .lrn-report-table > tbody > tr > td.lrn-report-clickable:hover {
         text-decoration: underline;
-    }
+    } */
     .learnosity-report .lrn-report-table > tbody > tr > td.lrn-report-clickable:hover::before {
         content: '';
         position: absolute;
@@ -83,18 +83,18 @@ $InitLastScoreBIBUCutScore1 = new Init('reports', $security, $consumer_secret, [
 </style>
 <!--visualization performance band fail styles-->
 <style id="band-fail-styles">
-    tr[data-custom_performance="fail"] {
+    .learnosity-report.lastscore-by-item-by-user .lrn-report-table > tbody > tr[data-custom_performance="fail"] {
         background-color: #FBE3E3;
         border: 1px solid #DADADA;
     }
-    .learnosity-report .lrn-report-table tr[data-custom_performance="fail"] .lrn-report-user {
+    .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="fail"] .lrn-report-user {
         font-family: 'Helvetica Neue';
         font-style: normal;
         font-weight: 700;
         font-size: 13px;
         position: relative;
     }
-    .learnosity-report .lrn-report-table tr[data-custom_performance="fail"] .lrn-report-user::after {
+    .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="fail"] .lrn-report-user::after {
         content: "";
         position: absolute;
         top: 0;
@@ -104,7 +104,7 @@ $InitLastScoreBIBUCutScore1 = new Init('reports', $security, $consumer_secret, [
         background-color: #DD002F;
     }
 
-    .learnosity-report .lrn-report-table tr[data-custom_performance="fail"] .lrn-report-score {
+    .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="fail"] .lrn-report-score {
         font-family: 'Helvetica Neue';
         font-style: normal;
         font-weight: 700;

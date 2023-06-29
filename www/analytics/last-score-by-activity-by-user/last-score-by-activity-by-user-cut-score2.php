@@ -26,6 +26,7 @@ $InitLastScoreBABUCutScore2 = new Init('reports', $security, $consumer_secret, [
         margin-top: 20px;
         margin-bottom: 20px;
     }
+   
      /* .learnosity-report .lrn-report-table td[data-custom_performance="1"] .lrn-report-user,
     .learnosity-report .lrn-report-table td[data-custom_performance="2"] .lrn-report-user,
     .learnosity-report .lrn-report-table td[data-custom_performance="3"] .lrn-report-user,
@@ -58,7 +59,7 @@ $InitLastScoreBABUCutScore2 = new Init('reports', $security, $consumer_secret, [
     }  */
 </style>
 <!--visualization background for cut score report-->
-<style id="band-4-styles">
+<style id="band-44-styles">
     .learnosity-report .lrn-report-table> tbody > tr > td[data-custom_performance="4"] {
         background: #B0D6A0;
         font-weight: 700;
@@ -67,7 +68,7 @@ $InitLastScoreBABUCutScore2 = new Init('reports', $security, $consumer_secret, [
         content: url("../../../static/images/A.svg");
     } */
 </style>
-<style id="band-3-styles">
+<style id="band-33-styles">
     .learnosity-report .lrn-report-table> tbody > tr > td[data-custom_performance="3"] {
         background: #F0F8ED;
         font-weight: 700;
@@ -76,7 +77,7 @@ $InitLastScoreBABUCutScore2 = new Init('reports', $security, $consumer_secret, [
         content: url("../../../static/images/B.svg");
     } */
 </style>
-<style id="band-2-styles">
+<style id="band-22-styles">
     .learnosity-report .lrn-report-table> tbody > tr > td[data-custom_performance="2"] {
         background: #FFEDDB;
         font-weight: 700;
@@ -85,7 +86,7 @@ $InitLastScoreBABUCutScore2 = new Init('reports', $security, $consumer_secret, [
         content: url("../../../static/images/D.svg"); 
     }*/
 </style>
-<style id="band-1-styles">
+<style id="band-11-styles">
     .learnosity-report .lrn-report-table> tbody > tr >td[data-custom_performance="1"] {
         background: #FBE3E3;
         font-weight: 700;
@@ -168,10 +169,10 @@ $InitLastScoreBABUCutScore2 = new Init('reports', $security, $consumer_secret, [
 
     //add button handler for visualization checkboxes
     function initCustomControlsCutScore2() {
-        window.band4scoreStyles = document.getElementById('band-4-styles');
-        window.band3scoreStyles = document.getElementById('band-3-styles');
-        window.band2scoreStyles = document.getElementById('band-2-styles');
-        window.band1scoreStyles = document.getElementById('band-1-styles');
+        window.band4scoreStyles = document.getElementById('band-44-styles');
+        window.band3scoreStyles = document.getElementById('band-33-styles');
+        window.band2scoreStyles = document.getElementById('band-22-styles');
+        window.band1scoreStyles = document.getElementById('band-11-styles');
 
         document.getElementById('highlight-band-11').addEventListener('click', applyVisualizationCutScore2);
         document.getElementById('highlight-band-22').addEventListener('click', applyVisualizationCutScore2);

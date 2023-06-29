@@ -12,14 +12,14 @@ $InitLastScoreBABUCutScore11 = new Init('reports', $security, $consumer_secret, 
 <!--visualization checkboxes-->
 <style>
     /* Styles for the checkbox when checked */
-    input[type="checkbox"].highlight-band-fail1-switch:checked {
+    /* input[type="checkbox"].highlight-band-fail1-switch:checked {
         background-color:#34C759;
         width: 38px;
         height:23px;
         border-color: #34C759;
-    }
+    } */
     /* Styles for the checkbox when not checked */
-    input[type="checkbox"].highlight-band-fail1-switch1:not(:checked) {
+    /* input[type="checkbox"].highlight-band-fail1-switch1:not(:checked) {
         width: 38px;
         height:23px;
     }
@@ -60,15 +60,15 @@ $InitLastScoreBABUCutScore11 = new Init('reports', $security, $consumer_secret, 
         margin-left: 50px;
         width: 100px;
         display: inline-block
-    }
-    .learnosity-report .lrn-report-table > tbody > tr > td.lrn-report-clickable {
+    }  */
+    .learnosity-report.lastscore-by-activity-by-user .lrn-report-table > tbody > tr > td.lrn-report-clickable {
         position: relative;
         vertical-align: middle;
     }
-    .learnosity-report .lrn-report-table > tbody > tr > td.lrn-report-clickable:hover {
+    /* .learnosity-report .lrn-report-table > tbody > tr > td.lrn-report-clickable:hover {
         text-decoration: underline;
-    }
-    .learnosity-report .lrn-report-table > tbody > tr > td.lrn-report-clickable:hover::before {
+    } */
+    /* .learnosity-report .lrn-report-table > tbody > tr > td.lrn-report-clickable:hover::before {
         content: '';
         position: absolute;
         top: -1px;
@@ -76,18 +76,18 @@ $InitLastScoreBABUCutScore11 = new Init('reports', $security, $consumer_secret, 
         right: -1px;
         bottom: -1px;
         box-shadow: 0 0 0 1px #696969;
-    }
-    .learnosity-report .lrn-report-table > tbody > tr > td.lrn-report-clickable:focus {
+    } */
+    .learnosity-report.lastscore-by-activity-by-user .lrn-report-table > tbody > tr > td.lrn-report-clickable:focus {
         border: 2px solid #333333;
     }
 </style>
 <!--visualization performance band fail styles-->
 <style id="band-fail-styles1">
-    td[data-custom_performance="fail"] {
+    .learnosity-report.lastscore-by-activity-by-user .lrn-report-table > tbody > tr > td[data-custom_performance="fail2"] {
         background-color: #FBE3E3;
         font-weight: 700;
     }
-    .learnosity-report .lrn-report-table > tbody > tr > td[data-custom_performance="fail"] {
+    .learnosity-report.lastscore-by-activity-by-user .lrn-report-table > tbody > tr > td[data-custom_performance="fail2"] {
         border: 2px solid #DD002F;
     }
      /* .learnosity-report .lrn-report-table td[data-custom_performance="fail"] .lrn-report-user {
@@ -146,18 +146,18 @@ $InitLastScoreBABUCutScore11 = new Init('reports', $security, $consumer_secret, 
         },
         scoreMutator: function(data) {
             console.log("DATA1",data);
-            processScoresCutScore1(data);
+            processScoresCutScore12(data);
         }
     };
 
-    function processScoresCutScore1(data) {
+    function processScoresCutScore12(data) {
         console.log("DATA2",data);
         console.log("PIC",data.percentageItemsCorrect);
         let performanceBand = 'none';
         let voiceOverMessage = '';
 
         if (data.percentageItemsCorrect <= 50) {
-            performanceBand = 'fail';
+            performanceBand = 'fail2';
             voiceOverMessage = 'Highlighted as failed';
         }
 
@@ -174,17 +174,17 @@ $InitLastScoreBABUCutScore11 = new Init('reports', $security, $consumer_secret, 
 
     //add button handler for visualization checkboxes
     function initCustomControlsCutScore11() {
-        window.failStyles = document.getElementById('band-fail-styles1');
+        window.failStyles1 = document.getElementById('band-fail-styles1');
         document.getElementById('highlight-band-fail1').addEventListener('click', applyVisualizationCutScore11);
     }
 
     //show/hide borders to high and/or low scores
     function applyVisualizationCutScore11() {
         if (document.getElementById('highlight-band-fail1').checked) {
-            document.body.appendChild(window.failStyles);
+            document.body.appendChild(window.failStyles1);
         }
         else {
-            window.failStyles.remove();
+            window.failStyles1.remove();
         }
     }
 </script>
