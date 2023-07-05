@@ -40,6 +40,12 @@ fine but the internal security in some of the APIs is domain restricted. So
 until you contact Learnosity to whitelist specific domains, access is restricted
 to *localhost*.
 
+If port 8080 is already in use, you can specify a custom port instead, with
+
+    make run-php PORT=8000  # Using custom port 8000
+
+You would then be able visit http://localhost:8000 in a browser.
+
 ### Using PHP's native server
 
 You can use PHP's built-in server to quickly get up and running.
