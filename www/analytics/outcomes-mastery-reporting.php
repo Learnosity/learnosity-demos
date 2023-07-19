@@ -164,7 +164,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Analyze Learning Outcomes Report and Mastery</h2>
-            <p>Drill down in individual and class-based reports to see percent success in Learning Outcomes Report and mastery. Optionally visualize data with score analysis and more.</p>
+            <p>Drill down in individual and class-based reports to see percent success in learning outcomes and mastery. Optionally visualize data with score analysis and more.</p>
             <ul>
                 <li><h4><a href="#item-scores-by-tag-by-user-report">Learning Outcomes Report - Individual</a></h4></li>
                 <li><h4><a href="#item-scores-by-tag-by-user-class-report">Learning Outcomes Report - Class</a></h4></li>
