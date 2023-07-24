@@ -25,10 +25,10 @@
         'mode'      => 'item_list',
         'config'    => [
             "global" => [
-                // All tags of type "course" are hidden in the UI
+                // All tags of type "Course" are hidden in the UI
                 "hide_tags" => [
                     [
-                        "type" => "course"
+                        "type" => "Course"
                     ]
                 ]
             ],
