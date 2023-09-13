@@ -59,7 +59,7 @@ $lastScoreBIBUReportConfig = [
 
 <!-- Container for the reports api to load into -->
 <h3 id="lastscore-list-item-report"><a href="#lastscore-list-item-report">Last Score by Item by User Report</a></h3>
-<p>Drill down and see exactly how each student did, per item. Helpful for identifying specific knowledge or understanding gaps in your group.</p>
+<p>This report provides an easy to use, at-a-glance view for multiple students, across multiple tests. To improve the teacher's ability to quickly see insights across their class, you can set score levels to highlight.</p>
 
 <button class="lsbibu-button lsbibu-button-selected" id="lsbibu-default">Default</button>
 <button class="lsbibu-button" id="lsbibu-cutscore1">Cut-score 1</button>
