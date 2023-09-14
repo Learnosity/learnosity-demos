@@ -99,25 +99,25 @@ $InitLastScoreBIBUCutScore2 = new Init('reports', $security, $consumer_secret, [
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="highlight-band-4" checked>
             <label class="form-check-label" for="highlight-band-4">
-                A - Pass with distinction (80 - 100%)
+                Distinction (80 - 100%)
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="highlight-band-3">
             <label class="form-check-label" for="highlight-band-3">
-                B - Pass with credit (65 - 79%)
+                Credit (65 - 79%)
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="highlight-band-2">
             <label class="form-check-label" for="highlight-band-2">
-                D - Pass (50 - 64%)
+                Pass (50 - 64%)
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="highlight-band-1">
             <label class="form-check-label" for="highlight-band-1">
-                F - Fail (0 - 49%)
+                Fail (0 - 49%)
             </label>
         </div>
     </div>

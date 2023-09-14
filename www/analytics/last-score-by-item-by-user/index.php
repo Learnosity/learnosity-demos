@@ -59,14 +59,12 @@ $lastScoreBIBUReportConfig = [
 
 <!-- Container for the reports api to load into -->
 <h3 id="lastscore-list-item-report"><a href="#lastscore-list-item-report">Last Score by Item by User Report</a></h3>
-<p>This report provides an easy to use, at-a-glance view for multiple students, across multiple tests. To improve the teacher's ability to quickly see insights across their class, you can set score levels to highlight.</p>
+<p>Drill down and see exactly how each student did, per item. Helpful for identifying specific knowledge or understanding gaps in your group. The cut-score options allow the teachers to highlight the learners who have made the indicated grade, or fallen beneath the set scores.</p>
 
 <button class="lsbibu-button lsbibu-button-selected" id="lsbibu-default">Default</button>
 <button class="lsbibu-button" id="lsbibu-cutscore1">Cut-score 1</button>
 <button class="lsbibu-button" id="lsbibu-cutscore2">Cut-score 2</button>
-<p>
-    Below shows an example of a Multi cut-score that can be applied on top of the existing report.
-</p>
+
 <?php require 'last-score-by-item-by-user-default.php' ?>
 <?php require 'last-score-by-item-by-user-cut-score1.php' ?>
 <?php require 'last-score-by-item-by-user-cut-score2.php' ?>
