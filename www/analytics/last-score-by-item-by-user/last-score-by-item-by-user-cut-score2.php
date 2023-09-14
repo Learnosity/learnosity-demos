@@ -65,32 +65,20 @@ $InitLastScoreBIBUCutScore2 = new Init('reports', $security, $consumer_secret, [
     .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="4"] {
         background: #B0D6A0;
     }
-    .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="4"] .lrn-report-score::after {
-        content: url("../../../static/images/A.svg");
-    }
 </style>
 <style id="band-3-styles">
     .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="3"] {
         background: #F0F8ED;
-    }
-    .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="3"] .lrn-report-score::after {
-        content: url("../../../static/images/B.svg");
     }
 </style>
 <style id="band-2-styles">
     .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="2"] {
         background: #FFEDDB;
     }
-    .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="2"] .lrn-report-score::after {
-        content: url("../../../static/images/D.svg");
-    }
 </style>
 <style id="band-1-styles">
     .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="1"] {
         background: #FBE3E3;
-    }
-    .learnosity-report.lastscore-by-item-by-user .lrn-report-table tr[data-custom_performance="1"] .lrn-report-score::after {
-        content: url("../../../static/images/F.svg");
     }
 </style>
 
