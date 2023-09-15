@@ -131,10 +131,10 @@ $InitLastScoreBIBUCutScore2 = new Init('reports', $security, $consumer_secret, [
         let performanceBand = 'none';
         let voiceOverMessage = '';
 
-        if      (data.percentageItemsCorrect >= 80) { performanceBand = '4'; voiceOverMessage = "Pass with distinction";}
-        else if (data.percentageItemsCorrect >= 65) { performanceBand = '3'; voiceOverMessage = "Pass with credit";}
-        else if (data.percentageItemsCorrect >= 50) { performanceBand = '2'; voiceOverMessage = "Pass";}
-        else if (data.percentageItemsCorrect >=  0) { performanceBand = '1'; voiceOverMessage = "Fail";}
+        if      (data.percentageItemsCorrect >= 80) { performanceBand = '4'; voiceOverMessage = "Distinction (80 - 100%)";}
+        else if (data.percentageItemsCorrect >= 65) { performanceBand = '3'; voiceOverMessage = "Credit (65 - 79%)";}
+        else if (data.percentageItemsCorrect >= 50) { performanceBand = '2'; voiceOverMessage = "Pass (50 - 64%)";}
+        else if (data.percentageItemsCorrect >=  0) { performanceBand = '1'; voiceOverMessage = "Fail (0 - 49%)";}
         const customDomData = {
             performance: performanceBand
         };
