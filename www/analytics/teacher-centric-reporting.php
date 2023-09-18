@@ -82,7 +82,7 @@ $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
+<script src="<?php echo $url_reports; ?>"></script>
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
