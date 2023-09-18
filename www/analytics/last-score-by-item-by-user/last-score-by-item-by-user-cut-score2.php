@@ -23,7 +23,6 @@ $InitLastScoreBIBUCutScore2 = new Init('reports', $security, $consumer_secret, [
         color: #333333;
     }
     .lsbibu-report .controls-container {
-        margin-top: 20px;
         margin-bottom: 20px;
     }
     .learnosity-report.lastscore-by-item-by-user .lrn-report-table .lrn-report-section.lrn-report-score {
