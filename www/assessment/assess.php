@@ -29,6 +29,8 @@ $request = [
     'items' => [
         'dos-sf-demo-01',
         'dos-sf-demo-02',
+        'dos-sf-demo-04',
+        'dos-sf-demo-05',
     ],
     'config' => [
         'title' => 'Salesforce Training - dynamically created assessment',
