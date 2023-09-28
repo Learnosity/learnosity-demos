@@ -36,8 +36,8 @@ $request = [
 
     ],
     'config' => [
-        'title' => 'Salesforce Training - dynamically created assessment',
-        'subtitle' => "David O’Sullivan",
+        'title' => 'Dynamically created assessment',
+        'subtitle' => "Walter White",
         'regions' => 'main'
     ]
 ];
