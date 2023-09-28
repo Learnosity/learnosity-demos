@@ -27,38 +27,17 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        [
-            'id' => Uuid::generate(),
-            'reference' => 'Demo3'
-        ],
-        [
-            'id' => Uuid::generate(),
-            'reference' => 'Demo4'
-        ],
-        [
-            'id' => Uuid::generate(),
-            'reference' => 'Demo6'
-        ],
-        [
-            'id' => Uuid::generate(),
-            'reference' => 'Demo7'
-        ],
-        [
-            'id' => Uuid::generate(),
-            'reference' => 'Demo8'
-        ],
-        [
-            'id' => Uuid::generate(),
-            'reference' => 'Demo9'
-        ],
-        [
-            'id' => Uuid::generate(),
-            'reference' => 'Demo10'
-        ]
+
+        'dos-sf-demo-01',
+        'dos-sf-demo-02',
+        'dos-sf-demo-04',
+        'dos-sf-demo-05',
+
+
     ],
     'config' => [
-        'title' => 'Demo activity - showcasing question types and assess options',
-        'subtitle' => 'Walter White',
+        'title' => 'Dynamically created assessment',
+        'subtitle' => "Walter White",
         'regions' => 'main'
     ]
 ];
@@ -75,40 +54,40 @@ $signedRequest = $Init->generate();
 
 ?>
 
-    <div class="jumbotron section">
-        <div class="toolbar">
-            <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            </ul>
-        </div>
-        <div class="overview">
-            <h2>Generate Just-in-Time Fixed Form Assessments</h2>
-            <p>Build your activities on the fly, and deliver content from your item bank without having to pre-author a fixed-form activity.</p>
-        </div>
+<div class="jumbotron section">
+    <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#" data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+        </ul>
     </div>
-
-    <div class="section pad-sml">
-        <!-- Container for the assess api to load into -->
-        <div id="learnosity_assess"></div>
+    <div class="overview">
+        <h2>Generate Just-in-Time Fixed Form Assessments</h2>
+        <p>Build your activities on the fly, and deliver content from your item bank without having to pre-author a fixed-form activity.</p>
     </div>
+</div>
 
-    <script src="<?php echo $url_items; ?>"></script>
-    <script>
-        var initializationObject = <?php echo $signedRequest; ?>;
+<div class="section pad-sml">
+    <!-- Container for the assess api to load into -->
+    <div id="learnosity_assess"></div>
+</div>
 
-        //optional callbacks for ready
-        var callbacks = {
-            readyListener: function () {
-                console.log("Items API has successfully initialized.");
-            },
-            errorListener: function (err) {
-                console.log(err);
-            }
-        };
+<script src="<?php echo $url_items; ?>"></script>
+<script>
+    var initializationObject = <?php echo $signedRequest; ?>;
 
-        var itemsApp = LearnosityItems.init(initializationObject, callbacks);
-    </script>
+    //optional callbacks for ready
+    var callbacks = {
+        readyListener: function() {
+            console.log("Items API has successfully initialized.");
+        },
+        errorListener: function(err) {
+            console.log(err);
+        }
+    };
+
+    var itemsApp = LearnosityItems.init(initializationObject, callbacks);
+</script>
 
 <?php
 include_once 'views/modals/initialisation-preview.php';
