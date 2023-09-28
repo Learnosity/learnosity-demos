@@ -75,14 +75,14 @@ $signedRequest = $Init->generate();
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h4>Sessions Summary</h4>
+        <h4>Sessions Summary Report</h4>
         <div id="session-summary">
             <div class="previewWrapper preview">
                 <pre><code></code></pre>
             </div>
         </div>
 
-        <h4>Progress by Tag</h4>
+        <h4>Progress by Tag Report</h4>
         <div id="progress-by-tag">
             <div class="previewWrapper preview">
                 <pre><code></code></pre>

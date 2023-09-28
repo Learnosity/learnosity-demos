@@ -34,36 +34,6 @@ $request = [
             ]
         ],
         [
-            'id' => 'lastscore-list-item',
-            'type' => 'lastscore-by-item-by-user',
-            'scoring_type' => 'partial',
-            "display_time_spent" => true,
-            "display_item_numbers" => true,
-            "activity_id" => 'Weekly_Math_Quiz',
-            'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Skylar White'],
-                ['id' => 'mce_student_2', 'name' => 'Walter White'],
-                ['id' => 'mce_student_3', 'name' => 'Saul Goodman']
-            ]
-        ],
-        [
-            'id' => 'lastscore-activity-by-user',
-            'type' => 'lastscore-by-activity-by-user',
-            'scoring_type' => 'partial',
-            'user_id' => 'mce_student',
-            'display_time_spent' => true,
-            'activities' => [
-                ['id' => 'Weekly_Math_Quiz', 'name' => 'Weekly Math Quiz'],
-                ['id' => 'Summer_Test_1', 'name' => 'Summer Test']
-            ],
-            'users' => [
-                ['id' => 'mce_student', 'name' => 'Jesse Pinkman'],
-                ['id' => 'mce_student_1', 'name' => 'Walter White'],
-                ['id' => 'mce_student_2', 'name' => 'Saul Goodman']
-            ]
-        ],
-        [
             "id" => "response-analysis",
             "type" => "response-analysis-by-item",
             "session_ids" => [
@@ -112,7 +82,7 @@ $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
+<script src="<?php echo $url_reports; ?>"></script>
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
@@ -124,10 +94,10 @@ $signedRequest = $Init->generate();
             <h2>Present Classroom and Teacher-Centric Reports</h2>
             <p>Easily learn more about your whole classroom at a glance. Our Reports API provides embeddable, group and classroom-focused reports to provide a teacher or instructor with information about their classroom ability and progress.</p>
             <ul>
-                <li><h4><a href="#lastscore-tag-report">Most recent score by user - with tag breakdown</a></h4></li>
-                <li><h4><a href="#lastscore-list-item-report">Most recent score by user - with item breakdown</a></h4></li>
-                <li><h4><a href="#lastscore-activity-by-user-report">Most recent score by user - with multiple activity breakdown</a></h4></li>
-                <li><h4><a href="#response-analysis-report">Response analysis report - class responses at a glance</a></h4></li>
+                <li><h4><a href="#lastscore-tag-report">Last Score by Tag by User Report</a></h4></li>
+                <li><h4><a href="#lastscore-list-item-report">Last Score by Item by User Report</a></h4></li>
+                <li><h4><a href="#lastscore-activity-by-user-report">Last Score by Activity by User Report</a></h4></li>
+                <li><h4><a href="#response-analysis-report">Response Analysis by Item Report</a></h4></li>
             </ul>
         </div>
     </div>
@@ -135,28 +105,22 @@ $signedRequest = $Init->generate();
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-tag-report"><a href="#lastscore-tag-report">Most recent score by user - with tag breakdown</a></h3>
+        <h3 id="lastscore-tag-report"><a href="#lastscore-tag-report">Last Score by Tag by User Report</a></h3>
         <p>See your class or group's scores, all broken down according to tag. This report allows you to easily identify strengths and weaknesses based on the skills or subject areas associated with the content in the activity.</p>
         <div id="lastscore-tag"></div>
     </div>
 
     <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-list-item-report"><a href="#lastscore-list-item-report">Most recent score by user - with item breakdown</a></h3>
-        <p>Drill down and see exactly how each student did, per item. Helpful for identifying specific knowledge or understanding gaps in your group.</p>
-        <div id="lastscore-list-item"></div>
+        <?php require 'last-score-by-item-by-user/index.php'; ?>
+    </div>
+
+    <div class="section pad-sml">
+    <?php require 'last-score-by-activity-by-user/index.php'; ?>
     </div>
 
     <div class="section pad-sml">
         <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-activity-by-user-report"><a href="#lastscore-activity-by-user-report">Most recent score by user - with multiple activity breakdown</a></h3>
-        <p>This report provides an easy to use, at-a-glance view for multiple students, across multiple tests.</p>
-        <div id="lastscore-activity-by-user"></div>
-    </div>
-
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="response-analysis-report"><a href="#response-analysis-report">Response analysis report - class responses at a glance</a></h3>
+        <h3 id="response-analysis-report"><a href="#response-analysis-report">Response Analysis by Item Report</a></h3>
         <p>See a summary of class responses at a glance:</p>
         <ul>
             <li>Click on an Item header to drill into the detail view and see full responses.</li>
@@ -165,7 +129,7 @@ $signedRequest = $Init->generate();
         <div id="response-analysis"></div>
     </div>
 
-    <script src="<?php echo $url_reports; ?>"></script>
+
     <script>
 
         var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>);

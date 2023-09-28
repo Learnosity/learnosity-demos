@@ -48,10 +48,7 @@ $request = '{
       "valid_response": "120",
       "score": 1
     }
-  ],
-    "beta_flags": {
-        "reactive_views": true
-    }
+  ]
 }';
 
 
@@ -78,7 +75,7 @@ $signedRequest = $init->generate();
     </div>
     <div class="overview">
         <h1>Custom Question - Percentage Bar</h1>
-        <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.</p>
+        <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.</p>
     </div>
 </div>
 

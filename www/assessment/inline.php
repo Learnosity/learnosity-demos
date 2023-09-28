@@ -27,9 +27,18 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        'inline_demo_q1',
-        'inline_demo_q2',
-        'Tut002_Item2'
+        [
+            'id' => 'inline_demo_q1',
+            'reference' => 'inline_demo_q1'
+        ],
+        [
+            'id' => 'inline_demo_q2',
+            'reference' => 'inline_demo_q2'
+        ],
+        [
+            'id' => 'Tut002_Item2',
+            'reference' => 'Tut002_Item2'
+        ]
     ]
 ];
 

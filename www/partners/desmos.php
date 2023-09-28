@@ -20,7 +20,7 @@ $security = [
 ];
 
 // to get a commercial license to the Desmos tools, email partnerships@desmos.com
-$desmosconfig = file_get_contents('https://www.desmos.com/api/learnosity/get-config?questionGroups=all&features=all');
+$desmosconfig = file_get_contents('https://www.desmos.com/api/learnosity/get-config?questionGroups=all&features=extended');
 $desmosconfig = json_decode($desmosconfig, true);
 
 
@@ -58,11 +58,11 @@ $signedRequest = $Init->generate();
     <div class="overview">
         <h2>Desmos Calculators - Graphing, Scientific, and Four Function</h2>
         <p>
-            Through the Desmos and Learnosity partnership, clients can leverage the Graphing, Scientific and Four Function Calculators in two ways.
+            Through the Desmos Studio and Learnosity partnership, clients can leverage the Desmos Graphing, Scientific, Four Function and Matrix Calculators in two ways.
         </p>
         <p>
             First, these Calculators can be included as a feature on any Learnosity item.<br/>
-            In this demo, click "Add new", and navigate to "Features". You can choose amongst the 3 Desmos custom features: Desmos Four Function Calculator, Desmos Graphing Calculator, and Desmos Scientific Calculator.
+            In this demo, click "Add new", and navigate to "Features". You can choose amongst the 4 Desmos custom features: Desmos Four Function Calculator, Desmos Graphing Calculator, Desmos Scientific Calculator, and Desmos Matrix Calculator.
         </p>
         <p>
             Second, authors can create custom open-ended, graded math items within seconds. Learnosity provides a number of templates across math and economics, plus the ability to create custom math item types.<br/>

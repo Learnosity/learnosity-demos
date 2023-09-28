@@ -1,0 +1,35 @@
+$colors : #bae2ff, #d8e7ed, #bcffff, #d8c1dc, #ffe7fa, #dfa6c2, #fddcda, #f0c49d, #fffbe2, #cfffea, #a1e3a8, #01FF70, #d3c4d7;
+$defaultColor : nth($colors, 1);
+
+.highlight {
+  transition: all 300ms ease-in-out;
+  box-sizing: border-box;
+  background-color: transparent;
+
+  @each $color in $colors {
+    $i: index($colors, $color);
+    &.on {
+      transition: all 300ms ease-in-out !important;
+      box-shadow: inset 0px 0px 0px 0px #bae2ff !important;
+      background-color: $defaultColor !important;
+      border: 1px solid $defaultColor;
+
+      &.color-#{$i} {
+        background-color: $color !important;
+        border: 1px solid $color !important;
+      }
+    }
+    &.on input{
+      transition: all 300ms ease-in-out !important;
+      outline: 1px solid $defaultColor !important;
+      background-color: $defaultColor !important;
+      border: 1px solid $defaultColor !important;
+
+      &.color-#{$i} {
+        outline: 1px solid $color !important;
+        background-color: $color !important;
+        border: 1px solid $color !important;
+      }
+    }
+  }
+}

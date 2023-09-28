@@ -27,13 +27,34 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        'Demo3',
-        'Demo4',
-        'Demo6',
-        'Demo7',
-        'Demo8',
-        'Demo9',
-        'Demo10'
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo3'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo4'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo6'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo7'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo8'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo9'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'Demo10'
+        ]
     ],
     'config' => [
         'title' => 'Demo activity - showcasing question types and assess options',
@@ -60,7 +81,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Bind to Items API Events</h2>
-            <p>Below is a demo of event binding using the <a href="https://reference.learnosity.com/items-api/events#assessmentEvents">Assessment Events</a> to display custom notifications.</p>
+            <p>Below is a demo of event binding using the <a href="https://reference.learnosity.com/assess-api/events">Assessment Events</a> to display custom notifications.</p>
         </div>
     </div>
 

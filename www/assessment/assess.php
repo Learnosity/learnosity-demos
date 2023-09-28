@@ -27,10 +27,13 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
+
         'dos-sf-demo-01',
         'dos-sf-demo-02',
         'dos-sf-demo-04',
         'dos-sf-demo-05',
+
+
     ],
     'config' => [
         'title' => 'Salesforce Training - dynamically created assessment',

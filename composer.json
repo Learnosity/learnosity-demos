@@ -6,7 +6,7 @@
     "homepage": "https://github.com/Learnosity/learnosity-demos",
     "license": "MIT",
     "require": {
-        "php": ">=7.4",
+        "php": ">=7.2",
         "learnosity/learnosity-sdk-php": ">=0.10"
     }
 }

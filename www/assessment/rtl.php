@@ -27,9 +27,26 @@ $request = [
     'session_id' => Uuid::generate(),
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
-        'ARABIC_Demo9',
-        'salim-arabic-mcq-2',
-        'ar-drawing-rtl'
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'ARABIC_Demo9'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'salim-arabic-mcq-2'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'ar-drawing-rtl'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'choice-matrix-tpl-i18n-item4-arb'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'token-i18n-item5-arb'
+        ]
     ],
     'config' => [
         'regions' => 'main',
@@ -279,7 +296,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Right-to-Left Language Support</h2>
-            <p>This demo demonstrates the Learnosity approach to handling right-to-left languages. In this demo, everything is localised to Arabic using <a href="https://reference.learnosity.com/items-api/initialization#config.labelBundle">label bundles</a>.</p>
+            <p>This demo demonstrates the Learnosity approach to handling right-to-left languages. In this demo, everything is localised to Arabic using <a href="https://reference.learnosity.com/items-api/initialization/config.labelBundle">label bundles</a>.</p>
         </div>
     </div>
 

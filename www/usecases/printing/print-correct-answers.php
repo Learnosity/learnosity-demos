@@ -12,14 +12,30 @@ include_once '../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain
 );
 
 // Decide which items your want to print
-$items = array('printing-mcq', 'printing-mcq-multi', 'printing-token', 'printing-fillintheblank');
+$items = [
+    [
+        'id' => 'printing-mcq',
+        'reference' => 'printing-mcq'
+    ],
+    [
+        'id' => 'printing-mcq-multi',
+        'reference' => 'printing-mcq-multi'
+    ],
+    [
+        'id' => 'printing-token',
+        'reference' => 'printing-token'
+    ],
+    [
+        'id' => 'printing-fillintheblank',
+        'reference' => 'printing-fillintheblank'
+    ]
+];
 $sessionid = Uuid::generate();
 
 // Load the assessment in `local_practice` (you won't want to submit actual responses)
@@ -110,6 +126,9 @@ $signedRequest = $Init->generate();
         .page-break {
             display: block;
             page-break-before: always;
+        }
+        .lrn.lrn-assess .lrn-region-group {
+           display: block;
         }
         /* Uncomment if you want to hide the question type headings */
         /*.item-container h2 {

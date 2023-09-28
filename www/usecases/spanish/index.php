@@ -28,7 +28,44 @@ $request = array(
     'session_id'     => $session_id,
     'type'           => 'submit_practice',
     'assess_inline'  => true,
-    'items'          => array('LEAR_222416777787000072', 'LEAR_222416777787000078','LEAR_222416777787000080','LEAR_222416777787000079','LEAR_222416777787000074','LEAR_222416777787000081','LEAR_222416777787000082', 'LEAR_222416777787000085', 'LEAR_99455450458884454545539'),
+    'items'          => [
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'LEAR_222416777787000072'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'LEAR_222416777787000078'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'LEAR_222416777787000080'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'LEAR_222416777787000079'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'LEAR_222416777787000074'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'LEAR_222416777787000081'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'LEAR_222416777787000082'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'LEAR_222416777787000085'
+        ],
+        [
+            'id' => Uuid::generate(),
+            'reference' => 'LEAR_99455450458884454545539'
+        ]
+    ],
     'config' => array(
         'navigation' => array(
             'show_accessibility' => array(

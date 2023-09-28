@@ -9,10 +9,22 @@ include_once 'includes/header.php';
 //common Learnosity config elements including API version control vars
 include_once '../lrn_config.php';
 
-use LearnositySdk\Request\Init;
-use LearnositySdk\Utils\Uuid;
+//file/URL util
+include_once 'utils/file.php';
 
-$language = filter_input(INPUT_GET, 'language', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'pt-PT']]);
+use LearnositySdk\Request\Init;
+
+function validateLanguageParam(string $language)
+{
+    $pattern = '/^[a-z]{2}-[A-Z]{2}$/';
+    if (preg_match($pattern, $language)) {
+        return $language;
+    } else {
+        return 'pt-PT';
+    }
+}
+
+$language = filter_var($_GET['language'] ?? "", FILTER_CALLBACK, ['options' => 'validateLanguageParam']);
 $env = filter_input(INPUT_GET, 'env', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'prod']]);
 
 /*
@@ -32,27 +44,29 @@ $baseRepoUrl = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/mas
 $hasGroupDefaults = ($language === 'ar-EG') ? 'false' : 'true';
 
 /*
-    Retrieve the label bundles, per API, that contain translations.
-    We need one for Author API and the embedded Question Editor API
-    (loaded by Author API internally). We store them in separate
-    files for easier maintenance and a cleaner initialization
-    object for this demo file.
+    For demos that have them, retrieve the Question Editor custom question
+    templates and groups needed for translated content (like placeholder
+    response options and question stimulus etc).
+    We store them in separate files for easier maintenance and a cleaner
+    initialization object for this demo file.
+
+    Normally, these would be passed in the standard `request` object, this
+    is a separate step for this demo purely to account for some demos that
+    don't have the templates and/or groups set up.
 */
 if (preg_match('/^[A-Za-z\-]+$/', $language)) {
     $questionsLabels = file_get_contents($baseRepoUrl . $language . '/label_bundles/questions-api.json');
     $authorLabels = file_get_contents($baseRepoUrl . $language . '/label_bundles/author-api.json');
     $questioneditorLabels = file_get_contents($baseRepoUrl . $language . '/label_bundles/questioneditor-api.json');
 }
-
-/*
-    Retrieve the Question Editor custom question templates and groups
-    needed for translated content (like placeholder response options and
-    question stimulus etc).
-    We store them in separate files for easier maintenance and a
-    cleaner initialization object for this demo file.
-*/
-$questionTypeTemplates = file_get_contents($baseRepoUrl . $language . '/qe_custom_types/question_type_templates.json');
-$questionTypeGroups = file_get_contents($baseRepoUrl . $language . '/qe_custom_types/question_type_groups.json');
+if (urlExists($baseRepoUrl . $language . '/qe_custom_types/question_type_templates.json')) {
+    $questionTypeTemplates = file_get_contents($baseRepoUrl . $language . '/qe_custom_types/question_type_templates.json');
+    $request['config']['dependencies']['question_editor_api']['init_options']['question_type_templates'] = json_decode($questionTypeTemplates, true);
+}
+if (urlExists($baseRepoUrl . $language . '/qe_custom_types/question_type_groups.json')) {
+    $questionTypeGroups = file_get_contents($baseRepoUrl . $language . '/qe_custom_types/question_type_groups.json');
+    $request['config']['dependencies']['question_editor_api']['init_options']['question_type_groups'] = json_decode($questionTypeGroups, true);
+}
 
 $security = [
     'consumer_key' => $consumer_key,
@@ -125,14 +139,7 @@ $request = json_decode('{
                     "group_defaults": ' . $hasGroupDefaults . ',
                     "question_type_groups": ' . $questionTypeGroups . ',
                     "question_type_templates": ' . $questionTypeTemplates . ',
-                    "label_bundle": ' . $questioneditorLabels . ',
-                    "dependencies": {
-                        "questions_api": {
-                            "init_options": {
-                                "labelBundle": ' . $questionsLabels . '
-                            }
-                        }
-                    }
+                    "label_bundle": ' . $questioneditorLabels . '
                 }
             },
             "questions_api": {
@@ -168,17 +175,19 @@ $signedRequest = $Init->generate();
         <p style="margin-bottom:25px;">Click a language icon to see a translation of the assessment below:</p>
         <div>
             <div class="language-button-container">
-                <a class="language-button <?php if ($language === 'pt-PT') {
-                    echo 'selected';
-                                          } ?>" href="/authoring/item-list-i18n.php?language=pt-PT">
+                <a class="language-button <?php if ($language === 'pt-PT') { echo 'selected'; } ?>" href="/authoring/item-list-i18n.php?language=pt-PT">
                     <img class="language-flag" src="/static/images/i18n/flag-PT.png" />
                     Português / Portuguese
                 </a>
             </div>
             <div class="language-button-container">
-                <a class="language-button <?php if ($language === 'ar-EG') {
-                    echo 'selected';
-                                          } ?>" href="/authoring/item-list-i18n.php?language=ar-EG">
+                <a class="language-button <?php if ($language === 'es-ES') { echo 'selected'; } ?>" href="/authoring/item-list-i18n.php?language=es-ES">
+                    <img class="language-flag" src="/static/images/i18n/flag-ES.png" />
+                    Español / Spanish
+                </a>
+            </div>
+            <div class="language-button-container">
+                <a class="language-button <?php if ($language === 'ar-EG') { echo 'selected'; } ?>" href="/authoring/item-list-i18n.php?language=ar-EG">
                     <img class="language-flag" src="/static/images/i18n/flag-EG.png" />
                     العَرَبِيَّة / Arabic
                 </a>

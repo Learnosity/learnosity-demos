@@ -125,10 +125,10 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Large Group Reporting</h2>
-            <p>With our Large Group Reports, you can easily build complex, large-scale reports showing detailed
+            <h2>Large Group Report</h2>
+            <p>With our large group reports, you can easily build complex, large-scale reports showing detailed
                 breakdowns of hundreds of thousands of user scores, raw score data, or complex 1-dimensional
-                plots to help Administrators easily contrast and compare different parts of their student body.
+                plots to help administrators easily contrast and compare different parts of their student body.
             </p>
         </div>
     </div>

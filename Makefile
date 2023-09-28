@@ -1,4 +1,5 @@
 PHP=php
+PORT=8080
 
 all: run-php
 
@@ -12,13 +13,13 @@ all: run-composer
 
 get-composer: composer.phar
 composer.phar:
-	$(PHP) get-composer.php
+	${PHP} get-composer.php
 
 run-composer: composer.phar
 	./composer.phar --no-interaction install
 
 run-php: run-composer
-	php -S localhost:8080 --docroot www
+	php -S localhost:${PORT} --docroot www
 
 run-vagrant:
 	vagrant up

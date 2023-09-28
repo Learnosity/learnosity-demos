@@ -32,11 +32,11 @@ $request = [
             'item_search' => [
                 'item_banks' => [
                     [
-                        'organisation_id' => 6,
+                        'organisation_id' => $rwAdditionalOrgId,
                         'item_bank_name' => 'Demos'
                     ],
                     [
-                        'organisation_id' => 505,
+                        'organisation_id' => $roAdditionalOrgId,
                         'item_bank_name' => 'Demos Read-Only'
                     ]
                 ]

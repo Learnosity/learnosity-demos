@@ -50,7 +50,7 @@ include_once '../../lrn_config.php';
                     <h2 class="panel-title">Custom Implementation</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Demostrates a custom implementation of the Short Text question type where you can rewrite the question JSON to define your own custom questions.</p>
+                    <p>Demonstrates a custom implementation of the Short Text question type where you can rewrite the question JSON to define your own custom questions.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./custom.php">Demo</a>
                     </p>
@@ -64,7 +64,7 @@ include_once '../../lrn_config.php';
                     <h2 class="panel-title">Custom Percentage Bar</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.<p>
+                    <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.<p>
                     <p class="text-right">
                         <a class="demo_link" href="./custom_percentage_bar.php">Demo</a>
                     </p>
@@ -75,7 +75,7 @@ include_once '../../lrn_config.php';
                     <h2 class="panel-title">Custom Box Whisker</h2>
                 </div>
                 <div class="panel-body">
-                    <p>Demostrates the implementation of a Custom question with an interactive and more complex UI.<p>
+                    <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.<p>
                     <p class="text-right">
                         <a class="demo_link" href="./custom_box_whisker.php">Demo</a>
                     </p>

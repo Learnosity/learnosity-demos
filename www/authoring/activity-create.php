@@ -1,5 +1,7 @@
 <?php
 
+$pageTitle = "Create New Activities - Learnosity Demos";
+
 //common environment attributes including search paths. not specific to Learnosity
 include_once '../env_config.php';
 

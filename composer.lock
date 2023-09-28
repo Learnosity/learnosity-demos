@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "feb0768e7dbd808ef32b3340d40cd133",
+    "content-hash": "df09ee487f3f526ea8d5cf67675ad935",
     "packages": [
         {
             "name": "learnosity/learnosity-sdk-php",
@@ -48,10 +48,6 @@
                 "php5",
                 "sdk"
             ],
-            "support": {
-                "issues": "https://github.com/Learnosity/learnosity-sdk-php/issues",
-                "source": "https://github.com/Learnosity/learnosity-sdk-php/tree/master"
-            },
             "time": "2019-12-19T06:00:42+00:00"
         },
         {
@@ -112,8 +108,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4"
+        "php": ">=7.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
