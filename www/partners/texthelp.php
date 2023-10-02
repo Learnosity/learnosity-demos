@@ -126,9 +126,6 @@ $signedRequest = $Init->generate();
         domControl.addIgnoreListQuerySelector(ignoreClasses);
         const elemStart = document.getElementById('start');
         speechstreamApi.domControlTools.setStartPoint(elemStart);
-        const styleListArray = ["em","strong","b","i","u","tt","font","kbd","dfn","cite","sup","sub","a","embed","span","small","nobr","wbr",
-                                   "acronym","abbr","code","s","chunk","th:pron","img","/th:pron","w","/w","lic/lic","break","silence","thspan","beelinereader", "x-marker", "texthelphighlightspan", "thspan"];
-        speechstreamApi.domControlTools.setStyleList(styleListArray, true);
         speechStreamFirstLoad = false;
      }
 
