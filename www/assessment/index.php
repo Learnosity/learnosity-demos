@@ -376,6 +376,19 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Reset Learner Responses</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Use the resetResponse public method to allow user to reset the response of a question.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./reset-response.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
