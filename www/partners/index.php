@@ -19,8 +19,8 @@
             Our demos below display how you can harness our partners' area-specific expertise to build upon Learnosity's extensible Authoring, Assessment, and Analytics products.
         </p>
         <ul>
-            <li><a class="blue-chevron" href="#TextHelp">SpeechStream, read aloud solution  by TextHelp</a></li>
             <li><a class="blue-chevron" href="#ReadSpeaker">Text to Speech solution: ReadSpeaker</a></li>
+            <li><a class="blue-chevron" href="#TextHelp">SpeechStream, read aloud solution  by TextHelp</a></li>
             <li><a class="blue-chevron" href="#Desmos">Helping every student love learning math: Desmos</a></li>
             <li><a class="blue-chevron" href="#AB">Browse and Tag Learning Standards: Academic Benchmarks</a></li>
             <li><a class="blue-chevron" href="#GeoGebra">Powerful math tools: GeoGebra</a></li>
@@ -35,20 +35,6 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title" id="TextHelp">SpeechStream, read aloud solution  by TextHelp</h>
-                </div>
-                <div class="panel-body">
-                    <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based
-                    JavaScript software solution that allows publishers to embed text-to-speech into their assessment items.</p>
-                    <p class="text-right">
-                        <a class="demo_link" href="./texthelp.php">Demo</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
                     <h3 class="panel-title" id="ReadSpeaker">Text to Speech solution: ReadSpeaker</h>
                 </div>
                 <div class="panel-body">
@@ -56,6 +42,20 @@
                     to multiple formats of educational content in over 50 languages and 200+ voices.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./readspeaker.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" id="TextHelp">SpeechStream, read aloud solution  by TextHelp</h>
+                </div>
+                <div class="panel-body">
+                    <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based
+                    JavaScript software solution that allows publishers to embed text-to-speech into their assessment items.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./texthelp.php">Demo</a>
                     </p>
                 </div>
             </div>
