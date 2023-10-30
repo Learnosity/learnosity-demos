@@ -90,6 +90,45 @@ $signedRequest = $Init->generate();
 <!-- Load the TextHelp library -->
 <script src="https://toolbar.speechstream.net/SpeechStream/latest/speechstream.js" type="text/javascript" data-speechstream-config="Learnosityv350R1"></script>
 
+<!-- Load Mathjax config compatible with Speechstream -->
+<script type="text/javascript">
+    window.MathJax = {
+        loader: {
+            load: ['a11y/semantic-enrich', 'a11y/explorer', 'a11y/assistive-mml']
+        },
+        options: {
+            enableEnrichment:true,
+            enableExplorer: true,
+            enableAssistiveMml: true,
+            enableMenu: false,
+            ignoreClass: "lrn_noMath"
+        },
+        tex: {
+            inlineMath: [['\\(', '\\)'], ['$$', '$$']],
+            displayMath: [['\\[', '\\]']],
+            macros: {
+                abs: ['{|#1|}', 1],
+                degree: ['°'],
+                longdiv: ['{\\enclose{longdiv}{#1}}', 1],
+                atomic: ['{_{#1}^{#2}}', 2],
+                polyatomic: ['{_{#2}{}^{#1}}', 2],
+                circledot: ['{\\odot}'],
+                parallelogram: ['\\unicode{x25B1}'],
+                ngtr: ['\\unicode{x226F}'],
+                nless: ['\\unicode{x226E}'],
+                MathQuillVarField: ['#1', 1],
+                // We create a macro alias for the overarc command to be interpreted as overparen
+                // Since overparen is supported by default in mathjax and overarc isn't
+                overarc: ['{\\overparen{#1}}', 1]
+            }
+        },
+        chtml: {
+            minScale: 1,
+            matchFontHeight: false
+        }
+        };
+</script>
+
 <script>
 
     var initializationObject = <?php echo $signedRequest; ?>
