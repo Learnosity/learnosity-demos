@@ -126,7 +126,7 @@ $InitLastScoreBABUCutScore1 = new Init('reports', $security, $consumer_secret, [
         errorListener: function (err) {
             console.log(err);
         },
-        scoreMutator: function(data) {
+        cutScoreMutator: function(data) {
             processLastScoreByActivityCutscore1(data);
         }
     };

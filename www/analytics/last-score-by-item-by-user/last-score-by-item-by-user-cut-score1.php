@@ -126,7 +126,7 @@ $InitLastScoreBIBUCutScore1 = new Init('reports', $security, $consumer_secret, [
         readyListener: function () {
             const report = reportsAppCutScore1.getReport('lastscore-by-item-by-user-cutscore1');
             report.on('load:data', function(data) {
-                console.log("cut score 1 load data: ", data);
+                console.log("cut score 1 load data:-------- ", data);
             });
             report.on("click:score", function(data) {
                 console.log("click score: ", data);
@@ -138,7 +138,7 @@ $InitLastScoreBIBUCutScore1 = new Init('reports', $security, $consumer_secret, [
         errorListener: function (err) {
             console.log(err);
         },
-        scoreMutator: function(data) {
+        cutScoreMutator: function(data) {
             processScoresCutScore1(data);
         }
     };
