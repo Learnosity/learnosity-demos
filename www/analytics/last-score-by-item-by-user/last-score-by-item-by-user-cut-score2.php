@@ -121,7 +121,7 @@ $InitLastScoreBIBUCutScore2 = new Init('reports', $security, $consumer_secret, [
         errorListener: function (err) {
             console.log(err);
         },
-        scoreMutator: function(data) {
+        cutScoreMutator: function(data) {
             processScoresCutScore2(data);
         }
     };
