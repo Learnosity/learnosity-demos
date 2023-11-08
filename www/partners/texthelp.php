@@ -101,7 +101,7 @@ $signedRequest = $Init->generate();
             enableExplorer: true,
             enableAssistiveMml: true,
             enableMenu: false,
-            ignoreClass: "lrn_noMath"
+            ignoreHtmlClass: "lrn_noMath"
         },
         tex: {
             inlineMath: [['\\(', '\\)'], ['$$', '$$']],
