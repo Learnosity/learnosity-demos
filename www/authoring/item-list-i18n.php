@@ -90,6 +90,13 @@ $request = json_decode('{
             ]
         },
         "item_edit": {
+            "item": {
+                "title": {
+                    "show": true,
+                    "edit": true,
+                    "mandatory": false
+                }
+            },
             "tags_on_create": [
                 {
                     "type": "context",

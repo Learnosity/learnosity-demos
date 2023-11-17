@@ -353,16 +353,32 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Right-to-Left Language Support</h3>
+                        <h3 class="panel-title">Right-to-Left Language Support (items)</h3>
                     </div>
                     <div class="panel-body">
-                        <p>This demo demonstrates the Learnosity approach to handling right-to-left languages.</p>
+                        <p>This demo demonstrates the Learnosity approach to handling right-to-left languages with the item editor.</p>
                         <p class="text-right">
                             <a class="demo_link" href="./rtl.php" aria-label="Right-to-left language demo">Demo</a>
                         </p>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Right-to-Left Language Support (activities)</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>This demo demonstrates the Learnosity approach to handling right-to-left languages with the activity editor.</p>
+                        <p class="text-right">
+                            <a class="demo_link" href="./rtl-activity-list.php" aria-label="Right-to-left language demo">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -376,9 +392,6 @@ include_once 'includes/header.php';
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
