@@ -4,7 +4,7 @@
 include_once '../env_config.php';
 
 //site scaffolding
-$pageTitle = 'Learnosity Author - Right-to-Left Language Support';
+$pageTitle = 'Learnosity Author - Right-to-Left Language Support (activities)';
 include_once 'includes/header.php';
 
 //common Learnosity config elements including API version control vars
@@ -17,7 +17,7 @@ $security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain
 ];
-
+$url_authorapi = 'https://authorapi.learnosity.com';
 /*
     We pull in all i18n files from an open source Github repo:
      - label bundles per API
@@ -37,6 +37,7 @@ $baseRepoUrl = 'https://raw.githubusercontent.com/Learnosity/learnosity-i18n/mas
 $bundleAuthorAPI = file_get_contents($baseRepoUrl . '/ar-EG/label_bundles/author-api.json');
 $bundleQuestionEditorAPI = file_get_contents($baseRepoUrl . '/ar-EG/label_bundles/questioneditor-api.json');
 $bundleQuestionsAPI = file_get_contents($baseRepoUrl . '/ar-EG/label_bundles/questions-api.json');
+$bundleAssessAPI = file_get_contents($baseRepoUrl . '/ar-EG/label_bundles/assess-api.json');
 
 /*
     Retrieve the Question Editor custom question templates and groups
@@ -55,7 +56,7 @@ $questionTypeGroups = file_get_contents($baseRepoUrl . '/ar-EG/qe_custom_types/q
     below in `dependencies`), this will be addressed in a future release.
 */
 $request = json_decode('{
-    "mode": "item_list",
+    "mode": "activity_list",
     "config": {
         "global": {
             "hide_tags": [
@@ -134,6 +135,11 @@ $request = json_decode('{
                 "init_options": {
                     "labelBundle": ' . $bundleQuestionsAPI . '
                 }
+            },
+            "items_api": {
+                "init_options": {
+                    "labelBundle": ' . $bundleAssessAPI . '
+                }
             }
         }
     },
@@ -159,7 +165,7 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Right-to-Left Language Support</h2>
-            <p>This demo demonstrates the Learnosity approach to handling right-to-left languages. In this demo, everything is localised to Arabic using <a href="https://reference.learnosity.com/author-api/initialization/config.label_bundle">label bundles</a>.</p>
+            <p>This demo demonstrates the Learnosity approach to handling right-to-left languages. In this demo, everything is localised to Arabic using <a href="https://reference.learnosity.com/author-api/initialization#config_label_bundle">label bundles</a>.</p>
             <p>See an article on how to <a href="https://help.learnosity.com/hc/en-us/articles/360000858898-Configuring-Author-API-to-Initialize-in-RTL-Right-to-Left-Mode-Arabic-and-Hebrew-Language-Support-">configure Author API for right-to-left support</a>.</p>
         </div>
     </div>
