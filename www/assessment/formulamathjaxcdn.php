@@ -50,7 +50,7 @@ $signedRequest = $Init->generate();
     </div>
 
     <div class="section pad-sml lrn">
-        <!-- Container for the assess api to load into -->
+        <!-- Container for the Items API assessment player to load into -->
         <span class="learnosity-item lrn" data-reference="demomathjaxformula_1"></span>
     </div>
 
