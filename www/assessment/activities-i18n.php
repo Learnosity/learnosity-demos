@@ -203,7 +203,7 @@ $signedRequest = $Init->generate();
     </div>
 </div>
 <div class="section pad-sml">
-    <!-- Container for the assess api to load into -->
+    <!-- Container for the Items API assessment player to load into -->
     <div id="learnosity_assess"></div>
 </div>
 <script <?php if ($language === 'ar-EG') {
