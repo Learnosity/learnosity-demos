@@ -28,15 +28,16 @@ $request = [
     'user_id' => '$ANONYMIZED_USER_ID',
     'items' => [
 
-        'dos-sf-demo-01',
-        'dos-sf-demo-02',
-        'dos-sf-demo-04',
-        'dos-sf-demo-05',
-
+        'Demo3',
+        'Demo6',
+        'Demo7',
+        'Demo8',
+        'Demo9',   
+        'Demo10'
 
     ],
     'config' => [
-        'title' => 'Dynamically created assessment',
+        'title' => 'Demo activity - showcasing question types and assess options',
         'subtitle' => "Walter White",
         'regions' => 'main'
     ]
