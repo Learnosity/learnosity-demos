@@ -26,6 +26,7 @@
             <li><a class="blue-chevron" href="#GeoGebra">Powerful math tools: GeoGebra</a></li>
             <li><a class="blue-chevron" href="#Brainingcamp">Digital math manipulatives: Brainingcamp</a></li>
             <li><a class="blue-chevron" href="#Alchemie">Game-inspired interactives: Alchemie</a></li>
+            <li><a class="blue-chevron" href="#Tuva">Data, graphing, and statistical tools: Tuva</a></li>
         </ul>
     </div>
 
@@ -131,6 +132,20 @@
                     <p>The Alchemie integration is transforming the options for chemistry question types. Now, prompts can require students to build or use a model to answer a question.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./alchemie.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" id="Tuva">Data, graphing, and statistical tools: Tuva</h>
+                </div>
+                <div class="panel-body">
+                    <p>Powerful, easy-to-use tools and a library of authentic, real-world datasets that are leading the way in the teaching, learning, and assessment of foundational concepts, topics, phenomena, and practices across math, science, social studies, and other disciplines.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./tuva.php">Demo</a>
                     </p>
                 </div>
             </div>
