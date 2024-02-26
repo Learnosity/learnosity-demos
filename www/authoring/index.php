@@ -255,7 +255,24 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Create Random Activity</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>Create and edit random activites that persist in your Learnosity-hosted item bank.</p>
+                        <p class="text-right">
+                            <a class="demo_link" href="./random-activity-create.php" aria-label="Create new random activity">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="section index">
 
         <h2 id="integrate">Customizing and Integrating into your Authoring environment</h2>
