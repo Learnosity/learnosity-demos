@@ -20,13 +20,14 @@
         </p>
         <ul>
             <li><a class="blue-chevron" href="#ReadSpeaker">Text to Speech solution: ReadSpeaker</a></li>
-            <li><a class="blue-chevron" href="#TextHelp">SpeechStream, read aloud solution  by TextHelp</a></li>
-            <li><a class="blue-chevron" href="#Desmos">Helping every student love learning math: Desmos</a></li>
-            <li><a class="blue-chevron" href="#AB">Browse and Tag Learning Standards: Academic Benchmarks</a></li>
             <li><a class="blue-chevron" href="#GeoGebra">Powerful math tools: GeoGebra</a></li>
+            <li><a class="blue-chevron" href="#Desmos">Helping every student love learning math: Desmos</a></li>
+            <li><a class="blue-chevron" href="#TextHelp">SpeechStream, read aloud solution  by TextHelp</a></li>
+            <li><a class="blue-chevron" href="#AB">Browse and Tag Learning Standards: Academic Benchmarks</a></li>
             <li><a class="blue-chevron" href="#Brainingcamp">Digital math manipulatives: Brainingcamp</a></li>
             <li><a class="blue-chevron" href="#Alchemie">Game-inspired interactives: Alchemie</a></li>
             <li><a class="blue-chevron" href="#Tuva">Data, graphing, and statistical tools: Tuva</a></li>
+            <li><a class="blue-chevron" href="#Qualified">Coding assessments: Qualified</a></li>
         </ul>
     </div>
 
@@ -50,13 +51,12 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title" id="TextHelp">SpeechStream, read aloud solution  by TextHelp</h>
+                    <h3 class="panel-title" id="GeoGebra">Powerful math tools: GeoGebra</h>
                 </div>
                 <div class="panel-body">
-                    <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based
-                    JavaScript software solution that allows publishers to embed text-to-speech into their assessment items.</p>
+                    <p>GeoGebra provides several powerful math tools including a graphing calculator, geometry tool, spreadsheet, probability calculator, algebra calculator and 3D graphing.</p>
                     <p class="text-right">
-                        <a class="demo_link" href="./texthelp.php">Demo</a>
+                        <a class="demo_link" href="./geogebra.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -81,12 +81,13 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title" id="AB">Browse and Tag Learning Standards: Academic Benchmarks</h>
+                    <h3 class="panel-title" id="TextHelp">SpeechStream, read aloud solution  by TextHelp</h>
                 </div>
                 <div class="panel-body">
-                    <p>Instructure’s partnership with Learnosity allows Elevate Standards Alignment customers to leverage the Academic Benchmarks digitized learning standards and unique identifiers (GUIDs) in an integrated manner within the Learnosity toolset.</p>
+                    <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based
+                    JavaScript software solution that allows publishers to embed text-to-speech into their assessment items.</p>
                     <p class="text-right">
-                        <a class="demo_link" href="./academic-benchmarks.php">Demo</a>
+                        <a class="demo_link" href="./texthelp.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -97,12 +98,12 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title" id="GeoGebra">Powerful math tools: GeoGebra</h>
+                    <h3 class="panel-title" id="AB">Browse and Tag Learning Standards: Academic Benchmarks</h>
                 </div>
                 <div class="panel-body">
-                    <p>GeoGebra provides several powerful math tools including a graphing calculator, geometry tool, spreadsheet, probability calculator, algebra calculator and 3D graphing.</p>
+                    <p>Instructure’s partnership with Learnosity allows Elevate Standards Alignment customers to leverage the Academic Benchmarks digitized learning standards and unique identifiers (GUIDs) in an integrated manner within the Learnosity toolset.</p>
                     <p class="text-right">
-                        <a class="demo_link" href="./geogebra.php">Demo</a>
+                        <a class="demo_link" href="./academic-benchmarks.php">Demo</a>
                     </p>
                 </div>
             </div>
@@ -146,6 +147,22 @@
                     <p>Powerful, easy-to-use tools and a library of authentic, real-world datasets that are leading the way in the teaching, learning, and assessment of foundational concepts, topics, phenomena, and practices across math, science, social studies, and other disciplines.</p>
                     <p class="text-right">
                         <a class="demo_link" href="./tuva.php">Demo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" id="Qualified">Coding assessments: Qualified</h>
+                </div>
+                <div class="panel-body">
+                    <p>The Qualified integration allows to assess technical competency in a real coding environment, with a developer-friendly IDE, rich language features, and modern unit-testing frameworks.</p>
+                    <p class="text-right">
+                        <a class="demo_link" href="./qualified.php">Demo</a>
                     </p>
                 </div>
             </div>
