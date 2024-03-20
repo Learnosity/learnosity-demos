@@ -81,6 +81,10 @@ $itemsRequest = [
                     'type' => 'verticaltoc_element'
                 ]
             ]
+        ],
+        'navigation' => [
+            'scroll_to_test' => false,
+            'scroll_to_top' => false
         ]
     ]
 ];
@@ -95,11 +99,6 @@ $signedRequestAuthor = $InitAuthor->generate();
 ?>
 
 <div class="jumbotron section">
-    <div class="toolbar">
-        <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-        </ul>
-    </div>
     <div class="overview">
         <h2>GeoGebra</h2>
         <p style="text-align:justify;">

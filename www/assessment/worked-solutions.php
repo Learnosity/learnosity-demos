@@ -132,7 +132,7 @@ $signedRequest = $Init->generate();
             $('button.' + question_id).text('Hint (' + (hints.length - $('#'+question_id).data('hintsClicked')) + ' left) ' )
 
             // Render any LaTeX that might have been in the hint
-            MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'hints_' + question_id]);
+            MathJax.typeset();
         }
 
         /**
