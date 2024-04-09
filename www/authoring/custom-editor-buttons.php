@@ -111,8 +111,7 @@ $signedRequest = $Init->generate();
                     $customContent = $('#ck-custom-content').prop('outerHTML');
 
                     buttonClickHandler = function () {
-                            $customContent = $('#ck-custom-content').prop('outerHTML');
-                            callback($customContent);
+                            callback($customContent + ' ');
                             $modal.modal('hide');
                             $closeButton.off('click', cancelClickHandler);
                             $embedButton.off('click', buttonClickHandler);
