@@ -72,7 +72,7 @@ $request = [
             'id' => 'session-detail',
             'type' => 'session-detail-by-item',
             'user_id' => '$ANONYMIZED_USER_ID',
-            'session_id' => '8c393c87-77b6-4c14-8da7-75d39243e642'
+            'session_id' => '22e797df-da86-4a1e-ac07-93b268ef349a'
         ]
     ]
 ];
