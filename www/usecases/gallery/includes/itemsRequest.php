@@ -36,14 +36,7 @@ $request = array(
     'session_id'           => Uuid::generate(),
     'type'                 => 'submit_practice',
     'rendering_type'       => 'inline',
-    'activity_template_id' => $activityRef,
-    'config'               => [
-        'questions_api_init_options' => [
-            'beta_flags' => [
-                'reactive_views' => true
-            ]
-        ]
-    ]
+    'activity_template_id' => $activityRef
 );
 
 $init = new Init('items', $security, $consumer_secret, $request);

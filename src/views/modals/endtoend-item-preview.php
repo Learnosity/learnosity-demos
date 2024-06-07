@@ -39,20 +39,12 @@ $(window).on('shown.bs.modal', function (e) {  // When the Modal is shown
           "user_id": "",
           "rendering_type": "inline",
           "name": "",
-          "state": "initial",
           "activity_id": "",
           "session_id": "",
           "items": [
             item_ref // This is the item clicked on the list
           ],
-          "type": "",
-          "config": {
-            "questions_api_init_options": {
-                "beta_flags": {
-                    "reactive_views": true
-                }
-            }
-          }
+          "type": ""
        },
        domain: window.location.hostname
     };
@@ -140,7 +132,6 @@ $(document).ready(function(){
           "user_id": "demo_user",
           "rendering_type": "inline",
           "name": "demo_example",
-          "state": "initial",
           "activity_id": "not_to_be_submitted",
           "session_id": "d834bc0c-6120-4447-9e8c-47b65cd4c769",
           "items": [

@@ -12,35 +12,27 @@ include_once '../../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$security = array(
+$security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain
-);
+];
 
 $session_id    = Uuid::generate();
-$session_state = 'initial';
 $activity_id   = Uuid::generate();
 
 $request = [
     'user_id'              => 'demo_student',
     'rendering_type'       => 'assess',
-    'assess_inline'        => true,
     'name'                 => 'Student Assessment demo',
-    'state'                => $session_state,
     'activity_id'          => $activity_id,
     'session_id'           => $session_id,
     'activity_template_id' => 'SCORING_DEMO_TEST',
     'type'                 => 'submit_practice',
-    'config'               => array(
-        'configuration' => array(
+    'config'               => [
+        'configuration' => [
             'onsubmit_redirect_url' => 'feedback.php?session_id=' . $session_id . '&activity_id=' . $activity_id
-        ),
-        'questions_api_init_options' => [
-            'beta_flags' => [
-                'reactive_views' => true
-            ]
         ]
-    )
+    ]
 ];
 
 $Init = new Init('items', $security, $consumer_secret, $request);

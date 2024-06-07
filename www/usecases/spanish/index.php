@@ -12,22 +12,20 @@ include_once '../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$security = array(
+$security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain
-);
+];
 
 $session_id = Uuid::generate();
 
-$request = array(
+$request = [
     'user_id'        => 'demo_student',
     'rendering_type' => 'assess',
     'name'           => 'Learnosity Spanish Demo',
-    'state'          => 'initial',
     'activity_id'    => 'spanish-demo',
     'session_id'     => $session_id,
     'type'           => 'submit_practice',
-    'assess_inline'  => true,
     'items'          => [
         [
             'id' => Uuid::generate(),
@@ -66,42 +64,28 @@ $request = array(
             'reference' => 'LEAR_99455450458884454545539'
         ]
     ],
-    'config' => array(
-        'navigation' => array(
-            'show_accessibility' => array(
+    'config' => [
+        'navigation' => [
+            'show_accessibility' => [
                 'show_colourscheme' => true,
                 'show_fontsize' => true,
                 'show_zoom' => true
-            ),
-            'scroll_to_top'            => false,
-            'scroll_to_test'           => false,
-            'show_configuration'       => false,
-            'show_fullscreencontrol'   => true,
-            'show_progress'            => true,
-            'show_submit'              => true,
-            'show_calculator'          => false,
-            'show_itemcount'           => true,
-            'skip_submit_confirmation' => true,
-            'warning_on_change'        => false,
-            'scrolling_indicator'      => false,
-            'show_answermasking'       => true,
-            'show_acknowledgements'    => true
-        ),
-        'ui_style'            => 'main',
-        'configuration' => array(
-            'lazyload'               => false,
+            ]
+        ],
+        'regions' => 'main',
+        'configuration' => [
             'onsubmit_redirect_url' => 'report.php?session_id=' . $session_id
-        ),
-        'time' => array(
+        ],
+        'time' => [
             'show_time'  => true,
             'show_pause' => true,
             'max_time'   => 1500,
             'warning_time' => 10,
             'limit_type'   => 'soft'
-        ),
+        ],
         'title' => 'Learnosity demo en Español',
         'subtitle' => 'Juan Perez',
-        'labelBundle' => array(
+        'labelBundle' => [
             'actionsave' => 'guardar',
             'actionsubmit' => 'enviar',
             'allQuestionsAttempted' => 'Todas las preguntas fueron contestadas.',
@@ -186,7 +170,7 @@ $request = array(
             'minus' => '-',
             'zero' => '0',
             'zoomInResult' => 'El navegador aumentará el zoom cuando presione la tecla de suma (+).',
-            'zoomOutResult' => 'El navegador disminuirá el zoom cuando presione la tecla de restar (-).',
+            'zoomOutResult' => 'El navegador disminuirá el zoom cuando presione la tecla de restar (-).',
             'collapseMenu' => 'Menú desplegable',
             'submitActionConfirmation' => 'Está seguro que desea finalizar la actividad?',
             'submitWithUnattemptedQuestion' => '{{unattemptedResponsesCount}} pregunta no tiene respuestas. Está seguro que desea finalizar la actividad?',
@@ -195,7 +179,7 @@ $request = array(
             'existingResponsesTitle' => 'Se encontraron respuestas existentes.',
             'existingResponsesMessage' => 'Esta actividad ya fue resuelta.',
             'existingResponsesDetail' => 'Por favor refresque la pagina para iniciar una nueva actividad.',
-            'questionsApiLabelBundle' => array(
+            'questionsApiLabelBundle' => [
                 'word' => 'Palabra',
                 'wordLength' => 'Límite de palabras',
                 'editorBoldIcon' => 'N',
@@ -210,15 +194,10 @@ $request = array(
                 'reset' => 'Reiniciar',
                 'undo' => 'Deshacer',
                 'redo' => 'Rehacer'
-            )
-        ),
-        'questions_api_init_options' => [
-            'beta_flags' => [
-                'reactive_views' => true
             ]
         ]
-    )
-);
+    ]
+];
 
 
 $Init = new Init('items', $security, $consumer_secret, $request);
