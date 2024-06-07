@@ -16,14 +16,14 @@ use LearnositySdk\Utils\Uuid;
 $item_ref = Uuid::generate();
 $activity_id = 'Demo_Activity';
 
-$security = array(
+$security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain
-);
+];
 
 $session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => Uuid::generate()]]);
 
-$request = array(
+$request = [
     'activity_id'    => $activity_id,
     'name'           => 'End to End Demo - Assessment',
     'rendering_type' => 'assess',
@@ -31,7 +31,6 @@ $request = array(
     'session_id'     => $session_id,
     'user_id'        => 'demo_student',
     'items'          => getItemsArray(),
-    'assess_inline'  => true,
     'config'         => [
         'title' => 'Demo Activity',
         'configuration' => [
@@ -78,20 +77,15 @@ $request = array(
                 ]
             ]
         ],
-        'labelBundle' => array(
+        'labelBundle' => [
             'close' => 'Go to Reporting'
-        ),
+        ],
         'time' => [
             'show_pause' => true,
             'max_time' => 300
-        ],
-        'questions_api_init_options' => [
-            'beta_flags' => [
-                'reactive_views' => true
-            ]
         ]
     ]
-);
+];
 
 
 function getItemsArray()

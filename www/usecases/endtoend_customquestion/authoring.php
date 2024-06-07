@@ -54,31 +54,31 @@ $request = array(
                 "js": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_js.php",
                 "css" : "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker.css",
                 "stimulus": "Draw a <b>box & whisker</b> chart for the following: <b>6, 2, 5, 3, 6, 10, 11, 6</b>",
-      "params_line_min": 0,
-      "params_line_max": 17,
-      "params_step": 0.5,
-      "params_mark_small": 0,
-      "params_mark_big": 1,
-      "params_width": 600,
-      "params_height": 150,
-      "params_range_1": 2,
-      "params_range_2": 14,
-      "params_quartile_1": 4,
-      "params_median": 6,
-      "params_quartile_3": 10,
-      "params_box1_color": "#bbbbbb",
-      "params_box2_color": "#999999",
-      "valid_range_1": 2,
-      "valid_range_2": 11,
-      "valid_quartile_1": 4,
-      "valid_median": 6,
-      "valid_quartile_3": 8.5,
-      "score": 1
+                "params_line_min": 0,
+                "params_line_max": 17,
+                "params_step": 0.5,
+                "params_mark_small": 0,
+                "params_mark_big": 1,
+                "params_width": 600,
+                "params_height": 150,
+                "params_range_1": 2,
+                "params_range_2": 14,
+                "params_quartile_1": 4,
+                "params_median": 6,
+                "params_quartile_3": 10,
+                "params_box1_color": "#bbbbbb",
+                "params_box2_color": "#999999",
+                "valid_range_1": 2,
+                "valid_range_2": 11,
+                "valid_quartile_1": 4,
+                "valid_median": 6,
+                "valid_quartile_3": 8.5,
+                "score": 1
             },
             "description": "Create a box & whisker plot."
         }
     }'),
-                    'question_type_groups' => json_decode('[
+        'question_type_groups' => json_decode('[
         {
             "name": "Custom Question Types",
             "reference": "custom_q_types"
@@ -219,24 +219,8 @@ $request = array(
             "js": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_js.php",
             "css" : "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker.css"
         }
-    ]'),
-                    'dependencies' => [
-                        'questions_api' => [
-                            'init_options' => [
-                                'beta_flags' => [
-                                    'reactive_views' => true
-                                ]
-                            ]
-                        ]
-                    ]
+    ]')
                 )
-            ],
-            'questions_api' => [
-                'init_options' => [
-                    'beta_flags' => [
-                        'reactive_views' => true
-                    ]
-                ]
             ]
         ]
     ),

@@ -22,16 +22,16 @@ $security = [
     'consumer_key' => $consumer_key,
 ];
 
-$request = array(
-    'reports' => array(
-        array(
+$request = [
+    'reports' => [
+        [
             'id' => 'report-1',
             'type' => 'session-detail-by-item',
             'user_id' => 'demo_student',
             'session_id' => $session_id
-        )
-    )
-);
+        ]
+    ]
+];
 
 $Init = new Init('reports', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
@@ -40,7 +40,7 @@ $signedRequest = $Init->generate();
 
 <div class="jumbotron section">
     <div class="overview">
-        <h1>End to End Demo – Reporting Review</h1>
+        <h1>End to End Demo - Reporting Review</h1>
         <p>Finally the student can review any teacher feedback.</p>
     </div>
 </div>
@@ -109,15 +109,7 @@ var init = function() {
             'activity_id': 'Demo_Activity',
             'session_id': '<?php echo $feedback_session_id; ?>',
             'items': itemReferences,
-            'type': 'feedback',
-            'config': {
-                "eventWorkaround" : true, //This is a temp workaround for LRN-7011
-                'questions_api_init_options': {
-                    'beta_flags': {
-                        'reactive_views': true
-                    }
-                }
-            }
+            'type': 'feedback'
           }
         };
 

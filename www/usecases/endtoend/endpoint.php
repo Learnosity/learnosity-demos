@@ -33,15 +33,6 @@ $security = [
     'consumer_key' => $consumer_key
 ];
 
-if (
-    isset($post_data['request']['config']) &&
-    isset($post_data['request']['config']['questions_api_init_options']) &&
-    isset($post_data['request']['config']['questions_api_init_options']['beta_flags']) &&
-    isset($post_data['request']['config']['questions_api_init_options']['beta_flags']['reactive_views']) &&
-    $post_data['request']['config']['questions_api_init_options']['beta_flags']['reactive_views'] === 'true'
-) {
-    $post_data['request']['config']['questions_api_init_options']['beta_flags']['reactive_views'] = true;
-}
 //initialize Items API with provided request object
 $init = new Init('items', $security, $consumer_secret, $post_data['request']);
 echo $init->generate();

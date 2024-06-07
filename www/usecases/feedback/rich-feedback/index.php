@@ -12,44 +12,29 @@ include_once '../../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$security = array(
+$security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain
-);
+];
 
-$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-//show in initial state to start and, when reloaded with session id, show in review mode
-if ($session_id) {
-    $session_state = 'resume';
-} else {
-    $session_id = Uuid::generate();
-    $session_state = 'initial';
-}
+$session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => [ 'default' => Uuid::generate()]]);
 
 $request = [
     'user_id'        => 'demo_student',
     'rendering_type' => 'assess',
-    'assess_inline'  => true,
     'name'           => 'Student Assessment demo',
-    'state'          => $session_state,
     'activity_id'    => 'DemoTest_DemoSiteExample',
     'session_id'     => $session_id,
     'activity_template_id' => 'FEEDBACK_DEMO_TEST',
     'type'           => 'submit_practice',
-    'config'         => array(
-        'labelBundle' => array(
+    'config'         => [
+        'labelBundle' => [
             'item' => 'Question'
-        ),
-        'configuration' => array(
+        ],
+        'configuration' => [
             'onsubmit_redirect_url' => 'feedback.php?session_id=' . $session_id
-        ),
-        'questions_api_init_options' => [
-            'beta_flags' => [
-                'reactive_views' => true
-            ]
         ]
-    )
+    ]
 ];
 
 $Init = new Init('items', $security, $consumer_secret, $request);

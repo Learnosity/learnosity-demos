@@ -81,7 +81,6 @@ $request = [
             ]
         ]
     ],
-    'assess_inline' => true,
     'config' => [
         'title' => 'Demo activity - showcasing sections',
         'regions' => 'main'
