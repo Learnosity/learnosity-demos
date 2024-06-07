@@ -11,11 +11,11 @@ include_once '../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$security = array(
+$security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain,
     'user_id'      => 'demo_student'
-);
+];
 
 
 $sessionId = filter_input(INPUT_GET, 'sessionid', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -34,10 +34,7 @@ $request = json_encode([
     "name" => "Questions API Demo",
     "session_id" => $sessionId,
     "questions" => [],
-    "features" => [],
-    "beta_flags" => [
-        "reactive_views" => true
-    ]
+    "features" => []
 ]);
 
 $Init = new Init('questions', $security, $consumer_secret, $request);

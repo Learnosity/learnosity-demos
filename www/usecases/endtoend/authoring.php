@@ -43,24 +43,8 @@ $request = array(
                         'fixed_preview'      => true,
                         'advanced_group'     => false,
                         'search_field'       => false
-                    ),
-                    'dependencies' => [
-                        'questions_api' => [
-                            'init_options' => [
-                                'beta_flags' => [
-                                    'reactive_views' => true
-                                ]
-                            ]
-                        ]
-                    ]
+                    )
                 )
-            ],
-            'questions_api' => [
-                'init_options' => [
-                    'beta_flags' => [
-                        'reactive_views' => true
-                    ]
-                ]
             ]
         ]
     ),
@@ -79,7 +63,7 @@ $signedRequest = $Init->generate();
 
 <div class="jumbotron section">
     <div class="overview">
-        <h1>End to End Demo – Authoring</h1>
+        <h1>End to End Demo - Authoring</h1>
         <p>Learnosity's Author API enable professional authors (as well as teachers) to create and edit content.</p>
         <p>Questions are saved to the Learnosity item bank to be included in the assessment.</p>
     </div>

@@ -18,7 +18,6 @@ $request = [
     'activity_id'    => 'itemsassessdemo',
     'name'           => 'Demo showcasing remote control events',
     'rendering_type' => 'assess',
-    'state'          => 'initial',
     'type'           => 'submit_practice',
     'session_id'     => Uuid::generate(),
     'user_id'        => $student['id'],
@@ -74,11 +73,6 @@ $request = [
             'onsubmit_redirect_url'  => $_SERVER['REQUEST_URI'],
             'onsave_redirect_url'    => $_SERVER['REQUEST_URI'],
             'events'                 => true
-        ],
-        'questions_api_init_options' => [
-            'beta_flags' => [
-                'reactive_views' => true
-            ]
         ]
     ]
 ];

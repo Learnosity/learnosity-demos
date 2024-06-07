@@ -111,15 +111,7 @@ var init = function() {
             'activity_id': 'Demo_Activity',
             'session_id': '<?php echo $feedback_session_id; ?>',
             'items': itemReferences,
-            'type': 'feedback',
-            'config': {
-                "eventWorkaround" : true, //This is a temp workaround for LRN-7011
-                'questions_api_init_options': {
-                    'beta_flags': {
-                        'reactive_views': true
-                    }
-                }
-            }
+            'type': 'feedback'
           }
         };
 

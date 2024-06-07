@@ -12,10 +12,10 @@ include_once '../../lrn_config.php';
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
 
-$security = array(
+$security = [
     'consumer_key' => $consumer_key,
     'domain'       => $domain
-);
+];
 
 // Decide which items your want to print
 $items = [
@@ -36,28 +36,22 @@ $items = [
         'reference' => 'printing-fillintheblank'
     ]
 ];
-$sessionid = Uuid::generate();
 
 // Load the assessment in `local_practice` (you won't want to submit actual responses)
 // and using the `inline` rendering type
-$request = array(
+$request = [
     'user_id'              => 'demo_student',
-    'session_id'           => $sessionid,
+    'session_id'           => Uuid::generate(),
     'state'                => 'review',
     'rendering_type'       => 'inline',
     'type'                 => 'local_practice',
     'items'                => $items,
-    'config'               => array(
+    'config'               => [
         'showCorrectAnswers'  => true,
         'fontsize'            => 'xlarge',
-        'renderSubmitButton'  => false,
-        'questions_api_init_options' => [
-            'beta_flags' => [
-                'reactive_views' => true
-            ]
-        ]
-    )
-);
+        'renderSubmitButton'  => false
+    ]
+];
 
 $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
