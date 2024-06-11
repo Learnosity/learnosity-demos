@@ -64,16 +64,19 @@ $lastScoreBIBUReportConfig = [
 <button class="lsbibu-button lsbibu-button-selected" id="lsbibu-default">Default</button>
 <button class="lsbibu-button" id="lsbibu-cutscore1">Cut-score 1</button>
 <button class="lsbibu-button" id="lsbibu-cutscore2">Cut-score 2</button>
+<button class="lsbibu-button" id="lsbibu-usesvg">Use SVG</button>
 
 <?php require 'last-score-by-item-by-user-default.php' ?>
 <?php require 'last-score-by-item-by-user-cut-score1.php' ?>
 <?php require 'last-score-by-item-by-user-cut-score2.php' ?>
+<?php require 'last-score-by-item-by-user-use-svg.php' ?>
 
 <script>
 const buttons = [
     {"lsbibu-default": "lsbibu-report-default"},
     {"lsbibu-cutscore1": "lsbibu-report-cutscore1"},
     {"lsbibu-cutscore2": "lsbibu-report-cutscore2"},
+    {"lsbibu-usesvg": "lsbibu-report-usesvg"},
 ];
 
 function hideAllLastScoreByItemByUserReport() {
