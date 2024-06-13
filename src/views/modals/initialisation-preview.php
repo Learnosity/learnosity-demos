@@ -5,12 +5,12 @@
 *
 ********************************************************************
 -->
-<div class="modal fade preview" id="initialisation-preview">
+<div class="modal preview-fade preview" id="initialisation-preview">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">API Initialisation Preview</h4>
+                <h4 class="modal-title">API Initialization Preview</h4>
             </div>
             <div class="modal-body">
                 <pre><code id="preview-body"></code></pre>
