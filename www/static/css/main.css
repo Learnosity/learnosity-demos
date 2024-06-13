@@ -391,6 +391,25 @@ h1, h2, h3, h4, h5, h6, .navbar {
     color: olive;
 }
 
+.preview-fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+            transition: opacity .15s linear;
+  }
+.preview-fade.in {
+    transition: opacity .6s;
+    opacity: 1;
+}
+
+/* Keep below the cookie banner and above the API's container */
+#initialisation-preview{
+    z-index:1099;
+}
+
+.section.pad-sml {
+    z-index: 200;
+}
+
 /********************************************************************
 *
 * Questions API
