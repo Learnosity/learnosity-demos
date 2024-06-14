@@ -1679,3 +1679,21 @@ textarea.form-control {
   font-size: 16px;
   line-height: 24px;
 }
+
+/********************************************************************
+*
+* custom-qe-layout.php workaround
+*
+********************************************************************/
+
+#collapseOne.collapse.in {
+    display: block !important;
+}
+
+#collapseTwo.collapse.in {
+    display: block !important;
+}
+
+#collapseThree.collapse.in {
+    display: block !important;
+}
