@@ -401,13 +401,19 @@ h1, h2, h3, h4, h5, h6, .navbar {
     opacity: 1;
 }
 
+/* The site was set up to use very high z-index values (1099 for example), values above 10 conflict with the frontend app's modals */
 /* Keep below the cookie banner and above the API's container */
 #initialisation-preview{
-    z-index:1099;
+    z-index:10;
+}
+
+/* Keep below the init preview */
+.modal-backdrop{
+    z-index:9;
 }
 
 .section.pad-sml {
-    z-index: 200;
+    z-index: 9;
 }
 
 /********************************************************************
