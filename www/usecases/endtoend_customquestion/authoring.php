@@ -280,7 +280,7 @@ $signedRequest = $Init->generate();
         //add more question handler
         $(".btn-addMore").click(function(){
             activeItemID = guid();
-            authorApp.setItem(activeItemID);
+            authorApp.editItem(activeItemID, true);
         });
         //go to assessment handler
         $(".btn-goToAssessment").click(function(){
@@ -330,7 +330,7 @@ $signedRequest = $Init->generate();
 
     function editItem(itemID) {
         activeItemID = itemID;
-        authorApp.setItem(itemID);
+        authorApp.editItem(itemID, true);
     }
 </script>
 
