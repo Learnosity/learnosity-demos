@@ -24,7 +24,7 @@ $request = [
     'rendering_type' => 'inline',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
-    'user_id' => '$ANONYMIZED_USER_ID',
+    'user_id' => 'ANONYMIZED_USER_ID',
     'items' => [
         [
             'id' => 'demoaudio_1',
