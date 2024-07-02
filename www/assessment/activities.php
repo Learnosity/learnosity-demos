@@ -26,7 +26,7 @@ $request = [
     'rendering_type' => 'assess',
     'type' => 'submit_practice',
     'session_id' => Uuid::generate(),
-    'user_id' => '$ANONYMIZED_USER_ID'
+    'user_id' => 'ANONYMIZED_USER_ID'
 ];
 
 // For more information: https://reference.learnosity.com/items-api/initialization#requestObject

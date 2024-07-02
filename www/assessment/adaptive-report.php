@@ -25,13 +25,13 @@ $request = [
         [
             'id' => 'sessions-summary-div',
             'type' => 'sessions-summary',
-            'user_id' => '$ANONYMIZED_USER_ID',
+            'user_id' => 'ANONYMIZED_USER_ID',
             'session_ids' => [ $sessionId ]
         ],
         [
             'id' => 'session-detail-by-item-div',
             'type' => 'session-detail-by-item',
-            'user_id' => '$ANONYMIZED_USER_ID',
+            'user_id' => 'ANONYMIZED_USER_ID',
             'session_id' => $sessionId
         ]
     ]

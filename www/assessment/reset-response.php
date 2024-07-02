@@ -17,7 +17,7 @@ $requestDemo = [
     'rendering_type' => 'inline',
     'type' => 'local_practice',
     'session_id' => Uuid::generate(),
-    'user_id' => '$ANONYMIZED_USER_ID',
+    'user_id' => 'ANONYMIZED_USER_ID',
     'organisation_id' => $roAdditionalOrgId,
     'items' => [
         [
