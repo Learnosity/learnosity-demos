@@ -22,7 +22,7 @@ $request = [
     'activity_template_id' => 'TexttoSpeech_Testing_Activity',
 
     'rendering_type' => 'assess',
-    'user_id' => '$ANONYMIZED_USER_ID',
+    'user_id' => 'ANONYMIZED_USER_ID',
     'session_id' => Uuid::generate(),
     'type' => 'submit_practice',
     'name' => 'Test Assessment',
