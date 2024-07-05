@@ -21,12 +21,6 @@ $security = [
 $request = [
     'reports' => [
         [
-            'id'        => 'progress-by-tag',
-            'type'      => 'progress-by-tag',
-            'user_id'   => 'mce_student_1',
-            'hierarchy_reference' => 'CCSS'
-        ],
-        [
             "id"        => "progress-by-tag-by-user",
             "type"      => "progress-by-tag-by-user",
             "users"     => [
@@ -34,19 +28,6 @@ $request = [
                 ["id" => "mce_student_2","name" => "John Carter"]
             ],
             "hierarchy_reference" => "CCSS"
-        ],
-        [
-            'id'          => 'progress-single',
-            'type'        => 'progress-single',
-            'ui'          => 'pie',
-            'user_id'     => 'demo_student',
-            'hierarchy_reference'   => 'questiontype',
-            'tag_hierarchy_path' => [
-                [
-                    'type'  => 'questiontype',
-                    'name'  => 'mcq'
-                ]
-            ]
         ]
     ]
 ];
@@ -65,20 +46,8 @@ $signedRequest = $Init->generate();
         </div>
         <div class="overview">
             <h2>Coursework Progress Reporting</h2>
-            <p>Track the progress of a student, or group of students, against learning objectives, standards, or other tag-based alignments. Or build your own dashboard with our Progress Single report.</p>
-            <ul>
-                <li><h4><a href="#progress-by-tag-report">Progress by Tag Report (Deprecated)</a></h4></li>
-                <li><h4><a href="#progress-by-tag-by-user-report">Progress by Tag by User Report</a></h4></li>
-                <li><h4><a href="#progress-single-report">Progress Single Report (Deprecated)</a></h4></li>
-            </ul>
+            <p>Track the progress of a student, or group of students, against learning objectives, standards, or other tag-based alignments.</p>
         </div>
-    </div>
-
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="progress-by-tag-report"><a href="#progress-by-tag-report">Progress by Tag Report (Deprecated)</a></h3>
-        <p>See at a glance how a student performed against two levels of tagging. Note overall performance in Expressions and Equations, for example, but also drill down to see progress in individual Common Core standards.</p>
-        <div id="progress-by-tag"></div>
     </div>
 
     <div class="section pad-sml">
@@ -86,13 +55,6 @@ $signedRequest = $Init->generate();
         <h3 id="progress-by-tag-by-user-report"><a href="#progress-by-tag-by-user-report">Progress by Tag by User Report</a></h3>
         <p>Look at overall progress across multiple tags, but for multiple students in a single report.</p>
         <div id="progress-by-tag-by-user"></div>
-    </div>
-
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="progress-single-report"><a href="#progress-single-report">Progress Single Report (Deprecated)</a></h3>
-        <p>Use the Progress Single Report when you want to build your own analytics views or dashboards out of several different progress metrics,</p>
-        <div style="width:100px;"><div id="progress-single"></div></div>
     </div>
 
     <script src="<?php echo $url_reports; ?>"></script>
