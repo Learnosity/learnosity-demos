@@ -61,7 +61,7 @@ This package comes with demo security (consumer) credentials. If you have your o
 
 ## Documentation
 
-More API documentation is available at the [Learnosity Reference site](http://reference.learnosity.com)
+More API documentation is available at the [Learnosity Developer Documentation](https://help.learnosity.com/hc/en-us/categories/16266193425053)
 
 
 ## PHP dependency management using Composer
