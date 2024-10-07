@@ -25,6 +25,23 @@ $data = json_decode(html_entity_decode(filter_input(INPUT_POST, 'request', FILTE
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'get']]);
 
+# Get the data API URL we are dealing with - so we can limit it to only that domain.
+# This comes from the env_config.php or lrn_config.php
+$data_url_parsed = parse_url($url_data);
+$parsed_endpoint = parse_url($endpoint);
+
+if($parsed_endpoint['scheme'] != $data_url_parsed['scheme']){
+    header('HTTP/1.0 403 Forbidden');
+    error_log("[SECURITY] Invalid scheme requested: " . $parsed_endpoint['scheme'] , );
+    die('Forbidden');
+}
+if($parsed_endpoint['host'] !=  $data_url_parsed['host']){
+    error_log("[SECURITY] Invalid URL requested: " . $parsed_endpoint['host']);
+    header('HTTP/1.0 403 Forbidden');
+    die('Forbidden');
+}
+
+# Make request to the Data API
 $dataapi = new DataApi(['ssl_verify' => $curl_ssl_verify]);
 $response = $dataapi->request($endpoint, $security, $consumer_secret, $data, $action);
 
