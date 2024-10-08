@@ -12,10 +12,6 @@ include_once '../../lrn_config.php';
 // Full base URL of the Data API
 $URL = $url_data;
 
-if (isset($_REQUEST['data-url'])) {
-    $URL = $_REQUEST['data-url'];
-}
-
 // Which version of the Data API to use
 $version = $lts_version;
 
