@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "devDependencies": {
     "@babel/core": "^7.18.13",
-    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-env": "^7.25.8",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
