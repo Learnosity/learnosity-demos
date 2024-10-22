@@ -17,8 +17,7 @@ $security = [
     'domain'       => $domain
 ];
 
-
-//simple api request object for Items API
+// Simple api request object for Items API
 $request = [
     'activity_id' => 'itemsassessdemo',
     'name' => 'Items API demo - assess activity',
@@ -97,12 +96,10 @@ $signedRequest = $Init->generate();
         </div>
     </div>
 
-    <script src="<?php echo $url_items; ?>"></script>
+    <script src="<?=$url_items?>"></script>
     <script>
-        var initializationObject = <?php echo $signedRequest; ?>;
-
-
-        var eventsArray = [
+        // Events array used to build DOM elements and event listeners
+        const eventsArray = [
             'test:start',
             'test:pause',
             'test:resume',
@@ -130,41 +127,45 @@ $signedRequest = $Init->generate();
             'unfocused'
         ];
 
-        // build events list DOM elements
-        $.each(eventsArray, function(index, eventName) {
-            $el = $('<div><span class="' + eventName + ' assess-event-name event-label">' + eventName + '</span></div>');
-            $('.assess-events').append($el);
-        });
+        // Build events list DOM elements
+        eventsArray.forEach( event => {
+            const container = document.createElement('div')
+            const label = document.createElement('span')
+            label.classList.add("assess-event-name", "event-label", event.replaceAll(":", "_"))
+            label.innerHTML = event 
+            container.appendChild(label)
+            document.querySelector(".assess-events").appendChild(container)
+        })
 
-        //optional callbacks for ready
+        // Function to iterate through events and bind listeners
+        const bindEventListeners = () => {
+            eventsArray.forEach( event => {
+                window.itemsApp.on(event, () => {
+                    els = document.querySelectorAll(`.assess-event-name.${event.replaceAll(":", "_")}`)
+                    // Toggle class event to indicate in the UI the event triggered
+                    els.forEach( el => {
+                        el.classList.add('event-called')
+                        setTimeout(function () {
+                            el.classList.remove('event-called')
+                        }, 800)
+                    })
+                })
+            })
+        }
+
+        // Optional callbacks for ready
         var callbacks = {
             readyListener: function () {
-                console.log('Items API has successfully initialized.');
-                bindEventListeners();
+                console.log('Items API has successfully initialized.')
+                bindEventListeners()
             },
             errorListener: function (err) {
-                console.log(err);
+                console.log(err)
             }
-        };
+        }
 
-        // function to iterate through events and bind listeners
-        function bindEventListeners () {
-            $.each(eventsArray, function(index, eventName) {
-                itemsApp.on(eventName, function(){
-                    console.log('Received event: ' + eventName);
-
-                    var $el = $('.assess-event-name:contains("' + eventName + '")');
-
-                    // Toggle class event to indicate in the UI the event triggered
-                    $el.addClass('event-called');
-                    setTimeout(function () {
-                        $el.removeClass('event-called');
-                    }, 800);
-                });
-            });
-        };
-
-        var itemsApp = LearnosityItems.init(initializationObject, callbacks);
+        const initializationObject = <?=$signedRequest?>;
+        window.itemsApp = LearnosityItems.init(initializationObject, callbacks);
 
     </script>
 

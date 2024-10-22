@@ -72,12 +72,10 @@ $signedRequest = $Init->generate();
 </div>
 
 <!-- version of api maintained in lrn_config.php file -->
-<script src="<?php echo $url_authorapi; ?>"></script>
+<script src="<?=$url_authorapi?>"></script>
 <script>
-    var initializationObject = <?php echo $signedRequest; ?>;
-
-    // event array used to build DOM elemnts and event listeners
-    var eventsArray = [
+    // Events array used to build DOM elements and event listeners
+    const eventsArray = [
         'add:widget',
         'itemduplicate:confirm',
         'itemedit:changed',
@@ -100,42 +98,44 @@ $signedRequest = $Init->generate();
         'widgetedit:widget:ready'
     ];
 
-    // build events list DOM elements
-    $.each(eventsArray, function(index, eventName) {
-        $el = $('<div><span class="' + eventName + ' author-event-name event-label">' + eventName + '</span></div>');
-        $('.author-events').append($el);
-    });
+    // Build events list DOM elements
+    eventsArray.forEach( event => {
+        const container = document.createElement('div')
+        const label = document.createElement('span')
+        label.classList.add("author-event-name", "event-label", event.replaceAll(":", "_"))
+        label.innerHTML = event 
+        container.appendChild(label)
+        document.querySelector(".author-events").appendChild(container)
+    })
 
-    //optional callbacks for ready
-    var callbacks = {
+    // Function to iterate through events and bind listeners
+    const bindEventListeners = () => {
+        eventsArray.forEach( event => {
+            window.authorApp.on(event, () => {
+                els = document.querySelectorAll(`.author-event-name.${event.replaceAll(":", "_")}`)
+                // Toggle class event to indicate in the UI the event triggered
+                els.forEach( el => {
+                    el.classList.add('event-called')
+                    setTimeout(function () {
+                        el.classList.remove('event-called')
+                    }, 800)
+                })
+            })
+        })
+    }
+
+    // Optional callbacks for ready
+    const callbacks = {
         readyListener: function () {
-            console.log('Author API has successfully initialized.');
-            bindEventListeners();
+            console.log('Author API has successfully initialized.')
+            bindEventListeners()
         },
         errorListener: function (err) {
-            console.log(err);
+            console.log(err)
         }
     };
-
-    // function to iterate through events and bind listeners
-    function bindEventListeners () {
-        $.each(eventsArray, function(index, eventName) {
-            authorApp.on(eventName, function(){
-                console.log('Received event: ' + eventName);
-
-                var $el = $('.author-event-name:contains("' + eventName + '")');
-
-                // Toggle class event to indicate in the UI the event triggered
-                $el.addClass('event-called');
-                setTimeout(function () {
-                    $el.removeClass('event-called');
-                }, 800);
-            });
-        });
-    };
-
-    var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
-
+    const initializationObject = <?=$signedRequest?>;
+    window.authorApp = LearnosityAuthor.init(initializationObject, callbacks)
 </script>
 
 <style type="text/css">
