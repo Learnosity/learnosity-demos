@@ -20,7 +20,7 @@ In the second case, you'll need to install the dependencies afterwards.
 
     composer install
 
-### Tests
+## Tests
 
 Test can be run from a development checkout with
 
@@ -29,3 +29,11 @@ Test can be run from a development checkout with
 [Issues]: https://github.com/Learnosity/learnosity-sdk-php/issues/new
 [PRs]: https://github.com/Learnosity/learnosity-sdk-php/compare
 [Composer]: https://getcomposer.org/
+
+## Creating a new release
+
+Run `make release`.
+
+This requires GNU-flavoured UNIX tools (particularly `gsed`). If those are not the default on your system, you'll need to install them, e.g. for OS X,
+
+    brew install gsed coreutils

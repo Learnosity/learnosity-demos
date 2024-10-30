@@ -2,19 +2,27 @@
     "name": "learnosity/learnosity-sdk-php",
     "type": "library",
     "description": "Include this package into your own codebase to ease integration with any of the Learnosity APIs",
-    "keywords": ["learnosity","sdk", "php5", "php7"],
+    "keywords": ["learnosity", "sdk", "php7", "php8"],
     "homepage": "https://github.com/Learnosity/learnosity-sdk-php",
     "license": "Apache-2.0",
     "autoload": {
-        "psr-0": {
-            "LearnositySdk\\": [ "src/", "src/tests/" ]
+        "psr-4": {
+            "LearnositySdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LearnositySdk\\": "tests/"
         }
     },
     "require": {
-        "php": ">=5.6 || ^7",
-        "paragonie/random_compat": ">=2.0"
+        "php": "^7.0 || ^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7"
+        "phpunit/phpunit": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+        "squizlabs/php_codesniffer": "*"
     }
 }

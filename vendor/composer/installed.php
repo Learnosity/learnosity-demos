@@ -1,42 +1,32 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-develop',
-    'version' => 'dev-develop',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'learnosity/learnosity-demos',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => '4f158e4fcaf0e5f395f0422f28d69af3012cd1d6',
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => '9fe471cb064e3f5f32be782c2144ae7e4951949d',
-    'name' => 'learnosity/learnosity-demos',
-  ),
-  'versions' => 
-  array (
-    'learnosity/learnosity-demos' => 
-    array (
-      'pretty_version' => 'dev-develop',
-      'version' => 'dev-develop',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '9fe471cb064e3f5f32be782c2144ae7e4951949d',
+    'versions' => array(
+        'learnosity/learnosity-demos' => array(
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => '4f158e4fcaf0e5f395f0422f28d69af3012cd1d6',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'learnosity/learnosity-sdk-php' => array(
+            'pretty_version' => 'v1.0.5',
+            'version' => '1.0.5.0',
+            'reference' => '405247b0e9fc2b82f1104d7a46d1a114fcf68f04',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../learnosity/learnosity-sdk-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-    'learnosity/learnosity-sdk-php' => 
-    array (
-      'pretty_version' => 'v0.10.3',
-      'version' => '0.10.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '6bb8c76bef60adba93b8eafdba7db02149407d40',
-    ),
-    'paragonie/random_compat' => 
-    array (
-      'pretty_version' => 'v9.99.100',
-      'version' => '9.99.100.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
-    ),
-  ),
 );
