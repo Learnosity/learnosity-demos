@@ -25,7 +25,7 @@ plugins:
     enabled: true
     config:
       tests_patterns:
-        - src/tests/LearnositySdk/**
+        - tests/**
   phpcodesniffer:
     enabled: true
   phan:

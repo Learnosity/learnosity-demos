@@ -1,0 +1,113 @@
+html,
+body,
+.main {
+    padding: 0;
+    margin: 0;
+    color: #333;
+}
+body {
+    height: auto;
+    margin: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin: 2em 0 .3em 0;
+    padding: 0;
+}
+h1 { font-size: 2.0em; margin: .3em 0 .3em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1.0em; }
+ul {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+a         { color: #3498DB; }
+a:visited { color: #3498DB; }
+a:hover   { color: #2979AF; }
+.quickstart-index {
+    margin: 0;
+    background-color: #efefef;
+}
+.quickstart-index h1 {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px dashed rgba(0, 0, 0, .3);
+}
+.container {
+    padding: 20px;
+}
+.lrn-logo {
+    width: 150px;
+}
+.header-nav,
+.footer-nav {
+    position: fixed;
+    width: 100%;
+}
+.header-nav {
+    top: 0;
+    background-color: #ffffff;
+    border-bottom: 2px solid #222;
+    height: 80px;
+}
+.footer-nav {
+    color: #f3f3f3;
+    background-color: #222;
+    padding: 1em 0;
+    text-align: center;
+    bottom: 0em;
+}
+.footer-nav a {
+    color: #fff;
+    padding: 0 0.5em;
+    text-decoration: none;
+}
+.footer-nav a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+.module-block {
+    background: #ffffff;
+    max-width: 800px;
+    margin: 80px auto 40px;
+    padding: 20px;
+}
+.api-list li {
+    margin-top: 1em;
+}
+.api-list p {
+    margin: 3px 0 6px 6px;
+}
+.hero-icon {
+    position: relative;
+    top: 7px;
+    height: 42px;
+    width: 42px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+.li-authorapi {
+    background-image: url(https://docs.learnosity.com/static/img/icons/authorapi.svg);
+}
+.li-itemsapi {
+    background-image: url(https://docs.learnosity.com/static/img/icons/itemsapi.svg);
+}
+.li-reportsapi {
+    background-image: url(https://docs.learnosity.com/static/img/icons/reports.svg);
+}
+.li-dataapi {
+    background-image: url(https://docs.learnosity.com/static/img/icons/dataapi.svg);
+}
+[class^="li-"], [class*=" li-"] {
+    background-color: #0d5786;
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-block;
+}

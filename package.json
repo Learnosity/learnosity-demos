@@ -4,14 +4,14 @@
   "description": "Jumpstart your integration of the Learnosity APIs into your learning platform.",
   "main": "gulpfile.js",
   "devDependencies": {
-    "@babel/core": "^7.18.13",
-    "@babel/preset-env": "^7.18.10",
-    "gulp": "^4.0.0",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
-    "gulp-cli": "^2.3.0",
+    "gulp-cli": "^3.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-replace": "^1.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-uglify": "^3.0.2"
   },
   "scripts": {
