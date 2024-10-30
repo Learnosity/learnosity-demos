@@ -4,36 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df09ee487f3f526ea8d5cf67675ad935",
+    "content-hash": "b5368e63081003e85c89088d5625032a",
     "packages": [
         {
             "name": "learnosity/learnosity-sdk-php",
-            "version": "v0.10.3",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Learnosity/learnosity-sdk-php.git",
-                "reference": "6bb8c76bef60adba93b8eafdba7db02149407d40"
+                "reference": "405247b0e9fc2b82f1104d7a46d1a114fcf68f04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Learnosity/learnosity-sdk-php/zipball/6bb8c76bef60adba93b8eafdba7db02149407d40",
-                "reference": "6bb8c76bef60adba93b8eafdba7db02149407d40",
+                "url": "https://api.github.com/repos/Learnosity/learnosity-sdk-php/zipball/405247b0e9fc2b82f1104d7a46d1a114fcf68f04",
+                "reference": "405247b0e9fc2b82f1104d7a46d1a114fcf68f04",
                 "shasum": ""
             },
             "require": {
-                "paragonie/random_compat": ">=2.0",
-                "php": ">=5.6 || ^7"
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^7.0 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7"
+                "phpunit/phpunit": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+                "squizlabs/php_codesniffer": "*"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "LearnositySdk\\": [
-                        "src/",
-                        "src/tests/"
-                    ]
+                "psr-4": {
+                    "LearnositySdk\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -45,71 +45,25 @@
             "keywords": [
                 "PHP7",
                 "learnosity",
-                "php5",
+                "php8",
                 "sdk"
             ],
-            "time": "2019-12-19T06:00:42+00:00"
-        },
-        {
-            "name": "paragonie/random_compat",
-            "version": "v9.99.100",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "996434e5492cb4c3edcb9168db6fbb1359ef965a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/996434e5492cb4c3edcb9168db6fbb1359ef965a",
-                "reference": "996434e5492cb4c3edcb9168db6fbb1359ef965a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">= 7"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*|5.*",
-                "vimeo/psalm": "^1"
-            },
-            "suggest": {
-                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Paragon Initiative Enterprises",
-                    "email": "security@paragonie.com",
-                    "homepage": "https://paragonie.com"
-                }
-            ],
-            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
-            "keywords": [
-                "csprng",
-                "polyfill",
-                "pseudorandom",
-                "random"
-            ],
             "support": {
-                "email": "info@paragonie.com",
-                "issues": "https://github.com/paragonie/random_compat/issues",
-                "source": "https://github.com/paragonie/random_compat"
+                "issues": "https://github.com/Learnosity/learnosity-sdk-php/issues",
+                "source": "https://github.com/Learnosity/learnosity-sdk-php/tree/v1.0.5"
             },
-            "time": "2020-10-15T08:29:30+00:00"
+            "time": "2024-10-14T16:24:35+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2"
+        "php": ">=8.1"
     },
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
