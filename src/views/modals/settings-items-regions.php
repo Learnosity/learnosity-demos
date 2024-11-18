@@ -41,7 +41,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="document.getElementById('frmSettings').submit();">Initialise Items API &raquo;</button>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('frmSettings').submit();">Initialize Items API &raquo;</button>
             </div>
         </div>
     </div>
