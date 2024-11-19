@@ -11,7 +11,7 @@ Each page shows a basic integration to a specific Learnosity API which you can u
 
 ### Requirements
 
-* PHP 7.4+
+* PHP 8.1+
 * You must be connected to the Internet to use this site
 
 ## Getting Started
@@ -87,9 +87,9 @@ For simplicity, the `get-composer.php` script can be used to fetch a
 local version of composer. It will be named `composer.phar`, and will have to be
 called as `./composer.phar` instead of just `composer`.
 
-If using Mac OS X, you can set up [Homebrew] to use a specific tap.
+If using macOS, you can set up [Homebrew] to install php and composer.
 
-    brew tap homebrew/php
+    brew install php
     brew install composer
 
 
