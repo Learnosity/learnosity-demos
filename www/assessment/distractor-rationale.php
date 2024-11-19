@@ -150,8 +150,7 @@ $signedRequest3 = $Init3->generate();
             <li><p>JavaScript method</p></li>
         </ol>
         <p>
-            Currently, we provide out of the box support for Multiple choice, Cloze with drop down, Cloze with drag & drop, Cloze with text.
-            If you would like to implement further hints and feedback, you can write custom code to display Distractor Rationale and other metadata.
+            <strong>Note:</strong> This feature is currently available for a subset of question types. Multiple Choice, Cloze with drop down, Cloze with drag & drop, and Cloze with text support both question-level and response-level distractor rationale out of the box. When using version v2024.3.LTS and higher, an additional 7 question types support question-level distractor rationale only: Label image with drag & drop, Classification, Match list, Hotspot, Token highlight, Math and Multi-step math.
         </p>
         <ul>
             <li><p><a href="#demo1">Demo 1: Display Distractor Rationale (using initialization options)</a></p></li>
