@@ -51,6 +51,7 @@ $signedRequest = $Init->generate();
         <div class="overview">
             <h2>Delivering STEM Assessments</h2>
             <p>This demo showcases how you can assess advanced STEM topics using our new math scoring engine.</p>
+            <p>We've enabled the image capture feature to the assessment. This is a premium feature. If you are a customer contact your Customer Success Manager to learn more.</p>
         </div>
     </div>
 
