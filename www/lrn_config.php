@@ -45,6 +45,7 @@ $url_items                 = 'https://items.learnosity.com/?' . $lts_version;
 $url_questioneditor        = 'https://questioneditor.learnosity.com/?' . $lts_version;
 $url_questions             = 'https://questions.learnosity.com/?' . $lts_version;
 $url_reports               = 'https://reports.learnosity.com/?' . $lts_version;
+$url_grading               = 'https://grading.learnosity.com/?' . $lts_version;
 
 /**
  * Allow override file to replace config options
