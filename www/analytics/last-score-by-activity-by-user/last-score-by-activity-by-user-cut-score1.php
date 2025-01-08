@@ -135,7 +135,7 @@ $InitLastScoreBABUCutScore1 = new Init('reports', $security, $consumer_secret, [
         let performanceBand = 'none';
         let voiceOverMessage = '';
 
-        if (data.percentageItemsCorrect <= 50) {
+        if (data.percentageItemsCorrect < 50) {
             performanceBand = 'fail_band';
             voiceOverMessage = 'Highlighted as failed';
         }
