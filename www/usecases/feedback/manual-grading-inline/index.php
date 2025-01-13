@@ -23,9 +23,12 @@ $activity_id   = Uuid::generate();
 
 $onsubmit_redirect_url = 'grading.php?';
 $items = [
-    'LRN-45244-MANGA-DEMO-1',
-    'LRN-45244-MANGA-DEMO-2',
-    'LRN-45244-MANGA-DEMO-3',
+    'Manual Grading Demo - Item 1',
+    'Manual Grading Demo - Item 3',
+    'Manual Grading Demo - Item 11',
+    'Manual Grading Demo - Item 6',
+    'Manual Grading Demo - Item 10',
+    'Manual Grading Demo - Item 12',
 ];
 $params = [
     'session_id' => $session_id,
@@ -61,35 +64,35 @@ $signedRequest = $Init->generate();
 
 ?>
 
-<div class="jumbotron section">
-    <div class="toolbar">
-        <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-        </ul>
+    <div class="jumbotron section">
+        <div class="toolbar">
+            <ul class="list-inline">
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            </ul>
+        </div>
+        <div class="overview">
+            <h1>Student Assessment – Step 1</h1>
+            <p>Here is a sample student assessment, with a mix of auto and non-autoscorable question types.</p>
+            <p>Take the test as a student would, you will be able to add scoring as a teacher after completing the assessment.</p>
+            <div class="previewWrapper preview" style="display: none; height: 300px; overflow: scroll;"><pre><code id="xApiPreview"></code></pre></div>
+        </div>
     </div>
-    <div class="overview">
-        <h1>Student Assessment – Step 1</h1>
-        <p>Here is a sample student assessment, with a mix of auto and non-autoscorable question types.</p>
-        <p>Take the test as a student would, you will be able to add scoring as a teacher after completing the assessment.</p>
-        <div class="previewWrapper preview" style="display: none; height: 300px; overflow: scroll;"><pre><code id="xApiPreview"></code></pre></div>
+
+    <div class="section">
+        <!-- Container for the items api to load into -->
+        <div id="learnosity_assess"></div>
     </div>
-</div>
 
-<div class="section">
-    <!-- Container for the items api to load into -->
-    <div id="learnosity_assess"></div>
-</div>
-
-<script src="<?php echo $url_items; ?>"></script>
-<script>
-    var eventOptions = {
-            readyListener: function () {
-                //add to history to support back button and show in resume mode
-                history.pushState({}, '', window.location.pathname + '?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>');
-            }
-        },
-        itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
-</script>
+    <script src="<?php echo $url_items; ?>"></script>
+    <script>
+        var eventOptions = {
+                readyListener: function () {
+                    //add to history to support back button and show in resume mode
+                    history.pushState({}, '', window.location.pathname + '?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>');
+                }
+            },
+            itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+    </script>
 
 <?php
-    include_once 'includes/footer.php';
+include_once 'includes/footer.php';
