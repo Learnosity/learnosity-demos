@@ -15,15 +15,15 @@ use LearnositySdk\Utils\Uuid;
 $grader_id = filter_input(INPUT_GET, 'grader_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? Uuid::generate();
 $student_id = filter_input(INPUT_GET, 'student_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$activity_id = filter_input(INPUT_GET, 'activity_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? 'review';
 $items = filter_input(INPUT_GET, 'items', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$timestamp = gmdate('Ymd-Hi');
 
 $security = [
     'user_id'      => $student_id,
     'domain'       => $domain,
-//    'consumer_key' => $consumer_key,
-    'consumer_key' => $consumer_key_0731,
+    'consumer_key' => $consumer_key,
+    'timestamp'    => $timestamp
 ];
 
 $request = '
@@ -44,9 +44,7 @@ $request = '
 $request = json_decode($request, true);
 $items = explode(',', $items);
 
-
-//$Init = new Init('items', $security, $consumer_key, $request);
-$Init = new Init('items', $security, $consumer_secret_0731, $request);
+$Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate(false);
 
 $appConfig = json_encode([
