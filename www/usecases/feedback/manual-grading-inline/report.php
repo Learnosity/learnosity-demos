@@ -15,7 +15,7 @@ use LearnositySdk\Utils\Uuid;
 $grader_id = filter_input(INPUT_GET, 'grader_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? Uuid::generate();
 $student_id = filter_input(INPUT_GET, 'student_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $session_id = filter_input(INPUT_GET, 'session_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? 'review';
+$state = filter_input(INPUT_GET, 'state', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? 'initial';
 $items = filter_input(INPUT_GET, 'items', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $timestamp = gmdate('Ymd-Hi');
 
@@ -26,32 +26,24 @@ $security = [
     'timestamp'    => $timestamp
 ];
 
-$request = '
-{
-    "rendering_type": "inline",
-    "user_id": "' . $grader_id . '",
-    "session_id": "' . $session_id . '",
-    "state": "' . $state . '",
-    "config": {
-        "questions_api_init_options": {
-            "render_optimization": {
-                "defer_render": true
-            }
-        }
-    }
-}';
-
-$request = json_decode($request, true);
+$gradingRequest = [
+    'organisation_id'      => $roAdditionalOrgId,
+    'user_id'              => $grader_id,
+    'rendering_type'       => 'inline',
+    'name'                 => 'Teacher Assessment demo',
+    'state'                => 'review',
+    'session_id'           => $session_id,
+];
 $items = explode(',', $items);
 
-$Init = new Init('items', $security, $consumer_secret, $request);
-$signedRequest = $Init->generate(false);
+$gradingInit = new Init('items', $security, $consumer_secret, $gradingRequest);
+$signedGradingRequest = $gradingInit->generate(false);
 
 $appConfig = json_encode([
-    'items'    => $items,
+    'items'     => $items,
     'sessionId' => $session_id,
-    'userId' => $student_id,
-    'activity' => $signedRequest
+    'userId'    => $student_id,
+    'activity'  => $signedGradingRequest,
 ]);
 
 ?>

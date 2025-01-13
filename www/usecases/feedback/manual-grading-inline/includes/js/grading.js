@@ -144,7 +144,7 @@
 
                     }).catch( (error) => {
                         console.error('save error ', error);
-                });
+                    });
             },
 
             async renderItems() {
@@ -254,16 +254,15 @@
     const wrapper = document.querySelector('#inline-items-wrapper');
 
     if (gradingInlineScript) {
-        const gradingConfig = JSON.parse(gradingInlineScript.getAttribute('data-parameters'));
+        const scriptData = JSON.parse(gradingInlineScript.getAttribute('data-parameters'));
 
         // set a global copy of config and gradingInlineApp for reference
-        window.__gradingConfig = gradingConfig;
+        window.__gradingConfig = scriptData;
         const gradingAppInstance = gradingInlineApp();
 
         // init the gradingApp
-        gradingAppInstance.init(gradingConfig, wrapper);
-        window.__gradingInlineApp = gradingAppInstance;
+        gradingAppInstance.init(window.__gradingConfig, wrapper);
+        window.gradingInlineApp = gradingAppInstance;
     }
-
 
 })();

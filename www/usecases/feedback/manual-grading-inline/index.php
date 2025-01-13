@@ -17,6 +17,7 @@ $security = array(
     'domain'       => $domain
 );
 
+$activity_template_id = filter_input(INPUT_GET, 'activity_template_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? 'Manual Grading collection';
 $session_id    = Uuid::generate();
 $session_state = 'initial';
 $activity_id   = Uuid::generate();
@@ -31,9 +32,11 @@ $items = [
     'Manual Grading Demo - Item 12',
 ];
 $params = [
-    'session_id' => $session_id,
-    'items' => implode(',', $items),
-    'student_id'=> Uuid::generate()
+    'session_id'            => $session_id,
+    'student_id'            => Uuid::generate(),
+    'activity_id'           => $activity_id,
+    'activity_template_id'  => $activity_template_id,
+    'items'                 =>  implode(',', $items)
 ];
 
 $request = [
@@ -45,7 +48,7 @@ $request = [
     'state'                => $session_state,
     'activity_id'          => $activity_id,
     'session_id'           => $params['session_id'],
-    'activity_template_id' => 'Manual Grading collection',
+    'activity_template_id' => $params['activity_template_id'],
     'type'                 => 'submit_practice',
     'config'               => array(
         'configuration' => array(
@@ -61,7 +64,6 @@ $request = [
 
 $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
-
 ?>
 
     <div class="jumbotron section">
@@ -85,13 +87,17 @@ $signedRequest = $Init->generate();
 
     <script src="<?php echo $url_items; ?>"></script>
     <script>
-        var eventOptions = {
-                readyListener: function () {
-                    //add to history to support back button and show in resume mode
-                    history.pushState({}, '', window.location.pathname + '?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>');
-                }
+        const callback = {
+            readyListener: function () {
+                //add to history to support back button and show in resume mode
+                history.pushState({}, '', window.location.pathname + '?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>');
             },
-            itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
+            errorListener: function (err) {
+                console.log('Error on loading the itemsApp: ', err);
+            }
+        }
+
+        const itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, callback);
     </script>
 
 <?php
