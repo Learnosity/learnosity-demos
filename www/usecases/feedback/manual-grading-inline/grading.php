@@ -26,32 +26,24 @@ $security = [
     'timestamp'    => $timestamp
 ];
 
-$request = '
-{
-    "rendering_type": "inline",
-    "user_id": "' . $grader_id . '",
-    "session_id": "' . $session_id . '",
-    "state": "' . $state . '",
-    "config": {
-        "questions_api_init_options": {
-            "render_optimization": {
-                "defer_render": true
-            }
-        }
-    }
-}';
-
-$request = json_decode($request, true);
+$gradingRequest = [
+    'organisation_id'      => $roAdditionalOrgId,
+    'user_id'              => $grader_id,
+    'rendering_type'       => 'inline',
+    'name'                 => 'Teacher Assessment demo',
+    'state'                => $state,
+    'session_id'           => $session_id,
+];
 $items = explode(',', $items);
 
-$Init = new Init('items', $security, $consumer_secret, $request);
-$signedRequest = $Init->generate(false);
+$gradingInit = new Init('items', $security, $consumer_secret, $gradingRequest);
+$signedGradingRequest = $gradingInit->generate(false);
 
 $appConfig = json_encode([
-    'items'    => $items,
+    'items'     => $items,
     'sessionId' => $session_id,
-    'userId' => $student_id,
-    'activity' => $signedRequest
+    'userId'    => $student_id,
+    'activity'  => $signedGradingRequest,
 ]);
 
 ?>

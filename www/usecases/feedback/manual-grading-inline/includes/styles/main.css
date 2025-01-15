@@ -66,3 +66,6 @@
     margin: 64px 30px 30px 30px ;
 }
 
+.lrn-mg .lrn-mg-score-feedback .lrn-mg-max-score-form .lrn-mg-max-score-label {
+    padding-top: 0.6em!important;
+}
