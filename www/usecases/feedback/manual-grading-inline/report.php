@@ -20,7 +20,7 @@ $items = filter_input(INPUT_GET, 'items', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $timestamp = gmdate('Ymd-Hi');
 
 $security = [
-    'user_id'      => $student_id,
+    'user_id'      => $grader_id,
     'domain'       => $domain,
     'consumer_key' => $consumer_key,
     'timestamp'    => $timestamp
@@ -42,7 +42,8 @@ $signedGradingRequest = $gradingInit->generate(false);
 $appConfig = json_encode([
     'items'     => $items,
     'sessionId' => $session_id,
-    'userId'    => $student_id,
+    'studentId'    => $student_id,
+    'graderId'  => $grader_id,
     'activity'  => $signedGradingRequest,
 ]);
 

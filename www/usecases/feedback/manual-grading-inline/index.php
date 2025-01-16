@@ -66,6 +66,9 @@ $Init = new Init('items', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 ?>
 
+    <script src="<?= $url_items ?>"></script>
+    <link rel="stylesheet" media="all" href="includes/styles/main.css">
+
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
@@ -85,20 +88,10 @@ $signedRequest = $Init->generate();
         <div id="learnosity_assess"></div>
     </div>
 
-    <script src="<?php echo $url_items; ?>"></script>
-    <script>
-        const callback = {
-            readyListener: function () {
-                //add to history to support back button and show in resume mode
-                history.pushState({}, '', window.location.pathname + '?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>');
-            },
-            errorListener: function (err) {
-                console.log('Error on loading the itemsApp: ', err);
-            }
-        }
-
-        const itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, callback);
-    </script>
+    <script id="items-script"
+            type="module"
+            data-parameters='<?php echo htmlspecialchars($signedRequest, ENT_QUOTES); ?>'
+            src="includes/js/items.js"></script>
 
 <?php
 include_once 'includes/footer.php';
