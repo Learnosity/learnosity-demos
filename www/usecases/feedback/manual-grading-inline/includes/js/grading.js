@@ -1,5 +1,5 @@
 
-(function () {
+( () => {
 
     const EVENT_NAMES = {
         saveStart: 'save:start',
@@ -85,12 +85,12 @@
         // ideally the save should return the error for dirty fields or save error
         // this is a workaround to get the error from the save event
 
-        setSaveListener(callback) {
+        setSaveListener() {
             window.gradingApp.on(EVENT_NAMES.saveFieldError, (data) => {
-                callback(data);
+                console.log('🔔 Grading-API Save Field Error:: ', data);
             })
             window.gradingApp.on(EVENT_NAMES.saveError, (data) => {
-                callback(data);
+                console.log('🔔 Grading-API Save Error:: ', data);
             })
         }
     }
@@ -126,37 +126,56 @@
 
         return {
             items: [],
-            sessionId: null,
-            userId: null,
+            sessionId: '',
+            studentId: '',
+            graderId: '',
             wrapper: null,
 
+            async redirect(url) {
+                const { sessionId, studentId, items, graderId } = this;
+                setTimeout(() => {
+                    const urlParams = new URLSearchParams({
+                        session_id: sessionId,
+                        grader_id: graderId,
+                        student_id: studentId,
+                        items: items.toString()
+                    });
+
+                    window.location.href = `${url}?${urlParams.toString()}`;
+                },2000);
+            },
+
             async save() {
+                let isSuccessful = false;
 
                 await GradingApi.save()
                     .then((savedItems) => {
                         console.log('save :: ', savedItems);
 
-                        if (savedItems) {
-                            const { sessionId, userId, items } = this;
-
-                            window.location.href = `report.php?session_id=${sessionId}&student_id=${userId}&items=${items.toString()}`;
-                        }
-
+                        isSuccessful = savedItems && savedItems.some(
+                            (savedItem) =>
+                                savedItem?.updated_scores?.length > 0
+                        );
                     }).catch( (error) => {
-                        console.error('save error ', error);
+                        console.error('🔔 save error ', error);
+                        isSuccessful = false
                     });
+
+                if (isSuccessful) {
+                    this.redirect('report.php');
+                }
             },
 
             async renderItems() {
                 let ctr = 0;
-                const { items, sessionId, userId, wrapper } = this;
+                const { items, sessionId, studentId: userId, wrapper } = this;
 
                 while( ctr < items.length ) {
                     const itemRef = items[ctr];
 
                     await GradingApi.attachItem(sessionId, userId, itemRef, wrapper)
-                        .then((attachedItems) => {
-                            this.attachItemSuccess(attachedItems, itemRef);
+                        .then(async (attachedItems) => {
+                            await this.attachItemSuccess(attachedItems, itemRef);
                             ctr++;
                             return attachedItems;
                         }).catch( (error) => {
@@ -164,6 +183,8 @@
                             ctr++;
                         });
                 }
+                this.setUiReady();
+                console.log('🔔 renderItems done!');
             },
 
 
@@ -181,7 +202,7 @@
             },
 
             attachItemSuccess(attachedItems, item) {
-                const { sessionId, userId } = this;
+                const { sessionId, studentId: userId } = this;
                 const payload = { sessionId, userId , item };
                 const element = getItemElement(attachedItems, payload);
 
@@ -201,6 +222,8 @@
                     dataRef.append(hr);
 
                     this.setLayout(element);
+
+                    return Promise.resolve(element);
                 }
 
             },
@@ -216,7 +239,7 @@
 
 
             readyListener() {
-                console.log("api is ready!");
+                console.log("🔔 api is ready!");
 
                 GradingApi.setSaveListener();
 
@@ -224,19 +247,20 @@
                 if (this.items?.length) {
                     this.renderItems();
                 }
-                this.setUiReady();
+
             },
 
             errorListener(error) {
-                console.error(`#App Error ${error}`);
+                console.error(`🔔 #App Error ${error}`);
             },
 
             init(config, wrapper) {
-                const { activity, items, sessionId, userId } = config;
+                const { activity, items, sessionId, studentId, graderId } = config;
                 this.wrapper = wrapper;
                 this.items = items;
                 this.sessionId = sessionId;
-                this.userId = userId;
+                this.studentId = studentId;
+                this.graderId = graderId;
 
                 // initiate the app
                 GradingApi.initApi(activity, this.readyListener.bind(this), this.errorListener.bind(this));
@@ -249,15 +273,12 @@
      * Grading App initialization
      */
 
-
     const gradingInlineScript = document.querySelector('#grading-inline-script');
     const wrapper = document.querySelector('#inline-items-wrapper');
 
     if (gradingInlineScript) {
-        const scriptData = JSON.parse(gradingInlineScript.getAttribute('data-parameters'));
-
         // set a global copy of config and gradingInlineApp for reference
-        window.__gradingConfig = scriptData;
+        window.__gradingConfig = JSON.parse(gradingInlineScript.getAttribute('data-parameters'));
         const gradingAppInstance = gradingInlineApp();
 
         // init the gradingApp
