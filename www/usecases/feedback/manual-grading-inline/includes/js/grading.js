@@ -133,6 +133,8 @@
 
             async redirect(url) {
                 const { sessionId, studentId, items, graderId } = this;
+
+                // set a delay to transition to the next page smoothly
                 setTimeout(() => {
                     const urlParams = new URLSearchParams({
                         session_id: sessionId,
@@ -142,11 +144,16 @@
                     });
 
                     window.location.href = `${url}?${urlParams.toString()}`;
-                },2000);
+                }, 1000);
             },
 
             async save() {
                 let isSuccessful = false;
+                const nextButton = document.querySelector('.mg-grading-next-btn');
+                const spinner = document.querySelector('.btn-spinner');
+
+                nextButton.disabled = true;
+                spinner.style.display = 'inline-block';
 
                 await GradingApi.save()
                     .then((savedItems) => {
@@ -163,6 +170,9 @@
 
                 if (isSuccessful) {
                     this.redirect('report.php');
+                } else {
+                    nextButton.removeAttribute('disabled');
+                    spinner.style.display = 'none';
                 }
             },
 

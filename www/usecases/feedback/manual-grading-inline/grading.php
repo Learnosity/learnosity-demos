@@ -77,7 +77,10 @@ $appConfig = json_encode([
             </div>
         </div>
         <div class="row submit-btn-group">
-            <button type="button" class="mg-grading-next-btn" aria-label="Go to next step Submit" data-original-title="Go to next step" style="" id="lrn_assess_next_btn" disabled><span class="btn-label">Save and submit to learner</span></button>
+            <button type="button" class="mg-grading-next-btn" aria-label="Go to next step Submit" data-original-title="Go to next step" style="" id="lrn_assess_next_btn" disabled>
+                <span class="btn-label">Save and submit to learner</span>
+                <span class="btn-spinner" style="display: none;"></span>
+            </button>
         </div>
     </div>
     <script id="grading-inline-script"
