@@ -72,7 +72,7 @@ $appConfig = json_encode([
 
     <div class="section">
         <div class="row">
-            <h1>Learner <span class="underline">"Results/Report"</span></h1>
+            <h1>Submitted scores & feedback</h1>
         </div>
         <div id="manual-grading">
             <div class="row">

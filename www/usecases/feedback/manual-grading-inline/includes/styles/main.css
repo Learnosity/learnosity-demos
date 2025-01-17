@@ -48,6 +48,12 @@
     opacity: 0.8;
 }
 
+.mg-grading-next-btn:not(:disabled):hover  {
+    background-color: #0b5684;
+    color: #fff;
+    border: 1px solid #1877b1;
+}
+
 .section-alert {
     margin-top: 24px;
     margin-bottom: 42px;
@@ -64,6 +70,27 @@
 .submit-btn-group {
     float: right;
     margin: 64px 30px 30px 30px ;
+}
+
+.btn-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-left-color: #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /*
