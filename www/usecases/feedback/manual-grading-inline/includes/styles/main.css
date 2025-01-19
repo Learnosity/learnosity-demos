@@ -6,16 +6,17 @@
     background-color: #D9D9D9;
 }
 
+.lrn-assess {
+    margin: 0 !important;
+}
+
 .learnosity-item {
     margin-top: 24px;
 }
 
 .learnosity-item .col-xs-12 {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
     margin-left: -15px !important;
     margin-right: -15px !important;
-
 }
 
 #manual-grading {
