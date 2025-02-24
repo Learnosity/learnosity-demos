@@ -93,6 +93,20 @@ include_once 'includes/header.php';
 
         <div class="row">
             <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Manual Grading Inline</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>New out-of-the-box manual grading to allow an instructor to update scores and add feedback.</p>
+                            <p class="text-right">
+                                <a class="demo_link" href="feedback/manual-grading-inline/index.php">Demo</a>
+                            </p>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Manual Grading</h3>
@@ -104,9 +118,11 @@ include_once 'includes/header.php';
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Richer Feedback</h3>
@@ -119,6 +135,7 @@ include_once 'includes/header.php';
                     </div>
                 </div>
             </div>
+            <div class="col-md-6"></div>
         </div>
 
         <h3 id="custom-question-examples">Using Custom Questions</h3>

@@ -93,18 +93,3 @@
         transform: rotate(360deg);
     }
 }
-
-/*
-    #TODO : Work around for the broken styles, will be fixed in the grading API
- */
-.lrn-mg .lrn-mg-score-feedback .lrn-mg-max-score-form .lrn-mg-max-score-label {
-    padding-top: 0.6em!important;
-}
-
-.lrn-mg textarea {
-    resize: vertical !important;
-}
-
-:is(#lds, body) .lds-mt-5 {
-    margin-top: 2.5em !important;
-}
