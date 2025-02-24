@@ -60,10 +60,7 @@ $appConfig = json_encode([
         </div>
         <div class="overview">
             <h1>Teacher Scoring – Step 2</h1>
-            <p>This template renders a student assessment in <i>review</i>, and loads interactive (including rubrics) for the teacher to save feedback for the student to see</p>
-            <p>The feedback widget can leverage any Learnosity question type, and are authored just like student (inside the author site or using the
-                <a href="https://help.learnosity.com/hc/en-us/articles/16458061166365-Author-API" target="_blank">Author API</a>
-            </p>
+            <p>This page renders the student’s assessment in review, and loads the interactive scoring and teacher feedback controls alongside the questions that require a score to be set. In this example a score is mandatory for each question within items for the manual grading to be saved and submitted.</p>
         </div>
     </div>
 
