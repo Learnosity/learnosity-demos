@@ -60,9 +60,7 @@ $appConfig = json_encode([
         </div>
         <div class="overview">
             <h1>Student Feedback Review – Step 3</h1>
-            <p>This template renders a student assessment in review, and loads interactive
-                widgets (including rubrics) for the teacher to save feedback for the student to see.</p>
-            <p>The feedback widgets can leverage and Learnosity question type, and are authored just like the author side or using the Author API).</p>
+            <p>This page renders the student’s assessment in review, along with the awarded score and teacher feedback in a read-only state. This demo shows the score and feedback using the same UI as the teacher’s view (for demo purposes only).</p>
         </div>
     </div>
 
