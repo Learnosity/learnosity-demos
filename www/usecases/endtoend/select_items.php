@@ -49,13 +49,13 @@ $signedRequest = $Init->generate();
 </div>
 
 <div class="section">
+    <p class="text-right">
+        <br>
+        <a class="btn btn-primary btn-md btn-goToAssessment" id="go-to-button" style="opacity: .75; cursor: not-allowed;">Go to Assessment</a>
+    </p>
     <div class="row">
             <div id="learnosity-author"></div>
     </div>
-    <p class="text-right">
-        <br>
-        <a class="btn btn-primary btn-md btn-goToAssessment">Go to Assessment</a>
-    </p>
 </div>
 
 <script src="<?=$url_authorapi?>"></script>
@@ -65,6 +65,15 @@ $signedRequest = $Init->generate();
 
         readyListener: function () {
             console.log("Author API loaded.")
+            authorApp.on("itemlist:selection:changed", (itemReferences) => {
+                console.log("Selected: ", itemReferences.data.itemRefs)
+                if(itemReferences.data.itemRefs.length > 0){
+                    document.getElementById("go-to-button").style = "opacity: 1; cursor: pointer;";
+                }
+                else{
+                    document.getElementById("go-to-button").style = "opacity: .75; cursor: not-allowed;";
+                }
+            })
         },
         errorListener: function(e){
             console.log(e);
