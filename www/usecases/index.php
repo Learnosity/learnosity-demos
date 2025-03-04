@@ -98,7 +98,7 @@ include_once 'includes/header.php';
                             <h3 class="panel-title">Manual Grading Inline</h3>
                         </div>
                         <div class="panel-body">
-                            <p>New out-of-the-box manual grading to allow an instructor to update scores and add feedback.</p>
+                            <p>New out-of-the box grading to score mixed-question assessments and provide personalized feedback to learners.</p>
                             <p class="text-right">
                                 <a class="demo_link" href="feedback/manual-grading-inline/index.php">Demo</a>
                             </p>
@@ -112,7 +112,7 @@ include_once 'includes/header.php';
                         <h3 class="panel-title">Manual Grading</h3>
                     </div>
                     <div class="panel-body">
-                        <p>Allow an instructor to update scores for manually scored items.</p>
+                        <p>Our classic approach to building a subjective scoring interface.</p>
                         <p class="text-right">
                             <a class="demo_link" href="feedback/simple-scoring/index.php">Demo</a>
                         </p>
