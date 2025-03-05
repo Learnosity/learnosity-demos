@@ -102,7 +102,7 @@ $signedRequest = $Init->generate();
                             var currentResponseCount = (questionResponse) ? questionResponse
                                 .value
                                 .reduce(function(acc, curr) {
-                                    return acc + (curr ? 1 : 0);
+                                    return acc + ( (curr || curr === 0) ? 1 : 0);
                                 }, 0) : 0;
 
                             if (currentResponseCount < valid_response_count) {
