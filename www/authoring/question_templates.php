@@ -53,7 +53,7 @@ $request = [
                                 //hidden elements not in a section
                                 "hidden" => ["description", "penalty_score"],
                                 //path to thumbnail
-                                "image" => "//dw6y82u65ww8h.cloudfront.net/questiontypes/templates/qev3/mcqdefault.png",
+                                "image" => "//assets.learnosity.com/questiontypes/templates/qev3/mcqdefault.png",
                                 //terms for search field in add question tile view to filter matching question templates
                                 "hidden_search_terms" => ["mcq", "mc", "true", "false", "yes", "no",],
                                 //new UUID reference for custom template
@@ -97,7 +97,7 @@ $request = [
                                 //hidden sections. note that not all elements appear in sections, to support layout versatility.
                                 //e.g. validation-related elements appear in More Options so they needn't clutter the answer area
                                 "hidden_sections" => ["scoring","validation.automarkable_fields","layout"],
-                                "image" => "//dw6y82u65ww8h.cloudfront.net/questiontypes/templates/qev3/mcqmulti.png",
+                                "image" => "//assets.learnosity.com/questiontypes/templates/qev3/mcqmulti.png",
                                 "hidden_search_terms" => ["mcq", "mc", "multi"],
                                 "reference" => "f3764936-aab4-4e74-980d-58f7b0b2933b",
                                 "defaults" => [
