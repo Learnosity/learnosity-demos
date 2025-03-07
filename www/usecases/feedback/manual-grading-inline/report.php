@@ -55,7 +55,7 @@ $appConfig = json_encode([
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://help.learnosity.com/hc/en-us/articles/19987787700893-Grading-API" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
         <div class="overview">
