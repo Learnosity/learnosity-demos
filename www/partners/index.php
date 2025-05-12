@@ -22,7 +22,7 @@
             <li><a class="blue-chevron" href="#ReadSpeaker">Text to Speech solution: ReadSpeaker</a></li>
             <li><a class="blue-chevron" href="#GeoGebra">Powerful math tools: GeoGebra</a></li>
             <li><a class="blue-chevron" href="#Desmos">Helping every student love learning math: Desmos</a></li>
-            <li><a class="blue-chevron" href="#TextHelp">SpeechStream, read aloud solution  by TextHelp</a></li>
+            <li><a class="blue-chevron" href="#SpeechStream">SpeechStream, read aloud solution by Everway (formerly Texthelp)</a></li>
             <li><a class="blue-chevron" href="#AB">Browse and Tag Learning Standards: Academic Benchmarks</a></li>
             <li><a class="blue-chevron" href="#Brainingcamp">Digital math manipulatives: Brainingcamp</a></li>
             <li><a class="blue-chevron" href="#Alchemie">Game-inspired interactives: Alchemie</a></li>
@@ -81,13 +81,13 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title" id="TextHelp">SpeechStream, read aloud solution  by TextHelp</h>
+                    <h3 class="panel-title" id="SpeechStream">SpeechStream, read aloud solution by Everway</h>
                 </div>
                 <div class="panel-body">
-                    <p>This demonstrates integrating Learnosity with TextHelp. TextHelp's SpeechStream is a cloud-based
-                    JavaScript software solution that allows publishers to embed text-to-speech into their assessment items.</p>
+                    <p>This demonstrates integrating Learnosity with SpeechStream. A cloud-based
+                    JavaScript software solution by Everway (formerly Texthelp) that allows publishers to embed text-to-speech into their assessment items.</p>
                     <p class="text-right">
-                        <a class="demo_link" href="./texthelp.php">Demo</a>
+                        <a class="demo_link" href="./speechstream.php">Demo</a>
                     </p>
                 </div>
             </div>
