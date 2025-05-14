@@ -28,7 +28,7 @@ $request = [
     'name' => 'Test Assessment',
     'config'         => [
         'configuration' => [
-            'onsubmit_redirect_url' => 'texthelp.php'
+            'onsubmit_redirect_url' => 'speachstream.php'
         ],
         'region_overrides' => [
             'right' => [
@@ -69,17 +69,16 @@ $signedRequest = $Init->generate();
         </ul>
     </div>
     <div class="overview">
-        <h2>Using Third-Party Assistive Tools: TextHelp</h2>
-        <p>This demo shows how Texthelp's SpeechStream product can be integrated into a Learnosity assessment with ease.</p>
-        <p><a href="https://www.texthelp.com/en-us/products/speechstream">SpeechStream</a> is a cloud based JavaScript software solution that allows publishers to embed text-to-speech read aloud within their products. This feature is used by students with learning disabilities, such as dyslexia, struggling readers, English language learners, auditory learners, and students with mild vision impairments.</p>
-        <a href='https://www.texthelp.com' target='_blank' title='Learn about solutions from our partner Texthelp'><img src='../static/images/texthelp-logo.png' alt='Texthelp Logo' class='pull-right' /></a>
-        <p>If you have a Texthelp license - it integrates effortlessly with Learnosity.</p>
+        <h2>Using Third-Party Assistive Tools: SpeechStream</h2>
+        <p>This demo shows how SpeechStream can be integrated into a Learnosity assessment with ease.</p>
+        <p><a href="https://www.everway.com/products/speechstream/">SpeechStream</a> is a cloud based JavaScript software solution by Everway (formerly Texthelp) that allows publishers to embed text-to-speech read aloud within their products. This feature is used by students with learning disabilities, such as dyslexia, struggling readers, English language learners, auditory learners, and students with mild vision impairments.</p>
+        <p>If you have a SpeechStream license - it integrates effortlessly with Learnosity.</p>
         <p>The SpeechStream Toolbar will appear in the upper right corner of the screen, when the assessment is started and the test taker clicks the SpeechStream launch icon in the Learnosity toolbar.</p>
     </div>
 </div>
 
 <div class="section pad-sml">
-    <!-- TextHelp start point indicator -->
+    <!-- SpeechStream start point indicator -->
     <span id="start"></span>
     <!-- Container for the items api to load into -->
     <div id="learnosity_assess"></div>
@@ -87,7 +86,7 @@ $signedRequest = $Init->generate();
 
 <!-- Load Learnosity -->
 <script src="<?php echo $url_items; ?>"></script>
-<!-- Load the TextHelp library -->
+<!-- Load the SpeechStream library -->
 <script src="https://toolbar.speechstream.net/SpeechStream/latest/speechstream.js" type="text/javascript" data-speechstream-config="Learnosityv350R1"></script>
 
 <!-- Load Mathjax config compatible with Speechstream -->
