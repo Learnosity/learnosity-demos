@@ -15,9 +15,7 @@ if (!isset($pageTitle)) {
             cb.setAttribute('data-blockingmode', 'auto');
             cb.type = 'text/javascript';
             cb.onload = function () {  
-                if (window?.Cookiebot?.consented &&  
-                    location.hostname.endsWith('.learnosity.com')) {  
-                    console.log('in');  
+                if (window?.Cookiebot?.consented) {  
                     (function(w,d,s,l,i){  
                         w[l] = w[l] || [];  
                         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});  
