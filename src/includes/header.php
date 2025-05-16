@@ -14,6 +14,8 @@ if (!isset($pageTitle)) {
             cb.setAttribute('data-cbid', '7d32057a-6a03-459f-84db-e232787c5485');
             cb.setAttribute('data-blockingmode', 'auto');
             cb.type = 'text/javascript';
+            // Only load GTM if Cookiebot has consented which needs to be done in the onload event
+            // as the Cookiebot script is async and we need to wait for it to load
             cb.onload = function () {  
                 if (window?.Cookiebot?.consented) {  
                     (function(w,d,s,l,i){  
