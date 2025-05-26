@@ -18,42 +18,18 @@ $security = [
     'domain'       => $domain
 ];
 
-//simple api request object, with additional common features added and commented
+//simple api request object, with read_only enabled
 $request = [
     'mode'      => 'item_list',
     'config'    => [
-        //hide ability to add new item
-        'item_list' => [
-            'toolbar' => [
-                'add' => false
-            ]
-        ],
-        /*
-            * show item reference but disallow editing
-            * disallow duplication
-            * show preview only
-            * disallow editing or deleting widgets within items
-            */
-        'item_edit' => [
-            'item' => [
-                'reference' => [
-                    'show' => true,
-                    'edit' => false
-                ],
-                'duplicate' => [
-                    'show' => false
-                ],
-                'mode' => [
-                    'default' => 'preview',
-                    'show' => false
-                ],
-                'save' => false
-            ],
-            'widget' => [
-                'delete' => false,
-                'edit' => false
+        'global' => [
+            'items' => [
+                'read_only' => [
+                    'enabled' => true
+                 ]
             ]
         ]
+
     ],
     //user for whom this API is initialized. recorded when editing item content.
     'user' => [
