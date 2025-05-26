@@ -10,9 +10,11 @@
 |
 */
 $consumer_key = 'yis0TYCu7U9V4o7M';
+$consumer_key_postgres = 'fSqyNLdPzJ1jnnNf';
 
 // Note - Consumer secret should never get displayed on the page - only used for creation of signature server side
 $consumer_secret = '74c5fd430cf1242a527f6223aebd42d30464be22';
+$consumer_secret_postgres = 'OBcZjzzv1AHdSwOrLu0hgYORaUOsrtId0crwn0WJ';
 
 // Additional organisation IDs that the consumer has access to, RW and RO.
 $rwAdditionalOrgId=6;
