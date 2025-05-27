@@ -215,6 +215,22 @@ $version = $lts_version;
             <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#responsesfeedbackupdate">
+                            <span class="block">action: update</span>
+                            <?php echo '/' . $version . '/sessions/responses/feedback'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="responsesfeedbackupdate" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'sessions/responsesfeedbackupdate.php'; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default panel-data">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#sessionsscores">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/scores'; ?>

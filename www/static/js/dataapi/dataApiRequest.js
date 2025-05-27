@@ -60,7 +60,7 @@
     function submitToApi (request, endpoint, resource) {
         $.ajax({
             url: 'xhr.php',
-            data: {'request': JSON.stringify(request), 'endpoint': endpoint},
+            data: {'request': JSON.stringify(request), 'endpoint': endpoint, 'resource': resource},
             dataType: 'json',
             type: 'POST'
         })
