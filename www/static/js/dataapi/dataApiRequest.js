@@ -20,11 +20,16 @@
             endpoint = $(frm).find('#endpoint').val(),
             resource = $(frm).data('resource'),
             action = $(frm).find('#action').val() || 'get',
+            security = config.apiRequest.security,
             request;
+
+        if (['responses-feedback-update', 'responses-feedback'].includes(resource)) {
+            security = config.apiRequest.security_postgres;
+        }
 
         request = {
             action: action,
-            security: config.apiRequest.security,
+            security: security,
             request: obj
         };
 

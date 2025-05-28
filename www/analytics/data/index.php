@@ -297,6 +297,12 @@ $version = $lts_version;
                 domain: '<?php echo $domain; ?>',
                 timestamp: '<?php echo gmdate('Ymd-Hi'); ?>',
                 signature: '[add request signature here]'
+            },
+            security_postgres: {
+                consumer_key: '<?php echo $consumer_key_postgres; ?>',
+                domain: '<?php echo $domain; ?>',
+                timestamp: '<?php echo gmdate('Ymd-Hi'); ?>',
+                signature: '[add request signature here]'
             }
         }
     };
