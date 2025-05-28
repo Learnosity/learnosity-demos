@@ -1,7 +1,7 @@
 <?php
 
 $endpoint = "$URL/sessions/responses/feedback";
-$resource = 'responsesfeedback';
+$resource = 'responses-feedback';
 
 ?>
 

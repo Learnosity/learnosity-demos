@@ -1,7 +1,7 @@
 <?php
 
 $endpoint = "$URL/sessions/responses/feedback";
-$resource = 'responsesfeedbackupdate';
+$resource = 'responses-feedback-update';
 
 ?>
 
@@ -21,6 +21,12 @@ $resource = 'responsesfeedbackupdate';
                 </div>
             </div>
             <div class="form-group">
+                <label class="col-md-2 control-label">Action</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="action" value="update" readonly>
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="col-md-2 control-label">session_id</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="api-session_id" data-type="string" value="">
@@ -31,21 +37,21 @@ $resource = 'responsesfeedbackupdate';
                 <div class="col-md-10">
                     <textarea class="form-control" id="api-items" data-type="json">
 [
-  {
-    "item_reference": "item_1",
-    "responses": [
-      {
-        "response_id": "response_1",
-        "feedback": [
-          {
-            "grader_id": "grader_1",
-            "content": "This is feedback for the response",
-            "rendering_format": "plaintext_inline"
-          }
+    {
+        "item_reference": "REPLACE_WITH_ITEM_REFERENCE",
+        "responses": [
+            {
+                "response_id": "REPLACE_WITH_RESPONSE_ID",
+                "feedback": [
+                    {
+                    "grader_id": "grader_id",
+                    "content": "This is feedback for the response",
+                    "rendering_format": "plaintext_inline"
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  }
+    }
 ]</textarea>
                 </div>
             </div>

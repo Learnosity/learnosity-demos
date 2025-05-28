@@ -199,32 +199,32 @@ $version = $lts_version;
             <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#responsesfeedback">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#responses-feedback">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/responses/feedback'; ?>
                             <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="responsesfeedback" class="panel-collapse collapse">
+                <div id="responses-feedback" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <?php include_once 'sessions/responsesfeedback.php'; ?>
+                        <?php include_once 'sessions/responses-feedback.php'; ?>
                     </div>
                 </div>
             </div>
             <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#responsesfeedbackupdate">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#responses-feedback-update">
                             <span class="block">action: update</span>
                             <?php echo '/' . $version . '/sessions/responses/feedback'; ?>
                             <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="responsesfeedbackupdate" class="panel-collapse collapse">
+                <div id="responses-feedback-update" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <?php include_once 'sessions/responsesfeedbackupdate.php'; ?>
+                        <?php include_once 'sessions/responses-feedback-update.php'; ?>
                     </div>
                 </div>
             </div>

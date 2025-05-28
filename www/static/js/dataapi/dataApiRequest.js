@@ -19,9 +19,11 @@
         var obj = formToObject.parse(frm),
             endpoint = $(frm).find('#endpoint').val(),
             resource = $(frm).data('resource'),
+            action = $(frm).find('#action').val() || 'get',
             request;
 
         request = {
+            action: action,
             security: config.apiRequest.security,
             request: obj
         };
@@ -32,7 +34,8 @@
         return {
             endpoint: endpoint,
             request: obj,
-            resource: resource
+            resource: resource,
+            action: action
         };
     }
 
@@ -57,10 +60,10 @@
      * @param  {string} resource Final resource endpoint
      * @return {void}
      */
-    function submitToApi (request, endpoint, resource) {
+    function submitToApi (request, endpoint, resource, action) {
         $.ajax({
             url: 'xhr.php',
-            data: {'request': JSON.stringify(request), 'endpoint': endpoint, 'resource': resource},
+            data: {'request': JSON.stringify(request), 'endpoint': endpoint, 'action': action},
             dataType: 'json',
             type: 'POST'
         })
@@ -96,7 +99,7 @@
                 ladda.stop();
             });
 
-            submitToApi(obj.request, obj.endpoint, obj.resource);
+            submitToApi(obj.request, obj.endpoint, obj.resource, obj.action);
         });
     });
 
