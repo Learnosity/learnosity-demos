@@ -25,7 +25,6 @@ if (filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED)) {
 $santized_url = filter_var($url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 $hasViewSource = !str_starts_with($_SERVER['REQUEST_URI'], '/showcase');
-
 ?>
 
 <div class="navbar" role="navigation">
