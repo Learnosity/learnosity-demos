@@ -199,6 +199,38 @@ $version = $lts_version;
             <div class="panel panel-default panel-data">
                 <div class="panel-heading">
                     <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#responses-feedback">
+                            <span class="block">action: get</span>
+                            <?php echo '/' . $version . '/sessions/responses/feedback'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="responses-feedback" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'sessions/responses-feedback.php'; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default panel-data">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#responses-feedback-update">
+                            <span class="block">action: update</span>
+                            <?php echo '/' . $version . '/sessions/responses/feedback'; ?>
+                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="responses-feedback-update" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <?php include_once 'sessions/responses-feedback-update.php'; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default panel-data">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#sessionsscores">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/scores'; ?>
@@ -262,6 +294,12 @@ $version = $lts_version;
         apiRequest: {
             security: {
                 consumer_key: '<?php echo $consumer_key; ?>',
+                domain: '<?php echo $domain; ?>',
+                timestamp: '<?php echo gmdate('Ymd-Hi'); ?>',
+                signature: '[add request signature here]'
+            },
+            security_postgres: {
+                consumer_key: '<?php echo $consumer_key_postgres; ?>',
                 domain: '<?php echo $domain; ?>',
                 timestamp: '<?php echo gmdate('Ymd-Hi'); ?>',
                 signature: '[add request signature here]'
