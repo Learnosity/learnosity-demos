@@ -10,12 +10,12 @@ include_once 'includes/header.php';
             <h1>Learnosity API and Partner Demos</h1>
             <div class="media">
                 <div class="media-body">
-                    <p>This site contains demonstrations of how to use Learnosity to build your ideal assessment and learning platform. Most of them are interactive, allowing you to get
-                the feel of our products with real content.</p>
-                    <p>You may also download the entire site to see how you can easily integrate our services into your own technology stack,
-                        or you can <a href="https://github.com/Learnosity/learnosity-demos/tree/master">browse the code directly</a> on github.
-                    </p><p>
-                        Although the site has been written in PHP, the format is simple enough to adapt to any language you may prefer.</p>
+                    <p>Discover how Learnosity can power your ideal assessment and learning platform through a range of interactive demos. Explore real content and see our capabilities in action.</p>
+
+                    <p>
+                        <strong>Ready to go further?</strong><br>
+                        <a href="https://github.com/Learnosity/learnosity-demos/tree/master">Download the full site or browse the source code on GitHub</a> to see how easily Learnosity integrates into your technology stack. The site is written in PHP, but the format is easy to adapt to any language you prefer.
+                    </p>
                 </div>
             </div>
         </div>

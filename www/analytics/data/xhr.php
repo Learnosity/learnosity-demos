@@ -16,13 +16,19 @@ include_once '../../lrn_config.php';
 
 use LearnositySdk\Request\DataApi;
 
+$endpoint = filter_input(INPUT_POST, 'endpoint', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => null]]);
+
+if (strpos($endpoint, 'sessions/responses/feedback')!==false){
+    $consumer_key = $consumer_key_postgres;
+    $consumer_secret = $consumer_secret_postgres;
+}
+
 $security = array(
     'consumer_key' => $consumer_key,
     'domain'       => $domain
 );
-$endpoint = filter_input(INPUT_POST, 'endpoint', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => null]]);
-$data = json_decode(html_entity_decode(filter_input(INPUT_POST, 'request', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => null]])), true);
 
+$data = json_decode(html_entity_decode(filter_input(INPUT_POST, 'request', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => null]])), true);
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'get']]);
 
 # Get the data API URL we are dealing with - so we can limit it to only that domain.
