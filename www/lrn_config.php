@@ -46,12 +46,12 @@ $url_questioneditor        = 'https://questioneditor.learnosity.com/?' . $lts_ve
 $url_questions             = 'https://questions.learnosity.com/?' . $lts_version;
 $url_reports               = 'https://reports.learnosity.com/?' . $lts_version;
 
-/**
- * Allow override file to replace config options
- **/
 
+/** Allow override file to replace config options
+// NEED TO CREATE THIS FILE IF YOU WANT TO OVERRIDE DEMOS
 if (file_exists(dirname(__FILE__) . '/config_override.php')) {
     require dirname(__FILE__) . '/config_override.php';
 }
 
+ **/
 include_once __DIR__ . '/../vendor/autoload.php';

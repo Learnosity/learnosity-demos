@@ -36,7 +36,8 @@ $request = [
             'hierarchy_reference' => 'CCSS',
             'session_ids' => [
                 '8f8490d9-5ef7-4c59-bcdc-44df24202a12'
-            ]
+      ],
+            'scoring_type'=> 'partial'
         ],
         [
             'id' => 'sessions-list',

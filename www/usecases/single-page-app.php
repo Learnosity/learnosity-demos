@@ -17,6 +17,20 @@ $security = [
     'domain'       => $domain
 ];
 
+// [
+//            'id' => Uuid::generate(),
+//            'reference' => 'Sci-Demo-1'
+//        ],
+//        [
+//            'id' => Uuid::generate(),
+//            'reference' => 'Sci-Demo-2'
+//        ],
+//        [
+//            'id' => Uuid::generate(),
+//           'reference' => 'Sci-Demo-3'
+//        ],
+
+
 $request1 = [
     'activity_id' => 'activity-1',
     'name' => 'Science Stage 1',
@@ -26,7 +40,7 @@ $request1 = [
     'session_id' => Uuid::generate(),
     'organisation_id' => $roAdditionalOrgId,
     'items' => [
-        [
+[
             'id' => Uuid::generate(),
             'reference' => 'Sci-Demo-1'
         ],
@@ -38,6 +52,12 @@ $request1 = [
             'id' => Uuid::generate(),
             'reference' => 'Sci-Demo-3'
         ],
+
+            [
+      'id'=> Uuid::generate(),
+      'reference' => 'LEAR_8e69bdde-b289-4b92-b90f-f02c93a5302c',
+      'organisation_id' => '6'
+    ]
     ],
     'config' => [
         'title' => 'Activity 1',
@@ -262,6 +282,7 @@ $signedRequest3 = $init3->generate();
 
         var itemsAppStatus = null;
         var itemsApp = null;
+        var assessApp = null;
 
         var activityListElement = document.getElementById('activities');
         var activityDetailElement = document.getElementById('activity-detail');
@@ -325,6 +346,9 @@ $signedRequest3 = $init3->generate();
             var itemsApp = LearnosityItems.init(initializationObject, itemsAppStatus.appId, {
                 readyListener: function() {
                     itemsAppStatus.isReady = true;
+                  //  assessApp = itemsApp.assessApp();
+                  //  assessApp.on('all', (e)=> console.log(`Assess: ${e}`))
+
                 },
                 errorListener: function() {
                     console.log('Items API initialization failed for activity "%s"', itemsAppStatus.appId);
@@ -483,6 +507,7 @@ $signedRequest3 = $init3->generate();
 
                 itemsAppStatus = createItemsAppStatus(activityId);
                 itemsApp = createItemsApp(initializationObject, itemsAppStatus);
+                console.log(`itemsApp:${itemsApp}`);
 
                 showActivityDetailView();
 
@@ -490,7 +515,8 @@ $signedRequest3 = $init3->generate();
                 itemsApp.on('app:ready', onItemsAppReady);
                 itemsApp.on('test:finished:discard test:finished:save test:finished:submit', onFinishTest);
                 itemsApp.on('test:reset', onItemsAppReset);
-            } else {
+
+                            } else {
                 console.log('Activity "%s" not found', activityId);
             }
 
