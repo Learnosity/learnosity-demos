@@ -236,12 +236,12 @@ function getConfigFromRequest($config, $key)
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="item_edit[item][duplicate]" class="col-sm-6 control-label">Show <em>Duplicate</em> button</label>
+                                    <label for="item_edit[item][duplicate][show]" class="col-sm-6 control-label">Show <em>Duplicate</em> button</label>
                                     <div class="col-sm-6">
-                                        <input type="radio" name="item_edit[item][duplicate]" value="true"<?php if (isset($item_edit['item']['duplicate']) && $item_edit['item']['duplicate'] === true) {
+                                        <input type="radio" name="item_edit[item][duplicate][show]" value="true"<?php if (isset($item_edit['item']['duplicate']['show']) && $item_edit['item']['duplicate']['show'] === true) {
                                             echo ' checked';
                                                                                                           }; ?>> Enable &nbsp;
-                                        <input type="radio" name="item_edit[item][duplicate]" value="false"<?php if (isset($item_edit['item']['duplicate']) && $item_edit['item']['duplicate'] === false) {
+                                        <input type="radio" name="item_edit[item][duplicate][show]" value="false"<?php if (isset($item_edit['item']['duplicate']['show']) && $item_edit['item']['duplicate']['show'] === false) {
                                             echo ' checked';
                                                                                                            }; ?>> Disable
                                     </div>

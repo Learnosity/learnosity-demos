@@ -44,7 +44,9 @@
                      * allow duplication of items
                      */
                     'dynamic_content' => true,
-                    'duplicate' => true,
+                    'duplicate' => [
+                        'show' => true
+                    ],
                     'shared_passage' => true,
                     'enable_audio_recording' => true
                 ]
