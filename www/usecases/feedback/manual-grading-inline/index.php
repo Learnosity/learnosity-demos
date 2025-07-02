@@ -40,7 +40,6 @@ $params = [
 ];
 
 $request = [
-    'organisation_id'      => $roAdditionalOrgId,
     'user_id'              => $params['student_id'],
     'rendering_type'       => 'assess',
     'assess_inline'        => true,

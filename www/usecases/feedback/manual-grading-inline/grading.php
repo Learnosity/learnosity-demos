@@ -27,7 +27,6 @@ $security = [
 ];
 
 $gradingRequest = [
-    'organisation_id'      => $roAdditionalOrgId,
     'user_id'              => $grader_id,
     'rendering_type'       => 'inline',
     'name'                 => 'Teacher Assessment demo',
