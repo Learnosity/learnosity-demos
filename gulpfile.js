@@ -39,4 +39,4 @@ function copyFonts() {
 }
 
 // default gulp task
-exports.default = gulp.series(scripts, styles, copyFonts);
+exports.default = gulp.series(scripts, styles);
