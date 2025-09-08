@@ -16,20 +16,20 @@ if (!isset($pageTitle)) {
             cb.type = 'text/javascript';
             // Only load GTM if Cookiebot has consented which needs to be done in the onload event
             // as the Cookiebot script is async and we need to wait for it to load
-            cb.onload = function () {  
-                if (window?.Cookiebot?.consented) {  
-                    (function(w,d,s,l,i){  
-                        w[l] = w[l] || [];  
-                        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});  
-                        var f = d.getElementsByTagName(s)[0],  
-                            j = d.createElement(s),  
-                            dl = l !== 'dataLayer' ? '&l=' + l : '';  
-                        j.async = true;  
-                        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;  
-                        f.parentNode.insertBefore(j, f);  
-                    })(window, document, 'script', 'dataLayer', 'GTM-M2HXW6');  
-                }  
-            };  
+            cb.onload = function () {
+                if (window?.Cookiebot?.consented) {
+                    (function(w,d,s,l,i){
+                        w[l] = w[l] || [];
+                        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                        var f = d.getElementsByTagName(s)[0],
+                            j = d.createElement(s),
+                            dl = l !== 'dataLayer' ? '&l=' + l : '';
+                        j.async = true;
+                        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                        f.parentNode.insertBefore(j, f);
+                    })(window, document, 'script', 'dataLayer', 'GTM-M2HXW6');
+                }
+            };
             document.head.appendChild(cb);
         }
     </script><meta charset="utf-8">
@@ -42,6 +42,8 @@ if (!isset($pageTitle)) {
 </head>
 <body>
 
+<div class="wrapper">
+
 <?php
     $server_name = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     // Show alert if not being used form localhost
@@ -53,5 +55,5 @@ if ($server_name && strpos($server_name, '.learnosity.com') === false && $server
     include_once 'nav.php';
 ?>
 
-<div class="container container-content" role="main">
-    <div class="row">
+    <main class="container container-content" role="main">
+        <div class="row">

@@ -4,10 +4,10 @@
 *
 ********************************************************************/
 html, body {
+    height: 100%;
     overflow: visible !important;
     overflow-x: hidden !important;
 }
-
 
 body {
     min-height: 500px;
@@ -196,6 +196,12 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 .panel.panel-default.panel-data {
     min-height:60px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .footer .section {
@@ -785,6 +791,12 @@ a:focus,
     height:60px;
 }
 
+.footer,
+.navbar {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
 .navbar {
     min-height:95px;
     background-color: #fff;
@@ -905,6 +917,10 @@ img.product-logo {
 
 .nav-sec .navbar-nav {
     margin-left: 0;
+}
+
+.container {
+    flex-grow: 1;
 }
 
 .container .jumbotron {
