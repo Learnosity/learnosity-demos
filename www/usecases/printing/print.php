@@ -101,6 +101,9 @@ $signedRequest = $Init->generate();
 
 <!-- Add some basic CSS to style the items -->
 <style>
+body{
+    height:auto;
+}
 h2 {
     border-bottom: 1px solid #dfdfdf;
     margin-bottom: 30px;
