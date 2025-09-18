@@ -27,7 +27,7 @@ $santized_url = filter_var($url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $hasViewSource = !str_starts_with($_SERVER['REQUEST_URI'], '/showcase');
 ?>
 
-<div class="navbar" role="navigation">
+<header class="navbar" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
@@ -72,4 +72,4 @@ $hasViewSource = !str_starts_with($_SERVER['REQUEST_URI'], '/showcase');
             <?php endif; ?>
         </div>
     </div>
-</div>
+</header>

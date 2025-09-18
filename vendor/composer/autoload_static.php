@@ -21,7 +21,22 @@ class ComposerStaticInitb5368e63081003e85c89088d5625032a
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'LearnositySdk\\Exceptions\\ValidationException' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Exceptions/ValidationException.php',
+        'LearnositySdk\\Request\\DataApi' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Request/DataApi.php',
+        'LearnositySdk\\Request\\Init' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Request/Init.php',
+        'LearnositySdk\\Request\\Remote' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Request/Remote.php',
+        'LearnositySdk\\Request\\RemoteInterface' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Request/RemoteInterface.php',
+        'LearnositySdk\\SdkFactory' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/SdkFactory.php',
+        'LearnositySdk\\Services\\PreHashStringFactory' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Services/PreHashStringFactory.php',
+        'LearnositySdk\\Services\\PreHashStrings\\LegacyPreHashString' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Services/PreHashStrings/LegacyPreHashString.php',
+        'LearnositySdk\\Services\\PreHashStrings\\PreHashStringInterface' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Services/PreHashStrings/PreHashStringInterface.php',
+        'LearnositySdk\\Services\\SignatureFactory' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Services/SignatureFactory.php',
+        'LearnositySdk\\Services\\Signatures\\HashSignature' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Services/Signatures/HashSignature.php',
+        'LearnositySdk\\Services\\Signatures\\HmacSignature' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Services/Signatures/HmacSignature.php',
+        'LearnositySdk\\Services\\Signatures\\SignatureInterface' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Services/Signatures/SignatureInterface.php',
+        'LearnositySdk\\Utils\\Conversion' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Utils/Conversion.php',
+        'LearnositySdk\\Utils\\Json' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Utils/Json.php',
+        'LearnositySdk\\Utils\\Uuid' => __DIR__ . '/..' . '/learnosity/learnosity-sdk-php/src/Utils/Uuid.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
