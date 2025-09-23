@@ -19,7 +19,7 @@ $security = [
     'domain' => $domain
 ];
 
-// to get a commercial license to the Desmos tools, email partnerships@desmos.com
+// to get a commercial license to the Desmos tools, email partners@learnosity.com
 $desmosconfig = file_get_contents('https://www.desmos.com/api/learnosity/get-config?questionGroups=all&features=extended');
 $desmosconfig = json_decode($desmosconfig, true);
 
