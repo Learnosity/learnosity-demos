@@ -45,8 +45,8 @@ $signedRequest = $Init->generate();
     </div>
     <div class="overview">
         <h2>Coding assessments: Qualified</h2>
-        <p>Through the Qualified and Learnosity partnership, you can integrate powerfull coding environments with a developer-friendly IDE, rich language features, and modern unit-testing frameworks in your Learnosity Assessments.</p>
-        <p>In the following activity you will find Qualified questions in Item 2, 4 and 6 while 1, 3 and 5 are Learnosity Questions.</p>
+        <p>Through the Qualified and Learnosity partnership, you can integrate powerful coding environments with a developer-friendly IDE, rich language features, and modern unit-testing frameworks in your Learnosity Assessments.</p>
+        <p>In the following activity, you will find Qualified questions in items 2, 4 and 6, while 1, 3 and 5 are Learnosity Questions.</p>
     </div>
 </div>
 
