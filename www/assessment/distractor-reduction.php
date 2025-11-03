@@ -26,6 +26,12 @@ if ($exclude !== 'none') {
 }
 $distractorReduction['minimum_distractors_count'] = $minimum_distractors_count;
 
+$questionModifications = $amount > 0 ? [
+    'mcq' => [
+        'distractor_reduction' => $distractorReduction
+    ]
+] : [];
+
 /* Demo configuration and signature sign */
 $requestDemo = [
     'name' => 'Distractor Reduction Demo',
@@ -40,11 +46,7 @@ $requestDemo = [
         ]
     ],
     'config' => [
-        'question_modifications' => [
-            'mcq' => [
-                'distractor_reduction' => $distractorReduction
-            ]
-        ]
+        'question_modifications' => $questionModifications
     ]
 ];
 
@@ -72,7 +74,7 @@ $signedRequest = $InitDemo->generate();
                         <label class="form-label"><strong>Amount of distractors to drop:</strong></label>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="amount" id="amount0" value="0" <?= $amount === 0 ? 'checked' : ''; ?>>
-                            <label class="form-check-label" for="amount0">0 (disabled)</label>
+                            <label class="form-check-label" for="amount0">None (disabled)</label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="amount" id="amount1" value="1" <?= $amount === 1 ? 'checked' : ''; ?>>
