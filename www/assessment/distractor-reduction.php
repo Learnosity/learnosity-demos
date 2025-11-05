@@ -59,6 +59,8 @@ $signedRequest = $InitDemo->generate();
             <h2>Distractor Reduction</h2>
             <br>
             <p>Distractor reduction provides a simple way to reduce the difficulty of multiple choice questions on a per-student basis.</p>
+            <p>A distractor in this context means a choice which is incorrect in the primary correct answer and in any alternate correct answers.</p>
+            <p>For more details, see <a href="https://help.learnosity.com/hc/en-us/articles/31392371210525-config-question-modifications-Initialization-Items-API" target="_blank">the Items API question_modifications documentation</a>.</p>
         </div>
     </div>
 
