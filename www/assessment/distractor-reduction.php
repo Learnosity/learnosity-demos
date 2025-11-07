@@ -58,8 +58,8 @@ $signedRequest = $InitDemo->generate();
         <div class="overview">
             <h2>Distractor Reduction</h2>
             <br>
-            <p>Distractor reduction provides a simple way to reduce the difficulty of multiple choice questions on a per-student basis.</p>
-            <p>A distractor in this context means a choice which is incorrect in the primary correct answer and in any alternate correct answers.</p>
+            <p>Distractor Reduction makes it easy to reduce the number of distractors in multiple-choice questions to support each student’s Individual Education Plan (IEPs).</p>
+            <p>In this context, a distractor is an intentionally incorrect option in a multiple choice question.</p>
             <p>For more details, see <a href="https://help.learnosity.com/hc/en-us/articles/31392371210525-config-question-modifications-Initialization-Items-API" target="_blank">the Items API question_modifications documentation</a>.</p>
         </div>
     </div>
