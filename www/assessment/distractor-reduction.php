@@ -2,7 +2,6 @@
 include_once '../env_config.php';
 include_once 'includes/header.php';
 include_once '../lrn_config.php';
-include_once '../../src/utils/date-gating.php';
 
 use LearnositySdk\Request\Init;
 use LearnositySdk\Utils\Uuid;
@@ -55,7 +54,6 @@ $InitDemo = new Init('items', $security, $consumer_secret, $requestDemo);
 $signedRequest = $InitDemo->generate();
 
 ?>
-<?php if (show_date_gated_content('2026-02-11')): ?>
     <div class="jumbotron section">
         <div class="overview">
             <h2>Distractor Reduction</h2>
@@ -145,15 +143,5 @@ $signedRequest = $InitDemo->generate();
 
 <?php
 include_once 'views/modals/initialisation-preview.php';
-?>
-<?php else: ?>
-    <div class="jumbotron section">
-        <div class="overview">
-            <h2>Distractor Reduction</h2>
-            <p>This demo is not currently available.</p>
-        </div>
-    </div>
-<?php endif; ?>
-<?php
 include_once 'includes/footer.php';
 
