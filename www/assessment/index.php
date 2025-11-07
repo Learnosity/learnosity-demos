@@ -2,7 +2,6 @@
 
 include_once '../env_config.php';
 include_once 'includes/header.php';
-include_once '../../src/utils/date-gating.php';
 ?>
 
 <div class="jumbotron section index">
@@ -390,7 +389,6 @@ include_once '../../src/utils/date-gating.php';
                 </div>
             </div>
         </div>
-        <?php if (show_date_gated_content('2026-02-11')): ?>
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -404,7 +402,6 @@ include_once '../../src/utils/date-gating.php';
                 </div>
             </div>
         </div>
-        <?php endif; ?>
     </div>
 </div>
 
