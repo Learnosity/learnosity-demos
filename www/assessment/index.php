@@ -389,19 +389,6 @@ include_once 'includes/header.php';
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Distractor Reduction</h3>
-                </div>
-                <div class="panel-body">
-                    <p>Reduce the number of distractors in multiple choice questions for certain learners as part of your Individual Learning Plan.</p>
-                    <p class="text-right">
-                        <a class="demo_link" href="./distractor-reduction.php">Demo</a>
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
