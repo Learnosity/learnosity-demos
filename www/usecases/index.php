@@ -1,5 +1,4 @@
 <?php
-
 include_once '../env_config.php';
 include_once 'includes/header.php';
 ?>
@@ -135,7 +134,20 @@ include_once 'includes/header.php';
                     </div>
                 </div>
             </div>
-            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Score with Feedback Aide</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>Learn how to create, score, and review feedback by integrating Learnosity APIs with Feedback Aide.</p>
+                        <p><small>Note: this is a new feature demo and is not included in our GitHub repository.</small></p>
+                        <p class="text-right">
+                            <a class="demo_link" href="/showcase/feedback-aide/essay-end-to-end/1-authoring.php">Demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <h3 id="custom-question-examples">Using Custom Questions</h3>
