@@ -41,10 +41,10 @@ $request = [
                                 "type": "custom",
                                 "stimulus": "Oh no! The hands on the clock have gotten all messed up! Help fix the clock by moving the hands to show what time it is! <br><strong>Drag the hands to show 4:30 on the clock.</strong>",
                                 "js": {
-                                    "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_q.js",
-                                    "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_s.js"
+                                    "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_q.jsX",
+                                    "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_s.jsX"
                                 },
-                                "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.css",
+                                "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.cssX",
                                 "instant_feedback": true,
                                 "valid_response" : {
                                     "hourHandAngle": 45, 
