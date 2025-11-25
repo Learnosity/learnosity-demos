@@ -41,10 +41,10 @@ $request = [
                                 "type": "custom",
                                 "stimulus": "Oh no! The hands on the clock have gotten all messed up! Help fix the clock by moving the hands to show what time it is! <br><strong>Drag the hands to show 4:30 on the clock.</strong>",
                                 "js": {
-                                    "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_q.jsX",
-                                    "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_s.jsX"
+                                    "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_q.js",
+                                    "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_s.js"
                                 },
-                                "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.cssX",
+                                "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.css",
                                 "instant_feedback": true,
                                 "valid_response" : {
                                     "hourHandAngle": 45, 
@@ -58,12 +58,12 @@ $request = [
                         "custom_type": "custom_clock",
                         "type": "custom",
                         "name": "Custom Question - clock",
-                        "editor_layout": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_layout.htmlX",
+                        "editor_layout": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_layout.html",
                         "js": {
-                            "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_q.jsX",
-                            "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_s.jsX"
+                            "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_q.js",
+                            "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_s.js"
                         },
-                        "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.cssX",
+                        "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.css",
                         "version": "v1.0.0",
                         "editor_schema": {
                             "hidden_question": false,
