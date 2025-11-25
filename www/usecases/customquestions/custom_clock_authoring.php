@@ -58,12 +58,12 @@ $request = [
                         "custom_type": "custom_clock",
                         "type": "custom",
                         "name": "Custom Question - clock",
-                        "editor_layout": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_layout.html",
+                        "editor_layout": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_layout.htmlX",
                         "js": {
-                            "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_q.js",
-                            "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_s.js"
+                            "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_q.jsX",
+                            "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock_s.jsX"
                         },
-                        "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.css",
+                        "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.cssX",
                         "version": "v1.0.0",
                         "editor_schema": {
                             "hidden_question": false,
