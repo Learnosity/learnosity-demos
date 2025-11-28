@@ -158,7 +158,7 @@ $signedRequest = $Init->generate();
 
     function sstoolbarLoaded(api){
         speechstreamApi = api;
-        const ignoreClasses =".sr-item-description, .mq-math-mode, [class^='lrn-accessibility-'], .sr-only, .test-title-text, .subtitle, .item-count, .timer, .lrn_sort_gripper, .footer";
+        const ignoreClasses = ".lrn-assess-skip-to-link, .sr-item-description, .mq-math-mode, [class^='lrn-accessibility-'], .sr-only, .test-title-text, .subtitle, .item-count, .timer, .lrn_sort_gripper, .footer";
         const doc = window.document;
         const domControl = speechstreamApi.domControlTools.getNewDomControl(doc);
         domControl.addIgnoreListQuerySelector(ignoreClasses);
