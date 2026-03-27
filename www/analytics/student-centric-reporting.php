@@ -73,6 +73,14 @@ $request = [
             'type' => 'session-detail-by-item',
             'user_id' => '$ANONYMIZED_USER_ID',
             'session_id' => '22e797df-da86-4a1e-ac07-93b268ef349a'
+        ],
+        [
+            'id' => 'scoring-group',
+            'type' => 'scoring-group-reportlet',
+            'session_id' => '78c527b2-4b5f-40a5-bc90-139e3558b30d',
+            'showOverallScore' => true,
+            'showActivityLevelScores' => true,
+            'showTable' => true
         ]
     ]
 ];
@@ -82,78 +90,98 @@ $signedRequest = $Init->generate();
 
 ?>
 
-    <div class="jumbotron section">
-        <div class="toolbar">
-            <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            </ul>
-        </div>
-        <div class="overview">
-            <h2>Display Student-Centric reports</h2>
-            <p>Learn more about individual students in an easy, in-depth fashion! Our Reports API provides embeddable, student-focused reports to provide a student with additional information and feedback or provide a teacher with a drilled down view of their student progress.
-            <ul>
-                <li><h4><a href="#sessions-summary-report">Sessions Summary Report</a></h4></li>
-                <li><h4><a href="#sessions-summary-tag-report">Sessions Summary with Tags Report</a></h4></li>
-                <li><h4><a href="#sessions-list-report">Sessions List Report</a></h4></li>
-                <li><h4><a href="#sessions-list-item-report">Sessions List by Item Report</a></h4></li>
-                <li><h4><a href="#lastscore-activity-report">Most recent score per Activity</a></h4></li>
-                <li><h4><a href="#session-detail-report">Sessions Detail Report</a></h4></li>
-
-            </ul>
-            </p>
-        </div>
+<div class="jumbotron section">
+    <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#" data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+        </ul>
     </div>
+    <div class="overview">
+        <h2>Display Student-Centric reports</h2>
+        <p>Learn more about individual students in an easy, in-depth fashion! Our Reports API provides embeddable, student-focused reports to provide a student with additional information and feedback or provide a teacher with a drilled down view of their student progress.
+        <ul>
+            <li>
+                <h4><a href="#sessions-summary-report">Sessions Summary Report</a></h4>
+            </li>
+            <li>
+                <h4><a href="#sessions-summary-tag-report">Sessions Summary with Tags Report</a></h4>
+            </li>
+            <li>
+                <h4><a href="#sessions-list-report">Sessions List Report</a></h4>
+            </li>
+            <li>
+                <h4><a href="#sessions-list-item-report">Sessions List by Item Report</a></h4>
+            </li>
+            <li>
+                <h4><a href="#lastscore-activity-report">Most recent score per Activity</a></h4>
+            </li>
+            <li>
+                <h4><a href="#session-detail-report">Sessions Detail Report</a></h4>
+            </li>
+            <li>
+                <h4><a href="#scoring-group-reportlet">Scoring Group Reportlet</a></h4>
+            </li>
 
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="sessions-summary-report"><a href="#sessions-summary-report">Sessions Summary Report</a></h3>
-        <p>See a running total of correct, incorrect and skipped items for an individual session or a combination of sessions.</p>
-        <div id="sessions-summary"></div>
+        </ul>
+        </p>
     </div>
+</div>
 
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="sessions-summary-tag-report"><a href="#sessions-summary-tag-report">Sessions Summary with Tags Report</a></h3>
-        <p>See a more detailed breakdown of the score of an individual or combination of sessions, broken down based on a tag hierarchy.</p>
-        <div id="sessions-summary-tag"></div>
-    </div>
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="sessions-summary-report"><a href="#sessions-summary-report">Sessions Summary Report</a></h3>
+    <p>See a running total of correct, incorrect and skipped items for an individual session or a combination of sessions.</p>
+    <div id="sessions-summary"></div>
+</div>
 
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="sessions-list-report"><a href="#sessions-list-report">Sessions List Report</a></h3>
-        <p>View multiple attempts at the same activity, or multiple different activities, for a single student.</p>
-        <div id="sessions-list"></div>
-    </div>
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="sessions-summary-tag-report"><a href="#sessions-summary-tag-report">Sessions Summary with Tags Report</a></h3>
+    <p>See a more detailed breakdown of the score of an individual or combination of sessions, broken down based on a tag hierarchy.</p>
+    <div id="sessions-summary-tag"></div>
+</div>
 
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="sessions-list-item-report"><a href="#sessions-list-item-report">Sessions List by Item Report</a></h3>
-        <p>Dive deeper and analyze exactly how a student did at a per-item level for a number of sessions.</p>
-        <div id="sessions-list-item"></div>
-    </div>
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="sessions-list-report"><a href="#sessions-list-report">Sessions List Report</a></h3>
+    <p>View multiple attempts at the same activity, or multiple different activities, for a single student.</p>
+    <div id="sessions-list"></div>
+</div>
 
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-activity-report"><a href="#lastscore-activity-report">Last Score by Activity Report</a></h3>
-        <p>See a student score for their most recent attempt at one or multiple activities.</p>
-        <div id="lastscore-activity"></div>
-    </div>
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="sessions-list-item-report"><a href="#sessions-list-item-report">Sessions List by Item Report</a></h3>
+    <p>Dive deeper and analyze exactly how a student did at a per-item level for a number of sessions.</p>
+    <div id="sessions-list-item"></div>
+</div>
 
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="session-detail-report"><a href="#session-detail-report">Sessions Detail by Item Report</a></h3>
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="lastscore-activity-report"><a href="#lastscore-activity-report">Last Score by Activity Report</a></h3>
+    <p>See a student score for their most recent attempt at one or multiple activities.</p>
+    <div id="lastscore-activity"></div>
+</div>
 
-        <p>Drill down into the student answer, score and correct answer for a session.</p>
-        <div id="session-detail"></div>
-    </div>
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="session-detail-report"><a href="#session-detail-report">Sessions Detail by Item Report</a></h3>
 
-    <script src="<?php echo $url_reports; ?>"></script>
-    <script>
+    <p>Drill down into the student answer, score and correct answer for a session.</p>
+    <div id="session-detail"></div>
+</div>
 
-        var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>);
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="scoring-group-reportlet"><a href="#scoring-group-reportlet">Scoring Group Reportlet</a></h3>
+    <p>View student scores across scoring groups (subscores) for a session.</p>
+    <div id="scoring-group"></div>
+</div>
 
-    </script>
+<script src="<?php echo $url_reports; ?>"></script>
+<script>
+    var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>);
+</script>
 
 <?php
 include_once 'views/modals/initialisation-preview.php';
