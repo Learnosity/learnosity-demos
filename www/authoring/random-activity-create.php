@@ -1,7 +1,5 @@
 <?php
 
-$pageTitle = "Create New Activities - Learnosity Demos";
-
 //common environment attributes including search paths. not specific to Learnosity
 include_once '../env_config.php';
 
@@ -11,30 +9,38 @@ include_once 'includes/header.php';
 //common Learnosity config elements including API version control vars
 include_once '../lrn_config.php';
 
+//alias(es) to eliminate the need for fully qualified classname(s) from sdk
 use LearnositySdk\Request\Init;
-use LearnositySdk\Utils\Uuid;
 
+
+//security object. timestamp added by SDK
 $security = [
     'consumer_key' => $consumer_key,
-    'domain'       => $domain
+    'domain' => $domain
 ];
 
 
+//simple api request object for item list view
 $request = [
-    'mode'      => 'activity_edit',
-    'reference' => Uuid::generate(),
-    'user' => [
-        'id'        => 'demos-site',
-        'firstname' => 'Demos',
-        'lastname'  => 'User',
-        'email'     => 'demos@learnosity.com'
-    ],
+    'mode' => 'item_list',
     'config' => [
-        'activity_list' => [
-            'toolbar' => [
-                'add_random' => true
-                ]
+        'item_edit' => [
+            'item' => [
+                'reference' => [
+                    'show' => true,
+                    'edit' => true
+                ],
+                'dynamic_content' => true,
+                'shared_passage' => true,
+                'enable_audio_recording' => true
+            ]
         ]
+    ],
+    'user' => [
+        'id' => 'demos-site',
+        'firstname' => 'Demos',
+        'lastname' => 'User',
+        'email' => 'demos@learnosity.com'
     ]
 ];
 
@@ -51,35 +57,10 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Create New Activities</h2>
-            <p>
-                The activity edit mode allows authors to create and edit activities that are automatically saved to your Learnosity-hosted item bank.
-            </p>
+        <h2>Maintenance Mode</h2>
+            <p>The Authoring Demos are currently undergoing maintenance and will return soon.</p>
         </div>
     </div>
-
-    <div class="section pad-sml">
-        <!-- Container for the author api to load into -->
-        <div id="learnosity-author"></div>
-    </div>
-
-    <script src="<?php echo $url_authorapi; ?>"></script>
-    <script>
-        var initializationObject = <?php echo $signedRequest; ?>;
-
-        //optional callbacks for ready
-        var callbacks = {
-            readyListener: function () {
-                authorApp.navigate('activities/new/random');
-                console.log("Author API has successfully initialized.");
-            },
-            errorListener: function (err) {
-                console.log(err);
-            }
-        };
-
-        var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
-    </script>
 
 <?php
 include_once 'views/modals/initialisation-preview.php';

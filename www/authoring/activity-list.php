@@ -9,18 +9,33 @@ include_once 'includes/header.php';
 //common Learnosity config elements including API version control vars
 include_once '../lrn_config.php';
 
+//alias(es) to eliminate the need for fully qualified classname(s) from sdk
 use LearnositySdk\Request\Init;
-use LearnositySdk\Utils\Uuid;
 
+
+//security object. timestamp added by SDK
 $security = [
     'consumer_key' => $consumer_key,
-    'domain'       => $domain
+    'domain' => $domain
 ];
 
 
-//simple api request object for item list view, with optional creation of items
+//simple api request object for item list view
 $request = [
-    'mode' => 'activity_list',
+    'mode' => 'item_list',
+    'config' => [
+        'item_edit' => [
+            'item' => [
+                'reference' => [
+                    'show' => true,
+                    'edit' => true
+                ],
+                'dynamic_content' => true,
+                'shared_passage' => true,
+                'enable_audio_recording' => true
+            ]
+        ]
+    ],
     'user' => [
         'id' => 'demos-site',
         'firstname' => 'Demos',
@@ -42,33 +57,10 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-            <h2>Browse Activities in Your Item Bank</h2>
-            <p>The activity list mode allows authors to browse and search the Learnosity hosted item bank for existing activities.
-                In this demo, we've enabled creation of new activities, but this functionality can be disabled as needed.</p>
+        <h2>Maintenance Mode</h2>
+            <p>The Authoring Demos are currently undergoing maintenance and will return soon.</p>
         </div>
     </div>
-
-    <div class="section pad-sml">
-        <!-- Container for the author api to load into -->
-        <div id="learnosity-author"></div>
-    </div>
-
-    <script src="<?php echo $url_authorapi; ?>"></script>
-    <script>
-        var initializationObject = <?php echo $signedRequest; ?>;
-
-        //optional callbacks for ready
-        var callbacks = {
-            readyListener: function () {
-                console.log("Author API has successfully initialized.");
-            },
-            errorListener: function (err) {
-                console.log(err);
-            }
-        };
-
-        var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
-    </script>
 
 <?php
 include_once 'views/modals/initialisation-preview.php';

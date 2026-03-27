@@ -87,52 +87,12 @@ $Init = new Init('author', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
 <div class="jumbotron section">
-    <div class="toolbar">
-        <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-        </ul>
-    </div>
     <div class="overview">
-        <h2>Brainingcamp</h2>
-        <p style="text-align:justify;">
-        Brainingcamp math manipulatives easily embed into your product, combining the familiarity of physical manipulatives with the convenience and powerful learning features of our digital tools.</p>
-        <p style="text-align:justify;">
-        With the Learnosity and Braningcamp partnership, Learnosity clients have access to Brainingcamp digital manipulatives are intuitive, easy to use, and packed with powerful learning tools like number lines, ten frames, regrouping animations, factor tracks, and so much more.
-        </p>
-        <p>
-        In this demo, you can Author a new question using Braningcamp custom question types.<br/>
-        You can then preview the result as it will be used in an Assessment.
-        </p>
+        <h2>Maintenance Mode</h2>
+        <p>The Authoring Demos are currently undergoing maintenance and will return soon.</p>
     </div>
 </div>
-
-<!-- Container for the author api to load into -->
-<div class="section pad-sml">
-    <!--    HTML placeholder that is replaced by API-->
-    <div id="learnosity-author"></div>
-</div>
-
-<!-- version of api maintained in lrn_config.php file -->
-<script src="<?php echo $url_authorapi; ?>"></script>
-<script>
-        var initializationObject = <?php echo $signedRequest; ?>;
-
-        //optional callbacks for ready
-        var callbacks = {
-            readyListener: function () {
-                console.log("Author API has successfully initialized.");
-            },
-            errorListener: function (err) {
-                console.log(err);
-            }
-        };
-
-        var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
-
-</script>
-
 <?php
     include_once 'views/modals/initialisation-preview.php';
     include_once 'includes/footer.php';

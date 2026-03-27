@@ -56,47 +56,12 @@ $Init = new Init('author', $security, $consumer_secret, $request);
 $signedRequest = $Init->generate();
 
 ?>
-
-    <div class="jumbotron section">
-        <div class="toolbar">
-            <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            </ul>
-        </div>
-        <div class="overview">
-            <h2>Browse and Tag Learning Standards: Academic Benchmarks</h2>
-            <p>Academic Benchmarks learning standards metadata—such as standards text, academic subject and grade level—is visible in Learnosity’s Author API user interface, for streamlined and accurate standards alignment of items authored in Learnosity.</p>
-        </div>
+<div class="jumbotron section">
+    <div class="overview">
+        <h2>Maintenance Mode</h2>
+        <p>The Authoring Demos are currently undergoing maintenance and will return soon.</p>
     </div>
-
-
-    <!-- Container for the author api to load into -->
-    <div class="section pad-sml">
-        <!--    HTML placeholder that is replaced by API-->
-        <div id="learnosity-author"></div>
-    </div>
-
-
-    <!-- version of api maintained in lrn_config.php file -->
-    <script src="<?php echo $url_authorapi; ?>"></script>
-    <script>
-        var initializationObject = <?php echo $signedRequest; ?>;
-
-        //optional callbacks for ready
-        var callbacks = {
-            readyListener: function () {
-               console.log("Author API has successfully initialized.");
-            },
-            errorListener: function (err) {
-                console.log(err);
-            }
-        };
-
-        var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
-    </script>
-
-
+</div>
 <?php
 include_once 'views/modals/initialisation-preview.php';
 include_once 'includes/footer.php';
