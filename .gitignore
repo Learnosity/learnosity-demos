@@ -15,3 +15,4 @@ yarn-error.log
 webpack-report.html
 www/showcase/
 counter.json
+package-lock.json
