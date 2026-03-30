@@ -11,7 +11,9 @@ function scripts() {
         './www/static/vendor/bootstrap/js/bootstrap.min.js',
         './www/static/js/prettyPrint.js',
         './www/static/js/main.js',
-        './www/static/js/cookieBanner.js'
+        './www/static/js/cookieBanner.js',
+        './www/static/js/profanity/profanityFilter.js',
+        './www/static/js/profanity/authorProfanityHook.js'
     ])
     .pipe(concat('all.min.js'))
     .pipe(babel({presets: ['@babel/env']}))
