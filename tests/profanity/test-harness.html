@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-profanity-locales="en" data-profanity-wordlist-path="/www/static/js/profanity/wordlists">
+<head>
+    <meta charset="utf-8">
+    <title>Profanity Filter Test Harness</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        #status { margin-top: 1em; padding: 0.5em; background: #eee; }
+    </style>
+</head>
+<body>
+    <h1>Profanity Filter – Test Harness</h1>
+    <p>This page simulates an Author API demo page for testing purposes.</p>
+
+    <!-- Learnosity-like author container -->
+    <div id="learnosity-author">
+        <button class="lrn_btn_save" data-authorapi-selector="save">Save</button>
+    </div>
+
+    <div id="status">Waiting for initialisation…</div>
+
+    <!-- Load the profanity filter modules (source, not minified) -->
+    <script src="/www/static/js/profanity/profanityFilter.js"></script>
+    <script src="/www/static/js/profanity/authorProfanityHook.js"></script>
+
+    <script>
+        /**
+         * Mock authorApp — simulates LearnosityAuthor.init() result.
+         * The hook polls for window.authorApp with a getItem() method.
+         */
+        var _mockItemData = {
+            reference: 'test-item-001',
+            questions: [
+                {
+                    type: 'mcq',
+                    stimulus: 'What is 2 + 2?',
+                    options: [
+                        { label: '3', value: '0' },
+                        { label: '4', value: '1' }
+                    ]
+                }
+            ]
+        };
+
+        window.authorApp = {
+            getItem: function () {
+                return _mockItemData;
+            }
+        };
+
+        /**
+         * Helper used by tests to swap the mock item data.
+         */
+        window.setMockItemData = function (data) {
+            _mockItemData = data;
+        };
+
+        // Report readiness
+        window.addEventListener('load', function () {
+            var checkReady = setInterval(function () {
+                if (window.LrnProfanityFilter && window.LrnProfanityFilter.isReady()) {
+                    clearInterval(checkReady);
+                    document.getElementById('status').textContent = 'Filter ready';
+                }
+            }, 50);
+        });
+    </script>
+</body>
+</html>
