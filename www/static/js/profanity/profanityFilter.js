@@ -104,6 +104,11 @@
      */
     function fetchWordList(locale) {
         return new Promise(function (resolve, reject) {
+            // Validate locale format (e.g., "en", "es", "en-US")
+            if (!/^[a-z]{2}(-[a-zA-Z]{2,4})?$/.test(locale)) {
+                reject(new Error('Invalid locale format: "' + locale + '"'));
+                return;
+            }
             var xhr = new XMLHttpRequest();
             xhr.open('GET', _wordlistBasePath + '/' + encodeURIComponent(locale) + '.json', true);
             xhr.onload = function () {

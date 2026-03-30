@@ -155,7 +155,7 @@ test.describe('Author Profanity Hook', () => {
             });
         });
 
-        // Listen for the blocking alert
+        // Auto-dismiss dialog and capture message
         let alertMessage = '';
         page.on('dialog', async (dialog) => {
             alertMessage = dialog.message();
@@ -163,6 +163,7 @@ test.describe('Author Profanity Hook', () => {
         });
 
         await page.click('[data-authorapi-selector="save"]');
+        // Wait briefly for the synchronous dialog handler to complete
         await page.waitForTimeout(200);
 
         expect(alertMessage).toContain('profanity detected');
