@@ -15,3 +15,6 @@ yarn-error.log
 webpack-report.html
 www/showcase/
 counter.json
+test-results
+playwright-report
+package-lock.json
