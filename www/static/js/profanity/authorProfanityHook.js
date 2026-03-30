@@ -26,7 +26,7 @@
         var locales = attr ? attr.split(',').map(function (s) { return s.trim(); }) : ['en'];
 
         window.LrnProfanityFilter.init({ locales: locales }).then(function () {
-            authorApp.on('presave', function () {
+            authorApp.on('presave', function (event) {
                 try {
                     var item = authorApp.getItem();
                     var found = _walkObject(item, function (str) {
@@ -34,12 +34,10 @@
                     });
                     if (found) {
                         alert('Save blocked: your content contains inappropriate language. Please review and remove any inappropriate words before saving.');
-                        return false;
+                        event.preventDefault();
                     }
-                    return true;
                 } catch (e) {
                     console.warn('[authorProfanityHook] Error during presave scan, allowing save:', e);
-                    return true;
                 }
             });
             console.log('[authorProfanityHook] Presave profanity filter attached.');
