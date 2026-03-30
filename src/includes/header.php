@@ -4,7 +4,7 @@ if (!isset($pageTitle)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-profanity-locales="en,es">
 <head>
     <script>
         if (location.hostname.endsWith('.learnosity.com')) {
