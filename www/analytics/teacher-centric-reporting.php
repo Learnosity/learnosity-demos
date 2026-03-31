@@ -63,15 +63,15 @@ $request = [
                 ["id" => "user_20200224c_00011", "name" => "Sophie Jensen"],
             ],
             "item_reference_map" => [
-                ["reference" => "20200224_responseAnalysis_i01", "name" => "Item 1" ],
-                ["reference" => "20200224_responseAnalysis_i02", "name" => "Item 2" ],
-                ["reference" => "20200224_responseAnalysis_i03", "name" => "Item 3" ],
-                ["reference" => "20200224_responseAnalysis_i04", "name" => "Item 4" ],
-                ["reference" => "20200224_responseAnalysis_i05", "name" => "Item 5" ],
-                ["reference" => "20200224_responseAnalysis_i06", "name" => "Item 6" ],
-                ["reference" => "20200224_responseAnalysis_i07", "name" => "Item 7" ],
-                ["reference" => "20200224_responseAnalysis_i08", "name" => "Item 8" ],
-                ["reference" => "20200224_responseAnalysis_i09", "name" => "Item 9" ],
+                ["reference" => "20200224_responseAnalysis_i01", "name" => "Item 1"],
+                ["reference" => "20200224_responseAnalysis_i02", "name" => "Item 2"],
+                ["reference" => "20200224_responseAnalysis_i03", "name" => "Item 3"],
+                ["reference" => "20200224_responseAnalysis_i04", "name" => "Item 4"],
+                ["reference" => "20200224_responseAnalysis_i05", "name" => "Item 5"],
+                ["reference" => "20200224_responseAnalysis_i06", "name" => "Item 6"],
+                ["reference" => "20200224_responseAnalysis_i07", "name" => "Item 7"],
+                ["reference" => "20200224_responseAnalysis_i08", "name" => "Item 8"],
+                ["reference" => "20200224_responseAnalysis_i09", "name" => "Item 9"],
                 ["reference" => "20200224_responseAnalysis_i10", "name" => "Item 10"]
             ]
         ]
@@ -83,58 +83,64 @@ $signedRequest = $Init->generate();
 
 ?>
 <script src="<?php echo $url_reports; ?>"></script>
-    <div class="jumbotron section">
-        <div class="toolbar">
-            <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
-            </ul>
-        </div>
-        <div class="overview">
-            <h2>Present Classroom and Teacher-Centric Reports</h2>
-            <p>Easily learn more about your whole classroom at a glance. Our Reports API provides embeddable, group and classroom-focused reports to provide a teacher or instructor with information about their classroom ability and progress.</p>
-            <ul>
-                <li><h4><a href="#lastscore-tag-report">Last Score by Tag by User Report</a></h4></li>
-                <li><h4><a href="#lastscore-list-item-report">Last Score by Item by User Report</a></h4></li>
-                <li><h4><a href="#lastscore-activity-by-user-report">Last Score by Activity by User Report</a></h4></li>
-                <li><h4><a href="#response-analysis-report">Response Analysis by Item Report</a></h4></li>
-            </ul>
-        </div>
-    </div>
-
-
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="lastscore-tag-report"><a href="#lastscore-tag-report">Last Score by Tag by User Report</a></h3>
-        <p>See your class or group's scores, all broken down according to tag. This report allows you to easily identify strengths and weaknesses based on the skills or subject areas associated with the content in the activity.</p>
-        <div id="lastscore-tag"></div>
-    </div>
-
-    <div class="section pad-sml">
-        <?php require 'last-score-by-item-by-user/index.php'; ?>
-    </div>
-
-    <div class="section pad-sml">
-    <?php require 'last-score-by-activity-by-user/index.php'; ?>
-    </div>
-
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="response-analysis-report"><a href="#response-analysis-report">Response Analysis by Item Report</a></h3>
-        <p>See a summary of class responses at a glance:</p>
-        <ul>
-            <li>Click on an Item header to drill into the detail view and see full responses.</li>
-            <li>Within the detail view, click on student names to highlight groupings of students who responded the same way.</li>
+<div class="jumbotron section">
+    <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#" data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
-        <div id="response-analysis"></div>
     </div>
+    <div class="overview">
+        <h2>Present Classroom and Teacher-Centric Reports</h2>
+        <p>Easily learn more about your whole classroom at a glance. Our Reports API provides embeddable, group and classroom-focused reports to provide a teacher or instructor with information about their classroom ability and progress.</p>
+        <ul>
+            <li>
+                <h4><a href="#lastscore-tag-report">Last Score by Tag by User Report</a></h4>
+            </li>
+            <li>
+                <h4><a href="#lastscore-list-item-report">Last Score by Item by User Report</a></h4>
+            </li>
+            <li>
+                <h4><a href="#lastscore-activity-by-user-report">Last Score by Activity by User Report</a></h4>
+            </li>
+            <li>
+                <h4><a href="#response-analysis-report">Response Analysis by Item Report</a></h4>
+            </li>
+        </ul>
+    </div>
+</div>
 
 
-    <script>
+<div class="section pad-sml report-with-tooltip">
+    <!-- Container for the reports api to load into -->
+    <h3 id="lastscore-tag-report"><a href="#lastscore-tag-report">Last Score by Tag by User Report</a></h3>
+    <p>See your class or group's scores, all broken down according to tag. This report allows you to easily identify strengths and weaknesses based on the skills or subject areas associated with the content in the activity.</p>
+    <div id="lastscore-tag"></div>
+</div>
 
-        var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>);
+<div class="section pad-sml">
+    <?php require 'last-score-by-item-by-user/index.php'; ?>
+</div>
 
-    </script>
+<div class="section pad-sml report-with-tooltip">
+    <?php require 'last-score-by-activity-by-user/index.php'; ?>
+</div>
+
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="response-analysis-report"><a href="#response-analysis-report">Response Analysis by Item Report</a></h3>
+    <p>See a summary of class responses at a glance:</p>
+    <ul>
+        <li>Click on an Item header to drill into the detail view and see full responses.</li>
+        <li>Within the detail view, click on student names to highlight groupings of students who responded the same way.</li>
+    </ul>
+    <div id="response-analysis"></div>
+</div>
+
+
+<script>
+    var reportsApp = LearnosityReports.init(<?php echo $signedRequest; ?>);
+</script>
 
 <?php
 include_once 'views/modals/initialisation-preview.php';
