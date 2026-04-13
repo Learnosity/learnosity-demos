@@ -57,10 +57,38 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-        <h2>Maintenance Mode</h2>
-            <p>The Authoring Demos are currently undergoing maintenance and will return soon.</p>
+            <h2>Browse Items in Your Item Bank</h2>
+            <p>The item list mode allows authors to browse and search the Learnosity-hosted item bank for existing items.
+                In this demo, we've enabled creation of new items, but this functionality can be disabled as needed.</p>
         </div>
     </div>
+
+
+    <!-- Container for the author api to load into -->
+    <div class="section pad-sml">
+        <!--    HTML placeholder that is replaced by API-->
+        <div id="learnosity-author"></div>
+    </div>
+
+
+    <!-- version of api maintained in lrn_config.php file -->
+    <script src="<?php echo $url_authorapi; ?>"></script>
+    <script>
+        var initializationObject = <?php echo $signedRequest; ?>;
+
+        //optional callbacks for ready
+        var callbacks = {
+            readyListener: function () {
+               console.log("Author API has successfully initialized.");
+            },
+            errorListener: function (err) {
+                console.log(err);
+            }
+        };
+
+        var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
+    </script>
+
 
 <?php
 include_once 'views/modals/initialisation-preview.php';
