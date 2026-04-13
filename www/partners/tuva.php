@@ -38,11 +38,44 @@ $signedRequest = $Init->generate();
 ?>
 
 <div class="jumbotron section">
+    <div class="toolbar">
+        <ul class="list-inline">
+            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
+        </ul>
+    </div>
     <div class="overview">
-        <h2>Maintenance Mode</h2>
-        <p>The Authoring Demos are currently undergoing maintenance and will return soon.</p>
+        <h2>Data, graphing, and statistical tools: Tuva</h2>
+        <p>Through the Tuva and Learnosity partnership, you can author powerful and engaging lessons, items, and performance tasks that enable learners to explore, manipulate, visualize, and analyze real-world data as part of their learning or assessment experience.</p>
     </div>
 </div>
+
+<div class="section pad-sml">
+    <!-- Container for the items api to load into -->
+    <div id="learnosity_assess"></div>
+</div>
+
+<!-- Load Learnosity -->
+<script src="<?php echo $url_items; ?>"></script>
+
+
+<script>
+
+    var initializationObject = <?php echo $signedRequest; ?>
+
+    //optional callback for ready
+    var eventOptions = {
+        readyListener: function() {
+            console.log("Items API has successfully initialized.");
+        },
+        errorListener: function (err) {
+            console.log(err);
+        }
+    };
+
+    var itemsApp = LearnosityItems.init(initializationObject, eventOptions);
+
+</script>
+
 
 <?php
     include_once 'views/modals/initialisation-preview.php';

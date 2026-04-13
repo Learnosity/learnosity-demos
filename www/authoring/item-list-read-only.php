@@ -12,35 +12,31 @@ include_once '../lrn_config.php';
 //alias(es) to eliminate the need for fully qualified classname(s) from sdk
 use LearnositySdk\Request\Init;
 
-
 //security object. timestamp added by SDK
 $security = [
     'consumer_key' => $consumer_key,
-    'domain' => $domain
+    'domain'       => $domain
 ];
 
-
-//simple api request object for item list view
+//simple api request object, with read_only enabled
 $request = [
-    'mode' => 'item_list',
-    'config' => [
-        'item_edit' => [
-            'item' => [
-                'reference' => [
-                    'show' => true,
-                    'edit' => true
-                ],
-                'dynamic_content' => true,
-                'shared_passage' => true,
-                'enable_audio_recording' => true
+    'mode'      => 'item_list',
+    'config'    => [
+        'global' => [
+            'items' => [
+                'read_only' => [
+                    'enabled' => true
+                 ]
             ]
         ]
+
     ],
+    //user for whom this API is initialized. recorded when editing item content.
     'user' => [
-        'id' => 'demos-site',
+        'id'        => 'demos-site',
         'firstname' => 'Demos',
-        'lastname' => 'User',
-        'email' => 'demos@learnosity.com'
+        'lastname'  => 'User',
+        'email'     => 'demos@learnosity.com'
     ]
 ];
 
@@ -49,6 +45,7 @@ $signedRequest = $Init->generate();
 
 ?>
 
+    <!--site scaffolding-->
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
@@ -57,11 +54,37 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-        <h2>Maintenance Mode</h2>
-            <p>The Authoring Demos are currently undergoing maintenance and will return soon.</p>
+            <h2>Preview Your Item Bank in Read-Only Mode</h2>
+            <p>Allow browsing of your item bank, including item, question, and feature previews, but disable editing.</p>
         </div>
     </div>
 
+
+    <div class="section pad-sml">
+        <!--HTML placeholder that is replaced by Author API-->
+        <div id="learnosity-author"></div>
+    </div>
+
+
+    <!-- version of api maintained in lrn_config.php file -->
+    <script src="<?php echo $url_authorapi; ?>"></script>
+    <script>
+        var initializationObject = <?php echo $signedRequest; ?>;
+
+        //optional callbacks for ready and/or error event(s)
+        var callbacks = {
+            readyListener: function () {
+                console.log("Author API has successfully initialized.");
+            },
+            errorListener: function (err) {
+                console.log(err);
+            }
+        };
+
+        var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
+    </script>
+
+
 <?php
-include_once 'views/modals/initialisation-preview.php';
-include_once 'includes/footer.php';
+    include_once 'views/modals/initialisation-preview.php';
+    include_once 'includes/footer.php';

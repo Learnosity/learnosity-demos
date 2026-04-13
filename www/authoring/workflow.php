@@ -24,16 +24,24 @@ $security = [
 $request = [
     'mode' => 'item_list',
     'config' => [
-        'item_edit' => [
-            'item' => [
-                'reference' => [
-                    'show' => true,
-                    'edit' => true
-                ],
-                'dynamic_content' => true,
-                'shared_passage' => true,
-                'enable_audio_recording' => true
+        'global' => [
+            'workflow' => [
+                'item' => [
+                    'reference' => 'Default workflow',
+                    'comments' => [
+                        'show' => true,
+                        'add' => true
+                    ]
+                ]
             ]
+        ],
+        'label_bundle' => [
+            'workflowStateDraft' => 'Draft',
+            'workflowStateApproved' => 'Approved',
+            'workflowStateReview' => 'Review',
+            'workflowStateRework' => 'Rework',
+            'workflowStateBlocked' => 'Blocked',
+            'workflowStateUnassigned' => 'Unassigned',
         ]
     ],
     'user' => [
@@ -57,10 +65,45 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-        <h2>Maintenance Mode</h2>
-            <p>The Authoring Demos are currently undergoing maintenance and will return soon.</p>
+            <h2>Workflow States and Comments</h2>
+            <p>Learnosity's workflow functionality allows you to define custom workflow states which Items have to go through
+                before being published. In this demo we've enabled an exemplary workflow, where Items have to be moved
+                from state 'Draft' to state 'Approved'. Once in 'Approved' state, Items are automatically published. It's possible
+                to add comments to the workflow, so that Authors know what needs to be done in order to move an Item forwards.
+                Items, which are not in any workflow state, are given the 'Unassigned' state by default and can be moved
+                to state 'Draft'. The workflow functionality allows Authors to search for Items by workflow state. For more
+                information refer to the <a href="https://reference.learnosity.com/author-api/initialization/config.global.workflow.item">
+                    Item workflow init options.
+                </a></p>
         </div>
     </div>
+
+
+    <!-- Container for the author api to load into -->
+    <div class="section pad-sml">
+        <!--    HTML placeholder that is replaced by API-->
+        <div id="learnosity-author"></div>
+    </div>
+
+
+    <!-- version of api maintained in lrn_config.php file -->
+    <script src="<?php echo $url_authorapi; ?>"></script>
+    <script>
+        var initializationObject = <?php echo $signedRequest; ?>;
+
+        //optional callbacks for ready
+        var callbacks = {
+            readyListener: function () {
+                console.log("Author API has successfully initialized.");
+            },
+            errorListener: function (err) {
+                console.log(err);
+            }
+        };
+
+        var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
+    </script>
+
 
 <?php
 include_once 'views/modals/initialisation-preview.php';
