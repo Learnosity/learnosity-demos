@@ -9,30 +9,30 @@ include_once 'includes/header.php';
 //common Learnosity config elements including API version control vars
 include_once '../lrn_config.php';
 
-//alias(es) to eliminate the need for fully qualified classname(s) from sdk
 use LearnositySdk\Request\Init;
+use LearnositySdk\Utils\Uuid;
 
-
-//security object. timestamp added by SDK
 $security = [
     'consumer_key' => $consumer_key,
-    'domain' => $domain
+    'domain'       => $domain
 ];
 
 
-//simple api request object for item list view
+//simple api request object for item list view, with optional creation of items
 $request = [
-    'mode' => 'item_list',
-    'config' => [
-        'item_edit' => [
-            'item' => [
-                'reference' => [
-                    'show' => true,
-                    'edit' => true
-                ],
-                'dynamic_content' => true,
-                'shared_passage' => true,
-                'enable_audio_recording' => true
+    'mode' => 'item_edit',
+    'reference' => Uuid::generate(),
+    'config'    => [
+        'dependencies' => [
+            'question_editor_api' => [
+                'init_options' => [
+                    'widget_type' => 'response',
+                    'ui' => [
+                        'layout' => [
+                            'global_template' => 'edit'
+                        ]
+                    ]
+                ]
             ]
         ]
     ],
@@ -57,10 +57,70 @@ $signedRequest = $Init->generate();
             </ul>
         </div>
         <div class="overview">
-        <h2>Maintenance Mode</h2>
-            <p>The Authoring Demos are currently undergoing maintenance and will return soon.</p>
+            <h2>Edit Questions Directly</h2>
+            <p>Initialize the Author API to directly load a question for quick editing. For more information refer to the init options docs and the <a href="https://reference.learnosity.com/author-api/methods/authorApp/setWidget">setWidget()</a> public method.</p>
         </div>
     </div>
+
+    <div class="section pad-sml">
+        <!-- Container for the author api to load into -->
+        <div id="learnosity-author"></div>
+    </div>
+
+    <script src="<?php echo $url_authorapi; ?>"></script>
+    <script>
+        var initializationObject = <?php echo $signedRequest; ?>;
+
+        //optional callbacks for ready
+        var callbacks = {
+            readyListener: function () {
+                authorApp.on('render:item', function(){
+                    authorApp.setWidget(
+                        {
+                            "options": [
+                                {
+                                    "label": "[Option A]",
+                                    "value": "0"
+                                },
+                                {
+                                    "label": "[Option B]",
+                                    "value": "1"
+                                },
+                                {
+                                    "label": "[Option C]",
+                                    "value": "2"
+                                },
+                                {
+                                    "label": "[Option D]",
+                                    "value": "3"
+                                }
+                            ],
+                            "stimulus": "<p>This is the question the student will answer</p>",
+                            "type": "mcq",
+                            "validation": {
+                                "scoring_type": "exactMatch",
+                                "valid_response": {
+                                    "score": 1,
+                                    "value": [
+                                        "2"
+                                    ]
+                                }
+                            },
+                            "ui_style": {
+                                "type": "horizontal"
+                            }
+                        },
+                        'Multiple choice – standard'
+                    );
+                });
+            },
+            errorListener: function (err) {
+                console.log(err);
+            }
+        };
+
+        var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
+    </script>
 
 <?php
 include_once 'views/modals/initialisation-preview.php';
