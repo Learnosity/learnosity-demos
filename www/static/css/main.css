@@ -949,6 +949,11 @@ img.product-logo {
     margin-bottom:48px;
 }
 
+/* Prevent tooltip cropping in reports with rollover tooltips */
+.section.pad-sml.report-with-tooltip {
+    z-index:10000;
+}
+
 .container .jumbotron {
     padding-top: 24px;
     background-color: #fff;
