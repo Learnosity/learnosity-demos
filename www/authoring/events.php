@@ -94,8 +94,9 @@ $signedRequest = $Init->generate();
         'save:success',
         'widgetedit:editor:ready',
         'widgetedit:preview:changed',
-        'widgetedit:widget:changed',
-        'widgetedit:widget:ready'
+        'widgetedit:widgetType:changed',
+        'widgetedit:widget:ready',
+        'widgetedit:widgetData:changed'
     ];
 
     // Build events list DOM elements
@@ -103,7 +104,7 @@ $signedRequest = $Init->generate();
         const container = document.createElement('div')
         const label = document.createElement('span')
         label.classList.add("author-event-name", "event-label", event.replaceAll(":", "_"))
-        label.innerHTML = event 
+        label.innerHTML = event
         container.appendChild(label)
         document.querySelector(".author-events").appendChild(container)
     })

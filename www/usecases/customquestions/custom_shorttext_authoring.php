@@ -343,7 +343,7 @@ $signedRequest = $init->generate();
             }
         });
 
-        questionEditorApp.on('widget:changed', function () {
+        questionEditorApp.on('widgetType:changed', function () {
             if (_handler) {
                 _handler.reset && _handler.reset();
                 _handler = null;
