@@ -263,18 +263,25 @@
                     const row = document.createElement('div');
                     row.className = 'row lrn-item-row';
 
-                    // Left: Items API hook
-                    const itemCol = document.createElement('div');
-                    itemCol.className = 'col-md-7';
-                    const itemSpan = document.createElement('span');
-                    itemSpan.className = 'learnosity-item';
-                    itemSpan.setAttribute('data-reference', itemRef);
-                    itemCol.appendChild(itemSpan);
-                    row.appendChild(itemCol);
+                    if (itemRef === this.item2Ref) {
+                        // Item 2: Grading API owns the full row (question + scoring panel)
+                        const hook = document.createElement('div');
+                        hook.className = 'lrn-mg-item-hook';
+                        hook.setAttribute('data-item-ref', itemRef);
+                        row.appendChild(hook);
+                    } else {
+                        // Items 1 & 3: Items API hook (left) + custom score/FA panel (right)
+                        const itemCol = document.createElement('div');
+                        itemCol.className = 'col-md-7';
+                        const itemSpan = document.createElement('span');
+                        itemSpan.className = 'learnosity-item';
+                        itemSpan.setAttribute('data-reference', itemRef);
+                        itemCol.appendChild(itemSpan);
+                        row.appendChild(itemCol);
 
-                    // Right: custom score / feedback panel
-                    const panel = this.buildScorePanel(itemRef);
-                    row.appendChild(panel);
+                        const panel = this.buildScorePanel(itemRef);
+                        row.appendChild(panel);
+                    }
 
                     this.wrapper.appendChild(row);
 
@@ -351,13 +358,18 @@
                 spinner.style.display = 'inline-block';
 
                 try {
-                    // 1. Save Feedback Aide sessions (if any)
-                    if (this.feedbackApp && this.faItems && Object.keys(this.faItems).length > 0) {
-                        await this.feedbackApp.save({ ready_for_review: true });
-                        console.log('🔔 Feedback Aide sessions saved');
+                    // 1. Save Grading API item (item 2)
+                    if (window.gradingApp) {
+                        const gradingResult = await window.gradingApp.save();
+                        console.log('Grading API PUT result ::', gradingResult);
                     }
 
-                    // 2. Collect scores from non-FA panels
+                    // 2. Save Feedback Aide sessions (if any)
+                    if (this.feedbackApp && this.faItems && Object.keys(this.faItems).length > 0) {
+                        await this.feedbackApp.save({ ready_for_review: true });
+                    }
+
+                    // 3. Collect scores from non-FA, non-Grading-API panels
                     const responses = [];
                     document.querySelectorAll('.mg-score-panel').forEach(panel => {
                         const itemRef       = panel.getAttribute('data-item-ref');
@@ -382,7 +394,7 @@
                         }
                     });
 
-                    // 3. Persist non-FA scores via Data API grading endpoint
+                    // 4. Persist non-FA scores via Data API grading endpoint
                     if (responses.length > 0) {
                         const itemsPayload = responses.map(r => ({
                             item_reference: r.item_reference || r.response_id,
@@ -650,19 +662,26 @@
             },
 
             async init(config, wrapper) {
-                const { activity, items, sessionId, studentId, graderId, activityId, readonly } = config;
-                this.wrapper    = wrapper;
-                this.items      = items;
-                this.sessionId  = sessionId;
-                this.studentId  = studentId;
-                this.graderId   = graderId;
-                this.activityId = activityId;
-                this.readonly   = readonly ?? false;
+                const { activity, gradingActivity, items, item2Ref, sessionId, studentId, graderId, activityId, readonly } = config;
+                this.wrapper          = wrapper;
+                this.items            = items;
+                this.item2Ref         = item2Ref;       // item rendered by Grading API
+                this.gradingActivity  = gradingActivity; // Grading API signed request
+                this.sessionId        = sessionId;
+                this.studentId        = studentId;
+                this.graderId         = graderId;
+                this.activityId       = activityId;
+                this.readonly         = readonly ?? false;
 
                 // 1. Stamp item hooks into the DOM before Items API init
                 this.buildItemRows();
 
-                // 2. Initialise Items API (inline mode finds the spans we just created)
+                // 2. Start Grading API init early (doesn't depend on Items API)
+                this._gradingApiPromise = this.initGradingApi().catch(e => {
+                    console.warn('Grading API initialization failed', e);
+                });
+
+                // 3. Initialise Items API (inline mode finds the spans we just created)
                 const itemsApp = LearnosityItems.init(activity, {
                     readyListener: async () => {
                         console.log('🔔 Items API ready!');
@@ -723,21 +742,15 @@
                     console.warn('Could not extract response_ids from Items API', e);
                 }
 
-                // 4. Fetch scores from Data API grading endpoint and populate panels
-                try {
-                    const scores = await this.fetchExistingScores();
-                    if (scores.length > 0) this.populateScores(scores);
-                } catch (e) {
-                    console.warn('Could not fetch existing scores', e);
-                }
+                // 4. Fetch scores and feedback in parallel, and wait for Grading API
+                const [scores, feedbackMap] = await Promise.all([
+                    this.fetchExistingScores().catch(e => { console.warn('Could not fetch existing scores', e); return []; }),
+                    this.fetchExistingFeedback().catch(e => { console.warn('Could not fetch existing feedback', e); return {}; }),
+                    this._gradingApiPromise,  // already started in init(), just await completion
+                ]);
 
-                // 4b. Fetch existing grader feedback and populate textareas
-                try {
-                    const feedbackMap = await this.fetchExistingFeedback();
-                    if (Object.keys(feedbackMap).length > 0) this.populateFeedback(feedbackMap);
-                } catch (e) {
-                    console.warn('Could not fetch existing feedback', e);
-                }
+                if (scores.length > 0) this.populateScores(scores);
+                if (Object.keys(feedbackMap).length > 0) this.populateFeedback(feedbackMap);
 
                 // 5. Initialize Feedback Aide for questions with rubrics
                 try {
@@ -795,6 +808,46 @@
                 const data = await res.json();
                 if (data.error) throw new Error(data.error);
                 return data;
+            },
+
+            /**
+             * Initialize the Grading API for item 2 (manual grading).
+             * The Grading API renders the student's response and scoring panel itself.
+             */
+            async initGradingApi() {
+                if (!this.gradingActivity || !this.item2Ref) return;
+                if (typeof LearnosityGrading === 'undefined') return;
+
+                const hookEl = document.querySelector(`.lrn-mg-item-hook[data-item-ref="${this.item2Ref}"]`);
+                if (!hookEl) return;
+
+                // Grading API requires these attributes on the hook element before attachItem
+                hookEl.setAttribute('session-id',     this.sessionId);
+                hookEl.setAttribute('user-id',        this.studentId);
+                hookEl.setAttribute('item-reference', this.item2Ref);
+
+                const app = await LearnosityGrading.init(this.gradingActivity);
+                window.gradingApp = app;
+                console.log('Grading API GET result ::', app);
+
+                const attached = await app.attachItem({
+                    sessionId: this.sessionId,
+                    userId:    this.studentId,
+                    item:      this.item2Ref
+                }, hookEl);
+                console.log('Grading API attachItem result ::', attached);
+
+                // Apply column layout (question left, score panel right)
+                hookEl.querySelectorAll('[data-lrn-widget-type="question"]').forEach(el => el.classList.add('col-md-7'));
+                hookEl.querySelectorAll('[data-lrn-widget-type="mg-score-feedback"]').forEach(el => el.classList.add('col-md-5'));
+
+                // Append footnote inside the Grading API hook (step 2 only)
+                if (!this.readonly) {
+                    const footnote = document.createElement('p');
+                    footnote.className = 'mg-panel-footnote';
+                    footnote.textContent = 'This will be updated via Grading API';
+                    hookEl.appendChild(footnote);
+                }
             },
 
             /**
@@ -890,7 +943,11 @@
 
                             // Generate feedback (grade mode) or load existing (review mode)
                             if (state === 'grade') {
-                                await ui.generateFeedback({ model: 'advanced-shortresponse' });
+                                try {
+                                    await ui.generateFeedback({ model: 'advanced-shortresponse' });
+                                } catch (genErr) {
+                                    console.warn('Feedback Aide generateFeedback failed (non-blocking)', genErr);
+                                }
                             }
 
                             // Hide FA's built-in "Submit scores" button and "How did we do?" elements

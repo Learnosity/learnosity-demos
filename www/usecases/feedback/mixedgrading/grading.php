@@ -25,6 +25,15 @@ $consumer_secret = $consumer_secret_postgres;
 
 $items = explode(',', $items);
 
+// Item 2 is rendered + scored by the Grading API; items 1 & 3 use Items API
+$is_production = (getenv('deploy_env') === 'production');
+$item2_ref = $is_production
+    ? '6690583c-d231-4641-8516-6dac3aa795ad'
+    : 'feb9a6c0-a1a1-43b0-92d7-60ed9b2952f8';
+
+$items_api_items = array_values(array_filter($items, fn($i) => $i !== $item2_ref));
+
+// Items API signed request — student user_id, items 1 & 3 only
 $security = [
     'user_id'      => $student_id,
     'domain'       => $domain,
@@ -39,20 +48,41 @@ $gradingRequest = [
     'state'          => 'review',
     'session_id'     => $session_id,
     'activity_id'    => $activity_id,
-    'items'          => $items,
+    'items'          => $items_api_items,
 ];
 
 $gradingInit = new Init('items', $security, $consumer_secret, $gradingRequest);
 $signedGradingRequest = $gradingInit->generate(false);
 
+// Grading API signed request — grader user_id, item 2 only
+$grading_security = [
+    'user_id'      => $grader_id,
+    'domain'       => $domain,
+    'consumer_key' => $consumer_key,
+    'timestamp'    => $timestamp,
+];
+
+$gradingApiRequest = [
+    'user_id'        => $grader_id,
+    'rendering_type' => 'inline',
+    'name'           => 'Mixed Grading – Manual',
+    'state'          => $state,
+    'session_id'     => $session_id,
+];
+
+$gradingApiInit = new Init('items', $grading_security, $consumer_secret, $gradingApiRequest);
+$signedGradingApiRequest = $gradingApiInit->generate(false);
+
 $appConfig = json_encode([
-    'items'      => $items,
-    'sessionId'  => $session_id,
-    'studentId'  => $student_id,
-    'graderId'   => $grader_id,
-    'activityId' => $activity_id,
-    'activity'   => $signedGradingRequest,
-    'readonly'   => false,
+    'items'           => $items,
+    'item2Ref'        => $item2_ref,
+    'sessionId'       => $session_id,
+    'studentId'       => $student_id,
+    'graderId'        => $grader_id,
+    'activityId'      => $activity_id,
+    'activity'        => $signedGradingRequest,      // Items API (items 1 & 3)
+    'gradingActivity' => $signedGradingApiRequest,   // Grading API (item 2)
+    'readonly'        => false,
 ]);
 
 ?>
@@ -67,6 +97,7 @@ elseif (in_array('ldc', $fa_host)) $fa_env = '.ldc';
 ?>
 
 <script src="<?= $url_items ?>"></script>
+<script src="<?= $url_grading ?>"></script>
 <script src="https://feedbackaide<?= $fa_env ?>.learnosity.com/js"></script>
 <link rel="stylesheet" media="all" href="includes/styles/main.css">
 <?php include_once 'includes/icons.php'; ?>

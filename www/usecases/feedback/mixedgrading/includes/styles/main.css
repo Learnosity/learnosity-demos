@@ -373,6 +373,29 @@ textarea[readonly].lrn-mg-feedback-input {
     cursor: default;
 }
 
+/* ── Grading API score panel alignment (item 2) ───────────────────────────── */
+/* The Grading API renders its own scoring panel inside a nested row.
+   Align it with the custom panels on items 1 & 3 by removing the extra
+   col-xs-12 wrapper padding and matching the outer grid. */
+.lrn-mg-item-hook .lrn-mg {
+    padding-top: 24px;
+}
+
+.lrn-mg-item-hook .lrn-mg .col-xs-12 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.lrn-mg-item-hook > .mg-panel-footnote {
+    text-align: right;
+    margin-left: auto;
+    width: 41.66667%; /* col-md-5 width — aligns with the Grading API scoring panel */
+    padding-right: 4px;
+    margin-right: 15px;
+}
+
 /* ── Feedback Aide panel ──────────────────────────────────────────────────── */
 .lrn-fa {
     padding-top: 24px;
