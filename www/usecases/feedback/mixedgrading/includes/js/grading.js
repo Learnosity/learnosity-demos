@@ -123,6 +123,11 @@
                         scoreInputGroup.classList.add('has-error');
                         invalidFeedback.textContent = 'Score cannot be empty';
                         invalidFeedback.style.display = 'block';
+                    } else if (isNaN(Number(val))) {
+                        scoreInput.classList.add('is-invalid');
+                        scoreInputGroup.classList.add('has-error');
+                        invalidFeedback.textContent = 'Score must be a valid number';
+                        invalidFeedback.style.display = 'block';
                     } else if (maxVal !== null && Number(val) > maxVal) {
                         scoreInput.classList.add('is-invalid');
                         scoreInputGroup.classList.add('has-error');
