@@ -266,7 +266,7 @@ $signedRequest3 = $Init3->generate();
     var callbacks = {
         readyListener: function () {
 
-            $.each(itemsApp3.questions(), function (index, question) {
+            Object.values(itemsApp3.questions()).forEach(function (question) {
                 question.on('validated', function () {
                     var outputHTML = '';
                     var map, qid;
@@ -276,7 +276,7 @@ $signedRequest3 = $Init3->generate();
 
                     if (question.mapValidationMetadata('distractor_rationale_response_level') != false) {
                         map = question.mapValidationMetadata('distractor_rationale_response_level');
-                        $.each(map.incorrect, function (i, data) {
+                        map.incorrect.forEach(function (data) {
                             /*  Each item in the `map.incorrect` array is an object that contains a `value` property that
                                 holds the response value; an `index` property that refers to the shared index of both the
                                 response area and the metadata; and a `metadata` property containing the metadata value.
@@ -301,7 +301,7 @@ $signedRequest3 = $Init3->generate();
                 });
             });
 
-            $.each(itemsApp3.questions(), function (index, question) {
+            Object.values(itemsApp3.questions()).forEach(function (question) {
                 question.on('changed', function () {
                     removeDistractor(this.getQuestion().response_id);
                 });
@@ -316,11 +316,13 @@ $signedRequest3 = $Init3->generate();
     // Host page rendering logic for Demo 3
     function renderDistractor (id, content) {
         var template;
-        if ($("#" + id + "_distractor").length) {
-            $("#" + id + "_distractor").html(content).fadeIn();
+        const existing = document.getElementById(id + "_distractor");
+            if (existing) {
+            existing.innerHTML = content;
+            fadeIn(existing, 400);
         } else {
             template = "<div id=\"" + id + "_distractor\" class=\"distractor-rationale alert alert-danger\">" + content + "</div>";
-            $("#" + id).append(template);
+            document.getElementById(id).insertAdjacentHTML("beforeend", template);
         }
 
         // renderMath() Renders all LaTeX or MathML elements on the page with MathJax.
@@ -329,7 +331,10 @@ $signedRequest3 = $Init3->generate();
 
     // Hide distractor when another attempt is made, used for Demo 3
     function removeDistractor (id) {
-        $("#" + id + '_distractor').fadeOut();
+        const el = document.getElementById(id + "_distractor");
+        if (el) {
+            fadeOut(el, 400);
+        }
     }
 
     var itemsApp = LearnosityItems.init(initializationObject);

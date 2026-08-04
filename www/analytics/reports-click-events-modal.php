@@ -36,8 +36,8 @@ $signedRequest = $Init->generate();
 ?>
 <div class="lrn-reports-demo-wrapper">
     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="lrn-reports-demos-modal-label">Onclick Report</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="alert alert-info">
             <?php echo (isset($user_id) ? '<strong>User ID:</strong> ' . $user_id . ',<br>' : ''); ?>
             <?php echo (isset($activity_id) ? '<strong>Activity ID:</strong> ' . $activity_id . ',<br>' : ''); ?>

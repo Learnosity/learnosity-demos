@@ -38,7 +38,7 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <div class="overview">
@@ -91,43 +91,43 @@ $signedRequest = $Init->generate();
 
         function implementNavigate () {
             // Navigate to new item
-            $('.btn-navigate-item-new').click(function () {
+            document.querySelector('.btn-navigate-item-new').addEventListener('click', function () {
                 authorApp.navigate(
                     'items/new'
                 );
             });
             // Navigate to new activity
-            $('.btn-navigate-activity-new').click(function () {
+            document.querySelector('.btn-navigate-activity-new').addEventListener('click', function () {
                 authorApp.navigate(
                     'activities/new'
                 );
             });
             // Navigate to new question
-            $('.btn-navigate-widgets-new').click(function () {
+            document.querySelector('.btn-navigate-widgets-new').addEventListener('click', function () {
                 authorApp.navigate(
                     'items/new/widgets/new'
                 );
             });
             // Navigate to new feature
-            $('.btn-navigate-feature-new').click(function () {
+            document.querySelector('.btn-navigate-feature-new').addEventListener('click', function () {
                 authorApp.navigate(
                     'items/new/widgets/new/' + encodeURIComponent('{"widgetType":"features"}')
                 );
             });
             // Navigate to items list
-            $('.btn-navigate-items').click(function () {
+            document.querySelector('.btn-navigate-items').addEventListener('click', function () {
                 authorApp.navigate(
                     'items'
                 );
             });
             // Navigate to activities list
-            $('.btn-navigate-activities').click(function () {
+            document.querySelector('.btn-navigate-activities').addEventListener('click', function () {
                 authorApp.navigate(
                     'activities'
                 );
             });
             // Navigate to edit MCQ question
-            $('.btn-navigate-widget-edit').click(function () {
+            document.querySelector('.btn-navigate-widget-edit').addEventListener('click', function () {
                 authorApp.navigate(
                     'items/new/widgets/new/' + encodeURIComponent(JSON.stringify({
                         widgetTemplate: {

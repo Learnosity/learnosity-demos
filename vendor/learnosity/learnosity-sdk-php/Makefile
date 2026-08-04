@@ -1,59 +1,37 @@
 ARGS_PHPUNIT ?=
 
 DOCKER := $(if $(LRN_SDK_NO_DOCKER),,$(shell which docker))
+DOCKER_COMPOSE := docker compose
 
 # PHP Evolution
-SUPPORTED_PHP_VERSIONS = 7.1 7.2 7.3 7.4 8.0 8.1 8.2 8.3
-PHP_VERSION = $(lastword ${SUPPORTED_PHP_VERSIONS})
+SUPPORTED_PHP_VERSIONS = 8.2 8.3 8.4 8.5
+PHP_VERSION ?= $(lastword ${SUPPORTED_PHP_VERSIONS})
 DEBIAN_VERSION-7.1 = buster
 DEBIAN_VERSION-7.2 = buster
 DEBIAN_VERSION-7.3 = bullseye
 DEBIAN_VERSION-7.4 = bullseye
 DEBIAN_VERSION-8.0 = bullseye
 DEBIAN_VERSION-def = bookworm
-DEBIAN_VERSION = $(or $(DEBIAN_VERSION-$(PHP_VERSION)),$(DEBIAN_VERSION-def))
+DEBIAN_VERSION ?= $(or $(DEBIAN_VERSION-$(PHP_VERSION)),$(DEBIAN_VERSION-def))
 COMPOSER_VERSION-7.1 = 2.2
 COMPOSER_VERSION-def = 2.7.6
-COMPOSER_VERSION = $(or $(COMPOSER_VERSION-$(PHP_VERSION)),$(COMPOSER_VERSION-def))
-LOCALHOST = 0.0.0.0
-
-IMAGE = php-cli-composer:$(PHP_VERSION)-$(DEBIAN_VERSION)-$(COMPOSER_VERSION)
+COMPOSER_VERSION ?= $(or $(COMPOSER_VERSION-$(PHP_VERSION)),$(COMPOSER_VERSION-def))
 
 TARGETS = all build devbuild prodbuild \
 	quickstart check-quickstart install-vendor \
 	dist dist-test dist-zip release \
 	lint test test-coverage test-integration-env test-unit \
 	clean clean-dist clean-test clean-vendor
+
 .PHONY: $(TARGETS)
 .default: all
 
-ifneq (,$(DOCKER))
-TTYFLAGS := $(shell if [ -t 0 ] ; then echo "-it"; else echo "-t"; fi)
-# Re-run the make command in a container
-DKR = docker container run $(TTYFLAGS) --rm \
-		-v $(CURDIR):/srv/sdk/php:z,delegated \
-		-v lrn-sdk-php_cache:/root/.composer \
-		-w /srv/sdk/php \
-		-e LRN_SDK_NO_DOCKER=1 \
-		-e ENV -e REGION -e VER \
-		-p 8000:8000 \
-		$(if $(findstring dev,$(ENV)),--net host) \
-		$(IMAGE)
+docker-build: install-vendor
+	$(DOCKER_COMPOSE) build php nginx
 
-$(TARGETS): $(if $(shell docker image ls -q --filter reference=$(IMAGE)),,docker-build)
-	$(DKR) make -e MAKEFLAGS="$(MAKEFLAGS)" $@
+.PHONY: docker-build
 
-docker-build:
-	docker image build \
-		--progress plain \
-		--build-arg PHP_VERSION=$(PHP_VERSION) \
-		--build-arg DEBIAN_VERSION=$(DEBIAN_VERSION) \
-		--build-arg COMPOSER_VERSION=$(COMPOSER_VERSION) \
-		-t $(IMAGE) .
-.PHONY: docker-build lrn-test-all lrn-test-clean
-
-
-else
+# Local development targets without Docker
 DIST_PREFIX = learnosity_sdk-
 SRC_VERSION := $(shell git describe | sed s/^v//)
 DIST = $(DIST_PREFIX)$(SRC_VERSION)
@@ -64,15 +42,19 @@ COMPOSER_INSTALL_FLAGS = --no-interaction --optimize-autoloader --classmap-autho
 PHPCS= ./vendor/bin/phpcs
 PHPUNIT = ./vendor/bin/phpunit
 
-###
-# quickstart rules
-###
-quickstart: VENDOR_FLAGS = --no-dev
-quickstart: install-vendor
-	cd docs/quickstart && php -S $(LOCALHOST):8000
+quickstart: $(if $(DOCKER),docker-build) $(if $(DOCKER),docker,local)-quickstart
+
+docker-quickstart: VENDOR_FLAGS = --no-dev
+docker-quickstart: install-vendor
+	$(DOCKER_COMPOSE) up -d
+
+local-quickstart: VENDOR_FLAGS = --no-dev
+local-quickstart: install-vendor
+	php -S localhost:8000 -t docs/quickstart
 
 check-quickstart: vendor/autoload.php
 	$(COMPOSER) install $(COMPOSER_INSTALL_FLAGS) --no-dev;
+
 ###
 # internal tooling rules
 ####
@@ -103,15 +85,11 @@ test-integration-env: build
 
 ###
 # dist rules
-#
-# build a dist zip file from the distdir, THEN run the tests in the dist dir,
-# to avoid polluting the distfile with dev dependencies
 ###
 dist: dist-test
 
-# We want to clean first before copying into the .distdir so that we have a clean copy
 dist-zip: clean-test clean-dist
-	mkdir -p .$(DIST) # use a hidden directory so that it doesn't get copied into itself
+	mkdir -p .$(DIST)
 	cp -R * .version .$(DIST)
 	mv .$(DIST) $(DIST)
 	rm -rf $(DIST)/vendor/
@@ -119,9 +97,9 @@ dist-zip: clean-test clean-dist
 	rm -rf $(DIST)/release.sh
 	zip -qr $(DIST).zip $(DIST)
 
-# run tests in the distdir
 dist-test: dist-zip install-vendor
-	$(PHPUNIT) --do-not-cache-result --no-logging --configuration=$(DIST)/phpunit.xml
+	cd $(DIST) && composer install $(COMPOSER_INSTALL_FLAGS)
+	cd $(DIST) && ./vendor/bin/phpunit --do-not-cache-result --no-logging
 
 ###
 # install vendor rules
@@ -132,6 +110,7 @@ composer.lock: composer.json
 
 clean: clean-dist clean-test clean-vendor
 	rm -rf $(DIST_PREFIX)*.zip
+	$(DOCKER_COMPOSE) down -v
 
 clean-dist:
 	rm -rf $(DIST_PREFIX)*/
@@ -145,16 +124,7 @@ clean-vendor:
 	rm -rf vendor
 	rm -f composer.lock
 
-# Aliases
-
-devbuild: build
-prodbuild: dist
-
-# The following are real targets, not phony ones
-
-vendor:
-	$(COMPOSER) install $(COMPOSER_INSTALL_FLAGS)
-
+# Package contents
 PKG_CONTENTS = .version \
 	CONTRIBUTING.md LICENSE.md README.md REFERENCE.md ChangeLog.md \
 	composer.json bootstrap.php phpunit.xml \
@@ -169,4 +139,3 @@ $(DIST)/vendor: $(DIST)
 
 $(DIST).zip: $(DIST)/vendor
 	zip -qr $(DIST).zip $(DIST)
-endif

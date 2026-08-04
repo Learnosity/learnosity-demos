@@ -18,26 +18,26 @@ include_once '../../lrn_config.php';
     </div>
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">End to End (Add items)</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">End to End (Add items)</h2>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates use of Author API to create content (new items), Items API to assess and Reports API to show the result and feedback.<p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./authoring.php">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">End to End (Select existing items)</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">End to End (Select existing items)</h2>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates use of Author API to create content (new items <i>or</i> select existing items), Items API to assess and Reports API to show the result and feedback.<p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./select_items.php">Demo</a>
                     </p>
                 </div>

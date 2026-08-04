@@ -52,7 +52,7 @@ $scores = $report['data'][0];
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -98,7 +98,7 @@ $scores = $report['data'][0];
     <div class="row">
         <div class="col-md-10"></div>
         <div class="col-md-2">
-            <div class="lrn pull-right">
+            <div class="lrn float-end">
                 <button type="button" class="ladda-button btn_save_simple_scores" data-style="expand-right" onclick="location.href='./feedback.php?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>'"><span class="ladda-label">&laquo; Score again</span></button>
             </div>
         </div>

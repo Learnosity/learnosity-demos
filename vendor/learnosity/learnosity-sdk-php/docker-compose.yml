@@ -1,0 +1,41 @@
+networks:
+  quickstart-network:
+    driver: bridge
+
+services:
+  nginx:
+    container_name: learnosity-php-sdk-nginx
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+    environment:
+      APPLICATION_SERVER_LANGUAGE: php
+      UPSTREAM_APPLICATION_SERVICE: php:9000
+    depends_on:
+      - php
+    networks:
+      quickstart-network:
+        aliases:
+          - nginx
+
+  php:
+    container_name: learnosity-php-sdk-php-frm
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+      args:
+        PHP_VERSION: ${PHP_VERSION:-8.3}
+        DEBIAN_VERSION: ${DEBIAN_VERSION:-bookworm}
+        COMPOSER_VERSION: ${COMPOSER_VERSION:-2.7.6}
+    volumes:
+      - .:/var/www/html
+    environment:
+      - SERVER_NAME=localhost
+    networks:
+      quickstart-network:
+        aliases:
+          - php

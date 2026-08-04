@@ -64,8 +64,8 @@ $jsonId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['op
 </div>
 
 <script>
-    $(function () {
-        var activity = $.extend(<?php echo $signedRequest; ?>, {
+    document.addEventListener('DOMContentLoaded', function () {
+        var activity = Object.assign(<?php echo $signedRequest; ?>, {
             type: 'submit_practice',
             state: '<?php echo $state ?>',
             id: 'questionsapi-responsive-demo',
@@ -75,21 +75,28 @@ $jsonId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['op
         var sessionId = '<?php echo $sessionId; ?>';
 
         (function () {
-            var $app = $('.responsiveApp');
-            var $deviceBtn = $('button[data-device]');
+            var apps = document.querySelectorAll('.responsiveApp');
+            var deviceButtons = document.querySelectorAll('button[data-device]');
 
-            $deviceBtn.on('click', function () {
-                var deviceName = this.dataset.device;
+            deviceButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var deviceName = this.dataset.device;
 
-                $deviceBtn.removeClass('selected');
-                $app.removeClass('desktop tablet mobile')
-                    .addClass(deviceName);
+                    deviceButtons.forEach(function (other) {
+                        other.classList.remove('selected');
+                    });
+                    apps.forEach(function (app) {
+                        app.classList.remove('desktop', 'tablet', 'mobile');
+                        app.classList.add(deviceName);
+                    });
 
-                this.classList.add('selected');
+                    this.classList.add('selected');
+                });
             });
 
-            $('[data-action="review"]').on('click', function () {
-                var $btn = $(this);
+            document.querySelectorAll('[data-action="review"]').forEach(function (reviewBtn) {
+                reviewBtn.addEventListener('click', function () {
+                var btn = this;
 
                 window.questionsApp.save({
                     success: function () {
@@ -105,37 +112,32 @@ $jsonId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['op
                         window.location.replace(url);
                     },
                     error: function (e) {
-                        $btn.prop('disabled', false);
+                        btn.disabled = false;
                         alert('Failed to save');
                     }
                 });
 
-                $btn.prop('disabled', true);
+                btn.disabled = true;
+                });
             });
 
-            $('button[data-device="desktop"]').addClass('selected');
+            document.querySelector('button[data-device="desktop"]').classList.add('selected');
         })();
 
         function loadData() {
             var jsonId = '<?php echo $jsonId; ?>';
             var linkToLoad = jsonId ? 'https://jsonblob.com/api/jsonBlob/' + jsonId : 'config/data.json';
-            var status = $.Deferred();
-
-            $.get(linkToLoad, function (data) {
-                prepareActivity(data);
-
-                status.resolve();
-            });
-
-            return status.promise();
+            return fetch(linkToLoad)
+                .then(function (response) { return response.json(); })
+                .then(function (data) { prepareActivity(data); });
         }
 
         function prepareActivity(data) {
-            var $widgetContainers = $('.widgets-container');
+            var widgetContainers = document.querySelectorAll('.widgets-container');
             var processWidget = function (widgetType, widgets) {
                 var keyId = widgetType === 'feature' ? 'feature_id' : 'response_id';
 
-                $.each(widgets, function (idx, widget) {
+                widgets.forEach(function (widget, idx) {
                     var id = sessionId + '__' + idx;
                     var identifier = '';
 
@@ -144,7 +146,10 @@ $jsonId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['op
                     identifier += widgetType === 'feature' ? 'learnosity-feature ' : 'learnosity-response ';
                     identifier += widgetType === 'feature' ? 'feature-' + id : 'question-' + id;
 
-                    $widgetContainers.append('<div class="widget"><span class="' + identifier + '"></span></div>');
+                    widgetContainers.forEach(function (container) {
+                        container.insertAdjacentHTML('beforeend',
+                            '<div class="widget"><span class="' + identifier + '"></span></div>');
+                    });
                 });
 
                 return widgets;

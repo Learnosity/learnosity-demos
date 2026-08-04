@@ -20,7 +20,7 @@ $version = $lts_version;
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -37,107 +37,107 @@ $version = $lts_version;
     <!--
     ********************************************************************
     *
-    * Setup a bootstrap panel group to house Data API interactive
-    * demos, grouped by section.
+    * Bootstrap collapse on a list of cards, housing the Data API
+    * interactive demos grouped by section.
     *
     ********************************************************************
     -->
     <div class="content-container">
-        <div class="panel-group" id="accordion">
+        <div id="accordion">
             <!-- Interactives demos for the 'itembank' section -->
             <h2>Item Bank</h2>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#activities">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#activities">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/activities'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="activities" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="activities" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'itembank/activities.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#activitytemplates">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#activitytemplates">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/activities/templates'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="activitytemplates" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="activitytemplates" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'itembank/activitytemplates.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#items">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#items">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/items'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="items" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="items" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'itembank/items.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#itembankquestions">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#itembankquestions">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/questions'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="itembankquestions" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="itembankquestions" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'itembank/questions.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#itembankfeatures">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#itembankfeatures">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/features'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="itembankfeatures" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="itembankfeatures" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'itembank/features.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#itembanktags">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#itembanktags">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/tagging/tags'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="itembanktags" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="itembanktags" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'itembank/tags.php'; ?>
                     </div>
                 </div>
@@ -145,18 +145,18 @@ $version = $lts_version;
 
             <!-- Interactives demos for the 'Item Pools' section -->
             <h2>Item Pools</h2>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#itempools">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#itempools">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/itembank/pools'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="itempools" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="itempools" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'itembank/pools.php'; ?>
                     </div>
                 </div>
@@ -164,98 +164,98 @@ $version = $lts_version;
 
             <!-- Interactives demos for the 'sessions' section -->
             <h2>Sessions</h2>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#sessionsresponses">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#sessionsresponses">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/responses'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="sessionsresponses" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="sessionsresponses" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'sessions/responses.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#responsescores">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#responsescores">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/responses/scores'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="responsescores" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="responsescores" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'sessions/responsescores.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#responses-feedback">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#responses-feedback">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/responses/feedback'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="responses-feedback" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="responses-feedback" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'sessions/responses-feedback.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#responses-feedback-update">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#responses-feedback-update">
                             <span class="block">action: update</span>
                             <?php echo '/' . $version . '/sessions/responses/feedback'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="responses-feedback-update" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="responses-feedback-update" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'sessions/responses-feedback-update.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#sessionsscores">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#sessionsscores">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/scores'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="sessionsscores" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="sessionsscores" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'sessions/scores.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#sessionsstatuses">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#sessionsstatuses">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/sessions/statuses'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="sessionsstatuses" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="sessionsstatuses" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'sessions/statuses.php'; ?>
                     </div>
                 </div>
@@ -263,18 +263,18 @@ $version = $lts_version;
 
             <!-- Interactives demos for the 'scoring' section -->
             <h2>Scoring</h2>
-            <div class="panel panel-default panel-data">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#scoring">
+            <div class="card panel-data">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <a data-bs-toggle="collapse" href="#scoring">
                             <span class="block">action: get</span>
                             <?php echo '/' . $version . '/scoring'; ?>
-                            <span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true"></span>
+                            <span class="bi bi-chevron-down float-end" aria-hidden="true"></span>
                         </a>
                     </h4>
                 </div>
-                <div id="scoring" class="panel-collapse collapse">
-                    <div class="panel-body">
+                <div id="scoring" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
                         <?php include_once 'scoring/scoring.php'; ?>
                     </div>
                 </div>
@@ -284,10 +284,10 @@ $version = $lts_version;
 </div>
 
 <script>
-    $(function() {
-        $('.glyphicon-question-sign').tooltip({
-            container: 'body'
-        })
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.bi-question-circle-fill').forEach((element) => {
+            new bootstrap.Tooltip(element, { container: 'body' });
+        });
     });
 
     var config = {

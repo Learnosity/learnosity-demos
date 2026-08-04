@@ -67,8 +67,8 @@
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+                <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <div class="overview">
@@ -82,7 +82,7 @@
     <div class="section pad-sml">
         <!--HTML placeholder that is replaced by Author API-->
         <div id="learnosity-author"></div>
-        <div class="text-right" style="margin-top:10px;">
+        <div class="text-end" style="margin-top:10px;">
             <!--duplicate button will be enabled when readyListener fires-->
             <button id="clearSelectedItems" class="btn btn-primary btn-md" type="submit" disabled>Clear Selected Items</button>
             <button id="doSelectedItems" class="btn btn-primary btn-md" type="submit" disabled>Log Reference and Title</button>
@@ -99,7 +99,8 @@
         var callbacks = {
             readyListener: function () {
                 console.log("Author API has successfully initialized.");
-                $("#doSelectedItems, #clearSelectedItems").removeAttr("disabled");
+                document.querySelectorAll("#doSelectedItems, #clearSelectedItems")
+                    .forEach(function (button) { button.removeAttribute("disabled"); });
             },
             errorListener: function (err) {
                 console.log(err);
@@ -108,7 +109,7 @@
 
         var authorApp = LearnosityAuthor.init(initializationObject, callbacks);
 
-        $("#doSelectedItems").click(function() {
+        document.getElementById("doSelectedItems").addEventListener("click", function () {
             var itemPromise = authorApp.getSelectedItems();
             if (itemPromise === false) {
                 console.log("No items selected.");
@@ -116,7 +117,7 @@
             };
             itemPromise
                 .then(function (result) {
-                    $.each(result.data.items, function (index, value) {
+                    result.data.items.forEach(function (value) {
                         console.log("item:\n\treference: " + value.item.reference + "\n\ttitle: " + value.item.title);
                     });
                 })
@@ -124,7 +125,7 @@
                     console.log(error)
                 });
         });
-        $("#clearSelectedItems").click(function() {
+        document.getElementById("clearSelectedItems").addEventListener("click", function () {
             authorApp.clearSelectedItems();
         });
     </script>

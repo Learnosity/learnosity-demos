@@ -76,7 +76,7 @@ $signedRequest = $Init->generate();
             <div id="learnosity-author"></div>
         </div>
     </div>
-    <p class="text-right">
+    <p class="text-end">
         <br>
         <a class="btn btn-primary btn-md btn-addMore">Add more</a>
         <a class="btn btn-primary btn-md btn-goToAssessment">Go to Assessment</a>
@@ -100,34 +100,42 @@ $signedRequest = $Init->generate();
 
     });
 
-    $(document).ready(function(){
+    document.addEventListener('DOMContentLoaded', function () {
         //add more question handler
-        $(".btn-addMore").click(function(){
-            activeItemID = guid();
-            authorApp.editItem(activeItemID, true);
+        document.querySelectorAll(".btn-addMore").forEach(function (button) {
+            button.addEventListener("click", function () {
+                activeItemID = guid();
+                authorApp.editItem(activeItemID, true);
+            });
         });
         //go to assessment handler
-        $(".btn-goToAssessment").click(function(){
-            window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
+        document.querySelectorAll(".btn-goToAssessment").forEach(function (button) {
+            button.addEventListener("click", function () {
+                window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");
+            });
         });
     });
 
     function showNotification (itemID) {
-         var $message = $('<a/>').text('Item ' + itemIDs.length)
-                                 .attr('onclick','editItem("' + itemID + '")')
-                                 .attr('style','cursor:pointer')
-        var $closeBtn = $('<button/>').attr('type', 'button')
-                                      .attr('data-dismiss', 'alert')
-                                      .attr('aria-hidden', 'true')
-                                      .attr('title', 'Delete question')
-                                      .attr('onclick', 'removeItem("' + itemID + '")')
-                                      .addClass('close')
-                                      .text('×');
-        var $notification = $('<div/>').addClass('alert alert-info alert-dismissable')
-                                       .attr('id', 'ItemNotification' + itemID)
-                                       .append($closeBtn)
-                                       .append($message);
-        $('#notifications').append($notification);
+        var message = document.createElement('a');
+        message.textContent = 'Item ' + itemIDs.length;
+        message.setAttribute('onclick', 'editItem("' + itemID + '")');
+        message.setAttribute('style', 'cursor:pointer');
+
+        var closeBtn = document.createElement('button');
+        closeBtn.setAttribute('type', 'button');
+        closeBtn.setAttribute('data-bs-dismiss', 'alert');
+        closeBtn.setAttribute('aria-label', 'Close');
+        closeBtn.setAttribute('title', 'Delete question');
+        closeBtn.setAttribute('onclick', 'removeItem("' + itemID + '")');
+        closeBtn.classList.add('btn-close');
+
+        var notification = document.createElement('div');
+        notification.className = 'alert alert-info alert-dismissible';
+        notification.setAttribute('id', 'ItemNotification' + itemID);
+        notification.append(closeBtn, message);
+
+        document.getElementById('notifications').append(notification);
     }
 
     function guid() {
@@ -141,7 +149,7 @@ $signedRequest = $Init->generate();
     }
 
     function saveItemID(itemID) {
-        if(jQuery.inArray(itemID, itemIDs) == -1){
+        if(itemIDs.indexOf(itemID) === -1){
             itemIDs.push(itemID);
             showNotification(itemID);
         }
@@ -149,7 +157,7 @@ $signedRequest = $Init->generate();
 
     function removeItem(itemID) {
         itemIDs.splice(itemIDs.indexOf(itemID), 1);
-        $("#ItemNotification" + itemID).remove();
+        document.getElementById("ItemNotification" + itemID).remove();
     }
 
     function editItem(itemID) {

@@ -50,8 +50,8 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+                <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <div class="overview">
@@ -63,7 +63,7 @@ $signedRequest = $Init->generate();
     <div class="section pad-sml" style="font-size:16px;">
         <h1>What is Color?</h1>
 
-        <span class="pull-left">
+        <span class="float-start">
             <img src="itemsapi_inline_images/berries-blueberries-lemons.jpg" width="400px" style="margin-right:20px;" alt="strawberries, blueberries, lemon">
             <p style="font-size:12px;">image: rawpixel.com</p>
         </span>
@@ -72,11 +72,11 @@ $signedRequest = $Init->generate();
 
         <p>Lots of things make up how and why we each see color, including different wavelengths of light and even our own bodies--such as whether or not we are color blind. But in simple terms, we see color because different kinds of light are either absorbed by an object’s surface, or bounce off into our eyes. We see different colors because each object absorbs or reflects light differently. </p>
 
-        <div class="pull-right" style="margin-left:20px;width:300px;" >
+        <div class="float-end" style="margin-left:20px;width:300px;" >
 
             <table class="table">
                 <tr>
-                    <th class="info" style="text-align:center;">Ask Yourself</th>
+                    <th class="table-info" style="text-align:center;">Ask Yourself</th>
                 </tr>
                 <tr>
                     <td><span class="learnosity-item" data-reference="inline_demo_q1"></span></td>
@@ -91,17 +91,17 @@ $signedRequest = $Init->generate();
 
         <h1 style="clear:both;">A Rainbow of Colors</h1>
 
-        <span class="pull-right"  style="margin-left:10px;">
+        <span class="float-end"  style="margin-left:10px;">
             <img src="itemsapi_inline_images/colorful-colourful-outdoors-830829.jpg" width="400px" alt="rainbow">
             <p style="font-size:12px;text-align:right;">image: Frans Van Heerden</p>
         </span>
 
         <p>You probably know there are seven colors in a rainbow: red, orange, yellow, green, blue, indigo, and violet. Our good friend, Roy G. Biv. But what you may not know is that only three of those colors can’t be created by mixing other colors together. These colors—red, yellow, and blue—are called <i>primary colors</i>.</p>
 
-        <div class="pull-left" style="margin-right:20px;width:300px;" >
+        <div class="float-start" style="margin-right:20px;width:300px;" >
             <table class="table">
                 <tr>
-                    <th class="info" style="text-align:center;">Ask Yourself</th>
+                    <th class="table-info" style="text-align:center;">Ask Yourself</th>
                 </tr>
                 <tr>
                     <td><span class="learnosity-item" data-reference="inline_demo_q2"></span></td>
@@ -113,7 +113,7 @@ $signedRequest = $Init->generate();
 
         <p>Another way to represent these colors is to show them on a color wheel. Primary colors appear equidistant from each other on the wheel. Secondary colors appear between the primary colors mixed to create them. The color wheel shown here includes primary and secondary colors.</p>
 
-        <span class="pull-right"  style="margin-left:10px;">
+        <span class="float-end"  style="margin-left:10px;">
             <img src="//s3-us-west-1.amazonaws.com/assets.staging.learnosity.com/organisations/1/primary_secondary_wheel.png" alt="A color wheel.">
             <p style="font-size:12px;text-align:center;">a color wheel</p>
         </span>
@@ -138,7 +138,7 @@ $signedRequest = $Init->generate();
         <div>
             <table class="table">
                 <tr>
-                    <th class="info" style="text-align:center;">Ask Yourself</th>
+                    <th class="table-info" style="text-align:center;">Ask Yourself</th>
                 </tr>
                 <tr>
                     <td><span class="learnosity-item" data-reference="Tut002_Item2"></span></td>

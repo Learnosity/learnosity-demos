@@ -5,18 +5,18 @@
 *
 ********************************************************************
 -->
-<div class="modal preview-fade preview" id="initialisation-preview">
+<div class="modal preview-fade preview" id="initialisation-preview" tabindex="-1" aria-labelledby="initialisation-preview-title">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">API Initialization Preview</h4>
+                <h4 class="modal-title" id="initialisation-preview-title">API Initialization Preview</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <pre><code id="preview-body"></code></pre>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -49,5 +49,5 @@ if (is_array($previewObject)) {
 <script>
     var init = <?php echo $previewBody; ?>;
     delete init.api_type;
-    $('#preview-body').html(prettyPrint.render(init));
+    document.getElementById('preview-body').innerHTML = prettyPrint.render(init);
 </script>

@@ -65,7 +65,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -158,7 +158,7 @@ $signedRequest = $Init->generate();
 
     function sstoolbarLoaded(api){
         speechstreamApi = api;
-        const ignoreClasses = ".lrn-assess-skip-to-link, .sr-item-description, .mq-math-mode, [class^='lrn-accessibility-'], .sr-only, .test-title-text, .subtitle, .item-count, .timer, .lrn_sort_gripper, .footer";
+        const ignoreClasses = ".lrn-assess-skip-to-link, .sr-item-description, .mq-math-mode, [class^='lrn-accessibility-'], .visually-hidden, .test-title-text, .subtitle, .item-count, .timer, .lrn_sort_gripper, .footer";
         const doc = window.document;
         const domControl = speechstreamApi.domControlTools.getNewDomControl(doc);
         domControl.addIgnoreListQuerySelector(ignoreClasses);

@@ -48,8 +48,8 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+                <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <div class="overview">
@@ -91,18 +91,39 @@ $signedRequest = $Init->generate();
 
         function onReportsReady() {
             // load modal from a remote location that initialize an instance of the reports api
-            var onClickFunction = function(data) {
-                $('#lrn-reports-demos-modal').modal({
-                    'remote': 'reports-click-events-modal.php'
+            var modalEl = document.getElementById('lrn-reports-demos-modal');
+            async function loadRemoteContent (container, url) {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(url + ' responded ' + response.status);
+                }
+                container.innerHTML = await response.text();
+                container.querySelectorAll('script').forEach(function (original) {
+                    const script = document.createElement('script');
+                    [...original.attributes].forEach(function (attr) {
+                        script.setAttribute(attr.name, attr.value);
+                    });
+                    script.textContent = original.textContent;
+                    original.replaceWith(script);
+                });
+            }
+
+            // Clear the injected markup on close so the next click loads it fresh.
+            modalEl.addEventListener('hidden.bs.modal', function () {
+                modalEl.querySelector('.modal-content').innerHTML = '';
+            });
+
+            var onClickFunction = async function(data) {
+                const url = 'reports-click-events-modal.php'
                     + '?session_id=' + data.session_id
                     + '&user_id=' + data.user_id
-                    + '&activity_id=' + data.activity_id
-                });
-
-                $('body').on('hidden.bs.modal', '.modal', function () {
-                    $(this).removeData('bs.modal');
-                    $('.modal-content').html("");
-                });
+                    + '&activity_id=' + data.activity_id;
+                try {
+                    await loadRemoteContent(modalEl.querySelector('.modal-content'), url);
+                    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+                } catch (error) {
+                    console.error(error);
+                }
             };
 
             var groupLastScoreByActivityByUser = reportsApp.getReport('report');

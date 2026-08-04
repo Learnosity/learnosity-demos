@@ -51,18 +51,18 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object">
-                    <a href="#" data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a>
+                <li class="list-inline-item">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a>
                 </li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation">
-                    <a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a>
+                <li class="list-inline-item">
+                    <a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a>
                 </li>
             </ul>
         </div>
         <div class="overview">
             <h2>Disable Reporting UI to Work Directly with Data</h2>
             <p>Turn off the default rendering and access the raw data to present reports any way you choose. Preview the
-                <a href="#" data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object">initialization object</a> to see how to turn off rendering.</p>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object">initialization object</a> to see how to turn off rendering.</p>
             <p>View the page source to see how to use event listeners to access the raw data.</p>
             <span>Render visual reports</span>
             <div style="display=inline-block;" class="lrn-switch">
@@ -92,8 +92,10 @@ $signedRequest = $Init->generate();
 
     <script src="<?php echo $url_reports; ?>"></script>
     <script>
-        $('.lrn-switch').click(function () {
-            window.location.href = "?render=" + !$('#render_toggle').prop('checked');
+        document.querySelectorAll('.lrn-switch').forEach(function (toggle) {
+            toggle.addEventListener('click', function () {
+                window.location.href = "?render=" + !document.getElementById('render_toggle').checked;
+            });
         });
 
         var initializationObject = <?php echo $signedRequest; ?>;
@@ -117,17 +119,20 @@ $signedRequest = $Init->generate();
 
             // For each report:
             // set a listener on report data load, to access the raw data...
+            var renderInto = function (containerId, data) {
+                var target = document.querySelector('#' + containerId + ' code');
+                if (target) {
+                    target.innerHTML = prettyPrint.render(data);
+                }
+            };
+
             sessionsReport.on('load:data', function (data) {
                 // ..and display JSON in prettified form. Data can be used in many ways.
                 // Ex: using another rendering library in a custom report or dashboard
-                $('#session-summary').find('code').html(
-                    prettyPrint.render(data)
-                );
+                renderInto('session-summary', data);
             });
             progressReport.on('load:data', function (data) {
-                $('#progress-by-tag').find('code').html(
-                    prettyPrint.render(data)
-                );
+                renderInto('progress-by-tag', data);
             });
         }
     </script>

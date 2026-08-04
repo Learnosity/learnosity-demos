@@ -40,7 +40,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -62,7 +62,7 @@ $signedRequest = $Init->generate();
     <div class="row">
         <div class="col-md-8"></div>
         <div class="col-md-4">
-            <div class="lrn pull-right">
+            <div class="lrn float-end">
                 <button type="button" class="ladda-button btn_save_simple_scores" onclick="saveScores()" data-style="expand-right"><span class="ladda-label">Save Scores</span></button>
             </div>
         </div>
@@ -140,7 +140,7 @@ restrictValuesInInputs = ()=>{
 
 saveScores = () => {
     // Spinning button
-    const ladda = Ladda.create($('.ladda-button')[0]);
+    const ladda = Ladda.create(document.querySelector('.ladda-button'));
     ladda.start();
 
     //Build responses array for the request object
@@ -175,19 +175,22 @@ saveScores = () => {
     }
 
     //Make call to the Data API scoring endpoint
-    $.ajax({
-        url: '/analytics/data/xhr.php',
-        data: {'request': JSON.stringify(request), 'endpoint': endpoint, 'action': 'update'},
-        dataType: 'json',
-        type: 'POST'
+    // .success()/.error() were removed in jQuery 3; this is a plain fetch now.
+    fetch('/analytics/data/xhr.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        body: new URLSearchParams(postObject)
     })
-    .error(function(xhr, status, data) {
-        console.log(xhr.responseText, null, null);
-    })
-    .success(function(data, status, xhr) {
+    .then(function (response) {
+        if (!response.ok) {
+            return response.text().then(function (text) { throw new Error(text); });
+        }
         window.setTimeout(function () {
             window.location = './feedback_report.php?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>';
         }, 7000);
+    })
+    .catch(function (error) {
+        console.log(error.message);
     });
 }
 

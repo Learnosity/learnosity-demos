@@ -8,6 +8,34 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [v1.2.1] - 2026-02-04
+### Changed
+- Updated minimum PHP version requirement to 8.2
+- Updated supported PHP versions to 8.2, 8.3, 8.4, and 8.5
+
+### Removed
+- Removed `curl_close()` call
+- Removed support for PHP versions below 8.2 (7.1, 7.2, 7.3, 7.4, 8.0, 8.1)
+- Removed `version` field from docker-compose.yml
+
+## [v1.2.0] - 2026-01-15
+### Added
+- Added SDK info functionality to include SDK metadata in requests
+- Added new metadata to Data API request headers for better tracking and debugging
+- Added data-api-demo.php example to quickstart documentation
+
+### Changed
+- Updated regex for request path handling to support `/latest` and `/latest-lts` prefixes
+
+## [v1.1.0] - 2025-07-30
+### Fixed
+- Fixed Quickstart app so that it runs in a Docker container or with a local PHP server
+
+### Refactor
+- Upgraded PHP version to 8.3
+- Update minimum supported version to PHP 7.2 and higher
+- Remove testing of older PHP versions
+
 ## [v1.0.5] - 2024-10-14
 ### Fixed
 - Fixed the signature mismatch issue.

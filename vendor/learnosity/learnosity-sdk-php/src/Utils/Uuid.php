@@ -15,7 +15,7 @@ class Uuid
      * @return null|string
      * @throws Exception
      */
-    public static function generate(string $type = 'uuidv4', string $namespace = null, string $name = null)
+    public static function generate(string $type = 'uuidv4', ?string $namespace = null, ?string $name = null)
     {
         switch ($type) {
             case 'v3':
@@ -35,7 +35,7 @@ class Uuid
      * @param string $name
      * @return null|string
      */
-    private static function v3(string $namespace = null, string $name = null)
+    private static function v3(?string $namespace = null, ?string $name = null)
     {
         if (!self::isValid($namespace)) {
             return null;
@@ -137,7 +137,7 @@ class Uuid
      * @param string $name
      * @return null|string
      */
-    private static function v5(string $namespace = null, string $name = null)
+    private static function v5(?string $namespace = null, ?string $name = null)
     {
         if (!self::isValid($namespace)) {
             return null;

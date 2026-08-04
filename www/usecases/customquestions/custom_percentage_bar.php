@@ -68,8 +68,8 @@ $signedRequest = $init->generate();
 <div class="jumbotron section">
      <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/articles/360000758817-Creating-Custom-Questions" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+            <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/articles/360000758817-Creating-Custom-Questions" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
 
         </ul>
     </div>
@@ -84,7 +84,7 @@ $signedRequest = $init->generate();
         <div class="question-container">
             <span class="learnosity-response question-custom-percentage-bar-response-1"></span>
             <div class="custom-score"><strong>Score: </strong> <span id="question_score">0</span> / <span id="question_max_score">0</span></div>
-            <button class="btn btn-primary pull-right" id="validate_question">Check Answer</button>
+            <button class="btn btn-primary float-end" id="validate_question">Check Answer</button>
         </div>
     </div>
 </div>
@@ -103,16 +103,16 @@ $signedRequest = $init->generate();
                 updateScores(question);
             });
 
-            $('#validate_question').off().click(function() {
+            document.getElementById('validate_question').onclick = function () {
                 questionsApp.validateQuestions();
-            });
+            };
         }
     });
 
     function updateScores(question) {
         var score = question.getScore();
-        $('#question_score').html((score && score.score) || 0);
-        $('#question_max_score').html((score && score.max_score) || 0);
+        document.getElementById('question_score').innerHTML = ((score && score.score) || 0);
+        document.getElementById('question_max_score').innerHTML = ((score && score.max_score) || 0);
     }
 
 </script>

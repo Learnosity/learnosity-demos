@@ -48,8 +48,8 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+            <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -70,27 +70,28 @@ $signedRequest = $Init->generate();
     // example function to be called by assetRequest
     var assetRequestFunction = function (mediaRequested, returnType, callback) {
         if (mediaRequested === 'image') {
-            var $modal = $('.modal.img-upload');
-            //when invoking assetRequestFunction, callback is expected
-            //if modal is cancelled, issue empty callback to allow ongoing use
-            $modal.on('hidden.bs.modal', function(){
+            var modalEl = document.querySelector('.modal.img-upload');
+            var modal = bootstrap.Modal.getOrCreateInstance(modalEl, { backdrop: 'static' });
+            modalEl.addEventListener('hidden.bs.modal', function () {
                 callback();
             });
 
-            var $images = $('.asset-img-gallery img');
+            var images = [...document.querySelectorAll('.asset-img-gallery img')];
             imgClickHandler = function () {
                 if (returnType === 'HTML') {
-                    callback('<img src="' + $(this).data('img') + '"/>');
+                    callback('<img src="' + this.dataset.img + '"/>');
                 } else {
-                    callback($(this).data('img'));
+                    callback(this.dataset.img);
                 }
-                $modal.modal('hide');
-                $images.off('click', imgClickHandler);
+                modal.hide();
+                images.forEach(function (img) {
+                    img.removeEventListener('click', imgClickHandler);
+                });
             };
-            $images.on('click', imgClickHandler);
-            $modal.modal({
-                backdrop:'static'
+            images.forEach(function (img) {
+                img.addEventListener('click', imgClickHandler);
             });
+            modal.show();
         }
     };
 

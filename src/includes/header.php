@@ -2,6 +2,10 @@
 if (!isset($pageTitle)) {
     $pageTitle = 'Learnosity Demos';
 }
+// Set in env_config.php; defaulted here in case a page reaches the header without it.
+if (!isset($assetBundle)) {
+    $assetBundle = 'all.min';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,8 +41,8 @@ if (!isset($pageTitle)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/static/images/favicon.ico?<?php echo $assetVersion ?>" type="image/x-icon">
-    <link rel="stylesheet" href="/static/dist/all.min.css?<?php echo $assetVersion ?>">
-    <script src="/static/dist/all.min.js?<?php echo $assetVersion ?>"></script>
+    <link rel="stylesheet" href="/static/dist/<?php echo $assetBundle ?>.css?<?php echo $assetVersion ?>">
+    <script src="/static/dist/<?php echo $assetBundle ?>.js?<?php echo $assetVersion ?>"></script>
 </head>
 <body>
 

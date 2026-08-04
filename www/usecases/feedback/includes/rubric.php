@@ -31,18 +31,18 @@ PDFJS.getDocument(url_pdf).then(function getPdfHelloWorld(pdf) {
 });
 </script>
 
-<div class="modal fade" id="rubricViewer">
+<div class="modal fade" id="rubricViewer" tabindex="-1" aria-labelledby="rubricViewer-title">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Teacher Rubric</h4>
+                <h4 class="modal-title" id="rubricViewer-title">Teacher Rubric</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <canvas id="rubric-canvas"></canvas>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

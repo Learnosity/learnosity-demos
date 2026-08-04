@@ -67,8 +67,8 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+                <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <div class="overview">
@@ -92,7 +92,7 @@ $signedRequest = $Init->generate();
         //optional callbacks for ready
         var callbacks = {
             readyListener: function () {
-                $.each(itemsApp.questions(), function(idx, value) {
+                Object.entries(itemsApp.questions()).forEach(function ([idx, value]) {
                     var counter = 0;
 
                     value.on('validated', function() {
@@ -126,11 +126,13 @@ $signedRequest = $Init->generate();
         // Host page rendering logic
         function renderMsg (id, content) {
             var template;
-            if ($("#" + id + "_msg").length) {
-                $("#" + id + "_msg").html(content).fadeIn();
+            const existing = document.getElementById(id + "_msg");
+            if (existing) {
+                existing.innerHTML = content;
+                fadeIn(existing, 400);
             } else {
                 template = "<div id=\"" + id + "_msg\" class=\"question-msg alert alert-danger\">" + content + "</div>";
-                $("#" + id).append(template);
+                document.getElementById(id).insertAdjacentHTML("beforeend", template);
             }
         }
     </script>

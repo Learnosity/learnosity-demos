@@ -67,8 +67,8 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+                <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <div class="overview">
@@ -103,7 +103,7 @@ $signedRequest = $Init->generate();
         var callbacks = {
             readyListener: function () {
 
-                $.each(itemsApp.questions(), function (index, question) {
+                Object.values(itemsApp.questions()).forEach(function (question) {
                     question.on('validated', function () {
                         var outputHTML = '';
                         var map, qid;
@@ -114,7 +114,7 @@ $signedRequest = $Init->generate();
 
                         if(question.mapValidationMetadata('distractor_rationale_response_level') != false){
                             map = question.mapValidationMetadata('distractor_rationale_response_level');
-                            $.each(map.incorrect, function (i, data) {
+                            map.incorrect.forEach(function (data) {
                                 /*  Each item in the `map.incorrect` array is an object that contains a `value` property that
                                     holds the response value; an `index` property that refers to the shared index of both the
                                     response area and the metadata; and a `metadata` property containing the metadata value. */
@@ -138,7 +138,7 @@ $signedRequest = $Init->generate();
                     });
                 });
 
-                $.each(itemsApp.questions(), function (index, question) {
+                Object.values(itemsApp.questions()).forEach(function (question) {
                     question.on('changed', function () {
                         removeDistractor(this.getQuestion().response_id);
                     });
@@ -155,18 +155,23 @@ $signedRequest = $Init->generate();
         // Host page rendering logic
         function renderDistractor (id, content) {
             var template;
-            if ($("#" + id + "_distractor").length) {
-                $("#" + id + "_distractor").html(content).fadeIn();
+            const existing = document.getElementById(id + "_distractor");
+            if (existing) {
+                existing.innerHTML = content;
+                fadeIn(existing, 400);
             } else {
                 template = "<div id=\"" + id + "_distractor\" class=\"distractor-rationale alert alert-danger\">" + content + "</div>";
-                $("#" + id).append(template);
+                document.getElementById(id).insertAdjacentHTML("beforeend", template);
             }
 
             // renderMath() Renders all Latex or MathML elements on the page with MathJax.
             itemsApp.questionsApp().renderMath();
         }
         function removeDistractor (id) {
-            $("#" + id + '_distractor').fadeOut();
+            const el = document.getElementById(id + "_distractor");
+        if (el) {
+            fadeOut(el, 400);
+        }
         }
     </script>
 

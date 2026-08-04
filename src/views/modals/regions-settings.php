@@ -107,7 +107,7 @@ foreach ($regionElementMapping as $region => $elements) { ?>
 
     <div class="regions-element-summary <?= $region; ?>">
         <div class="regionLabel">
-             <label class="control-label" for="<?= str_replace(' ', '-', regionTitle($region)); ?>"><?= regionTitle($region); ?></label>
+             <label class="col-form-label" for="<?= str_replace(' ', '-', regionTitle($region)); ?>"><?= regionTitle($region); ?></label>
         </div>
         <div class="<?= $region; ?>Container regionContainer">
         </div>

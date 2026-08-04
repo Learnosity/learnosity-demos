@@ -58,7 +58,7 @@ $signedRequest = $Init->generate();
     <div class="row">
         <div class="col-md-8"></div>
         <div class="col-md-4">
-            <div class="lrn pull-right">
+            <div class="lrn float-end">
                     <span class="learnosity-save-button"></span>
             </div>
         </div>
@@ -78,16 +78,21 @@ var init = function() {
 
         // Build the 2 columns, left is Reports API (student in review) and the right is Items API
         // showing the teacher feedback.
-        $('.lrn_widget').wrap('<div class="row"></div>').wrap('<div class="col-md-6"></div>');
+        document.querySelectorAll('.lrn_widget').forEach(function (widget) {
+            wrapWithDiv(widget, 'row');
+            wrapWithDiv(widget, 'col-md-6');
+        });
 
         itemsApp.getQuestions(function(questions) {
-            $.each(questions, function(index, element) {
+            Object.values(questions).forEach(function (element) {
                 //if(element.metadata.rubric_reference !== undefined) {
                     var itemId = element.response_id + '_' + 'feedback_type_4';
 
-                    $('<span class="learnosity-item" data-reference="' + itemId + '">')
-                        .appendTo($('#' + element.response_id).closest('.row'))
-                        .wrap('<div class="col-md-6"></div>');
+                    var span = document.createElement('span');
+                    span.className = 'learnosity-item';
+                    span.dataset.reference = itemId;
+                    document.getElementById(element.response_id).closest('.row').appendChild(span);
+                    wrapWithDiv(span, 'col-md-6');
 
                     itemReferences.push({
                         'id' : itemId,
@@ -113,10 +118,10 @@ var init = function() {
           }
         };
 
-        $.post("endpoint.php", itemsActivity, function(data, status) {
+        postForm("endpoint.php", itemsActivity).then(function (data) {
           console.log("endpoint response", data);
           itemsApp = LearnosityItems.init(data);
-        });
+        }).catch(function (error) { console.error(error); });
       });
 };
 

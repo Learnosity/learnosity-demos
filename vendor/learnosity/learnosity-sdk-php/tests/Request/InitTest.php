@@ -249,6 +249,186 @@ class InitTest extends AbstractTestCase
         Init::enableTelemetry();
     }
 
+    /**
+     * Test that consumer metadata is added to Data API requests
+     */
+    public function testDataApiConsumerMetadata()
+    {
+        Init::enableTelemetry();
+
+        $securityPacket = [
+            'consumer_key' => 'test_consumer_key',
+            'domain' => 'localhost',
+            'timestamp' => '20140626-0528'
+        ];
+
+        $requestPacket = ['limit' => 100];
+        $endpoint = 'https://data.learnosity.com/v2023.1.lts/itembank/items';
+
+        $init = new Init('data', $securityPacket, 'test_secret', $requestPacket, 'get', null, null, $endpoint);
+        $generated = $init->generate();
+
+        // Decode the request to check metadata
+        $decodedRequest = json_decode($generated['request'], true);
+
+        $this->assertArrayHasKey('meta', $decodedRequest);
+        $this->assertArrayHasKey('consumer', $decodedRequest['meta']);
+        $this->assertEquals('test_consumer_key', $decodedRequest['meta']['consumer']);
+    }
+
+    /**
+     * Test that action metadata is correctly derived from endpoint and action
+     */
+    public function testDataApiActionMetadata()
+    {
+        Init::enableTelemetry();
+
+        $securityPacket = [
+            'consumer_key' => 'test_consumer_key',
+            'domain' => 'localhost',
+            'timestamp' => '20140626-0528'
+        ];
+
+        $requestPacket = ['limit' => 100];
+
+        // Test various endpoint and action combinations
+        $testCases = [
+            [
+                'endpoint' => 'https://data.learnosity.com/v2023.1.lts/itembank/items',
+                'action' => 'get',
+                'expected' => 'get_/itembank/items'
+            ],
+            [
+                'endpoint' => 'https://data.learnosity.com/v1/sessions/responses',
+                'action' => 'set',
+                'expected' => 'set_/sessions/responses'
+            ],
+            [
+                'endpoint' => 'https://data.learnosity.com/v2023.1.lts/session_scores',
+                'action' => null, // should default to 'get'
+                'expected' => 'get_/session_scores'
+            ],
+            // Test uppercase LTS
+            [
+                'endpoint' => 'https://data.learnosity.com/v2025.3.LTS/itembank/items',
+                'action' => 'get',
+                'expected' => 'get_/itembank/items'
+            ],
+            // Test v2025.2.LTS
+            [
+                'endpoint' => 'https://data.learnosity.com/v2025.2.LTS/sessions',
+                'action' => 'get',
+                'expected' => 'get_/sessions'
+            ],
+            // Test simple v1
+            [
+                'endpoint' => 'https://data.learnosity.com/v1/items',
+                'action' => 'get',
+                'expected' => 'get_/items'
+            ],
+            // Test v1.85.0
+            [
+                'endpoint' => 'https://data.learnosity.com/v1.85.0/itembank/items',
+                'action' => 'get',
+                'expected' => 'get_/itembank/items'
+            ],
+            // Test latest
+            [
+                'endpoint' => 'https://data.learnosity.com/latest/itembank/items',
+                'action' => 'get',
+                'expected' => 'get_/itembank/items'
+            ],
+            // Test latest-lts
+            [
+                'endpoint' => 'https://data.learnosity.com/latest-lts/sessions',
+                'action' => 'get',
+                'expected' => 'get_/sessions'
+            ],
+            // Test developer
+            [
+                'endpoint' => 'https://data.learnosity.com/developer/items',
+                'action' => 'get',
+                'expected' => 'get_/items'
+            ],
+            // Test preview1 (alphanumeric suffix)
+            [
+                'endpoint' => 'https://data.learnosity.com/v2022.3.preview1/items',
+                'action' => 'get',
+                'expected' => 'get_/items'
+            ],
+            // Test preview2
+            [
+                'endpoint' => 'https://data.learnosity.com/v2022.2.preview2/sessions',
+                'action' => 'get',
+                'expected' => 'get_/sessions'
+            ],
+            // Test beta2
+            [
+                'endpoint' => 'https://data.learnosity.com/v1.2.3.beta2/test',
+                'action' => 'get',
+                'expected' => 'get_/test'
+            ],
+            // Test alpha1
+            [
+                'endpoint' => 'https://data.learnosity.com/v2024.1.alpha1/items',
+                'action' => 'get',
+                'expected' => 'get_/items'
+            ],
+            // Test URL with no version
+            [
+                'endpoint' => 'https://data.learnosity.com/items',
+                'action' => 'get',
+                'expected' => 'get_/items'
+            ],
+            // Test false positive: path starting with 'v' but not a version
+            [
+                'endpoint' => 'https://data.learnosity.com/validate/items',
+                'action' => 'get',
+                'expected' => 'get_/validate/items'
+            ]
+        ];
+
+        foreach ($testCases as $testCase) {
+            $init = new Init('data', $securityPacket, 'test_secret', $requestPacket, $testCase['action'], null, null, $testCase['endpoint']);
+            $generated = $init->generate();
+
+            $decodedRequest = json_decode($generated['request'], true);
+
+            $this->assertArrayHasKey('meta', $decodedRequest);
+            $this->assertArrayHasKey('action', $decodedRequest['meta']);
+            $this->assertEquals($testCase['expected'], $decodedRequest['meta']['action'],
+                "Failed for endpoint: {$testCase['endpoint']}, action: {$testCase['action']}");
+        }
+    }
+
+    /**
+     * Test that metadata is only added to Data API requests, not other services
+     */
+    public function testMetadataOnlyAddedToDataApi()
+    {
+        Init::enableTelemetry();
+
+        $securityPacket = [
+            'consumer_key' => 'test_consumer_key',
+            'domain' => 'localhost',
+            'timestamp' => '20140626-0528',
+            'user_id' => 'test_user'
+        ];
+
+        $requestPacket = ['test' => 'data'];
+
+        // Test non-data API service (e.g., questions)
+        $init = new Init('questions', $securityPacket, 'test_secret', $requestPacket);
+        $generated = json_decode($init->generate(), true);
+
+        // Should have SDK metadata but not consumer/action metadata
+        if (isset($generated['meta'])) {
+            $this->assertArrayHasKey('sdk', $generated['meta']);
+            $this->assertArrayNotHasKey('consumer', $generated['meta']);
+            $this->assertArrayNotHasKey('action', $generated['meta']);
+        }
+    }
+
     /*
      * Data providers
      */

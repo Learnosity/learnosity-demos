@@ -11,55 +11,65 @@
  *     - boolean
  *     - integer
  *     - string
+ *
+ * Plain ES6 - no jQuery. See docs/bootstrap-5-upgrade.md
  */
-var formToObject = (function($) {
+const formToObject = (function () {
     'use strict';
 
+    /**
+     * @param {HTMLFormElement} frm Form element
+     * @return {object}
+     */
     function parse (frm) {
-        var elements = getFormElements(frm);
-
-        return translateFormInputs(elements);
+        return translateFormInputs(getFormElements(frm));
     }
 
     /**
      * Returns all form inputs that have id's prefixed with 'api-'
-     * @param  {object} frm Form instance
-     * @return {array}
+     * @param  {HTMLFormElement} frm Form element
+     * @return {Array<HTMLElement>}
      */
     function getFormElements (frm) {
-        var id = frm.attr('id');
-        return $('#'+id).find('[id^=api-]');
+        return [...frm.querySelectorAll('[id^=api-]')];
+    }
+
+    /**
+     * Splits a comma separated value into trimmed, non-empty parts.
+     * @param  {string} value
+     * @return {Array<string>}
+     */
+    function splitList (value) {
+        return value.split(',').map((part) => part.trim());
     }
 
     /**
      * Translate form inputs into a JavaScript object. DSL is defined
      * by 'data' attributes. We also expect elements to have specific
      * 'id' prefixing.
-     * @param  {object} els Form instance
+     * @param  {Array<HTMLElement>} els Form inputs
      * @return {object}
      */
     function translateFormInputs (els) {
-        var request = {},
-            parameter,
-            type,
-            value;
-        for (var i = 0, len = els.length; i < len; i++) {
-            type = $(els[i]).data('type');
-            parameter = $(els[i]).attr('id').replace('api-', '').split('~')[0];
-            value = $.trim($(els[i]).val());
+        const request = {};
+
+        els.forEach((el) => {
+            const type = el.dataset.type;
+            const parameter = el.id.replace('api-', '').split('~')[0];
+            const value = (el.value || '').trim();
+
             if (parameter === 'endpoint') {
-                continue;
+                return;
             }
+
             switch (type) {
                 case 'objectarray':
                     if (value.length) {
-                        var param = parameter.split(':'), val = [];
-                        $.each(value.split(','), function() {
-                            val.push($.trim(this));
-                        });
+                        const param = parameter.split(':');
+                        const val = splitList(value);
                         if (val.length) {
                             if (request[param[0]] === undefined) {
-                                request[param[0]] = {}
+                                request[param[0]] = {};
                             }
                             request[param[0]][param[1]] = val;
                         }
@@ -67,57 +77,54 @@ var formToObject = (function($) {
                     break;
                 case 'array':
                     if (value.length) {
-                        request[parameter] = [];
-                        $.each(value.split(','), function() {
-                            request[parameter].push($.trim(this));
-                        });
+                        request[parameter] = splitList(value);
                     }
                     break;
                 case 'array_single':
                     if (value.length) {
-                        request[parameter] = [];
-                        request[parameter].push($.trim(value));
+                        request[parameter] = [value];
                     }
                     break;
                 case 'checkboxarray':
-                    if ($(els[i]).is(':checked')) {
+                    if (el.checked) {
                         if (request[parameter] === undefined) {
                             request[parameter] = [];
                         }
-                        request[parameter].push($(els[i]).val());
+                        request[parameter].push(el.value);
                     }
                     break;
                 case 'boolean':
-                    if (!$(els[i]).is(':checked')) {
-                        continue;
+                    if (!el.checked) {
+                        return;
                     }
-                    request[parameter] = (value === '1') ? true : false;
+                    request[parameter] = value === '1';
                     break;
                 case 'integer':
                     if (!value.length) {
-                        continue;
+                        return;
                     }
-                    request[parameter] = (isNaN(value)) ? 0 : parseInt(value, 10);
+                    request[parameter] = isNaN(value) ? 0 : parseInt(value, 10);
                     break;
                 case 'string':
                     if (!value.length) {
-                        continue;
+                        return;
                     }
                     request[parameter] = value;
                     break;
                 case 'json':
                     try {
                         request[parameter] = JSON.parse(value);
-                    } catch (e) {}
+                    } catch (e) { /* leave the parameter unset on malformed JSON */ }
                     break;
                 default:
                     break;
             }
-        }
+        });
+
         return request;
     }
 
     return {
         parse: parse
     };
-}(jQuery));
+}());

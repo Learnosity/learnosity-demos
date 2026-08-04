@@ -36,8 +36,8 @@ $signedRequest = $init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/articles/360000758817-Creating-Custom-Questions" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+            <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/articles/360000758817-Creating-Custom-Questions" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
 
         </ul>
     </div>
@@ -161,7 +161,7 @@ $signedRequest = $init->generate();
             var repository = {};
             var widgetJson = qeApp.getWidget();
 
-            $.each(keys, function (__, key) {
+            keys.forEach(function (key) {
                 repository[key] = widgetJson[key];
             });
 
@@ -169,7 +169,7 @@ $signedRequest = $init->generate();
                 var widgetJson = qeApp.getWidget();
 
                 if (widgetJson) {
-                    $.each(repository, function (key, value) {
+                    Object.entries(repository).forEach(function ([key, value]) {
                         var newValue = widgetJson[key];
 
                         if (newValue !== value) {
@@ -185,11 +185,27 @@ $signedRequest = $init->generate();
             });
         };
 
+        /**
+         * jQuery's .width()/.height() set the CONTENT box. `box-sizing: border-box` is
+         * in effect globally, so jQuery added padding and borders on top of the value;
+         * this reproduces that so author-set sizes render as they did before.
+         */
+        var setContentSize = function (element, dimension, value) {
+            var cs = getComputedStyle(element);
+            var extra = dimension === 'width'
+                ? parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight)
+                    + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth)
+                : parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)
+                    + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+
+            element.style[dimension] = (parseFloat(value) + extra) + 'px';
+        };
+
         // ===============================================================================
         // Using custom renderer to render any UI
         // ===============================================================================
-        var ShorttextCustomRenderer = function ($editPanel, qeApp) {
-            this.$editPanel = $editPanel;
+        var ShorttextCustomRenderer = function (editPanel, qeApp) {
+            this.editPanel = editPanel;
             this.qeApp = qeApp;
 
             this.init();
@@ -201,7 +217,7 @@ $signedRequest = $init->generate();
                 var key = data.key;
                 var value = data.value;
 
-                this.$el[key](value);
+                setContentSize(this.el, key, value);
             }.bind(this));
         };
 
@@ -211,20 +227,21 @@ $signedRequest = $init->generate();
             var height = widgetJson.height;
             var value = getNested(widgetJson, 'valid_response');
 
-            this.$editPanel
-                .find('[data-custom-shorttext-element]')
-                .replaceWith('<input class="custom-input" type="text">');
+            this.editPanel
+                .querySelectorAll('[data-custom-shorttext-element]')
+                .forEach(function (element) {
+                    element.outerHTML = '<input class="custom-input" type="text">';
+                });
 
-            this.$el = this.$editPanel
-                .find('.custom-input')
-                .width(width)
-                .height(height)
-                .val(value)
-                .on('change', function (event) {
-                    var validationValueAttr = this.qeApp.attribute('valid_response');
+            this.el = this.editPanel.querySelector('.custom-input');
+            setContentSize(this.el, 'width', width);
+            setContentSize(this.el, 'height', height);
+            this.el.value = value;
+            this.el.addEventListener('change', function (event) {
+                var validationValueAttr = this.qeApp.attribute('valid_response');
 
-                    validationValueAttr.setValue(event.currentTarget.value);
-                }.bind(this));
+                validationValueAttr.setValue(event.currentTarget.value);
+            }.bind(this));
         };
 
         ShorttextCustomRenderer.prototype.reset = function () {
@@ -235,8 +252,8 @@ $signedRequest = $init->generate();
         // Using Questions API to render the current Custom Question as inline element
         // ===============================================================================
         var _count = 0;
-        var ShorttextInlineQuestionsApiRenderer = function ($editPanel, qeApp, questionsApp) {
-            this.$editPanel = $editPanel;
+        var ShorttextInlineQuestionsApiRenderer = function (editPanel, qeApp, questionsApp) {
+            this.editPanel = editPanel;
             this.qeApp = qeApp;
             this.questionsApp = questionsApp;
 
@@ -249,11 +266,13 @@ $signedRequest = $init->generate();
                 this.render();
             }.bind(this));
 
-            this.$editPanel
-                .find('[data-custom-shorttext-element]')
-                .replaceWith('<div class="questionContainer"></div>');
+            this.editPanel
+                .querySelectorAll('[data-custom-shorttext-element]')
+                .forEach(function (element) {
+                    element.outerHTML = '<div class="questionContainer"></div>';
+                });
 
-            this.$questionContainer = this.$editPanel.find('.questionContainer');
+            this.questionContainer = this.editPanel.querySelector('.questionContainer');
         };
 
         ShorttextInlineQuestionsApiRenderer.prototype.render = function () {
@@ -269,12 +288,12 @@ $signedRequest = $init->generate();
                 value: value
             };
 
-            this.$questionContainer
-                .html('<span class="learnosity-response question-' + responseId + '"/>');
+            this.questionContainer.innerHTML =
+                '<span class="learnosity-response question-' + responseId + '"/>';
 
             this.questionsApp.append({
                 questions: [
-                    $.extend(widgetJson, {
+                    Object.assign(widgetJson, {
                         response_id: responseId
                     })
                 ],
@@ -338,7 +357,12 @@ $signedRequest = $init->generate();
                 Handler = customQuestionHandlers[widget.custom_type];
 
                 if (Handler) {
-                    _handler = new Handler($(data.wrapper), questionEditorApp, _hiddenQuestionApp);
+                    // data.wrapper may be an element or a selector; jQuery accepted both.
+                    var wrapper = typeof data.wrapper === 'string'
+                        ? document.querySelector(data.wrapper)
+                        : data.wrapper;
+
+                    _handler = new Handler(wrapper, questionEditorApp, _hiddenQuestionApp);
                 }
             }
         });

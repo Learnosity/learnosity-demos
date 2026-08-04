@@ -11,7 +11,7 @@ include_once '../../lrn_config.php';
 ?>
 
 <div class="jumbotron section">
-    <div class="pull-right toolbar">
+    <div class="float-end toolbar">
         <ul class="list-inline">
 
         </ul>
@@ -26,32 +26,32 @@ include_once '../../lrn_config.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Rich Feedback</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Rich Feedback</h2>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates reviewing a student assessment, and providing
                     Learnosity tools to enable rich teacher feedback using rubrics.<p>
                     <p>In this example, no scoring is applied to the student responses. Only
                     feedback from the teacher for the student to review.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link"  href="./rich-feedback/">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Simple Scoring</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Simple Scoring</h2>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates reviewing a student assessment, and providing
                     Learnosity tools enabling the teacher to apply a score to each student response.<p>
                     <p>In this example, scoring is applied to student responses via
                     the Data API.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link"  href="./simple-scoring/">Demo</a>
                     </p>
                 </div>

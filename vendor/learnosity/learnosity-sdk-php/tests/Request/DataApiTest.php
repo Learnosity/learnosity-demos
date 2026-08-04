@@ -127,6 +127,98 @@ class DataApiTest extends AbstractTestCase
         $this->assertEquals(5, $requestCount);
     }
 
+    /**
+     * Test that DataApi passes endpoint information to Init for metadata generation
+     */
+    public function testDataApiPassesEndpointForMetadata()
+    {
+        // Create a mock Remote to capture the request data
+        $mockRemote = new class implements RemoteInterface {
+            public $capturedUrl = '';
+            public $capturedData = [];
+
+            public function get(string $url, array $data = []): RemoteInterface
+            {
+                return $this;
+            }
+
+            public function post(string $url, array $data = []): RemoteInterface
+            {
+                $this->capturedUrl = $url;
+                $this->capturedData = $data;
+                return $this;
+            }
+
+            public function request(string $url, array $post = [])
+            {
+                // Suppress unused parameter warnings - required by interface
+                unset($url, $post);
+                // Not used in this test
+            }
+
+            public function getBody()
+            {
+                return '{"meta":{"status":true},"data":[]}';
+            }
+
+            public function getError(): array
+            {
+                return ['code' => 0, 'message' => ''];
+            }
+
+            public function getHeader(string $type = 'content_type')
+            {
+                // Suppress unused parameter warning - required by interface
+                unset($type);
+                return 'application/json';
+            }
+
+            public function getSize(bool $format = true)
+            {
+                // Suppress unused parameter warning - required by interface
+                unset($format);
+                return 100;
+            }
+
+            public function getStatusCode(): int
+            {
+                return 200;
+            }
+
+            public function getTimeTaken(): float
+            {
+                return 0.1;
+            }
+
+            public function json(bool $assoc = true)
+            {
+                return json_decode($this->getBody(), $assoc);
+            }
+        };
+
+        $securityPacket = [
+            'consumer_key' => 'test_consumer_key',
+            'domain' => 'localhost'
+        ];
+
+        $requestPacket = ['limit' => 20];
+        $endpoint = 'https://data.learnosity.com/v2023.1.lts/itembank/items';
+
+        $dataApi = new DataApi([], $mockRemote);
+        $dataApi->request($endpoint, $securityPacket, 'test_secret', $requestPacket, 'get');
+
+        // Verify the request data contains metadata
+        $this->assertEquals($endpoint, $mockRemote->capturedUrl);
+        $this->assertArrayHasKey('request', $mockRemote->capturedData);
+
+        $decodedRequest = json_decode($mockRemote->capturedData['request'], true);
+        $this->assertArrayHasKey('meta', $decodedRequest);
+        $this->assertArrayHasKey('consumer', $decodedRequest['meta']);
+        $this->assertArrayHasKey('action', $decodedRequest['meta']);
+        $this->assertEquals('test_consumer_key', $decodedRequest['meta']['consumer']);
+        $this->assertEquals('get_/itembank/items', $decodedRequest['meta']['action']);
+    }
+
     public function testRequestRecursiveArrayMerge()
     {
         $expectedResult = <<<JSON

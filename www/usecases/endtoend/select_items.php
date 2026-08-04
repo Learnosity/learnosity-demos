@@ -49,7 +49,7 @@ $signedRequest = $Init->generate();
 </div>
 
 <div class="section">
-    <p class="text-right">
+    <p class="text-end">
         <br>
         <a class="btn btn-primary btn-md btn-goToAssessment" id="go-to-button" style="opacity: .75; cursor: not-allowed;">Go to Assessment</a>
     </p>
@@ -80,9 +80,9 @@ $signedRequest = $Init->generate();
         }
     });
 
-    $(document).ready(function(){
+    document.addEventListener('DOMContentLoaded', function () {
         //Go to assessment handler
-        $(".btn-goToAssessment").click(function(){
+        document.querySelector(".btn-goToAssessment").addEventListener("click", function () {
             let itemPromise = authorApp.getSelectedItems();
             if (itemPromise === false) {
                 console.log("No items selected.");
@@ -91,7 +91,7 @@ $signedRequest = $Init->generate();
             itemPromise
                 .then(function (result) {
                     let itemIDs = [];
-                    $.each(result.data.items, function (index, value) {
+                    Object.values(result.data.items).forEach(function (value) {
                         itemIDs.push(value.item.reference);
                     });
                     window.location = 'assessment.php?itemIDs=' + itemIDs.join(",");

@@ -41,8 +41,8 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+                <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <div class="overview">
@@ -60,7 +60,7 @@ $signedRequest = $Init->generate();
             </div>
             <div class="col-md-6">
                 <div class="hints">
-                    <table class="table table-bordered table-condensed">
+                    <table class="table table-bordered table-sm">
                         <thead>
                             <tr>
                                 <th></th>
@@ -114,9 +114,9 @@ $signedRequest = $Init->generate();
                 audioQuestion.on('recording:stopped', function () {
                     audioQuality = audioQuestion.response.audioQualityCheck();
                     console.log(audioQuality);
-                    $('.numberOfClippingSamples').html(audioQuality.detail.numberOfClippingSamples);
-                    $('.maxRmsEnergy').html(audioQuality.detail.maxRmsEnergy);
-                    $('.minRmsEnergy').html(audioQuality.detail.minRmsEnergy);
+                    document.querySelector('.numberOfClippingSamples').innerHTML = audioQuality.detail.numberOfClippingSamples;
+                    document.querySelector('.maxRmsEnergy').innerHTML = audioQuality.detail.maxRmsEnergy;
+                    document.querySelector('.minRmsEnergy').innerHTML = audioQuality.detail.minRmsEnergy;
                     checkQuality();
                 });
             },
@@ -128,31 +128,41 @@ $signedRequest = $Init->generate();
         var itemsApp = LearnosityItems.init(initializationObject, callbacks);
 
         function checkQuality() {
-            $('.good,.bad').removeClass("good bad");
-            if (parseFloat($('.numberOfClippingSamples').html(), 10) > parseFloat($('.numberOfClippingSamples_inp').val(), 10)) {
-                $('.numberOfClippingSamples').addClass('bad');
-                $('.numberOfClippingSamples_result').addClass('bad').html('Too Loud');
+            document.querySelectorAll('.good,.bad').forEach(function (element) {
+                element.classList.remove("good", "bad");
+            });
+            if (parseFloat(document.querySelector('.numberOfClippingSamples').innerHTML, 10) > parseFloat(document.querySelector('.numberOfClippingSamples_inp').value, 10)) {
+                document.querySelector('.numberOfClippingSamples').classList.add('bad');
+                document.querySelector('.numberOfClippingSamples_result').classList.add('bad');
+                document.querySelector('.numberOfClippingSamples_result').innerHTML = 'Too Loud';
             } else {
-                $('.numberOfClippingSamples').addClass('good');
-                $('.numberOfClippingSamples_result').addClass('good').html('Acceptable');
+                document.querySelector('.numberOfClippingSamples').classList.add('good');
+                document.querySelector('.numberOfClippingSamples_result').classList.add('good');
+                document.querySelector('.numberOfClippingSamples_result').innerHTML = 'Acceptable';
             }
-            if (parseFloat($('.maxRmsEnergy').html(), 10) < parseFloat($('.maxRmsEnergy_inp').val(), 10)) {
-                $('.maxRmsEnergy').addClass('bad');
-                $('.maxRmsEnergy_result').addClass('bad').html('Too Quiet');
+            if (parseFloat(document.querySelector('.maxRmsEnergy').innerHTML, 10) < parseFloat(document.querySelector('.maxRmsEnergy_inp').value, 10)) {
+                document.querySelector('.maxRmsEnergy').classList.add('bad');
+                document.querySelector('.maxRmsEnergy_result').classList.add('bad');
+                document.querySelector('.maxRmsEnergy_result').innerHTML = 'Too Quiet';
             } else {
-                $('.maxRmsEnergy').addClass('good');
-                $('.maxRmsEnergy_result').addClass('good').html('Acceptable');
+                document.querySelector('.maxRmsEnergy').classList.add('good');
+                document.querySelector('.maxRmsEnergy_result').classList.add('good');
+                document.querySelector('.maxRmsEnergy_result').innerHTML = 'Acceptable';
             }
-            if (parseFloat($('.minRmsEnergy').html(), 10) > parseFloat($('.minRmsEnergy_inp').val(), 10)) {
-                $('.minRmsEnergy').addClass('bad');
-                $('.minRmsEnergy_result').addClass('bad').html('Background Noise');
+            if (parseFloat(document.querySelector('.minRmsEnergy').innerHTML, 10) > parseFloat(document.querySelector('.minRmsEnergy_inp').value, 10)) {
+                document.querySelector('.minRmsEnergy').classList.add('bad');
+                document.querySelector('.minRmsEnergy_result').classList.add('bad');
+                document.querySelector('.minRmsEnergy_result').innerHTML = 'Background Noise';
             } else {
-                $('.minRmsEnergy').addClass('good');
-                $('.minRmsEnergy_result').addClass('good').html('Acceptable');
+                document.querySelector('.minRmsEnergy').classList.add('good');
+                document.querySelector('.minRmsEnergy_result').classList.add('good');
+                document.querySelector('.minRmsEnergy_result').innerHTML = 'Acceptable';
             }
         }
 
-        $('.checkQualityInputs input').on("change", checkQuality);
+        document.querySelectorAll('.checkQualityInputs input').forEach(function (input) {
+            input.addEventListener("change", checkQuality);
+        });
 
     </script>
 

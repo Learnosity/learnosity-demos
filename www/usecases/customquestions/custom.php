@@ -58,7 +58,7 @@ $request = '{
 <div class="jumbotron section">
      <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/articles/360000758817-Creating-Custom-Questions" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/articles/360000758817-Creating-Custom-Questions" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
 
         </ul>
     </div>
@@ -81,11 +81,11 @@ $request = '{
     </div>
     <div class="row">
         <div class="col-md-6">
-            <button class="btn btn-primary pull-right" id="render_custom_question">Render JSON</button>
+            <button class="btn btn-primary float-end" id="render_custom_question">Render JSON</button>
         </div>
         <div class="col-md-6">
             <div class="custom-score"><strong>Score: </strong> <span id="question_score">0</span> / <span id="question_max_score">0</span></div>
-            <button class="btn btn-primary pull-right" id="validate_question">Check Answer</button>
+            <button class="btn btn-primary float-end" id="validate_question">Check Answer</button>
         </div>
     </div>
 </div>
@@ -106,7 +106,7 @@ $request = '{
         editor.focus();
 
 
-    $(function(){
+    document.addEventListener('DOMContentLoaded', function () {
 
         function init() {
             var json;
@@ -118,9 +118,8 @@ $request = '{
                 return;
             }
 
-            $('#custom_question_wrapper').html(
-                '<span class="learnosity-response question-'+json.response_id+'"></span>'
-            );
+            document.getElementById('custom_question_wrapper').innerHTML =
+                '<span class="learnosity-response question-'+json.response_id+'"></span>';
 
             activity.questions = [json];
 
@@ -135,22 +134,22 @@ $request = '{
                         updateScores(question);
                     });
 
-                    $('#validate_question').off().click(function() {
+                    document.getElementById('validate_question').onclick = function () {
                         questionsApp.validateQuestions();
-                    });
+                    };
                 }
             });
         }
 
         function updateScores(question) {
             var score = question.getScore();
-            $('#question_score').html((score && score.score) || 0);
-            $('#question_max_score').html((score && score.max_score) || 0);
+            document.getElementById('question_score').innerHTML = ((score && score.score) || 0);
+            document.getElementById('question_max_score').innerHTML = ((score && score.max_score) || 0);
         }
 
         init();
 
-        $('#render_custom_question').click(init);
+        document.getElementById('render_custom_question').addEventListener('click', init);
 
     });
 

@@ -22,6 +22,8 @@ You can also download the entire demo site or browse the code directly on [GitHu
 
 The Init class is used to create the necessary *security* and *request* details used to integrate with a Learnosity API. Most often this will be a JavaScript object.
 
+For Data API requests, the Init class automatically includes internal metadata (consumer identifier and action) in the request packet. This metadata is used by Learnosity infrastructure for routing decisions and is completely transparent to your application.
+
 ``` php
 //Include the Init and Uuid classes.
 use LearnositySdk\Request\Init;
@@ -181,6 +183,8 @@ Returns the HTTP status code of the response.
 ### DataApi
 
 This is a helper class for use with the Data API. It creates the initialisation packet and sends a request to the Data API, returning an instance of Remote. You can then interact as you would with Remote, e.g., `getBody()`
+
+**Automatic Metadata Inclusion**: The DataApi class automatically includes internal metadata in every request for infrastructure routing purposes. This metadata includes the consumer identifier and the action being performed (derived from the endpoint and HTTP method). This functionality is completely transparent to your application and requires no code changes.
 
 #### request()
 

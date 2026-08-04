@@ -34,6 +34,79 @@ class RemoteTest extends AbstractTestCase
         $this->assertCount($arr['meta']['records'], $arr['data']);
     }
 
+    /**
+     * Test that metadata headers are added to Data API requests
+     */
+    public function testMetadataHeadersAddedToDataApiRequests()
+    {
+        // Test the addMetadataHeaders method directly using reflection
+        $remote = new Remote();
+        $reflection = new \ReflectionClass($remote);
+        $method = $reflection->getMethod('addMetadataHeaders');
+        $method->setAccessible(true);
+
+        // Create Data API request data with metadata
+        $requestData = [
+            'security' => '{"consumer_key":"test_consumer","domain":"localhost"}',
+            'request' => '{"meta":{"sdk":{"version":"v1.1.0","lang":"php"},"consumer":"test_consumer","action":"get_/itembank/items"},"limit":100}',
+            'action' => 'get'
+        ];
+
+        $headers = [];
+        $result = $method->invoke($remote, $headers, $requestData);
+
+        // Verify that metadata headers were added
+        $consumerHeaderFound = false;
+        $actionHeaderFound = false;
+        $sdkHeaderFound = false;
+
+        foreach ($result as $header) {
+            if (strpos($header, 'X-Learnosity-Consumer: test_consumer') === 0) {
+                $consumerHeaderFound = true;
+            }
+            if (strpos($header, 'X-Learnosity-Action: get_/itembank/items') === 0) {
+                $actionHeaderFound = true;
+            }
+            if (strpos($header, 'X-Learnosity-SDK: PHP:1.1.0') === 0) {
+                $sdkHeaderFound = true;
+            }
+        }
+
+        $this->assertTrue($consumerHeaderFound, 'Consumer header should be added');
+        $this->assertTrue($actionHeaderFound, 'Action header should be added');
+        $this->assertTrue($sdkHeaderFound, 'SDK header should be added');
+    }
+
+    /**
+     * Test that metadata headers are not added to non-Data API requests
+     */
+    public function testMetadataHeadersNotAddedToNonDataApiRequests()
+    {
+        // Test the addMetadataHeaders method directly using reflection
+        $remote = new Remote();
+        $reflection = new \ReflectionClass($remote);
+        $method = $reflection->getMethod('addMetadataHeaders');
+        $method->setAccessible(true);
+
+        // Create non-Data API request data (missing 'request' and 'security' keys)
+        $requestData = ['some' => 'data'];
+
+        $headers = [];
+        $result = $method->invoke($remote, $headers, $requestData);
+
+        // Verify that no metadata headers were added
+        $hasMetadataHeaders = false;
+        foreach ($result as $header) {
+            if (strpos($header, 'X-Learnosity-Consumer:') !== false
+                || strpos($header, 'X-Learnosity-Action:') !== false
+                || strpos($header, 'X-Learnosity-SDK:') !== false) {
+                $hasMetadataHeaders = true;
+                break;
+            }
+        }
+        $this->assertFalse($hasMetadataHeaders, 'No metadata headers should be added to non-Data API requests');
+    }
+
     public function testGet()
     {
         $remote = new Remote();

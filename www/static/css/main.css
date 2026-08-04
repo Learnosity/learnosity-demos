@@ -1,5 +1,337 @@
 /********************************************************************
 *
+* Bootstrap 3 metric parity
+*
+* This block re-establishes the global metrics Bootstrap 3 provided and
+* this design was built on top of, which Bootstrap 5 changed. It must stay
+* at the TOP of this file: everything below it overrode Bootstrap 3 before
+* the upgrade and needs to keep overriding these values in the same order.
+*
+* See docs/bootstrap-5-upgrade.md
+*
+********************************************************************/
+
+/* BS3 base was 14px; BS5 is 1rem/16px. This file never set a body font-size,
+   so the whole site's type scale hung off Bootstrap. */
+body {
+    font-size: 14px;
+}
+
+/* IMPORTANT - do not reintroduce `rem` units in this file.
+ *
+ * Bootstrap 3 set `html { font-size: 62.5% }`, making 1rem = 10px, and every rem
+ * value written here was authored against that. Bootstrap 5 does not set a root
+ * font-size, so the root is the browser default of 16px and each of those values
+ * silently grew by 1.6x (card padding 21.875px -> 35px, and so on).
+ *
+ * Setting the root back to 62.5% is not an option: BS5's own stylesheet is
+ * rem-based throughout, so it would shrink all of Bootstrap by the same factor.
+ * Instead every rem in this file has been converted to its 10px equivalent, which
+ * renders identically to before and no longer depends on the root font-size.
+ * Use px here; `em` is fine, since it resolves against the element's own size. */
+
+/* BS3 heading scale (BS5: 40/32/28/24/20/16px) and heading/paragraph margins. */
+h1, .h1 { font-size: 36px; }
+h2, .h2 { font-size: 30px; }
+h3, .h3 { font-size: 24px; }
+h4, .h4 { font-size: 18px; }
+h5, .h5 { font-size: 14px; }
+h6, .h6 { font-size: 12px; }
+
+h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+/* BS3 links were not underlined; BS5 underlines them by default. This file only
+   ever added an underline on :hover, which implies the un-underlined default. */
+a {
+    text-decoration: none;
+}
+
+/* BS3 used an absolute `bold`; BS5 Reboot uses the relative `bolder`. Inside
+   .jumbotron p (font-weight: 200) `bolder` only resolves to 400, so <strong> in
+   any jumbotron paragraph stopped rendering bold. */
+b, strong {
+    font-weight: bold;
+}
+
+/* BS3 used fixed container widths; BS5 uses max-width at different
+   breakpoints. Reset max-width so the widths below take effect. */
+.container {
+    width: 100%;
+    max-width: none;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px)  { .container { width: 750px; } }
+@media (min-width: 992px)  { .container { width: 970px; } }
+@media (min-width: 1200px) { .container { width: 1170px; } }
+
+.row {
+    /* BS3 grid gutter was 30px; BS5 defaults to 1.5rem/24px. */
+    --bs-gutter-x: 30px;
+
+    /* BS3's .row was float-based, so its children never stretched to a shared height.
+       BS5's .row is a flex container defaulting to align-items: stretch, which gives
+       each child a DEFINITE height - and a definite height cannot grow later when
+       content arrives. That clipped the asynchronously rendered Learnosity reports on
+       analytics/teacher-centric-reporting.php, spilling them past the card and into
+       the footer. flex-start restores BS3's behaviour.
+       Verified this does not move the landing page card grids: those size themselves
+       with min-height, so stretch was never contributing anything there. */
+    align-items: flex-start;
+}
+
+/* Same width-vs-max-width trap as .container above: BS3 sized modals with
+   `width`, while BS5 adds `max-width: var(--bs-modal-width)` (500px) at >=576px,
+   which was clamping this file's `.modal-dialog { width: 70% }` down to 500px. */
+.modal-dialog {
+    max-width: none;
+}
+
+/* BS3's navbar was float-based, so `.container { flex-grow: 1 }` further down
+   this file never applied to it. BS5's navbar IS a flex container, so without
+   this the header's container stretches to the full viewport instead of holding
+   the site's container width. */
+.navbar > .container {
+    flex-grow: 0;
+}
+
+/* BS3 put no padding on .navbar itself; BS5 adds .5rem top and bottom. */
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* BS3 gave navbar links 15px vertical padding at >=768px; BS5 .nav-link uses 8px. */
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        line-height: 20px;
+    }
+}
+
+/* Horizontal link padding has to be restated at matching specificity: BS5's
+   `.navbar-expand-lg .navbar-nav .nav-link` (0,3,0) outranks the
+   `.navbar-nav > li > a` rules further down this file (0,1,2), which is why they
+   no longer take effect on their own. The values are BS3's measured output -
+   15px from `.nav > li > a` below the expand breakpoint, 20px above it. */
+.navbar-nav .nav-link {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    /* The first nav item should be separated from the logo by the same gap that
+       separates the items from each other, which is 20px of link padding on each
+       side. The logo image's text runs to its right edge, so 20px of margin here
+       plus the link's own 20px padding gives a matching 40px. */
+    .navbar-nav:not(.nav-sec) {
+        margin-left: 20px;
+    }
+
+    /* Sit the nav text on the same baseline as "Learnosity Demos" inside the
+       logo. That logo is a 570x80 PNG rendered 310px wide (scale 0.5439) whose
+       text baseline is at source y=61 - 6.5px below where the nav text lands by
+       default. Shifting padding rather than the box keeps the link's 50px height
+       and hit area intact. */
+    .navbar-expand-lg .navbar-nav:not(.nav-sec) .nav-link {
+        padding-top: 21.5px;
+        padding-bottom: 8.5px;
+    }
+}
+
+/* BS5 makes .navbar-collapse a flex container, and floats do not apply to flex
+   items, so the "View source" button needs an auto margin to sit hard right. */
+@media (min-width: 1000px) {
+    .nav-sec-wrapper {
+        margin-left: auto;
+    }
+}
+
+/* Note: BS3's float-based .navbar-header pushed the nav onto a second row
+   beneath the logo. The header is intentionally a single row now. If the wrap is
+   ever wanted back, BS5 forces one line via `.navbar-expand-lg{flex-wrap:nowrap}`
+   and .container inherits it, so flex-wrap has to be re-enabled on the navbar
+   before flex-basis on .navbar-collapse will do anything. */
+
+/********************************************************************
+*
+* .card (replaces BS3's .panel)
+*
+* BS5's card is the successor to BS3's panel, with different default
+* metrics. These restate BS3's panel defaults through BS5's card custom
+* properties, so the .card rules further down this file land on the same
+* base their .panel counterparts always did.
+*
+* BS5's card is also display:flex/column where BS3's panel was a block.
+* That is left alone: the children stack the same way, and .card-body's
+* flex-grow only fills space that was empty white before.
+*
+********************************************************************/
+.card {
+    /* .panel-body { padding: 15px } */
+    --bs-card-spacer-y: 15px;
+    --bs-card-spacer-x: 15px;
+    /* .panel-heading { padding: 10px 15px } */
+    --bs-card-cap-padding-y: 10px;
+    --bs-card-cap-padding-x: 15px;
+    /* .panel { border-radius: 4px }, .panel-default { border-color: #ddd } */
+    --bs-card-border-radius: 4px;
+    --bs-card-border-color: #ddd;
+    /* .panel-default > .panel-heading { background-color: #f5f5f5 } */
+    --bs-card-cap-bg: #f5f5f5;
+    /* .panel { margin-bottom: 20px; box-shadow: ... } */
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+/* BS5 removed .form-group entirely (its margin became a utility class). The class is
+   kept in the markup as this project's own, purely for this spacing; the row grid it
+   used to get from .form-horizontal now comes from an explicit .row alongside it. */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* BS3's contextual table classes (`<th class="info">`) became `.table-*` in BS5, and
+   the palette changed with them - BS5's .table-info is #cff4fc against BS3's #d9edf7.
+   BS5 paints the cell via an inset box-shadow driven by --bs-table-bg, so overriding
+   that variable restores the original colour. Used by assessment/inline.php. */
+.table-info {
+    --bs-table-bg: #d9edf7;
+    --bs-table-border-color: #bcdff1;
+}
+
+.table {
+    /* BS3's .table had a 20px bottom margin; BS5 uses 1rem (16px). */
+    margin-bottom: 20px;
+
+    /* BS3 painted no background on table cells, so a background set on the <tr> showed
+       through - which is exactly how the cut-score reports highlight student rows
+       (analytics/teacher-centric-reporting.php). BS5 sets --bs-table-bg to the body
+       background and paints every cell with it, hiding the row underneath.
+       Defaulting it to transparent restores BS3's behaviour without breaking the
+       contextual classes: .table-info and friends set --bs-table-bg on the cell
+       itself, which still wins over this inherited value. */
+    --bs-table-bg: transparent;
+}
+
+/* BS3 drew cell separators as a 1px border-TOP on every cell, so the last row had
+   no rule beneath it. BS5 switched to border-BOTTOM on every cell, which leaves a
+   stray line under the final row. Restore BS3's model.
+   `.table-bordered > :not(caption) > * > *` is (0,2,1) and so still outranks this
+   (0,1,1) rule, meaning bordered tables keep their full box. */
+.table > :not(caption) > * > * {
+    border-bottom-width: 0;
+    border-top: 1px solid #ddd;
+    line-height: 1.428571429;
+}
+
+/* BS3's .table-condensed became .table-sm, and the padding changed with it. */
+.table-sm > :not(caption) > * > * {
+    padding: 5px;
+}
+
+/* BS3's .checkbox, now owned here. Deliberately NOT migrated to BS5's .form-check:
+   that restyles the checkbox itself with a custom box, where BS3 laid out a native
+   checkbox with a hanging indent. Keeping BS3's rules keeps the controls looking the
+   same. Used by the Data API request forms. */
+.checkbox {
+    display: block;
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.checkbox label {
+    display: inline;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+    float: left;
+    margin-left: -20px;
+}
+
+/* .panel-title { margin: 0; font-size: 16px; color: inherit } - BS5's .card-title
+   adds a bottom margin and no font-size. Note the landing pages put .card-title on
+   an h3 inside .card-header, where the 18px rule below still wins, as it did before. */
+.card-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+/********************************************************************
+*
+* .jumbotron
+*
+* Bootstrap 5 removed the jumbotron component, and it is used on all 123
+* demo pages. Rather than restructure every page, the site now owns it:
+* these are Bootstrap 3's rules, so the overrides further down this file
+* continue to apply exactly as they did before.
+*
+********************************************************************/
+.jumbotron {
+    padding: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
+    border-radius: 6px;
+}
+
+.jumbotron h1,
+.jumbotron .h1 {
+    color: inherit;
+}
+
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 200;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .container .jumbotron {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .jumbotron h1,
+    .jumbotron .h1 {
+        font-size: 63px;
+    }
+}
+
+/********************************************************************
+*
 * Defaults
 *
 ********************************************************************/
@@ -40,16 +372,16 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 :root {
     --font: "Gilroy", sans-serif;
-    --font-size: 1rem;
-    --font-size-body: 1.125rem;
-    --font-size-lg: 1.375rem;
-    --font-size-sm: 0.875rem;
+    --font-size: 10px;
+    --font-size-body: 11.25px;
+    --font-size-lg: 13.75px;
+    --font-size-sm: 8.75px;
     --line-height: 1.6;
-    --heading-font-size-xl: 2.625rem;
-    --heading-font-size-lg: 2.375rem;
-    --heading-font-size-md: 1.75rem;
-    --heading-font-size-sm: 1.5rem;
-    --heading-font-size-xs: 1.375rem;
+    --heading-font-size-xl: 26.25px;
+    --heading-font-size-lg: 23.75px;
+    --heading-font-size-md: 17.5px;
+    --heading-font-size-sm: 15px;
+    --heading-font-size-xs: 13.75px;
     --heading-font-size-xs: var(--font-size-lg);
     --colour-white: #fff;
     --colour-off-white: #f6f9fe;
@@ -78,52 +410,52 @@ h1, h2, h3, h4, h5, h6, .navbar {
     --pinterest-red: #cb2027;
     --youtube-red: red;
     --flickr-pink: #ff0084;
-    --container-max-width: 80rem;
-    --container-max-width-wide: 90rem;
-    --container-max-width-narrow: 42.5rem;
-    --gutter: 1.25rem;
+    --container-max-width: 800px;
+    --container-max-width-wide: 900px;
+    --container-max-width-narrow: 425px;
+    --gutter: 12.5px;
     --transition: 0.2s;
     --letter-spacing: 0.01em;
-    --border-radius: 0.625rem;
+    --border-radius: 6.25px;
     --z-index-menu: 90;
     --z-index-modal: 100;
-    --shadow: 0 0 1.875rem 0 rgba(20, 55, 70, .2);
-    --shadow: 0 0 1.875rem 0 var(--colour-teal-opaque)
+    --shadow: 0 0 18.75px 0 rgba(20, 55, 70, .2);
+    --shadow: 0 0 18.75px 0 var(--colour-teal-opaque)
 }
 
-.index .panel.panel-default:hover {
+.index .card:hover {
     transform: translateY(-0.55rem);
 }
 
-.index .panel.panel-default {
+.index .card {
     transition: transform 0.25s linear;
 }
 
-.panel.panel-default {
+.card {
     min-height:260px;
     position: relative;
-    padding: 2.1875rem 1.875rem;
+    padding: 21.875px 18.75px;
     border-radius: 10px;
-    margin: 1.25rem;
+    margin: 12.5px;
     background-color: #fff;
-    -webkit-box-shadow: 0 0 1.875rem 0 rgba(20,55,70,.2);
-    box-shadow: 0 0 1.875rem 0 rgba(20,55,70,.2);
+    -webkit-box-shadow: 0 0 18.75px 0 rgba(20,55,70,.2);
+    box-shadow: 0 0 18.75px 0 rgba(20,55,70,.2);
 }
 
-.panel .panel-heading {
+.card .card-header {
     background-color: #fff;
     border-color:  #fff;
 }
-.panel .panel-heading h3 {
+.card .card-header h3 {
     font-size: 18px;
     font-weight:700;
 }
 
-.panel .panel-body a {
+.card .card-body a {
     font-weight:700;
 }
 
-.panel .panel-body a.demo_link {
+.card .card-body a.demo_link {
     position: absolute;
     bottom:20px;
     right:20px;
@@ -142,7 +474,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 }
 
-.panel .panel-body a.demo_link:hover {
+.card .card-body a.demo_link:hover {
     background-color: #d70000;
     text-decoration: none;
 }
@@ -168,33 +500,33 @@ h1, h2, h3, h4, h5, h6, .navbar {
 .section.pad-sml {
     min-height:260px;
     position: relative;
-    padding: 2.1875rem 1.875rem;
+    padding: 21.875px 18.75px;
     border-radius: 10px;
-    margin: 1.25rem;
+    margin: 12.5px;
     background-color: #fff;
-    -webkit-box-shadow: 0 0 1.875rem 0 rgba(20,55,70,.2);
-    box-shadow: 0 0 1.875rem 0 rgba(20,55,70,.2);
+    -webkit-box-shadow: 0 0 18.75px 0 rgba(20,55,70,.2);
+    box-shadow: 0 0 18.75px 0 rgba(20,55,70,.2);
 }
 
-.panel.panel-default.main-page-panel {
+.card.main-page-panel {
     min-height:400px;
     text-align:center;
 }
 
-.panel.panel-default.main-page-panel .panel-heading h2{
+.card.main-page-panel .card-header h2 {
     font-size: 28px;
     font-weight:700;
 }
 
-.panel.panel-default.main-page-panel .panel-body {
+.card.main-page-panel .card-body {
     font-size: 18px;
 }
 
-.panel.panel-default.main-page-panel.panel-short {
+.card.main-page-panel.panel-short {
     min-height:180px;
 }
 
-.panel.panel-default.panel-data {
+.card.panel-data {
     min-height:60px;
 }
 
@@ -402,7 +734,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
     -webkit-transition: opacity .15s linear;
             transition: opacity .15s linear;
   }
-.preview-fade.in {
+.preview-fade.show {
     transition: opacity .6s;
     opacity: 1;
 }
@@ -576,7 +908,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
 * Data API
 *
 ********************************************************************/
-.panel-title .block {
+.card-title .block {
     background-color: #0071CE;
     color: #FFFFFF;
     position: relative;
@@ -699,11 +1031,11 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 }
 
-.inner-heading .glyphicon {
+.inner-heading .bi {
     margin-right: 10px;
 }
 
-.inner-heading :hover .glyphicon {
+.inner-heading :hover .bi {
     color: #62AE41;
 }
 
@@ -734,7 +1066,7 @@ a:focus,
     outline: thin dotted #777;
 }
 
-.dropdown.open .dropdown-toggle {
+.dropdown.show .dropdown-toggle {
     outline: none;
 }
 
@@ -760,15 +1092,15 @@ a:focus,
     /*padding-right: 20px;*/
 /*}*/
 
-.glyphicon-question-sign:before {
+.bi-question-circle-fill:before {
     color: #e21c47;
 }
 
-.glyphicon-cloud-download:before {
+.bi-cloud-download:before {
     color: #f1bd19;
 }
 
-.glyphicon-info-sign:before {
+.bi-info-circle-fill:before {
     color: #93d5d9;
 }
 
@@ -1015,7 +1347,7 @@ img.product-logo {
     padding-right: 0px;
 }
 
-.landing .jumbotron .glyphicon {
+.landing .jumbotron .bi {
     font-size: 30px;
 }
 
@@ -1076,7 +1408,7 @@ img.product-logo {
     border-collapse: collapse !important;
 }
 
-.jumbotron .panel-body p {
+.jumbotron .card-body p {
     margin-top: 5px;
     font-size: 16px;
 }
@@ -1085,7 +1417,7 @@ img.product-logo {
     margin-top: 15px;
 }
 
-.panel-default > .panel-heading {
+.card > .card-header {
     background-image: none;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -1112,12 +1444,14 @@ img.product-logo {
     width: 765px;
 }
 
-#accordion .panel-heading {
+#accordion .card-header {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.panel-group .panel {
+/* The Data API accordion is cards + collapse rather than BS5's .accordion component,
+   which brings its own chrome. */
+#accordion .card {
     border-radius: 0px;
 }
 
@@ -1158,7 +1492,7 @@ img.product-logo {
         border: 0;
     }
 
-    .panel.panel-default {
+    .card {
         margin-left: 0px;
         margin-right: 0px;
     }
@@ -1201,14 +1535,27 @@ img.product-logo {
     padding-right: 0px;
 }
 
-#settings .panel-heading {
+/* The settings modals' containers were BS3 `panel panel-info`, which never picked up
+   the .panel-default content-card styling further up this file. Now that they are
+   .card, that styling has to be reset back to the plain white block BS3 rendered. */
+#settings .card {
+    min-height: 0;
+    padding: 0;
+    margin: 0 0 20px;
+    border: none;
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+#settings .card-header {
     color: inherit;
     background-color: inherit;
     border: none;
-}
-
-#settings .panel-info {
-    border: none;
+    /* .panel-heading's 10px, not the 15px that `.card > .card-header` applies for
+       the content cards on the landing pages. */
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #settings h3 {
@@ -1218,9 +1565,13 @@ img.product-logo {
     letter-spacing: 0.03em;
 }
 
-#settings .form-horizontal .control-label {
+/* BS3 right-aligned labels via `.form-horizontal .control-label`; BS5 has neither
+   class, so the alignment is restated here against .col-form-label. */
+#settings .col-form-label {
     padding-top: 0px;
+    padding-bottom: 0px;
     font-weight: normal;
+    text-align: right;
 }
 
 #settings .form-group {
@@ -1249,13 +1600,13 @@ img.product-logo {
     position: relative;
 }
 
-.gallery.card-active {
+.gallery.gallery-card-active {
     width: 90%;
     margin: 0 auto;
 }
 
 .pod-inner,
-.card {
+.gallery-card {
     position: relative;
     z-index: 1;
     background: #fff;
@@ -1291,24 +1642,24 @@ img.product-logo {
     left: auto;
 }
 
-.card {
+.gallery-card {
     margin-bottom: 25px;
     min-height: 265px;
 }
 
-.card:not(.active) {
+.gallery-card:not(.active) {
     padding: 25px 0;
 }
 
-.card.report:not(.active) {
+.gallery-card.report:not(.active) {
     padding: 25px 0 0 0;
 }
 
-.card.active {
+.gallery-card.active {
     padding: 25px;
 }
 
-.card:not(.active) .learnosity-item {
+.gallery-card:not(.active) .learnosity-item {
     height: 300px;
     overflow: hidden;
     padding-right: 10px;
@@ -1316,7 +1667,7 @@ img.product-logo {
     margin: -50px -60px -50px -50px;
 }
 
-.card:not(.active):before {
+.gallery-card:not(.active):before {
     cursor: pointer;
     z-index: 1;
     content: "";
@@ -1329,11 +1680,11 @@ img.product-logo {
     bottom: 0;
 }
 
-.card:not(.active) .save {
+.gallery-card:not(.active) .save {
     display: none;
 }
 
-.card:not(.active) .cancel {
+.gallery-card:not(.active) .cancel {
     display: none;
 }
 
@@ -1447,13 +1798,13 @@ img.product-logo {
     cursor: default;
 }
 
-.card-active .gallery-button,
-.card-active .gallery-pagination {
+.gallery-card-active .gallery-button,
+.gallery-card-active .gallery-pagination {
     opacity: 1;
 }
 
-.card-active .gallery-button,
-.card-active .gallery-pagination li button {
+.gallery-card-active .gallery-button,
+.gallery-card-active .gallery-pagination li button {
     transition: all .25s ease-in;
 }
 
@@ -1482,13 +1833,13 @@ textarea.form-control {
     background: #f9f9f9;
 }
 
-.sortable .glyphicon-move {
+.sortable .bi-arrows-move {
     font-size: 12px;
     color: #444;
     padding-right: 2px;
 }
 
-.panel-title a {
+.card-title a {
     display: block;
 }
 
@@ -1713,14 +2064,14 @@ textarea.form-control {
 *
 ********************************************************************/
 
-#collapseOne.collapse.in {
+#collapseOne.collapse.show {
     display: block !important;
 }
 
-#collapseTwo.collapse.in {
+#collapseTwo.collapse.show {
     display: block !important;
 }
 
-#collapseThree.collapse.in {
+#collapseThree.collapse.show {
     display: block !important;
 }

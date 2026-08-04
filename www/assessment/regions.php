@@ -78,9 +78,9 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Customise API Settings"><a href="#" class="text-muted" data-toggle="modal" data-target="#settings"><span class="glyphicon glyphicon-list-alt"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Preview API Initialization Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li class="list-inline-item"><a href="#" class="text-muted" data-bs-toggle="modal" data-bs-target="#settings" aria-label="Customise API Settings" data-bs-title="Customise API Settings"><span class="bi bi-list-ul" aria-hidden="true"></span></a></li>
+                <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialization Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+                <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <div class="overview">
@@ -89,7 +89,7 @@ $signedRequest = $Init->generate();
             <p>All visual elements such as buttons, timer, pager, etc. are modularized in such a way that they can be placed
             in different <em>regions</em> of the assessment container.</p>
             <p>Read more about regions on the <a href="https://support.learnosity.com/hc/en-us/articles/360000758337-Customizing-the-Assessment-Player-experience-with-Regions">docs site</a>,
-            or select one of the <a href="#" class="text-muted" data-toggle="modal" data-target="#settings">default or custom regions</a>
+            or select one of the <a href="#" class="text-muted" data-bs-toggle="modal" data-bs-target="#settings">default or custom regions</a>
             to see the sorts of things you can do.</p>
         </div>
     </div>

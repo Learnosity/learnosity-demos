@@ -67,8 +67,8 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+            <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -105,33 +105,38 @@ $signedRequest = $Init->generate();
             label: 'youtube',
             icon: '/../static/images/youtube_social_icon_red.png',
             func: function(attribute, callback) {
-                var $modal = $('.modal.img-upload'),
-                    $embedButton = $('button#embed'),
-                    $closeButton = $('button#cancelembed'),
-                    $customContent = $('#ck-custom-content').prop('outerHTML');
+                var modalEl = document.querySelector('.modal.img-upload'),
+                    embedButton = document.querySelector('button#embed'),
+                    closeButton = document.querySelector('button#cancelembed'),
+                    modal = bootstrap.Modal.getOrCreateInstance(modalEl, { backdrop: 'static' });
+
+                    if (typeof buttonClickHandler === 'function') {
+                        embedButton.removeEventListener('click', buttonClickHandler);
+                    }
+                    if (typeof cancelClickHandler === 'function') {
+                        closeButton.removeEventListener('click', cancelClickHandler);
+                    }
+
+                    detachEmbedHandlers = function () {
+                            closeButton.removeEventListener('click', cancelClickHandler);
+                            embedButton.removeEventListener('click', buttonClickHandler);
+                    };
 
                     buttonClickHandler = function () {
-                            $customContent = $('#ck-custom-content').prop('outerHTML');
-                            callback($customContent);
-                            $modal.modal('hide');
-                            $closeButton.off('click', cancelClickHandler);
-                            $embedButton.off('click', buttonClickHandler);
+                            callback(document.getElementById('ck-custom-content').outerHTML);
+                            modal.hide();
+                            detachEmbedHandlers();
                     };
 
                     cancelClickHandler = function () {
                             callback('');
-                            $modal.modal('hide');
-                            $closeButton.off('click', cancelClickHandler);
-                            $embedButton.off('click', buttonClickHandler);
+                            modal.hide();
+                            detachEmbedHandlers();
                     };
 
-                    $embedButton.unbind('click');
-                    $closeButton.unbind('click');
-                    $embedButton.on('click', buttonClickHandler);
-                    $closeButton.on('click', cancelClickHandler);
-                    $modal.modal({
-                        backdrop: 'static'
-                    })
+                    embedButton.addEventListener('click', buttonClickHandler);
+                    closeButton.addEventListener('click', cancelClickHandler);
+                    modal.show()
             }
         }],
         errorListener: function (err) {

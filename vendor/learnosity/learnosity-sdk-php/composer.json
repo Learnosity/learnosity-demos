@@ -2,7 +2,7 @@
     "name": "learnosity/learnosity-sdk-php",
     "type": "library",
     "description": "Include this package into your own codebase to ease integration with any of the Learnosity APIs",
-    "keywords": ["learnosity", "sdk", "php7", "php8"],
+    "keywords": ["learnosity", "sdk", "php8"],
     "homepage": "https://github.com/Learnosity/learnosity-sdk-php",
     "license": "Apache-2.0",
     "autoload": {
@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "php": "^7.0 || ^8.0",
+        "php": ">=8.2",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*"

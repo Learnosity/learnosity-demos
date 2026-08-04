@@ -29,6 +29,12 @@ stop-vagrant:
 
 update-assets:
 	npm install
+	node build.mjs
+
+# Legacy Bootstrap 3 bundle (www/static/dist/all.min.*), retained for the
+# duration of the Bootstrap 5 migration - see docs/bootstrap-5-upgrade.md
+update-assets-legacy:
+	npm install
 	./node_modules/.bin/gulp
 
 clean:

@@ -26,13 +26,13 @@ include_once 'includes/header.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">End to End Example - from new content</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">End to End Example - from new content</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Learn how to tie Learnosity products together to create content from scratch, deliver it, and report!</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="endtoend/authoring.php">Demo</a>
                     </p>
                 </div>
@@ -40,13 +40,13 @@ include_once 'includes/header.php';
         </div>
         <div class="col-md-6">
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">End to End Example - with existing items</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">End to End Example - with existing items</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Learn how to tie Learnosity products together to choose content from an Item Bank, deliver it, and report!</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="endtoend/select_items.php">Demo</a>
                     </p>
                 </div>
@@ -59,13 +59,13 @@ include_once 'includes/header.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Printing a Test</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Printing a Test</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Use print-friendly CSS to print a student test.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="printing/print.php">Demo</a>
                     </p>
                 </div>
@@ -73,13 +73,13 @@ include_once 'includes/header.php';
         </div>
         <div class="col-md-6">
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Printing correct answers</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Printing correct answers</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Use print-friendly CSS to show correct answers.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="printing/print-correct-answers.php">Demo</a>
                     </p>
                 </div>
@@ -92,13 +92,13 @@ include_once 'includes/header.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Manual Grading Inline</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Manual Grading Inline</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>New out-of-the box grading to score mixed-question assessments and provide personalized feedback to learners.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="feedback/manual-grading-inline/index.php">Demo</a>
                     </p>
                 </div>
@@ -106,13 +106,13 @@ include_once 'includes/header.php';
 
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Manual Grading</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Manual Grading</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Our classic approach to building a subjective scoring interface.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="feedback/simple-scoring/index.php">Demo</a>
                     </p>
                 </div>
@@ -122,40 +122,40 @@ include_once 'includes/header.php';
     </div>
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Richer Feedback</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Richer Feedback</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Provide a way for instructors to provide richer audio, essay or question based feedback.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="feedback/rich-feedback/index.php">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Score with Feedback Aide</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Score with Feedback Aide</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Learn how to create, score, and review feedback by integrating Learnosity APIs with Feedback Aide.</p>
                     <p><small>Note: this is a new feature demo and is not included in our GitHub repository.</small></p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="/showcase/feedback-aide/essay-end-to-end/1-authoring.php">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Mixed Grading Demo</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Mixed Grading Demo</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Learn how to create, score, and review feedback using Manual Grading and Feedback Aide together in one.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="feedback/mixedgrading/index.php">Demo</a>
                     </p>
                 </div>
@@ -167,27 +167,27 @@ include_once 'includes/header.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Custom Short Text Question</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Custom Short Text Question</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>The simplest example of a custom question type - replicating Learnosity's short text question.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./customquestions/custom_shorttext.php">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Custom Box and Whisker Plot</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Custom Box and Whisker Plot</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.
                     <p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./customquestions/custom_box_whisker.php">Demo</a>
                     </p>
                 </div>
@@ -197,27 +197,27 @@ include_once 'includes/header.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Using Learnosity Math in a custom question type</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Using Learnosity Math in a custom question type</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Math Custom question using Learnosity Mathcore.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./customquestions/custom_mathcore.php">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Author Custom Box and Whisker Plot</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Author Custom Box and Whisker Plot</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.
                     <p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./customquestions/custom_box_whisker_authoring.php">Demo</a>
                     </p>
                 </div>
@@ -227,27 +227,27 @@ include_once 'includes/header.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Custom Piano Question</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Custom Piano Question</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./customquestions/custom_piano.php">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Author Custom Piano Question</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Author Custom Piano Question</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.
                     <p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./customquestions/custom_piano_authoring.php">Demo</a>
                     </p>
                 </div>
@@ -257,27 +257,27 @@ include_once 'includes/header.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Custom Clock Question</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Custom Clock Question</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./customquestions/custom_clock.php">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Author Custom Clock Question</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Author Custom Clock Question</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Demonstrates the implementation of a Custom question with an interactive and more complex UI.
                     <p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./customquestions/custom_clock_authoring.php">Demo</a>
                     </p>
                 </div>
@@ -287,13 +287,13 @@ include_once 'includes/header.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Author Custom Features</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Author Custom Features</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Develop your own custom features for inclusion in your Learnosity ecosystem.</p>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link" href="./customquestions/author-custom-features.php" aria-label="Custom features demo">Demo</a>
                     </p>
                 </div>
@@ -306,13 +306,13 @@ include_once 'includes/header.php';
 
 <div class="row">
     <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Spanish Language example</h3>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Spanish Language example</h3>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <p>Localize Learnosity as you need to - in this case, we've localized our UI to Spanish.</p>
-                <p class="text-right">
+                <p class="text-end">
                     <a class="demo_link" href="./spanish/index.php">Demo</a>
                 </p>
             </div>
@@ -324,26 +324,26 @@ include_once 'includes/header.php';
 
 <div class="row">
     <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Gallery Style UI</h3>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Gallery Style UI</h3>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <p>Fit Learnosity's UI and UX to your needs - see how easy it is to embed them into a gallery style user experience.</p>
-                <p class="text-right">
+                <p class="text-end">
                     <a class="demo_link" href="./gallery/index.php">Demo</a>
                 </p>
             </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Manage Multiple Items API Instances in a Single Page App</h3>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Manage Multiple Items API Instances in a Single Page App</h3>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <p>Learn best practices for creating and destroying Items API instances within a single page app.</p>
-                <p class="text-right">
+                <p class="text-end">
                     <a class="demo_link" href="./single-page-app.php">Demo</a>
                 </p>
             </div>

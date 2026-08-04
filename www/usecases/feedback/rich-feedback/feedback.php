@@ -43,7 +43,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+            <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
         </ul>
     </div>
     <div class="overview">
@@ -68,7 +68,7 @@ $signedRequest = $Init->generate();
     <span class="learnosity-report" id="report-1"></span>
     <div class="row">
         <div class="col-md-10"></div>
-        <div class="col-md-2 pull-right">
+        <div class="col-md-2 float-end">
             <span class="learnosity-save-button"></span>
         </div>
     </div>
@@ -86,17 +86,22 @@ var init = function() {
 
         // Build the 2 columns, left is Reports API (student in review) and the right is Items API
         // for the teacher to add feedback.
-        $('.lrn_widget').wrap('<div class="row"></div>').wrap('<div class="col-md-6"></div>');
+        document.querySelectorAll('.lrn_widget').forEach(function (widget) {
+            wrapWithDiv(widget, 'row');
+            wrapWithDiv(widget, 'col-md-6');
+        });
 
         itemsApp.getQuestions(function(questions) {
 
-            $.each(questions, function(index, element) {
+            Object.values(questions).forEach(function (element) {
                 if(element.metadata.rubric_reference !== undefined) {
                     var itemId = element.response_id + '_' + element.metadata.rubric_reference;
 
-                    $('<span class="learnosity-item" data-reference="' + itemId + '">')
-                        .appendTo($('#' + element.response_id).closest('.row'))
-                        .wrap('<div class="col-md-6"></div>');
+                    var span = document.createElement('span');
+                    span.className = 'learnosity-item';
+                    span.dataset.reference = itemId;
+                    document.getElementById(element.response_id).closest('.row').appendChild(span);
+                    wrapWithDiv(span, 'col-md-6');
 
                     itemReferences.push({
                         'id' : itemId,
@@ -125,18 +130,20 @@ var init = function() {
             }
         };
 
-        $.post('endpoint.php', itemsActivity, function(data, status) {
+        postForm('endpoint.php', itemsActivity).then(function (data) {
             console.log('endpoint response', data);
             itemsApp = LearnosityItems.init(data, {
                 readyListener: function() {
-                    $('.lrn_save_button').click(function() {
-                        window.setTimeout(function() {
-                            window.location = 'feedback_report.php?session_id=<?php echo $session_id; ?>&feedback_session_id=' + itemsActivity.request.session_id;
-                        }, 2000);
+                    document.querySelectorAll('.lrn_save_button').forEach(function (button) {
+                        button.addEventListener('click', function () {
+                            window.setTimeout(function() {
+                                window.location = 'feedback_report.php?session_id=<?php echo $session_id; ?>&feedback_session_id=' + itemsActivity.request.session_id;
+                            }, 2000);
+                        });
                     });
                 }
             });
-        });
+        }).catch(function (error) { console.error(error); });
     });
 };
 

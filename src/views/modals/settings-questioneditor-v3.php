@@ -14,24 +14,24 @@
     $serviceShortcut = 'questioneditorV3';
 ?>
 
-<div class="modal fade" id="settings">
+<div class="modal fade" id="settings" tabindex="-1" aria-labelledby="settings-title">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title"><?php echo $service ?> – Custom Settings</h4>
+                <h4 class="modal-title" id="settings-title"><?php echo $service ?> – Custom Settings</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="frmSettings" method="post">
+                <form id="frmSettings" method="post">
                     <input type="hidden" name="api_type" value="<?php echo $serviceShortcut ?>">
                     <input type="hidden" name="widget_type" value="response">
 
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><h3>Basic Settings</h3></div>
-                        <div class="panel-body">
+                    <div class="card">
+                        <div class="card-header"><h3>Basic Settings</h3></div>
+                        <div class="card-body">
                             <div class="col-lg-6">
-                                <!-- <div class="form-group">
-                                    <label for="widget_type" class="col-sm-6 control-label">Editor Type</label>
+                                <!-- <div class="form-group row">
+                                    <label for="widget_type" class="col-sm-6 col-form-label">Editor Type</label>
                                     <div class="col-sm-6">
                                         <select id="widget_type" name="widget_type">
                                             <option value="response"<?php if (isset($request['widget_type']) && $request['widget_type'] === 'response') {
@@ -43,8 +43,8 @@
                                         </select>
                                     </div>
                                 </div> -->
-                                <div id="question_type_wrapper" class="form-group">
-                                    <label for="widget_type" class="col-sm-6 control-label">Question Type </label>
+                                <div id="question_type_wrapper" class="form-group row">
+                                    <label for="widget_type" class="col-sm-6 col-form-label">Question Type </label>
                                     <div class="col-sm-6">
                                         <select id="question_type" name="question_type">
                                             <option value="mcq"<?php if (isset($request['question_type']) && $request['question_type'] === 'mcq') {
@@ -62,8 +62,8 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="layout" class="col-sm-6 control-label">Layout</label>
+                                <div class="form-group row">
+                                    <label for="layout" class="col-sm-6 col-form-label">Layout</label>
                                     <div class="col-sm-6">
                                         <select id="layout" name="ui[layout]">
                                             <option value="edit"<?php if (isset($layout['global_template']) && $layout['global_template'] === 'edit') {
@@ -82,7 +82,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" onclick="document.getElementById('frmSettings').submit();">Initialise <?php echo $service ?> &raquo;</button>
             </div>
         </div>
@@ -91,15 +91,22 @@
 
 <script src="/static/vendor/html5sortable/jquery.sortable.min.js"></script>
 <script>
-    $(function () {
-        $('#widget_type').change(function () {
-            if ($(this).val() !== 'response') {
-                $('#question_type_wrapper').hide();
-            } else {
-                $('#question_type_wrapper').show();
-            }
-        });
+    document.addEventListener('DOMContentLoaded', () => {
+        // The #widget_type select is commented out in the markup above, so this is
+        // normally absent. jQuery's $('#widget_type').change(...) was a silent no-op
+        // on an empty selection; guard for the same behaviour.
+        const widgetType = document.getElementById('widget_type');
+        const wrapper = document.getElementById('question_type_wrapper');
 
-        $('#widget_type').trigger('change');
+        if (!widgetType || !wrapper) {
+            return;
+        }
+
+        const syncVisibility = () => {
+            wrapper.style.display = widgetType.value === 'response' ? '' : 'none';
+        };
+
+        widgetType.addEventListener('change', syncVisibility);
+        syncVisibility();
     });
 </script>

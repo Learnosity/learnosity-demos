@@ -23,44 +23,44 @@ $security = [
 //Contact partners@learnosity.com to get a commercial licence.
 
 $BrainingcampConfig = json_decode('{
-	"custom_question_types": [{
-		"custom_type": "bcm_custom_question",
-		"type": "custom",
-		"group_reference": "brainingcamp",
-		"name": "Brainingcamp Manipulative Question",
-		"js": "https://learnosity.brainingcamp.com/bcq.umd.min.js",
-		"css": "https://learnosity.brainingcamp.com/bcq.css",
-		"version": "0.0.1",
-		"editor_layout": "https://learnosity.brainingcamp.com/bcq.html",
-		"editor_schema": {
-			"hidden_question": false,
-			"properties": {
-				"share_code": {
-					"name": "Share Code",
-					"type": "text",
-					"default": ""
-				}
-			}
-		}
-	}],
-	"question_type_groups": [{
-		"name": "Brainingcamp",
-		"reference": "brainingcamp",
-		"group_icon": "https://learnosity.brainingcamp.com/bc_logo@2x.png"
-	}],
-	"question_type_templates": {
-		"bcm_custom_question": {
-			"name": "Brainingcamp Manipulative",
-			"description": "Add a Brainingcamp manipulative or specific manipulative activity.",
-			"image": "https://learnosity.brainingcamp.com/bcq-card-img.png",
-			"group_reference": "brainingcamp",
-			"defaults": {
-				"type": "custom",
-				"js": "https://learnosity.brainingcamp.com/bcq.umd.min.js",
-				"css": "https://learnosity.brainingcamp.com/bcq.css"
-			}
-		}
-	}
+  "custom_question_types": [{
+    "custom_type": "bcm_custom_question",
+    "type": "custom",
+    "group_reference": "brainingcamp",
+    "name": "Brainingcamp Manipulative Question",
+    "js": "https://learnosity.brainingcamp.com/bcq.umd.min.js",
+    "css": "https://learnosity.brainingcamp.com/bcq.css",
+    "version": "0.0.1",
+    "editor_layout": "https://learnosity.brainingcamp.com/bcq.html",
+    "editor_schema": {
+      "hidden_question": false,
+      "properties": {
+        "share_code": {
+          "name": "Share Code",
+          "type": "text",
+          "default": ""
+        }
+      }
+    }
+  }],
+  "question_type_groups": [{
+    "name": "Brainingcamp",
+    "reference": "brainingcamp",
+    "group_icon": "https://learnosity.brainingcamp.com/bc_logo@2x.png"
+  }],
+  "question_type_templates": {
+    "bcm_custom_question": {
+      "name": "Brainingcamp Manipulative",
+      "description": "Add a Brainingcamp manipulative or specific manipulative activity.",
+      "image": "https://learnosity.brainingcamp.com/bcq-card-img.png",
+      "group_reference": "brainingcamp",
+      "defaults": {
+        "type": "custom",
+        "js": "https://learnosity.brainingcamp.com/bcq.umd.min.js",
+        "css": "https://learnosity.brainingcamp.com/bcq.css"
+      }
+    }
+  }
 }', true);
 
 
@@ -91,7 +91,7 @@ $signedRequest = $Init->generate();
 <div class="jumbotron section">
     <div class="toolbar">
         <ul class="list-inline">
-            <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
         </ul>
     </div>
     <div class="overview">

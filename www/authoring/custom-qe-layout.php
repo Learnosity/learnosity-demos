@@ -81,8 +81,8 @@ $signedRequest = $Init->generate();
     <div class="jumbotron section">
         <div class="toolbar">
             <ul class="list-inline">
-                <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li class="list-inline-item"><a href="#"  data-bs-toggle="modal" data-bs-target="#initialisation-preview" aria-label="Preview API Initialisation Object" data-bs-title="Preview API Initialisation Object"><span class="bi bi-search" aria-hidden="true"></span></a></li>
+                <li class="list-inline-item"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" aria-label="Visit the documentation" data-bs-title="Visit the documentation"><span class="bi bi-book" aria-hidden="true"></span></a></li>
             </ul>
         </div>
         <div class="overview">
@@ -124,17 +124,17 @@ $signedRequest = $Init->generate();
 
     <!--  Custom layout -->
     <script type="text/template" data-lrn-qe-layout="custom_mcq_layout">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+                <h4 class="card-title">
+                    <a role="button" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Basic Options
                     </a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body">
+            <div id="collapseOne" class="collapse show" data-bs-parent="#accordion" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-body">
                     <div class="lrn-qe-ui">
                         <span data-lrn-qe-label="stimulus" value="Compose question:" class="lrn-qe-lg-ckeditor"></span>
                         <span data-lrn-qe-input="stimulus" class="lrn-qe-lg-ckeditor"></span>
@@ -148,16 +148,16 @@ $signedRequest = $Init->generate();
                 </div>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+                <h4 class="card-title">
+                    <a class="collapsed" role="button" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         Validation
                     </a>
                 </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                <div class="panel-body">
+            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-body">
                     <div class="lrn-qe-tabs" data-lrn-qe-tabs>
                         <ul class="lrn-qe-tab-header">
                             <li class="lrn-qe-tab-trigger" data-lrn-qe-tab-trigger>
@@ -194,16 +194,16 @@ $signedRequest = $Init->generate();
                 </div>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+                <h4 class="card-title">
+                    <a class="collapsed" role="button" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Other Options
                     </a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
+            <div id="collapseThree" class="collapse" data-bs-parent="#accordion" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-body">
                     <div class="lrn-qe-ui">
                         <div class="lrn-qe-row-flex">
                             <div class="lrn-qe-col-sm-6">
@@ -217,26 +217,26 @@ $signedRequest = $Init->generate();
                         </div>
 
                         <div class="lrn-qe-row-flex">
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="instant_feedback"></span>
                                 <span data-lrn-qe-input="instant_feedback"></span>
                             </div>
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="feedback_attempts" value="Number of attempted allowed"></span>
                                 <span data-lrn-qe-input="feedback_attempts" class="lrn-qe-form-control-sm"></span>
                             </div>
                         </div>
 
                         <div class="lrn-qe-row-flex">
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="validation.penalty"></span>
                                 <span data-lrn-qe-input="validation.penalty"></span>
                             </div>
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="is_math"></span>
                                 <span data-lrn-qe-input="is_math"></span>
                             </div>
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="math_renderer"></span>
                                 <span data-lrn-qe-input="math_renderer"></span>
                             </div>
@@ -248,26 +248,26 @@ $signedRequest = $Init->generate();
                         <span data-lrn-qe-label="ui_style" value="Layout:" class="lrn-h3"></span>
 
                         <div class="lrn-qe-row-flex">
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="ui_style.type" value="Layout style"></span>
                                 <span data-lrn-qe-input="ui_style.type"></span>
                             </div>
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="ui_style.fontsize"></span>
                                 <span data-lrn-qe-input="ui_style.fontsize"></span>
                             </div>
 
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="ui_style.choice_label"></span>
                                 <span data-lrn-qe-input="ui_style.choice_label"></span>
                             </div>
 
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="ui_style.columns"></span>
                                 <span data-lrn-qe-input="ui_style.columns" class="lrn-qe-form-control-sm"></span>
                             </div>
 
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="ui_style.orientation"></span>
                                 <span data-lrn-qe-input="ui_style.orientation"></span>
                             </div>
@@ -278,20 +278,20 @@ $signedRequest = $Init->generate();
                         <!-- Details -->
                         <span data-lrn-qe-label="metadata" value="Details:" class="lrn-h3"></span>
                         <div class="lrn-qe-row-flex">
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="metadata.acknowledgements"></span>
                                 <span data-lrn-qe-input="metadata.acknowledgements"></span>
                             </div>
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="metadata.distractor_rationale" value="Distractor rationale (Global)"></span>
                                 <span data-lrn-qe-input="metadata.distractor_rationale"></span>
                             </div>
 
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="metadata.rubric_reference"></span>
                                 <span data-lrn-qe-input="metadata.rubric_reference"></span>
                             </div>
-                            <div class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <span data-lrn-qe-label="stimulus_review"></span>
                                 <span data-lrn-qe-input="stimulus_review"></span>
                             </div>
@@ -299,7 +299,7 @@ $signedRequest = $Init->generate();
 
                         <span data-lrn-qe-label="metadata.distractor_rationale_response_level"></span>
                         <div class="lrn-qe-row-flex">
-                            <div data-lrn-qe-loop="metadata.distractor_rationale_response_level[*]" class="lrn-qe-col-xs-12 lrn-qe-col-sm-6">
+                            <div data-lrn-qe-loop="metadata.distractor_rationale_response_level[*]" class="lrn-qe-col-12 lrn-qe-col-sm-6">
                                 <div data-lrn-qe-label="metadata.distractor_rationale_response_level[*]" value="Distractor {{index}}"></div>
                                 <div data-lrn-qe-input="metadata.distractor_rationale_response_level[*]"></div>
                             </div>

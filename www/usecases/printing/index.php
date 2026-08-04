@@ -24,11 +24,11 @@ include_once '../../lrn_config.php';
 
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Printing Demo</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Printing Demo</h2>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Uses Items API (inline) to render items for print. In this simple
                     demo we use the following question types:</p>
                     <ul>
@@ -37,18 +37,18 @@ include_once '../../lrn_config.php';
                         <li>Token highlight</li>
                         <li>Fill in the blanks</li>
                     </ul>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link"  href="https://demos.learnosity.com/usecases/printing/print.php">Demo</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Printing Key Answer Demo</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Printing Key Answer Demo</h2>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>Uses Items API (inline) to render items for print. In this simple
                         demo we use the following question types:</p>
                     <ul>
@@ -57,7 +57,7 @@ include_once '../../lrn_config.php';
                         <li>Token highlight</li>
                         <li>Fill in the blanks</li>
                     </ul>
-                    <p class="text-right">
+                    <p class="text-end">
                         <a class="demo_link"  href="https://demos.learnosity.com/usecases/printing/print-correct-answers.php">Demo</a>
                     </p>
                 </div>

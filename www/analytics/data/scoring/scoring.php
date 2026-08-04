@@ -5,22 +5,22 @@ $resource = 'scoring';
 
 ?>
 
-<ul class="nav nav-tabs" id="nav-dataapi-<?php echo $resource; ?>">
-    <li class="active"><a href="#tab-request-form-<?php echo $resource; ?>" data-toggle="tab">Request Form</a></li>
-    <li><a href="#tab-request-json-<?php echo $resource; ?>" data-toggle="tab">Request JSON</a></li>
-    <li><a href="#tab-response-<?php echo $resource; ?>" data-toggle="tab">Response</a></li>
+<ul class="nav nav-tabs" role="tablist" id="nav-dataapi-<?php echo $resource; ?>">
+    <li class="nav-item" role="presentation"><a class="nav-link active" id="tab-request-form-<?php echo $resource; ?>-tab" href="#tab-request-form-<?php echo $resource; ?>" data-bs-toggle="tab" role="tab" aria-controls="tab-request-form-<?php echo $resource; ?>" aria-selected="true">Request Form</a></li>
+    <li class="nav-item" role="presentation"><a class="nav-link" id="tab-request-json-<?php echo $resource; ?>-tab" href="#tab-request-json-<?php echo $resource; ?>" data-bs-toggle="tab" role="tab" aria-controls="tab-request-json-<?php echo $resource; ?>" aria-selected="false">Request JSON</a></li>
+    <li class="nav-item" role="presentation"><a class="nav-link" id="tab-response-<?php echo $resource; ?>-tab" href="#tab-response-<?php echo $resource; ?>" data-bs-toggle="tab" role="tab" aria-controls="tab-response-<?php echo $resource; ?>" aria-selected="false">Response</a></li>
 </ul>
 <div class="tab-content">
-    <div class="tab-pane active" id="tab-request-form-<?php echo $resource; ?>">
-        <form class="form-horizontal" method="post" id="frm-data-api-<?php echo $resource; ?>" data-resource="<?php echo $resource; ?>">
-            <div class="form-group">
-                <label class="col-md-2 control-label">URL</label>
+    <div class="tab-pane active" id="tab-request-form-<?php echo $resource; ?>" role="tabpanel" aria-labelledby="tab-request-form-<?php echo $resource; ?>-tab" tabindex="0">
+        <form method="post" id="frm-data-api-<?php echo $resource; ?>" data-resource="<?php echo $resource; ?>">
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">URL</label>
                 <div class="col-md-10">
                 <input type="text" class="form-control" id="endpoint" value="<?php echo $endpoint; ?>" readonly>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">questions</label>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">questions</label>
                 <div class="col-md-10">
                     <textarea class="form-control" id="api-questions" data-type="json">
 [
@@ -93,8 +93,8 @@ $resource = 'scoring';
 ]</textarea>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">responses</label>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">responses</label>
                 <div class="col-md-10">
                     <textarea class="form-control" id="api-responses" data-type="json">
 {
@@ -115,8 +115,8 @@ $resource = 'scoring';
 }</textarea>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
+            <div class="form-group row">
+                <div class="offset-md-2 col-md-10">
                     <button type="submit" class="ladda-button btn btn-primary btn-md" data-style="expand-right"><span class="ladda-label">Submit</span></button>
                 </div>
             </div>
@@ -124,13 +124,13 @@ $resource = 'scoring';
         </form>
     </div>
     <!-- Render the raw request json -->
-    <div class="tab-pane" id="tab-request-json-<?php echo $resource; ?>">
+    <div class="tab-pane" id="tab-request-json-<?php echo $resource; ?>" role="tabpanel" aria-labelledby="tab-request-json-<?php echo $resource; ?>-tab" tabindex="0">
         <div class="preview">
             <pre><code id="request-<?php echo $resource; ?>"></code></pre>
         </div>
     </div>
     <!-- Render the response packet -->
-    <div class="tab-pane" id="tab-response-<?php echo $resource; ?>">
+    <div class="tab-pane" id="tab-response-<?php echo $resource; ?>" role="tabpanel" aria-labelledby="tab-response-<?php echo $resource; ?>-tab" tabindex="0">
         <div class="preview">
             <pre><code id="response-<?php echo $resource; ?>"><em>Submit the request form to see a response</em></code></pre>
         </div>

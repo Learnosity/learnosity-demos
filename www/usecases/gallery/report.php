@@ -70,11 +70,11 @@ $reportsRequest = $init->generate();
             <?php foreach ($items as $reference) { ?>
             <div class="col-md-4 pod">
                 <div class="pod-inner">
-                    <div class="card report">
+                    <div class="gallery-card report">
                         <span class="learnosity-item" data-reference="<?php echo $reference; ?>"></span>
                         <button type="button" class="btn btn-primary save">Save</button>
                         <div class="item-status" id="<?php echo $reference; ?>">
-                            <span class="status-text" data-toggle="tooltip" data-original-title="">
+                            <span class="status-text" data-bs-toggle="tooltip" data-bs-title="">
                                 <span class="users-attempted">0</span> /
                                 <span class="total-users"><?php echo count($users); ?></span>
                             </span>
@@ -112,9 +112,11 @@ $reportsRequest = $init->generate();
     }
 
     function updateScores (itemReference, userId, score) {
-        var $itemStatus = $('.item-status#' + itemReference);
+        // Item references can begin with a digit, which is not a valid id selector;
+        // use an attribute selector rather than '#' + reference.
+        var itemStatus = document.querySelector('.item-status[id="' + itemReference + '"]');
 
-        if ($itemStatus.length != 1) {
+        if (!itemStatus) {
             return;
         }
 
@@ -133,23 +135,26 @@ $reportsRequest = $init->generate();
                 countPassed++;
             }
         }
-        $('.users-attempted', $itemStatus).text(countAttempted);
+        itemStatus.querySelector('.users-attempted').textContent = countAttempted;
 
-        var $card = $itemStatus.closest('.card'),
-            $status = $card.children('.item-status');
+        var card = itemStatus.closest('.gallery-card');
+        var statuses = [...card.children].filter(function (child) {
+            return child.classList.contains('item-status');
+        });
 
-        if (countPassed >= countAttempted - countPassed) {
-            $status.addClass('passing');
-            $status.removeClass('failing');
-        } else {
-            $status.addClass('failing');
-            $status.removeClass('passing');
+        statuses.forEach(function (status) {
+            status.classList.toggle('passing', countPassed >= countAttempted - countPassed);
+            status.classList.toggle('failing', countPassed < countAttempted - countPassed);
+        });
+
+        var statusText = itemStatus.querySelector('.status-text');
+        var tooltipText = getStatusTooltip(scoresByItemByUser[itemReference]);
+        statusText.setAttribute('data-bs-title', tooltipText);
+
+        var tip = bootstrap.Tooltip.getInstance(statusText);
+        if (tip) {
+            tip.setContent({ '.tooltip-inner': tooltipText });
         }
-
-        $('.status-text', $itemStatus).attr(
-            'data-original-title',
-            getStatusTooltip(scoresByItemByUser[itemReference])
-        );
     }
 
     function getStatusTooltip (scoresByUser) {
@@ -160,7 +165,12 @@ $reportsRequest = $init->generate();
         return text;
     }
 
-    $('.status-text').tooltip({html: true});
+    document.querySelectorAll('.status-text').forEach(function (element) {
+        new bootstrap.Tooltip(element, {
+            html: true,
+            title: element.getAttribute('data-bs-title') || ''
+        });
+    });
 </script>
 
 <?php

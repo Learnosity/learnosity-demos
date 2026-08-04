@@ -92,7 +92,7 @@ $signedRequest = $Init->generate();
         position: relative;
     }
     .effect2,
-    .card {
+    .gallery-card {
         position: relative;
         z-index: 1;
         background: #fff;
@@ -127,14 +127,14 @@ $signedRequest = $Init->generate();
         left: auto;
     }
 
-    .card .learnosity-item {
+    .gallery-card .learnosity-item {
         transform: scale(.8);
         max-height: 200px;
         height: 200px;
         overflow: hidden;
     }
 
-    .card:before {
+    .gallery-card:before {
       cursor: pointer;
       z-index: 1;
       content: "";
@@ -158,7 +158,7 @@ $signedRequest = $Init->generate();
             <?php foreach ($glossaryCards as $i => $card) { ?>
             <div class="col-md-4 pod">
                 <div class="effect2">
-                    <div class="card" data-activity="<?php echo $cardsetRef[$i]; ?>">
+                    <div class="gallery-card" data-activity="<?php echo $cardsetRef[$i]; ?>">
                         <span class="learnosity-item" data-reference="<?php echo $card; ?>"></span>
                     </div>
                 </div>
@@ -183,9 +183,11 @@ $signedRequest = $Init->generate();
     itemsApp = LearnosityItems.init(<?php echo $signedRequest; ?>, eventOptions);
 
     function init () {
-        $('.card').on('click', function (el) {
-            var ref = $(this).attr('data-activity');
-            loadActivity(ref);
+        document.querySelectorAll('.gallery-card').forEach(function (card) {
+            card.addEventListener('click', function () {
+                var ref = this.getAttribute('data-activity');
+                loadActivity(ref);
+            });
         });
     }
 

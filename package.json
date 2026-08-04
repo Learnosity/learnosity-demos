@@ -6,6 +6,9 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "esbuild": "^0.28.1",
     "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -15,6 +18,8 @@
     "gulp-uglify": "^3.0.2"
   },
   "scripts": {
+    "build": "node build.mjs",
+    "build:legacy": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,112 +1,121 @@
 /**
- * Listens for form submission and submits an xhr request
- * to a server side proxy to handle cross-domain API requests.
+ * Listens for form submission and submits a request to a server side proxy
+ * to handle cross-domain API requests.
  *
  * Also translates form inputs to JSON for display.
+ *
+ * Plain ES6 - no jQuery. See docs/bootstrap-5-upgrade.md
  */
-(function($, config, Ladda, prettyPrint) {
+(function (config, Ladda, prettyPrint) {
     'use strict';
 
     /**
      * Retrieve the form in the current active tab,
-     * each panel has its own form.
+     * each card has its own form.
      * Parse the form, write the resulting JSON to
      * the 'request' tab.
-     * @param  {object} frm Form handle
-     * @return {object}     Object used to POST to the data api
+     * @param  {HTMLFormElement} frm Form element
+     * @return {object}              Object used to POST to the data api
      */
     function prepareApiRequest (frm) {
-        var obj = formToObject.parse(frm),
-            endpoint = $(frm).find('#endpoint').val(),
-            resource = $(frm).data('resource'),
-            action = $(frm).find('#action').val() || 'get',
-            security = config.apiRequest.security,
-            request;
+        const obj = formToObject.parse(frm);
+        const endpoint = frm.querySelector('#endpoint').value;
+        const resource = frm.dataset.resource;
+        const actionField = frm.querySelector('#action');
+        const action = (actionField && actionField.value) || 'get';
 
+        let security = config.apiRequest.security;
         if (['responses-feedback-update', 'responses-feedback'].includes(resource)) {
             security = config.apiRequest.security_postgres;
         }
 
-        request = {
+        // Write to the request JSON tab
+        document.getElementById('request-' + resource).innerHTML = prettyPrint.render({
             action: action,
             security: security,
             request: obj
-        };
+        });
 
-        // Write to the request JSON tab
-        $('#request-'+resource).html(prettyPrint.render(request));
-
-        return {
-            endpoint: endpoint,
-            request: obj,
-            resource: resource,
-            action: action
-        };
+        return { endpoint: endpoint, request: obj, resource: resource, action: action };
     }
 
     /**
-     * Ajax callback - writes response to 'Response' tab
-     * @param  {string} resource Which resource was requested
-     * @param  {object} data     JSON object
-     * @param  {string} status   Text xhr status
-     * @param  {xhr} xhr      xhr object
+     * Writes a response to the 'Response' tab and switches to it.
+     * @param  {string} resource       Which resource was requested
+     * @param  {object|string} data    Parsed JSON, or an error string
      * @return {void}
      */
-    function renderResponse (resource, data, status, xhr) {
-        $('#response-'+resource).html(prettyPrint.render(data));
-        $('#nav-dataapi-'+resource+' a[href="#tab-response-'+resource+'"]').tab('show');
+    function renderResponse (resource, data) {
+        document.getElementById('response-' + resource).innerHTML = prettyPrint.render(data);
+        const tab = document.querySelector(
+            '#nav-dataapi-' + resource + ' a[href="#tab-response-' + resource + '"]'
+        );
+        if (tab) {
+            bootstrap.Tab.getOrCreateInstance(tab).show();
+        }
     }
 
     /**
-     * Makes an asynchronous to the current domain as a proxy
-     * to the Data API
+     * Posts to a script on the current domain, which proxies the Data API so the
+     * request can be signed server side. Note the contract with xhr.php: it reads
+     * `endpoint`, `request` and `action` out of $_POST.
      * @param  {object} request  Request object
      * @param  {string} endpoint Full URL of the data api
      * @param  {string} resource Final resource endpoint
-     * @return {void}
+     * @param  {string} action   Data API action
+     * @return {Promise<void>}
      */
-    function submitToApi (request, endpoint, resource, action) {
-        $.ajax({
-            url: 'xhr.php',
-            data: {'request': JSON.stringify(request), 'endpoint': endpoint, 'action': action},
-            dataType: 'json',
-            type: 'POST'
-        })
-        .error(resource, function(xhr, status, data) {
-            renderResponse(resource, xhr.responseText, null, null);
-        })
-        .success(resource, function(data, status, xhr) {
-            renderResponse(resource, data, status, xhr);
+    async function submitToApi (request, endpoint, resource, action) {
+        const body = new URLSearchParams({
+            request: JSON.stringify(request),
+            endpoint: endpoint,
+            action: action
         });
+
+        try {
+            const response = await fetch('xhr.php', { method: 'POST', body: body });
+            const text = await response.text();
+            // The proxy echoes the API's error message as plain text when the upstream
+            // request fails, so a parse failure is still a response worth showing.
+            try {
+                renderResponse(resource, JSON.parse(text));
+            } catch (e) {
+                renderResponse(resource, text);
+            }
+        } catch (error) {
+            renderResponse(resource, error.message);
+        }
     }
 
-    $(function() {
+    document.addEventListener('DOMContentLoaded', function () {
         // Render the Request JSON tab when it's clicked
-        $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-            var resource = $(e.currentTarget).parents('ul').attr('id').split('-').pop(),
-                frm = $('#tab-request-form-'+resource).children('form');
-            prepareApiRequest(frm);
+        document.querySelectorAll('a[data-bs-toggle="tab"]').forEach((tab) => {
+            tab.addEventListener('show.bs.tab', function (e) {
+                const resource = e.currentTarget.closest('ul').id.split('-').pop();
+                const frm = document.querySelector('#tab-request-form-' + resource + ' form');
+                if (frm) {
+                    prepareApiRequest(frm);
+                }
+            });
         });
 
         // On submit, send the request to the data api for processing
-        $('form').on('submit', function(e) {
-            e.preventDefault();
-            var frm = $(e.currentTarget).closest('form'),
-                obj = prepareApiRequest(frm),
-                button = $(frm).find('.ladda-button');
+        document.querySelectorAll('form').forEach((form) => {
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const frm = e.currentTarget;
+                const obj = prepareApiRequest(frm);
+                const button = frm.querySelector('.ladda-button');
+                const spinner = button ? Ladda.create(button) : null;
 
-            var ladda = Ladda.create(button[0]);
-
-            $(document).ajaxStart(function() {
-                ladda.start();
+                if (spinner) {
+                    spinner.start();
+                }
+                await submitToApi(obj.request, obj.endpoint, obj.resource, obj.action);
+                if (spinner) {
+                    spinner.stop();
+                }
             });
-            $(document).ajaxStop(function() {
-                ladda.stop();
-            });
-
-            submitToApi(obj.request, obj.endpoint, obj.resource, obj.action);
         });
     });
-
-    return {};
-}(jQuery, config, Ladda, prettyPrint));
+}(config, Ladda, prettyPrint));

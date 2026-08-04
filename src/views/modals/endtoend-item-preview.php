@@ -23,14 +23,32 @@
 
 var item_ref = '';
 
-$(window).on('shown.bs.modal', function (e) {  // When the Modal is shown
+/**
+ * Flattens a nested object into the bracketed form-encoded keys endpoint.php reads
+ * out of $_POST, e.g. { request: { items: ['a'] } } -> "request[items][0]=a".
+ * jQuery's $.ajax did this for us; fetch does not.
+ */
+function toFormData (value, prefix, params) {
+    params = params || new URLSearchParams();
+    if (value !== null && typeof value === 'object') {
+        Object.entries(value).forEach(([key, inner]) => {
+            toFormData(inner, prefix ? prefix + '[' + key + ']' : key, params);
+        });
+    } else {
+        params.append(prefix, value);
+    }
+    return params;
+}
+
+document.addEventListener('shown.bs.modal', async function (e) {  // When the Modal is shown
 
     //Get the item ref which is stored as a custom data attribute of the Modal div.
     // TODO: Try to do this by adding the param directly into the learnosity-item span
-    item_ref = $('#endtoend-item-preview').data('parameter_1');
+    item_ref = document.getElementById('endtoend-item-preview').dataset.parameter_1;
 
     // Add the learnosity-item span to hold the item, complete with the appropriate reference
-    $('#item_container').html('<span class="learnosity-item" data-reference="'+item_ref+'"></span>');
+    document.getElementById('item_container').innerHTML =
+        '<span class="learnosity-item" data-reference="' + item_ref + '"></span>';
 
     // Prepare the Request data. This will be POSTed to a PHP endpoint so we can add the security signature
     // This example only provides the minimum required params, no fake dummy params are aded.
@@ -50,48 +68,54 @@ $(window).on('shown.bs.modal', function (e) {  // When the Modal is shown
     };
 
     // We send the post_data above to a PHP back end file where it can be security signed.
-    $.ajax({
-        url : "endpoint.php",
-        type: "POST",
-        data : post_data,
-        success: function(data, textStatus, jqXHR) {
-            console.log(data);
-            var eventOptions = {
-                readyListener: function () {
-                    console.log('Learnosity Items API is ready');
-                }
-            },
-            itemsApp = LearnosityItems.init(data, eventOptions); //Generate the Item
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.dir(errorThrown);
-            alert("Error: " + errorThrown);
+    try {
+        const response = await fetch('endpoint.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            body: toFormData(post_data)
+        });
+        if (!response.ok) {
+            throw new Error('endpoint.php responded ' + response.status);
         }
-    });
+        const data = await response.json();
+        console.log(data);
+        const eventOptions = {
+            readyListener: function () {
+                console.log('Learnosity Items API is ready');
+            }
+        };
+        LearnosityItems.init(data, eventOptions); //Generate the Item
+    } catch (error) {
+        console.dir(error);
+        alert("Error: " + error.message);
+    }
 
 });
 
-$(document).ready(function(){
+document.addEventListener('DOMContentLoaded', function () {
 
     // addToList question handler
-    $(".btn-addToList").click(function(){
+    document.querySelectorAll('.btn-addToList').forEach(function (button) {
+        button.addEventListener('click', function () {
 
-        // Add a green bg to the Item from the list which was added
-        //   find all elements with the class 'lrn-list-view-heading'
-        $('.lrn-list-view-heading').each(function(i, obj) {
-            if(obj.outerText === item_ref){  // Test for an exact match on outterText
-                $(this).parent().addClass('alert-success'); // Add a class to the parent to highlight this Item
+            // Add a green bg to the Item from the list which was added
+            //   find all elements with the class 'lrn-list-view-heading'
+            document.querySelectorAll('.lrn-list-view-heading').forEach(function (heading) {
+                if (heading.outerText === item_ref) {  // Test for an exact match on outterText
+                    heading.parentElement.classList.add('alert-success'); // Highlight this Item
+                }
+            });
+
+            // Save the item to the list
+            saveItemID(item_ref);
+            if (itemHasQuestions == true) {
+              itemWithQuestionsAdded = true;
             }
+            // Finally close the Modal
+            const preview = document.getElementById('endtoend-item-preview');
+            bootstrap.Modal.getOrCreateInstance(preview).hide();
+
         });
-
-        // Save the item to the list
-        saveItemID(item_ref);
-        if(itemHasQuestions == true){
-          itemWithQuestionsAdded = true;
-        }
-        // Finally close the Modal
-        $('#endtoend-item-preview').modal('hide');
-
     });
 });
 
@@ -105,8 +129,8 @@ $(document).ready(function(){
         <div class="modal-content">
             <div class="modal-header text-center">
                 <a class="btn btn-primary btn-md btn-addToList">Add To List</a>
-                <a class="btn btn-default btn-md btn-gcancel"  data-dismiss="modal">Cancel</a>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <a class="btn btn-outline-secondary btn-md btn-gcancel"  data-bs-dismiss="modal">Cancel</a>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                <div id="item_container"></div>
@@ -117,7 +141,7 @@ $(document).ready(function(){
             <div class="modal-footer">
                 <div class="text-center">
                     <a class="btn btn-primary btn-md btn-addToList">Add To List</a>
-                    <a class="btn btn-default btn-md btn-gcancel"  data-dismiss="modal">Cancel</a>
+                    <a class="btn btn-outline-secondary btn-md btn-gcancel"  data-bs-dismiss="modal">Cancel</a>
                 </div>
             </div>
 

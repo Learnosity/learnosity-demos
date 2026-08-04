@@ -55,9 +55,9 @@ class HashSignatureTest extends AbstractTestCase
     public function testSign(
         string $preHashString,
         string $secretKey,
-        string $expectedResult = null,
+        ?string $expectedResult = null,
         $expectedException = null,
-        string $expectedExceptionMessage = null
+        ?string $expectedExceptionMessage = null
     ) {
         if (!empty($expectedException)) {
             $this->expectException($expectedException);

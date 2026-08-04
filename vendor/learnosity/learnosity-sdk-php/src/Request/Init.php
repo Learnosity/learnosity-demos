@@ -93,6 +93,12 @@ class Init
     private $action;
 
     /**
+     * The endpoint URL for Data API requests, used to derive action metadata
+     * @var string|null
+     */
+    private $endpoint;
+
+    /**
      * Most services add the request packet (if passed) to the signature
      * for security reasons. This flag can override that behaviour for
      * services that don't require this.
@@ -125,6 +131,8 @@ class Init
      * @param string|array $requestPacket
      * @param string $action
      * @param SignatureFactory|null $signatureFactory
+     * @param PreHashStringFactory|null $preHashStringFactory
+     * @param string|null $endpoint
      * @throws ValidationException
      */
     public function __construct(
@@ -132,9 +140,10 @@ class Init
         $securityPacket,
         string $secret,
         $requestPacket = null,
-        string $action = null,
-        SignatureFactory $signatureFactory = null,
-        PreHashStringFactory $preHashStringFactory = null
+        ?string $action = null,
+        ?SignatureFactory $signatureFactory = null,
+        ?PreHashStringFactory $preHashStringFactory = null,
+        ?string $endpoint = null
     ) {
         $this->signatureFactory = $signatureFactory;
         if (!isset($signatureFactory)) {
@@ -154,6 +163,7 @@ class Init
         $this->secret             = $secret;
         $this->requestPacket      = $requestPacket;
         $this->action             = $action;
+        $this->endpoint           = $endpoint;
         $this->validate();
 
         if (self::$telemetryEnabled) {
@@ -178,7 +188,9 @@ class Init
      *       "lang_version": "5.6.36",
      *       "platform": "Linux",
      *       "platform_version": "3.10.0-862.6.3.el7.x86_64"
-     *     }
+     *     },
+     *     "consumer": "consumer_key_value",
+     *     "action": "get_/itembank/items"
      *   }
      * }
      *
@@ -193,12 +205,24 @@ class Init
             'platform_version' => php_uname('r')
         ];
 
+        $meta = [
+            'sdk' => $sdkMetricsMeta
+        ];
+
+        // Add consumer metadata for Data API requests
+        if ($this->service === 'data' && isset($this->securityPacket['consumer_key'])) {
+            $meta['consumer'] = $this->securityPacket['consumer_key'];
+        }
+
+        // Add action metadata for Data API requests
+        if ($this->service === 'data') {
+            $meta['action'] = $this->deriveAction();
+        }
+
         if (isset($this->decodedRequestPacket['meta'])) {
-            $this->decodedRequestPacket['meta']['sdk'] = $sdkMetricsMeta;
+            $this->decodedRequestPacket['meta'] = array_merge($this->decodedRequestPacket['meta'], $meta);
         } else {
-            $this->decodedRequestPacket['meta'] = [
-                'sdk' => $sdkMetricsMeta
-            ];
+            $this->decodedRequestPacket['meta'] = $meta;
         }
         $this->requestPacket = Json::encode($this->decodedRequestPacket);
     }
@@ -213,6 +237,42 @@ class Init
         }
 
         return trim(file_get_contents(self::VERSION_FILE_PATH));
+    }
+
+    /**
+     * Derives the action metadata from the endpoint URL and HTTP method.
+     * Format: {method}_{path} (e.g., "get_/itembank/items", "set_/session_scores")
+     *
+     * @return string
+     */
+    private function deriveAction(): string
+    {
+        if (empty($this->endpoint)) {
+            return $this->action ?? 'unknown';
+        }
+
+        // Extract the path from the endpoint URL using regex for security
+        // Match protocol://domain/path pattern and extract the path component
+        if (!preg_match('#^https?://[^/]+(/.*)?$#', $this->endpoint, $matches)) {
+            // Invalid URL format, fallback to action or unknown
+            return $this->action ?? 'unknown';
+        }
+        $path = $matches[1] ?? '/';
+
+        // Remove version information from the path
+        // (e.g., /v2023.1.lts/itembank/items -> /itembank/items, /v1/sessions -> /sessions, /developer/items -> /items)
+        // Supports: v1, v1.85.0, v2023.1.lts, v2025.3.LTS, v2022.3.preview1, latest, latest-lts, developer
+        $path = preg_replace('/\/(v\d+(\.\d+)*(\.[a-zA-Z0-9]+)?|latest(-lts)?|developer)/', '', $path);
+
+        // Ensure path starts with /
+        if (!empty($path) && $path[0] !== '/') {
+            $path = '/' . $path;
+        }
+
+        // Use the action parameter if provided, otherwise default to 'get'
+        $method = $this->action ?? 'get';
+
+        return $method . '_' . $path;
     }
 
     /**
