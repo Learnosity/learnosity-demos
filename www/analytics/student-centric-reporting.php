@@ -86,9 +86,9 @@ $request = [
             'id' => 'scoring-group',
             'type' => 'scoring-group-reportlet',
             'session_id' => '78c527b2-4b5f-40a5-bc90-139e3558b30d',
-            'showOverallScore' => true,
-            'showActivityLevelScores' => true,
-            'showTable' => true
+            'show_overall_score' => true,
+            'show_activity_level_scores' => true,
+            'show_table' => true
         ]
     ]
 ];
