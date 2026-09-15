@@ -116,6 +116,7 @@ $signedRequest = $Init->generate();
                 <li><h4><a href="#sessions-list-item-report">Sessions List by Item Report</a></h4></li>
                 <li><h4><a href="#lastscore-activity-report">Most recent score per Activity</a></h4></li>
                 <li><h4><a href="#session-detail-report">Sessions Detail Report</a></h4></li>
+                <li><h4><a href="#scoring-group-reportlet">Scoring Group Reportlet</a></h4></li>
 
             </ul>
             </p>
