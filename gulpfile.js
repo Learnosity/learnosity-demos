@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 
 function scripts() {
     return gulp.src([
-        './www/static/vendor/jquery/jquery-1.11.?.min.js',
+        './www/static/vendor/jquery/jquery-3.7.1.min.js',
         './www/static/vendor/bootstrap/js/bootstrap.min.js',
         './www/static/js/prettyPrint.js',
         './www/static/js/main.js',
