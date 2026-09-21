@@ -1724,3 +1724,25 @@ textarea.form-control {
 #collapseThree.collapse.in {
     display: block !important;
 }
+
+/********************************************************************
+*
+* Scoring Group Reportlet - responsive fit
+*
+* The scoring-group-reportlet's charts (Learnosity Reports API /
+* recharts) set an inline "min-width: 752px" on their responsive
+* container. Below Bootstrap's 992px "md" breakpoint the page uses the
+* narrow container, so that fixed min-width makes the chart wider than
+* the demo card and it overflows the card's bounds. Resetting min-width
+* to 0 lets recharts re-measure and redraw the chart to fit the
+* available width.
+* Scoped to .scoring-group-reportlet so no other report is affected.
+* The !important is required to override recharts' inline style.
+*
+********************************************************************/
+@media (max-width: 991px) {
+    .scoring-group-reportlet .recharts-responsive-container,
+    .scoring-group-reportlet [class*="HorizontalStackedBarChart-module__chartContainer"] {
+        min-width: 0 !important;
+    }
+}
