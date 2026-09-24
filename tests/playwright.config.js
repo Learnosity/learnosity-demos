@@ -71,7 +71,7 @@ module.exports = (async () => {
         reporter: 'list',
         use: {
             baseURL,
-            headless: true,
+            // Headless by default; pass `--headed` (or set PWDEBUG) to watch the browser.
             trace: 'on-first-retry',
         },
         projects: [
