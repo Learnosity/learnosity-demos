@@ -1,6 +1,5 @@
-# Playwright / npm artifacts - only the test sources and config are tracked.
+# Playwright / npm artifacts - only the test sources, config and lockfile are tracked.
 node_modules/
-package-lock.json
 test-results/
 playwright-report/
 blob-report/
