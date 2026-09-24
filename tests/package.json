@@ -1,0 +1,13 @@
+{
+  "name": "learnosity-demos-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright smoke tests for the jQuery 3.7.1 / Bootstrap 3.4.1 upgrade (LRN-52745)",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.0"
+  }
+}
