@@ -20,18 +20,24 @@ upgrade did not regress the jQuery-driven UI in the demos.
 
 ## Running
 
-1. Start the demo server from the repo root:
+From this `tests/` directory:
 
-   ```bash
-   make run-php          # serves http://localhost:8080
-   ```
+```bash
+npm install
+npx playwright install chromium
+npm test
+```
 
-2. In another terminal, from this `tests/` directory:
+Playwright starts PHP's built-in server on a random free port automatically (requires
+`php` on your PATH) and shuts it down when the run finishes, so no manual server step is
+needed.
 
-   ```bash
-   npm install
-   npx playwright install chromium
-   npm test
-   ```
+To run against a server you're already running instead, set `BASE_URL` — this skips the
+managed server entirely:
 
-Override the target with `BASE_URL`, e.g. `BASE_URL=http://localhost:8000 npm test`.
+```bash
+make run-php                                   # from the repo root, serves :8080
+BASE_URL=http://localhost:8080 npm test        # from tests/
+```
+
+`php -v` should report PHP 8.1+.
