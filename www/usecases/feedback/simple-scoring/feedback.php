@@ -181,10 +181,10 @@ saveScores = () => {
         dataType: 'json',
         type: 'POST'
     })
-    .error(function(xhr, status, data) {
+    .fail(function(xhr, status, data) {
         console.log(xhr.responseText, null, null);
     })
-    .success(function(data, status, xhr) {
+    .done(function(data, status, xhr) {
         window.setTimeout(function () {
             window.location = './feedback_report.php?session_id=<?php echo $session_id; ?>&activity_id=<?php echo $activity_id; ?>';
         }, 7000);
