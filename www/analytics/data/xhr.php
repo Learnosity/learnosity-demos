@@ -65,6 +65,12 @@ $security = array(
 );
 
 $data = json_decode(html_entity_decode(filter_input(INPUT_POST, 'request', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => null]]) ?? ''), true);
+// A missing or malformed "request" payload decodes to a non-array. Reject it as
+// a client error (400) rather than letting a null reach the Data API SDK, whose
+// array-typed parameter would raise a TypeError and be reported as an upstream 502.
+if (!is_array($data)) {
+    respond_with_error('Bad request.', 'Missing or malformed "request" JSON payload.');
+}
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS, ['options' => ['default' => 'get']]);
 
 # Get the data API URL we are dealing with - so we can limit it to only that domain.
@@ -91,12 +97,18 @@ try {
     respond_with_error('An error occurred while processing the request.', 'Data API request failed: ' . $e->getMessage(), 502);
 }
 
-if (strlen($response->getBody())) {
-    echo $response->getBody();
+$status_code = $response->getStatusCode();
+$body = (string) $response->getBody();
+
+// Only relay the upstream body on a successful (2xx) response. A non-2xx status
+// or an empty body indicates a transport/upstream failure: log the detail
+// server-side and return a generic 502 rather than echoing the upstream error
+// (which would otherwise be relayed verbatim with this proxy's status left at 200).
+if ($status_code >= 200 && $status_code < 300 && strlen($body)) {
+    echo $body;
 } else {
-    $err = $response->getError();
     // Log the underlying error detail; return a generic message to the client.
-    error_log('[xhr.php] Data API returned an error: ' . json_encode($err));
+    error_log('[xhr.php] Data API returned an error. HTTP ' . $status_code . ': ' . json_encode($response->getError()));
     http_response_code(502);
     header('Content-Type: application/json');
     echo json_encode(['error' => 'An error occurred while processing the request.']);
