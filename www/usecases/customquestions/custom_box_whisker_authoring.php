@@ -57,14 +57,16 @@ $request = [
                                 "median": 6,
                                 "quartile_3": 10,
                                 "score": 1,
-                                "valid_response": {
-                                    "type": "object",
-                                    "value": {
-                                    "min": 2,
-                                    "max": 11,
-                                    "quartile_1": 5,
-                                    "median": 6,
-                                    "quartile_3": 8
+                                "validation": {
+                                    "valid_response": {
+                                        "score": 1,
+                                        "value": {
+                                            "min": 4,
+                                            "max": 8,
+                                            "quartile_1": 5,
+                                            "median": 6,
+                                            "quartile_3": 7
+                                        }
                                     }
                                 },
                                 "instant_feedback": true
@@ -138,11 +140,31 @@ $request = [
                                     "description": "Set default last quartile value.",
                                     "required": true
                                 },
-                                "valid_response": {
+                                "validation": {
                                     "name": "Set correct answer(s)",
                                     "description": "In this section, configure the correct answer(s) for the question.",
-                                    "type": "question",
-                                    "white_list": ["line_min", "line_max", "min", "max", "step", "quartile_1", "median", "quartile_3"]
+                                    "type": "object",
+                                    "attributes": {
+                                      "valid_response": {
+                                        "name": "Correct",
+                                        "type": "object",
+                                        "attributes": {
+                                          "score": {
+                                            "name": "Point(s)",
+                                            "description": "Score awarded for the correct response(s).",
+                                            "type": "number",
+                                            "required": true,
+                                            "default": 1
+                                          },
+                                          "value": {
+                                            "name": "Value",
+                                            "type": "object",
+                                            "element": "question",
+                                            "white_list": ["line_min", "line_max", "min", "max", "step", "quartile_1", "median", "quartile_3"]
+                                          }
+                                        }
+                                      }
+                                    }
                                 },
                                 "score": {
                                     "name": "Point(s)",

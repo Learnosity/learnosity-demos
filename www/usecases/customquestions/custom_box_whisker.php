@@ -45,14 +45,16 @@ $request = '{
       "median": 6,
       "quartile_3": 10,
       "score": 1,
-      "valid_response": {
-        "type": "object",
-        "value": {
-            "min": 2,
-            "max": 11,
-            "quartile_1": 4,
-            "median": 6,
-            "quartile_3": 8
+      "validation": {
+        "valid_response": {
+            "score": 1,
+            "value": {
+               "min": 2,
+               "max": 11,
+               "quartile_1": 4,
+               "median": 6,
+               "quartile_3": 8
+            }
         }
       },
       "instant_feedback": true
