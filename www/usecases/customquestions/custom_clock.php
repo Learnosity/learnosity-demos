@@ -37,11 +37,15 @@ $request = '{
       },
       "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.css",
       "instant_feedback": true,
-      "valid_response" : {
-        "hourHandAngle": 45, 
-        "minHandAngle": 90
-      },
-      "score":1
+      "validation": {
+        "valid_response": {
+          "score": 1,
+          "value": {
+            "hourHandAngle": 45,
+            "minHandAngle": 90
+          }
+        }
+      }
     }
   ]
 }';

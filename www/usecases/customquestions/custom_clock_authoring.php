@@ -46,11 +46,15 @@ $request = [
                                 },
                                 "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_clock.css",
                                 "instant_feedback": true,
-                                "valid_response" : {
-                                    "hourHandAngle": 45, 
-                                    "minHandAngle": 90
-                                  },
-                                  "score":1
+                                "validation": {
+                                  "valid_response": {
+                                    "score": 1,
+                                    "value": {
+                                      "hourHandAngle": 45,
+                                      "minHandAngle": 90
+                                    }
+                                  }
+                                }
                             }
                         }]
                     },
@@ -75,18 +79,31 @@ $request = [
                                     "required": false,
                                     "default": false
                                 },
-                                "valid_response": {
-                                    "type": "question",
+                                "validation": {
                                     "name": "Set correct answer(s)",
-                                    "description": "Correct answer for the question",
-                                    "whitelist_attributes": ["valid_response", "value"]
-                                },
-                                "score": {
-                                    "type": "number",
-                                    "name": "Score",
-                                    "description": "Score for a correct answer.",
-                                    "required": true,
-                                    "default": 1
+                                    "description": "In this section, configure the correct answer(s) for the question.",
+                                    "type": "object",
+                                    "attributes": {
+                                      "valid_response": {
+                                        "name": "Correct",
+                                        "type": "object",
+                                        "attributes": {
+                                          "score": {
+                                            "name": "Score",
+                                            "description": "Score for a correct answer.",
+                                            "type": "number",
+                                            "required": true,
+                                            "default": 1
+                                          },
+                                          "value": {
+                                            "name": "Value",
+                                            "type": "object",
+                                            "element": "question",
+                                            "white_list": ["validation"]
+                                          }
+                                        }
+                                      }
+                                    }
                                 }
                             }
                         }
