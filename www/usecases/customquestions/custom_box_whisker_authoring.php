@@ -41,33 +41,34 @@ $request = [
                                 "description": "A custom question type - Box & Whisker",
                                 "group_reference": "custom_q_types",
                                 "defaults": {
-                                "type": "custom",
-                                "stimulus": "Draw a <b>box &amp; whisker</b> chart for the following: <b>6, 2, 5, 3, 6, 10, 11, 6</b>",
-                                "js": {
-                                    "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_q.js",
-                                    "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_s.js"
-                                },
-                                "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker.css",
-                                "line_min": 1,
-                                "line_max": 19,
-                                "step": 1,
-                                "min": 2,
-                                "max": 14,
-                                "quartile_1": 4,
-                                "median": 6,
-                                "quartile_3": 10,
-                                "score": 1,
-                                "valid_response": {
-                                    "type": "object",
-                                    "value": {
+                                    "type": "custom",
+                                    "stimulus": "Draw a <b>box &amp; whisker</b> chart for the following: <b>6, 2, 5, 3, 6, 10, 11, 6</b>",
+                                    "js": {
+                                        "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_q.js",
+                                        "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker_s.js"
+                                    },
+                                    "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_box_whisker.css",
+                                    "line_min": 1,
+                                    "line_max": 19,
+                                    "step": 1,
                                     "min": 2,
-                                    "max": 11,
-                                    "quartile_1": 5,
+                                    "max": 14,
+                                    "quartile_1": 4,
                                     "median": 6,
-                                    "quartile_3": 8
-                                    }
-                                },
-                                "instant_feedback": true
+                                    "quartile_3": 10,
+                                    "validation": {
+                                        "valid_response": {
+                                            "score": 1,
+                                            "value": {
+                                                "min": 4,
+                                                "max": 8,
+                                                "quartile_1": 5,
+                                                "median": 6,
+                                                "quartile_3": 7
+                                            }
+                                        }
+                                    },
+                                    "instant_feedback": true
                                 }
                             }
                         ]
@@ -138,11 +139,31 @@ $request = [
                                     "description": "Set default last quartile value.",
                                     "required": true
                                 },
-                                "valid_response": {
+                                "validation": {
                                     "name": "Set correct answer(s)",
                                     "description": "In this section, configure the correct answer(s) for the question.",
-                                    "type": "question",
-                                    "white_list": ["line_min", "line_max", "min", "max", "step", "quartile_1", "median", "quartile_3"]
+                                    "type": "object",
+                                    "attributes": {
+                                      "valid_response": {
+                                        "name": "Correct",
+                                        "type": "object",
+                                        "attributes": {
+                                          "score": {
+                                            "name": "Point(s)",
+                                            "description": "Score awarded for the correct response(s).",
+                                            "type": "number",
+                                            "required": true,
+                                            "default": 1
+                                          },
+                                          "value": {
+                                            "name": "Value",
+                                            "type": "object",
+                                            "element": "question",
+                                            "white_list": ["line_min", "line_max", "min", "max", "step", "quartile_1", "median", "quartile_3"]
+                                          }
+                                        }
+                                      }
+                                    }
                                 },
                                 "score": {
                                     "name": "Point(s)",
