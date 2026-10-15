@@ -28,20 +28,33 @@ $request = '{
   "session_id": "' . $session_id . '",
   "questions": [
     {
-      "response_id": "custom-piano-response-1",
-      "type": "custom",
-      "stimulus": "<strong>Identify the notes of a C major chord on the piano. Any inversion is permissible. Click a key to hear the note.</strong>",
-      "js": {
+        "response_id": "custom-piano-response-1",
+        "type": "custom",
+        "stimulus": "<strong>Identify the notes of a C major chord on the piano. Any inversion is permissible. Click a key to hear the note.</strong>",
+        "js": {
         "question": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_piano_q.js",
         "scorer": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_piano_s.js"
-      },
-      "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_piano.css",
-      "instant_feedback": true,
-      "valid_response": {
-        "notes": ["C", "E", "G"],
-        "indecies": [0, 4, 7]
-    },
-      "score":1
+        },
+        "css": "//' . $_SERVER['HTTP_HOST'] . '/usecases/customquestions/custom_piano.css",
+        "instant_feedback": true,
+        "validation": {
+            "valid_response": {
+                "score": 1,
+                "value": {
+                    "notes": [
+                        "C",
+                        "E",
+                        "G"
+                    ],
+                    "indecies": [
+                        0,
+                        4,
+                        7
+                    ]
+                }
+            }
+        },
+        "score":1
     }
   ]
 }';
