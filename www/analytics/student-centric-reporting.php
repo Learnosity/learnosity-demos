@@ -129,21 +129,21 @@ $signedRequest = $Init->generate();
     <h3 id="sessions-summary-report"><a href="#sessions-summary-report">Sessions Summary Report</a></h3>
     <p>See a running total of correct, incorrect and skipped items for an individual session or a combination of sessions.</p>
     <div id="sessions-summary"></div>
+    </div>
+
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="sessions-summary-tag-report"><a href="#sessions-summary-tag-report">Sessions Summary with Tags Report</a></h3>
+    <p>See a more detailed breakdown of the score of an individual or combination of sessions, broken down based on a tag hierarchy.</p>
+    <div id="sessions-summary-tag"></div>
 </div>
 
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="sessions-summary-question-report"><a href="#sessions-summary-question-report">Sessions Summary by Question Report</a></h3>
-        <p>See a summary of Question results for a single learner, showing how many Questions were correct, incorrect, unattempted, and unmarked.</p>
-        <div id="sessions-summary-question"></div>
-    </div>
-
-    <div class="section pad-sml">
-        <!-- Container for the reports api to load into -->
-        <h3 id="sessions-list-report"><a href="#sessions-list-report">Sessions List Report</a></h3>
-        <p>View multiple attempts at the same activity, or multiple different activities, for a single student.</p>
-        <div id="sessions-list"></div>
-    </div>
+<div class="section pad-sml">
+    <!-- Container for the reports api to load into -->
+    <h3 id="sessions-summary-question-report"><a href="#sessions-summary-question-report">Sessions Summary by Question Report</a></h3>
+    <p>See a summary of Question results for a single learner, showing how many Questions were correct, incorrect, unattempted, and unmarked.</p>
+    <div id="sessions-summary-question"></div>
+</div>
 
 <div class="section pad-sml">
     <!-- Container for the reports api to load into -->
