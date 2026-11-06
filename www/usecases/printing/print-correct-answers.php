@@ -101,9 +101,6 @@ $signedRequest = $Init->generate();
 
 <!-- Add some basic CSS to style the items -->
 <style>
-    body{
-        height: "auto";
-    }
     h2 {
         border-bottom: 1px solid #dfdfdf;
         margin-bottom: 30px;
@@ -120,9 +117,26 @@ $signedRequest = $Init->generate();
         padding-bottom: 50px;
     }
     @media print {
+        /* Site CSS sets html/body to height:100% with overflow hidden, which clips print to page 1 */
+        html, body {
+            height: auto !important;
+            min-height: 0 !important;
+            overflow: visible !important;
+        }
+        .wrapper, .print-container {
+            display: block !important;
+            height: auto !important;
+            min-height: 0 !important;
+            overflow: visible !important;
+            position: static !important;
+        }
+        .learnosity-item {
+            page-break-inside: auto;
+        }
         .page-break {
             display: block;
             page-break-before: always;
+            break-before: page;
         }
         .lrn.lrn-assess .lrn-region-group {
            display: block;
