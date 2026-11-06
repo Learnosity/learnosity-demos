@@ -64,7 +64,7 @@ $signedRequest = $Init->generate();
         <div class="toolbar">
             <ul class="list-inline">
                 <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://help.learnosity.com/hc/en-us/sections/22502731079965-Learnosity-Assessment" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
         <div class="overview">

@@ -160,11 +160,11 @@ $signedRequest = $Init->generate();
         <div class="toolbar">
             <ul class="list-inline">
                 <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000101737-Learnosity-Assessments" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://help.learnosity.com/hc/en-us/sections/22502731079965-Learnosity-Assessment" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
         <div class="overview">
-            <h2>Right-to-Left Language Support</h2>
+            <h2>Right-to-Left Language Support (Activities)</h2>
             <p>This demo demonstrates the Learnosity approach to handling right-to-left languages. In this demo, everything is localised to Arabic using <a href="https://reference.learnosity.com/author-api/initialization#config_label_bundle">label bundles</a>.</p>
             <p>See an article on how to <a href="https://help.learnosity.com/hc/en-us/articles/360000858898-Configuring-Author-API-to-Initialize-in-RTL-Right-to-Left-Mode-Arabic-and-Hebrew-Language-Support-">configure Author API for right-to-left support</a>.</p>
         </div>

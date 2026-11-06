@@ -370,7 +370,7 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Right-to-Left Language Support (items)</h3>
+                        <h3 class="panel-title">Right-to-Left Language Support (Items)</h3>
                     </div>
                     <div class="panel-body">
                         <p>This demo demonstrates the Learnosity approach to handling right-to-left languages with the item editor.</p>
@@ -383,7 +383,7 @@ include_once 'includes/header.php';
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Right-to-Left Language Support (activities)</h3>
+                        <h3 class="panel-title">Right-to-Left Language Support (Activities)</h3>
                     </div>
                     <div class="panel-body">
                         <p>This demo demonstrates the Learnosity approach to handling right-to-left languages with the activity editor.</p>

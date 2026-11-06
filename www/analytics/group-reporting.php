@@ -21,13 +21,6 @@ $security = [
 $request = [
     'reports' => [
         [
-            'id' => 'sessions-summary-by-group-report',
-            'type' => 'sessions-summary-by-group',
-            'dataset_id' => '33285a4b-0e6e-47e4-bade-78999ada14db',
-            'group_path' => [],
-            'always_show_group_ancestors' => true
-        ],
-        [
             'id' => 'activity-summary-by-group-report',
             'type' => 'activity-summary-by-group',
             'dataset_id' => '33285a4b-0e6e-47e4-bade-78999ada14db',
@@ -127,7 +120,7 @@ $signedRequest = $Init->generate();
                                                                                                      data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span
                                 class="glyphicon glyphicon-search"></span></a></li>
                 <li data-toggle="tooltip" data-original-title="Visit the documentation"><a
-                            href="https://support.learnosity.com/hc/en-us/categories/360000105378-Learnosity-Analytics" title="Documentation"><span
+                            href="https://help.learnosity.com/hc/en-us/sections/22502724634653-Learnosity-Analytics" title="Documentation"><span
                                 class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
@@ -137,19 +130,11 @@ $signedRequest = $Init->generate();
                 breakdowns of hundreds of thousands of user scores, raw score data, or complex 1-dimensional
                 plots to help administrators easily contrast and compare different parts of their student body.
             <ul>
-                <li><h4><a href="#sessions-summary-by-group">Sessions Summary by Group Report</a></h4></li>
                 <li><h4><a href="#activity-summary-by-group">Activity Summary by Group Report</a></h4></li>
             </ul>
             </p>
         </div>
     </div>
-
-    <div class="section pad-sml">
-        <h3 id="sessions-summary-by-group"><a href="#sessions-summary-by-group">Sessions Summary by Group Report</a></h3>
-        <p>Summarize results for groups of users using specific session identifiers, with drill-down navigation from high-level group summaries to individual user data.</p>
-        <div id="sessions-summary-by-group-report"></div>
-    </div>
-
     <div class="section pad-sml">
         <h3 id="activity-summary-by-group"><a href="#activity-summary-by-group">Activity Summary by Group Report</a></h3>
         <div id="activity-summary-by-group-report"></div>

@@ -82,12 +82,12 @@ $signedRequest = $Init->generate();
         <div class="toolbar">
             <ul class="list-inline">
                 <li data-toggle="tooltip" data-original-title="Preview API Initialisation Object"><a href="#"  data-toggle="modal" data-target="#initialisation-preview" aria-label="Preview API Initialisation Object"><span class="glyphicon glyphicon-search"></span></a></li>
-                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://support.learnosity.com/hc/en-us/categories/360000105358-Learnosity-Author" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
+                <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="https://help.learnosity.com/hc/en-us/sections/22502680182941-Learnosity-Authoring" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
             </ul>
         </div>
         <div class="overview">
             <h2>Customize the Question Editing Layout</h2>
-            <p>Our editor. Your item bank. You can customize the Question Editor's layout to suit your authoring and design needs. For more information, refer to <a href="https://support.learnosity.com/hc/en-us/articles/360000755258-Adding-a-Custom-Editor-Layout-for-a-Question-Type" target="blank">the docs page</a>.</p>
+            <p>Our editor. Your item bank. You can customize the Question Editor's layout to suit your authoring and design needs. For more information, refer to <a href="https://help.learnosity.com/hc/en-us/articles/360000755258-Adding-a-Custom-Editor-Layout-for-a-Question-Type" target="blank">the docs page</a>.</p>
         </div>
     </div>
 
