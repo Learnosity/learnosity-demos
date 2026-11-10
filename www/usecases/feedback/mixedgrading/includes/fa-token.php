@@ -44,6 +44,12 @@ function getAppConfig() {
             $service = $config->get('app', 'serviceName') ?: '';
             $config->loadIniFromEnvironment($configPath, $service);
         }
+
+        // Apply env var overrides (ln_cnf_<service>_<section>__<key>), used in production
+        if ($config->get('app', 'env_variable_config_overrides')) {
+            $service = $config->get('app', 'serviceName') ?: '';
+            $config->loadFromEnvironment($service);
+        }
     } catch (Exception $e) {
         header('HTTP/1.1 500 Internal Server Error');
         die(json_encode(['error' => $e->getMessage()]));
