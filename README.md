@@ -35,10 +35,7 @@ modes, by running either of the following commands from the `learnosity-demos` d
 
 You can then visit http://localhost:8080 in a browser.
 
-Note that you must use *localhost* as the domain (not 127.0.0.1). Any port is
-fine but the internal security in some of the APIs is domain restricted. So
-until you contact Learnosity to whitelist specific domains, access is restricted
-to *localhost*.
+Note: this demo site repo has been configured to run locally using the localhost hostname. The port may be changed as required, but the hostname must remain as localhost.
 
 If port 8080 is already in use, you can specify a custom port instead, with
 
